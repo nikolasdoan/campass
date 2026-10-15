@@ -1,6 +1,6 @@
 /* Shared chrome: the toast and the dialog (sheet on a phone, modal or popover on a desktop).
    One blocking dialog at a time, as the design system asks. */
-import { isPhone } from "./util.js";
+import { isPhone } from "./util.js?v=2";
 
 /* ---------- toast ---------- */
 

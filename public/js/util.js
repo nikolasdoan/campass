@@ -40,6 +40,7 @@ export function linkify(text) {
 
 /** Only http(s) URLs are ever rendered as links (no javascript:, data:, …). */
 export function safeUrl(url) {
+  if (!url || !String(url).trim()) return "";
   try {
     const u = new URL(url, location.origin);
     return u.protocol === "https:" || u.protocol === "http:" ? u.href : "";

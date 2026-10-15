@@ -65,9 +65,8 @@ a{ color:var(--dot); }
 .num{ font-variant-numeric:tabular-nums; }
 
 .skip{ position:fixed; z-index:200; top:calc(8px + var(--sat)); left:calc(8px + var(--rail-w)); padding:8px 14px; border-radius:8px;
-  background:var(--accent-fill); color:var(--on-accent); font-size:14px; font-weight:600; text-decoration:none;
-  transform:translateY(-200%); }
-.skip:focus{ transform:none; }
+  background:var(--accent-fill); color:var(--on-accent); font-size:14px; font-weight:600; text-decoration:none; }
+.skip:not(:focus){ clip-path:inset(50%); width:1px; height:1px; padding:0; overflow:hidden; white-space:nowrap; }
 .noscript{ padding:40px 16px; text-align:center; color:var(--ink-2); }
 
 /* ---------- desktop rail (bizmap rail.py) ---------- */
@@ -98,7 +97,7 @@ a{ color:var(--dot); }
   line-height:16px; text-align:center; font-variant-numeric:tabular-nums; letter-spacing:0; }
 
 /* The avatar button: rail foot (desktop) and app bar (phone). */
-.avatarbtn{ display:grid; place-items:center; width:44px; height:44px; padding:0; border:0; border-radius:50%; background:none; }
+.avatarbtn{ display:grid; place-items:center; text-decoration:none; width:44px; height:44px; padding:0; border:0; border-radius:50%; background:none; }
 .avatarbtn:hover .avatar{ box-shadow:0 0 0 3px var(--chip); }
 .avatar{ width:30px; height:30px; border-radius:50%; overflow:hidden; display:grid; place-items:center; flex:none;
   background:#6B3FCC; color:#fff; font-size:13px; font-weight:600; letter-spacing:0; transition:box-shadow var(--dur-tap) var(--ease-standard); }
@@ -129,7 +128,8 @@ a{ color:var(--dot); }
 
 /* ---------- Explore toolbar: search + category pills (sticky) ---------- */
 .toolbar{ position:sticky; top:var(--appbar-h); z-index:20; display:grid; gap:10px; padding:10px 16px 10px;
-  background:var(--surface); }
+  background:var(--surface); border-bottom:1px solid transparent; transition:border-color var(--dur-ui) var(--ease-standard); }
+html.is-scrolled .toolbar{ border-bottom-color:var(--line); }
 .searchbar{ position:relative; display:flex; align-items:center; height:36px; border-radius:19px; background:var(--chip);
   border:1px solid transparent; transition:border-color var(--dur-ui) var(--ease-standard), background-color var(--dur-ui) var(--ease-standard); }
 .searchbar:focus-within{ border-color:var(--dot); background:var(--surface); }
@@ -363,6 +363,10 @@ details.info .prose{ padding-bottom:12px; font-size:14px; color:var(--ink-2); }
   transition:background-color var(--dur-tap) var(--ease-standard), color var(--dur-tap) var(--ease-standard); }
 .seg button .ic{ width:15px; height:15px; }
 .seg button[aria-checked="true"]{ background:var(--surface); color:var(--ink); font-weight:500; box-shadow:0 1px 3px rgba(0,0,0,.10); }
+.installrow{ display:flex; align-items:center; gap:12px; }
+.installtxt{ display:grid; flex:1; min-width:0; gap:2px; }
+.installtxt b{ font-size:14px; font-weight:500; }
+.installtxt span{ font-size:12.5px; color:var(--muted); }
 .srclist{ display:grid; gap:2px; margin:0; padding:0; list-style:none; font-size:14px; }
 .srclist li{ display:flex; justify-content:space-between; gap:12px; padding:6px 0; }
 .srclist li span:last-child{ color:var(--muted); white-space:nowrap; font-variant-numeric:tabular-nums; }
@@ -412,6 +416,7 @@ textarea.field:focus{ outline:none; border-color:var(--dot); box-shadow:0 0 0 3p
 .opt .ic{ width:17px; height:17px; color:var(--dot); visibility:hidden; }
 .opt[aria-checked="true"]{ font-weight:600; }
 .opt[aria-checked="true"] .ic{ visibility:visible; }
+.dlg-pop .pick-head{ display:none; }
 .dlg-pop .opts{ padding:2px 0; }
 .dlg-pop .opt{ min-height:38px; font-size:14px; }
 /* Account menu (bizmap .acctmenu) */
@@ -458,7 +463,8 @@ textarea.field:focus{ outline:none; border-color:var(--dot); box-shadow:0 0 0 3p
   body{ background:var(--surface); }
   body[data-route="me"]{ background:var(--page); }
   .col{ min-height:calc(100dvh - var(--appbar-h) - var(--nav-h)); }
-  .pagehead{ display:none; }
+  /* The app bar shows the page name; the view's own <h1> stays for screen readers. */
+  .pagehead{ position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
   .qkbd{ display:none; }
 
   /* The top app bar: sticky, so nothing can ever sit under it; safe-area aware. */
@@ -480,9 +486,7 @@ textarea.field:focus{ outline:none; border-color:var(--dot); box-shadow:0 0 0 3p
     background:var(--surface); color:var(--ink); font-size:13.5px; font-weight:500; white-space:nowrap; }
   .signinpill:active{ transform:scale(.97); }
 
-  .toolbar{ gap:8px; padding:4px calc(16px + var(--sar)) 8px calc(16px + var(--sal)); border-bottom:1px solid transparent;
-    transition:border-color var(--dur-ui) var(--ease-standard); }
-  html.is-scrolled .toolbar{ border-bottom-color:var(--line); }
+  .toolbar{ gap:8px; padding:4px calc(16px + var(--sar)) 8px calc(16px + var(--sal)); }
   .searchbar{ height:40px; border-radius:20px; }
   .search{ font-size:16px; }  /* ≥16px: no iOS focus zoom */
   textarea.field{ font-size:16px; }
@@ -529,7 +533,7 @@ textarea.field:focus{ outline:none; border-color:var(--dot); box-shadow:0 0 0 3p
   dialog.dlg::backdrop{ background:rgba(0,0,0,.28); }
   @keyframes sheetIn{ from{ transform:translateY(100%); } }
   @keyframes sheetOut{ to{ transform:translateY(100%); } }
-  .dlg-x{ position:absolute; top:6px; right:calc(6px + var(--sar)); margin:0; }
+  .dlg-x{ position:absolute; top:20px; right:calc(8px + var(--sar)); margin:0; }
   .dlg-head{ padding-right:36px; }
   .dlg-actions .btn{ flex:1; min-height:44px; }
   .seg button{ min-height:40px; }
@@ -537,6 +541,13 @@ textarea.field:focus{ outline:none; border-color:var(--dot); box-shadow:0 0 0 3p
   .toast{ bottom:calc(var(--nav-h) + 36px); }
 }
 
+/* Phones: denser badge rows so a deal stays about three list lines tall. */
+@media (max-width:820px){
+  .pick{ padding:12px 0 12px calc(16px + var(--sal)); }
+  .badges{ gap:4px; margin-top:5px; }
+  .badge,.chip{ line-height:17px; }
+  .mini{ height:19px; padding:0 6px; font-size:11px; }
+}
 /* Small phones: tighter rows. */
 @media (max-width:379px){
   .pick{ grid-template-columns:36px minmax(0,1fr); gap:10px; }

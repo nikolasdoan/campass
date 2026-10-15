@@ -1,6 +1,6 @@
 /* Every UI string, in zh-TW and en. Deal content (names, offers) stays Chinese.
    Write 臺 not 台 in UI copy. Labels never wrap: the English is shortened, not the layout. */
-import { storage } from "./util.js";
+import { storage } from "./util.js?v=2";
 
 const LANG_KEY = "cp_lang";
 
@@ -119,7 +119,7 @@ const DICT = {
     "signin.title": "登入 CampusPass",
     "signin.body": "以 Google 帳號登入，即可查看每項優惠的完整條件、訂房代碼與聯絡方式，並收藏常用的優惠。",
     "signin.short": "登入",
-    "signin.saveReason": "登入後即可收藏優惠，換手機也找得到。",
+    "signin.saveReason": "以 Google 帳號登入即可收藏優惠，換裝置也找得到；還能查看每項優惠的完整條件、訂房代碼與聯絡方式。",
 
     "saved.title": "收藏",
     "saved.lede": "你收藏的優惠，已過期的也會保留。",
@@ -143,6 +143,11 @@ const DICT = {
     "me.aboutBody": "CampusPass 把各校、學院、系所與學生組織公告的特約優惠整理成一份可搜尋的清單，並標示每項優惠的原公告單位與資料擷取日。",
     "me.sources": "目前收錄的資料來源",
     "me.privacy": "隱私",
+    "me.app": "App",
+    "me.install": "安裝 CampusPass",
+    "me.installHint": "加到主畫面，像 App 一樣開啟。",
+    "me.installBtn": "安裝",
+    "me.installIOS": "在 Safari 點「分享」，再選「加入主畫面」。",
     "me.contact": "發現資料有誤？請在該優惠頁點「回報錯誤」。",
     "disclaimer": "CampusPass 為獨立整理之索引，非臺大官方網站；優惠以商家及原公告單位為準。",
 
@@ -293,7 +298,7 @@ const DICT = {
     "signin.title": "Sign in to CampusPass",
     "signin.body": "Sign in with Google to see every deal's full terms, booking codes and contact details, and to save the ones you use.",
     "signin.short": "Sign in",
-    "signin.saveReason": "Sign in to save deals and find them on any device.",
+    "signin.saveReason": "Sign in with Google to save deals and find them on any device, and to see every deal's full terms, booking codes and contact details.",
 
     "saved.title": "Saved",
     "saved.lede": "Deals you saved, including expired ones.",
@@ -317,6 +322,11 @@ const DICT = {
     "me.aboutBody": "CampusPass collects the partner discounts announced by universities, colleges, departments and student groups into one searchable list, and shows each deal's original source and retrieval date.",
     "me.sources": "Sources included",
     "me.privacy": "Privacy",
+    "me.app": "App",
+    "me.install": "Install CampusPass",
+    "me.installHint": "Add it to your home screen and open it like an app.",
+    "me.installBtn": "Install",
+    "me.installIOS": "In Safari, tap Share, then “Add to Home Screen”.",
     "me.contact": "Found a mistake? Use “Report an error” on the deal's page.",
     "disclaimer": "CampusPass is an independent index, not an official NTU website. The merchant and the original announcing office have the final word on every deal.",
 
