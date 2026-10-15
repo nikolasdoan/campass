@@ -156,6 +156,17 @@ check("admin CSVs", (await Promise.all(["users", "reports", "redemptions", "merc
 check("logout", (await stu.json("/api/logout", { method: "POST" })).body?.ok === true);
 check("session gone after logout", (await stu.json("/api/me")).body?.user === null);
 
+// ---------- account deletion + cleanup ----------
+const gone = await devLogin(`delete-${Date.now()}@ntu.edu.tw`);
+await gone.json(`/api/favorites/${full.id}`, { method: "PUT" });
+const gonePass = (await gone.json(`/api/deals/${full.id}/redeem`, { method: "POST" })).body;
+await gone.json(`/api/deals/${full.id}/report`, { method: "POST", json: { message: "delete test" } });
+check("account deletion needs login", (await anon.json("/api/me", { method: "DELETE" })).status === 401);
+check("account deletion", (await gone.json("/api/me", { method: "DELETE" })).body?.ok === true);
+check("deleted account is signed out", (await gone.json("/api/me")).body?.user === null);
+check("deleted account's passes are gone", !(await (await anon.req("/admin/redemptions.csv", { headers: ADMIN })).text()).includes(gonePass.code));
+check("admin cleanup runs", Array.isArray((await anon.json("/admin/cleanup", { method: "POST", headers: ADMIN })).body?.deleted));
+
 // ---------- Google OAuth via tests/mock-google.mjs ----------
 async function oauth(email, { next = "/saved", tamperState = false, crossBrowser = false } = {}) {
   const b = browser();

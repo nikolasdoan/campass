@@ -232,6 +232,25 @@ app.post("/api/logout", async (c) => {
   return c.json({ ok: true });
 });
 
+// Delete the signed-in account and everything tied to it (個資法 §3 right to deletion).
+// Shop leads the user submitted keep the shop's own contact data but lose the link to them.
+app.delete("/api/me", requireUser, async (c) => {
+  const id = c.get("user")!.id;
+  const db = c.env.DB;
+  await db.batch([
+    db.prepare("DELETE FROM sessions WHERE user_id = ?").bind(id),
+    db.prepare("DELETE FROM favorites WHERE user_id = ?").bind(id),
+    db.prepare("DELETE FROM visits WHERE user_id = ?").bind(id),
+    db.prepare("DELETE FROM deal_views WHERE user_id = ?").bind(id),
+    db.prepare("DELETE FROM redemptions WHERE user_id = ?").bind(id),
+    db.prepare("DELETE FROM reports WHERE user_id = ?").bind(id),
+    db.prepare("UPDATE merchant_leads SET user_id = NULL WHERE user_id = ?").bind(id),
+    db.prepare("DELETE FROM users WHERE id = ?").bind(id),
+  ]);
+  deleteCookie(c, SESSION_COOKIE, { path: "/" });
+  return c.json({ ok: true });
+});
+
 // ---------- API ----------
 
 /** Today's date in Taiwan (YYYY-MM-DD); visits and gates are counted in local days. */
@@ -611,4 +630,26 @@ app.get("/admin/stats", async (c) => {
 
 app.all("/api/*", (c) => c.json({ error: "not_found" }, 404));
 
-export default app;
+/**
+ * Daily housekeeping (Cron Trigger in wrangler.jsonc). Retention periods follow the proposals in
+ * docs/privacy-policy.md: sessions go when they expire; activity rows after two years.
+ */
+export async function cleanup(db: D1Database) {
+  const res = await db.batch([
+    db.prepare("DELETE FROM sessions WHERE expires_at < ?").bind(new Date().toISOString()),
+    db.prepare("DELETE FROM visits WHERE day < ?").bind(taipeiDay(-730)),
+    db.prepare("DELETE FROM deal_views WHERE created_at < datetime('now', '-730 days')"),
+    db.prepare("DELETE FROM redemptions WHERE created_at < datetime('now', '-730 days')"),
+  ]);
+  return res.map((r) => r.meta.changes);
+}
+
+// Lets tests and operators run the cleanup on demand.
+app.post("/admin/cleanup", async (c) => c.json({ deleted: await cleanup(c.env.DB) }));
+
+export default {
+  fetch: app.fetch,
+  async scheduled(_event: ScheduledController, env: Env, ctx: ExecutionContext) {
+    ctx.waitUntil(cleanup(env.DB));
+  },
+} satisfies ExportedHandler<Env>;
