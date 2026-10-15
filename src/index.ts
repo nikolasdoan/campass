@@ -184,16 +184,21 @@ app.get("/auth/google/start", async (c) => {
 app.get("/auth/google/callback", async (c) => {
   const raw = getCookie(c, OAUTH_COOKIE);
   deleteCookie(c, OAUTH_COOKIE, { path: "/auth" });
-  const fail = (reason: string) => c.redirect(`/?login_error=${encodeURIComponent(reason)}`);
+  let saved: { state: string; verifier: string; next: string } | null = null;
+  try {
+    saved = raw ? JSON.parse(raw) : null;
+  } catch {
+    saved = null;
+  }
+  // A cancelled or failed sign-in returns to the page it started from, with the reason.
+  const fail = (reason: string) => {
+    const back = new URL(safeNext(saved?.next), "https://x");
+    back.searchParams.set("login_error", reason);
+    return c.redirect(back.pathname + back.search);
+  };
 
   if (c.req.query("error")) return fail(c.req.query("error")!);
-  if (!raw) return fail("expired");
-  let saved: { state: string; verifier: string; next: string };
-  try {
-    saved = JSON.parse(raw);
-  } catch {
-    return fail("expired");
-  }
+  if (!saved) return fail("expired");
   const code = c.req.query("code");
   if (!code || c.req.query("state") !== saved.state) return fail("state_mismatch");
 
@@ -333,8 +338,9 @@ app.post("/api/deals/:id/report", requireUser, async (c) => {
 // (merchant-confirmed, the only verified tier).
 
 const CODE_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // no 0/O/1/I
-const PASS_MINUTES = 15; // the pass shows a countdown; a shop can confirm within CONFIRM_HOURS
-const CONFIRM_HOURS = 2;
+const PASS_MINUTES = 15; // the pass shows a countdown
+// A shop may confirm a little after the pass's countdown ends (a busy counter), but not much later.
+const CONFIRM_MINUTES = 30;
 
 function newCode(len = 6): string {
   const bytes = crypto.getRandomValues(new Uint8Array(len));
@@ -349,7 +355,7 @@ app.post("/api/deals/:id/redeem", requireUser, async (c) => {
   // Reuse a pass opened in the last few minutes so re-opening doesn't inflate counts.
   const recent = await c.env.DB.prepare(
     `SELECT code, created_at FROM redemptions
-      WHERE user_id = ? AND deal_id = ? AND created_at > datetime('now', ?) AND confirmed_at IS NULL
+      WHERE user_id = ? AND deal_id = ? AND created_at > datetime('now', ?) AND confirmed_at IS NULL AND outcome IS NULL
       ORDER BY created_at DESC LIMIT 1`
   )
     .bind(user.id, id, `-${PASS_MINUTES} minutes`)
@@ -381,12 +387,16 @@ app.post("/api/redemptions/:code/outcome", requireUser, async (c) => {
   const user = c.get("user")!;
   const body = await c.req.json<{ outcome?: string }>().catch(() => ({ outcome: "" }));
   if (!["used", "refused", "not_used"].includes(body.outcome ?? "")) return c.json({ error: "bad_outcome" }, 400);
-  const res = await c.env.DB.prepare(
-    "UPDATE redemptions SET outcome = ?, outcome_at = datetime('now') WHERE code = ? AND user_id = ?"
-  )
-    .bind(body.outcome, c.req.param("code").toUpperCase(), user.id)
+  const code = c.req.param("code").toUpperCase();
+  const row = await c.env.DB.prepare("SELECT confirmed_at FROM redemptions WHERE code = ? AND user_id = ?")
+    .bind(code, user.id)
+    .first<{ confirmed_at: string | null }>();
+  if (!row) return c.json({ error: "not_found" }, 404);
+  // A shop confirmation is the stronger evidence: the student can't record the opposite.
+  if (row.confirmed_at && body.outcome !== "used") return c.json({ error: "already_confirmed" }, 409);
+  await c.env.DB.prepare("UPDATE redemptions SET outcome = ?, outcome_at = datetime('now') WHERE code = ? AND user_id = ?")
+    .bind(body.outcome, code, user.id)
     .run();
-  if (!res.meta.changes) return c.json({ error: "not_found" }, 404);
   return c.json({ ok: true });
 });
 
@@ -396,8 +406,9 @@ app.post("/api/merchant-leads", async (c) => {
   if (b.website) return c.json({ ok: true }); // honeypot: bots fill every field
   const f = (k: string, max = 200) => String(b[k] ?? "").trim().slice(0, max);
   const shop = f("shop_name");
-  const contact = f("email") || f("phone");
-  if (!shop || !contact) return c.json({ error: "shop_and_contact_required" }, 400);
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f("email"));
+  const phoneOk = (f("phone", 40).match(/\d/g) ?? []).length >= 7;
+  if (!shop || !(emailOk || phoneOk)) return c.json({ error: "shop_and_contact_required" }, 400);
   const interest = ["list_free", "featured_paid", "exclusive_deal", "unsure"].includes(f("interest")) ? f("interest") : "unsure";
   await c.env.DB.prepare(
     `INSERT INTO merchant_leads (shop_name, contact_name, email, phone, area, offer, interest, budget, message, user_id)
@@ -457,7 +468,7 @@ async function passForShop(db: D1Database, mk: MerchantKey, rawCode: string): Pr
     `SELECT r.id, r.deal_id, r.confirmed_at, r.created_at > datetime('now', ?) AS fresh, d.name
        FROM redemptions r JOIN deals d ON d.id = r.deal_id WHERE r.code = ?`
   )
-    .bind(`-${CONFIRM_HOURS} hours`, code)
+    .bind(`-${CONFIRM_MINUTES} minutes`, code)
     .first<PassRow>();
   return r && mk.deal_ids.split(",").includes(r.deal_id) ? r : null;
 }

@@ -108,6 +108,9 @@ check("re-opening within 15 min reuses the code", (await stu.json(`/api/deals/${
 check("own pass readable", (await stu.json(`/api/redemptions/${pass.code}`)).body?.code === pass.code);
 const stu2 = await devLogin(`api2-${Date.now()}@ntu.edu.tw`);
 check("someone else's pass is 404", (await stu2.json(`/api/redemptions/${pass.code}`)).status === 404);
+const answered = (await stu2.json(`/api/deals/${other.id}/redeem`, { method: "POST" })).body;
+await stu2.json(`/api/redemptions/${answered.code}/outcome`, { method: "POST", json: { outcome: "not_used" } });
+check("an answered pass is not reused", (await stu2.json(`/api/deals/${other.id}/redeem`, { method: "POST" })).body?.code !== answered.code);
 check("bad outcome 400", (await stu.json(`/api/redemptions/${pass.code}/outcome`, { method: "POST", json: { outcome: "maybe" } })).status === 400);
 check("outcome on someone else's pass 404", (await stu2.json(`/api/redemptions/${pass.code}/outcome`, { method: "POST", json: { outcome: "used" } })).status === 404);
 
@@ -139,16 +142,19 @@ check("another branch of the same deal starts at 0", (await browser().json(`/api
 const sm = await anon.json(`/api/merchant/${key}/manifest.webmanifest`);
 check("shop manifest opens the shop page", sm.body?.start_url === `/m/${key}` && sm.body?.id === `/m/${key}`);
 check("shop manifest 404 for bad key", (await anon.json("/api/merchant/nope/manifest.webmanifest")).status === 404);
+check("a shop-confirmed pass can't be marked refused", (await stu.json(`/api/redemptions/${pass.code}/outcome`, { method: "POST", json: { outcome: "refused" } })).status === 409);
 check("outcome saved", (await stu.json(`/api/redemptions/${pass.code}/outcome`, { method: "POST", json: { outcome: "used" } })).body?.ok === true);
 check("shop confirm needs same origin", (await shop.json("/api/merchant/confirm", { method: "POST", origin: "https://evil.example", json: { code: pass.code } })).status === 403);
 
 // ---------- merchant leads ----------
 const before = (await anon.json("/admin/stats", { headers: ADMIN })).body;
 check("lead needs shop + contact", (await anon.json("/api/merchant-leads", { method: "POST", json: { shop_name: "x" } })).status === 400);
+check("lead rejects a junk phone as the only contact", (await anon.json("/api/merchant-leads", { method: "POST", json: { shop_name: "x", phone: "abc" } })).status === 400);
+check("lead accepts a real phone", (await anon.json("/api/merchant-leads", { method: "POST", json: { shop_name: "電話店", phone: "02-2363-1234" } })).body?.ok === true);
 check("lead saved", (await anon.json("/api/merchant-leads", { method: "POST", json: { shop_name: "API 測試咖啡", email: "shop@example.com", interest: "featured_paid" } })).body?.ok === true);
 check("honeypot lead accepted silently", (await anon.json("/api/merchant-leads", { method: "POST", json: { shop_name: "bot", email: "b@b.b", website: "http://spam" } })).body?.ok === true);
 const after = (await anon.json("/admin/stats", { headers: ADMIN })).body;
-check("only the real lead was stored", after.merchants.leads === before.merchants.leads + 1, `${before.merchants.leads} -> ${after.merchants.leads}`);
+check("only the real leads were stored", after.merchants.leads === before.merchants.leads + 2, `${before.merchants.leads} -> ${after.merchants.leads}`);
 check("stats has the go/no-go gate", after.gate?.students_using_twice?.target === 30 && after.gate?.shops_would_pay?.target === 5);
 check("admin CSVs", (await Promise.all(["users", "reports", "redemptions", "merchants"].map((n) => anon.req(`/admin/${n}.csv`, { headers: ADMIN })))).every((r) => r.status === 200));
 
@@ -188,7 +194,8 @@ if (!mockUp) {
   check("Google sign-in returns to `next`", new URL(ok.location, B).pathname === "/saved", ok.location || ok.error);
   check("Google sign-in creates a session", !!(await ok.b.json("/api/me")).body?.user);
   check("callback replay rejected", ((await browser().req(ok.cb)).headers.get("location") || "").includes("login_error"));
-  check("cancel -> access_denied", ((await oauth("deny@example.com")).location || "").includes("login_error=access_denied"));
+  const denied = await oauth("deny@example.com", { next: `/deal/${full.id}` });
+  check("cancel -> access_denied, back on the page it started from", (denied.location || "").startsWith(`/deal/${full.id}?login_error=access_denied`), denied.location);
   check("unverified email rejected", ((await oauth("unverified@example.com")).location || "").includes("login_error=email_unverified"));
   check("tampered state rejected", ((await oauth("a@example.com", { tamperState: true })).location || "").includes("login_error=state_mismatch"));
   check("callback in another browser rejected", ((await oauth("a@example.com", { crossBrowser: true })).location || "").includes("login_error=expired"));
