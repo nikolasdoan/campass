@@ -71,6 +71,22 @@ function safeNext(next: string | undefined | null): string {
   return u.pathname + u.search + u.hash;
 }
 
+/** The JSON body as a plain object; anything else (null, arrays, bad JSON) becomes {}. */
+async function jsonBody(c: any): Promise<Record<string, unknown>> {
+  const b = await c.req.json().catch(() => null);
+  return b && typeof b === "object" && !Array.isArray(b) ? b : {};
+}
+
+/** A string field, trimmed and cut to max code points (never mid-character). */
+function str(v: unknown, max: number): string {
+  return typeof v === "string" ? [...v.trim()].slice(0, max).join("") : "";
+}
+
+/** Pass codes: full-width letters from zhuyin IMEs (ＡＢＣ) count as ABC. */
+function normCode(raw: unknown): string {
+  return String(raw ?? "").normalize("NFKC").toUpperCase().replace(/[^A-Z0-9]/g, "");
+}
+
 async function createSession(c: any, userId: number) {
   const token = randomToken();
   const expires = new Date(Date.now() + SESSION_DAYS * 864e5);
@@ -109,6 +125,8 @@ async function upsertUser(db: D1Database, p: GoogleProfile): Promise<number> {
   return row!.id;
 }
 
+const LIST_FIELDS =
+  "id, name, subtitle, category, regions, highlight, expires_on, auto_renew, eligibility, schools, source_level, source_org, sort_order";
 const PUBLIC_FIELDS =
   "id, name, subtitle, category, regions, highlight, expires_on, auto_renew, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order";
 
@@ -147,6 +165,12 @@ app.use("*", async (c, next) => {
       .first<User>();
     c.set("user", user ?? null);
   }
+  await next();
+});
+
+// No API body needs more than 64 KB.
+app.use("/api/*", async (c, next) => {
+  if (Number(c.req.header("Content-Length") ?? 0) > 65536) return c.json({ error: "too_large" }, 413);
   await next();
 });
 
@@ -260,6 +284,8 @@ app.delete("/api/me", requireUser, async (c) => {
     db.prepare("DELETE FROM favorites WHERE user_id = ?").bind(id),
     db.prepare("DELETE FROM visits WHERE user_id = ?").bind(id),
     db.prepare("DELETE FROM deal_views WHERE user_id = ?").bind(id),
+    // A shop's confirmation is also the shop's record: keep it, but anonymised (user 0 never exists).
+    db.prepare("UPDATE redemptions SET user_id = 0 WHERE user_id = ? AND confirmed_at IS NOT NULL").bind(id),
     db.prepare("DELETE FROM redemptions WHERE user_id = ?").bind(id),
     db.prepare("DELETE FROM reports WHERE user_id = ?").bind(id),
     db.prepare("UPDATE merchant_leads SET user_id = NULL WHERE user_id = ?").bind(id),
@@ -292,9 +318,10 @@ app.get("/api/me", async (c) => {
   });
 });
 
-// Public list: names, categories and the discount badge. Terms need login.
+// Public list: names, categories and the discount badge. Terms need login; the source link and
+// date are in the detail (kept out of the list to keep it small: ~1,100 rows).
 app.get("/api/deals", async (c) => {
-  const { results } = await c.env.DB.prepare(`SELECT ${PUBLIC_FIELDS} FROM deals ORDER BY sort_order`).all();
+  const { results } = await c.env.DB.prepare(`SELECT ${LIST_FIELDS} FROM deals ORDER BY sort_order`).all();
   c.header("Cache-Control", "public, max-age=300");
   return c.json({ deals: results.map(parseDeal) });
 });
@@ -335,9 +362,10 @@ app.delete("/api/favorites/:id", requireUser, async (c) => {
 app.post("/api/deals/:id/report", requireUser, async (c) => {
   if (await limited(c.env.RL_FORMS, c, "report")) return c.json({ error: "rate_limited" }, 429);
   const user = c.get("user")!;
-  const body = await c.req.json<{ message?: string }>().catch(() => ({ message: "" }));
-  const message = (body.message ?? "").trim().slice(0, 1000);
+  const message = str((await jsonBody(c)).message, 1000);
   if (!message) return c.json({ error: "message_required" }, 400);
+  const exists = await c.env.DB.prepare("SELECT 1 FROM deals WHERE id = ?").bind(c.req.param("id")).first();
+  if (!exists) return c.json({ error: "not_found" }, 404);
   await c.env.DB.prepare("INSERT INTO reports (user_id, deal_id, message) VALUES (?, ?, ?)")
     .bind(user.id, c.req.param("id"), message)
     .run();
@@ -385,8 +413,11 @@ function newCode(len = 6): string {
 app.post("/api/deals/:id/redeem", requireUser, async (c) => {
   const user = c.get("user")!;
   const id = c.req.param("id");
-  const deal = await c.env.DB.prepare("SELECT id FROM deals WHERE id = ?").bind(id).first();
+  const deal = await c.env.DB.prepare("SELECT expires_on, auto_renew FROM deals WHERE id = ?")
+    .bind(id)
+    .first<{ expires_on: string | null; auto_renew: number }>();
   if (!deal) return c.json({ error: "not_found" }, 404);
+  if (!deal.auto_renew && deal.expires_on && deal.expires_on < taipeiDay()) return c.json({ error: "deal_expired" }, 410);
   // Reuse a pass opened in the last few minutes so re-opening doesn't inflate counts.
   const recent = await c.env.DB.prepare(
     `SELECT code, created_at FROM redemptions
@@ -412,7 +443,7 @@ app.get("/api/redemptions/:code", requireUser, async (c) => {
   const row = await c.env.DB.prepare(
     "SELECT code, deal_id, created_at, outcome, confirmed_at FROM redemptions WHERE code = ? AND user_id = ?"
   )
-    .bind(c.req.param("code").toUpperCase(), c.get("user")!.id)
+    .bind(normCode(c.req.param("code")), c.get("user")!.id)
     .first();
   if (!row) return c.json({ error: "not_found" }, 404);
   return c.json(row);
@@ -420,9 +451,9 @@ app.get("/api/redemptions/:code", requireUser, async (c) => {
 
 app.post("/api/redemptions/:code/outcome", requireUser, async (c) => {
   const user = c.get("user")!;
-  const body = await c.req.json<{ outcome?: string }>().catch(() => ({ outcome: "" }));
-  if (!["used", "refused", "not_used"].includes(body.outcome ?? "")) return c.json({ error: "bad_outcome" }, 400);
-  const code = c.req.param("code").toUpperCase();
+  const body = { outcome: str((await jsonBody(c)).outcome, 20) };
+  if (!["used", "refused", "not_used"].includes(body.outcome)) return c.json({ error: "bad_outcome" }, 400);
+  const code = normCode(c.req.param("code"));
   const row = await c.env.DB.prepare("SELECT confirmed_at FROM redemptions WHERE code = ? AND user_id = ?")
     .bind(code, user.id)
     .first<{ confirmed_at: string | null }>();
@@ -438,9 +469,9 @@ app.post("/api/redemptions/:code/outcome", requireUser, async (c) => {
 // Shops that want to be listed or would pay for featured placement. Public form.
 app.post("/api/merchant-leads", async (c) => {
   if (await limited(c.env.RL_FORMS, c, "lead")) return c.json({ error: "rate_limited" }, 429);
-  const b = await c.req.json<Record<string, string>>().catch(() => ({}) as Record<string, string>);
+  const b = await jsonBody(c);
   if (b.website) return c.json({ ok: true }); // honeypot: bots fill every field
-  const f = (k: string, max = 200) => String(b[k] ?? "").trim().slice(0, max);
+  const f = (k: string, max = 200) => str(b[k], max);
   const shop = f("shop_name");
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f("email"));
   const phoneOk = (f("phone", 40).match(/\d/g) ?? []).length >= 7;
@@ -499,7 +530,7 @@ type PassRow = { id: number; deal_id: string; confirmed_at: string | null; fresh
 
 /** Look up a pass for a shop. Unknown codes and other shops' codes give the same answer. */
 async function passForShop(db: D1Database, mk: MerchantKey, rawCode: string): Promise<PassRow | null> {
-  const code = rawCode.trim().toUpperCase().replace(/[^A-Z0-9]/g, "");
+  const code = normCode(rawCode);
   const r = await db.prepare(
     `SELECT r.id, r.deal_id, r.confirmed_at, r.created_at > datetime('now', ?) AS fresh, d.name
        FROM redemptions r JOIN deals d ON d.id = r.deal_id WHERE r.code = ?`
@@ -552,8 +583,7 @@ async function confirmPass(c: any, key: string | undefined) {
   if (await limited(c.env.RL_CONFIRM, c, "confirm")) return c.json({ error: "rate_limited" }, 429);
   const mk = await merchantKey(c.env.DB, key);
   if (!mk) return c.json({ error: "not_merchant" }, 403);
-  const body = await c.req.json().catch(() => ({}));
-  const r = await passForShop(c.env.DB, mk, String(body.code ?? ""));
+  const r = await passForShop(c.env.DB, mk, String((await jsonBody(c)).code ?? ""));
   if (!r) return c.json({ error: "invalid_code" }, 404);
   if (r.confirmed_at) return c.json({ error: "already_confirmed", deal: r.name }, 409);
   if (!r.fresh) return c.json({ error: "expired_code", deal: r.name }, 410);
@@ -571,9 +601,16 @@ async function confirmPass(c: any, key: string | undefined) {
 
 app.use("/admin/*", async (c, next) => {
   const auth = c.req.header("Authorization") ?? "";
-  if (!c.env.ADMIN_TOKEN || auth !== `Bearer ${c.env.ADMIN_TOKEN}`) return c.text("Unauthorized", 401);
+  if (!c.env.ADMIN_TOKEN || !(await sameSecret(auth, `Bearer ${c.env.ADMIN_TOKEN}`))) return c.text("Unauthorized", 401);
   await next();
 });
+
+/** Constant-time comparison of two secrets (hash first so lengths always match). */
+async function sameSecret(a: string, b: string): Promise<boolean> {
+  const enc = new TextEncoder();
+  const [ha, hb] = await Promise.all([crypto.subtle.digest("SHA-256", enc.encode(a)), crypto.subtle.digest("SHA-256", enc.encode(b))]);
+  return (crypto.subtle as any).timingSafeEqual(ha, hb);
+}
 
 function csv(rows: Record<string, unknown>[]): string {
   if (!rows.length) return "";
@@ -619,9 +656,13 @@ app.get("/admin/merchants.csv", async (c) => {
 
 // Issue a shop's private confirm link. Body: {label, deal_ids:[...]}. The key is shown once.
 app.post("/admin/merchant-keys", async (c) => {
-  const b = await c.req.json<{ label?: string; deal_ids?: string[] }>().catch(() => ({}) as { label?: string; deal_ids?: string[] });
-  const ids = (b.deal_ids ?? []).filter(Boolean);
-  if (!b.label || !ids.length) return c.json({ error: "label_and_deal_ids_required" }, 400);
+  const body = await jsonBody(c);
+  const label = str(body.label, 80);
+  const raw = Array.isArray(body.deal_ids) ? body.deal_ids : [];
+  const ids = [...new Set(raw.filter((x): x is string => typeof x === "string" && /^[\w-]{1,40}$/.test(x)))];
+  if (!label || !ids.length || ids.length !== raw.length || ids.length > 50)
+    return c.json({ error: "label_and_deal_ids_required", note: "label text; deal_ids: 1-50 distinct deal ids" }, 400);
+  const b = { label };
   const marks = ids.map(() => "?").join(",");
   const found = await c.env.DB.prepare(`SELECT COUNT(*) AS n FROM deals WHERE id IN (${marks})`).bind(...ids).first<{ n: number }>();
   if (found?.n !== ids.length) return c.json({ error: "unknown_deal_id" }, 400);

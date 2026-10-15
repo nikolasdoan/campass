@@ -57,10 +57,11 @@ const deals = list.body?.deals || [];
 check("public list returns deals", list.status === 200 && deals.length > 100, `${deals.length}`);
 const leaked = deals.filter((d) => "offer" in d || "info" in d || "phone" in d || "links" in d || "address" in d);
 check("public list never includes offer/info/phone/address/links", leaked.length === 0, `${leaked.length} leaked`);
-check("public list includes source_url + retrieved_on", deals.every((d) => d.source_url && d.retrieved_on));
+check("public list stays small (no source_url in rows)", deals.every((d) => !("source_url" in d)));
 const full = deals.find((d) => d.name === "台北福華大飯店") || deals[0];
 const other = deals.find((d) => d.id !== full.id);
 const locked = await anon.json(`/api/deals/${full.id}`);
+check("signed-out detail carries source_url + retrieved_on", !!locked.body?.deal?.source_url && !!locked.body?.deal?.retrieved_on);
 check("signed-out detail is locked", locked.body?.locked === true && !("offer" in locked.body.deal) && !("links" in locked.body.deal));
 check("unknown deal 404", (await anon.json("/api/deals/nope")).status === 404);
 check("unknown /api route 404 json", (await anon.json("/api/nope")).body?.error === "not_found");
@@ -97,10 +98,19 @@ check("CSRF: missing origin rejected", (await stu.json(`/api/favorites/${full.id
 // ---------- reports ----------
 check("report needs a message", (await stu.json(`/api/deals/${full.id}/report`, { method: "POST", json: { message: "  " } })).status === 400);
 check("report saved", (await stu.json(`/api/deals/${full.id}/report`, { method: "POST", json: { message: "API test — ignore" } })).body?.ok === true);
+for (const [label, body] of [["null", "null"], ["number message", '{"message":5}'], ["object message", '{"message":{}}']])
+  check(`report with ${label} is a 400`, (await stu.json(`/api/deals/${full.id}/report`, { method: "POST", body, headers: { "Content-Type": "application/json" } })).status === 400);
+check("report on an unknown deal is 404", (await stu.json(`/api/deals/nope/report`, { method: "POST", json: { message: "x" } })).status === 404);
+check("oversized body is 413", (await stu.json(`/api/deals/${full.id}/report`, { method: "POST", json: { message: "x".repeat(70000) } })).status === 413);
+check("report keeps whole characters (no split emoji)", (await stu.json(`/api/deals/${full.id}/report`, { method: "POST", json: { message: "😀".repeat(1200) } })).body?.ok === true);
 check("report with bad JSON is a 400 not a 500", (await stu.json(`/api/deals/${full.id}/report`, { method: "POST", body: "{", headers: { "Content-Type": "application/json" } })).status === 400);
 
 // ---------- redemption ----------
 check("redeem needs login", (await anon.json(`/api/deals/${full.id}/redeem`, { method: "POST" })).status === 401);
+const expiredDeal = deals.find((d) => d.expires_on && !d.auto_renew && d.expires_on < new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10));
+if (expiredDeal) check("redeeming an expired deal is 410", (await stu.json(`/api/deals/${expiredDeal.id}/redeem`, { method: "POST" })).status === 410);
+check("outcome with null body is 400", (await stu.json("/api/redemptions/ABCDEF/outcome", { method: "POST", body: "null", headers: { "Content-Type": "application/json" } })).status === 400);
+check("lead with null body is 400", (await anon.json("/api/merchant-leads", { method: "POST", body: "null", headers: { "Content-Type": "application/json" } })).status === 400);
 check("redeem unknown deal 404", (await stu.json(`/api/deals/nope/redeem`, { method: "POST" })).status === 404);
 const pass = (await stu.json(`/api/deals/${full.id}/redeem`, { method: "POST" })).body;
 check("redeem returns a 6-char code", /^[A-HJ-NP-Z2-9]{6}$/.test(pass?.code || ""), JSON.stringify(pass));
@@ -117,6 +127,8 @@ check("outcome on someone else's pass 404", (await stu2.json(`/api/redemptions/$
 // ---------- shops ----------
 check("admin needs token", (await anon.json("/admin/stats")).status === 401);
 check("admin rejects wrong token", (await anon.json("/admin/stats", { headers: { Authorization: "Bearer nope" } })).status === 401);
+for (const [label, json] of [["blank label", { label: "  ", deal_ids: ["x"] }], ["string ids", { label: "x", deal_ids: "x" }], ["object label", { label: {}, deal_ids: ["x"] }], ["duplicate ids", { label: "x", deal_ids: ["a", "a"] }]])
+  check(`merchant key rejects ${label}`, (await anon.json("/admin/merchant-keys", { method: "POST", headers: ADMIN, json })).status === 400);
 check("merchant key rejects unknown deal", (await anon.json("/admin/merchant-keys", { method: "POST", headers: ADMIN, json: { label: "x", deal_ids: ["nope"] } })).status === 400);
 const mk = (await anon.json("/admin/merchant-keys", { method: "POST", headers: ADMIN, json: { label: "測試店", deal_ids: [full.id] } })).body;
 const key = mk?.url?.split("/m/")[1];
@@ -129,6 +141,8 @@ const page = await shop.json(`/api/merchant/${key}`);
 check("shop page loads and pairs the phone", page.body?.label === "測試店" && shop.jar.has("cp_merchant"));
 check("invalid shop key 404", (await anon.json("/api/merchant/not-a-key")).status === 404);
 check("paired phone sees the pass", (await shop.json(`/api/merchant/pass/${pass.code}`)).body?.status === "ok");
+const fw = pass.code.replace(/[A-Z0-9]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) + 0xfee0));
+check("paired phone, full-width code (zhuyin IME)", (await shop.json(`/api/merchant/pass/${encodeURIComponent(fw)}`)).body?.status === "ok");
 check("paired phone, lowercase code", (await shop.json(`/api/merchant/pass/${pass.code.toLowerCase()}`)).body?.status === "ok");
 check("other shop can't confirm this deal's pass", (await anon.json(`/api/merchant/${key2}/confirm`, { method: "POST", json: { code: pass.code } })).status === 404);
 check("unknown code 404", (await shop.json("/api/merchant/confirm", { method: "POST", json: { code: "ZZZZZZ" } })).status === 404);
@@ -158,7 +172,7 @@ check("only the real leads were stored", after.merchants.leads === before.mercha
 check("stats has the go/no-go gate", after.gate?.students_using_twice?.target === 30 && after.gate?.shops_would_pay?.target === 5);
 await anon.json("/api/merchant-leads", { method: "POST", json: { shop_name: "=HYPERLINK(\"http://x\")", email: "f@example.com" } });
 check("CSV export neutralises formulas", (await (await anon.req("/admin/merchants.csv", { headers: ADMIN })).text()).includes(`"'=HYPERLINK(""http://x"")"`));
-const dup = { shop_name: "重複店", email: "dup@example.com", interest: "featured_paid" };
+const dup = { shop_name: `重複店 ${Date.now()}`, email: "dup@example.com", interest: "featured_paid" };
 const g0 = (await anon.json("/admin/stats", { headers: ADMIN })).body.gate.shops_would_pay.value;
 for (let i = 0; i < 3; i++) await anon.json("/api/merchant-leads", { method: "POST", json: dup });
 check("repeat leads from one shop count once in the gate", (await anon.json("/admin/stats", { headers: ADMIN })).body.gate.shops_would_pay.value === g0 + 1);
@@ -177,7 +191,7 @@ await gone.json(`/api/deals/${full.id}/report`, { method: "POST", json: { messag
 check("account deletion needs login", (await anon.json("/api/me", { method: "DELETE" })).status === 401);
 check("account deletion", (await gone.json("/api/me", { method: "DELETE" })).body?.ok === true);
 check("deleted account is signed out", (await gone.json("/api/me")).body?.user === null);
-check("deleted account's passes are gone", !(await (await anon.req("/admin/redemptions.csv", { headers: ADMIN })).text()).includes(gonePass.code));
+check("deleted account's unconfirmed passes are gone", !(await (await anon.req("/admin/redemptions.csv", { headers: ADMIN })).text()).includes(gonePass.code));
 check("admin cleanup runs", Array.isArray((await anon.json("/admin/cleanup", { method: "POST", headers: ADMIN })).body?.deleted));
 
 // ---------- Google OAuth via tests/mock-google.mjs ----------
