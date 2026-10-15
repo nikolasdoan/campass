@@ -1,10 +1,13 @@
 /* CampusPass front end. Plain ES modules, no framework, no build step.
    Routes: /  (Explore) · /saved · /me · /deal/:id (deep-linkable; a side panel on a desktop,
-   a pushed full-screen page on a phone). History API routing over the Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=4";
-import { t, getLang, setLang, applyLang, schoolName } from "./js/i18n.js?v=4";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone } from "./js/util.js?v=4";
-import { toast, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=4";
+   a pushed full-screen page on a phone) · /merchants (商家合作) · /m/:key (a shop's private
+   confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
+   Workers SPA fallback. */
+import { icon } from "./js/icons.js?v=5";
+import { t, getLang, setLang, applyLang, schoolName } from "./js/i18n.js?v=5";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone } from "./js/util.js?v=5";
+import { toast, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=5";
+import { qrSVG } from "./js/qr.js?v=5";
 
 /* ---------- constants ---------- */
 
@@ -44,14 +47,18 @@ const state = {
   detail: new Map(), // id → { deal, locked }
   detailSeq: 0,
 };
-const scrollPos = { explore: 0, saved: 0, me: 0 };
+const VIEWS = ["explore", "saved", "me", "merchants", "shop", "scan"];
+// Shop-facing pages run on a counter phone: no tabs, no account chrome.
+const MINIMAL = new Set(["shop", "scan"]);
+const scrollPos = Object.fromEntries(VIEWS.map((v) => [v, 0]));
 
 const $ = (id) => document.getElementById(id);
 const els = {
   shell: $("shell"), main: $("main"), appbar: $("appbar"), appbarTitle: $("appbarTitle"), appbarActions: $("appbarActions"),
   railFoot: $("railFoot"), q: $("q"), qclear: $("qclear"), cats: $("cats"), catWrap: $("catWrap"), filterRow: $("filterRow"),
   list: $("list"), exploreFoot: $("exploreFoot"), savedBody: $("savedBody"), meBody: $("meBody"),
-  detail: $("detail"), dhead: $("dhead"), detailBody: $("detailBody"),
+  detail: $("detail"), dhead: $("dhead"), detailBody: $("detailBody"), detailUse: $("detailUse"), appbarBack: $("appbarBack"),
+  merchantsBody: $("merchantsBody"), shopBody: $("shopBody"), scanBody: $("scanBody"),
 };
 
 /* ---------- data helpers ---------- */
@@ -114,7 +121,8 @@ async function api(method, url, body) {
     const res = await fetch(url, {
       method,
       credentials: "same-origin",
-      cache: method === "GET" && url.startsWith("/api/me") ? "no-store" : "default",
+      // Per-person and live answers are never served from the HTTP cache.
+      cache: method === "GET" && /^\/api\/(me|redemptions|merchant)\b/.test(url) ? "no-store" : "default",
       headers: method === "GET" ? { Accept: "application/json" } : { "Content-Type": "application/json", Accept: "application/json" },
       body: method === "GET" ? undefined : JSON.stringify(body ?? {}),
     });
@@ -122,7 +130,8 @@ async function api(method, url, body) {
     try {
       data = await res.json();
     } catch {}
-    return { ok: res.ok, status: res.status, data };
+    // The server's clock (Date header), so the pass countdown survives a wrong phone clock.
+    return { ok: res.ok, status: res.status, data, date: res.headers.get("Date") };
   } catch {
     return { ok: false, status: 0, data: null };
   }
@@ -376,8 +385,12 @@ function renderExplore() {
   markSelected();
 
   const expired = state.deals.filter(isExpired).length;
-  els.exploreFoot.innerHTML = `${expired ? `<p>${esc(t("list.expiredHidden", { n: expired }))}</p>` : ""}<p>${esc(t("disclaimer"))}</p>`;
+  els.exploreFoot.innerHTML = `${expired ? `<p>${esc(t("list.expiredHidden", { n: expired }))}</p>` : ""}<p>${esc(t("disclaimer"))}</p>
+    <p>${merchantsLinkHTML()}</p>`;
 }
+
+/** 「店家想登錄優惠或洽談合作？商家合作」: the list footer and the About card. */
+const merchantsLinkHTML = () => `${esc(t("foot.merchants"))} <a href="/merchants" data-nav>${esc(t("foot.merchantsLink"))}</a>`;
 
 function markSelected() {
   const id = state.route.name === "deal" ? state.route.id : null;
@@ -540,8 +553,12 @@ function renderMe() {
       <div class="setrow"><span>${esc(t("me.theme"))}</span>${themeSeg()}</div>
     </section>
     ${install}
+    <section class="card card-links"><a class="row" href="/merchants" data-nav>${icon("store")}<span class="rtxt"><b>${esc(t("me.merchants"))}</b><small>${esc(
+      t("me.merchantsHint")
+    )}</small></span>${icon("chevron-right", "go")}</a></section>
     <section class="card"><h2>${esc(t("me.about"))}</h2>
       <p>${esc(t("me.aboutBody"))}</p>
+      <p>${merchantsLinkHTML()}</p>
       <p class="disclaimer">${esc(t("disclaimer"))}</p>
       ${srcList ? `<h2 style="margin-top:16px">${esc(t("me.sources"))}</h2><ul class="srclist">${srcList}</ul>` : ""}
       <p class="fine" style="margin-top:12px">${esc(t("me.contact"))}</p>
@@ -679,6 +696,27 @@ function renderDetailHead() {
     <p class="dhead-title" aria-hidden="true">${esc(d?.name || "")}</p>
     ${d ? `<button class="iconbtn" type="button" data-share aria-label="${esc(t("detail.share"))}">${icon("share")}</button>
     <button class="iconbtn${on ? " saved" : ""}" type="button" data-star="${esc(id)}" aria-pressed="${on}" aria-label="${esc(t(on ? "row.unsave" : "row.save"))}">${icon("star")}</button>` : ""}`;
+  renderUseBar();
+}
+
+/** 「使用優惠」, the one signature CTA of the detail: only once the full deal is shown to a
+ *  signed-in reader (signed out, the sign-in card stands in its place). Expired: disabled,
+ *  with the reason. */
+function renderUseBar() {
+  const c = state.route.name === "deal" ? state.detail.get(state.route.id) : null;
+  const show = !!(state.user && c && !c.locked);
+  els.detail.classList.toggle("has-use", show);
+  els.detailUse.hidden = !show;
+  if (!show) {
+    els.detailUse.innerHTML = "";
+    return;
+  }
+  const expired = isExpired(c.deal);
+  els.detailUse.classList.toggle("is-expired", expired);
+  els.detailUse.innerHTML = `<button class="btn btn-cta" type="button" data-redeem${expired ? ' disabled aria-describedby="useWhy"' : ""}>${icon(
+    "qr-code"
+  )}<span>${esc(t("use.cta"))}</span></button>
+    <p class="usehint" id="useWhy">${esc(t(expired ? "use.expired" : "use.hint"))}</p>`;
 }
 
 function eligHTML(d) {
@@ -872,8 +910,7 @@ async function share() {
   }
 }
 
-function openReport() {
-  const id = state.route.id;
+function openReport({ id = state.route.id, prefill = "" } = {}) {
   const d = state.detail.get(id)?.deal || state.byId.get(id);
   if (!state.user) return openSignin();
   const dlg = openDialog({
@@ -891,10 +928,17 @@ function openReport() {
   });
   const ta = dlg.querySelector("textarea");
   const submit = dlg.querySelector('[type="submit"]');
-  ta.addEventListener("input", () => {
+  const sync = () => {
     dlg.querySelector("#reportN").textContent = ta.value.length;
     submit.disabled = !ta.value.trim();
-  });
+  };
+  ta.addEventListener("input", sync);
+  if (prefill) {
+    // From 「店家不接受」: start the report for them, cursor at the end to add details.
+    ta.value = `${prefill}\n`;
+    sync();
+    ta.setSelectionRange(ta.value.length, ta.value.length);
+  }
   dlg.querySelector("form").addEventListener("submit", async (e) => {
     e.preventDefault();
     const message = ta.value.trim();
@@ -1090,6 +1134,7 @@ function onClick(e) {
   if (t0.closest("[data-close-detail]")) return closeDetail();
   if (t0.closest("[data-share]")) return share();
   if (t0.closest("[data-report]")) return openReport();
+  if (t0.closest("[data-redeem]")) return openPass(t0.closest("[data-redeem]"));
   if (t0.closest("[data-install]")) {
     Promise.resolve(window.cpPWA?.install?.())
       .catch(() => {})

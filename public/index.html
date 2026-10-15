@@ -45,12 +45,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Serif+TC:wght@700&display=swap">
-<link rel="stylesheet" href="/styles.css?v=4">
-<link rel="modulepreload" href="/js/i18n.js?v=4">
-<link rel="modulepreload" href="/js/util.js?v=4">
-<link rel="modulepreload" href="/js/icons.js?v=4">
-<link rel="modulepreload" href="/js/ui.js?v=4">
-<script type="module" src="/app.js?v=4"></script>
+<link rel="stylesheet" href="/styles.css?v=5">
+<link rel="modulepreload" href="/js/i18n.js?v=5">
+<link rel="modulepreload" href="/js/util.js?v=5">
+<link rel="modulepreload" href="/js/icons.js?v=5">
+<link rel="modulepreload" href="/js/ui.js?v=5">
+<link rel="modulepreload" href="/js/qr.js?v=5">
+<script type="module" src="/app.js?v=5"></script>
 <script src="/pwa.js" defer></script>
 </head>
 <body data-route="explore">
@@ -90,6 +91,7 @@
 
 <!-- Phone (≤820px): the top app bar. -->
 <header class="appbar" id="appbar">
+  <button class="iconbtn appbar-back" id="appbarBack" type="button" data-back hidden aria-label="返回" data-i18n-aria="detail.back"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg></button>
   <a class="brand" href="/" data-nav aria-label="CampusPass 首頁" data-i18n-aria="home">
     <svg class="brandmark" aria-hidden="true"><use href="#cp-mark"/></svg>
     <span class="wordmark">campuspass</span><span class="wordmark-zh i18n-zh">校園優惠</span>
@@ -142,11 +144,33 @@
         <div id="meBody" class="mebody"></div>
       </div>
     </section>
+
+    <!-- /merchants: the public pitch and lead form. -->
+    <section class="view" id="view-merchants" aria-labelledby="merchantsTitle" hidden>
+      <div class="col col-page">
+        <div class="pagehead pagehead-solo">
+          <h1 id="merchantsTitle" class="pagetitle" data-i18n="merchants.title">商家合作</h1>
+          <p class="pagelede" data-i18n="merchants.lede">CampusPass 整理學生可用的特約優惠。</p>
+        </div>
+        <div id="merchantsBody" class="mebody"></div>
+      </div>
+    </section>
+
+    <!-- /m/<key>: a shop's private confirm page; /r/<code>: what a scanned pass QR opens.
+         Minimal chrome (no tabs): this runs on a shop's counter phone. -->
+    <section class="view" id="view-shop" aria-label="店家確認" data-i18n-aria="shop.title" hidden>
+      <div class="col col-page col-min"><div id="shopBody" class="minbody"></div></div>
+    </section>
+    <section class="view" id="view-scan" aria-label="確認優惠使用" data-i18n-aria="scan.title" hidden>
+      <div class="col col-page col-min"><div id="scanBody" class="minbody"></div></div>
+    </section>
   </main>
 
   <aside class="detail" id="detail" aria-labelledby="detailName" aria-hidden="true">
     <div class="dhead" id="dhead"></div>
     <div class="dbody" id="detailBody"></div>
+    <!-- 使用優惠: a bottom action bar on a phone, a strip under the header on a desktop. -->
+    <div class="duse" id="detailUse" hidden></div>
   </aside>
 </div>
 
