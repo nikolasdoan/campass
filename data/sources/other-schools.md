@@ -101,3 +101,73 @@ Records by region:
 | Brand-direct programs (台鐵大學生優惠票, 小米 etc.) | One-off national student pricing | Could be indexed as national entries |
 
 **CampusPass gap (unchanged):** none of these index the official school lists above. The lists hold hundreds of local deals with explicit eligibility.
+
+## Data-quality pass 2026-10-15
+
+Every change below was checked against the live source page re-fetched on 2026-10-15 (NCHU vstore.php pages 1–14, all 76 NTHU detail pages plus the 人事室 「特約商店說明」 page, the NCCU benefit_vendor page, the 7 NYCU sheet tabs as CSV, and the TCU medclub page). The record count is unchanged at 409. 347 records are now student-eligible (up from 328).
+
+**1. Eligibility defaults**
+- **NCHU (34 records with student=false re-read):**
+  - The list page has no audience statement for the whole list. Its only header line is the merchant-application contact.
+  - 26 records have an empty 使用對象 field, and their offer text names no audience either. They stay student=false. Their notes now say 「適用對象未載明…消費前請向商家確認」. The records are 元成車業, 德川, 鮮活農產, 歐客佬, 肉鮮生, 王品文心, 3393, 有心食堂, 陳允寶泉, 礽豐, 美麗華皮件, 龍興機車, 愛林幼兒園, 親貝兒托嬰, 六法資訊, 歐舒嫚, 明祐耳鼻喉科, 永盛體育, 路易斯皮件, 法藍瓷, 小林眼鏡, 慎安堂, 樂扣樂扣 (whose offer adds 「優惠適用退休人員」), 玉山銀行, 飛夢力 and 24-17.
+  - 興大附農實習旅館 and 附農員工子女幼兒園 have an empty field, but their offer text limits the deal to 本校(現職)教職員工. Their notes now say so.
+  - 麗喆國民中小學 (offer for 教職員之子女) now has family=true.
+  - Amo, 銀櫃, 華航 and 綠世界 state the audience explicitly. They are unchanged.
+- **NTHU (36 records with student=false re-read):**
+  - The 人事室 「特約商店說明」 page (https://person.site.nthu.edu.tw/p/406-1066-7628,r898.php) applies to the whole list. It says 「若資料不符，則以合約書內容為準，消費前請出示服務證、校友證或學生證」.
+  - 19 records whose pages say nothing about who qualifies (only 「憑證」, 「識別證」 or nothing at all) now have **student=true and alumni=true**, and their notes cite the 說明 page. The records are 宏常, Backhaus, 元世祖, 藝奇竹北, 夏慕尼桃園, 邀月茶坊, 太陽堂, 城堡花園, 享住旅店, 會來尖石, 梅林親水岸, 貝格, 蓓萌, 莎拉公主, 喜馬帝, 美日牙醫, 廖健仲/梅約, 紐約國際幼兒園 and 中華汽車幼兒園.
+  - 11 records stay staff-only because their own page text says 員工/教職員. The old note 「頁面未另註適用對象」 on them was wrong and now quotes the restricting text instead. The records are 客美多, 辛麻辣, 古拉爵迎曦, 楓樺台一, 宜泰, 太一, 三久, 永康中醫, 城市綠洲, 橙智 and 研田.
+  - 6 records with an explicit 備註 are unchanged.
+- **NCCU:** 長榮航空's notes now say 「適用對象未載明」. The NCCU page has no list-wide audience statement, so student stays false.
+
+**2. Field fixes from full-field checks**
+- Every NCHU 期限 (128), NCCU period (115), NYCU 適用對象/備註 (49) and NTHU 備註/合約到期日 (76) was compared with the source. Only these four were wrong:
+  - NTHU 森森燒肉: regions changed from all four to north and central, since only 中區 and 北區 stores are listed.
+  - NTHU 元手壽司: north added to regions for the 竹北 branch.
+  - NTHU Backhaus: auto_renew set to true (1100630 自動續約).
+  - NTHU 辛麻辣: expires_on set to 2024-06-12, because the page says 「優惠至113-06-12」. The record now shows as expired.
+- NCCU 高雄日航酒店: the mooncake pre-order block, which had ended (2026-09-25), was removed from the offer.
+
+**3. Spot check (random.seed(15), 40 records across both files)**
+
+| Source | Sampled | Errors | Rate |
+|---|---|---|---|
+| 中興大學校友中心 | 9 | 0 | 0% |
+| 政治大學校友服務中心 | 10 | 0 | 0% |
+| 清華大學人事室 | 5 | 2 | 40% |
+| 陽明交通大學人事室 | 5 | 0 | 0% |
+| 慈濟醫學系系學會 (incl. 轉載) | 4 | 1 | 25% |
+
+The NTHU errors were 城堡花園 (staff-only default; fixed under item 1) and 元手壽司 (missing region). The TCU error was 來來牛排, which had the badge 「特約優惠」 although the source gives 9折/95折. Sampled NTU-file rows are reported in ntu-research.md. The overall rate was 3/40 (7.5%).
+
+**4. Highlight badges (26 changed in this file)**
+- 高雄日航: 85折 became 專屬優惠價. The 85折 was the expired mooncake early-bird price.
+- 長榮航空 (政大): 92折 became 企業會員. 92折 is a time-limited code; ticketing must happen by the end of 10/2026.
+- O′right: 75折 became 限定月75折 (January, May and September only).
+- 奧黛莉: 回饋優惠 became 折$50.
+- Badges now show the rate a single cardholder gets rather than the group-only rate:
+  - 饗賓: 96折起 became 98折 (96折 needs 20 or more people).
+  - 舞動陽光 and 北區國民運動中心: 85折起 became 9折.
+  - 駿發: 85折起 became 9折.
+- 寶島53行館: 9折 became 專屬優惠價. The 9折 applies only during Lunar New Year.
+- 玉山: 5折 became 手續費5折.
+- 山海樓, 農人餐桌 and Green&Safe: 回饋優惠 became 5%回饋.
+- 聯合航空 (政大): 特約優惠 became 95折.
+- 荃能: 消費贈品 became 專屬優惠價.
+- MORE: 特約優惠 became 專屬優惠價.
+- 太一: 早鳥每人折$5000 (10 characters, and the early-bird price is open to everyone) became 每人折$1000, the partner-only amount.
+- 吉品: 7折 became 5折起.
+- 優品: 6折 became 4折起.
+- 莎拉公主: 8折起 (the 8折 is for nails only) became 包套贈品.
+- 國泰人壽: 77折 became 旅平險77折.
+- TCU: 幽靈餐車, TOP手感烘焙 and 懶惰狗 became 95折; 將門 and 一筷燒肉 became 9折; 來來牛排 became 9折起; 肚咖喱 (折$20) became 折$10起.
+
+All badges are now 8 characters or fewer.
+
+**5. Regions:** Only 澎澄飯店 (澎湖), 金湖飯店 and 永成租車 (金門) have empty regions. Our scheme has no island region, so they stay empty and their notes say so.
+
+**6. Duplicates:** The same school's records were compared across sources by normalised name, including TCU 系學會 against 學生會轉載. No same-merchant, same-offer duplicates were found, and nothing was dropped.
+
+**Other:** CJK compatibility ideographs copied from the NCHU source (for example 林 U+F9F4 in 高佳林, and ⽛ in 沐芯⽛醫) were normalised to standard characters in 13 records, so that name search works.
+
+**Validation:** Both JSON files load. Every record has name, a valid category, source_url, source_org, schools, regions and 4 boolean eligibility flags. `scripts/import_deals.py` ran without errors (605 deals, no skips), and `data/deals.json` and `seed/deals.sql` were then restored with git checkout.

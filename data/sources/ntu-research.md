@@ -94,3 +94,15 @@ Per-source counts in the JSON: 財務管理處 6 · 臺大系統學生會 45 · 
 4. **臺大系統學生會 platform:** check each semester in case it is revived. It has not been updated since 2022.
 5. **臺大學生會 (ntusa.ntu.edu.tw, plus FB/IG @ntusa.taiwan):** the 公關部 negotiates 特約 but publishes on social media only. Needs manual entry or OCR.
 6. **Alumni center StoreList:** low priority, because it is a lagging mirror of #1.
+
+## Data-quality pass 2026-10-15
+
+All 66 distinct source URLs in `ntu-research.json` were re-fetched on 2026-10-15. The record count is unchanged at 129.
+
+- **臺大系統學生會 (45 records):** The footer still shows ©2022 and there are no newer page timestamps. Every record's notes now read 「資料來源最後更新於 2022 年，請以店家現場為準。」 in place of the earlier wording; this covers the 28 records that have no expiry date. The 臺師大/臺科大 entries keep their 2021–22 expiry dates, so they show as expired. 池先生 Kopitiam appears twice, but these are different branches (公館店 and 大安店), so both were kept.
+- **Eligibility:** No defaulted records here. 校總區書店 and 水源校區書店 now say 「適用對象未載明」 in notes. Their page and the list page give no audience, but on the same page 校史館書店 distinguishes 校內/校外 for souvenirs. Their student=true flag was left unchanged; see the report.
+- **Highlights:** 校史館書店 changed from 8折 to 紀念品88折. The page lists 「書籍8折」 without restricting it to school members (souvenirs are 校外9折 and 校內88折), so the members-only price is now the badge. All other badges were checked and are 8 characters or fewer.
+- **Spot check** (random.seed(15), drawn across both files; 7 of the 40 sampled records came from this file): 臺大系統學生會 0/3, 生活便利通 0/3 and 臺師大 PDF 0/1 had no errors. 財務管理處 was not sampled.
+- **Regions:** No empty regions.
+- **Duplicates:** The file was compared with the 財務處 deals and across sources (學生會, 生活便利通 and 臺師大 PDF), by name and school. The only overlaps are different branches: SUBWAY/全家 at NTU (二活, dorms) against the NTNU campus stores, and CoCo都可 against CoCo壹番屋, which are different brands. Nothing was dropped.
+- **Validation:** The JSON loads and all required fields are present. The importer ran cleanly, and the generated files were restored.
