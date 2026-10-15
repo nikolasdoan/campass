@@ -20,6 +20,8 @@
   "vars": {
     "GOOGLE_CLIENT_ID": ""
   },
+  // Daily cleanup at 03:17 Asia/Taipei (19:17 UTC): expired sessions, data past retention
+  "triggers": { "crons": ["17 19 * * *"] },
   "observability": { "enabled": true }
   // Secrets (set with `npx wrangler secret put <NAME>`, or .dev.vars locally):
   //   GOOGLE_CLIENT_SECRET, ADMIN_TOKEN

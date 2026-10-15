@@ -82,6 +82,24 @@ curl -s -o /dev/null -w "%{http_code}\n" $U/admin/stats                         
 Results of the first deploy (2026-10-15): all pass, except `/auth/google/start` which correctly reports
 "not configured" until the Google client id/secret exist.
 
+## Scheduled cleanup (Cron Trigger)
+
+`wrangler.jsonc` → `"triggers": { "crons": ["17 19 * * *"] }` runs the Worker's `scheduled()` handler daily at
+03:17 Asia/Taipei. It calls `cleanup()`: expired sessions, and visits / deal views / passes older than 730 days.
+The trigger is registered by `npm run deploy` (the deploy output lists `schedule: 17 19 * * *`).
+
+Run it on demand in production: `curl -X POST -H "Authorization: Bearer $ADMIN_TOKEN" $U/admin/cleanup`
+(returns the rows deleted per table).
+
+Test locally (wrangler 4.151; the old `/__scheduled` URL is caught by the SPA asset fallback):
+
+```bash
+npx wrangler dev --port 8788 --test-scheduled
+curl -X POST -H "Content-Type: application/json" -d '{"cron":"17 19 * * *"}' \
+  "http://localhost:8788/cdn-cgi/local/explorer/api/local/scheduled?worker=campuspass"
+# -> {"success":true,...,"result":{"outcome":"ok"}}
+```
+
 ## Rollback
 
 ```bash
