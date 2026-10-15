@@ -14,7 +14,7 @@ No two sessions edit the same file. If you need a change in a file you don't own
 
 | campass-1 | campass-2 |
 |---|---|
-| `public/**`, `src/**`, `scripts/**`, `migrations/**`, `tests/**` (incl. `tests/api.mjs`, `tests/mock-google.mjs`) | `wrangler.jsonc` (database id, Google client id, routes) |
+| `public/**`, `src/**`, `scripts/**`, `migrations/**`, `tests/**` except `tests/prod-smoke.mjs` | `wrangler.jsonc` (database id, Google client id, routes), `tests/prod-smoke.mjs` |
 | `data/deals.json`, `seed/deals.sql`, `data/sources/ntu-research.*`, `data/sources/other-schools.*` | new source files `data/sources/<school>.json` + `.md` (one pair per school) |
 | `README.md`, `docs/**` | `.github/**` (CI/deploy workflows, if agreed), `docs/ops.md` |
 

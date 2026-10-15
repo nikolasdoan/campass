@@ -469,7 +469,7 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
 // Desktop: the strip under the panel header, the pass as a centred modal.
 {
   const { ctx, page } = await newPage(DESKTOP, 'pass-desktop');
-  await page.goto(B + `/auth/dev-login?email=${STUDENT}&next=/deal/${OTHER[1]}`, { waitUntil: 'networkidle' });
+  await page.goto(B + `/auth/dev-login?email=desk-${STUDENT}&next=/deal/${FULL}`, { waitUntil: 'networkidle' });
   await page.waitForSelector('#detail .prose'); await settle(page);
   const head = await rect(page, '#dhead'); const use = await rect(page, '#detailUse');
   check('pass: desktop 使用優惠 strip right under the panel header', Math.abs(use.top - head.bottom) < 1 && use.right <= 1280.5, `${head.bottom} ${use.top}`);
@@ -539,7 +539,7 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
 {
   const W360 = { viewport: { width: 360, height: 640 }, isMobile: true, hasTouch: true, deviceScaleFactor: 2 };
   const { ctx, page } = await newPage(W360, 'w360-redeem');
-  await page.goto(B + `/auth/dev-login?email=${STUDENT}&next=/deal/${FULL}`, { waitUntil: 'networkidle' });
+  await page.goto(B + `/auth/dev-login?email=w360-${STUDENT}&next=/deal/${FULL}`, { waitUntil: 'networkidle' });
   await page.waitForSelector('[data-redeem]'); await page.click('[data-redeem]'); await page.waitForSelector('dialog.pass .pass-qr svg'); await settle(page);
   const fits = await page.evaluate(() => { const c = document.querySelector('dialog.pass .dlg-card'); return c.scrollWidth <= c.clientWidth && document.documentElement.scrollWidth <= innerWidth; });
   check('360px: pass fits without horizontal scroll', fits);
