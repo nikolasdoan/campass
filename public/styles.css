@@ -81,7 +81,7 @@ a{ color:var(--dot-ink); }
 :focus-visible{ outline:2px solid var(--dot); outline-offset:2px; }
 /* Headings that script focuses (the deal name on open, a page title after navigation) are
    screen-reader landmarks, not controls: no ring, even when Chromium deems the focus "visible". */
-.dname:focus,h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{ outline:none; }
+.dname:focus,:is(h1,h2,h3,[role="heading"])[tabindex="-1"]:focus{ outline:none; }
 .ic{ width:20px; height:20px; flex:none; stroke-width:1.75; display:block; }
 .sr-only{ position:absolute !important; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
 :root[data-lang="en"] .i18n-zh{ display:none; }
@@ -393,6 +393,9 @@ details.info .prose{ padding-bottom:12px; font-size:14px; color:var(--ink-2); }
 .setrow{ display:grid; grid-template-columns:minmax(80px,auto) minmax(0,1fr); align-items:center; gap:12px; padding:6px 0; }
 .setrow + .setrow{ border-top:1px solid var(--line); padding-top:12px; margin-top:6px; }
 .setrow > span{ font-size:14px; color:var(--ink); }
+/* A row with an action button (e.g. 刪除帳號): the text takes the room, the button keeps its width. */
+.setrow:has(> .btn){ grid-template-columns:minmax(0,1fr) auto; }
+.setrow:has(> .btn) > span{ font-size:13px; color:var(--ink-2); }
 .seg{ display:flex; gap:3px; padding:3px; border-radius:9px; background:var(--chip); }
 .seg button{ flex:1; display:inline-flex; align-items:center; justify-content:center; gap:5px; min-width:0; min-height:34px; padding:0 8px;
   border:0; border-radius:7px; background:none; color:var(--ink-2); font-size:13px; white-space:nowrap;
@@ -713,7 +716,7 @@ fieldset.radios legend{ padding:0; }
   .filterrow:empty{ min-height:49px; }
   .pill,.signinpill,.btn-sm{ position:relative; }
   .pill::after,.linkbtn::after,.signinpill::after,.btn-sm::after{ content:""; position:absolute; inset:-7px 0; }
-  .linkbtn{ display:inline-flex; align-items:center; min-height:32px; }
+  .filterrow .linkbtn{ display:inline-flex; align-items:center; min-height:32px; }
   .linkbtn::after{ inset:-7px -4px; }
   .brand{ align-self:stretch; }
   .search{ height:44px; margin-block:-2px; }
@@ -768,6 +771,8 @@ fieldset.radios legend{ padding:0; }
   /* Long pickers (12 schools): leave the backdrop in view, so a list cut mid-row reads as scrollable. */
   dialog.picker .dlg-card{ max-height:min(85dvh,calc(100dvh - var(--sat) - 24px)); }
   .toast{ bottom:calc(var(--nav-h) + 36px); }
+  /* Clear the detail's 使用優惠 bar (74px + its fade), so a toast never covers the CTA. */
+  html:has(#detail.open.has-use) .toast{ bottom:calc(var(--nav-h) + 92px); }
 }
 
 /* Desktop: the 使用優惠 strip sits under the panel header, above the scrolling body. */

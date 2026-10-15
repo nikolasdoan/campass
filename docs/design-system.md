@@ -35,6 +35,18 @@ Dark mode: the same block twice, identical — under
 `--page:#17171B; --surface:#202026; --map-ground:#1B1B20; --ink:#FAFAFA; --ink-2:#C7C7CC; --muted:#A1A1A6;
 --line:#35353D; --chip:#2A2A31; --ring:#5A5A5F; --dot:#A978FF; --accent-fill:#A978FF; --on-accent:#0A0A0A;
 --warn:#FF3B30; --seal:#5EC0C0; --seal-ink:#5EC0C0; --seal-wash:#2A3A3F; --shadow:0 1px 2px rgba(0,0,0,.5),0 8px 24px rgba(0,0,0,.55)`.
+**CampusPass additions (contrast, QA round 1).** Measured with axe; all text now clears WCAG AA in
+both themes:
+
+| Token | Light | Dark | Use |
+|---|---|---|---|
+| `--dot-ink` | `#6B3FCC` | `#C4A6FF` | Purple **small text** (links, badges, active labels). `--dot` stays for icons, rings and large text |
+| `--warn-ink` | `#C00014` | `#FF6961` | Red text (field errors, "ends soon", shop errors) |
+| `--on-warn` | `#FFFFFF` | `#0A0A0A` | Text on a `--warn` fill |
+| `--seg-on` | `var(--surface)` | `#46464E` | Selected segment of a segmented control |
+| `--qr-bg` / `--qr-ink` | `#FFFFFF` / `#48484A` | same | Pass QR stays dark-on-white in dark mode, so it scans |
+| `--dur-pulse` / `--dur-sweep` | `1.2s` / `1.8s` | same | Looping skeleton pulse and pass shimmer |
+
 Theme choice is stored in `localStorage cp_theme` (`light`/`dark`/absent = system) and applied by an
 inline `<head>` script **before** CSS loads (no flash).
 
