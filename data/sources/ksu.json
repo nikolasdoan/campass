@@ -1,0 +1,3424 @@
+[
+ {
+  "name": "夢東籬茶舍",
+  "subtitle": "台南市東區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區長榮路三段26號",
+  "phone": "(06)200-2691",
+  "highlight": "8折起",
+  "offer": "持識別證可享平日用餐8折、假日用餐85折\n招待爆米花、菜脯餅、酸梅湯\n用餐者招待麻油麵線一份",
+  "info": "電話：(06)200-2691\n地址：台南市東區長榮路三段26號\n使用對象：學生證、教職員工證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2010-07-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=2&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "楊博文耳鼻喉科附設榮美醫學美容中心",
+  "subtitle": "台南市中西區",
+  "category": "health",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市中西區府前路一段172-1號",
+  "phone": "(06) 221-6411",
+  "highlight": "9折",
+  "offer": "掛號費半價\n耳鼻喉科非健保給付檢查項目，自費者給予九折優待；醫美部提供免費皮膚檢測與諮詢，保養品九折優惠",
+  "info": "電話：(06) 221-6411\n地址：台南市中西區府前路一段172-1號\n使用對象：學生證、教職員工證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2009-04-20；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=14&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "大學眼科診所",
+  "subtitle": "台南市中西區",
+  "category": "health",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市中西區民生路2段56號",
+  "phone": "(06)220-8241",
+  "highlight": "7折起",
+  "offer": "眼部雷射手術 : 享有 “ 減免新台幣參千元整 ” 之法人團體優惠。\n愛眼保健食品等相關產品 : 享有 “ 八折 ” 優惠。\n醫學美容服務享有法人團體優惠。\n門診掛號費，享有 “ 減免新台幣伍拾元整 ” 。\n免費清洗眼鏡或隱形眼鏡。\n免費軟硬式隱形眼鏡驗光暨諮詢。\n免費視力檢查。\n免費耗材更新，鏡框調整。\n眼鏡商品可七折起之法人團體優惠。",
+  "info": "電話：(06)220-8241\n地址：台南市中西區民生路2段56號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2009-10-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=16&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "邱錦雀中醫診所",
+  "subtitle": "台南市永康區",
+  "category": "health",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區永明街61號",
+  "phone": "(06) 231-1340",
+  "highlight": "9折",
+  "offer": "免掛號費\n非健保給付檢查項目，自費者給予九折優待",
+  "info": "電話：(06) 231-1340\n地址：台南市永康區永明街61號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2009-11-02；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=19&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "阮嵩翔耳鼻喉科、林欣儀皮膚科專科聯合診所",
+  "subtitle": "台南市永康區",
+  "category": "health",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區大灣路918號",
+  "phone": "(06) 272-8333",
+  "highlight": "9折",
+  "offer": "掛號費50元\n非健保給付檢查項目，自費者給予九折優待",
+  "info": "電話：(06) 272-8333\n地址：台南市永康區大灣路918號\n使用對象：學生證、教職員工證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2009-11-02；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=20&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "千葉牙醫診所",
+  "subtitle": "台南市東區",
+  "category": "health",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區府連路168號",
+  "phone": "(06) 214-7598",
+  "highlight": "9折",
+  "offer": "免掛號費\n非健保給付檢查項目，自費者給予九折優待",
+  "info": "電話：(06) 214-7598\n地址：台南市東區府連路168號\n使用對象：學生證、教職員工證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2009-11-02；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=21&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "永全牙醫診所",
+  "subtitle": "台南市永康區",
+  "category": "health",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區大灣路958號",
+  "phone": "(06) 272-8359",
+  "highlight": "9折",
+  "offer": "免掛號費\n非健保給付檢查項目，自費者給予九折優待",
+  "info": "電話：(06) 272-8359\n地址：台南市永康區大灣路958號\n使用對象：學生證、教職員工證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2009-11-02；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=22&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "新格牙醫診所",
+  "subtitle": "台南市永康區",
+  "category": "health",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區大灣路986號",
+  "phone": "(06) 271-6871",
+  "highlight": "95折",
+  "offer": "免掛號費\n非健保給付檢查項目，自費者給予九五折優待",
+  "info": "電話：(06) 271-6871\n地址：台南市永康區大灣路986號\n使用對象：學生證、教職員工證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2009-11-02；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=23&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "佳一家庭診所",
+  "subtitle": "台南市東區",
+  "category": "health",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區東光路一段132號",
+  "phone": "(06) 236-0513",
+  "highlight": "85折",
+  "offer": "掛號費減免50元\n非健保給付檢查項目，自費者給予八五折優待",
+  "info": "電話：(06) 236-0513\n地址：台南市東區東光路一段132號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2011-02-14；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=25&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "南門診所",
+  "subtitle": "台南市中西區",
+  "category": "health",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市中西區南門路179-5號",
+  "phone": "(06) 214-6847",
+  "highlight": "掛號費優惠",
+  "offer": "原掛號費150元，優待掛號費50元，酌收掛號費100元。",
+  "info": "電話：(06) 214-6847\n地址：台南市中西區南門路179-5號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2012-03-07；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=27&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "三國饌麻辣鴛鴦鍋",
+  "subtitle": "台南市中西區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市中西區府前路二段265號",
+  "phone": "(06) 293-4567",
+  "highlight": "9折",
+  "offer": "持識別證可享餐飲費 9 折優惠（酒類除外）",
+  "info": "電話：(06) 293-4567\n地址：台南市中西區府前路二段265號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2009-11-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=31&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "紫米.玫瑰健康食尚館",
+  "subtitle": "台南市北區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市北區東豐路179號",
+  "phone": "(06) 235-8887",
+  "highlight": "9折",
+  "offer": "本校教職員、學生、校友持識別證可享餐點9折優惠\n餐後贈送水果及甜點",
+  "info": "電話：(06) 235-8887\n地址：台南市北區東豐路179號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2010-01-08；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=36&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "滬豐上海湯包館",
+  "subtitle": "台南市中西區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市中西區西門路一段658號B2",
+  "phone": "(06) 303-1063",
+  "highlight": "85折起",
+  "offer": "單點可享85折優惠（需加收一成服務費）\n套餐、桌菜可享9折優惠（特價商品與吃到飽不與其它優惠同時使用）\n壽星預約訂位可享美味甜品一份\n最多可享4小時停車",
+  "info": "電話：(06) 303-1063\n地址：台南市中西區西門路一段658號B2\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2010-01-26；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=37&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "多福臭臭鍋",
+  "subtitle": "台南市東區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區裕農路375號",
+  "phone": "(06) 236-1123",
+  "highlight": "9折",
+  "offer": "火鍋九折優惠（假日除外）\n生日當日消費 5 鍋，其中一鍋免費",
+  "info": "電話：(06) 236-1123\n地址：台南市東區裕農路375號\n使用對象：學生證、教職員工證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2010-02-05；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=38&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "周氏醬鮮泡菜",
+  "subtitle": "台南市東區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區東安路258號",
+  "phone": "(06)200-2691",
+  "highlight": "折$10",
+  "offer": "持識別證可享冷藏系列商品一律每瓶折價10元，平溫商品折價10元\n該優惠無法與其他優惠活動合併使用",
+  "info": "電話：(06)200-2691\n地址：台南市東區東安路258號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2010-07-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=42&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "SABATINI義式廚房",
+  "subtitle": "台南市東區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區富農街一段188巷6號",
+  "phone": "(06) 289-1314",
+  "highlight": "9折",
+  "offer": "點用200元以上餐點享九折優惠\n飲料享九折優惠",
+  "info": "電話：(06) 289-1314\n地址：台南市東區富農街一段188巷6號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2010-10-06；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=45&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "鬥牛士二鍋",
+  "subtitle": "台南市中西區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市中西區中山路166號11F",
+  "phone": "(06) 208-1298",
+  "highlight": "95折",
+  "offer": "憑證消費享九五折優待",
+  "info": "電話：(06) 208-1298\n地址：台南市中西區中山路166號11F\n使用對象：學生證、教職員工證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2012-12-31；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=50&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "雨荷舞水餐廳",
+  "subtitle": "台南市東區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區勝利路118號",
+  "phone": "(06) 209-8333",
+  "highlight": "9折",
+  "offer": "可享九折禮遇優惠 (桌菜及喜宴除外)",
+  "info": "電話：(06) 209-8333\n地址：台南市東區勝利路118號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2011-12-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=52&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "濃園滿漢餐廳",
+  "subtitle": "台南市東區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區長榮路二段248號",
+  "phone": "(06) 235-1133",
+  "highlight": "消費贈品",
+  "offer": "小吃點菜：有甜點、小菜、果汁共3樣招待\n席菜訂5000元以上：2壺現打果汁及小菜招待，凡訂3桌以上並有KTV招待\n結婚喜宴專案：每桌8800元以上(贈送紅酒1瓶及果汁無限暢飲)\n結婚喜宴並提供會場佈置及婚禮流程企劃\n尾牙春酒及謝師宴專案：每桌招待1瓶紅酒及果汁無限暢飲並提供KTV音響及單槍投影設備",
+  "info": "電話：(06) 235-1133\n地址：台南市東區長榮路二段248號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2017-12-31；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=54&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "中華航空股份有限公司",
+  "subtitle": "台南市東區",
+  "category": "transport",
+  "regions": [
+   "north",
+   "central",
+   "south",
+   "east"
+  ],
+  "address": "台南市東區東門路一段358號6號A室",
+  "phone": "(06) 235-8849",
+  "highlight": "企業會員",
+  "offer": "由旅行社業者購票請於開票前務必主動告知旅行社，並於開票前輸入華航企業卡號：TW002070。\n中華航空崑山科技大學B2C企業會員與會展推廣專區專屬購票網站（帳號、密碼請見原頁面）。",
+  "info": "電話：(06) 235-8849\n地址：台南市東區東門路一段358號6號A室\n使用對象：學生證、教職員工證",
+  "links": [
+   {
+    "label": "華航企業購票",
+    "url": "https://www.china-airlines.com/tw/zh/booking/book-flights/corporate-booking"
+   }
+  ],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2010-10-01；系統合約終止日期 2099-12-31（視為無固定期限）；線上購票，全國適用；原文另有107年底前適用之舊企業卡號，已略去；網站帳號密碼見原頁面",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=56&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "晨芳美妍企業社",
+  "subtitle": "台南市東區",
+  "category": "shopping",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區勝利路118號1樓",
+  "phone": "(06) 238-3899",
+  "highlight": "7折起",
+  "offer": "保養品 / 包卡七折優惠\n保養品消費滿三千送免費護膚壹次\n免費就業創業輔導 (產品、上課教材自備)\n輔導考照學費八折",
+  "info": "電話：(06) 238-3899\n地址：台南市東區勝利路118號1樓\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2011-11-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=61&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "九乘九文具專家",
+  "subtitle": "台南市東區",
+  "category": "shopping",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區勝利路118號",
+  "phone": "(06) 237-9088",
+  "highlight": "專屬優惠價",
+  "offer": "憑證消費可立即享有會員價之優惠 (贈品活動不適用)",
+  "info": "電話：(06) 237-9088\n地址：台南市東區勝利路118號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2011-11-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=62&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "多米科技有限公司",
+  "subtitle": "台南市東區",
+  "category": "shopping",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區勝利路118號B2樓",
+  "phone": "(06) 276-0970",
+  "highlight": "75折",
+  "offer": "憑證消費可享會員價\n碁峰、松崗、文魁、博碩、上奇、悅知、經緯圖書可享七五折\n可集點換贈品 (500元1點) 最少五點才可換",
+  "info": "電話：(06) 276-0970\n地址：台南市東區勝利路118號B2樓\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2011-12-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=63&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "旭軒框藝中心",
+  "subtitle": "台南市永康區",
+  "category": "shopping",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區大橋二街253號",
+  "phone": "(06) 251-7027",
+  "highlight": "85折",
+  "offer": "原定價再享八五折優待。\n消費滿五仟，即可享免費送件到府服務。",
+  "info": "電話：(06) 251-7027\n地址：台南市永康區大橋二街253號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2012-03-20；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=64&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "韋樂專業禮品有限公司",
+  "subtitle": "台南市東區",
+  "category": "shopping",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區東門路一段209號",
+  "phone": "(06) 234-2222",
+  "highlight": "6折起",
+  "offer": "獎盃、獎牌文具類網路訂價60%。\n各式毛、浴巾禮盒類網路訂價75%。\n喜餅食品禮盒依各品牌當期優惠方案行之。\n量大或客製化商品，價格另議。\n其他未盡事宜，依官網公告為準。",
+  "info": "電話：(06) 234-2222\n地址：台南市東區東門路一段209號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2012-03-20；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=65&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "鑫峰車業行",
+  "subtitle": "台南市東區",
+  "category": "services",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區裕農路868-10號",
+  "phone": "(06) 331-9589",
+  "highlight": "9折起",
+  "offer": "機油九折\n輪胎九五折",
+  "info": "電話：(06) 331-9589\n地址：台南市東區裕農路868-10號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2012-04-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=66&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "長渼SPA游泳池",
+  "subtitle": "台南市北區",
+  "category": "entertainment",
+  "regions": [
+   "south"
+  ],
+  "address": "臺南市北區文賢一路77號",
+  "phone": "(06)2591259",
+  "highlight": "8折起",
+  "offer": "(1)水道及水療部分，得單次購票八折優惠。另可免費停車二小時。\n(2)自辦教學課程部分，以九折優惠。另可免費停車三小時。\n(3)如有其他貴校之自辦活動或配合專案活動，雙方得另行議價。",
+  "info": "電話：(06)2591259\n地址：臺南市北區文賢一路77號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-09-03；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=73&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "慈香庭素食餐廳",
+  "subtitle": "台南市東區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區中華東路三段377巷10號",
+  "phone": "06-2697666",
+  "highlight": "9折",
+  "offer": "1.享消費金額九折優惠，如遇特殊節日以現場公告為準。\n2.以上優惠不含外送、外燴、喜宴、外帶。\n※優惠不得同時使用",
+  "info": "電話：06-2697666\n地址：台南市東區中華東路三段377巷10號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": "2031-12-31",
+  "auto_renew": false,
+  "notes": "合約期間 2017-12-28～2031-12-31",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=77&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "品田牧場-勝利店",
+  "subtitle": "台南市東區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區勝利路118號",
+  "phone": "06-2369618",
+  "highlight": "消費贈品",
+  "offer": "持識別證至台南勝利店消費可享贈送「吉利豚米花」乙份",
+  "info": "電話：06-2369618\n地址：台南市東區勝利路118號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": "2030-12-31",
+  "auto_renew": false,
+  "notes": "合約期間 2011-01-04～2030-12-31",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=82&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "圓頂西餐廳 La Cupola",
+  "subtitle": "台南市北區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市北區成功路202號",
+  "phone": "06-2290271",
+  "highlight": "9折",
+  "offer": "(1)用餐消費享9折，需加收10%服務費。\n(2)餐飲禮券大宗採購，滿50,000元送6,000元。\n(3)餐飲禮券大宗採購，滿100,000元送15,000元。",
+  "info": "電話：06-2290271\n地址：台南市北區成功路202號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-10-19；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=88&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "津華火鍋-北安店",
+  "subtitle": "台南市北區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市北區北安路一段177號-30號",
+  "phone": "06-2812898",
+  "highlight": "9折",
+  "offer": "平日用餐消費享九折優惠。",
+  "info": "電話：06-2812898\n地址：台南市北區北安路一段177號-30號\n使用對象：學生證、教職員工證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-11-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=91&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "佳仕奇",
+  "subtitle": "台中市南屯區",
+  "category": "shopping",
+  "regions": [
+   "central"
+  ],
+  "address": "台中市南屯區文心南三路996巷2號一樓",
+  "phone": "04-24621638",
+  "highlight": "5折起",
+  "offer": "1.店家提供所經銷之各系列行李箱產品以訂價5折會員價折扣優惠。\n2.每年實施2次為期一個月訂價3.9折之優惠專案（寒、暑假前一個月）。\n3.正常使用情況下，店家將提供「零配件5年免費保固」（不含運費）。",
+  "info": "電話：04-24621638\n地址：台中市南屯區文心南三路996巷2號一樓\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2016-11-22；系統合約終止日期 2099-12-31（視為無固定期限）；原頁另列108年3.9折期間活動（已過期，未收錄）；每年寒暑假前一個月3.9折專案",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=92&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "原燒-永華店",
+  "subtitle": "台南市安平區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市安平區永華路二段133號",
+  "phone": "06-2975356",
+  "highlight": "消費贈品",
+  "offer": "(一)憑識別證消費套餐，即可享免費兌換〔優質烤物〕乙份。(內容視店鋪提供為主)\n(二)每桌每次消費，限兌換〔優質烤物〕乙份。\n(三)贈品若送完得以等值贈品替換。",
+  "info": "電話：06-2975356\n地址：台南市安平區永華路二段133號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-11-23；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=95&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "夏慕尼-台南永華店",
+  "subtitle": "台南市安平區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "臺南市安平區永華路二段129號",
+  "phone": "06-2950707",
+  "highlight": "9折",
+  "offer": "一、憑識別證消費，即可享有用餐9折優惠。※九折優惠為套餐定價九折，但另收原套餐定價一成服務費。\n二、本優惠不得與其他優惠併用。",
+  "info": "電話：06-2950707\n地址：臺南市安平區永華路二段129號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-11-26；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=98&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "葉陶楊坊人文餐廳",
+  "subtitle": "台南市新化區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市新化區信義路54-1號",
+  "phone": "06-5908000",
+  "highlight": "9折起",
+  "offer": "一、來店消費享九折優惠。(標準筵席桌菜、酒水不含，除開席三桌以上９５折優惠標準筵席桌菜)。(婚宴筵席及客制桌不含以上９５折優惠)\n二、不定時提供餐廳新菜色及促銷活動。",
+  "info": "電話：06-5908000\n地址：台南市新化區信義路54-1號\n使用對象：學生證、教職員工證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-12-05；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=99&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "光復中醫診所",
+  "subtitle": "台南市永康區",
+  "category": "health",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區永大路二段257號",
+  "phone": "06-2739797",
+  "highlight": "掛號費優惠",
+  "offer": "一、免收掛號費50元。\n二、三九貼及三伏貼優待。\n三、提供健康諮詢。",
+  "info": "電話：06-2739797\n地址：台南市永康區永大路二段257號\n使用對象：學生證、教職員工證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-12-05；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=100&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "塔木德連鎖飯店集團",
+  "subtitle": "台南市東區",
+  "category": "lodging",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區裕學路90號",
+  "phone": "06-2691988",
+  "highlight": "85折",
+  "offer": "住宿優惠/折扣\n1.【門市特惠價】85折優惠。\n2.快速退房。\n3.客服單一窗口服務。\n4.營養美味早餐。\n5.全館免費寬頻上網。\n6.免費停車(限館別提供)。\n7.如遇飯店客滿，享有優先候補全。\n8.提供商務影印傳真服務。\n※特約價不得與任何住宿、休息等相關優惠同時合併使用。\n※農曆春節假期及3天以上連續假期，房價調整時恕不另行通知。\n※特約公司優惠折扣僅適用於特約公司直接與飯店訂房，此外任何涉及佣金或訂房費用(如旅行社)均不適用此優惠折扣。",
+  "info": "電話：06-2691988\n地址：台南市東區裕學路90號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-12-07；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=102&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "府城食府",
+  "subtitle": "台南市",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市華平路152號",
+  "phone": "06-2953456#34",
+  "highlight": "9折",
+  "offer": "1.可享消費金額九折優惠，另酌收原價10%之服務費。\n2.本優惠皆不適用喜宴、桌席、特惠品、酒水以及企業禮盒。\n3.府城食府台南高鐵店不適用。\n4.農曆春節期間、國定假日、特殊節日等不適用，日期以餐廳現場說明為主。\n5.以上優惠條件，不得與其他優惠方案併行使用。",
+  "info": "電話：06-2953456#34\n地址：台南市華平路152號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-12-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=103&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "東饌魚翅",
+  "subtitle": "台南市",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市華平路156號",
+  "phone": "06-2953456#34",
+  "highlight": "9折",
+  "offer": "1.可享消費金額九折優惠，另酌收原價10%之服務費。\n2.本優惠皆不適用喜宴、桌席、特惠品、酒水以及企業禮盒。\n3.農曆春節期間、國定假日、特殊節日等不適用，日期以餐廳現場說明為主。\n4.以上優惠條件，不得與其他優惠方案併行使用。",
+  "info": "電話：06-2953456#34\n地址：台南市華平路156號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-12-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=104&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "東悅坊港式飲茶",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區永大路二段707號",
+  "phone": "06-2953456#34",
+  "highlight": "9折",
+  "offer": "1.可享消費金額九折優惠，另酌收原價10%之服務費。\n2.本優惠皆不適用喜宴、桌席、特惠品、酒水以及企業禮盒。\n3.農曆春節期間、國定假日、特殊節日等不適用，日期以餐廳現場說明為主。\n4.以上優惠條件，不得與其他優惠方案併行使用。\n5.高雄分店亦適用(高雄市前鎮區瑞竹里瑞田街99號9F)。",
+  "info": "電話：06-2953456#34\n地址：台南市永康區永大路二段707號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-12-01；系統合約終止日期 2099-12-31（視為無固定期限）；高雄分店亦適用",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=105&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "東大門韓國烤肉料理",
+  "subtitle": "台南市安平區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市安平區永華路二段131號",
+  "phone": "06-2953456#34",
+  "highlight": "9折",
+  "offer": "1.可享消費金額九折優惠，另酌收原價10%之服務費。\n2.本優惠皆不適用喜宴、桌席、特惠品、酒水以及企業禮盒。\n3.農曆春節期間、國定假日、特殊節日等不適用，日期以餐廳現場說明為主。\n4.以上優惠條件，不得與其他優惠方案併行使用。\n5.東大門韓式燒烤暢食料理館亦適用(高雄市鳥松區公園路45號)。",
+  "info": "電話：06-2953456#34\n地址：台南市安平區永華路二段131號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-12-01；系統合約終止日期 2099-12-31（視為無固定期限）；高雄鳥松暢食館亦適用",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=106&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "府城藝術轉角",
+  "subtitle": "台南市",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市健康路一段77號",
+  "phone": "06-2953456#34",
+  "highlight": "9折",
+  "offer": "1.可享消費金額九折優惠，另酌收原價10%之服務費。\n2.本優惠皆不適用喜宴、桌席、特惠品、酒水以及企業禮盒。\n3.農曆春節期間、國定假日、特殊節日等不適用，日期以餐廳現場說明為主。\n4.以上優惠條件，不得與其他優惠方案併行使用。",
+  "info": "電話：06-2953456#34\n地址：台南市健康路一段77號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-12-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=107&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "東加和漢創作料理",
+  "subtitle": "台南市",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永華路二段41號",
+  "phone": "06-2953456#34",
+  "highlight": "9折",
+  "offer": "1.可享消費金額九折優惠，另酌收原價10%之服務費。\n2.本優惠皆不適用喜宴、桌席、特惠品、酒水以及企業禮盒。\n3.農曆春節期間、國定假日、特殊節日等不適用，日期以餐廳現場說明為主。\n4.以上優惠條件，不得與其他優惠方案併行使用。",
+  "info": "電話：06-2953456#34\n地址：台南市永華路二段41號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-12-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=108&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "永恆天詩義式美食館",
+  "subtitle": "台南市安平區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市安平區永華路二段812號",
+  "phone": "06-2953456#34",
+  "highlight": "9折",
+  "offer": "1.可享消費金額九折優惠，另酌收原價10%之服務費。\n2.本優惠皆不適用喜宴、桌席、特惠品、酒水以及企業禮盒。\n3.農曆春節期間、國定假日、特殊節日等不適用，日期以餐廳現場說明為主。\n4.以上優惠條件，不得與其他優惠方案併行使用。",
+  "info": "電話：06-2953456#34\n地址：台南市安平區永華路二段812號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-12-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=109&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "咖啡部屋",
+  "subtitle": "台南市東區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區中華東路三段332號",
+  "phone": "06-3953456#34",
+  "highlight": "9折",
+  "offer": "1.可享消費金額九折優惠，另酌收原價10%之服務費。\n2.本優惠皆不適用喜宴、桌席、特惠品、酒水以及企業禮盒。\n3.農曆春節期間、國定假日、特殊節日等不適用，日期以餐廳現場說明為主。\n4.以上優惠條件，不得與其他優惠方案併行使用。",
+  "info": "電話：06-3953456#34\n地址：台南市東區中華東路三段332號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-12-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=110&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "長鼻子泰式咖哩",
+  "subtitle": "台南市東區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區勝利路189號2樓",
+  "phone": "06-2083871",
+  "highlight": "9折",
+  "offer": "1.來店消費可享九折優惠，不予其他任何活動合併使用。\n2.不限優惠使用金額、次數、時段。",
+  "info": "電話：06-2083871\n地址：台南市東區勝利路189號2樓\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-01-07；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=112&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "大億國際旅行社",
+  "subtitle": "台南市東區",
+  "category": "services",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區中華東路二段219號",
+  "phone": "06-2880111",
+  "highlight": "專屬優惠價",
+  "offer": "1.提供優惠票卷(電影票、遊樂區門票、餐卷)。\n2.各分店皆適用。\n3.票卷查看(http://www.tayih.com.tw/)-->上方點選【企業福委】-->選擇【福委專區】-->查詢請輸入【崑山科技大學】-->點選【崑山Logo】-->登入後即可查詢最新優惠票卷。",
+  "info": "電話：06-2880111\n地址：台南市東區中華東路二段219號\n使用對象：教職員工證",
+  "links": [
+   {
+    "label": "官網",
+    "url": "http://www.tayih.com.tw/"
+   }
+  ],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-01-15；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=113&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "石頭日式炭火燒肉",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區中華路 166 號",
+  "phone": "06-3125018",
+  "highlight": "9折起",
+  "offer": "1.信用卡消費享95折優惠，或是現金消費享9折優惠\n2.本優惠不適用農曆過年等連假(詳細日期以餐廳說明為主），且不得與其他優惠券重複使用。",
+  "info": "電話：06-3125018\n地址：台南市永康區中華路 166 號\n使用對象：學生證、教職員工證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-01-15；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=114&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "XM麻辣鍋",
+  "subtitle": "台南市中西區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市中西區中華西路二段839號",
+  "phone": "06-3583300",
+  "highlight": "免服務費",
+  "offer": "1.免收10%服務費。\n2.適用分店如下:\n湖美店(地址：台南市中西區中華西路二段839號；電話：06-3583300)\n永康店(地址：台南市永康區中華路660號；電話：06-3025299)",
+  "info": "電話：06-3583300\n地址：台南市中西區中華西路二段839號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-01-17；系統合約終止日期 2099-12-31（視為無固定期限）；永康店另有獨立合約（呈康火鍋店），見另一筆",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=115&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "地果咖啡",
+  "subtitle": "台南市仁德區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市仁德區大同路三段838號",
+  "phone": "06-2903131",
+  "highlight": "95折",
+  "offer": "來店消費可享九五折優惠。",
+  "info": "電話：06-2903131\n地址：台南市仁德區大同路三段838號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-02-12；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=117&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "KK義式餐廳",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區大灣路503-1號",
+  "phone": "0931713233",
+  "highlight": "9折",
+  "offer": "全面打九折",
+  "info": "電話：0931713233\n地址：台南市永康區大灣路503-1號\n使用對象：校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-11-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=119&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "桃山日本料理",
+  "subtitle": "台南市仁德區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市仁德區中山路229號(仁德店)",
+  "phone": "(06)2498082",
+  "highlight": "免服務費",
+  "offer": "1.洋蔥醋一盤\n2.鮮果汁1杯、招待炸豆腐1份\n3.不收服務費",
+  "info": "電話：(06)2498082\n地址：台南市仁德區中山路229號(仁德店)\n使用對象：校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-11-14；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=120&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "萬福羊肉海產",
+  "subtitle": "台南市東區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區崇善里1鄰中華東路三段141號",
+  "phone": "0932825950",
+  "highlight": "9折起",
+  "offer": "1.現金打9折\n2.刷卡打95折\n3.特價商品除外\n4.酒水不計算",
+  "info": "電話：0932825950\n地址：台南市東區崇善里1鄰中華東路三段141號\n使用對象：校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-11-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=121&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "宏盛鑫商務飯店",
+  "subtitle": "台南市東區",
+  "category": "lodging",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區東區崇明路239號",
+  "phone": "(06)3350888",
+  "highlight": "專屬優惠價",
+  "offer": "1.無提供住宿早餐\n2.依房型住宿加人每人加500元。\n3.假日加價200元。\n4.上述合約房價已含:營業稅、服務費及提供停車場停車服務。\n5.免費客房內無限ADSL寬頻高速上網。\n6.最高規格防震、防火等災害因應，安置最新監控設備，安全無虞，並未所有的客房投保公共意外責任險。\n7.提供個人保險箱服務。",
+  "info": "電話：(06)3350888\n地址：台南市東區東區崇明路239號\n使用對象：教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-11-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=122&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "CHEFFRESH cafe",
+  "subtitle": "台南市中西區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市中西區中正路1號(南門路側門出入)",
+  "phone": "2638686",
+  "highlight": "9折",
+  "offer": "1.單點主餐九折優待\n2.飲料類九折優待",
+  "info": "電話：2638686\n地址：台南市中西區中正路1號(南門路側門出入)\n使用對象：校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-11-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=123&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "日記商號(文創)",
+  "subtitle": "台南市南區",
+  "category": "shopping",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市南區西門路一段689號",
+  "phone": "0919631518",
+  "highlight": "9折",
+  "offer": "店內商品Sharon Yang 九折優待",
+  "info": "電話：0919631518\n地址：台南市南區西門路一段689號\n使用對象：校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-11-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=124&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "摩朵仕女養生館",
+  "subtitle": "台南市東區",
+  "category": "health",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區崇學路133-1號",
+  "phone": "(06)2980000-230",
+  "highlight": "7折",
+  "offer": "1.首次來店禮贈仟元抵用券\n2.會員每次均有本店折扣(最高7折)",
+  "info": "電話：(06)2980000-230\n地址：台南市東區崇學路133-1號\n使用對象：校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-11-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=125&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "仁翔汽車服務廠",
+  "subtitle": "台南市東區",
+  "category": "services",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區崇善路782號",
+  "phone": "(06)2604891",
+  "highlight": "9折",
+  "offer": "1.零件9折\n2.接送車\n3.車輛外觀清洗",
+  "info": "電話：(06)2604891\n地址：台南市東區崇善路782號\n使用對象：校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-11-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=126&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "一樂町拉麵(府連店)",
+  "subtitle": "台南市東區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區府連東路3號",
+  "phone": "0981391492",
+  "highlight": "9折",
+  "offer": "店內餐點皆享9折優惠(不與其他活動並行)",
+  "info": "電話：0981391492\n地址：台南市東區府連東路3號\n使用對象：校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-11-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=127&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "COSWAY",
+  "subtitle": "台南市東區",
+  "category": "shopping",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區林森路二段51號(林森店)",
+  "phone": "(06)2085891",
+  "highlight": "專屬優惠價",
+  "offer": "1.享有cosway會員促銷優惠價\n2.買千送會員資格一年\n3.消費滿2000元，送百元商品",
+  "info": "電話：(06)2085891\n地址：台南市東區林森路二段51號(林森店)\n使用對象：校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-11-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=128&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "伍洋國際股份有限公司",
+  "subtitle": "台南市南區",
+  "category": "shopping",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市南區新孝路204號",
+  "phone": "0908677201",
+  "highlight": "8折",
+  "offer": "1.商品價格市價8折(約1400種襪子、平口褲、 口罩等)(特價品除外)\n2.凡超過999免運，校友者贈公司小商品一份",
+  "info": "電話：0908677201\n地址：台南市南區新孝路204號\n使用對象：校友證",
+  "links": [
+   {
+    "label": "優惠內容圖片",
+    "url": "https://bir.ksu.edu.tw/cr/public/upload/firm/offer/129/1d552c12a3c30984295d62950e5305824676ef52.jpg"
+   }
+  ],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-12-27；系統合約終止日期 2099-12-31（視為無固定期限）；期間優惠（2021年特賣會）已過期，未收錄",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=129&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "菜籃子果昔",
+  "subtitle": "台南市東區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區府連東路13號",
+  "phone": "(06)2002793",
+  "highlight": "9折",
+  "offer": "來店消費果昔飲品，皆享9折優待。\n(本優惠方案，不與其他優惠活動合併使用)",
+  "info": "電話：(06)2002793\n地址：台南市東區府連東路13號\n使用對象：校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-11-10；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=130&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "夏林海鮮碳燒",
+  "subtitle": "台南市南區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市南區夏林路1之22號",
+  "phone": "(06)2289088",
+  "highlight": "9折",
+  "offer": "1.用餐9折優惠(水、酒、特價品除外，另收5%服務費)\n2.當月生日壽星招待豬腳麵線或和風海藻沙拉\n3.啤酒節期間無折扣優惠",
+  "info": "電話：(06)2289088\n地址：台南市南區夏林路1之22號\n使用對象：校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2018-12-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=131&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "和明織品文化館(HMTM)",
+  "subtitle": "台南市七股區",
+  "category": "shopping",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市七股區大埕里大埕189號",
+  "phone": "(06)7875288",
+  "highlight": "75折起",
+  "offer": "1. 入館一律免門票\n2.當季服飾商品75折(不含配件、零碼布及特價商品)\n3.至咖啡店消費享9折優惠",
+  "info": "電話：(06)7875288\n地址：台南市七股區大埕里大埕189號\n使用對象：校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-01-16；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=132&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "港香蘭",
+  "subtitle": "台南市新市區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市新市區南科一路1號 (港香蘭綠色健康知識館)",
+  "phone": "(06)5052505",
+  "highlight": "專屬優惠價",
+  "offer": "1.精美來店禮一份，現場並享有養生茶飲體驗\n2.專人導覽解說參觀，10:00&14:00(需於1日前完成預約)\n3.門市商品享有會員優惠價(定價10%)，並享有體驗套組優惠價，不得與其他優惠並用\n4.DIY製作活動買一送一(需於3日前完成預約)\n5.現場滿額2000元可免費加入會員(全省12家直營門市享會員優惠折扣)\n6.電購金額滿3000元免收運費再9折優惠(未滿3000元者加收100元運費)\n7.以上優惠僅限港香蘭綠色健康知識館使用",
+  "info": "電話：(06)5052505\n地址：台南市新市區南科一路1號 (港香蘭綠色健康知識館)\n使用對象：校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-02-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=133&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "允頌汽車旅館",
+  "subtitle": "台南市安平區",
+  "category": "lodging",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市安平區建平十七街1號",
+  "phone": "(06)2987756",
+  "highlight": "9折",
+  "offer": "平日9折",
+  "info": "電話：(06)2987756\n地址：台南市安平區建平十七街1號\n使用對象：校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-01-30；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=134&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "原村",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區大灣路1018號",
+  "phone": "06-2737637",
+  "highlight": "95折",
+  "offer": "憑識別証至店消費享95折優惠。",
+  "info": "電話：06-2737637\n地址：台南市永康區大灣路1018號\n使用對象：學生證、教職員工證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-02-18；系統合約終止日期 2110-01-01（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=136&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "福豆屋壽喜燒",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區中正南路533號",
+  "phone": "06-2433093",
+  "highlight": "9折",
+  "offer": "1.憑識別証消費享九折優惠。\n2.其他分店皆適用。",
+  "info": "電話：06-2433093\n地址：台南市永康區中正南路533號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-02-19；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=137&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "一心保齡球館",
+  "subtitle": "台南市東區",
+  "category": "entertainment",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區中華東路一段26號",
+  "phone": "06-2084727",
+  "highlight": "折$10",
+  "offer": "憑證消費每局折10元，不得與其他優惠合併使用。",
+  "info": "電話：06-2084727\n地址：台南市東區中華東路一段26號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-02-22；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=140&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "多那之烘培坊-台南永康門店",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區中華路330號",
+  "phone": "06-3129567",
+  "highlight": "95折",
+  "offer": "持識別證全館自製西點蛋糕、麵包、咖啡 95 折優惠（特價品除外）",
+  "info": "電話：06-3129567\n地址：台南市永康區中華路330號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-03-05；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=142&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "板塊牛排-永大店",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區永大路一段300-1號",
+  "phone": "06-2731222",
+  "highlight": "折$10",
+  "offer": "憑證每一客排餐折扣10元(不包含鐵板麵，限內用)。",
+  "info": "電話：06-2731222\n地址：台南市永康區永大路一段300-1號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-03-12；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=144&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "得恩堂眼鏡-大灣店",
+  "subtitle": "台南市永康區",
+  "category": "shopping",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區大灣路1070號",
+  "phone": "06-2730030",
+  "highlight": "6折起",
+  "offer": "憑證可享以下優惠:\n1.鏡框、鏡片6折(訂製片、特殊鏡框除外)\n2.隱形眼鏡長戴式7折\n3.來店就送1副日拋隱形眼鏡",
+  "info": "電話：06-2730030\n地址：台南市永康區大灣路1070號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-03-12；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=145&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "波納貝堤歐式庭園餐廳",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區永大路三段85號",
+  "phone": "06-2023272",
+  "highlight": "95折",
+  "offer": "憑證可享以下優惠:\n1.現金95折，不收服務費(需滿額600元才享有折扣)。\n2.年節期間除外。",
+  "info": "電話：06-2023272\n地址：台南市永康區永大路三段85號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-03-14；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=148&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "紅帽森林廚坊",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區永大路二段1055號",
+  "phone": "06-2032585",
+  "highlight": "95折",
+  "offer": "1.憑證可享95折優惠(春節期間不適用)。\n2.不得與其他優惠同時使用。",
+  "info": "電話：06-2032585\n地址：台南市永康區永大路二段1055號\n使用對象：學生證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-03-14；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=149&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "寶島眼鏡-大灣店",
+  "subtitle": "台南市永康區",
+  "category": "shopping",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區大灣路1060號",
+  "phone": "06-2733536",
+  "highlight": "7折起",
+  "offer": "憑證可享以下優惠:\n1.一般眼鏡、太陽眼鏡7折(限配整付，特價商品除外)。\n2.長戴式隱形眼鏡8折，附贈隱形眼鏡保養組一套。\n3.不定期享有特別規劃之特定節目專屬優惠。\n4.上列優惠拋棄式隱形眼鏡、特價商品、特殊品牌、藥水及訂製片除外。",
+  "info": "電話：06-2733536\n地址：台南市永康區大灣路1060號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-03-14；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=150&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "灰熊咖哩-崑大店",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區崑大路155巷7號",
+  "phone": "0917-648895",
+  "highlight": "95折",
+  "offer": "憑證可享以下優惠:\n1.主餐類95折(小數點進位計算)，限內用、自取(外送不適用)。\n2.飲料加購優惠。\n3.加飯一次免費。\n4.現場隱藏版炸物優惠10元。(依現場為準)",
+  "info": "電話：0917-648895\n地址：台南市永康區崑大路155巷7號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-04-10；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=153&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "新天地動力有限公司",
+  "subtitle": "台南市永康區",
+  "category": "services",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區中華路672號",
+  "phone": "06-3020775",
+  "highlight": "95折",
+  "offer": "1.購買宏佳騰新車，贈送三次機油保養服務。\n2.機車維修，享有95折優惠。",
+  "info": "電話：06-3020775\n地址：台南市永康區中華路672號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-05-01；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=156&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "三普花屋",
+  "subtitle": "台南市東區",
+  "category": "shopping",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區長榮路二段35號",
+  "phone": "06-2742123",
+  "highlight": "9折",
+  "offer": "1.盆景享9折優惠(限台南地區)。\n2.羅馬花柱享9折優惠(限台南地區)。",
+  "info": "電話：06-2742123\n地址：台南市東區長榮路二段35號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-06-15；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=160&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "歐克影印店",
+  "subtitle": "台南市永康區",
+  "category": "services",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區大灣路1050號",
+  "phone": "062050052",
+  "highlight": "9折",
+  "offer": "結帳總金額打9折",
+  "info": "電話：062050052\n地址：台南市永康區大灣路1050號\n使用對象：校友證",
+  "links": [
+   {
+    "label": "優惠內容圖片",
+    "url": "https://bir.ksu.edu.tw/cr/public/upload/firm/offer/168/1a95212209c82cf3e59df278cda64e696f0ddcf3.jpg"
+   }
+  ],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-09-06；系統合約終止日期 2100-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=168&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "阿明食堂",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區大灣路927號",
+  "phone": "0938308815",
+  "highlight": "消費贈品",
+  "offer": "凡來店之校友憑卡消費滿50元即贈茶葉蛋，滿200元以上再加贈燙青菜乙盤\n2.限當日當次消費使用乙次\n3.外送不適合此優惠活動內\n4.辣椒醬不在此活動內",
+  "info": "電話：0938308815\n地址：台南市永康區大灣路927號\n使用對象：校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-08-15；系統合約終止日期 2100-12-31（視為無固定期限）；原文寫「凡來店之校友憑卡」",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=169&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "九州豚骨拉麵",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區大灣路933號",
+  "phone": "06-2050799",
+  "highlight": "消費贈品",
+  "offer": "優惠:憑卡兩人同行贈燙青菜!",
+  "info": "電話：06-2050799\n地址：台南市永康區大灣路933號\n使用對象：校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-09-04；系統合約終止日期 2100-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=170&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "德川商行(茶當會永康大灣店)",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區大灣路799號",
+  "phone": "06-2723318",
+  "highlight": "9折",
+  "offer": "(1)所有飲品九折優惠",
+  "info": "電話：06-2723318\n地址：台南市永康區大灣路799號\n使用對象：校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-09-23；系統合約終止日期 9999-01-01（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=175&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "天鳳有限公司(多米文化廣場永康店)",
+  "subtitle": "台南市永康區",
+  "category": "shopping",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區大灣路808號",
+  "phone": "(06)2732151",
+  "highlight": "消費贈品",
+  "offer": "(1)季節性文具贈品",
+  "info": "電話：(06)2732151\n地址：台南市永康區大灣路808號\n使用對象：校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2019-09-15；系統合約終止日期 9999-01-01（視為無固定期限）",
+  "eligibility": {
+   "student": false,
+   "staff": false,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=176&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "森鑶複合式餐廳",
+  "subtitle": "台南市東區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "701台南市東區東門路二段385號",
+  "phone": "06-2085363",
+  "highlight": "95折",
+  "offer": "享95折優惠\n不適用於:商業午餐、農曆過年、母親節、父親節\n不得與其他優惠並用",
+  "info": "電話：06-2085363\n地址：701台南市東區東門路二段385號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2020-01-08；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=184&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "橋北屋日本料理",
+  "subtitle": "台南市東區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區中華東路一段189號",
+  "phone": "0916578928",
+  "highlight": "95折",
+  "offer": "1.平日內用95折。\n2.僅限中華店使用。",
+  "info": "電話：0916578928\n地址：台南市東區中華東路一段189號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2020-03-13；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=187&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "一鍋の主日式刷刷鍋-崇明店",
+  "subtitle": "台南市東區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區崇明路403號",
+  "phone": "0970625928",
+  "highlight": "8折起",
+  "offer": "平日用餐8折，假日用餐9折。",
+  "info": "電話：0970625928\n地址：台南市東區崇明路403號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2020-08-13；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=193&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "薄多義-台南崇學店",
+  "subtitle": "台南市東區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "701台南市東區崇學路171號",
+  "phone": "07-7310251#23",
+  "highlight": "9折",
+  "offer": "用餐服務享有9折優惠。為維護雙方權益，優惠折扣不適用於商品部之商品販售、優惠活動、餐會活動、大團體訂位與包層、包場。\n用餐當日需於結帳時出示識別證（員工名片 + 個人證件）方可享有優惠。恕不接受代他人訂位等事宜。結帳時未能出具識別證，將取消該次享有優惠資格。",
+  "info": "電話：07-7310251#23\n地址：701台南市東區崇學路171號\n使用對象：教職員工證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2021-01-22；系統合約終止日期 2099-12-31（視為無固定期限）；需出示識別證（員工名片＋個人證件）",
+  "eligibility": {
+   "student": false,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=199&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "日麗牙醫",
+  "subtitle": "台南市東區",
+  "category": "health",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區凱旋路31號",
+  "phone": "06-2098167",
+  "highlight": "95折",
+  "offer": "看診免掛號費，自費項目九五折優惠。\n(需事先提供員工識別證或相關可證明所屬人員文件供查驗，本優惠限本人使用)",
+  "info": "電話：06-2098167\n地址：台南市東區凱旋路31號\n使用對象：教職員工證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2022-04-01；系統合約終止日期 2099-12-31（視為無固定期限）；需事先提供員工識別證或相關證明文件，限本人使用",
+  "eligibility": {
+   "student": false,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=210&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "星奕企業股份有限公司(星球工坊)",
+  "subtitle": "台北市南港區",
+  "category": "food",
+  "regions": [
+   "north",
+   "central",
+   "south",
+   "east"
+  ],
+  "address": "台北市南港區重陽路263巷3號2樓",
+  "phone": "02-26511369 213",
+  "highlight": "9折",
+  "offer": "結帳前出示識別證\n1.於全台門市消費，可享9折優惠。\n2.我們跟京站獨家合作，幫貴校創立專屬隱形賣場:https://bit.ly/3D60L2w",
+  "info": "電話：02-26511369 213\n地址：台北市南港區重陽路263巷3號2樓\n使用對象：學生證、教職員工證、校友證",
+  "links": [
+   {
+    "label": "專屬隱形賣場",
+    "url": "https://bit.ly/3D60L2w"
+   }
+  ],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2022-08-17；系統合約終止日期 2099-12-31（視為無固定期限）；全台門市適用；地址為公司登記地址",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=217&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "復得科技有限公司",
+  "subtitle": "高雄市三民區",
+  "category": "services",
+  "regions": [
+   "south"
+  ],
+  "address": "高雄巿三民區建國二路203號",
+  "phone": "07-238-1631",
+  "highlight": "9折",
+  "offer": "提供有條件免費檢測，資料救援給予9折優惠(須出具職員證、學生證、退休人員證)",
+  "info": "電話：07-238-1631\n地址：高雄巿三民區建國二路203號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2022-10-18；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=218&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "瑞特汽車有限公司",
+  "subtitle": "台南市永康區",
+  "category": "services",
+  "regions": [
+   "central",
+   "south"
+  ],
+  "address": "台南市永康區中正北路304號",
+  "phone": "06-254-8989",
+  "highlight": "9折",
+  "offer": "1.甲方之任何廠牌車輛進雲嘉南任一廠保養或維修費用，乙方同意依一般標準價格給予零件九折優待，惟鈑金與烤漆工資依議價優惠收費，不再另享折扣優惠。\n2.乙方特約維修地點如下:東台南廠、北台南廠、永康廠、永新廠、佳里廠、歸仁廠、新營廠、金標準中古車部附設快保點、嘉義廠、忠孝廠、朴子廠、虎尾廠。",
+  "info": "電話：06-254-8989\n地址：台南市永康區中正北路304號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2011-01-07；系統合約終止日期 2099-12-31（視為無固定期限）；維修廠遍及台南、嘉義、雲林（虎尾）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=219&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "瑞達汽車股份有限公司",
+  "subtitle": "雲林縣斗六市",
+  "category": "services",
+  "regions": [
+   "central"
+  ],
+  "address": "雲林縣斗六市大學路一段26號",
+  "phone": "05-596-8988",
+  "highlight": "9折",
+  "offer": "1.甲方之任何廠牌車輛進雲嘉南任一廠保養或維修費用，乙方同意依一般標準價格給予零件九折優待，惟鈑金與烤漆工資依議價優惠收費，不再另享折扣優惠。\n2.乙方特約維修地點如下:斗南廠、斗六廠。",
+  "info": "電話：05-596-8988\n地址：雲林縣斗六市大學路一段26號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2011-01-07；系統合約終止日期 2099-12-31（視為無固定期限）；維修點：斗南廠、斗六廠（雲林）；原文乙方誤植為「瑞特汽車有限公司」",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=220&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "佳新鈴木汽車股份有限公司",
+  "subtitle": "台南市",
+  "category": "services",
+  "regions": [
+   "central",
+   "south"
+  ],
+  "address": "台南市中華東路三段279號",
+  "phone": "06-254-1877",
+  "highlight": "9折",
+  "offer": "1.甲方之任何廠牌車輛進雲嘉南任一廠保養或維修費用，乙方同意依一般標準價格給予零件九折優待，惟鈑金與烤漆工資依議價優惠收費，不再另享折扣優惠。\n2.乙方特約維修地點如下:東台南廠、新營廠、嘉義廠、斗南廠。",
+  "info": "電話：06-254-1877\n地址：台南市中華東路三段279號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2011-01-07；系統合約終止日期 2099-12-31（視為無固定期限）；維修點含台南、嘉義、斗南（雲林）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=221&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "冰菓蹦台南永康店",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區中華路727巷31號",
+  "phone": "0979990833",
+  "highlight": "9折",
+  "offer": "憑校友證、教職員工證、學生證來店消費享9折優惠",
+  "info": "電話：0979990833\n地址：台南市永康區中華路727巷31號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": "2060-03-15",
+  "auto_renew": false,
+  "notes": "合約期間 2023-03-15～2060-03-15",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=225&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "多那之咖啡 東寧門市",
+  "subtitle": "台南市東區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區東寧路269號",
+  "phone": "(06)237-5888",
+  "highlight": "95折",
+  "offer": "全館自製西蛋糕、麵包、咖啡95折優惠(酒會、餐盒、節慶商品、特價品除外)。",
+  "info": "電話：(06)237-5888\n地址：台南市東區東寧路269號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "合約起始 2023-11-15；系統合約終止日期 2099-12-31（視為無固定期限）",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=236&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "呈康火鍋店（XM麻辣鍋）",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區中華路660號",
+  "phone": "063025299",
+  "highlight": "免服務費",
+  "offer": "憑員工識別證及會員證，消費可享免收服務費之優惠",
+  "info": "電話：063025299\n地址：台南市永康區中華路660號\n使用對象：教職員工證",
+  "links": [
+   {
+    "label": "優惠內容圖片",
+    "url": "https://bir.ksu.edu.tw/cr/public/upload/firm/offer/245/fff1b04056eb1f07d1bdfaeaba972fbc1aad2b5e.png"
+   }
+  ],
+  "expires_on": "2026-12-31",
+  "auto_renew": false,
+  "notes": "合約期間 2024-03-11～2026-12-31；與「XM麻辣鍋」湖美店合約所列永康店同址；此筆限教職員工證",
+  "eligibility": {
+   "student": false,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=245&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "極力健身健身房",
+  "subtitle": "台南市東區",
+  "category": "entertainment",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市東區東光路一段13號",
+  "phone": "06-2085911",
+  "highlight": "95折",
+  "offer": "1.一對一教練體驗課程折價100元\n2.團體教練課程買10堂送1堂\n3.購買24堂課程以上費用打95折\n4.購買一對一教練課程贈送會籍",
+  "info": "電話：06-2085911\n地址：台南市東區東光路一段13號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": "2030-12-31",
+  "auto_renew": false,
+  "notes": "合約期間 2024-07-01～2030-12-31",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=246&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "Holiday&art 高雄多元手作工作室",
+  "subtitle": "高雄市鳳山區",
+  "category": "shopping",
+  "regions": [
+   "south"
+  ],
+  "address": "高雄市鳳山區三誠路112號",
+  "phone": "0976587853",
+  "highlight": "95折起",
+  "offer": "優惠內容：\n簇絨地毯兩組以上95折、四組以上95折\n玻璃鑲嵌兩組以上98折\n銀泥土寶石戒指兩組以上98折\n聖誕花圈即各項花藝體驗兩組以上98折\n各項體驗活動學生可憑學生證取得優惠，優惠折抵不可與工作室其他優惠共同使用。",
+  "info": "電話：0976587853\n地址：高雄市鳳山區三誠路112號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": "2026-11-22",
+  "auto_renew": false,
+  "notes": "合約期間 2024-11-22～2026-11-22",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=249&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "角落有貓國際股份有限公司",
+  "subtitle": "台南市中西區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南中西區市忠義路二段233巷2號",
+  "phone": "0932740850",
+  "highlight": "9折",
+  "offer": "凡崑山大學師生教職員，平日來店消費，一律享用以下優惠\n1，餐飲一律九折。 2，招待雞蛋糕。\n特別強調：（例假日不適用）。\n由於座依有限，請上網預約。",
+  "info": "電話：0932740850\n地址：台南中西區市忠義路二段233巷2號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": "2028-03-01",
+  "auto_renew": false,
+  "notes": "合約期間 2025-03-25～2028-03-01",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=255&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "吉也春餐飲有限公司",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區大灣路700之2號",
+  "phone": "(06)2073522",
+  "highlight": "9折",
+  "offer": "商業午餐399價位,憑學生證9折優惠",
+  "info": "電話：(06)2073522\n地址：台南市永康區大灣路700之2號\n使用對象：學生證、教職員工證",
+  "links": [],
+  "expires_on": "2027-04-17",
+  "auto_renew": false,
+  "notes": "合約期間 2025-04-18～2027-04-17；原文寫「憑學生證9折」，但證別標示學生證、教職員工證",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=256&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "義朵朵Pasta-永康復國店",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區復國路86號",
+  "phone": "(06)3123700",
+  "highlight": "95折",
+  "offer": "1.學生與教師憑相關證件於店內用餐，享餐點95折優惠\n2. 本優惠適用於平日與假日。\n3. 本優惠不得與其他行銷活動或優惠方案併用（如限定活動、餐卷、會員等）\n4. 若調整菜單價格或優惠內容，應以店內公告為準。",
+  "info": "電話：(06)3123700\n地址：台南市永康區復國路86號\n使用對象：學生證、教職員工證",
+  "links": [],
+  "expires_on": "2027-05-19",
+  "auto_renew": false,
+  "notes": "合約期間 2025-05-20～2027-05-19",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=258&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "航典國際旅行社有限公司",
+  "subtitle": "台南市永康區",
+  "category": "services",
+  "regions": [
+   "north",
+   "central",
+   "south",
+   "east"
+  ],
+  "address": "台南市永康區永大路三段99號",
+  "phone": "(06)2315678",
+  "highlight": "折$1000",
+  "offer": "代辦會員旅遊或差旅（線上即時訂購服務）：國際機票及國際訂房、國外套裝自由行、國外團體旅遊、國內團體旅遊、國內訂房等。\n會員（含員工及其眷屬）必須透過網路報名方可以網路價格再享以下優惠折扣：\n(1) 國外團體旅遊享價格優惠新台幣1000元/人。\n(2) 國外團體自由行(航空公司或FIT自由行除外)享價格優惠新台幣500元/人。\n★備註★促銷及特惠團體…等，不適用上述優惠範圍。\n(3) 員工旅遊、企業獎勵旅遊、勞工教育會議、商務會議考察，專責專案優惠辦理！",
+  "info": "電話：(06)2315678\n地址：台南市永康區永大路三段99號\n使用對象：學生證、教職員工證、校友證",
+  "links": [
+   {
+    "label": "航典旅遊官網企業會員專區",
+    "url": "https://www.waypoint-travel.com.tw/"
+   }
+  ],
+  "expires_on": "2026-12-31",
+  "auto_renew": false,
+  "notes": "合約期間 2025-07-31～2026-12-31；線上訂購旅遊產品，視為全國；與另一筆「航典國際旅行社有限公司」合約合併；合約第三條：期滿雙方無異議得視同續約",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": true
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=260&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "晶盈親旅大酒店",
+  "subtitle": "台南市永康區",
+  "category": "lodging",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區新中街206號",
+  "phone": "06-2541666#2005",
+  "highlight": "專屬優惠價",
+  "offer": "平日合約價: 假日與國定假日入住，每晚需加價300/間\nCD晶典大床房$2600/1BF\nSD輕盈大床房$2800/1BF\nDD豪華大床房$3200/1BF\nST輕盈雙床房$3000/2BF\nDT豪華雙床房$3400/2BF\nCF晶典家庭房$4800/4BF\nJF晶盈家庭房$5200/4BF\n-晶典大床房、輕盈大床房與豪華大床房，第二人入住每晚須加價300元(含乙客早餐)。\n-免費提供礦泉水、中式茶包、咖啡包(依房型提供)。\n-房客可免費使用網路、洗衣房、健身房、商務中心、24小時點心吧以及兒童遊戲室。\n-送洗衣物可享9折優惠\n-特約公司可享桉樹餐廳9折優惠\n-此合約價格不適用於農曆春",
+  "info": "電話：06-2541666#2005\n地址：台南市永康區新中街206號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": "2026-12-31",
+  "auto_renew": false,
+  "notes": "合約期間 2025-09-08～2026-12-31；原文於「此合約價格不適用於農曆春…」處截斷",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=262&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "悠躍運動空間",
+  "subtitle": "台南市安平區",
+  "category": "entertainment",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市安平區華平路601號",
+  "phone": "0977454580",
+  "highlight": "消費贈品",
+  "offer": "購課消費憑有效識別證，即可享以下任一優惠：\n(1) 私人教練課乙堂（價值新台幣2000元）\n(2) 筋肌膜放鬆滾筒乙支（價值新台幣1000元）",
+  "info": "電話：0977454580\n地址：台南市安平區華平路601號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": "2026-12-31",
+  "auto_renew": false,
+  "notes": "合約期間 2025-09-12～2026-12-31",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=263&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "白巷子 | 永康大灣店",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "永康區大灣路366號",
+  "phone": "06-272-6969",
+  "highlight": "9折起",
+  "offer": "店取優惠：老師/學生/家屬憑教師證、學生證、識別證照片至白巷子大灣店購買，享全品項九折優惠，不限杯數、特價品除外。\n外送優惠：學區訂單滿200元／教師、學生住家訂單依公里數即可免費外送；買五送一（訂單平均價折抵第六杯），再享九五折優惠（特價品除外）。",
+  "info": "電話：06-272-6969\n地址：永康區大灣路366號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": "2028-11-11",
+  "auto_renew": false,
+  "notes": "合約期間 2025-11-11～2028-11-11；地址未寫縣市（永康區屬台南市）；原文為合作提案文；店取九折含家屬；粉絲專頁網址截斷未收錄",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": true
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=265&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "昕叡創能股份有限公司",
+  "subtitle": "台南市永康區",
+  "category": "shopping",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區大灣路982號",
+  "phone": "0905919982",
+  "highlight": "折$1500",
+  "offer": "出示學生證或教師證，即享有SYM專屬購車優惠：\n1.車價現折1,500元。\n2.配件折扣金500元。\n3.一年強制險＋免牌險費\n4.保養維修98折\n全車系新車2年不限里程保固。\n配合門市：摩托市集永康大灣店(永康區大灣路982號）、摩托市集永康中華店(永康區中華路670號）、摩托市集東區崇善店(東區崇善路559號）",
+  "info": "電話：0905919982\n地址：台南市永康區大灣路982號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": "2026-12-31",
+  "auto_renew": false,
+  "notes": "合約期間 2025-11-17～2026-12-31；原文另列Gogoro優惠（即日起至2025/12/23，已過期），未收錄",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=266&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "藏龍羽球",
+  "subtitle": "台南市仁德區",
+  "category": "entertainment",
+  "regions": [
+   "south"
+  ],
+  "address": "臺南市仁德區中山路50號",
+  "phone": "062700987",
+  "highlight": "9折起",
+  "offer": "持學生證及教職員證可享以下優惠\n1.尖峰、離峰時段租場九折優惠。\n2.場館內購買羽球相關商品時，享有商品售價九五折優惠(羽毛球與球拍線不在此優惠範圍內)。\n附註:\n1.須於結帳前主動出示員工證或學生證，不得轉借、轉讓或與他人共用。\n2.此優惠不得與其他優惠券、促銷活動或專案合併使用。",
+  "info": "電話：062700987\n地址：臺南市仁德區中山路50號\n使用對象：學生證、教職員工證",
+  "links": [],
+  "expires_on": "2027-12-31",
+  "auto_renew": false,
+  "notes": "合約期間 2025-12-01～2027-12-31",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=267&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "創宇數位科技有限公司",
+  "subtitle": "全國各門市",
+  "category": "services",
+  "regions": [
+   "north",
+   "central",
+   "south",
+   "east"
+  ],
+  "address": "",
+  "phone": "(03)456-2277",
+  "highlight": "97折",
+  "offer": "1. 乙方人員至甲方全國各門市消費，出示證明文件可享帳單金額(不包含全新商品)之97折優惠（即帳單金額3%之金額減免）。\n2. 乙方人員將相關證明文件之電子檔上傳至甲方官網”特約商店”專區的申請表單後，可獲得於甲方官方網站購物時享97折優惠之優惠代碼。（每組代碼限一次性使用）\n3. 乙方人員並同意以上甲方提供之本合約特定優惠，不包含全新商品且不得與甲方門市或甲方官方網站之其他優惠活動同時使用。\n※甲方官網及特約商店專區網址: https://www.smart3c.com.tw/",
+  "info": "電話：(03)456-2277\n地址：全國各門市\n使用對象：學生證、教職員工證、校友證",
+  "links": [
+   {
+    "label": "官網特約商店專區",
+    "url": "https://www.smart3c.com.tw/"
+   }
+  ],
+  "expires_on": "2026-12-31",
+  "auto_renew": false,
+  "notes": "合約期間 2026-01-01～2026-12-31；全國各門市及官網（官網需上傳證明取得一次性優惠代碼）；不含全新商品",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=271&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "煙波國際獵光股份有限公司（台南館）",
+  "subtitle": "台南市中西區",
+  "category": "lodging",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市中西區永福路一段269號",
+  "phone": "(06)213-5366",
+  "highlight": "專屬優惠價",
+  "offer": "特約合約價（價格已含5％營業稅及10％服務費）。\n週末、連續假期、農曆春節期間恕不適用合約價，房價依飯店現場公告為主。\n免費提供翌日早餐一客；客房提供免費飲品、茶包及咖啡包；免費有線及無線上網。\n住客可免費使用館內設施（健身房、游泳池、男女三溫暖）及會員交誼廳。\n週一至週五免費提供從飯店出發至台南科學園區之定時交通車服務（入住時預約）。\n客房內不提供一次性備品及瓶裝水。",
+  "info": "電話：(06)213-5366\n地址：台南市中西區永福路一段269號\n使用對象：教職員工證",
+  "links": [],
+  "expires_on": "2026-12-31",
+  "auto_renew": false,
+  "notes": "合約期間 2026-01-01～2026-12-31",
+  "eligibility": {
+   "student": false,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=274&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "西谷子養生元氣堂",
+  "subtitle": "桃園市中壢區",
+  "category": "health",
+  "regions": [
+   "north",
+   "central",
+   "south",
+   "east"
+  ],
+  "address": "中壢區領航南路三段305號15樓",
+  "phone": "03-2870666#222",
+  "highlight": "專屬優惠價",
+  "offer": "教職員專屬隱藏購物網站：詳細優惠售價以官網公告為主。\n教職員大量採購／團購方案（限時）：教職員可透過專屬線下訂購表單，直接以低於市售金額訂購。",
+  "info": "電話：03-2870666#222\n地址：中壢區領航南路三段305號15樓\n使用對象：學生證、教職員工證、校友證",
+  "links": [
+   {
+    "label": "專屬購物網",
+    "url": "https://ecshop.seegoalsmate.com/hidden/2026ksu"
+   }
+  ],
+  "expires_on": "2027-03-01",
+  "auto_renew": false,
+  "notes": "合約期間 2026-03-01～2027-03-01；地址未寫縣市（中壢區屬桃園市）；專屬購物網（線上），視為全國；與「西谷子 - 教職員健康關懷合作方案」合併；以教職員為對象",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=275&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "老爹手機維修中心",
+  "subtitle": "台南市永康區",
+  "category": "services",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區大灣路972號",
+  "phone": "(06)207-3555",
+  "highlight": "95折",
+  "offer": "持卡優惠:（維修）95 折，二手機 折價卷300",
+  "info": "電話：(06)207-3555\n地址：台南市永康區大灣路972號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": "2027-12-31",
+  "auto_renew": false,
+  "notes": "合約期間 2026-03-13～2027-12-31",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=276&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ },
+ {
+  "name": "咖樂V",
+  "subtitle": "台南市永康區",
+  "category": "food",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市永康區崑大路226號",
+  "phone": "06-2058622",
+  "highlight": "消費贈品",
+  "offer": "憑崑山科技大學學生證、職員證、校友證\n來店內用點任一主餐\n即贈指定飲品乙杯（不含酒精飲料）\n週一～週五限定｜例假日不適用\n每人每次限享乙次\n本優惠不得與其他優惠活動併用",
+  "info": "電話：06-2058622\n地址：台南市永康區崑大路226號\n使用對象：學生證、教職員工證、校友證",
+  "links": [],
+  "expires_on": "2026-12-31",
+  "auto_renew": false,
+  "notes": "合約期間 2026-10-01～2026-12-31",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "KSU"
+  ],
+  "source_level": "school",
+  "source_org": "崑山科技大學 特約商店",
+  "source_url": "https://bir.ksu.edu.tw/cr/public/application/ksulife/ajax?id=279&action=StoreGetFirmData",
+  "retrieved_on": "2026-10-15"
+ }
+]
