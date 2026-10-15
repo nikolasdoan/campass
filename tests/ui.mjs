@@ -17,7 +17,8 @@ const FULL = '58a27e58ee'; // has phone + address
 const results = [];
 const check = (name, ok, extra = '') => { results.push({ name, ok: !!ok }); console.log(`${ok ? 'PASS' : 'FAIL'}  ${name}${extra ? '  — ' + extra : ''}`); };
 
-const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+// Playwright finds its own Chromium (PLAYWRIGHT_BROWSERS_PATH); CHROMIUM_PATH overrides it.
+const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 const MOBILE = { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, deviceScaleFactor: 2 };
 const DESKTOP = { viewport: { width: 1280, height: 800 } };
 
