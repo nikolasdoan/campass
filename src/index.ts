@@ -89,7 +89,7 @@ async function upsertUser(db: D1Database, p: GoogleProfile): Promise<number> {
 }
 
 const PUBLIC_FIELDS =
-  "id, name, subtitle, category, regions, highlight, expires_on, auto_renew, eligibility, schools, source_level, source_org, sort_order";
+  "id, name, subtitle, category, regions, highlight, expires_on, auto_renew, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order";
 
 function parseDeal(row: Record<string, any>) {
   return {

@@ -1,10 +1,10 @@
 /* CampusPass front end. Plain ES modules, no framework, no build step.
    Routes: /  (Explore) · /saved · /me · /deal/:id (deep-linkable; a side panel on a desktop,
    a pushed full-screen page on a phone). History API routing over the Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=2";
-import { t, getLang, setLang, applyLang, schoolName } from "./js/i18n.js?v=2";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone } from "./js/util.js?v=2";
-import { toast, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=2";
+import { icon } from "./js/icons.js?v=4";
+import { t, getLang, setLang, applyLang, schoolName } from "./js/i18n.js?v=4";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone } from "./js/util.js?v=4";
+import { toast, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=4";
 
 /* ---------- constants ---------- */
 
@@ -17,6 +17,10 @@ const REGIONS = ["north", "central", "south", "east"];
 const ELIG = ["student", "staff", "alumni", "family"];
 const THEME_KEY = "cp_theme";
 const PENDING_FAV = "cp_pending_fav";
+// CampusPass starts with NTU: Explore shows deals NTU students can use, and a
+// visitor from another school picks theirs once (remembered in localStorage).
+const DEFAULT_SCHOOL = "NTU";
+const SCHOOL_KEY = "cp_school";
 const SOON_DAYS = 30;
 const TODAY = todayTW();
 
@@ -34,7 +38,7 @@ const state = {
   favs: new Set(),
   favOrder: [], // newest first, as /api/me returns them
   meStatus: "loading", // loading | ready
-  filters: { q: "", cat: "all", region: "all", school: "all", students: true },
+  filters: { q: "", cat: "all", region: "all", school: storage.get(SCHOOL_KEY) || DEFAULT_SCHOOL, students: true },
   route: { name: "explore", id: null },
   base: "explore", // the list view under an open detail
   detail: new Map(), // id → { deal, locked }
@@ -204,16 +208,18 @@ function facetCounts(facet, keyOf) {
 
 const filtersActive = () => {
   const f = state.filters;
-  return f.q.trim() !== "" || f.cat !== "all" || f.region !== "all" || f.school !== "all" || !f.students;
+  return f.q.trim() !== "" || f.cat !== "all" || f.region !== "all" || f.school !== DEFAULT_SCHOOL || !f.students;
 };
 
 /* ---------- rows ---------- */
 
 const rowCache = new Map();
 
+// Rows stay one line: the full eligibility breakdown lives in the detail view;
+// a row only warns when students can't use the deal.
 function badgesHTML(d) {
-  const elig = ELIG.filter((k) => d.eligibility[k]).map((k) => `<span class="mini">${esc(t(`elig.${k}`))}</span>`).join("");
-  return `${d.highlight ? `<span class="badge">${esc(d.highlight)}</span>` : ""}${expiryChip(d)}${elig}`;
+  const warn = d.eligibility.student ? "" : `<span class="mini warn">${esc(t("elig.noStudent"))}</span>`;
+  return `${d.highlight ? `<span class="badge">${esc(d.highlight)}</span>` : ""}${expiryChip(d)}${warn}`;
 }
 
 function starHTML(d) {
@@ -407,14 +413,18 @@ function openPicker(kind, anchor) {
     const b = e.target.closest("[data-value]");
     if (!b) return;
     if (isRegion) f.region = b.dataset.value;
-    else f.school = b.dataset.value;
+    else {
+      f.school = b.dataset.value;
+      storage.set(SCHOOL_KEY, f.school === DEFAULT_SCHOOL ? null : f.school);
+    }
     closeDialog();
     renderExplore();
   });
 }
 
 function resetFilters() {
-  Object.assign(state.filters, { q: "", cat: "all", region: "all", school: "all", students: true });
+  Object.assign(state.filters, { q: "", cat: "all", region: "all", school: DEFAULT_SCHOOL, students: true });
+  storage.set(SCHOOL_KEY, null);
   els.q.value = "";
   els.qclear.hidden = true;
   renderExplore();

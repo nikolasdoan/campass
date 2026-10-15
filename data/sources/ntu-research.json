@@ -1,1 +1,4418 @@
-[]
+[
+  {
+    "name": "玉山銀行",
+    "subtitle": "臺大教職員薪轉/貸款優惠",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "專案優惠",
+    "offer": "教職員優惠專區－薪轉優惠；房信貸優惠請參考玉山薪轉優惠。本校教職員工(限專任(含計畫人員))薪資轉存金融機構新增「玉山銀行」及「華南銀行」，故除本校原有之薪轉郵局外，可選擇轉存至玉山銀行或華南銀行(即三間金融機構僅能擇一)，且薪轉戶及優存戶須在同一間金融機構。",
+    "info": "詳細條件見財務管理處優惠專區所附優惠說明文件。洽詢：財務管理處 鍾卓器經理 02-3366-9799#12",
+    "links": [
+      {
+        "label": "玉山薪轉優惠",
+        "url": "https://drive.google.com/file/d/1Q_qkPiZ4G7pSOcC7b6A3LyxUsCmoN397/view?usp=drive_link"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "限教職員工（薪轉限專任含計畫人員）；學生不適用。條件細節在 Google Drive PDF，未逐一摘錄。",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "華南銀行",
+    "subtitle": "臺大教職員薪轉/貸款優惠",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "專案優惠",
+    "offer": "教職員優惠專區－薪轉優惠；房信貸優惠請參考華銀薪轉優惠。本校教職員工(限專任(含計畫人員))薪資轉存金融機構新增「玉山銀行」及「華南銀行」，故除本校原有之薪轉郵局外，可選擇轉存至玉山銀行或華南銀行(即三間金融機構僅能擇一)，且薪轉戶及優存戶須在同一間金融機構。",
+    "info": "詳細條件見財務管理處優惠專區所附優惠說明文件。洽詢：財務管理處 鍾卓器經理 02-3366-9799#12",
+    "links": [
+      {
+        "label": "華銀薪轉優惠",
+        "url": "https://drive.google.com/file/d/1EfFW3AJyxVaDBSxMd23zentHini-IxfB/view?usp=drive_link"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "限教職員工（薪轉限專任含計畫人員）；學生不適用。條件細節在 Google Drive PDF，未逐一摘錄。",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "中華郵政",
+    "subtitle": "臺大教職員薪轉/貸款優惠",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "專案優惠",
+    "offer": "教職員優惠專區－薪轉優惠。本校教職員工(限專任(含計畫人員))薪資轉存金融機構新增「玉山銀行」及「華南銀行」，故除本校原有之薪轉郵局外，可選擇轉存至玉山銀行或華南銀行(即三間金融機構僅能擇一)，且薪轉戶及優存戶須在同一間金融機構。",
+    "info": "詳細條件見財務管理處優惠專區所附優惠說明文件。洽詢：財務管理處 鍾卓器經理 02-3366-9799#12",
+    "links": [
+      {
+        "label": "中華郵政薪轉優惠",
+        "url": "https://drive.google.com/file/d/1Bkwt68P-uAsoR28gJsPdSJ1Vq27vlcBX/view?usp=sharing"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "限教職員工（薪轉限專任含計畫人員）；學生不適用。條件細節在 Google Drive PDF，未逐一摘錄。",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "元大銀行",
+    "subtitle": "臺大教職員薪轉/貸款優惠",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "專案優惠",
+    "offer": "教職員優惠專區－房貸優惠、信貸優惠。為減輕本校教職員工的貸款壓力，為師長及同仁們提供信貸、房貸等優惠專案。",
+    "info": "詳細條件見財務管理處優惠專區所附優惠說明文件。洽詢：財務管理處 鍾卓器經理 02-3366-9799#12",
+    "links": [
+      {
+        "label": "房貸優惠",
+        "url": "https://drive.google.com/file/d/1PDFgnAMoQus091Eu7UxrUN1Kdl95iLQv/view?usp=sharing"
+      },
+      {
+        "label": "信貸優惠",
+        "url": "https://drive.google.com/file/d/11tPN6xWwf_vOZY3Or4j2xbxeOi-Twva6/view?usp=sharing"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "限教職員工（薪轉限專任含計畫人員）；學生不適用。條件細節在 Google Drive PDF，未逐一摘錄。",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "遠東商銀",
+    "subtitle": "臺大教職員薪轉/貸款優惠",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "專案優惠",
+    "offer": "教職員優惠專區－房信貸優惠、存款優惠、美元定存優惠。為減輕本校教職員工的貸款壓力，為師長及同仁們提供信貸、房貸等優惠專案。",
+    "info": "詳細條件見財務管理處優惠專區所附優惠說明文件。洽詢：財務管理處 鍾卓器經理 02-3366-9799#12",
+    "links": [
+      {
+        "label": "房信貸優惠",
+        "url": "https://drive.google.com/file/d/1kcG3XV5XudnK0oRBRmNgSUrcuqFGAQLR/view?usp=sharing"
+      },
+      {
+        "label": "存款優惠",
+        "url": "https://drive.google.com/file/d/1eMVzPvYkWcQH4ggnT7eg3CwCxwfQntL0/view?usp=sharing"
+      },
+      {
+        "label": "美元定存優惠",
+        "url": "https://drive.google.com/file/d/1Ig-fSE5gUisOr02nsRWUC3_w2EYOdfLx/view?usp=sharing"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "限教職員工（薪轉限專任含計畫人員）；學生不適用。條件細節在 Google Drive PDF，未逐一摘錄。",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "王道銀行",
+    "subtitle": "臺大教職員薪轉/貸款優惠",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "專案優惠",
+    "offer": "教職員優惠專區－房信貸及存款優惠。為減輕本校教職員工的貸款壓力，為師長及同仁們提供信貸、房貸等優惠專案。",
+    "info": "詳細條件見財務管理處優惠專區所附優惠說明文件。洽詢：財務管理處 鍾卓器經理 02-3366-9799#12",
+    "links": [
+      {
+        "label": "房信貸及存款優惠",
+        "url": "https://drive.google.com/file/d/1ivqaD3BCAiMxIj52fLczKlSDK32k3mYX/view?usp=drive_link"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "限教職員工（薪轉限專任含計畫人員）；學生不適用。條件細節在 Google Drive PDF，未逐一摘錄。",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "Lazy Pâtisserie",
+    "subtitle": "徠集手工法式甜點坊（公館店）",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區羅斯福路3段345號",
+    "phone": "",
+    "highlight": "優惠價",
+    "offer": "六吋生日蛋糕享優惠價280（限同一口味）",
+    "info": "營業時間：週一至週日：12:00-20:00",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/%E5%85%AC%E9%A4%A8%E6%BA%AB%E5%B7%9E%E8%A1%97",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "戰醬燒肉",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市中正區羅斯福路三段316巷7-3號",
+    "phone": "",
+    "highlight": "95折",
+    "offer": "消費95折優惠",
+    "info": "營業時間：週一至週日 12:00-22:00",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/%E5%85%AC%E9%A4%A8%E6%BA%AB%E5%B7%9E%E8%A1%97",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "池先生 Kopitiam",
+    "subtitle": "公館店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市中正區羅斯福路三段284巷10號",
+    "phone": "",
+    "highlight": "折$30",
+    "offer": "主餐加飲料可折抵30元",
+    "info": "營業時間：週一至週五：11:30–15:30, 17:00–20:45 六日：11:30–20:45",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/%E5%85%AC%E9%A4%A8%E6%BA%AB%E5%B7%9E%E8%A1%97",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "GURU HOUSE",
+    "subtitle": "台大公館店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區溫州街74巷5弄3號",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "1.內用消費享免服務費\n2.外帶消費享9折優惠",
+    "info": "營業時間：週一到週日 09:00-22:00",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/%E5%85%AC%E9%A4%A8%E6%BA%AB%E5%B7%9E%E8%A1%97",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "Ooh Cha Cha",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區和平東路二段118巷4-1號",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "消費享九折優惠",
+    "info": "營業時間：週一至週日： 10:00 - 22:00",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "玩味咖啡",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區和平東路二段118巷38-1號",
+    "phone": "",
+    "highlight": "95折",
+    "offer": "消費享九五折優惠",
+    "info": "營業時間：週一至週五：11:00-22:00 週六、週日：10:30-22:00",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "麵工坊",
+    "subtitle": "大安店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區和平東路二段118巷2弄1號1樓",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "主餐享九折優惠及免費加麵服務",
+    "info": "營業時間：週一至週五 11:30-14:30；17:30-21:30 週六至週日 11:30-15:00；17:30-21:30",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "微笑廚房洋食館",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區和平東路二段118巷54弄3號",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "出示學生證消費享九折優惠",
+    "info": "營業時間：週一至週四 : 11:30-14:30；17:00-20:00 週五至週六 : 11:30-14:00；17:00-21:00 週日休息",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "米堤銀行",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區復興南路二段327號",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "臨櫃交易單筆滿百打九折(須主動出示學生證)",
+    "info": "營業時間：週一至週日： 10:00–19:30",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "新丼",
+    "subtitle": "和平店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區和平東路二段118巷45號",
+    "phone": "",
+    "highlight": "贈品",
+    "offer": "出示學生證可兌換冰紅茶或冰綠茶乙杯",
+    "info": "營業時間：週一至週日：11:30–21:00",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "CoCo都可",
+    "subtitle": "和平東門市",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區和平東路二段311巷30號",
+    "phone": "",
+    "highlight": "8折",
+    "offer": "1.杯杯折五元\n2.買十送一，滿千可享八折優惠",
+    "info": "營業時間：週一至週日：10:30–20:45",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "小姐姐麻辣食堂",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區和平東路二段118巷4弄2號",
+    "phone": "",
+    "highlight": "贈品",
+    "offer": "消費滿百元即送鴨血、豆腐、蛋（三選一）",
+    "info": "營業時間：週一至週日： 11:00-21:00",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "好食早餐",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區和平東路二段357巷7號",
+    "phone": "",
+    "highlight": "折$5",
+    "offer": "憑學生證單點薯餅塔加飲品可現折五元",
+    "info": "營業時間：週一至週日： 07:30–15:00",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "Mr.Smile好吃雞排",
+    "subtitle": "台北復興店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區復興南路二段349號",
+    "phone": "",
+    "highlight": "95折",
+    "offer": "消費滿百享九五折優惠",
+    "info": "營業時間：週一至週六： 15:00-00:00 週日公休",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "池先生 Kopitiam",
+    "subtitle": "大安店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區復興南路二段385號",
+    "phone": "",
+    "highlight": "折$30",
+    "offer": "主餐加飲料可折抵30元",
+    "info": "營業時間：週一至週日： 11:30–15:00, 17:00–20:30",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "其實豆製所",
+    "subtitle": "瑞安店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區瑞安街274號",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "特定商品享九折優惠或累計點數（擇一）",
+    "info": "營業時間：週一至週日： 08:30-21:00",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "旭倉咖哩",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區辛亥路二段169號1樓",
+    "phone": "",
+    "highlight": "贈品",
+    "offer": "憑學生證贈送紅茶一杯（價值30元）",
+    "info": "營業時間：週一至週五：11:00–14:30, 17:00–20:00",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "SELF Oasis 綠洲",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區瑞安街135巷4號1樓",
+    "phone": "",
+    "highlight": "贈品",
+    "offer": "憑學生證贈送一杯shot",
+    "info": "營業時間：週日至週四：17:30-01:00 週五、週六：17:30-02:00",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "小拾聚",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區復興南路二段325號",
+    "phone": "",
+    "highlight": "贈品",
+    "offer": "消費滿400元享小點一份",
+    "info": "營業時間：週一至週六：11:30-20:00",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "山焙 SUNBAY",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區和平東路二段363號",
+    "phone": "",
+    "highlight": "95折",
+    "offer": "外帶自取優惠：冰飲料中杯免費升級大杯、熱飲料打九五折\n外送優惠：不限距離滿300元即可外送，滿十送一（贈送價格低者）",
+    "info": "營業時間：週一至週五： 10:30-21:00 週六、週日：12:00-20:30",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "貢茶",
+    "subtitle": "全台門市均適用",
+    "category": "food",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "全台貢茶門市",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "1.貢茶全台門市購買大杯飲品，享九折優惠，但不得與其他優惠併用\n2.購買25杯以上飲品可享八五折優惠（大量訂購須自取，請提前一週訂購）\n3.購買50杯以上飲品可享八折優惠\n（大量訂購須自取，請提前一週訂購）",
+    "info": "",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/%E5%85%B6%E4%BB%96%E5%9C%B0%E5%8D%80",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "Agoda 訂房網",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "額外7%折扣",
+    "offer": "透過Agoda x 臺大系統學生會專屬網站訂房，有「適用額外優惠」標籤者，訂房金額滿1000元可使用折扣碼：ntusa34，除網站本身優惠外可另外享 7％折扣。\n（優惠碼使用期限至2022/12/31，適用入住日期至2023/03/31）\n（詳細規範內容以網站中寫明之條款與規範為主）",
+    "info": "",
+    "links": [
+      {
+        "label": "Agoda x 臺大系統學生會專屬網站",
+        "url": "https://www.agoda.com/zh-tw/c/ntusa"
+      }
+    ],
+    "expires_on": "2022-12-31",
+    "auto_renew": false,
+    "notes": "優惠碼使用期限至2022/12/31（適用入住日期至2023/03/31），已過期。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E7%94%9F%E6%B4%BB-%E5%A8%9B%E6%A8%82",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "23 Public Craft Beer",
+    "subtitle": "精釀吧",
+    "category": "entertainment",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區辛亥路一段100號1樓",
+    "phone": "",
+    "highlight": "7折",
+    "offer": "1.三校學生週日至週四憑學生證可「免費」租借地下一樓展演空間（約可容納40人），入場人員每人低消為一杯飲料，低消飲料可打七折。\n2.租借場地前須先與店長聯繫，以利確認可租借之時段及最高容納人數\n3.週五、週六場地租借需另外與店家洽詢，不在本合約之優惠範圍中",
+    "info": "營業時間：週一至週日： 15:30-00:00",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E7%94%9F%E6%B4%BB-%E5%A8%9B%E6%A8%82",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "台一數位影印印刷",
+    "subtitle": "",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市中正區汀州路三段131號",
+    "phone": "",
+    "highlight": "優惠價",
+    "offer": "影印: 黑白單面0.55元/面；雙面0.45元/面；彩色4元/面\n裝訂:黑白封面20元/本；彩色封面30元/本\n急件海報2小時交件，每才30元",
+    "info": "營業時間：週一到週五：09:00 - 21:00 週六：10:00 - 18:00",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E7%94%9F%E6%B4%BB-%E5%A8%9B%E6%A8%82",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "飛捷廣告影印數位印刷",
+    "subtitle": "台大店",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區辛亥路二段161、163號",
+    "phone": "",
+    "highlight": "優惠價",
+    "offer": "黑白列印0.5元/張（限自動列印、限A4以下尺寸）\n彩色列印4元/張",
+    "info": "營業時間：週一至週日：09:00–21:00",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E7%94%9F%E6%B4%BB-%E5%A8%9B%E6%A8%82",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "愛閱二手書坊",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區和平東路二段14號地下一樓",
+    "phone": "",
+    "highlight": "85折",
+    "offer": "消費享85折優惠（指定商品不適用）",
+    "info": "營業時間：12:00–21:00",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E7%94%9F%E6%B4%BB-%E5%A8%9B%E6%A8%82",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "伸騰1+1眼鏡",
+    "subtitle": "伸騰1+1眼鏡有限公司",
+    "category": "health",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市中正區羅斯福路三段266-1號",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "配鏡九折優惠，彩拋9.5折",
+    "info": "營業時間：週一 ~ 週日 10:30-22:00",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E7%94%9F%E6%B4%BB-%E5%A8%9B%E6%A8%82",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "國泰美術社",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區和平東路一段184-2號1樓",
+    "phone": "",
+    "highlight": "會員價",
+    "offer": "出示三校學生證可享一般會員價，已特價商品則不再折扣",
+    "info": "營業時間：週一至週六： 09:30–20:30 週日：11:00–17:00",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E7%94%9F%E6%B4%BB-%E5%A8%9B%E6%A8%82",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "野球魂棒壘用品店",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區新生南路三段56巷10號",
+    "phone": "",
+    "highlight": "會員價",
+    "offer": "所有商品均享有會員價優惠",
+    "info": "營業時間：週一至週日：14:00-21:30",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E7%94%9F%E6%B4%BB-%E5%A8%9B%E6%A8%82",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "貳號基地Cafe",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "116台北市文山區汀州路四段130號",
+    "phone": "02-8935-2755",
+    "highlight": "9折",
+    "offer": "台大系統教職員工及在校學生憑職員或學生證結帳享九折優惠。\n1.折扣優惠項目不含酒類\n2.不予其他店內優惠活動合併使用\n3.限在校教職員工及學生（限本人）",
+    "info": "營業時間：平日11:00-19:00/假日10:30-20:30（每周四公休）",
+    "links": [],
+    "expires_on": "2021-11-01",
+    "auto_renew": false,
+    "notes": "頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "JOHN DOE CAFÉ 無名氏咖啡",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "116台北市文山區羅斯福路五段225號",
+    "phone": "02 2933 6566",
+    "highlight": "9折",
+    "offer": "九折優惠",
+    "info": "營業時間：09:30-21:30",
+    "links": [],
+    "expires_on": "2021-12-17",
+    "auto_renew": false,
+    "notes": "頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "2D Cafe",
+    "subtitle": "師大旗艦店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "106台北市大安區師大路59巷10號",
+    "phone": "02 2366 0250",
+    "highlight": "85折",
+    "offer": "1.憑學生證或教職證消費享整筆85折優惠\n2.消費可加入「2D師大VIP會員」每人每日限一杯5折飲品，以及不定期精美小禮物贈送或套餐優惠",
+    "info": "營業時間：10:30-21:30",
+    "links": [],
+    "expires_on": "2022-01-01",
+    "auto_renew": false,
+    "notes": "頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "旺禾港式燒臘",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "106台北市大安區泰順街34號1樓",
+    "phone": "02 2366 0058",
+    "highlight": "折$5",
+    "offer": "1.外帶、內用，每一分便當折5元\n2.外送達10分便當，每一分便當折5元（未達10分則原價計算）",
+    "info": "營業時間：10:30-19:30（每周日公休）",
+    "links": [],
+    "expires_on": "2021-12-15",
+    "auto_renew": false,
+    "notes": "頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "13_Burger",
+    "subtitle": "13 Burger",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "106台北市大安區師大路49巷13號1樓",
+    "phone": "0975 266 918",
+    "highlight": "折$10",
+    "offer": "漢堡品項折10元",
+    "info": "營業時間：12:00-14:00/17:00-22:00（每周一公休）",
+    "links": [],
+    "expires_on": "2021-12-16",
+    "auto_renew": false,
+    "notes": "頁面所列優惠期限已過。頁面另列「2.外送達10分便當，每一分便當折5元（未達10分則原價計算）」，疑為自上一店家複製之誤植，未納入。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "怪獸小雞排",
+    "subtitle": "師大店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "106台北市大安區師大路98號",
+    "phone": "0981 819 722",
+    "highlight": "9折",
+    "offer": "九折優惠",
+    "info": "營業時間：16:00-01:30",
+    "links": [],
+    "expires_on": "2021-12-20",
+    "auto_renew": false,
+    "notes": "頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "騎士碁ChessChicken-雞排專賣店",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "106台北市大安區師大路49巷10號",
+    "phone": "02 2369 7885",
+    "highlight": "折$5",
+    "offer": "套餐減5元",
+    "info": "營業時間：14:00-22:30（每周三公休）",
+    "links": [],
+    "expires_on": "2022-01-17",
+    "auto_renew": false,
+    "notes": "頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "老茶人",
+    "subtitle": "師大店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "106台北市大安區師大路104號",
+    "phone": "02 2366 1028",
+    "highlight": "折$10",
+    "offer": "現場消費折10元，不與其它優惠方案共用",
+    "info": "營業時間：11:00-23:00",
+    "links": [],
+    "expires_on": "2021-12-17",
+    "auto_renew": false,
+    "notes": "頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "藍鵲",
+    "subtitle": "師大店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "106台北市大安區師大路106號",
+    "phone": "02 3365 3371",
+    "highlight": "9折",
+    "offer": "9折",
+    "info": "營業時間：10:00-22:00",
+    "links": [],
+    "expires_on": "2022-01-27",
+    "auto_renew": false,
+    "notes": "頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "男子漢早餐店",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "106台北市大安區泰順街16巷36號",
+    "phone": "02 2369 6066",
+    "highlight": "贈品",
+    "offer": "消費滿150元，即贈送小杯紅茶乙杯（可補差額換大杯，一張學生證限換乙次）",
+    "info": "營業時間：07:00-13:30（每周一公休）",
+    "links": [],
+    "expires_on": "2022-01-19",
+    "auto_renew": false,
+    "notes": "頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "芳鄰健身事業有限公司",
+    "subtitle": "",
+    "category": "health",
+    "regions": [
+      "north"
+    ],
+    "address": "116台北市文山區羅斯福路六段130號",
+    "phone": "02 7703 2559",
+    "highlight": "優惠價",
+    "offer": "1.場地器材消費優惠：兩人同行，且各消費100元，享免卡片工本費100元（第一次申辦）\n2.團體課程優惠：單次體驗，一點課程享160元優惠價，二點課程享320元（單堂）",
+    "info": "營業時間：07:00-23:50",
+    "links": [],
+    "expires_on": "2022-03-08",
+    "auto_renew": false,
+    "notes": "頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E5%85%B6%E4%BB%96",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "玉欣珍",
+    "subtitle": "台式小吃和平店／異國料理店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區和平東路2段255-1號(台式小吃和平店)；台北市大安區復興南路2段189號(異國料理店)",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "#須出示三校學生證才可享優惠\n全天候餐點9折\n學生訂購團體便當，可客製化製作100元便當（滿3000可外送）\n當日壽星憑證件贈送150元以內餐點\n提供50人會議場地提供學生租借",
+    "info": "營業時間：24小時（台式小吃和平店）；10:30-21:30(異國料理店)(若需訂位可事先協調時間)",
+    "links": [],
+    "expires_on": "2022-04-07",
+    "auto_renew": false,
+    "notes": "頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E7%A7%91%E5%A4%A7/%E9%A3%B2%E9%A3%9F",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "上賀海南雞腿飯",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區羅斯福路三段333巷2-1號",
+    "phone": "",
+    "highlight": "贈品",
+    "offer": "#須出示三校學生證才可享優惠\n依照人數送任意小菜一份",
+    "info": "營業時間：11:00-22:30",
+    "links": [],
+    "expires_on": "2022-06-30",
+    "auto_renew": false,
+    "notes": "頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E7%A7%91%E5%A4%A7/%E9%A3%B2%E9%A3%9F",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "眯糊茶",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區復興南路二段206號",
+    "phone": "",
+    "highlight": "85折",
+    "offer": "#須出示三校學生證才可享優惠\n飲品全品項85折，免費加料",
+    "info": "營業時間：10：00～22：00(星期六～星期日休息)",
+    "links": [],
+    "expires_on": "2022-06-30",
+    "auto_renew": false,
+    "notes": "頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E7%A7%91%E5%A4%A7/%E9%A3%B2%E9%A3%9F",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "油力特機油認證店",
+    "subtitle": "",
+    "category": "services",
+    "regions": [
+      "north",
+      "central",
+      "south"
+    ],
+    "address": "全台北中南服務據點(https://reurl.cc/ynKorO)",
+    "phone": "",
+    "highlight": "贈品",
+    "offer": "#須出示三校學生證才可享優惠\n1.汽/機車引擎油泥清洗劑一次（市值500元）\n2.機車傳動室清潔健檢【皮帶/普利珠（盤）/離合器/碗公等】\n3.提供店內插入內補式補胎以及店內接電啟動\n4.汽/機車道路救援載運回店內維修，及外出計費接電啟動或運送汽油（基本里程5公里內免費，超過公里數請洽店家）\n5.提供代步車借用（由店家決定是否借出）/到府牽車（5公里內）\n6.代辦驗車及各項汽/機車保險業務\n7.專業電腦診斷張器健檢\n8.煞車系統檢查/輪胎安全性檢查/引擎狀況異音告知\n9.機車保養維修後，車輛外觀清洗（依店家為主）\n10.凡到認證店指定更換油力特任一款機油即可享有免費添加X-3000機油精或高效潤滑噴油嘴清潔劑",
+    "info": "營業時間：依各店營業時間為主",
+    "links": [
+      {
+        "label": "服務據點",
+        "url": "https://reurl.cc/ynKorO"
+      }
+    ],
+    "expires_on": "2022-04-09",
+    "auto_renew": false,
+    "notes": "頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E7%A7%91%E5%A4%A7/%E4%BA%A4%E9%80%9A",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "威比大廚",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2980-0892",
+    "highlight": "95折",
+    "offer": "#須出示台科大學生證才可享優惠\n（1）不限訂購組數，免運費。\n（2）不限訂購組數，結帳金額全面95折。\n（3）單一訂單訂購滿10組，每組加贈烤肉網乙面＆1L飲料乙瓶。\n（4）單一訂單訂購滿20組，每組肉量1.5倍升級。\n（5）單一訂單訂購滿30組，每組加贈50g A5和牛片。\n（6）以上優惠可同時享有。",
+    "info": "line id:@wibbyhappy",
+    "links": [],
+    "expires_on": "2022-06-30",
+    "auto_renew": false,
+    "notes": "頁面所列優惠期限已過。限臺科大學生證，臺大學生不適用。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTUST"
+    ],
+    "source_level": "student_org",
+    "source_org": "臺大系統學生會",
+    "source_url": "https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E7%A7%91%E5%A4%A7/%E5%85%B6%E4%BB%96",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "可唐精品茶旅 KALU TEA",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "社會科學院地下1樓",
+    "phone": "0911-881-686",
+    "highlight": "9折",
+    "offer": "1.自備餐具折減5元\n2.國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：平日10:00~19:00、週六10:00~17:00\n營業項目：手搖飲、優格、貝果、厚片、健康餐、簡餐",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784192183058&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "卓聯門市",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "禮賢樓商場1樓",
+    "phone": "02-2362-7127",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠(酒、免稅農產品、代售品除外)",
+    "info": "營業時間：平日07:00~19:00、週六07:00~15:00\n營業項目：多元化日常生活服務",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://www.7-11.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784192832865&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "路易莎咖啡",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "禮賢樓商場2樓",
+    "phone": "02-2367-6613",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠(外送服務以原價計算)",
+    "info": "營業項目：咖啡、簡餐",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://www.louisacoffee.co/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784193030497&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "品軒樓中餐廳",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "禮賢樓商場2樓",
+    "phone": "02-2365-1122",
+    "highlight": "9折",
+    "offer": "國立臺灣大學聯盟之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：全日11:30~20:00(午休14:00~17:00)\n營業項目：中餐廳、自助餐",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://reurl.cc/0z7NKk"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。原文為「國立臺灣大學聯盟之教職員工生、臺大校友及退休人員」，是否含臺師大、臺科大未明確，暫列臺大。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784193324298&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "福德食堂",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "禮賢樓商場2樓",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "1.自備餐具(盒)折減5元\n2.國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：平日11:00~18:00、週六11:00~14:00\n營業項目：麵食類、飯類",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784193550298&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "蘇杭餐廳",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市中正區濟南路一段2-1號(校友會館)",
+    "phone": "02-2396-3186",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：11:30~14:00、17:30~21:00\n營業項目：中式料理",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "http://www.suhung.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784194326217&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "小木屋鬆餅",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "鹿鳴廣場(舟山路)",
+    "phone": "02-8369-5722",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：平日09:30-19:00、假日09:30-18:30\n營業項目：鬆餅、炸物點心、飲料",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://shinemood2006.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784194707632&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "舟山門市",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "小小福及望樂樓旁",
+    "phone": "02-3365-2414",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：週一至週五07:00~23:00，週六、日及寒暑假07:00~22:00\n營業項目：便利商店",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "http://www.family.com.tw/Marketing/index.aspx"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784194866037&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "85度C",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "鹿鳴廣場",
+    "phone": "02-2369-0085",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠；當月壽星6吋、8吋蛋糕9折；當日壽星6吋、8吋蛋糕85折",
+    "info": "營業時間：08:00~20:00，寒暑假10:00~20:00(暑假之每週日公休)\n營業項目：咖啡、茶飲、蛋糕點心",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784195076738&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "銅板Pizza",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "鹿鳴廣場",
+    "phone": "02-2369-0085",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：08:00~20:00，寒暑假10:00~20:00(暑假之每週日公休)\n營業項目：披薩、焗烤、義大利麵、飲料",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784252320980&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "二活門市",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市羅斯福路四段85號1樓",
+    "phone": "02-7709-6561",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：07:00~23:00\n營業項目：便利商店",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "http://www.family.com.tw/Marketing/index.aspx"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784252653301&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "SUBWAY",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市羅斯福路四段85號1樓",
+    "phone": "02-3365-2629",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠。",
+    "info": "營業時間：08:00~22:00\n營業項目：健康輕食、潛艇堡、三明治",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://subway.com.tw/GoWeb2/include/index.html"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784253196843&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "魯山人壽喜鍋物",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市羅斯福路四段85號1樓",
+    "phone": "02-2363-0339",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：11:00~22:00\n營業項目：壽喜鍋、涮涮鍋",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "http://www.sukiyaki.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784253355881&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "龐德羅莎",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市羅斯福路四段85號2樓",
+    "phone": "02-2366-0046",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：11:30~21:30\n營業項目：牛排餐、海鮮餐、雞豬組合餐、沙拉吧、下午茶",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "http://www.ponderosa.com.tw"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784253491627&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "莫凡彼咖啡館",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市羅斯福路四段85號1樓",
+    "phone": "02-2362-2579",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠\n(套餐優惠不得重複使用)",
+    "info": "營業時間：11:00-21:30\n營業項目：甜點、咖啡飲品、西式餐食、冰淇淋",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://www.mvp-icecream.com.tw/index.php?ac=MenuShow1&sn=32"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784257222130&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "曉鹿鳴樓",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市羅斯福路四段85號1樓",
+    "phone": "02-2368-8994",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：11:00~14:30、17:00~21:00\n營業項目：中式料理",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://gugokitchen.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784257381974&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "DOKI POKE夏威夷蒸鮮飯 二活門市",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市羅斯福路四段85號1樓",
+    "phone": "02-2365-7568",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：11:00~14:30、16:30~19:00\n營業項目：健康餐料理",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://shop.ichefpos.com/store/fMaBSbT5/ordering"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784257627236&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "小蔬杭",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市羅斯福路四段85號2樓",
+    "phone": "02-2363-7288",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：週二至週日11:30~14:30、17:30~21:00，週一公休\n營業項目：健康養生蔬食為主",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://suhung.com.tw/story.php?b=2"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784257767363&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "熊一頂級燒肉",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市羅斯福路四段85號2樓",
+    "phone": "02-2362-0681",
+    "highlight": "95折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證95折優惠",
+    "info": "營業時間：11:30~22:00\n營業項目：燒肉放題",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://www.mala.com.tw/Home/BrandIndex?verificationCode=2E07D5C6BC66E4B01B3E254E8245FF89"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784258058518&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "全家便利商店台福門市",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "文學院旁腳踏車部",
+    "phone": "02-8369-1892",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：7:00~23:00\n營業項目：多元化日常生活服務",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "http://www.family.com.tw/Marketing/index.aspx"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784277656019&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "里洋烘培坊",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "校總區第一學生活動中心",
+    "phone": "02-2366-1082",
+    "highlight": "89折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證享下列優惠\n1.活大餐廳享89折優惠。(麥當勞9折優惠)。\n2.萊爾富便利商店享85折優惠。(除代收售、服務性商品等無法折扣商品)",
+    "info": "營業時間：平日09:00~20:00  ; 假日10:00~19:00\n營業項目：麵包、西點、蛋糕",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784277835521&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "萊爾富便利商店",
+    "subtitle": "新台大門市",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "校總區第一學生活動中心",
+    "phone": "02-2362-0819",
+    "highlight": "85折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證85折優惠",
+    "info": "營業時間：24小時營業\n營業項目：多元化日常生活服務",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://www.hilife.com.tw/page/index"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784278238771&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "麥當勞",
+    "subtitle": "McDonald's",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "校總區第一學生活動中心",
+    "phone": "02-2362-1290",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證享下列優惠\n1.活大餐廳享89折優惠。(麥當勞9折優惠)。\n2.萊爾富便利商店享85折優惠。(除代收售、服務性商品等無法折扣商品)",
+    "info": "營業時間：07:00~22:00\n營業項目：速食",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://www.mcdonalds.com/tw/zh-tw.html"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784278600942&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "御喜自助餐",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "校總區第一學生活動中心",
+    "phone": "02-2367-0387",
+    "highlight": "89折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證享下列優惠\n1.活大餐廳享89折優惠。(麥當勞9折優惠)。\n2.萊爾富便利商店享85折優惠。(除代收售、服務性商品等無法折扣商品)",
+    "info": "營業時間：10:30~14:30、16:30~19:30\n營業項目：自助餐",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784278678800&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "食香園素食館",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "106臺北市大安區學府里羅斯福路四段1號第一學生活動中心",
+    "phone": "02-2368-7839",
+    "highlight": "89折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證享下列優惠\n1.活大餐廳享89折優惠。(麥當勞9折優惠)。\n2.萊爾富便利商店享85折優惠。(除代收售、服務性商品等無法折扣商品)",
+    "info": "營業時間：週一至週五11:00~14:00、16：30~19:00\n營業項目：素食自助餐",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784278898435&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "四海遊龍",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "106臺北市大安區學府里羅斯福路四段1號第一學生活動中心",
+    "phone": "02-2368-6478",
+    "highlight": "89折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證享下列優惠\n1.活大餐廳享89折優惠。(麥當勞9折優惠)。\n2.萊爾富便利商店享85折優惠。(除代收售、服務性商品等無法折扣商品)",
+    "info": "營業時間：週一至週六11:00~19:00\n營業項目：鍋貼、水餃",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "http://www.0800224466.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784278960495&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "Drinkstore 水雲朵",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "106臺北市大安區學府里羅斯福路四段1號第一學生活動中心",
+    "phone": "02-2366-1686",
+    "highlight": "89折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證享下列優惠\n1.活大餐廳享89折優惠。(麥當勞9折優惠)。\n2.萊爾富便利商店享85折優惠。(除代收售、服務性商品等無法折扣商品)",
+    "info": "營業時間：11:00~18:30\n營業項目：飲品",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://www.drinkstore.com.tw/home.jsp?lang=tw"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784279105868&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "蛋白盒子Theproteinbox",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "106臺北市大安區學府里羅斯福路四段1號第一學生活動中心",
+    "phone": "02-2369-9193",
+    "highlight": "89折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證享下列優惠\n1.活大餐廳享89折優惠。(麥當勞9折優惠)。\n2.萊爾富便利商店享85折優惠。(除代收售、服務性商品等無法折扣商品)",
+    "info": "營業時間：週一至週六11:00~14:00、16:00~19:30，週日公休\n營業項目：健康餐盒",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://www.theproteinbox.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784279252535&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "糧晨GET食",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "106臺北市大安區學府里羅斯福路四段1號第一學生活動中心",
+    "phone": "0905-556-589",
+    "highlight": "89折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證享下列優惠\n1.活大餐廳享89折優惠。(麥當勞9折優惠)。\n2.萊爾富便利商店享85折優惠。(除代收售、服務性商品等無法折扣商品)",
+    "info": "營業時間：07:00~16:30\n營業項目：早午餐、輕食、義大利麵",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784279450192&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "全家便利商店台一宿舍門市",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "大一女宿舍",
+    "phone": "02-2367-2617",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：7:00~23:00\n營業項目：多元化日常生活服務",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "http://www.family.com.tw/Marketing/index.aspx"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1786324701659&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "CoCo壹番屋咖哩餐廳",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "大一女宿舍",
+    "phone": "02-8369-2980",
+    "highlight": "85折",
+    "offer": "自備餐盒折扣5元。國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證85折優惠",
+    "info": "營業時間：11:00~22:00\n營業項目：日式",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://www.ichibanya.com.tw/web/index/index.jsp"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1786326612509&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "全家便利商店台興門市",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "男生第三宿舍(台北市大安區長興街50號)",
+    "phone": "02-2732-4804",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：07:00~02:00\n營業項目：商品零售、多元生活便利服務",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "http://www.family.com.tw/Marketing/index.aspx"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1786326859398&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "萊爾富便利商店大安學霸門市",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "研三舍(國青大樓)",
+    "phone": "02-8978-1508",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：07:00~20:00\n營業項目：多元化日常生活服務",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://www.hilife.com.tw/page/index"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1786327339713&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "男七萊爾富便利商店",
+    "subtitle": "大安勵學門市",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "臺大長興街男七宿舍",
+    "phone": "02-2737-5015",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：07:00~23:00\n營業項目：便利商店",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://meals.ntu.edu.tw/restaurant/info/id/270"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1786347679053&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "MD創作料理",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "明達館一樓",
+    "phone": "02-2362-0658",
+    "highlight": "9折",
+    "offer": "凡臺大師生(包含EMBA)出示證件，消費即享9折優惠 (服務費、清潔費及酒類飲品不在此列 ，未盡事宜以餐廳公告為主)。",
+    "info": "營業時間：11:30~14:30、17:30~21:00，每週日、一公休\n營業項目：西餐",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://restaurants.anyongfresh.com/md/news"
+      },
+      {
+        "label": "官方網站",
+        "url": "https://reurl.cc/1017O9"
+      },
+      {
+        "label": "官方網站",
+        "url": "https://restaurants.anyongfresh.com/md"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1786431866521&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "Toh-A桌藏餐廳",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市大安區和平東路二段76巷23弄9號",
+    "phone": "02-2377-0952",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：12:00~15:00、18:00~22:30，每週一、二公休\n營業項目：工業風時尚餐廳，提供高級的法式與台式融合料理",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://inline.app/booking/-MoWgGOFAsbtV_n0oF-A:inline-live-2/-MoWgGZs4C2iTwKlug_y?language=zh-tw"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1787041500590&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "無二會所",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市大安區錦泰里杭州南路二段61巷12號",
+    "phone": "02-7730-8499#608",
+    "highlight": "9折",
+    "offer": "國立臺灣大學在職教職員生憑證享餐飲及自有商品9折優惠",
+    "info": "營業項目：季節餐食、活動場租、五感體驗",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://wuer2015.mystrikingly.com/"
+      },
+      {
+        "label": "官方網站",
+        "url": "https://x.gd/2HZYM"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。原文為「國立臺灣大學在職教職員生」，學生是否適用請向店家確認。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1787046066597&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "玖蜜沐喜",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "禮賢樓商場2樓",
+    "phone": "02-2363-2913",
+    "highlight": "9折",
+    "offer": "1.自備餐具(盒)折減2元\n2.國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠(優惠餐食除外)",
+    "info": "營業時間：平日09:00~18:00、週六09:00~16:00\n營業項目：素食為主，亦有提供葷食",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://life.ntu.edu.tw/uploads/root/Germeemulsi/玖蜜沐喜_一頁式總菜單_A4_20261004.pdf"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1787131397478&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "輝室 pān-toh",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市中正區南昌路二段1巷2號",
+    "phone": "02-3322-6298",
+    "highlight": "9折",
+    "offer": "結帳時出示「國立臺灣大學在職教職員」證件，即可享9折優惠。",
+    "info": "營業項目：午、晚餐時段提供季節套餐，午茶時段提供咖啡、台灣茶、調酒等飲品。",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://inline.app/booking/pantoh/212"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。限在職教職員，學生不適用。",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1787217186369&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "Gia越式河粉",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "106臺北市大安區學府里羅斯福路四段1號第一學生活動中心",
+    "phone": "0989-022-631",
+    "highlight": "89折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證享下列優惠\n1.活大餐廳享89折優惠。(麥當勞9折優惠)。\n2.萊爾富便利商店享85折優惠。(除代收售、服務性商品等無法折扣商品)",
+    "info": "營業項目：越式河粉、涼拌、飯類",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1787561015721&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "女六餐廳",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "10055臺北市中正區徐州路2之2號",
+    "phone": "02-2396-6871",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：週一至週五11:00~20:00，週日17:00~20:00，週六週公休\n營業項目：火鍋",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1788316095241&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "全家便利商店台六宿舍門市",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "女生第六宿舍(徐州路2-2號)",
+    "phone": "02-33226216",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：24HR\n營業項目：多元化日常生活服務",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1788316722091&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "義饗食堂",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "尊賢館2樓",
+    "phone": "02-7735-5089",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：11:30~14:00\n營業項目：單點+自助蔬食吧",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://lihi2.me/JDpDt"
+      },
+      {
+        "label": "官方網站",
+        "url": "https://www.justsleephotels.com/NTU/tw/diningsandmeetings"
+      },
+      {
+        "label": "官方網站",
+        "url": "https://inline.app/booking/-NXiFy7g6QYL6MdZUIDx:inline-live-3/-NXiFyKseP-YUgovK7In"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1788507605208&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "綠色小屋",
+    "subtitle": "酷鎷",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "網路購買、綠色小屋(學生心理輔導中心對面，近鹿鳴廣場)",
+    "phone": "02-3365-2112",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：週一至週五11:30~18:00；週六、週日公休\n營業項目：NTU帽T、飛行外套、背包、文具、紀念品等",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://www.instagram.com/ntugreenhouse?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
+      },
+      {
+        "label": "官方網站",
+        "url": "https://m.facebook.com/coolcode/"
+      },
+      {
+        "label": "官方網站",
+        "url": "https://lin.ee/jJn4tM8"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「珍藏好記憶」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/ntu_gifts/ntu_gifts_in.jsp?np_id=NP1784858320412&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "臺大酷樂網NTU Colaz",
+    "subtitle": "采豐",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "網路販售、臺大出版中心-校史館店、臺大農產品展示中心-舟山店",
+    "phone": "02-2945-8912",
+    "highlight": "折$100",
+    "offer": "一、加入官方LINE可獲得50元折扣碼\n二、於結帳畫面輸入「NTU100」可享滿千折百優惠\n三、加入IG粉專可參與NTU商品抽獎，還能獲得第一手優惠資訊喔！",
+    "info": "營業時間：網路販售全年無休\n營業項目：臺大授權商品（短T、帽T、連帽外套、棒球外套、飛行外套、背包、文具、紀念品等百樣商品）",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://ntugift.colaz.com.tw/"
+      },
+      {
+        "label": "官方網站",
+        "url": "https://www.instagram.com/ntucolaz"
+      },
+      {
+        "label": "官方網站",
+        "url": "https://www.facebook.com/ntucolaz"
+      },
+      {
+        "label": "官方網站",
+        "url": "https://lin.ee/DHKpOdC"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「珍藏好記憶」所列商家（多為校內或臺大館舍委外商家）。官網折扣碼／LINE折扣，頁面未限身分。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/ntu_gifts/ntu_gifts_in.jsp?np_id=NP1784861263549&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "臺大農場農產品展示中心",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "臺大校內-臺大農場農產品展示中心(舟山路)",
+    "phone": "02-3366-2555",
+    "highlight": "95折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證95折優惠",
+    "info": "營業時間：08:00~18:30",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「珍藏好記憶」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/ntu_gifts/ntu_gifts_in.jsp?np_id=NP1784861263549&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "男子理髮部",
+    "subtitle": "",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "農化系實驗室",
+    "phone": "0910-080-474",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：週一至週六8:00~17:30，週日公休\n營業項目：男士理髮、理容",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「便利小幫手」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/other_services/other_services_in.jsp?np_id=NP1784271109996&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "女子美髮部",
+    "subtitle": "",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "農化系實驗室",
+    "phone": "02-2365-0358",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：週一至週六8:00~17:30，週日公休\n營業項目：女士理髮、理容",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「便利小幫手」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/other_services/other_services_in.jsp?np_id=NP1784271466227&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "東昌乾洗商店",
+    "subtitle": "",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "農化系實驗室",
+    "phone": "0926-988-484",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：週一至週六8:00~17:00，午休12:30~13:30\n營業項目：衣物送洗服務",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「便利小幫手」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/other_services/other_services_in.jsp?np_id=NP1784272161583&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "愷元單車店",
+    "subtitle": "",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "文學院旁腳踏車部",
+    "phone": "02-2369-5276",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：週一至週五8:30~18:00、週六11:00~17:00、週日及國定假日公休\n營業項目：腳踏車維修、販售",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://www.facebook.com/ffuussing/?locale=zh_TW"
+      },
+      {
+        "label": "官方網站",
+        "url": "https://life.ntu.edu.tw/uploads/root/愷元/價目表.pdf"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「便利小幫手」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/other_services/other_services_in.jsp?np_id=NP1784274088060&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "Zoot眼鏡",
+    "subtitle": "台灣大學卓聯店",
+    "category": "health",
+    "regions": [
+      "north"
+    ],
+    "address": "禮賢樓商場2樓",
+    "phone": "02-3365-3430",
+    "highlight": "9折",
+    "offer": "國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠",
+    "info": "營業時間：週一至週日11:00~19:00。\n營業項目：眼鏡相關商品販售",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://reurl.cc/VWg5yN"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「逛逛放輕鬆」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/shopping/shopping_in.jsp?np_id=NP1784693200047&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "Straight A Apple 校園體驗中心",
+    "subtitle": "臺灣大學門市",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "學新館1樓",
+    "phone": "02-2862-2015",
+    "highlight": "教育優惠",
+    "offer": "國立臺灣大學之在學教職員工生以及幼稚園、國高中小教師，眾多商品可享教育折扣",
+    "info": "營業時間：平日10:00~20:00、假日10:00~18:00\n營業項目：Apple相關電腦設備及周邊 (適用教職員校內經費採購)",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "https://shop.straighta.com.tw/home"
+      },
+      {
+        "label": "官方網站",
+        "url": "https://lin.ee/wfKzl96"
+      },
+      {
+        "label": "官方網站",
+        "url": "https://www.instagram.com/straighta.ntu"
+      },
+      {
+        "label": "官方網站",
+        "url": "https://www.threads.com/@straighta.ntu?igshid=NTc4MTIwNjQ2YQ=="
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「逛逛放輕鬆」所列商家（多為校內或臺大館舍委外商家）。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/shopping/shopping_in.jsp?np_id=NP1787649758917&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "校史館書店",
+    "subtitle": "臺灣大學出版中心",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "106216 臺北市羅斯福路四段1號 臺大校史館二樓",
+    "phone": "02-3366-1523",
+    "highlight": "8折",
+    "offer": "書籍8折、紀念品校外人士9折、 校內人士88折",
+    "info": "營業時間：週一至週六09:00~17:00(每月最後一個星期二及國定假日公休)",
+    "links": [
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/ntuprsbookstore"
+      },
+      {
+        "label": "臺大紀念品線上商店",
+        "url": "https://shop.press.ntu.edu.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「珍藏好記憶／臺灣大學出版中心」所列校內書店。紀念品88折為校內人士價，頁面未定義「校內人士」範圍。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/ntu_gifts/ntu_gifts_in.jsp?np_id=NP1785201468313&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "校總區書店",
+    "subtitle": "臺灣大學出版中心",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "106216 臺北市羅斯福路四段1號 臺大校總區圖書館地下一樓",
+    "phone": "02-2365-9286",
+    "highlight": "8折",
+    "offer": "書籍8折，紀念品88折",
+    "info": "營業時間：週一至週五08:30~17:00(2020年4月起12:00~13:00休息，週六、日、例假日公休)",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "http://www.press.ntu.edu.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「珍藏好記憶／臺灣大學出版中心」所列校內書店。頁面未載明適用身分。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/ntu_gifts/ntu_gifts_in.jsp?np_id=NP1785201468313&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "水源校區書店",
+    "subtitle": "臺灣大學出版中心",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "100047 臺北市思源街18號  臺大水源校區澄思樓一樓",
+    "phone": "02-3366-3993分機18",
+    "highlight": "8折",
+    "offer": "書籍8折、紀念品88折",
+    "info": "營業時間：週一至週五08:30~12:00、13:00~17:00 (週六、日、例假日公休)",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "http://www.press.ntu.edu.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "台大生活便利通「珍藏好記憶／臺灣大學出版中心」所列校內書店。頁面未載明適用身分。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/ntu_gifts/ntu_gifts_in.jsp?np_id=NP1785201468313&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "太子文旅修齊館",
+    "subtitle": "臺大修齊會館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "10087台北市中正區思源街16-1號",
+    "phone": "02-2363-1066，分機轉40199或轉5",
+    "highlight": "特約優惠",
+    "offer": "房價表詳見官網，臺大教職員工、其眷屬及校友需憑證件另享優惠，並設有忠誠客戶(同房型連續住宿16晚(含)以上)方案供不同需求者參考。",
+    "info": "營業時間：24小時\n營業項目：長期及短期住宿服務",
+    "links": [
+      {
+        "label": "官方網站",
+        "url": "http://hsiuchi.prince.com.tw"
+      },
+      {
+        "label": "房價表",
+        "url": "https://hsiuchi.prince.com.tw/rooms_price.php"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "校內住宿。頁面未提及學生適用。",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/accommodation/accommodation_in.jsp?np_id=NP1785230037235&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "京倫會所",
+    "subtitle": "",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "100臺北市中正區臨沂街44巷1號",
+    "phone": "02-2356-9188",
+    "highlight": "8折",
+    "offer": "全區包場：5,000元/小時(至少4小時)，全天35,000元，5pm後及超時6,000元/小時。\n會議室(上限7人)/榻榻米區(上限12人)：8,000元/4小時\n展覽：10天60,000元，30天150,000元\n【台大教職員工租借享8折優惠】",
+    "info": "開放時段：週一~週五 10:00~17:00（如活動遇週六、日，請提早告知以利安排）\n可容納人數：依活動性質，最多45-50人",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "經管組委外場地包場服務；8折限台大教職員工。",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/other_services/other_services_in.jsp?np_id=NP1784706742587&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "CAMA CAFE",
+    "subtitle": "台大新生南店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區新生南路三段76巷1號",
+    "phone": "02-2368-3055",
+    "highlight": "9折",
+    "offer": "CAMA CAFE 咖啡分享桶（微韻美式$550／桶；金獎美式、熟香紅茶、栗香焙煎茶$650/桶；雙冠莊園精品美式 $750/桶）台大新生南店專屬優惠：憑台大相關證件，自取享 9 折優惠！",
+    "info": "營業時間：07:30-18:00(平日)/ 07:00-18:00(例假日)",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "生活便利通「生活新鮮事」2026-09-07 公告；僅限咖啡分享桶自取，未載明期限。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大總務處經營管理組（台大生活便利通）",
+    "source_url": "https://life.ntu.edu.tw/web/news/news_in.jsp?np_id=NP1788745435697&npage=1",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "茶士丁尼手搖飲",
+    "subtitle": "臺師大和平校區Ⅰ",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大和平校區Ⅰ 樂智樓1樓",
+    "phone": "02-2362-2310",
+    "highlight": "折$5",
+    "offer": "憑證享折5元優惠",
+    "info": "營業時間：週一~週五11:00-19:00(例假日公休)\n商品類型：飲品\n優惠期間：即日起~119/06/30",
+    "links": [],
+    "expires_on": "2030-06-30",
+    "auto_renew": false,
+    "notes": "臺師大和平校區Ⅰ校內商家（樂智樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "WahSay佩佩奶奶義大利麵",
+    "subtitle": "臺師大和平校區Ⅰ",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大和平校區Ⅰ 樂智樓1樓",
+    "phone": "02-3365-1533",
+    "highlight": "特約優惠",
+    "offer": "師大師生註冊會員送100元註冊禮，消費集點還能獲得日式炸雞等人氣餐點",
+    "info": "營業時間：11:00~20:00\n商品類型：義大利麵、咖哩飯\n優惠期間：即日起~119/06/30",
+    "links": [],
+    "expires_on": "2030-06-30",
+    "auto_renew": false,
+    "notes": "臺師大和平校區Ⅰ校內商家（樂智樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "全家便利商店",
+    "subtitle": "樂智樓",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大和平校區Ⅰ 樂智樓1樓",
+    "phone": "02-2368-2773",
+    "highlight": "9折",
+    "offer": "憑證9折，惟咖啡、報紙、雜誌及生鮮農產品除外",
+    "info": "營業時間：7:00-23:00\n商品類型：便利超商\n優惠期間：即日起~119/06/30",
+    "links": [],
+    "expires_on": "2030-06-30",
+    "auto_renew": false,
+    "notes": "臺師大和平校區Ⅰ校內商家（樂智樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "椒麻雞大王",
+    "subtitle": "臺師大和平校區Ⅰ",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大和平校區Ⅰ 學一舍地下1樓",
+    "phone": "02-2367-0178",
+    "highlight": "會員價",
+    "offer": "憑證享會員價之優惠",
+    "info": "營業時間：11:00-20:00(週日公休)\n商品類型：泰式客飯套餐\n優惠期間：即日起~115/06/30",
+    "links": [],
+    "expires_on": "2026-06-30",
+    "auto_renew": false,
+    "notes": "臺師大和平校區Ⅰ校內商家（學一舍地下1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "學一舍校園商店",
+    "subtitle": "臺師大和平校區Ⅰ",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大和平校區Ⅰ 學一舍校園商店",
+    "phone": "02-2369-6582",
+    "highlight": "9折",
+    "offer": "憑證9折",
+    "info": "營業時間：7:30~16:00\n商品類型：文創商品、Cama咖啡、輕食\n優惠期間：即日起~117/06/30",
+    "links": [],
+    "expires_on": "2028-06-30",
+    "auto_renew": false,
+    "notes": "臺師大和平校區Ⅰ校內商家（學一舍校園商店）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "貳樓餐廳",
+    "subtitle": "臺師大和平校區Ⅰ",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大和平校區Ⅰ 樂群樓",
+    "phone": "02-2365-6222",
+    "highlight": "9折",
+    "offer": "憑證9折、另師大之教職員生憑證專屬師大人之外帶特別優惠餐盒",
+    "info": "營業時間：週一至週五10:00~21:00、週六、週日9:00~21:00\n商品類型：美式早午餐、義大利麵、燉飯、飲料、甜品\n優惠期間：即日起~118/06/30",
+    "links": [],
+    "expires_on": "2029-06-30",
+    "auto_renew": false,
+    "notes": "臺師大和平校區Ⅰ校內商家（樂群樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "Saizeriya薩莉亞義式餐廳",
+    "subtitle": "臺師大和平校區Ⅱ",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大和平校區Ⅱ 綜合大樓1樓",
+    "phone": "02-2322-3422",
+    "highlight": "特約優惠",
+    "offer": "憑證可享師大人特餐",
+    "info": "營業時間：11:00~22:00\n商品類型：義式餐飲、比薩、義大利麵、飲品\n優惠期間：即日起~118/06/30",
+    "links": [],
+    "expires_on": "2029-06-30",
+    "auto_renew": false,
+    "notes": "臺師大和平校區Ⅱ校內商家（綜合大樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "起初好好",
+    "subtitle": "臺師大和平校區Ⅱ",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大和平校區Ⅱ 綜合大樓1樓",
+    "phone": "02-2351-2699",
+    "highlight": "9折",
+    "offer": "憑證9折",
+    "info": "營業時間：8:00-19:00\n商品類型：咖啡、茶品、三明治、炸物、義大利麵\n優惠期間：即日起~118/06/30",
+    "links": [],
+    "expires_on": "2029-06-30",
+    "auto_renew": false,
+    "notes": "臺師大和平校區Ⅱ校內商家（綜合大樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "星巴克",
+    "subtitle": "臺師大和平校區Ⅱ",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大和平校區Ⅱ 綜合大樓1樓",
+    "phone": "02-2321-3986",
+    "highlight": "9折",
+    "offer": "憑證9折",
+    "info": "營業時間：週一至週五7:30~19:00、例假日7:30~18:00\n商品類型：咖啡、蛋糕、常溫點心、果汁\n優惠期間：即日起~118/06/30",
+    "links": [],
+    "expires_on": "2029-06-30",
+    "auto_renew": false,
+    "notes": "臺師大和平校區Ⅱ校內商家（綜合大樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "三商巧福",
+    "subtitle": "臺師大和平校區Ⅱ",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大和平校區Ⅱ 綜合大樓1樓",
+    "phone": "02-2396-5285",
+    "highlight": "9折",
+    "offer": "憑證9折",
+    "info": "營業時間：11:00-21:00\n商品類型：麵食、飯、小菜\n優惠期間：即日起~118/06/30",
+    "links": [],
+    "expires_on": "2029-06-30",
+    "auto_renew": false,
+    "notes": "臺師大和平校區Ⅱ校內商家（綜合大樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "街口皇廚",
+    "subtitle": "臺師大和平校區Ⅱ",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大和平校區Ⅱ 綜合大樓1樓",
+    "phone": "02-2322-2010",
+    "highlight": "9折",
+    "offer": "單點、套餐憑證9折",
+    "info": "營業時間：週一~週五、日11:00~14:00、16:45~19:50、週六公休\n商品類型：招牌特餐、便當\n優惠期間：即日起~118/06/30",
+    "links": [],
+    "expires_on": "2029-06-30",
+    "auto_renew": false,
+    "notes": "臺師大和平校區Ⅱ校內商家（綜合大樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "7-11 統一超商",
+    "subtitle": "臺師大和平校區Ⅱ",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大和平校區Ⅱ 綜合大樓1樓",
+    "phone": "02-2351-9957",
+    "highlight": "9折",
+    "offer": "憑證9折，惟咖啡、報紙、雜誌及生鮮農產品除外",
+    "info": "營業時間：7:00-23:00\n商品類型：便利超商\n優惠期間：即日起~118/06/30",
+    "links": [],
+    "expires_on": "2029-06-30",
+    "auto_renew": false,
+    "notes": "臺師大和平校區Ⅱ校內商家（綜合大樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "師大照相影印部",
+    "subtitle": "臺師大和平校區Ⅱ",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大和平校區Ⅱ 綜合大樓1樓",
+    "phone": "02-2391-8101",
+    "highlight": "優惠價",
+    "offer": "表定商品優惠價格",
+    "info": "營業時間：週一至週四9:00~19:00、週五9:00-17:00(例假日公休)\n商品類型：照相、影印、裝訂、護貝\n優惠期間：即日起~118/06/30",
+    "links": [],
+    "expires_on": "2029-06-30",
+    "auto_renew": false,
+    "notes": "臺師大和平校區Ⅱ校內商家（綜合大樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "水粵香港式餐廳",
+    "subtitle": "臺師大和平校區Ⅱ",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大和平校區Ⅱ 綜合大樓B1",
+    "phone": "02-2321-1117",
+    "highlight": "9折",
+    "offer": "精緻合菜、個人套餐、單點，憑證9折",
+    "info": "營業時間：11:00~14:00、17:00~21:00\n商品類型：粵式料理、港式飲茶、包廂宴席\n優惠期間：即日起~118/06/30",
+    "links": [],
+    "expires_on": "2029-06-30",
+    "auto_renew": false,
+    "notes": "臺師大和平校區Ⅱ校內商家（綜合大樓B1）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "Subway",
+    "subtitle": "臺師大和平校區Ⅱ",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大和平校區Ⅱ 產學館1樓(C櫃位)",
+    "phone": "02-2321-0081",
+    "highlight": "9折",
+    "offer": "憑證可享師大人專屬優惠(每日9折之特惠餐點及飲料9折優惠)",
+    "info": "營業時間：週一至週五7:30~21:30、例假日8:00~21:30\n商品類型：三明治、麵包、輕食、沙拉\n優惠期間：即日起~116/12/31",
+    "links": [],
+    "expires_on": "2027-12-31",
+    "auto_renew": false,
+    "notes": "臺師大和平校區Ⅱ校內商家（產學館1樓(C櫃位)）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員工生。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "極電資訊",
+    "subtitle": "臺師大和平校區Ⅱ",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大和平校區Ⅱ 產學館1樓(B櫃位)",
+    "phone": "02-2322-3718",
+    "highlight": "教育優惠",
+    "offer": "教育優惠折扣（副廠週邊配件(三校聯盟優惠)）",
+    "info": "營業時間：11:00~19:00 (週日公休)\n商品類型：蘋果電腦銷售、配件販售、維護\n優惠期間：即日起~116/12/31",
+    "links": [],
+    "expires_on": "2027-12-31",
+    "auto_renew": false,
+    "notes": "臺師大和平校區Ⅱ校內商家（產學館1樓(B櫃位)）。優惠對象：副廠週邊配件(三校聯盟優惠)。優惠對象欄僅寫「副廠週邊配件(三校聯盟優惠)」。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "鐵支涮火鍋",
+    "subtitle": "臺師大和平校區Ⅱ",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市大安區和平東路一段141巷6-1號",
+    "phone": "02-2391-1798",
+    "highlight": "9折",
+    "offer": "憑證享9折優惠",
+    "info": "營業時間：週一到週五 17:00~24:00週六日11:30~14:30、17:30~24:00(國定假日or連續假期比照六日營業時\n商品類型：時令海鮮肉品與獨家創意料理\n優惠期間：即日起~116/06/30",
+    "links": [],
+    "expires_on": "2027-06-30",
+    "auto_renew": false,
+    "notes": "臺師大和平校區Ⅱ校內商家（臺北市大安區和平東路一段141巷6-1號）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "銅樂鍋物",
+    "subtitle": "臺師大其他",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市大安區師大路39巷1號",
+    "phone": "02-2368-0687",
+    "highlight": "9折",
+    "offer": "憑證享9折優惠。",
+    "info": "營業時間：11:30~23:00\n商品類型：火鍋、鬆餅、可麗餅、甜甜圈\n優惠期間：即日起~114/12/31",
+    "links": [],
+    "expires_on": "2025-12-31",
+    "auto_renew": false,
+    "notes": "臺師大其他校內商家（師大路39巷1號）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "7-11 統一超商",
+    "subtitle": "臺師大門市",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大公館校區 行政大樓",
+    "phone": "02-8663-5162",
+    "highlight": "9折",
+    "offer": "憑證9折",
+    "info": "營業時間：7:00~23:00\n商品類型：便利超商\n優惠期間：即日起~117/06/30",
+    "links": [],
+    "expires_on": "2028-06-30",
+    "auto_renew": false,
+    "notes": "臺師大公館校區校內商家（行政大樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "萊爾富超商",
+    "subtitle": "師文山師大店",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大公館校區 學二舍1樓",
+    "phone": "02-8663-9916",
+    "highlight": "9折",
+    "offer": "憑證9折",
+    "info": "營業時間：全天營業00:00~24:00\n商品類型：便利超商\n優惠期間：即日起~117/06/30",
+    "links": [],
+    "expires_on": "2028-06-30",
+    "auto_renew": false,
+    "notes": "臺師大公館校區校內商家（學二舍1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員工生。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU",
+      "NTNU",
+      "NTUST"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學（國立臺灣大學系統網站公告）",
+    "source_url": "https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf",
+    "retrieved_on": "2026-10-15"
+  }
+]

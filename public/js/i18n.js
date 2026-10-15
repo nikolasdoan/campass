@@ -1,6 +1,6 @@
 /* Every UI string, in zh-TW and en. Deal content (names, offers) stays Chinese.
    Write 臺 not 台 in UI copy. Labels never wrap: the English is shortened, not the layout. */
-import { storage } from "./util.js?v=2";
+import { storage } from "./util.js?v=4";
 
 const LANG_KEY = "cp_lang";
 
@@ -59,6 +59,7 @@ const DICT = {
     "elig.staff": "教職員",
     "elig.alumni": "校友",
     "elig.family": "眷屬",
+    "elig.noStudent": "學生不適用",
 
     "cat.food": "美食",
     "cat.lodging": "住宿",
@@ -238,6 +239,7 @@ const DICT = {
     "elig.staff": "Staff",
     "elig.alumni": "Alumni",
     "elig.family": "Family",
+    "elig.noStudent": "Not for students",
 
     "cat.food": "Food",
     "cat.lodging": "Stays",
@@ -372,6 +374,11 @@ const SCHOOLS = {
   NTHU: { zh: ["清大", "國立清華大學"], en: ["NTHU", "National Tsing Hua University"] },
   NYCU: { zh: ["陽明交大", "國立陽明交通大學"], en: ["NYCU", "National Yang Ming Chiao Tung University"] },
   NCKU: { zh: ["成大", "國立成功大學"], en: ["NCKU", "National Cheng Kung University"] },
+  NCU: { zh: ["中央", "國立中央大學"], en: ["NCU", "National Central University"] },
+  NCHU: { zh: ["中興", "國立中興大學"], en: ["NCHU", "National Chung Hsing University"] },
+  TMU: { zh: ["北醫", "臺北醫學大學"], en: ["TMU", "Taipei Medical University"] },
+  TCU: { zh: ["慈大", "慈濟大學"], en: ["TCU", "Tzu Chi University"] },
+  CMU: { zh: ["中國醫", "中國醫藥大學"], en: ["CMU", "China Medical University"] },
 };
 
 let lang = storage.get(LANG_KEY) === "en" ? "en" : "zh";

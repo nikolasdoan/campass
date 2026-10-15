@@ -593,3 +593,2679 @@ INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info
 請透過指定服務旅行社訂票 https://reurl.cc/6dn5OV
 
 開票日116/04/30前（出發日116/10/31前），本校教職員工、學生敬請多加利用！（管理單位：臺大國際處）', '', '', '', '[{"label": "reurl.cc", "url": "https://reurl.cc/6dn5OV"}]', '2027-04-30', 0, '短期優惠', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU', 'school', '臺大財務管理處（短期優惠）', 'https://homepage.ntu.edu.tw/~ntufinance/benefit.html', '2026-10-15', 67);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('f905d212e8', '玉山銀行', '臺大教職員薪轉/貸款優惠', 'services', 'north', '專案優惠', '教職員優惠專區－薪轉優惠；房信貸優惠請參考玉山薪轉優惠。本校教職員工(限專任(含計畫人員))薪資轉存金融機構新增「玉山銀行」及「華南銀行」，故除本校原有之薪轉郵局外，可選擇轉存至玉山銀行或華南銀行(即三間金融機構僅能擇一)，且薪轉戶及優存戶須在同一間金融機構。', '詳細條件見財務管理處優惠專區所附優惠說明文件。洽詢：財務管理處 鍾卓器經理 02-3366-9799#12', '', '', '[{"label": "玉山薪轉優惠", "url": "https://drive.google.com/file/d/1Q_qkPiZ4G7pSOcC7b6A3LyxUsCmoN397/view?usp=drive_link"}]', NULL, 0, '限教職員工（薪轉限專任含計畫人員）；學生不適用。條件細節在 Google Drive PDF，未逐一摘錄。', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTU', 'school', '臺大財務管理處', 'https://homepage.ntu.edu.tw/~ntufinance/benefit.html', '2026-10-15', 68);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('dd8a9ee3ff', '華南銀行', '臺大教職員薪轉/貸款優惠', 'services', 'north', '專案優惠', '教職員優惠專區－薪轉優惠；房信貸優惠請參考華銀薪轉優惠。本校教職員工(限專任(含計畫人員))薪資轉存金融機構新增「玉山銀行」及「華南銀行」，故除本校原有之薪轉郵局外，可選擇轉存至玉山銀行或華南銀行(即三間金融機構僅能擇一)，且薪轉戶及優存戶須在同一間金融機構。', '詳細條件見財務管理處優惠專區所附優惠說明文件。洽詢：財務管理處 鍾卓器經理 02-3366-9799#12', '', '', '[{"label": "華銀薪轉優惠", "url": "https://drive.google.com/file/d/1EfFW3AJyxVaDBSxMd23zentHini-IxfB/view?usp=drive_link"}]', NULL, 0, '限教職員工（薪轉限專任含計畫人員）；學生不適用。條件細節在 Google Drive PDF，未逐一摘錄。', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTU', 'school', '臺大財務管理處', 'https://homepage.ntu.edu.tw/~ntufinance/benefit.html', '2026-10-15', 69);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('cede1592ac', '中華郵政', '臺大教職員薪轉/貸款優惠', 'services', 'north', '專案優惠', '教職員優惠專區－薪轉優惠。本校教職員工(限專任(含計畫人員))薪資轉存金融機構新增「玉山銀行」及「華南銀行」，故除本校原有之薪轉郵局外，可選擇轉存至玉山銀行或華南銀行(即三間金融機構僅能擇一)，且薪轉戶及優存戶須在同一間金融機構。', '詳細條件見財務管理處優惠專區所附優惠說明文件。洽詢：財務管理處 鍾卓器經理 02-3366-9799#12', '', '', '[{"label": "中華郵政薪轉優惠", "url": "https://drive.google.com/file/d/1Bkwt68P-uAsoR28gJsPdSJ1Vq27vlcBX/view?usp=sharing"}]', NULL, 0, '限教職員工（薪轉限專任含計畫人員）；學生不適用。條件細節在 Google Drive PDF，未逐一摘錄。', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTU', 'school', '臺大財務管理處', 'https://homepage.ntu.edu.tw/~ntufinance/benefit.html', '2026-10-15', 70);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('3c5cac511a', '元大銀行', '臺大教職員薪轉/貸款優惠', 'services', 'north', '專案優惠', '教職員優惠專區－房貸優惠、信貸優惠。為減輕本校教職員工的貸款壓力，為師長及同仁們提供信貸、房貸等優惠專案。', '詳細條件見財務管理處優惠專區所附優惠說明文件。洽詢：財務管理處 鍾卓器經理 02-3366-9799#12', '', '', '[{"label": "房貸優惠", "url": "https://drive.google.com/file/d/1PDFgnAMoQus091Eu7UxrUN1Kdl95iLQv/view?usp=sharing"}, {"label": "信貸優惠", "url": "https://drive.google.com/file/d/11tPN6xWwf_vOZY3Or4j2xbxeOi-Twva6/view?usp=sharing"}]', NULL, 0, '限教職員工（薪轉限專任含計畫人員）；學生不適用。條件細節在 Google Drive PDF，未逐一摘錄。', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTU', 'school', '臺大財務管理處', 'https://homepage.ntu.edu.tw/~ntufinance/benefit.html', '2026-10-15', 71);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('5729148f74', '遠東商銀', '臺大教職員薪轉/貸款優惠', 'services', 'north', '專案優惠', '教職員優惠專區－房信貸優惠、存款優惠、美元定存優惠。為減輕本校教職員工的貸款壓力，為師長及同仁們提供信貸、房貸等優惠專案。', '詳細條件見財務管理處優惠專區所附優惠說明文件。洽詢：財務管理處 鍾卓器經理 02-3366-9799#12', '', '', '[{"label": "房信貸優惠", "url": "https://drive.google.com/file/d/1kcG3XV5XudnK0oRBRmNgSUrcuqFGAQLR/view?usp=sharing"}, {"label": "存款優惠", "url": "https://drive.google.com/file/d/1eMVzPvYkWcQH4ggnT7eg3CwCxwfQntL0/view?usp=sharing"}, {"label": "美元定存優惠", "url": "https://drive.google.com/file/d/1Ig-fSE5gUisOr02nsRWUC3_w2EYOdfLx/view?usp=sharing"}]', NULL, 0, '限教職員工（薪轉限專任含計畫人員）；學生不適用。條件細節在 Google Drive PDF，未逐一摘錄。', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTU', 'school', '臺大財務管理處', 'https://homepage.ntu.edu.tw/~ntufinance/benefit.html', '2026-10-15', 72);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('bf65f5a94a', '王道銀行', '臺大教職員薪轉/貸款優惠', 'services', 'north', '專案優惠', '教職員優惠專區－房信貸及存款優惠。為減輕本校教職員工的貸款壓力，為師長及同仁們提供信貸、房貸等優惠專案。', '詳細條件見財務管理處優惠專區所附優惠說明文件。洽詢：財務管理處 鍾卓器經理 02-3366-9799#12', '', '', '[{"label": "房信貸及存款優惠", "url": "https://drive.google.com/file/d/1ivqaD3BCAiMxIj52fLczKlSDK32k3mYX/view?usp=drive_link"}]', NULL, 0, '限教職員工（薪轉限專任含計畫人員）；學生不適用。條件細節在 Google Drive PDF，未逐一摘錄。', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTU', 'school', '臺大財務管理處', 'https://homepage.ntu.edu.tw/~ntufinance/benefit.html', '2026-10-15', 73);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8d9518adfd', 'Lazy Pâtisserie', '徠集手工法式甜點坊（公館店）', 'food', 'north', '優惠價', '六吋生日蛋糕享優惠價280（限同一口味）', '營業時間：週一至週日：12:00-20:00', '', '台北市大安區羅斯福路3段345號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/%E5%85%AC%E9%A4%A8%E6%BA%AB%E5%B7%9E%E8%A1%97', '2026-10-15', 74);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('4791834243', '戰醬燒肉', '', 'food', 'north', '95折', '消費95折優惠', '營業時間：週一至週日 12:00-22:00', '', '台北市中正區羅斯福路三段316巷7-3號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/%E5%85%AC%E9%A4%A8%E6%BA%AB%E5%B7%9E%E8%A1%97', '2026-10-15', 75);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('caef539df7', '池先生 Kopitiam', '公館店', 'food', 'north', '折$30', '主餐加飲料可折抵30元', '營業時間：週一至週五：11:30–15:30, 17:00–20:45 六日：11:30–20:45', '', '台北市中正區羅斯福路三段284巷10號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/%E5%85%AC%E9%A4%A8%E6%BA%AB%E5%B7%9E%E8%A1%97', '2026-10-15', 76);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b00fca4da1', 'GURU HOUSE', '台大公館店', 'food', 'north', '9折', '1.內用消費享免服務費
+2.外帶消費享9折優惠', '營業時間：週一到週日 09:00-22:00', '', '台北市大安區溫州街74巷5弄3號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/%E5%85%AC%E9%A4%A8%E6%BA%AB%E5%B7%9E%E8%A1%97', '2026-10-15', 77);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c1a642f903', 'Ooh Cha Cha', '', 'food', 'north', '9折', '消費享九折優惠', '營業時間：週一至週日： 10:00 - 22:00', '', '台北市大安區和平東路二段118巷4-1號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7', '2026-10-15', 78);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c2369c1978', '玩味咖啡', '', 'food', 'north', '95折', '消費享九五折優惠', '營業時間：週一至週五：11:00-22:00 週六、週日：10:30-22:00', '', '台北市大安區和平東路二段118巷38-1號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7', '2026-10-15', 79);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('cbcbfe2910', '麵工坊', '大安店', 'food', 'north', '9折', '主餐享九折優惠及免費加麵服務', '營業時間：週一至週五 11:30-14:30；17:30-21:30 週六至週日 11:30-15:00；17:30-21:30', '', '台北市大安區和平東路二段118巷2弄1號1樓', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7', '2026-10-15', 80);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('575d6cd22e', '微笑廚房洋食館', '', 'food', 'north', '9折', '出示學生證消費享九折優惠', '營業時間：週一至週四 : 11:30-14:30；17:00-20:00 週五至週六 : 11:30-14:00；17:00-21:00 週日休息', '', '台北市大安區和平東路二段118巷54弄3號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7', '2026-10-15', 81);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b5bc09a2e0', '米堤銀行', '', 'food', 'north', '9折', '臨櫃交易單筆滿百打九折(須主動出示學生證)', '營業時間：週一至週日： 10:00–19:30', '', '台北市大安區復興南路二段327號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7', '2026-10-15', 82);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('762f00adc4', '新丼', '和平店', 'food', 'north', '贈品', '出示學生證可兌換冰紅茶或冰綠茶乙杯', '營業時間：週一至週日：11:30–21:00', '', '台北市大安區和平東路二段118巷45號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7', '2026-10-15', 83);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('2f5ff394a2', 'CoCo都可', '和平東門市', 'food', 'north', '8折', '1.杯杯折五元
+2.買十送一，滿千可享八折優惠', '營業時間：週一至週日：10:30–20:45', '', '台北市大安區和平東路二段311巷30號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7', '2026-10-15', 84);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('37193fcc95', '小姐姐麻辣食堂', '', 'food', 'north', '贈品', '消費滿百元即送鴨血、豆腐、蛋（三選一）', '營業時間：週一至週日： 11:00-21:00', '', '台北市大安區和平東路二段118巷4弄2號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7', '2026-10-15', 85);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('140495f2f9', '好食早餐', '', 'food', 'north', '折$5', '憑學生證單點薯餅塔加飲品可現折五元', '營業時間：週一至週日： 07:30–15:00', '', '台北市大安區和平東路二段357巷7號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7', '2026-10-15', 86);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('bfd115d462', 'Mr.Smile好吃雞排', '台北復興店', 'food', 'north', '95折', '消費滿百享九五折優惠', '營業時間：週一至週六： 15:00-00:00 週日公休', '', '台北市大安區復興南路二段349號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7', '2026-10-15', 87);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c22380d363', '池先生 Kopitiam', '大安店', 'food', 'north', '折$30', '主餐加飲料可折抵30元', '營業時間：週一至週日： 11:30–15:00, 17:00–20:30', '', '台北市大安區復興南路二段385號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7', '2026-10-15', 88);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('93998f015d', '其實豆製所', '瑞安店', 'food', 'north', '9折', '特定商品享九折優惠或累計點數（擇一）', '營業時間：週一至週日： 08:30-21:00', '', '台北市大安區瑞安街274號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7', '2026-10-15', 89);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('41361982a6', '旭倉咖哩', '', 'food', 'north', '贈品', '憑學生證贈送紅茶一杯（價值30元）', '營業時間：週一至週五：11:00–14:30, 17:00–20:00', '', '台北市大安區辛亥路二段169號1樓', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7', '2026-10-15', 90);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('35b948abce', 'SELF Oasis 綠洲', '', 'food', 'north', '贈品', '憑學生證贈送一杯shot', '營業時間：週日至週四：17:30-01:00 週五、週六：17:30-02:00', '', '台北市大安區瑞安街135巷4號1樓', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7', '2026-10-15', 91);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('08ee54d8fa', '小拾聚', '', 'food', 'north', '贈品', '消費滿400元享小點一份', '營業時間：週一至週六：11:30-20:00', '', '台北市大安區復興南路二段325號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7', '2026-10-15', 92);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('63c813fd01', '山焙 SUNBAY', '', 'food', 'north', '95折', '外帶自取優惠：冰飲料中杯免費升級大杯、熱飲料打九五折
+外送優惠：不限距離滿300元即可外送，滿十送一（贈送價格低者）', '營業時間：週一至週五： 10:30-21:00 週六、週日：12:00-20:30', '', '台北市大安區和平東路二段363號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/118%E5%B7%B7', '2026-10-15', 93);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9a8dd31cbc', '貢茶', '全台門市均適用', 'food', 'north,central,south,east', '9折', '1.貢茶全台門市購買大杯飲品，享九折優惠，但不得與其他優惠併用
+2.購買25杯以上飲品可享八五折優惠（大量訂購須自取，請提前一週訂購）
+3.購買50杯以上飲品可享八折優惠
+（大量訂購須自取，請提前一週訂購）', '', '', '全台貢茶門市', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E9%A3%B2%E9%A3%9F/%E5%85%B6%E4%BB%96%E5%9C%B0%E5%8D%80', '2026-10-15', 94);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('6c5d092ff0', 'Agoda 訂房網', '', 'lodging', 'north', '額外7%折扣', '透過Agoda x 臺大系統學生會專屬網站訂房，有「適用額外優惠」標籤者，訂房金額滿1000元可使用折扣碼：ntusa34，除網站本身優惠外可另外享 7％折扣。
+（優惠碼使用期限至2022/12/31，適用入住日期至2023/03/31）
+（詳細規範內容以網站中寫明之條款與規範為主）', '', '', '', '[{"label": "Agoda x 臺大系統學生會專屬網站", "url": "https://www.agoda.com/zh-tw/c/ntusa"}]', '2022-12-31', 0, '優惠碼使用期限至2022/12/31（適用入住日期至2023/03/31），已過期。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E7%94%9F%E6%B4%BB-%E5%A8%9B%E6%A8%82', '2026-10-15', 95);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('fab6bc8323', '23 Public Craft Beer', '精釀吧', 'entertainment', 'north', '7折', '1.三校學生週日至週四憑學生證可「免費」租借地下一樓展演空間（約可容納40人），入場人員每人低消為一杯飲料，低消飲料可打七折。
+2.租借場地前須先與店長聯繫，以利確認可租借之時段及最高容納人數
+3.週五、週六場地租借需另外與店家洽詢，不在本合約之優惠範圍中', '營業時間：週一至週日： 15:30-00:00', '', '台北市大安區辛亥路一段100號1樓', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E7%94%9F%E6%B4%BB-%E5%A8%9B%E6%A8%82', '2026-10-15', 96);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('514eb52cc7', '台一數位影印印刷', '', 'services', 'north', '優惠價', '影印: 黑白單面0.55元/面；雙面0.45元/面；彩色4元/面
+裝訂:黑白封面20元/本；彩色封面30元/本
+急件海報2小時交件，每才30元', '營業時間：週一到週五：09:00 - 21:00 週六：10:00 - 18:00', '', '台北市中正區汀州路三段131號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E7%94%9F%E6%B4%BB-%E5%A8%9B%E6%A8%82', '2026-10-15', 97);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b17ea2e6e5', '飛捷廣告影印數位印刷', '台大店', 'services', 'north', '優惠價', '黑白列印0.5元/張（限自動列印、限A4以下尺寸）
+彩色列印4元/張', '營業時間：週一至週日：09:00–21:00', '', '台北市大安區辛亥路二段161、163號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E7%94%9F%E6%B4%BB-%E5%A8%9B%E6%A8%82', '2026-10-15', 98);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('bb68ff8923', '愛閱二手書坊', '', 'shopping', 'north', '85折', '消費享85折優惠（指定商品不適用）', '營業時間：12:00–21:00', '', '台北市大安區和平東路二段14號地下一樓', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E7%94%9F%E6%B4%BB-%E5%A8%9B%E6%A8%82', '2026-10-15', 99);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('4234194b0a', '伸騰1+1眼鏡', '伸騰1+1眼鏡有限公司', 'health', 'north', '9折', '配鏡九折優惠，彩拋9.5折', '營業時間：週一 ~ 週日 10:30-22:00', '', '台北市中正區羅斯福路三段266-1號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E7%94%9F%E6%B4%BB-%E5%A8%9B%E6%A8%82', '2026-10-15', 100);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('05df138e20', '國泰美術社', '', 'shopping', 'north', '會員價', '出示三校學生證可享一般會員價，已特價商品則不再折扣', '營業時間：週一至週六： 09:30–20:30 週日：11:00–17:00', '', '台北市大安區和平東路一段184-2號1樓', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E7%94%9F%E6%B4%BB-%E5%A8%9B%E6%A8%82', '2026-10-15', 101);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('2b71c6f0b9', '野球魂棒壘用品店', '', 'shopping', 'north', '會員價', '所有商品均享有會員價優惠', '營業時間：週一至週日：14:00-21:30', '', '台北市大安區新生南路三段56巷10號', '[]', NULL, 0, '特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%A4%A7/%E7%94%9F%E6%B4%BB-%E5%A8%9B%E6%A8%82', '2026-10-15', 102);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('cfe6edf2e1', '貳號基地Cafe', '', 'food', 'north', '9折', '台大系統教職員工及在校學生憑職員或學生證結帳享九折優惠。
+1.折扣優惠項目不含酒類
+2.不予其他店內優惠活動合併使用
+3.限在校教職員工及學生（限本人）', '營業時間：平日11:00-19:00/假日10:30-20:30（每周四公休）', '02-8935-2755', '116台北市文山區汀州路四段130號', '[]', '2021-11-01', 0, '頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F', '2026-10-15', 103);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('0199b00849', 'JOHN DOE CAFÉ 無名氏咖啡', '', 'food', 'north', '9折', '九折優惠', '營業時間：09:30-21:30', '02 2933 6566', '116台北市文山區羅斯福路五段225號', '[]', '2021-12-17', 0, '頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F', '2026-10-15', 104);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('96a398a13d', '2D Cafe', '師大旗艦店', 'food', 'north', '85折', '1.憑學生證或教職證消費享整筆85折優惠
+2.消費可加入「2D師大VIP會員」每人每日限一杯5折飲品，以及不定期精美小禮物贈送或套餐優惠', '營業時間：10:30-21:30', '02 2366 0250', '106台北市大安區師大路59巷10號', '[]', '2022-01-01', 0, '頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F', '2026-10-15', 105);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('f0afd04c4b', '旺禾港式燒臘', '', 'food', 'north', '折$5', '1.外帶、內用，每一分便當折5元
+2.外送達10分便當，每一分便當折5元（未達10分則原價計算）', '營業時間：10:30-19:30（每周日公休）', '02 2366 0058', '106台北市大安區泰順街34號1樓', '[]', '2021-12-15', 0, '頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F', '2026-10-15', 106);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9e34ddbb6e', '13_Burger', '13 Burger', 'food', 'north', '折$10', '漢堡品項折10元', '營業時間：12:00-14:00/17:00-22:00（每周一公休）', '0975 266 918', '106台北市大安區師大路49巷13號1樓', '[]', '2021-12-16', 0, '頁面所列優惠期限已過。頁面另列「2.外送達10分便當，每一分便當折5元（未達10分則原價計算）」，疑為自上一店家複製之誤植，未納入。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F', '2026-10-15', 107);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('d5cfcc5d42', '怪獸小雞排', '師大店', 'food', 'north', '9折', '九折優惠', '營業時間：16:00-01:30', '0981 819 722', '106台北市大安區師大路98號', '[]', '2021-12-20', 0, '頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F', '2026-10-15', 108);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('df51fa2955', '騎士碁ChessChicken-雞排專賣店', '', 'food', 'north', '折$5', '套餐減5元', '營業時間：14:00-22:30（每周三公休）', '02 2369 7885', '106台北市大安區師大路49巷10號', '[]', '2022-01-17', 0, '頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F', '2026-10-15', 109);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('653132df71', '老茶人', '師大店', 'food', 'north', '折$10', '現場消費折10元，不與其它優惠方案共用', '營業時間：11:00-23:00', '02 2366 1028', '106台北市大安區師大路104號', '[]', '2021-12-17', 0, '頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F', '2026-10-15', 110);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a576ca1c29', '藍鵲', '師大店', 'food', 'north', '9折', '9折', '營業時間：10:00-22:00', '02 3365 3371', '106台北市大安區師大路106號', '[]', '2022-01-27', 0, '頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F', '2026-10-15', 111);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a7f01db947', '男子漢早餐店', '', 'food', 'north', '贈品', '消費滿150元，即贈送小杯紅茶乙杯（可補差額換大杯，一張學生證限換乙次）', '營業時間：07:00-13:30（每周一公休）', '02 2369 6066', '106台北市大安區泰順街16巷36號', '[]', '2022-01-19', 0, '頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E9%A3%B2%E9%A3%9F', '2026-10-15', 112);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('990182242b', '芳鄰健身事業有限公司', '', 'health', 'north', '優惠價', '1.場地器材消費優惠：兩人同行，且各消費100元，享免卡片工本費100元（第一次申辦）
+2.團體課程優惠：單次體驗，一點課程享160元優惠價，二點課程享320元（單堂）', '營業時間：07:00-23:50', '02 7703 2559', '116台北市文山區羅斯福路六段130號', '[]', '2022-03-08', 0, '頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E5%B8%AB%E5%A4%A7/%E5%85%B6%E4%BB%96', '2026-10-15', 113);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8569395a74', '玉欣珍', '台式小吃和平店／異國料理店', 'food', 'north', '9折', '#須出示三校學生證才可享優惠
+全天候餐點9折
+學生訂購團體便當，可客製化製作100元便當（滿3000可外送）
+當日壽星憑證件贈送150元以內餐點
+提供50人會議場地提供學生租借', '營業時間：24小時（台式小吃和平店）；10:30-21:30(異國料理店)(若需訂位可事先協調時間)', '', '台北市大安區和平東路2段255-1號(台式小吃和平店)；台北市大安區復興南路2段189號(異國料理店)', '[]', '2022-04-07', 0, '頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E7%A7%91%E5%A4%A7/%E9%A3%B2%E9%A3%9F', '2026-10-15', 114);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a470f5e8c7', '上賀海南雞腿飯', '', 'food', 'north', '贈品', '#須出示三校學生證才可享優惠
+依照人數送任意小菜一份', '營業時間：11:00-22:30', '', '台北市大安區羅斯福路三段333巷2-1號', '[]', '2022-06-30', 0, '頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E7%A7%91%E5%A4%A7/%E9%A3%B2%E9%A3%9F', '2026-10-15', 115);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('5b2d61426a', '眯糊茶', '', 'food', 'north', '85折', '#須出示三校學生證才可享優惠
+飲品全品項85折，免費加料', '營業時間：10：00～22：00(星期六～星期日休息)', '', '台北市大安區復興南路二段206號', '[]', '2022-06-30', 0, '頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E7%A7%91%E5%A4%A7/%E9%A3%B2%E9%A3%9F', '2026-10-15', 116);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c0bf788c0d', '油力特機油認證店', '', 'services', 'north,central,south', '贈品', '#須出示三校學生證才可享優惠
+1.汽/機車引擎油泥清洗劑一次（市值500元）
+2.機車傳動室清潔健檢【皮帶/普利珠（盤）/離合器/碗公等】
+3.提供店內插入內補式補胎以及店內接電啟動
+4.汽/機車道路救援載運回店內維修，及外出計費接電啟動或運送汽油（基本里程5公里內免費，超過公里數請洽店家）
+5.提供代步車借用（由店家決定是否借出）/到府牽車（5公里內）
+6.代辦驗車及各項汽/機車保險業務
+7.專業電腦診斷張器健檢
+8.煞車系統檢查/輪胎安全性檢查/引擎狀況異音告知
+9.機車保養維修後，車輛外觀清洗（依店家為主）
+10.凡到認證店指定更換油力特任一款機油即可享有免費添加X-3000機油精或高效潤滑噴油嘴清潔劑', '營業時間：依各店營業時間為主', '', '全台北中南服務據點(https://reurl.cc/ynKorO)', '[{"label": "服務據點", "url": "https://reurl.cc/ynKorO"}]', '2022-04-09', 0, '頁面所列優惠期限已過。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E7%A7%91%E5%A4%A7/%E4%BA%A4%E9%80%9A', '2026-10-15', 117);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c79f68b955', '威比大廚', '', 'food', 'north', '95折', '#須出示台科大學生證才可享優惠
+（1）不限訂購組數，免運費。
+（2）不限訂購組數，結帳金額全面95折。
+（3）單一訂單訂購滿10組，每組加贈烤肉網乙面＆1L飲料乙瓶。
+（4）單一訂單訂購滿20組，每組肉量1.5倍升級。
+（5）單一訂單訂購滿30組，每組加贈50g A5和牛片。
+（6）以上優惠可同時享有。', 'line id:@wibbyhappy', '02-2980-0892', '', '[]', '2022-06-30', 0, '頁面所列優惠期限已過。限臺科大學生證，臺大學生不適用。特約平台頁面最後更新約2022年（頁尾©2022），優惠現況未經確認，使用前請向店家確認。', '{"student": true, "staff": false, "alumni": false, "family": false}', 'NTUST', 'student_org', '臺大系統學生會', 'https://sites.google.com/gapps.ntnu.edu.tw/system/%E8%87%BA%E7%A7%91%E5%A4%A7/%E5%85%B6%E4%BB%96', '2026-10-15', 118);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7d4a6e8615', '可唐精品茶旅 KALU TEA', '', 'food', 'north', '9折', '1.自備餐具折減5元
+2.國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：平日10:00~19:00、週六10:00~17:00
+營業項目：手搖飲、優格、貝果、厚片、健康餐、簡餐', '0911-881-686', '社會科學院地下1樓', '[]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784192183058&npage=1', '2026-10-15', 119);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('16673d9591', '卓聯門市', '', 'shopping', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠(酒、免稅農產品、代售品除外)', '營業時間：平日07:00~19:00、週六07:00~15:00
+營業項目：多元化日常生活服務', '02-2362-7127', '禮賢樓商場1樓', '[{"label": "官方網站", "url": "https://www.7-11.com.tw/"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784192832865&npage=1', '2026-10-15', 120);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('e337ba21b5', '路易莎咖啡', '', 'food', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠(外送服務以原價計算)', '營業項目：咖啡、簡餐', '02-2367-6613', '禮賢樓商場2樓', '[{"label": "官方網站", "url": "https://www.louisacoffee.co/"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784193030497&npage=1', '2026-10-15', 121);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('2fdccf7cc4', '品軒樓中餐廳', '', 'food', 'north', '9折', '國立臺灣大學聯盟之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：全日11:30~20:00(午休14:00~17:00)
+營業項目：中餐廳、自助餐', '02-2365-1122', '禮賢樓商場2樓', '[{"label": "官方網站", "url": "https://reurl.cc/0z7NKk"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。原文為「國立臺灣大學聯盟之教職員工生、臺大校友及退休人員」，是否含臺師大、臺科大未明確，暫列臺大。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784193324298&npage=1', '2026-10-15', 122);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('46b17354f3', '福德食堂', '', 'food', 'north', '9折', '1.自備餐具(盒)折減5元
+2.國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：平日11:00~18:00、週六11:00~14:00
+營業項目：麵食類、飯類', '', '禮賢樓商場2樓', '[]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784193550298&npage=1', '2026-10-15', 123);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('162f1c1a6b', '蘇杭餐廳', '', 'food', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：11:30~14:00、17:30~21:00
+營業項目：中式料理', '02-2396-3186', '臺北市中正區濟南路一段2-1號(校友會館)', '[{"label": "官方網站", "url": "http://www.suhung.com.tw/"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784194326217&npage=1', '2026-10-15', 124);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('dc8660731b', '小木屋鬆餅', '', 'food', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：平日09:30-19:00、假日09:30-18:30
+營業項目：鬆餅、炸物點心、飲料', '02-8369-5722', '鹿鳴廣場(舟山路)', '[{"label": "官方網站", "url": "https://shinemood2006.com/"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784194707632&npage=1', '2026-10-15', 125);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7317f28af8', '舟山門市', '', 'shopping', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：週一至週五07:00~23:00，週六、日及寒暑假07:00~22:00
+營業項目：便利商店', '02-3365-2414', '小小福及望樂樓旁', '[{"label": "官方網站", "url": "http://www.family.com.tw/Marketing/index.aspx"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784194866037&npage=1', '2026-10-15', 126);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8d6d4df3eb', '85度C', '', 'food', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠；當月壽星6吋、8吋蛋糕9折；當日壽星6吋、8吋蛋糕85折', '營業時間：08:00~20:00，寒暑假10:00~20:00(暑假之每週日公休)
+營業項目：咖啡、茶飲、蛋糕點心', '02-2369-0085', '鹿鳴廣場', '[]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784195076738&npage=1', '2026-10-15', 127);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('5851d979b6', '銅板Pizza', '', 'food', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：08:00~20:00，寒暑假10:00~20:00(暑假之每週日公休)
+營業項目：披薩、焗烤、義大利麵、飲料', '02-2369-0085', '鹿鳴廣場', '[]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784252320980&npage=1', '2026-10-15', 128);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('0f8dfed3a9', '二活門市', '', 'shopping', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：07:00~23:00
+營業項目：便利商店', '02-7709-6561', '臺北市羅斯福路四段85號1樓', '[{"label": "官方網站", "url": "http://www.family.com.tw/Marketing/index.aspx"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784252653301&npage=1', '2026-10-15', 129);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a7000b2f47', 'SUBWAY', '', 'food', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠。', '營業時間：08:00~22:00
+營業項目：健康輕食、潛艇堡、三明治', '02-3365-2629', '臺北市羅斯福路四段85號1樓', '[{"label": "官方網站", "url": "https://subway.com.tw/GoWeb2/include/index.html"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784253196843&npage=1', '2026-10-15', 130);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('73ba629e64', '魯山人壽喜鍋物', '', 'food', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：11:00~22:00
+營業項目：壽喜鍋、涮涮鍋', '02-2363-0339', '臺北市羅斯福路四段85號1樓', '[{"label": "官方網站", "url": "http://www.sukiyaki.tw/"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784253355881&npage=1', '2026-10-15', 131);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('074fa02dbb', '龐德羅莎', '', 'food', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：11:30~21:30
+營業項目：牛排餐、海鮮餐、雞豬組合餐、沙拉吧、下午茶', '02-2366-0046', '臺北市羅斯福路四段85號2樓', '[{"label": "官方網站", "url": "http://www.ponderosa.com.tw"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784253491627&npage=1', '2026-10-15', 132);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('29444d8696', '莫凡彼咖啡館', '', 'food', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠
+(套餐優惠不得重複使用)', '營業時間：11:00-21:30
+營業項目：甜點、咖啡飲品、西式餐食、冰淇淋', '02-2362-2579', '臺北市羅斯福路四段85號1樓', '[{"label": "官方網站", "url": "https://www.mvp-icecream.com.tw/index.php?ac=MenuShow1&sn=32"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784257222130&npage=1', '2026-10-15', 133);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('0f2bb6cc7a', '曉鹿鳴樓', '', 'food', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：11:00~14:30、17:00~21:00
+營業項目：中式料理', '02-2368-8994', '臺北市羅斯福路四段85號1樓', '[{"label": "官方網站", "url": "https://gugokitchen.com.tw/"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784257381974&npage=1', '2026-10-15', 134);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('398e5407a3', 'DOKI POKE夏威夷蒸鮮飯 二活門市', '', 'food', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：11:00~14:30、16:30~19:00
+營業項目：健康餐料理', '02-2365-7568', '臺北市羅斯福路四段85號1樓', '[{"label": "官方網站", "url": "https://shop.ichefpos.com/store/fMaBSbT5/ordering"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784257627236&npage=1', '2026-10-15', 135);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a10b43b18a', '小蔬杭', '', 'food', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：週二至週日11:30~14:30、17:30~21:00，週一公休
+營業項目：健康養生蔬食為主', '02-2363-7288', '臺北市羅斯福路四段85號2樓', '[{"label": "官方網站", "url": "https://suhung.com.tw/story.php?b=2"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784257767363&npage=1', '2026-10-15', 136);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('20a204aa2a', '熊一頂級燒肉', '', 'food', 'north', '95折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證95折優惠', '營業時間：11:30~22:00
+營業項目：燒肉放題', '02-2362-0681', '臺北市羅斯福路四段85號2樓', '[{"label": "官方網站", "url": "https://www.mala.com.tw/Home/BrandIndex?verificationCode=2E07D5C6BC66E4B01B3E254E8245FF89"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784258058518&npage=1', '2026-10-15', 137);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('93512ca958', '全家便利商店台福門市', '', 'shopping', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：7:00~23:00
+營業項目：多元化日常生活服務', '02-8369-1892', '文學院旁腳踏車部', '[{"label": "官方網站", "url": "http://www.family.com.tw/Marketing/index.aspx"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784277656019&npage=1', '2026-10-15', 138);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('bec3d59e25', '里洋烘培坊', '', 'food', 'north', '89折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證享下列優惠
+1.活大餐廳享89折優惠。(麥當勞9折優惠)。
+2.萊爾富便利商店享85折優惠。(除代收售、服務性商品等無法折扣商品)', '營業時間：平日09:00~20:00  ; 假日10:00~19:00
+營業項目：麵包、西點、蛋糕', '02-2366-1082', '校總區第一學生活動中心', '[]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784277835521&npage=1', '2026-10-15', 139);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a94ce613da', '萊爾富便利商店', '新台大門市', 'shopping', 'north', '85折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證85折優惠', '營業時間：24小時營業
+營業項目：多元化日常生活服務', '02-2362-0819', '校總區第一學生活動中心', '[{"label": "官方網站", "url": "https://www.hilife.com.tw/page/index"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784278238771&npage=1', '2026-10-15', 140);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('68e8bc0ec6', '麥當勞', 'McDonald''s', 'food', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證享下列優惠
+1.活大餐廳享89折優惠。(麥當勞9折優惠)。
+2.萊爾富便利商店享85折優惠。(除代收售、服務性商品等無法折扣商品)', '營業時間：07:00~22:00
+營業項目：速食', '02-2362-1290', '校總區第一學生活動中心', '[{"label": "官方網站", "url": "https://www.mcdonalds.com/tw/zh-tw.html"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784278600942&npage=1', '2026-10-15', 141);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('e8b549ecd6', '御喜自助餐', '', 'food', 'north', '89折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證享下列優惠
+1.活大餐廳享89折優惠。(麥當勞9折優惠)。
+2.萊爾富便利商店享85折優惠。(除代收售、服務性商品等無法折扣商品)', '營業時間：10:30~14:30、16:30~19:30
+營業項目：自助餐', '02-2367-0387', '校總區第一學生活動中心', '[]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784278678800&npage=1', '2026-10-15', 142);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b01dab3b48', '食香園素食館', '', 'food', 'north', '89折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證享下列優惠
+1.活大餐廳享89折優惠。(麥當勞9折優惠)。
+2.萊爾富便利商店享85折優惠。(除代收售、服務性商品等無法折扣商品)', '營業時間：週一至週五11:00~14:00、16：30~19:00
+營業項目：素食自助餐', '02-2368-7839', '106臺北市大安區學府里羅斯福路四段1號第一學生活動中心', '[]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784278898435&npage=1', '2026-10-15', 143);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('55a9c512b3', '四海遊龍', '', 'food', 'north', '89折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證享下列優惠
+1.活大餐廳享89折優惠。(麥當勞9折優惠)。
+2.萊爾富便利商店享85折優惠。(除代收售、服務性商品等無法折扣商品)', '營業時間：週一至週六11:00~19:00
+營業項目：鍋貼、水餃', '02-2368-6478', '106臺北市大安區學府里羅斯福路四段1號第一學生活動中心', '[{"label": "官方網站", "url": "http://www.0800224466.com/"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784278960495&npage=1', '2026-10-15', 144);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('acd74d972a', 'Drinkstore 水雲朵', '', 'food', 'north', '89折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證享下列優惠
+1.活大餐廳享89折優惠。(麥當勞9折優惠)。
+2.萊爾富便利商店享85折優惠。(除代收售、服務性商品等無法折扣商品)', '營業時間：11:00~18:30
+營業項目：飲品', '02-2366-1686', '106臺北市大安區學府里羅斯福路四段1號第一學生活動中心', '[{"label": "官方網站", "url": "https://www.drinkstore.com.tw/home.jsp?lang=tw"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784279105868&npage=1', '2026-10-15', 145);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('0fd91116ac', '蛋白盒子Theproteinbox', '', 'food', 'north', '89折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證享下列優惠
+1.活大餐廳享89折優惠。(麥當勞9折優惠)。
+2.萊爾富便利商店享85折優惠。(除代收售、服務性商品等無法折扣商品)', '營業時間：週一至週六11:00~14:00、16:00~19:30，週日公休
+營業項目：健康餐盒', '02-2369-9193', '106臺北市大安區學府里羅斯福路四段1號第一學生活動中心', '[{"label": "官方網站", "url": "https://www.theproteinbox.com.tw/"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784279252535&npage=1', '2026-10-15', 146);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('be94f0d0bc', '糧晨GET食', '', 'food', 'north', '89折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證享下列優惠
+1.活大餐廳享89折優惠。(麥當勞9折優惠)。
+2.萊爾富便利商店享85折優惠。(除代收售、服務性商品等無法折扣商品)', '營業時間：07:00~16:30
+營業項目：早午餐、輕食、義大利麵', '0905-556-589', '106臺北市大安區學府里羅斯福路四段1號第一學生活動中心', '[]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1784279450192&npage=1', '2026-10-15', 147);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('bfd4fcee7e', '全家便利商店台一宿舍門市', '', 'shopping', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：7:00~23:00
+營業項目：多元化日常生活服務', '02-2367-2617', '大一女宿舍', '[{"label": "官方網站", "url": "http://www.family.com.tw/Marketing/index.aspx"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1786324701659&npage=1', '2026-10-15', 148);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a15d8e9a98', 'CoCo壹番屋咖哩餐廳', '', 'food', 'north', '85折', '自備餐盒折扣5元。國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證85折優惠', '營業時間：11:00~22:00
+營業項目：日式', '02-8369-2980', '大一女宿舍', '[{"label": "官方網站", "url": "https://www.ichibanya.com.tw/web/index/index.jsp"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1786326612509&npage=1', '2026-10-15', 149);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('f295db3b04', '全家便利商店台興門市', '', 'shopping', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：07:00~02:00
+營業項目：商品零售、多元生活便利服務', '02-2732-4804', '男生第三宿舍(台北市大安區長興街50號)', '[{"label": "官方網站", "url": "http://www.family.com.tw/Marketing/index.aspx"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1786326859398&npage=1', '2026-10-15', 150);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8e01a3da69', '萊爾富便利商店大安學霸門市', '', 'shopping', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：07:00~20:00
+營業項目：多元化日常生活服務', '02-8978-1508', '研三舍(國青大樓)', '[{"label": "官方網站", "url": "https://www.hilife.com.tw/page/index"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1786327339713&npage=1', '2026-10-15', 151);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('20af416f96', '男七萊爾富便利商店', '大安勵學門市', 'shopping', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：07:00~23:00
+營業項目：便利商店', '02-2737-5015', '臺大長興街男七宿舍', '[{"label": "官方網站", "url": "https://meals.ntu.edu.tw/restaurant/info/id/270"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1786347679053&npage=1', '2026-10-15', 152);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c6a5b6ab11', 'MD創作料理', '', 'food', 'north', '9折', '凡臺大師生(包含EMBA)出示證件，消費即享9折優惠 (服務費、清潔費及酒類飲品不在此列 ，未盡事宜以餐廳公告為主)。', '營業時間：11:30~14:30、17:30~21:00，每週日、一公休
+營業項目：西餐', '02-2362-0658', '明達館一樓', '[{"label": "官方網站", "url": "https://restaurants.anyongfresh.com/md/news"}, {"label": "官方網站", "url": "https://reurl.cc/1017O9"}, {"label": "官方網站", "url": "https://restaurants.anyongfresh.com/md"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1786431866521&npage=1', '2026-10-15', 153);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('86d25137fd', 'Toh-A桌藏餐廳', '', 'food', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：12:00~15:00、18:00~22:30，每週一、二公休
+營業項目：工業風時尚餐廳，提供高級的法式與台式融合料理', '02-2377-0952', '臺北市大安區和平東路二段76巷23弄9號', '[{"label": "官方網站", "url": "https://inline.app/booking/-MoWgGOFAsbtV_n0oF-A:inline-live-2/-MoWgGZs4C2iTwKlug_y?language=zh-tw"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1787041500590&npage=1', '2026-10-15', 154);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('2a3e13aa16', '無二會所', '', 'food', 'north', '9折', '國立臺灣大學在職教職員生憑證享餐飲及自有商品9折優惠', '營業項目：季節餐食、活動場租、五感體驗', '02-7730-8499#608', '臺北市大安區錦泰里杭州南路二段61巷12號', '[{"label": "官方網站", "url": "https://wuer2015.mystrikingly.com/"}, {"label": "官方網站", "url": "https://x.gd/2HZYM"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。原文為「國立臺灣大學在職教職員生」，學生是否適用請向店家確認。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1787046066597&npage=1', '2026-10-15', 155);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a635b9294f', '玖蜜沐喜', '', 'food', 'north', '9折', '1.自備餐具(盒)折減2元
+2.國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠(優惠餐食除外)', '營業時間：平日09:00~18:00、週六09:00~16:00
+營業項目：素食為主，亦有提供葷食', '02-2363-2913', '禮賢樓商場2樓', '[{"label": "官方網站", "url": "https://life.ntu.edu.tw/uploads/root/Germeemulsi/玖蜜沐喜_一頁式總菜單_A4_20261004.pdf"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1787131397478&npage=1', '2026-10-15', 156);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c307dfa72d', '輝室 pān-toh', '', 'food', 'north', '9折', '結帳時出示「國立臺灣大學在職教職員」證件，即可享9折優惠。', '營業項目：午、晚餐時段提供季節套餐，午茶時段提供咖啡、台灣茶、調酒等飲品。', '02-3322-6298', '臺北市中正區南昌路二段1巷2號', '[{"label": "官方網站", "url": "https://inline.app/booking/pantoh/212"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。限在職教職員，學生不適用。', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTU', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1787217186369&npage=1', '2026-10-15', 157);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8c901af79a', 'Gia越式河粉', '', 'food', 'north', '89折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證享下列優惠
+1.活大餐廳享89折優惠。(麥當勞9折優惠)。
+2.萊爾富便利商店享85折優惠。(除代收售、服務性商品等無法折扣商品)', '營業項目：越式河粉、涼拌、飯類', '0989-022-631', '106臺北市大安區學府里羅斯福路四段1號第一學生活動中心', '[]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1787561015721&npage=1', '2026-10-15', 158);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b5e1772482', '女六餐廳', '', 'food', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：週一至週五11:00~20:00，週日17:00~20:00，週六週公休
+營業項目：火鍋', '02-2396-6871', '10055臺北市中正區徐州路2之2號', '[]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1788316095241&npage=1', '2026-10-15', 159);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('0e7b1e42cf', '全家便利商店台六宿舍門市', '', 'shopping', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：24HR
+營業項目：多元化日常生活服務', '02-33226216', '女生第六宿舍(徐州路2-2號)', '[]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1788316722091&npage=1', '2026-10-15', 160);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('2ddeca4f3a', '義饗食堂', '', 'food', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：11:30~14:00
+營業項目：單點+自助蔬食吧', '02-7735-5089', '尊賢館2樓', '[{"label": "官方網站", "url": "https://lihi2.me/JDpDt"}, {"label": "官方網站", "url": "https://www.justsleephotels.com/NTU/tw/diningsandmeetings"}, {"label": "官方網站", "url": "https://inline.app/booking/-NXiFy7g6QYL6MdZUIDx:inline-live-3/-NXiFyKseP-YUgovK7In"}]', NULL, 0, '台大生活便利通「快來找好食」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/dining/dining_in.jsp?np_id=NP1788507605208&npage=1', '2026-10-15', 161);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8bab010cab', '綠色小屋', '酷鎷', 'shopping', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：週一至週五11:30~18:00；週六、週日公休
+營業項目：NTU帽T、飛行外套、背包、文具、紀念品等', '02-3365-2112', '網路購買、綠色小屋(學生心理輔導中心對面，近鹿鳴廣場)', '[{"label": "官方網站", "url": "https://www.instagram.com/ntugreenhouse?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="}, {"label": "官方網站", "url": "https://m.facebook.com/coolcode/"}, {"label": "官方網站", "url": "https://lin.ee/jJn4tM8"}]', NULL, 0, '台大生活便利通「珍藏好記憶」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/ntu_gifts/ntu_gifts_in.jsp?np_id=NP1784858320412&npage=1', '2026-10-15', 162);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('220e1eee9e', '臺大酷樂網NTU Colaz', '采豐', 'shopping', 'north', '折$100', '一、加入官方LINE可獲得50元折扣碼
+二、於結帳畫面輸入「NTU100」可享滿千折百優惠
+三、加入IG粉專可參與NTU商品抽獎，還能獲得第一手優惠資訊喔！', '營業時間：網路販售全年無休
+營業項目：臺大授權商品（短T、帽T、連帽外套、棒球外套、飛行外套、背包、文具、紀念品等百樣商品）', '02-2945-8912', '網路販售、臺大出版中心-校史館店、臺大農產品展示中心-舟山店', '[{"label": "官方網站", "url": "https://ntugift.colaz.com.tw/"}, {"label": "官方網站", "url": "https://www.instagram.com/ntucolaz"}, {"label": "官方網站", "url": "https://www.facebook.com/ntucolaz"}, {"label": "官方網站", "url": "https://lin.ee/DHKpOdC"}]', NULL, 0, '台大生活便利通「珍藏好記憶」所列商家（多為校內或臺大館舍委外商家）。官網折扣碼／LINE折扣，頁面未限身分。', '{"student": true, "staff": true, "alumni": true, "family": true}', 'NTU', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/ntu_gifts/ntu_gifts_in.jsp?np_id=NP1784861263549&npage=1', '2026-10-15', 163);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a3ed24490b', '臺大農場農產品展示中心', '', 'shopping', 'north', '95折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證95折優惠', '營業時間：08:00~18:30', '02-3366-2555', '臺大校內-臺大農場農產品展示中心(舟山路)', '[]', NULL, 0, '台大生活便利通「珍藏好記憶」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/ntu_gifts/ntu_gifts_in.jsp?np_id=NP1784861263549&npage=1', '2026-10-15', 164);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('bf8337e688', '男子理髮部', '', 'services', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：週一至週六8:00~17:30，週日公休
+營業項目：男士理髮、理容', '0910-080-474', '農化系實驗室', '[]', NULL, 0, '台大生活便利通「便利小幫手」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/other_services/other_services_in.jsp?np_id=NP1784271109996&npage=1', '2026-10-15', 165);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('28f0ddf3f3', '女子美髮部', '', 'services', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：週一至週六8:00~17:30，週日公休
+營業項目：女士理髮、理容', '02-2365-0358', '農化系實驗室', '[]', NULL, 0, '台大生活便利通「便利小幫手」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/other_services/other_services_in.jsp?np_id=NP1784271466227&npage=1', '2026-10-15', 166);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('f186506915', '東昌乾洗商店', '', 'services', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：週一至週六8:00~17:00，午休12:30~13:30
+營業項目：衣物送洗服務', '0926-988-484', '農化系實驗室', '[]', NULL, 0, '台大生活便利通「便利小幫手」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/other_services/other_services_in.jsp?np_id=NP1784272161583&npage=1', '2026-10-15', 167);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b8550ac9db', '愷元單車店', '', 'services', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：週一至週五8:30~18:00、週六11:00~17:00、週日及國定假日公休
+營業項目：腳踏車維修、販售', '02-2369-5276', '文學院旁腳踏車部', '[{"label": "官方網站", "url": "https://www.facebook.com/ffuussing/?locale=zh_TW"}, {"label": "官方網站", "url": "https://life.ntu.edu.tw/uploads/root/愷元/價目表.pdf"}]', NULL, 0, '台大生活便利通「便利小幫手」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/other_services/other_services_in.jsp?np_id=NP1784274088060&npage=1', '2026-10-15', 168);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ae0b120884', 'Zoot眼鏡', '台灣大學卓聯店', 'health', 'north', '9折', '國立臺灣大學系統之教職員工生、臺大校友及退休人員憑證9折優惠', '營業時間：週一至週日11:00~19:00。
+營業項目：眼鏡相關商品販售', '02-3365-3430', '禮賢樓商場2樓', '[{"label": "官方網站", "url": "https://reurl.cc/VWg5yN"}]', NULL, 0, '台大生活便利通「逛逛放輕鬆」所列商家（多為校內或臺大館舍委外商家）。「國立臺灣大學系統」含臺大、臺師大、臺科大教職員工生；臺大校友及退休人員亦適用。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU,NTNU,NTUST', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/shopping/shopping_in.jsp?np_id=NP1784693200047&npage=1', '2026-10-15', 169);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a1e101064e', 'Straight A Apple 校園體驗中心', '臺灣大學門市', 'shopping', 'north', '教育優惠', '國立臺灣大學之在學教職員工生以及幼稚園、國高中小教師，眾多商品可享教育折扣', '營業時間：平日10:00~20:00、假日10:00~18:00
+營業項目：Apple相關電腦設備及周邊 (適用教職員校內經費採購)', '02-2862-2015', '學新館1樓', '[{"label": "官方網站", "url": "https://shop.straighta.com.tw/home"}, {"label": "官方網站", "url": "https://lin.ee/wfKzl96"}, {"label": "官方網站", "url": "https://www.instagram.com/straighta.ntu"}, {"label": "官方網站", "url": "https://www.threads.com/@straighta.ntu?igshid=NTc4MTIwNjQ2YQ=="}]', NULL, 0, '台大生活便利通「逛逛放輕鬆」所列商家（多為校內或臺大館舍委外商家）。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/shopping/shopping_in.jsp?np_id=NP1787649758917&npage=1', '2026-10-15', 170);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ffca871125', '校史館書店', '臺灣大學出版中心', 'shopping', 'north', '8折', '書籍8折、紀念品校外人士9折、 校內人士88折', '營業時間：週一至週六09:00~17:00(每月最後一個星期二及國定假日公休)', '02-3366-1523', '106216 臺北市羅斯福路四段1號 臺大校史館二樓', '[{"label": "Facebook", "url": "https://www.facebook.com/ntuprsbookstore"}, {"label": "臺大紀念品線上商店", "url": "https://shop.press.ntu.edu.tw/"}]', NULL, 0, '台大生活便利通「珍藏好記憶／臺灣大學出版中心」所列校內書店。紀念品88折為校內人士價，頁面未定義「校內人士」範圍。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/ntu_gifts/ntu_gifts_in.jsp?np_id=NP1785201468313&npage=1', '2026-10-15', 171);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('2a63542a41', '校總區書店', '臺灣大學出版中心', 'shopping', 'north', '8折', '書籍8折，紀念品88折', '營業時間：週一至週五08:30~17:00(2020年4月起12:00~13:00休息，週六、日、例假日公休)', '02-2365-9286', '106216 臺北市羅斯福路四段1號 臺大校總區圖書館地下一樓', '[{"label": "官方網站", "url": "http://www.press.ntu.edu.tw/"}]', NULL, 0, '台大生活便利通「珍藏好記憶／臺灣大學出版中心」所列校內書店。頁面未載明適用身分。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/ntu_gifts/ntu_gifts_in.jsp?np_id=NP1785201468313&npage=1', '2026-10-15', 172);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('99863b2629', '水源校區書店', '臺灣大學出版中心', 'shopping', 'north', '8折', '書籍8折、紀念品88折', '營業時間：週一至週五08:30~12:00、13:00~17:00 (週六、日、例假日公休)', '02-3366-3993分機18', '100047 臺北市思源街18號  臺大水源校區澄思樓一樓', '[{"label": "官方網站", "url": "http://www.press.ntu.edu.tw/"}]', NULL, 0, '台大生活便利通「珍藏好記憶／臺灣大學出版中心」所列校內書店。頁面未載明適用身分。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/ntu_gifts/ntu_gifts_in.jsp?np_id=NP1785201468313&npage=1', '2026-10-15', 173);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b40157a56f', '太子文旅修齊館', '臺大修齊會館', 'lodging', 'north', '特約優惠', '房價表詳見官網，臺大教職員工、其眷屬及校友需憑證件另享優惠，並設有忠誠客戶(同房型連續住宿16晚(含)以上)方案供不同需求者參考。', '營業時間：24小時
+營業項目：長期及短期住宿服務', '02-2363-1066，分機轉40199或轉5', '10087台北市中正區思源街16-1號', '[{"label": "官方網站", "url": "http://hsiuchi.prince.com.tw"}, {"label": "房價表", "url": "https://hsiuchi.prince.com.tw/rooms_price.php"}]', NULL, 0, '校內住宿。頁面未提及學生適用。', '{"student": false, "staff": true, "alumni": true, "family": true}', 'NTU', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/accommodation/accommodation_in.jsp?np_id=NP1785230037235&npage=1', '2026-10-15', 174);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('89140e9a82', '京倫會所', '', 'services', 'north', '8折', '全區包場：5,000元/小時(至少4小時)，全天35,000元，5pm後及超時6,000元/小時。
+會議室(上限7人)/榻榻米區(上限12人)：8,000元/4小時
+展覽：10天60,000元，30天150,000元
+【台大教職員工租借享8折優惠】', '開放時段：週一~週五 10:00~17:00（如活動遇週六、日，請提早告知以利安排）
+可容納人數：依活動性質，最多45-50人', '02-2356-9188', '100臺北市中正區臨沂街44巷1號', '[]', NULL, 0, '經管組委外場地包場服務；8折限台大教職員工。', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTU', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/other_services/other_services_in.jsp?np_id=NP1784706742587&npage=1', '2026-10-15', 175);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9ac5a3ec98', 'CAMA CAFE', '台大新生南店', 'food', 'north', '9折', 'CAMA CAFE 咖啡分享桶（微韻美式$550／桶；金獎美式、熟香紅茶、栗香焙煎茶$650/桶；雙冠莊園精品美式 $750/桶）台大新生南店專屬優惠：憑台大相關證件，自取享 9 折優惠！', '營業時間：07:30-18:00(平日)/ 07:00-18:00(例假日)', '02-2368-3055', '台北市大安區新生南路三段76巷1號', '[]', NULL, 0, '生活便利通「生活新鮮事」2026-09-07 公告；僅限咖啡分享桶自取，未載明期限。', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTU', 'school', '臺大總務處經營管理組（台大生活便利通）', 'https://life.ntu.edu.tw/web/news/news_in.jsp?np_id=NP1788745435697&npage=1', '2026-10-15', 176);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('f1dc0dfc35', '茶士丁尼手搖飲', '臺師大和平校區Ⅰ', 'food', 'north', '折$5', '憑證享折5元優惠', '營業時間：週一~週五11:00-19:00(例假日公休)
+商品類型：飲品
+優惠期間：即日起~119/06/30', '02-2362-2310', '臺師大和平校區Ⅰ 樂智樓1樓', '[]', '2030-06-30', 0, '臺師大和平校區Ⅰ校內商家（樂智樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 177);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('23b9a994e2', 'WahSay佩佩奶奶義大利麵', '臺師大和平校區Ⅰ', 'food', 'north', '特約優惠', '師大師生註冊會員送100元註冊禮，消費集點還能獲得日式炸雞等人氣餐點', '營業時間：11:00~20:00
+商品類型：義大利麵、咖哩飯
+優惠期間：即日起~119/06/30', '02-3365-1533', '臺師大和平校區Ⅰ 樂智樓1樓', '[]', '2030-06-30', 0, '臺師大和平校區Ⅰ校內商家（樂智樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 178);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8a13f0b799', '全家便利商店', '樂智樓', 'shopping', 'north', '9折', '憑證9折，惟咖啡、報紙、雜誌及生鮮農產品除外', '營業時間：7:00-23:00
+商品類型：便利超商
+優惠期間：即日起~119/06/30', '02-2368-2773', '臺師大和平校區Ⅰ 樂智樓1樓', '[]', '2030-06-30', 0, '臺師大和平校區Ⅰ校內商家（樂智樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 179);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('19cfaf9abe', '椒麻雞大王', '臺師大和平校區Ⅰ', 'food', 'north', '會員價', '憑證享會員價之優惠', '營業時間：11:00-20:00(週日公休)
+商品類型：泰式客飯套餐
+優惠期間：即日起~115/06/30', '02-2367-0178', '臺師大和平校區Ⅰ 學一舍地下1樓', '[]', '2026-06-30', 0, '臺師大和平校區Ⅰ校內商家（學一舍地下1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 180);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('876d1e5c02', '學一舍校園商店', '臺師大和平校區Ⅰ', 'shopping', 'north', '9折', '憑證9折', '營業時間：7:30~16:00
+商品類型：文創商品、Cama咖啡、輕食
+優惠期間：即日起~117/06/30', '02-2369-6582', '臺師大和平校區Ⅰ 學一舍校園商店', '[]', '2028-06-30', 0, '臺師大和平校區Ⅰ校內商家（學一舍校園商店）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 181);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('490fd75cb6', '貳樓餐廳', '臺師大和平校區Ⅰ', 'food', 'north', '9折', '憑證9折、另師大之教職員生憑證專屬師大人之外帶特別優惠餐盒', '營業時間：週一至週五10:00~21:00、週六、週日9:00~21:00
+商品類型：美式早午餐、義大利麵、燉飯、飲料、甜品
+優惠期間：即日起~118/06/30', '02-2365-6222', '臺師大和平校區Ⅰ 樂群樓', '[]', '2029-06-30', 0, '臺師大和平校區Ⅰ校內商家（樂群樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 182);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('3dfac0d123', 'Saizeriya薩莉亞義式餐廳', '臺師大和平校區Ⅱ', 'food', 'north', '特約優惠', '憑證可享師大人特餐', '營業時間：11:00~22:00
+商品類型：義式餐飲、比薩、義大利麵、飲品
+優惠期間：即日起~118/06/30', '02-2322-3422', '臺師大和平校區Ⅱ 綜合大樓1樓', '[]', '2029-06-30', 0, '臺師大和平校區Ⅱ校內商家（綜合大樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 183);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('0fa7c187b6', '起初好好', '臺師大和平校區Ⅱ', 'food', 'north', '9折', '憑證9折', '營業時間：8:00-19:00
+商品類型：咖啡、茶品、三明治、炸物、義大利麵
+優惠期間：即日起~118/06/30', '02-2351-2699', '臺師大和平校區Ⅱ 綜合大樓1樓', '[]', '2029-06-30', 0, '臺師大和平校區Ⅱ校內商家（綜合大樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 184);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a438225130', '星巴克', '臺師大和平校區Ⅱ', 'food', 'north', '9折', '憑證9折', '營業時間：週一至週五7:30~19:00、例假日7:30~18:00
+商品類型：咖啡、蛋糕、常溫點心、果汁
+優惠期間：即日起~118/06/30', '02-2321-3986', '臺師大和平校區Ⅱ 綜合大樓1樓', '[]', '2029-06-30', 0, '臺師大和平校區Ⅱ校內商家（綜合大樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 185);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('77286eb01b', '三商巧福', '臺師大和平校區Ⅱ', 'food', 'north', '9折', '憑證9折', '營業時間：11:00-21:00
+商品類型：麵食、飯、小菜
+優惠期間：即日起~118/06/30', '02-2396-5285', '臺師大和平校區Ⅱ 綜合大樓1樓', '[]', '2029-06-30', 0, '臺師大和平校區Ⅱ校內商家（綜合大樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 186);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('cbd32084bf', '街口皇廚', '臺師大和平校區Ⅱ', 'food', 'north', '9折', '單點、套餐憑證9折', '營業時間：週一~週五、日11:00~14:00、16:45~19:50、週六公休
+商品類型：招牌特餐、便當
+優惠期間：即日起~118/06/30', '02-2322-2010', '臺師大和平校區Ⅱ 綜合大樓1樓', '[]', '2029-06-30', 0, '臺師大和平校區Ⅱ校內商家（綜合大樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 187);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('3cd5196bb5', '7-11 統一超商', '臺師大和平校區Ⅱ', 'shopping', 'north', '9折', '憑證9折，惟咖啡、報紙、雜誌及生鮮農產品除外', '營業時間：7:00-23:00
+商品類型：便利超商
+優惠期間：即日起~118/06/30', '02-2351-9957', '臺師大和平校區Ⅱ 綜合大樓1樓', '[]', '2029-06-30', 0, '臺師大和平校區Ⅱ校內商家（綜合大樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 188);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('969b71cae8', '師大照相影印部', '臺師大和平校區Ⅱ', 'services', 'north', '優惠價', '表定商品優惠價格', '營業時間：週一至週四9:00~19:00、週五9:00-17:00(例假日公休)
+商品類型：照相、影印、裝訂、護貝
+優惠期間：即日起~118/06/30', '02-2391-8101', '臺師大和平校區Ⅱ 綜合大樓1樓', '[]', '2029-06-30', 0, '臺師大和平校區Ⅱ校內商家（綜合大樓1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 189);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('5e8ecb863f', '水粵香港式餐廳', '臺師大和平校區Ⅱ', 'food', 'north', '9折', '精緻合菜、個人套餐、單點，憑證9折', '營業時間：11:00~14:00、17:00~21:00
+商品類型：粵式料理、港式飲茶、包廂宴席
+優惠期間：即日起~118/06/30', '02-2321-1117', '臺師大和平校區Ⅱ 綜合大樓B1', '[]', '2029-06-30', 0, '臺師大和平校區Ⅱ校內商家（綜合大樓B1）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 190);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('d1e79ac32b', 'Subway', '臺師大和平校區Ⅱ', 'food', 'north', '9折', '憑證可享師大人專屬優惠(每日9折之特惠餐點及飲料9折優惠)', '營業時間：週一至週五7:30~21:30、例假日8:00~21:30
+商品類型：三明治、麵包、輕食、沙拉
+優惠期間：即日起~116/12/31', '02-2321-0081', '臺師大和平校區Ⅱ 產學館1樓(C櫃位)', '[]', '2027-12-31', 0, '臺師大和平校區Ⅱ校內商家（產學館1樓(C櫃位)）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員工生。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 191);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('d5d925c080', '極電資訊', '臺師大和平校區Ⅱ', 'shopping', 'north', '教育優惠', '教育優惠折扣（副廠週邊配件(三校聯盟優惠)）', '營業時間：11:00~19:00 (週日公休)
+商品類型：蘋果電腦銷售、配件販售、維護
+優惠期間：即日起~116/12/31', '02-2322-3718', '臺師大和平校區Ⅱ 產學館1樓(B櫃位)', '[]', '2027-12-31', 0, '臺師大和平校區Ⅱ校內商家（產學館1樓(B櫃位)）。優惠對象：副廠週邊配件(三校聯盟優惠)。優惠對象欄僅寫「副廠週邊配件(三校聯盟優惠)」。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 192);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('74fc196027', '鐵支涮火鍋', '臺師大和平校區Ⅱ', 'food', 'north', '9折', '憑證享9折優惠', '營業時間：週一到週五 17:00~24:00週六日11:30~14:30、17:30~24:00(國定假日or連續假期比照六日營業時
+商品類型：時令海鮮肉品與獨家創意料理
+優惠期間：即日起~116/06/30', '02-2391-1798', '臺北市大安區和平東路一段141巷6-1號', '[]', '2027-06-30', 0, '臺師大和平校區Ⅱ校內商家（臺北市大安區和平東路一段141巷6-1號）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 193);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ce0b6c0701', '銅樂鍋物', '臺師大其他', 'food', 'north', '9折', '憑證享9折優惠。', '營業時間：11:30~23:00
+商品類型：火鍋、鬆餅、可麗餅、甜甜圈
+優惠期間：即日起~114/12/31', '02-2368-0687', '臺北市大安區師大路39巷1號', '[]', '2025-12-31', 0, '臺師大其他校內商家（師大路39巷1號）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生，與師大校友及退休人員。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 194);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('f14a6d641d', '7-11 統一超商', '臺師大門市', 'shopping', 'north', '9折', '憑證9折', '營業時間：7:00~23:00
+商品類型：便利超商
+優惠期間：即日起~117/06/30', '02-8663-5162', '臺師大公館校區 行政大樓', '[]', '2028-06-30', 0, '臺師大公館校區校內商家（行政大樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員生。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 195);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('cc1b4fdf8b', '萊爾富超商', '師文山師大店', 'shopping', 'north', '9折', '憑證9折', '營業時間：全天營業00:00~24:00
+商品類型：便利超商
+優惠期間：即日起~117/06/30', '02-8663-9916', '臺師大公館校區 學二舍1樓', '[]', '2028-06-30', 0, '臺師大公館校區校內商家（學二舍1樓）。優惠對象：國立臺灣大學系統(臺大、臺科大、臺師大)之教職員工生。來源為臺師大「校內轄下提供臺大系統優惠商家一覽表」（更新日期2025.9.22），刊於國立臺灣大學系統網站「優惠訊息」頁。', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTU,NTNU,NTUST', 'school', '國立臺灣師範大學（國立臺灣大學系統網站公告）', 'https://triangle.ntu.edu.tw/001/Upload/1571/ckfile/4c61f706-ae6a-4e13-b389-e5fb2803d4e1.pdf', '2026-10-15', 196);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('0b255eeed7', 'G惡熊脆皮雞蛋糕', '台中市西區', 'food', 'central', '95折', '憑教職員證或學生證享 95 折優惠。
+團體訂購另享優惠，歡迎會議、活動、社團及系學會訂購。
+可提前預約製作，減少等待時間。', '電話：0906-386062
+地址：台中市西區中美街298號
+使用對象：教職員、在校學生', '0906-386062', '台中市西區中美街298號', '[{"label": "官網", "url": "https://www.facebook.com/gxbear2025/?locale=zh_TW"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php', '2026-10-15', 197);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('760fa83f23', '宏碁 Acer', '台北市松山區', 'shopping', 'north', '教育方案優惠', '持有中興大學電子郵件註冊 Acer Store 會員並審核教育方案通過後消費，享有所定約下列之優惠條款，優惠內容及適用商品依公告為準：
+1. 指定筆電結帳享教育方案專屬折扣
+2. 指定筆電結帳贈送一年延長保固
+3. 指定螢幕結帳享教育方案專屬折扣', '電話：04-26963131
+地址：台北市松山區復興北路369號7樓之5
+使用對象：需有本校Email', '04-26963131', '台北市松山區復興北路369號7樓之5', '[{"label": "官網", "url": "https://acer.link/4x0xa5A"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php', '2026-10-15', 198);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7346fc317f', '大眾旅行社-台中分公司', '台中市南屯區', 'services', 'central', '折$50', '1. 各項簽證折 50 元。
+2. 國外團體旅遊優惠 500 元/人（不含稅）：東南亞、東北亞、中國大陸（不含港澳）、太平洋小島。
+3. 國外團體旅遊優惠 1000 元/人（不含稅）：歐洲、亞非、紐澳美、加拿大。
+4. 不適用行銷特惠案、清艙特價團與專案團體旅遊商品，優惠不可合併使用。
+5. 優惠僅適用於台中分公司的團費售價抵減。', '電話：04-36009770
+地址：台中市南屯區公益路二段61號6樓之2
+使用對象：教職員、在校學生、校友', '04-36009770', '台中市南屯區公益路二段61號6樓之2', '[{"label": "官網", "url": "https://www.publictravel.com.tw/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php', '2026-10-15', 199);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('18a2bd7bf3', '好事國際商通', '台中市南屯區', 'shopping', 'central', '專屬優惠價', '1. 環境噴瓶原價一瓶 300 元，特約商店享一瓶 200 元優惠
+2. 保養品會陸續推出優惠資訊', '電話：04-23897333
+地址：台中市南屯區五權西路二段666號12樓之7
+使用對象：教職員、在校學生、校友', '04-23897333', '台中市南屯區五權西路二段666號12樓之7', '[]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php', '2026-10-15', 200);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8a0bafffea', 'O′right 歐萊德', '桃園市龍潭區', 'shopping', 'north,central,south,east', '75折', '1. 歐萊德於合約期間內，為中興大學提供企業專屬優惠網站（線上平台）。教職員工、學生及校友可憑中興大學專屬企業代碼（或經由公告之專屬連結）登入該平台訂購商品。
+2. 享有優惠月份為每年的 1 月、5 月、9 月，於活動期間內在該專屬網站消費，享有單品 75 折之特約優惠。
+3. 為響應綠色物流與減碳環保，於該網站消費之單筆訂單金額滿 NT$2,000 元整，即可享有指定單一收件地址免運費之優惠。', '電話：03-4116789
+地址：桃園市龍潭區中豐路高平段18號
+使用對象：教職員、在校學生、校友', '03-4116789', '桃園市龍潭區中豐路高平段18號', '[{"label": "官網", "url": "https://www.oright.inc/tw/home"}]', '2026-12-31', 0, '地址為公司/總店地址，優惠可於線上或多地使用', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php', '2026-10-15', 201);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('e6ad52bd92', '屾沐Sunmood 36F 景觀餐廳', '台中市南區', 'food', 'central', '88折', '持有學生證或教職員工證至店鋪內用消費，享有約定事項如下：
+1.內用消費單筆享88 折優惠。
+2.打卡或分享餐點圖片至粉絲專頁或 google 評論，贈小點心乙份，依現場供應為主。
+3.當月生日壽星，點餐時出示證件，即贈蛋糕乙份。
+4.平日14：00～18：00包場費用4小時一律4500 (供應茶水)。
+5.上述優惠可同時使用，但不得與行銷活動之其他優惠併用。
+6.上述三點優惠之項目，屾沐有權保有現場變更或更換之權益，並不另行通知。', '電話：04-22650465
+地址：台中市南區忠明南路787號36樓
+使用對象：教職員、在校學生', '04-22650465', '台中市南區忠明南路787號36樓', '[{"label": "官網", "url": "https://www.facebook.com/p/%F0%9D%90%92%F0%9D%90%AE%F0%9D%90%A7%F0%9D%90%A6%F0%9D%90%A8%F0%9D%90%A8%F0%9D%90%9D%E5%B1%BE%E6%B2%90-100086499409895/?locale=zh_TW"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php', '2026-10-15', 202);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9bc0e85a17', '欣里美診所', '台中市大里區', 'health', 'central', '掛號費優惠', '憑學生證、教職員工證、校友證掛號享有優惠。', '電話：04-24823103
+地址：台中市大里區國光路二段236號
+使用對象：教職員、在校學生、校友', '04-24823103', '台中市大里區國光路二段236號', '[{"label": "官網", "url": "https://www.facebook.com/people/%E6%AC%A3%E9%87%8C%E7%BE%8E%E8%A8%BA%E6%89%80/61573357477514/#"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php', '2026-10-15', 203);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('bb2d612c7a', '江魚美', '台中市西區', 'food', 'central', '95折', '到店用餐享原價95折優惠（不含服務費）及來店禮一份。', '電話：04-23263456
+地址：台中市西區公益路22號
+使用對象：教職員、在校學生、校友', '04-23263456', '台中市西區公益路22號', '[{"label": "官網", "url": "https://www.instagram.com/jiangyumei_/"}]', '2027-06-04', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php', '2026-10-15', 204);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('df2c233692', '易亓全直火烘焙精品手沖咖啡', '台中市南區', 'food', 'central', '9折', '1. 店內消費全品項（含咖啡豆）9折優惠
+2. 提供手沖咖啡交流
+3. 場地租借優惠', '電話：0939-831114
+地址：台中市南區信義南街103號
+使用對象：教職員、在校學生、校友', '0939-831114', '台中市南區信義南街103號', '[{"label": "官網", "url": "https://www.facebook.com/p/%E6%98%93%E4%BA%93%E5%85%A8%E7%9B%B4%E7%81%AB%E7%83%98%E7%84%99%E5%92%96%E5%95%A1-%E7%B2%BE%E5%93%81%E8%8E%8A%E5%9C%92%E5%92%96%E5%95%A1-100089735716928/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php', '2026-10-15', 205);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('fcb3ef53c2', '台灣奧黛莉股份有限公司', '台中市西屯區', 'shopping', 'central', '回饋優惠', '於EASY SHOP 官方購物網消費時享有以下優惠：
+1. 享【優惠碼】折扣金$50
+2. 不定期享指定專屬商品優惠
+3. 提供 EASY SHOP 電子禮物卡專屬面額及回饋金', '電話：04-23592211
+地址：台中市西屯區工業區3路6號
+使用對象：教職員、在校學生、校友', '04-23592211', '台中市西屯區工業區3路6號', '[{"label": "官網", "url": "https://www.easyshop.com.tw/"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=2', '2026-10-15', 206);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('cfc198d7ab', '向耘心理諮商所', '台中市南區', 'health', 'central', '9折', '1.個別諮商、伴侶/婚姻諮商與家族/親子諮商費用(皆已含行政費用)，每次費用9折。
+2. 本合作方案不可與政府其他方案(如衛福部15-45歲青壯世代心理健康支持方案、國軍心理健康照護方案等)同時於當次諮商使用。', '電話：04-22656939
+地址：台中市南區五權南路535號
+使用對象：教職員、在校學生、校友', '04-22656939', '台中市南區五權南路535號', '[{"label": "官網", "url": "https://www.verduremind.com/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=2', '2026-10-15', 207);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ccdf533669', 'Jourdeness佐登妮絲', '台中市北區', 'shopping', 'north,central,south,east', '專屬優惠價', '1-1.生美特約方案：限女性新朋友，適用全台佐登妮絲直營門市
+方案1：A、法式淨膚課程／定價2,000元／時間40分／優惠999元（旗艦館1,099元）
+B、法式背部課程／定價2,200元／時間30分／優惠999元（旗艦館1,099元）
+方案2：法式雙享方案／方案1中 A+B 或 Ax2 堂或 Bx2 堂，三選一／2,200元（旗艦館2,500元）
+方案3：亮顏舒筋課程單堂／定價2,500元／時間50分／優惠1,250元（旗艦館1,500元）
+1-2.生美特約憑證加碼：
+A、以上課程隨堂加贈：遠紅線太空艙／定價1,200元／時間20分／堂
+B、水搖滾保濕面膜25ml／片／定價100元
+2-1.醫美特約方案：不限男女，適用全台佐登微爾醫美診所
+A、全像皮秒1堂（每人限一次）／4,999
+B、全像皮秒1堂+藍寶石1堂／6,999
+C、淨白0毛孔1堂／3,333
+D、雷射2選1 x3／4,999
+E、杏仁酸煥顏／999
+F、氦氖雷射3堂／5,999
+G、幸福保健椅3堂／3,333
+2-2.醫美特約憑證加碼：
+天使美白點滴250ml／堂
+3.健康養生講座／課程規劃及師資安排，全程免費
+A、肩頸紓壓
+B、精油芳療
+C、DIY手作課程', '電話：04-22982222
+地址：台中市北區中清路一段812號
+使用對象：教職員、在校學生、校友', '04-22982222', '台中市北區中清路一段812號', '[{"label": "官網", "url": "https://www.jourdeness.com.tw/"}]', NULL, 0, '校友中心標示期限：永久；地址為公司/總店地址，優惠可於線上或多地使用', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=2', '2026-10-15', 208);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a55106703d', '澤 健康管理診所', '台中市西區', 'health', 'central', '掛號費優惠', '1. 健保門診憑出示識別證件健保掛號費為50元、部分負擔50元(原門診掛號費200元）。
+2. 自費門診憑出示識別證件自費掛號費為800元。原自費掛號費1,000元）。
+3. 掛號批價時請先出示識別證件或是大樓特約管委會提供之可識別方式；該識別證件不得做簽帳使用。', '電話：04-23262133
+地址：台中市西區臺灣大道二段461號1樓
+使用對象：教職員、在校學生', '04-23262133', '台中市西區臺灣大道二段461號1樓', '[{"label": "官網", "url": "https://www.glowhealth.com.tw/"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=2', '2026-10-15', 209);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('fac8ce3064', '慈祐診所', '台中市烏日區', 'health', 'central', '掛號費優惠', '1. 來院就醫掛號費享掛號費100元(原掛號費200元)。
+2. 依健保局規定收取之部分負擔、診斷書、就醫明細等費用，恕無折扣。
+3. 需主動表明身分已享有折扣。', '電話：04-23368633
+地址：台中市烏日區中山路一段548號
+使用對象：教職員、在校學生', '04-23368633', '台中市烏日區中山路一段548號', '[{"label": "官網", "url": "https://www.facebook.com/Taichung.Wuri/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=2', '2026-10-15', 210);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('418b15124d', '松群診所', '台中市烏日區', 'health', 'central', '掛號費優惠', '1. 來院就醫掛號費優惠100元(另收部分負擔50元)。
+2. 依健保局規定收取之部分負擔、診斷書、就醫明細等費用，恕無折扣。
+3. 需主動表明身分已享有折扣。', '電話：04-23386690
+地址：台中市烏日區公園路88號
+使用對象：教職員、在校學生', '04-23386690', '台中市烏日區公園路88號', '[{"label": "官網", "url": "https://www.facebook.com/sungchiun/?locale=zh_TW"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=2', '2026-10-15', 211);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('01ef184c26', '元亨診所', '台中市北屯區', 'health', 'central', '掛號費優惠', '1. 來院就醫掛號費優惠100元(另收部分負擔50元)。
+2. 依健保局規定收取之部分負擔、診斷書、就醫明細等費用，恕無折扣。
+3. 需主動表明身分已享有折扣。', '電話：04-22413959
+地址：台中市北屯區松竹路二段303號
+使用對象：教職員、在校學生', '04-22413959', '台中市北屯區松竹路二段303號', '[{"label": "官網", "url": "https://www.facebook.com/p/%E5%85%83%E4%BA%A8%E8%A8%BA%E6%89%80-100063663925718/?locale=zh_TW"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=2', '2026-10-15', 212);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('12b23bf92c', '天行健診所', '台中市北區', 'health', 'central', '掛號費優惠', '1. 來院就醫掛號費優惠100元。
+2. 依健保局規定收取之部分負擔、診斷書、就醫明細等費用，恕無折扣。
+3. 需主動表明身分已享有折扣。', '電話：04-22352112
+地址：台中市北區健行路321號
+使用對象：教職員、在校學生', '04-22352112', '台中市北區健行路321號', '[{"label": "官網", "url": "https://www.facebook.com/txj22352112/?locale=zh_TW"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=2', '2026-10-15', 213);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('08c1a52a93', '謙樂診所', '台中市南屯區', 'health', 'central', '掛號費優惠', '1. 來院就醫掛號費優惠100元(另收部分負擔50元)。
+2. 依健保局規定收取之部分負擔、診斷書、就醫明細等費用，恕無折扣。
+3. 需主動表明身分已享有折扣。', '電話：04-24710818
+地址：台中市南屯區文心南六路297號
+使用對象：教職員、在校學生', '04-24710818', '台中市南屯區文心南六路297號', '[{"label": "官網", "url": "https://www.facebook.com/p/%E8%AC%99%E6%A8%82%E8%A8%BA%E6%89%80-61577830880916/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=2', '2026-10-15', 214);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7d69392d07', '家康診所', '台中市南屯區', 'health', 'central', '掛號費優惠', '1. 來院就醫掛號費優惠100元。
+2. 依健保局規定收取之部分負擔、診斷書、就醫明細等費用，恕無折扣。
+3. 需主動表明身分已享有折扣。', '電話：04-24710818
+地址：台中市南屯區文心南六路297號
+使用對象：教職員、在校學生', '04-24710818', '台中市南屯區文心南六路297號', '[{"label": "官網", "url": "https://www.facebook.com/Jiakang0412/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=2', '2026-10-15', 215);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('e18d7176ad', '元里診所', '台中市大里區', 'health', 'central', '掛號費優惠', '1. 來院就醫掛號費優惠100元+部分負擔50元。
+2. 依健保局規定收取之部分負擔、診斷書、就醫明細等費用，恕無折扣。
+3. 需主動表明身分已享有折扣。', '電話：04-24064779
+地址：台中市大里區新興路97號
+使用對象：教職員、在校學生', '04-24064779', '台中市大里區新興路97號', '[{"label": "官網", "url": "https://www.facebook.com/Yuanli.0809/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=2', '2026-10-15', 216);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('1389a96bfe', '元盛診所', '台中市南區', 'health', 'central', '掛號費優惠', '1. 來院就醫掛號費優惠100元(另收部分負擔50元)。
+2. 依健保局規定收取之部分負擔、診斷書、就醫明細等費用，恕無折扣。
+3. 需主動表明身分已享有折扣。', '電話：04-22636165
+地址：台中市南區復興路一段295號
+使用對象：教職員、在校學生', '04-22636165', '台中市南區復興路一段295號', '[{"label": "官網", "url": "https://www.facebook.com/a22636165/?locale=zh_TW"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=3', '2026-10-15', 217);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('3411bc586a', 'WCJ 維西杰', '台中市西屯區', 'entertainment', 'central', '95折', '(一) 品牌與合作範圍甲方係依法經營運動與身心健康相關品牌之公司，包含但不限於：
+一、KX Pilates（器械皮拉提斯）
+二、AntiGravity Studios（瑜珈教室）
+三、Radical Fitness（節奏型團體課程）
+以及甲方未來依法取得代理或經營權之其他品牌及其所屬教室。
+(二) 特約企業優惠適用方案與價格說明
+一、課程享有95折優惠。
+二、適用於常態課程及月繳型方案。
+三、生日折扣或其他優惠（例：里程碑折扣優惠）不得併同使用本優惠。購課可於手機App端結帳逕行輸入優惠碼即享各店購課優惠。', '電話：02-27040550
+地址：台中市西屯區河南路二段317號1樓、2樓
+使用對象：教職員、在校學生、校友', '02-27040550', '台中市西屯區河南路二段317號1樓、2樓', '[{"label": "官網", "url": "https://wcj.com.tw/"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=3', '2026-10-15', 218);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7c3cc00383', '六書堂數位學習', '台中市南屯區', 'education', 'north,central,south,east', '85折', '1. 乙方贈課活動【一對一語言程度分析課程_價值 2,000 元】，內容提供成人線上英語、兒童線上美語之口說程度檢測及學習報告建議服務。
+2. 甲方員工透過乙方安排服務顧問、老師，進行線上語言諮詢課程，且 若購買乙方品牌【WUWOW 成人線上英文】、【WUWOW JUNIOR 兒童線上英文】之課程方案，甲方教職員工、學生、校友 出示相關識別證明，可享本人、眷屬、孩童報名乙方雙品牌所有課程方案，大專院校專屬 85 折優惠。', '電話：02-23236666
+地址：台中市南屯區公益路二段971號
+使用對象：教職員、在校學生、校友', '02-23236666', '台中市南屯區公益路二段971號', '[{"label": "官網", "url": "https://www.lioshutan.com/"}]', NULL, 0, '校友中心標示期限：永久；地址為公司/總店地址，優惠可於線上或多地使用', '{"student": true, "staff": true, "alumni": true, "family": true}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=3', '2026-10-15', 219);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('4f20c0d531', '謎因創意工作室', '台中市西區', 'entertainment', 'central', '折$100', '「密室逃脫」每款主題每人可現折100元。', '電話：04-22229641
+地址：台中市西區民權路175-1號3樓
+使用對象：教職員、在校學生', '04-22229641', '台中市西區民權路175-1號3樓', '[{"label": "官網", "url": "https://www.instagram.com/meingescape/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=3', '2026-10-15', 220);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c3612f783f', '臺中勤美洲際酒店', '台中市西區', 'lodging', 'central', '專屬優惠價', '2026年商務優惠價
+房型 /平日/ 週六
+豪華客房 /NT$7,738net/NT$10,279net
+草悟道景觀 豪華客房/NT$8,431net/NT$10,972net
+行政樓層 豪華客房
+(享 洲際行政俱樂部 使用權)/NT$11,781net/NT$14,322net
+上述價格，已包含稅金與服務費，可累計 IHG 優悅會會員點數與房晚，惟於國定連續假期期間不適用，敬請留意。
+如有訂房需求，請聯繫T: (04)2324 6300#88006｜F: (04)2328 1098 曾先生', '電話：04-23246300#88006
+地址：台中市西區館前路77號
+使用對象：教職員、在校學生、校友', '04-23246300#88006', '台中市西區館前路77號', '[{"label": "官網", "url": "https://taichungic.com/"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=3', '2026-10-15', 221);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('962e86b43c', '威比事業有限公司', '新北市三重區', 'shopping', 'north,central,south,east', '7折', '1. 官網全品項享七折優惠，須向官方客服索取折扣代碼，並於官網結帳時輸入使用，且不得與其他優惠、折扣、特惠方案或活動併用。
+2. 訂單出貨配送至校內地址者，不限金額享免運費。
+3. 凡購買寢具五件組，加贈高級枕頭套乙枚。
+4. 限定具低收入戶身分之在學大學部學士班學生，憑有效證明文件，可免費申請寢具經濟型三件組乙組，每人限申請一組，且不得重複申請。', '電話：02-29800892#2
+地址：新北市三重區中正北路415號2樓
+使用對象：教職員、在校學生、校友', '02-29800892#2', '新北市三重區中正北路415號2樓', '[{"label": "官網", "url": "https://www.wibby-st.com/"}]', NULL, 0, '校友中心標示期限：永久；地址為公司/總店地址，優惠可於線上或多地使用', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=3', '2026-10-15', 222);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('757396a4f6', '傑昇通信', '台中市南區', 'services', 'central', '買一送一', '1. imos保護貼買一送一（曲面螢幕/低藍光/康寧除外）
+2. TOUGHER玻璃保護貼買一送一（曲面螢幕除外）
+3. 配件購物金200元（限折抵單價300元以上非手機品牌配件或保健品）
+4. 上述優惠任選一項，消費再送傑納瑞衛生紙一串（6包）', '電話：04-22610168
+地址：台中市南區美村南路187號
+使用對象：教職員、在校學生、校友', '04-22610168', '台中市南區美村南路187號', '[{"label": "官網", "url": "https://www.jyes.com.tw/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=3', '2026-10-15', 223);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('6b3449996c', '一日誠臻牙醫', '台中市南屯區', 'health', 'central', '9折起', '1. 預約門診掛號費：繳交健保部分負擔$50元。
+2. 特約自費方案：
+A. 提供免費諮詢，並制定客製化醫療方案。
+B. 植牙：美國Hiossen $36,800/顆；瑞典Nobel $55,000/顆；瑞士Straumann $68,000/顆。
+C. 全口重建(All on x) 95折。
+D. 全瓷冠 9折。
+E. 美學陶瓷貼片 $15,000/顆(6顆以上)。
+F.冷光美白 $12,999/次。
+3. 不定期舉辦牙醫衛生相關講座。', '電話：04-24731551
+地址：台中市南屯區文心路一段54號
+使用對象：教職員、在校學生、校友', '04-24731551', '台中市南屯區文心路一段54號', '[{"label": "官網", "url": "https://oneday-all-on-4.com/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=3', '2026-10-15', 224);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('56df54f55b', '西谷子養生元氣堂', '桃園市中壢區', 'food', 'north,central,south,east', '專屬優惠價', '優惠價需使用專屬網站下單，
+如需使用請來信wang1026@nchu.edu.tw', '電話：03-2870666#222
+地址：桃園市中壢區領航南路三段305號15樓
+使用對象：教職員、在校學生、校友', '03-2870666#222', '桃園市中壢區領航南路三段305號15樓', '[{"label": "官網", "url": "https://ecshop.seegoalsmate.com/?lang=zh-TW"}]', NULL, 0, '校友中心標示期限：永久；地址為公司/總店地址，優惠可於線上或多地使用', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=3', '2026-10-15', 225);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a9c9898b32', '曾氏福建炒麵', '台中市大里區', 'food', 'central', '消費贈品', '1. 新竹地區門市：消費任一主食，即可享「免費加麵乙份」之優惠。
+2. 台中、台南、高雄及屏東地區門市：消費任一主食，即可享「免費贈送涼拌小菜乙份(價值新台幣45元整)」之優惠。', '電話：0979-599182
+地址：台中市大里區東榮路468-8號
+使用對象：教職員、在校學生、校友', '0979-599182', '台中市大里區東榮路468-8號', '[{"label": "官網", "url": "https://www.znegs.com/h/Index?key=cz09f"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=4', '2026-10-15', 226);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c024ced3d2', '工學誠心診所', '台中市南區', 'health', 'central', '9折起', '1. 掛號費優惠折扣50元。
+2. 疫苗全品項95折（破傷風疫苗例外）。
+3. 自費成人小兒健檢9折優惠、自費點滴治療及保肝針劑9折優惠。
+4. 福委會保健食品量購優惠折扣。', '電話：04-22609600
+地址：台中市南區工學路159號
+使用對象：教職員、在校學生、校友', '04-22609600', '台中市南區工學路159號', '[{"label": "官網", "url": "https://www.allheartcare.com.tw/forms/index.html"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=4', '2026-10-15', 227);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9ef0b96c2d', '不遲 BUCHEE • TEA', '台中市大里區', 'food', 'central', '95折', '1. 憑證來店消費不限金額，全單95折。
+2. 外送買10送1、買20送2，以此類推。', '電話：04-24823666
+地址：台中市大里區大明路246號
+使用對象：教職員、在校學生、校友', '04-24823666', '台中市大里區大明路246號', '[{"label": "官網", "url": "https://www.instagram.com/buchee_tea/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=4', '2026-10-15', 228);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('fbe8a8f2cf', 'Amo 阿默', '台中市西屯區', 'food', 'central', '9折起', '1. 各項產品可享有95折優惠【含小包裝商品（須以原價計算）】，但仍須遵循阿默運費折扣標準。
+2. Amo咖啡廳：
+(1)內用：單點或套餐享95折優惠，服務費不打折會以原價另加收一成。
+(2)外帶：單點或套餐享9折優惠。
+※消費時請先告知特約商名稱方可享有優惠！', '電話：04-22541512
+地址：台中市西屯區台灣大道三段301號B2樓
+使用對象：教職員工', '04-22541512', '台中市西屯區台灣大道三段301號B2樓', '[{"label": "官網", "url": "https://www.amo.com.tw/"}]', '2028-12-31', 0, '', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=4', '2026-10-15', 229);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('dfe5997e37', '老四川集團', '台中市西區', 'food', 'north,central,south,east', '95折', '1. 店內消費「單點」總金額滿低消可享九五折優惠全台老四川集團直營店（老四川巴蜀麻辣燙、 紅亭迴轉麻辣鍋、癮揪鍋物）皆可使用但不得與本公司其它特惠方案（包含但不限於會員卡優惠）及任何優惠券同時使用 。
+2. 老四川電子商城購物優惠折扣碼為簽約時提供之公司或福委統編（本校為52024101） 。
+3. 店內消費應於結帳前主動出示員工或學生證並報統一編號（52024101）且至FB粉絲專頁（老四川巴蜀麻辣燙 、 紅亭迴轉麻辣鍋、癮揪鍋物）其一按讚方可享有優惠。
+4. 優惠內容若有任何更改以官網公告為主。', '電話：04-23198789
+地址：台中市西區公益路343號
+使用對象：教職員、在校學生、校友', '04-23198789', '台中市西區公益路343號', '[{"label": "官網", "url": "https://www.oldsichuan.com.tw/official/home"}]', NULL, 0, '校友中心標示期限：永久；地址為公司/總店地址，優惠可於線上或多地使用', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=4', '2026-10-15', 230);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b93fb6716a', '英倫牙醫體系', '台中市南屯區', 'health', 'central', '掛號費優惠', '1. 人工植牙每顆37,500元。
+2. 掛號費50元/次。
+3. 完成療程郵寄「口腔清潔組」乙份。', '電話：0800-438000
+地址：台中市南屯區河南路四段368號
+使用對象：教職員、在校學生、校友', '0800-438000', '台中市南屯區河南路四段368號', '[{"label": "官網", "url": "https://www.endental.com.tw/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=4', '2026-10-15', 231);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('6d07ab1e4e', 'ezTravel易遊網', '台北市中山區', 'services', 'north,central,south,east', '專屬優惠價', '訂購透過易遊網企業專區線上訂購或企業服務部客服訂購享專屬優惠。', '地址：台北市中山區民生東路3段51號4樓
+使用對象：教職員、在校學生、校友', '', '台北市中山區民生東路3段51號4樓', '[{"label": "官網", "url": "https://www.eztravel.com.tw/"}]', NULL, 0, '校友中心標示期限：永久；地址為公司/總店地址，優惠可於線上或多地使用', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=4', '2026-10-15', 232);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('16a92c3212', '鼎威維修', '台中市西屯區', 'services', 'central', '9折起', '1. 原廠零件維修/配件九五折優惠。
+2. 副廠零件維修九折優惠。
+3. iPhone全版玻璃貼：特價200元（原價＄680元）。
+4. 全品項維修折扣＄300元（不適用於檢測、除潮、重灌......等手工費用）。', '電話：04-23019985
+地址：台中市西屯區甘肅路二段68號
+使用對象：教職員、在校學生、校友', '04-23019985', '台中市西屯區甘肅路二段68號', '[{"label": "官網", "url": "https://topwinfix.com.tw/company"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=4', '2026-10-15', 233);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('5ab379e1f1', '航典國際旅行社有限公司', '嘉義市西區', 'services', 'south', '折$1000', '中興大學會員必須透過網路報名方可以網路價格再享以下優惠折扣。
+1. 國外團體旅遊享價格優惠新台幣1000元/人。
+2. 國外團體自由行（航空公司或FIT自由行除外）享價格優惠新台幣500元/人。
+★備註★促銷及特惠團體…等，不適用上述優惠範圍。
+3. 員工旅遊、企業獎勵旅遊、勞工教育會議、商務會議考察，專責專案優惠辦理！
+本校統編：52024101', '電話：05-2841866
+地址：嘉義市西區興業西路300號
+使用對象：教職員、在校學生、校友', '05-2841866', '嘉義市西區興業西路300號', '[{"label": "官網", "url": "https://www.waypoint-travel.com.tw/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=4', '2026-10-15', 234);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('73d59bef0a', '科研市集', '新北市林口區', 'shopping', 'north', '消費贈品', '1.訂單金額滿 $999，全面免運費。
+2.訂單金額滿 $1,688，再送超值贈品2份。', '電話：02-86013311
+地址：新北市林口區文化二路一段390號4樓
+使用對象：教職員、在校學生、校友', '02-86013311', '新北市林口區文化二路一段390號4樓', '[{"label": "官網", "url": "https://www.sciket.com/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=5', '2026-10-15', 235);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b07aafc0b5', '饗賓餐旅事業股份有限公司', '台中市西屯區', 'food', 'north,central,south,east', '96折起', '一、優惠店家
+1. 饗食天堂
+平日週一至週四，午餐/下午餐/晚餐
+平日週五，午餐/下午餐
+20人以下98折優惠，20人(含)以上96折優惠
+*優惠計算:限成人收費，需另收原價服務費
+2. 果然匯蔬食宴
+平日週一至週五，午餐/晚餐
+10人以下98折優惠，10人(含)以上96折優惠
+*優惠計算:限成人收費，需另收原價服務費
+3. 小福利麻辣鍋
+平日週一至週五
+20人以下98折優惠，20人(含)以上96折優惠
+*優惠計算:限成人收費，需另收原價服務費
+4. 開飯川食堂
+平日週一至週五，單筆消費贈乙道精選餐點(含服務費)
+*限內用，本餐廳設有個人低消金額
+*精選餐點依門市實際供應為主，最高價值300元
+5. 饗泰多泰式風格餐廳
+平日週一至週五，單筆消費贈乙道精選餐點(含服務費)
+*限內用，本餐廳設有個人低消金額
+*精選餐點依門市實際供應為主，最高價值300元
+6. 真珠台灣佳味
+平日週一至週五，單筆消費贈乙道精選餐點(含服務費)
+*限內用，本餐廳設有個人低消金額
+*精選餐點依門市實際供應為主，最高價值300元
+二、優惠使用注意事項
+1.平日定義為週一至週五，以平日收費。
+2.例假日、補班、補課之週六、週日、端午節(農曆五月初五)、父親節(8月8日)、中秋節(農曆八月十五)、國慶日(10月10日)、聖誕節前夕(12月24日)、聖誕節(12月25日)、跨年夜(12月31日)......等特殊節日、國定假日及彈性調整放假日不適用。各年度農曆春節期間及國定假日、彈性調整放假日定義，依政府機關公告為準。
+3.各門市餐期營業時間、餐價及定金規則，請依官網公告為主。
+4.使用特約優惠方案不得與其他優惠(含餐券優惠)合併使用。
+5.需出示相關識別證。', '電話：04-22585006
+地址：台中市西屯區台灣大道三段251號11樓(Top City台中大遠百11F)
+使用對象：教職員、在校學生、校友', '04-22585006', '台中市西屯區台灣大道三段251號11樓(Top City台中大遠百11F)', '[{"label": "官網", "url": "https://eatogether.com.tw/zh-TW/store/EAT008"}]', '2026-12-31', 0, '地址為公司/總店地址，優惠可於線上或多地使用', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=5', '2026-10-15', 236);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('eacc7c3a12', '和雲行動服務股份有限公司', '台北市中山區', 'transport', 'north', '6折起', '一、和運門市租車現在有更快速便利的訂車方式
+1.登入官網→選擇專案→輸入統編→現場取車核對公司證明文件(名片、PASS卡、銘牌)即可享有(平日六折 假日七折)優惠(春節不適用)。
+2.若需要電洽門市預約請務必告知企業特約平日六折假日七折專案代碼 R611 及本校統編 52024101 。
+3.門市租車還車時以信用卡付款結清相關費用。
+二、iRentAPP特約 時數回饋版
+1.流程：簽約完成，同仁先行註冊iRent APP 無人自助租車(APP內上傳駕照、身分證、綁定信用卡)
+2. iRent 小學堂-快來練習一下~iRentSchool!
+https://www.easyrent.com.tw/iRentSchool/
+3. 直接點選填寫GOOGLE表單聯結登記填寫(IR帳號)
+https://forms.gle/5bEE2ogrjpEHRXsR7
+4. 審核為回饋身份，贈送2H時數(每一帳號限一次汽機車可抵用)
+回饋時數發放條件為：汽車用車該月份統計至月底， 次月中那週發放上個月實際消費(大於1小時的時數)10%回饋到個人帳號裡
+舉例： 8月份 汽車實際消費20個小時，9月15日那週發送2小時回饋時數至個人IR帳號(不得轉移)
+三、和雲門市日租車注意事項：https://www.irentcar.com.tw/rental-notice.html', '電話：02-25185299
+地址：台北市中山區長安東路二段99號5樓
+使用對象：教職員、在校學生、校友', '02-25185299', '台北市中山區長安東路二段99號5樓', '[{"label": "官網", "url": "https://www.irentcar.com.tw/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=5', '2026-10-15', 237);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('5117056c6d', '翻修先生', '台中市南屯區', 'services', 'central', '消費贈品', '1. 免費丈量
+2. 完工細清清潔', '電話：0911-331586
+地址：台中市南屯區干城街376號1樓
+使用對象：教職員、在校學生、校友', '0911-331586', '台中市南屯區干城街376號1樓', '[{"label": "官網", "url": "https://www.mrrenovation.tw/%E9%A6%96%E9%A0%81home"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=5', '2026-10-15', 238);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('1d8e4f1914', '銀櫃視聽有限公司', '台中市西屯區', 'entertainment', 'central', '特約優惠', '銀櫃中港店 貴賓卡折扣
+銀櫃高雄店 貴賓卡折扣
+銀櫃逢甲店 學生價格消費
+嘉年華鹿港店 貴賓卡折扣
+銀櫃一廣店 學生價格消費
+嘉年華南投店 貴賓卡折扣
+大都會梧棲店 貴賓卡折扣
+員林頌潮KTV 貴賓卡折扣
+大都會頭份店 貴賓卡折扣
+（學生享有學生優惠）
+消費付款前只要一人提出識別證給櫃檯人員，即可享有折扣優惠 。', '電話：04-27051400
+地址：台中市西屯區西屯路二段273-5號3樓
+使用對象：教職員工及校友', '04-27051400', '台中市西屯區西屯路二段273-5號3樓', '[{"label": "官網", "url": "https://www.silverbox.com.tw/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=5', '2026-10-15', 239);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a7f4210695', 'Scott.C運動按摩工作室&Felicia 梧蒔經絡按摩', '台中市西區', 'health', 'central', '專屬優惠價', '1. 運動按摩 1,400元/ 60分鐘
+經絡調理 1,400元/ 90分鐘(原價1,800元)
+2. 可提供到校服務，滿5人/1,800(人/次)，滿10人/1,700(人/次)，未滿人數，以原價計算(到校服務原價1人/2,500元)
+3. 當月消費滿20,000元可提供免費講座', '電話：0978-780291
+地址：台中市西區五權路22巷28號
+使用對象：教職員、在校學生、校友', '0978-780291', '台中市西區五權路22巷28號', '[]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=5', '2026-10-15', 240);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('dccedce1e4', '愛妮眼鏡大里店', '台中市大里區', 'health', 'central', '85折起', '1. 各項檢測、調整、維修皆免費。
+2. 各項師生憑相關文件配鏡整付享85折優惠。
+3. 師生配鏡滿額3000元即贈太陽眼鏡1支。
+4. 師生購買拋棄式隱形眼鏡、藥水等產品皆享95折優惠。', '電話：04-24839520
+地址：台中市大里區中興路二段115號
+使用對象：教職員、在校學生、校友', '04-24839520', '台中市大里區中興路二段115號', '[{"label": "官網", "url": "https://www.facebook.com/people/%E6%84%9B%E5%A6%AE%E7%9C%BC%E9%8F%A1-%E5%A4%A7%E9%87%8C%E5%BA%97/61572919240264/#"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=5', '2026-10-15', 241);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('be2ea2f24c', '君侯食補鱷鍋頭 (鱷魚廚房)', '台中市大里區', 'food', 'central', '85折起', '1. 久久楓多醣體機能飲，全系列商品9折優惠， https://maple.4-w.net/
+2. 君侯食補鱷鍋頭,全系列商品9折優惠，https://crocspot.4-w.net/
+3. 消費滿500元，免費外送。
+4. 團購滿1000元，再送100元折價券(可現場折抵)。
+5. 加LINE好友享85折優惠。', '電話：04-35083289
+地址：台中市大里區仁美路35巷12號1樓
+使用對象：教職員、在校學生、校友', '04-35083289', '台中市大里區仁美路35巷12號1樓', '[{"label": "官網", "url": "https://crocspot.4-w.net/myshop/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=6', '2026-10-15', 242);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a27d168be7', '卡菲努努親子寵物餐廳', '新竹縣竹東鎮', 'food', 'north', '消費贈品', '來店消費贈酥炸金元寶一份', '電話：03-5827709
+地址：新竹縣竹東鎮明星一路138號
+使用對象：教職員、在校學生、校友', '03-5827709', '新竹縣竹東鎮明星一路138號', '[{"label": "官網", "url": "https://www.facebook.com/cafenunu/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=6', '2026-10-15', 243);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c6a588a696', '火山岩燒肉-竹北旗艦店', '新竹縣竹北市', 'food', 'north', '消費贈品', '來店消費贈塔香雞腿丁一份', '電話：03-6688951
+地址：新竹縣竹北市自強北路230號
+使用對象：教職員、在校學生、校友', '03-6688951', '新竹縣竹北市自強北路230號', '[{"label": "官網", "url": "https://www.facebook.com/volcanicrockbbq/?locale=zh_TW"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=6', '2026-10-15', 244);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('f712ca2b57', '岩漿漢方麻辣火鍋', '台中市南屯區', 'food', 'central', '消費贈品', '來店消費贈
+台中【公益店】：綜合丸拼盤一份及烏梅汁一壺
+竹北【復興店】/ 竹東【明星店】/ 新竹【經國店】/ 微風【信義店】：芙蓉嫩雞柳(中)一份', '電話：04-23830868
+地址：台中市南屯區公益路二段889號
+使用對象：教職員、在校學生、校友', '04-23830868', '台中市南屯區公益路二段889號', '[{"label": "官網", "url": "https://yenchiang-hotpot.com/index.php"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=6', '2026-10-15', 245);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('43c415c9b1', '台中商務旅館', '台中市西屯區', 'lodging', 'central', '特約優惠', '詳細優惠請至資產經營組公告查詢。
+https://oga.nchu.edu.tw/news-detail/id/1279', '電話：04-22556688
+地址：台中市西屯區台灣大道三段593號
+使用對象：教職員、在校學生、校友', '04-22556688', '台中市西屯區台灣大道三段593號', '[{"label": "興大公告", "url": "https://oga.nchu.edu.tw/news-detail/id/1279"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=6', '2026-10-15', 246);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('90dd97a539', '日月潭教師會館', '南投縣魚池鄉', 'lodging', 'central', '5折起', '1. 平日住宿出示相關證件，給予本館定價 5 折優惠價，限一間。
+2. 假日住宿出示相關證件，給予本館定價 6.5 折優惠價，限一間。
+※ 平假日定義：平日：週日～週五。假日：週六與連續假日前夕。
+※ 大假日及農曆春節期間恕不適用。
+3. 員工識別證需於櫃檯登記出示，不得事後補繳，未出示者依本館收費規定辦理。
+4. 訂房需預付每房 $1000 元之訂金為訂房保證（若住宿前 14 天內取消訂房則需依觀光局規定辦理）。', '電話：049-2855991
+地址：南投縣魚池鄉水社村中興路136號
+使用對象：教職員、在校學生、校友', '049-2855991', '南投縣魚池鄉水社村中興路136號', '[{"label": "官網", "url": "https://www.smlthotel.com.tw/"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=6', '2026-10-15', 247);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('372903dfe2', '中華電信', '台中市西區市', 'services', 'central', '特約優惠', '請直洽中華電信詢問學生方案。
+（教職員也同樣適用）', '電話：0800-080-123
+地址：台中市西區市府路37號
+使用對象：教職員、在校學生', '0800-080-123', '台中市西區市府路37號', '[{"label": "官網", "url": "https://www.cht.com.tw/home/campaign/forstu?tab=tab_3"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=6', '2026-10-15', 248);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('67fcef376d', '九村眼鏡', '台中市北屯區', 'health', 'central', '85折', '1. 各項檢測分析報告免費。
+2. 配鏡整付享 85 折。
+3. 如需第二付半價（不得與第 2 項合併使用、二則一的方案）。
+4. 需 於 結帳前告知門市人員特約廠商、結帳後因帳務處理不得優惠。', '電話：04-22372502
+地址：台中市北屯區松竹路二段 133 號
+使用對象：教職員、在校學生、校友', '04-22372502', '台中市北屯區松竹路二段 133 號', '[{"label": "官網", "url": "https://www.jiucun-optical.com/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=6', '2026-10-15', 249);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ed561d6827', '杰朔有限公司', '台中市西屯區', 'health', 'central', '專屬優惠價', '全身整復及單一部位調理直接享有會員價。', '電話：0962-052086
+地址：台中市西屯區福聯街22巷1號1樓
+使用對象：教職員、在校學生、校友', '0962-052086', '台中市西屯區福聯街22巷1號1樓', '[{"label": "官網", "url": "https://www.jiehshou.com/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=6', '2026-10-15', 250);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('541471c50d', '禹太健康事業股份有限公司', '台中市西屯區市', 'health', 'central', '95折', '1.松鶴張力平衡專家首次體驗價折價100元。
+2.《24Club安心守護方案》95折優惠，方案請洽官方Line：@bodyexpert，由專人介紹。
+3.ViMED人體專業經由養護全系列商品95折優惠。', '電話：04-37050531
+地址：台中市西屯區市政路402號8樓之1
+使用對象：教職員、在校學生、校友', '04-37050531', '台中市西屯區市政路402號8樓之1', '[{"label": "官網", "url": "https://www.bodybalanceexpert.com/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=6', '2026-10-15', 251);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ee72af390b', '食在燒臘便當', '台中市南區', 'food', 'central', '95折', '1.便當原價95折
+2.全雞套餐95折
+3.麻辣燙套餐95折', '電話：0910-093556
+地址：台中市南區南門路40號
+使用對象：教職員、在校學生、校友', '0910-093556', '台中市南區南門路40號', '[{"label": "官網", "url": "https://g.co/kgs/T5Zgzdm"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=7', '2026-10-15', 252);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('0487d57d12', '成就希望工程', '嘉義市西區', 'food', 'south', '9折', '1.至現場訂購享全館9折優惠。
+2.以中興大學教職員工註冊會員，註冊身分將改為鑽石級會員享全館9折折扣優惠。', '電話：05-2363356
+地址：嘉義市西區玉山路82號
+使用對象：教職員、在校學生、校友', '05-2363356', '嘉義市西區玉山路82號', '[{"label": "官網", "url": "https://www.linrg.com/?gad_source=1&gclid=EAIaIQobChMIkrrduaXRiwMVUid7Bx20JRuhEAAYASAAEgINNfD_BwE"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=7', '2026-10-15', 253);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('805d6f6129', '來點什麼-民權店（點什麼民權企業社）', '台中市西區', 'food', 'central', '消費贈品', '來店內用、外帶憑證消費滿百元送25元飲品任選（可加價兌換）。', '電話：04-22083399
+地址：台中市西區民權路374號
+使用對象：教職員、在校學生、校友', '04-22083399', '台中市西區民權路374號', '[]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=7', '2026-10-15', 254);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('cbf5b01725', '耀媄儷妍診所', '台中市南區', 'health', 'central', '9折', '官網 : https://www.yaomei.com.tw/
+持本校教職員工證、學生證、校友證可享下列療程9折優惠
+1. 光療雷射、針劑微整、肉毒注射、電波音波皆為醫師操作。
+2. 靜脈雷射、點滴療程、女王電波非侵入探頭等醫事人員可操作項目，為護理師操作。
+3. 海飛秀、杏仁酸、保濕導入、無針水光等美療項目，為美容師、諮詢師操作。', '電話：04-22850206
+地址：台中市南區興大路186號
+使用對象：教職員、在校學生、校友', '04-22850206', '台中市南區興大路186號', '[{"label": "官網", "url": "https://line.me/ti/p/~@yaomeiliyian"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=7', '2026-10-15', 255);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('00f84a2485', 'FOD職人美車工藝', '台中市南區', 'services', 'central', '8折起', '1.洗車享8折優惠。
+2.施作車身鍍膜享9折優惠。
+3.施作玻璃油膜去除送玻璃鍍膜。', '電話：0967-135293
+地址：台中市南區仁德街8號
+使用對象：本校教職員工生及校友', '0967-135293', '台中市南區仁德街8號', '[]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=8', '2026-10-15', 256);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c6b7744e3e', '舞動陽光有限公司長春分公司（長春國民暨兒童運動中心）', '台中市南區', 'entertainment', 'central', '85折起', '1. 特約公司團體報名團體課程優惠（有氧、飛輪、舞蹈、瑜珈、TRX、兒童、游泳、桌球、羽球、籃球、排
+球、壁球）
+(1)個人報名課程 9 折。
+(2)以公司行號報名課程，6 人同行 85 折。
+2. 特約公司團體選擇班（有氧、舞蹈、瑜珈、TRX）
+(1)TRX 專班（10 人滿班）：10,000／一個月（四堂）。
+(2)有氧、瑜珈、舞蹈專班（25 人滿班）：10,000／一個月（四堂）。
+3. 特約公司團體單次入場及月季票卡折扣
+(1)游泳池單次入場及月季票卡 9 折。
+(2)體適能中心單次入場及月季票卡 9 折。
+4. 特約公司團體臨租球場優惠
+(1)桌球室、綜合球場、壁球室、羽球場離峰時段臨組 9 折優惠。
+(2)平日離峰時段：06:00-18:00，假日／例假日離峰時段：06:00-12:00。
+5. 相關場地使用規定、租借、報名方法，請依長春國民暨兒童運動中心規定辦理。', '電話：04-22220661
+地址：台中市南區合作街46號
+使用對象：本校教職員工生及校友', '04-22220661', '台中市南區合作街46號', '[{"label": "官網", "url": "https://cccsc.wdygsports.com.tw/"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=8', '2026-10-15', 257);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c656ab67f2', '頭等艙飯店有限公司臺中分公司（臺中李方艾美酒店）', '台中市中區', 'lodging', 'central', '專屬優惠價', '1. 精緻客房 (一大床 無浴缸) 單人入住 $4,200 含一客早餐；$4,900 含兩客早餐
+2. 經典客房 (一大床/兩中床) 單人入住 $4,600 含一客早餐；$5,300 含兩客早餐
+3. 豪華客房 (一大床/兩中床) 單人入住 $5,000 含一客早餐；$5,700 含兩客早餐
+4. 尊爵客房 (一大床/兩中床) 單人入住 $6,100 含一客早餐；$6,800 含兩客早餐
+5. 艾美套房 (一大床) 單人入住 $8,300 含一客早餐；$9,000 含兩客早餐
+6. 皇家套房 (一大床) 單人入住 $12,000 含一客早餐；$12,700 含兩客早餐
+＜ 備註與優惠政策 ＞
+1. 上述優惠合約價已包含服務費、營業稅及免費自助早餐。周六每房加價 $1,200，連續假日不適用。
+2. 僅適用於公司團隊的個人商務差旅需求，不適用於會議、展覽、特殊活動期間的團體預訂，團體指 8 間客房 以上的預訂，團隊預訂的價格需視規模需求另行約定。
+3. 上述合約價不適用於 2025/12/31 - 2026/01/01，農曆春節假期 (2026/02/16 - 02/20)及大型活動展期，大型活動展期依酒店公告為準。
+4. 加人服務：成人及 13 歲以上青少年，每位 NT$1,000 NET (含早餐)；兒童 (年齡: 6～12 歲) 每位 NT$650 NET (含早餐)；幼兒 (年齡: 0～5 歲) 可免費使用早餐。每房至多 2 位免費幼兒。
+5. 加床服務：每位費用NT$1,500NET(不含早餐)，每房至多加一張床(需事先預訂)，加床尺寸為90*200公分。
+5. 精緻客房(無浴缸)/經典客房/豪華客房/尊爵客房/艾美套房一大床：200cm × 200cm；
+經典客房/豪華客房/尊爵客房二中床：150cm × 200cm。
+6. 房客可享免費使用無線網路、艾美健身中心(包含健身房、烤箱、蒸氣室)。
+7. 入住套房房客可享有之專屬各項禮遇與服務：快速退房服務；於行政俱樂部享有免費提供的咖啡、果汁及茶點。服務及晚間雞尾酒時光；迎賓禮遇可延至下午 2 點結束 (須視酒店當日房況)。
+8. 萬豪會員透過出訪務名合約訂房，可累積會員點數，僅限萬豪會員本人入住累積，恕無法提供非會員本人入住之訂房累積會員點數。
+＜ 入住/退房手續相關須知 ＞
+標準登記入住時間為下午 4 點以後。若須預留一間客房作為提前入住使用，會加收一天的房間費用。退房時間為上午 12 點，如在上午 12 點以後但於下午 6 點前退房，酒店將加收房間價格的 50%。如客人在下午 6 點後辦理退房手續，則根據目前所入住的房間，再收取 1 天的房間費用。
+＜ 訂房保證及取消規範 ＞
+所有客房預訂必須提供入住貴賓的信用卡資料，或以貴公司名義出具具有並蓋章以作為擔保。於訂房時使用傳真方式通知酒店。已提供訂房保證之貴賓，若於入住當日下午 6 點後取消預訂，酒店將收取一個晚上房費。對於無提供訂房保證的貴賓，酒店將保留房間至下午 6 點，此後，酒店可視當日房況決定是否保留或取消客房之訂房。
+若遇周六及連續假日或酒店高住房率時，酒店有權要求所有訂房皆須提供客人信用卡資料以保證訂房。', '電話：04-22265678
+地址：台中市中區建國路111號
+使用對象：本校教職員工生及校友', '04-22265678', '台中市中區建國路111號', '[{"label": "興大公告", "url": "https://oga.nchu.edu.tw/news-detail/id/1427"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=8', '2026-10-15', 258);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('6f19e44e25', '保衛站企業社', '台南市中西區', 'shopping', 'north,central,south,east', '9折', '1.周邊配件9折
+2.各式維修項目/貼膜服務9折(最高折抵上限1,000元)
+3.保衛貼折抵200元
+4.購買新機/二手機送購物金500元
+5.優惠內容是用全台21間門市', '電話：06-2223881
+地址：台南市中西區北門路一段75號
+使用對象：本校教職員工生及校友', '06-2223881', '台南市中西區北門路一段75號', '[{"label": "官網", "url": "https://www.guardstation.com.tw/"}]', NULL, 0, '校友中心標示期限：永久；地址為公司/總店地址，優惠可於線上或多地使用', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=8', '2026-10-15', 259);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('6071641081', 'MORE身活訓練特區', '台中市大里區', 'entertainment', 'central', '特約優惠', '1.年費會籍優惠8000元。', '電話：04-24070880
+地址：台中市大里區國光路二段405-2號
+使用對象：本校教職員工生及校友', '04-24070880', '台中市大里區國光路二段405-2號', '[{"label": "官網", "url": "https://moreactivegym.com/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=8', '2026-10-15', 260);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('0b04764ee0', '敦謙國際智能科技股份有限公司', '台中市西屯區', 'lodging', 'central', '專屬優惠價', '訂房中心聯繫窗口(Line ID)：https://lin.ee/PWl5sep
+【請統一透過此官方連結窗口才有辦法享有特約商店之企業合約價格】
+敦謙國際(旅館)之電子型錄：https://www.dunqian.com/202407-tf/', '電話：04-24529446
+地址：台中市西屯區臺灣大道二段689號7樓
+使用對象：本校教職員工生及校友', '04-24529446', '台中市西屯區臺灣大道二段689號7樓', '[{"label": "官網", "url": "https://www.dunqian.com/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=8', '2026-10-15', 261);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('5b1bb58817', '好合咖啡店', '台中市南區', 'food', 'central', '9折', '來店門市消費享特約優惠全品項九折，優惠不得與其他優惠併用。', '電話：04-22659506
+地址：台中市南區復興路一段20號1F
+使用對象：本校教職員工生及校友', '04-22659506', '台中市南區復興路一段20號1F', '[{"label": "官網", "url": "https://www.facebook.com/HititoffCafe/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=8', '2026-10-15', 262);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('0efcd3ebd0', 'foodpanda(富胖達股份有限公司)', '台北市信義區', 'services', 'north,central,south,east', '專屬優惠價', '一、優惠對象
+甲方提供 google 表單 https://forms.gle/sZnMFQDggoFXjtDJ7 與委託企業之員工申請，並經乙方協助將申請員工之foodpanda APP 帳號免費升級為企業帳號，即享有企業專屬優惠&優先派單服務&活動配餐服務等(惟原先帳號內之 pandapro 會員恕無法一併沿用至企業帳號內，需另外購買)。
+二、 乙方針對企業客戶帳號提供之優惠項目及服務內容
+(一)每月精選店家滿 499 元(不含平台費、小費或外送費)即可免外送費。
+(二)透過加入乙方企業貴賓 LINE 帳號,可享:
+1. 團體預訂、活動、會議餐點、外燴、辦公室零食雜貨等訂單優先處理。
+2. 滿額客製配餐。
+3. 乙方專人協助事前與店家確認、追蹤訂單與客服處理。
+(三)每個月提供相關優惠活動、折扣碼或抽獎。另回饋活動將於乙方企業貴賓 LINE 帳號公布。
+(四)乙方保留對所有優惠內容修改之權利。', '電話：02-77300090轉378
+地址：台北市信義區忠孝東路四段555號14樓
+使用對象：本校教職員工生及校友', '02-77300090轉378', '台北市信義區忠孝東路四段555號14樓', '[{"label": "官網", "url": "https://www.foodpanda.com.tw/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=8', '2026-10-15', 263);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('2d5723f0c8', '朵法婭生活美學有限公司', '新北市中和區', 'shopping', 'north', '8折', '享全館八折（不與館內其他優惠共用）
+使用優惠代碼：SVIP8', '電話：02-27780037
+地址：新北市中和區板南路663號14樓
+使用對象：本校教職員工、在校生及校友', '02-27780037', '新北市中和區板南路663號14樓', '[{"label": "官網", "url": "https://www.darphia.com/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=9', '2026-10-15', 264);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('068557b252', '東元電機股份有限公司', '台北市南港區', 'shopping', 'north,central,south,east', '特約優惠', '專屬網站連結下單購買才提供優惠~https://elite.tecohome.com.tw/', '電話：02-26553333
+地址：台北市南港區三重路19之9號
+使用對象：教職員、在校學生、校友', '02-26553333', '台北市南港區三重路19之9號', '[{"label": "官網", "url": "https://www.teco.com.tw/zh-tw/"}]', NULL, 0, '校友中心標示期限：永久；地址為公司/總店地址，優惠可於線上或多地使用', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=9', '2026-10-15', 265);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c1482033a8', '合合雨傘', '台中市南區', 'shopping', 'central', '92折', '全品項92折之優惠', '電話：0963171292
+地址：台中市南區忠明南路678號
+使用對象：教職員工生及校友', '0963171292', '台中市南區忠明南路678號', '[{"label": "官網", "url": "https://www.facebook.com/togetherumbrella/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=9', '2026-10-15', 266);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a23e005d59', '明台產物保險股份有限公司', '台中市北區', 'services', 'central', '特約優惠', '經營項目包含汽機車強制險、旅遊險、防疫險、寵物險等各類保險， 並提供該公司網頁
+https://reurl.cc/KQKyNp公告之優惠(優惠內容不定期更新)。', '電話：0800-528528
+地址：台中市北區民權路222號
+使用對象：教職員工生及校友', '0800-528528', '台中市北區民權路222號', '[{"label": "官網", "url": "https://reurl.cc/KQKyNp"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=9', '2026-10-15', 267);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('efa15500f0', '台灣錄得清', '台中市西屯區', 'shopping', 'central', '85折', '1.官方網站全品項商品可享85折優惠(特定商品除外)，專屬折扣碼：nchu85
+2.企業採購/團購專案(專案組合優惠組)', '電話：04-23151577#40
+地址：台中市西屯區太原路一段157號
+使用對象：教職員工生及校友', '04-23151577#40', '台中市西屯區太原路一段157號', '[{"label": "官網", "url": "https://www.lookingtaiwan.com/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=9', '2026-10-15', 268);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('6b9b47a997', '格哆莉奶酪優禮', '台中市東區', 'food', 'central', '9折', '手工經典鮮奶酪/風味茶凍/法式布丁/水果凍系列 原價45元優惠享9折。', '電話：04-22203330
+地址：台中市東區和平街34號
+使用對象：教職員工生及校友', '04-22203330', '台中市東區和平街34號', '[{"label": "官網", "url": "https://www.fromage.tw/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=9', '2026-10-15', 269);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('19fe315757', '晁陽綠能園區', '雲林縣麥寮鄉', 'shopping', 'central', '85折', '1.園區商品85折(不含嚴選商品)
+2.旅遊套裝行程彈性調整(依業務實際報價)
+學生迎新/露營/焢土窯/ESG課程/師長家庭日/農事體驗活動/太並能農場導覽/食農DIY等等)', '電話：05-6938238
+地址：雲林縣麥寮鄉興華村興華32號
+使用對象：教職員工生及校友', '05-6938238', '雲林縣麥寮鄉興華村興華32號', '[{"label": "官網", "url": "http://www.solarfarm.com.tw/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=9', '2026-10-15', 270);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('5ef6363567', '全合實業有限公司', '台中市大里區', 'shopping', 'central', '特約優惠', '1.昭惠醫用口罩(成人、兒童)120元/盒
+2.10盒以上每盒100元
+3.100盒以上每盒90元', '電話：04-24939339
+地址：台中市大里區四維街26號
+使用對象：教職員工生及校友', '04-24939339', '台中市大里區四維街26號', '[]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=9', '2026-10-15', 271);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a471f079dc', '北區國民運動中心', '台中市北區', 'entertainment', 'central', '85折起', '1.特約公司團體報名團體課程優惠(有氧、飛輪、舞蹈、瑜珈、TRX、兒童、游泳、桌球、羽球、籃球)
+一、個人報名課程9折。
+二、以公司行號報名課程，6人同行85折。
+2.特約公司團體專班(有氧、飛輪、舞蹈、瑜珈、TRX)
+一、TRX專班 (10人滿班)：10,000/一個月(四堂)。
+二、飛輪專班 (20人滿班)：12,000/一個月(四堂)。
+三、有氧、瑜珈、舞蹈專班(25人滿班)：10,000/一個月(四堂)。
+3.特約公司團體租用韻律教室、綜合球場9折(體育相關活動)
+一、租借韻律教室9折、綜合球場9折。
+4.特約公司團體申辦泳樂季卡、泳健季卡
+一、特約公司員工申辦泳樂季卡、泳健季卡享有9折優惠。
+二、申辦上述季卡，可享有一次的免費身體組成分析儀檢測。
+5.特約公司團體臨租球場優惠
+一、羽球場、桌球室、綜合球場離峰時段臨租9折優惠。
+二、平日離峰時段:06:00~18:00，假日/例假日離峰時段:06:00~12:00。
+6.特約公司團體單次入場折扣
+一、溫水游泳池單次入場9折。
+二、體適能中心單次入場9折。
+7.特約公司團體租借泳池水道(體育相關活動)
+一、租借本中心泳池水道9折。', '電話：04-22356555#508
+地址：台中市北區崇德路一段55號
+使用對象：教職員工生及校友', '04-22356555#508', '台中市北區崇德路一段55號', '[]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=9', '2026-10-15', 272);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('779ad9e16a', '興大汽車租賃有限公司', '台中市南區', 'transport', 'central', '特約優惠', '1.可配合老師計畫需求，租期可彈性，價格可依租約滾動式調整
+2.隨時提供全時四輪傳動車輛(在庫5部)及各式小型車，無需等待
+3.租車服務時間較長(08：00~01：00)，以利各系所每個時段取車、還車，車輛進入學校，所有停車費用均由租賃公司負擔
+4.憑教職員證、學生證、校友證，承租2日以上均享有每日100元折扣(連續假期及過年期間不適用)', '電話：04-22877700
+地址：台中市南區國光路405號
+使用對象：教職員工生及校友', '04-22877700', '台中市南區國光路405號', '[]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=9', '2026-10-15', 273);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('385c307d31', '胖老爹美式炸雞-大里大買家店', '台中市大里區', 'food', 'central', '95折', '1.全商品95折
+2.來店消費滿1000元加贈100元商品(限自取)
+3.訂餐滿千元享免費外送服務(限2公里內)
+註：上述特約優惠不得併用且與本店現行促銷活動不可同時使用', '地址：台中市大里區國光路二段710號2樓
+使用對象：教職員工生及校友', '', '台中市大里區國光路二段710號2樓', '[]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=10', '2026-10-15', 274);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('1a37ae9f42', '糖老爹', '新北市林口區', 'shopping', 'north', '特約優惠', '可至此網頁https://www.papa-oligo.com/pages/forwelfaresale17，選購糖老爹的產品並享有優惠', '電話：02-26033588#126
+地址：新北市林口區中山路250號2樓之2
+使用對象：教職員工生及校友', '02-26033588#126', '新北市林口區中山路250號2樓之2', '[{"label": "官網", "url": "https://www.papa-oligo.com/pages/forwelfaresale17"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=10', '2026-10-15', 275);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('671c372c10', '美美心港式飲茶', '台中市南區', 'food', 'central', '95折', '1.美美心港式飲茶(吃到飽、單點)享95折優惠(服務費另計)
+2.桌菜專屬包廂(五桌內)，95折優惠另附主廚私房菜乙道(需低消)
+3.外原商品全品項95折
+4.以上優惠不得與其他優惠並做使用
+5.國定假日無法使用', '電話：04-36006000
+地址：台中市南區文心南路99號
+使用對象：教職員工生及校友', '04-36006000', '台中市南區文心南路99號', '[{"label": "官網", "url": "https://www.yourhomewedding.com/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=10', '2026-10-15', 276);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('620b0beaa9', '元成車業', '台中市南區', 'services', 'central', '9折', '1.維修保養9折
+2.噴射保養1588元
+3.消費滿500元送洗車及打蠟', '電話：04-22220311
+地址：台中市南區建國南路三段123號', '04-22220311', '台中市南區建國南路三段123號', '[]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=10', '2026-10-15', 277);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('6daf47f024', '金牌大師滴雞精', '台中市西區', 'food', 'central', '專屬優惠價', '1.滴雞精(60ml*10包/盒)*2盒,優惠價1600元｡(含運費)
+2.滴雞精(60ml*10包/盒)*24盒/箱,優惠價18480元｡(含運費)', '電話：04-23719750
+地址：台中市西區公館路248號1樓
+使用對象：教職員工、在校生', '04-23719750', '台中市西區公館路248號1樓', '[]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=10', '2026-10-15', 278);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('e717973cb7', '聖達隆股份有限公司', '台中市南區', 'shopping', 'central', '85折', '1.甲方會員至乙方開設之 My Color Bar 美髮沙龍消費,於結帳時出示｢識別證｣者,即可享有85折優惠(不得與其他優惠並用)｡
+(老虎城店):台中市西屯區河南路三段120 號 2 樓;電話(04)3606-2512
+(復興店):台中市南區復興路 二段155-1號;電話(04)2260-2536
+2.甲方會員於乙方官方 LINE 及電話訂購乙方各項產品,說明是甲方會員,即可享有 85
+折優惠(於乙方官方網站不適用)｡乙方官方line@ :wip3420p
+乙方公司免付費專線:0800-200-767', '電話：04-22602536
+地址：台中市南區復興路二段155-1號
+使用對象：教職員工生及校友', '04-22602536', '台中市南區復興路二段155-1號', '[]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=10', '2026-10-15', 279);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('12d4c2dfc6', '德國施巴', '台中市南屯區', 'shopping', 'central', '特約優惠', '1. 潔膚露1000ml､油性洗髮乳1000ml､溫和洗髮乳1000ml任選三瓶1900元
+2. 抗乾敏浴露1000ml､運動沐浴乳(花香/麝香)1000ml任選三瓶2050元
+3. 泡泡露1000ml､嬰幼兒洗髮乳750ml任選四瓶2400元
+4. 護潔露400ml三瓶1500元
+5. 濃縮牙膏50ml､兒童牙膏50ml､漱口水25ml､潔舌棒､潔舌膠25ml､口腔旅行組任選12個2400元', '電話：0983031012
+地址：台中市南屯區文心路一段324號10F
+使用對象：本校教、職員工及學生', '0983031012', '台中市南屯區文心路一段324號10F', '[{"label": "官網", "url": "https://www.sebamed.com.tw/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=10', '2026-10-15', 280);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('fffe377dff', 'MST國際穿線團隊-興和店', '台中市南區', 'services', 'north,central,south,east', '專屬優惠價', '1. 憑教職員工證､學生證､校友證即可享有會員價
+2. 憑教職員工證､學生證､校友證來店穿線即贈MST握把布
+3. 教職員工､學生､校友,憑證購買網球或羽球教學課程可享會員價
+特約商店優惠條件僅限興和店｡
+各門市位置及詳細資訊請參見MST國際穿線團隊官網｡', '電話：04-22858637(興和店)
+地址：台中市南區台中市南區興大路137-2號(興和店)
+使用對象：教職員工、在校生､校友', '04-22858637(興和店)', '台中市南區台中市南區興大路137-2號(興和店)', '[{"label": "官網", "url": "http://www.mst-team.com/AboutUs1.aspx"}]', NULL, 0, '校友中心標示期限：永久；地址為公司/總店地址，優惠可於線上或多地使用', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=10', '2026-10-15', 281);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8fe473473e', '優瑞咖啡', '台中市南區', 'food', 'central', '8折', '1. 結帳出示中興大學證明,咖啡飲品享8折優惠(特惠組合除外)｡
+2. 結帳出示中興大學證明,咖啡豆商品享8折優惠(特惠組合除外)｡', '電話：04-22816660
+地址：台中市南區興大路196號
+使用對象：教職員工生及校友', '04-22816660', '台中市南區興大路196號', '[{"label": "官網", "url": "http://eurocafe.com.tw/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=10', '2026-10-15', 282);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('76e84d5bb3', '德川手作茶坊', '台中市西區', 'food', 'central', '消費贈品', '買二杯第三杯升級大杯，買四杯送二杯大杯
+買四送二，外送買十送一，買二十送二', '地址：台中市西區貴和街39號', '', '台中市西區貴和街39號', '[]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=10', '2026-10-15', 283);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('1819306ba3', '寶島53行館', '台中市中區', 'lodging', 'central', '9折', '1. 標準雙人房 (一大床) 平日 1,700 含 1 客早餐；假日 2,900 含 1 客早餐。
+2. 精緻雙人房 (一大床/兩小床) 平日 2,000 含 1 客早餐；假日 3,100 含 1 客早餐。
+3. 豪華雙人房 (一大床) 平日 2,300 含 2 客早餐；假日 3,300 含 2 客早餐。
+4. 精緻家庭房 (兩大床) 平日 2,500 含 2 客早餐；假日 4,100 含 2 客早餐。
+5. 豪華家庭房 (兩大床) 平日 2,900 含 2 客早餐；假日 4,400 含 2 客早餐。
+6. 假日定義：週六、國定假日、連續假期 (含前夕)，其他依循飯店規定。
+7. 農曆春節期間不適用合約價。農曆春節期間以定價 9 折計費。2025 年 01 月 26 日、01 月 27 日、01 月 28
+日除夕及 02 月初五以假日價計費(農曆節期間訂房完成 7 日內，需預付房價 5 成訂金)。
+8. 住宿期間可享每日免費提供一個免費停車位，因車位有限，故無法預留，敬請見諒。
+9. 其他規定請見洽飯店。', '電話：04-2220-5368
+地址：台中市中區中山路27號
+使用對象：教職員、在校學生、校友', '04-2220-5368', '台中市中區中山路27號', '[{"label": "官網", "url": "https://www.53hotel.com.tw/tw/index.html"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=10', '2026-10-15', 284);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('2e52ab6186', '進萬汽車維修廠', '台中市南區', 'services', 'central', '9折', '教職員、學生及校友享有九折優惠
+特約優惠不與其他優惠活動一同併用。', '電話：04-22850277
+地址：台中市南區建成路 1580號', '04-22850277', '台中市南區建成路 1580號', '[]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=10', '2026-10-15', 285);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ca887ff441', '中興小客車租賃有限公司', '台中市南區', 'transport', 'central', '折$100', '1. 假日租車自駕（週五至週日不含農曆春節期間，指定車款如 TOYOTA YARIS/ TOYOTA VIOS），現金優惠一天
+折扣100元。
+2. 承租七日（含）以上一律以平日優惠專案計價。
+3. 承租本公司所有車輛加油即享每公升優惠 1 元 （限建成路中油路昇加油站）。
+4. 優惠適用南區建成門市。', '電話：04-22855589
+地址：台中市南區建成路 1175號
+使用對象：教職員、在校學生、校友', '04-22855589', '台中市南區建成路 1175號', '[{"label": "官網", "url": "http://www.cheap-car.com.tw/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=11', '2026-10-15', 286);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('3ab8ebbda8', '長榮航空公司', '台中市西區', 'transport', 'north,central,south,east', '特約優惠', '1. 請告知配合旅行社，於訂位、開票時 註記本校之商務代碼，方可累計機票 淨額。
+2. 訂位：於訂位記 錄 OSI 項目註 明CFFPTPE2926。
+3. 開票：於機票 Form of Payment 欄位註明商務代碼 TPE2926。
+4. 企業會員綁定網址：https://bizfam.evaair.com/BZES/join-us/corporate-identifier?identifier=T895GVGX1K', '電話：04-22176116
+地址：台中市西區大隆路 20 號 A 棟 14-7
+使用對象：教職員、在校學生、校友', '04-22176116', '台中市西區大隆路 20 號 A 棟 14-7', '[{"label": "官網", "url": "http://www.evaair.com/zh-tw/index.html"}]', NULL, 0, '校友中心標示期限：永久；地址為公司/總店地址，優惠可於線上或多地使用', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=11', '2026-10-15', 287);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c3de48ea21', '中華航空公司', '台中市西區', 'transport', 'north,central,south,east', '特約優惠', '1.於中華航空官網https://www.china-airlines.com/tw/zh 購票時輸入企業會員帳號可享國際航線優惠票價。
+2.於華信航空官網https://www.mandarin-airlines.com/ 開立國內機票時輸入企業會員帳號可享國內航線優惠票價。
+3.開立國際線機票時請告知配合旅行社，於訂位、開票時輸入本校企業會員帳號方可累計機票淨額。
+註：本校企業會員帳號TW039813', '電話：04-23259592-2309
+地址：台中市西區台灣大道二段218號15樓之2
+使用對象：教職員工', '04-23259592-2309', '台中市西區台灣大道二段218號15樓之2', '[{"label": "官網", "url": "https://www.china-airlines.com/tw/zh"}]', NULL, 0, '校友中心標示期限：永久；地址為公司/總店地址，優惠可於線上或多地使用', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=11', '2026-10-15', 288);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('dff8213b0c', '台灣高鐵', '台中市烏日區', 'transport', 'north,central,south,east', '特約優惠', '1.台灣高鐵企業會員，訂票時須登錄
+「企業統一編號」（即本校統一編號 52024101）。
+2.台灣高鐵企業會員專屬權益。', '電話：客服專線：04-40663000訂位專線：04-40660000
+地址：台中市烏日區二路 8 號
+使用對象：教職員、在校學生、校友', '客服專線：04-40663000訂位專線：04-40660000', '台中市烏日區二路 8 號', '[{"label": "官網", "url": "https://www.thsrc.com.tw/"}]', NULL, 0, '校友中心標示期限：永久；地址為公司/總店地址，優惠可於線上或多地使用', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=11', '2026-10-15', 289);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7fae880301', '興大附農實習旅館', '台中市東區', 'lodging', 'central', '7折起', '1.本校現職教職員工憑服務證，住宿享
+7 折優惠(限本人)。
+2.本校現職教職員工憑服務證代訂，住
+宿享 8.5 折優惠。
+3.住房當日請攜帶相關證明文件。', '電話：04-22807236
+地址：台中市東區台中路 287 號', '04-22807236', '台中市東區台中路 287 號', '[]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=11', '2026-10-15', 290);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('73ed3255bc', '鮮活農產股份有限公司', '台北市中正區', 'food', 'north', '9折', '1. 棗對樂享$129，買一送一。(單盒原價$198)
+2. 鮮活農市所有商品9折。
+3. 不定期推出組合特價商品。', '電話：02-23016858
+地址：台北市中正區重慶南路三段16巷10號', '02-23016858', '台北市中正區重慶南路三段16巷10號', '[]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=11', '2026-10-15', 291);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9b42fb2509', '歐客佬精品咖啡', '台中市北區', 'food', 'central', '9折', '1. 各國精品咖啡豆買二送一
+2. 咖啡用具9折優惠', '電話：04-22178808
+地址：台中市北區崇德路一段517號', '04-22178808', '台中市北區崇德路一段517號', '[{"label": "官網", "url": "https://www.oklaocoffee.com/"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=11', '2026-10-15', 292);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7a272f57ae', '肉鮮生韓式烤肉', '台中市南屯區', 'food', 'central', '95折', '1. 全時段用餐免收服務費
+2. 平日中午用餐消費享95折
+3. 不定時活動，如生日、謝師宴等
+4. 包場服務', '電話：04-24718966
+地址：台中市南屯區南屯路二段342號', '04-24718966', '台中市南屯區南屯路二段342號', '[]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=11', '2026-10-15', 293);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('d0d1f74246', '王品餐飲股份有限公司王品台中文心分公司', '台中市西屯區', 'food', 'central', '9折', '消費套餐享9折優惠', '電話：04-23136430
+地址：台中市西屯區寧夏路233號', '04-23136430', '台中市西屯區寧夏路233號', '[{"label": "官網", "url": "https://www.wangsteak.com.tw/"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=11', '2026-10-15', 294);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('618a547b9d', '3393(吉品養生股份有限公司烏日營業所)', '台中市南區', 'food', 'central', '9折', '1. 開學季回饋108.09.01-15飲品第二杯半價(不限同品項以價高者計算)
+2. 全店商品9折優惠(不和其他優惠合併計算)', '電話：04-22289028
+地址：台中市南區復興路三段393號', '04-22289028', '台中市南區復興路三段393號', '[{"label": "官網", "url": "https://www.facebook.com/3393.tw/?pageid=102034481147338&ftentidentifier=111237713560348&padding=0"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=11', '2026-10-15', 295);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b1c2648323', '天菜豐巢秀泰文心店', '台中市南屯區', 'food', 'central', '9折', '持有本校教職員工證、學生證及校友證消費，享有下列之優惠條款：
+天菜豐巢秀泰文心店內用消費享9折優惠(酒飲、零售商品、優惠品、服務費除外)，此優惠不得與其它優惠併用(EX:外燴服務、客製餐點、折扣券、折價券、簡訊優惠、信用卡優惠或任何未及載列之優惠)。', '電話：04-24757678
+地址：台中市南屯區文心南路289號', '04-24757678', '台中市南屯區文心南路289號', '[{"label": "官網", "url": "https://www.cooper-vegood.com/"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=11', '2026-10-15', 296);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('f50f7a1375', '有心食堂', '台中市南區', 'food', 'central', '9折', '1. 店內用餐 套餐9折
+2. 外帶自備餐盒容器 享9折優惠
+3. 外送服務 餐點免低消
+4. 平日14:00~17:00 店內用餐飲料免費續乙杯
+5. 肉類商品滿千折百元
+6. 消費券9折優惠販售 買20張贈2張', '電話：04-22859276
+地址：台中市南區國光路361號', '04-22859276', '台中市南區國光路361號', '[{"label": "官網", "url": "https://www.withheart.com.tw/"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=11', '2026-10-15', 297);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a8de9e685e', '陳允寶泉食品(股)公司', '台中市西區', 'food', 'central', '9折', '1. 消費享 9 折優惠(特價品、寄賣品除外，餐盒、彌月、喜餅另有優惠)。
+2. 優惠適用自由總店、草悟道店。', '電話：自由04-22222257草悟道04-23027552
+地址：台中市西區向上北路136號', '自由04-22222257草悟道04-23027552', '台中市西區向上北路136號', '[{"label": "官網", "url": "https://zh-tw.facebook.com/chenyunpaochuan/"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=12', '2026-10-15', 298);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('44d541c7eb', '礽豐國際餐飲股份有限公司(炎香樓、炎香亭、妃黛美式海鮮、茶吉堂)', '台中市西區', 'food', 'central', '9折', '1、現金或刷卡消費皆享9折優惠
+2、如遇店內促銷活動，則擇一(擇優)使用。', '電話：炎香樓04-23299968炎香亭04-23261759妃黛美式04-23756513
+地址：台中市西區公正路106號', '炎香樓04-23299968炎香亭04-23261759妃黛美式04-23756513', '台中市西區公正路106號', '[{"label": "官網", "url": "https://www.facebook.com/yanxianglou/"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=12', '2026-10-15', 299);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c5745a483f', '雲雀集團中部地區', '台中市北區', 'food', 'central', '95折', '1. 除單點之酒類商品及氣泡水商品外，其餘全品類商品原價95折優惠，但服務費須另外收取(服務費以商品原價之10%計算)。
+2. 本優惠內容不得與乙方之其他優惠方案、特惠商品、會員集點、優惠券、折價券、或禮券等等合併使用。
+3. 本優惠內容適用於周一至周日，但如屬人事行政局所公告之國定假日排除適用。
+【古拉爵】之【中友百貨店、文心家樂福店、三井台中港店、彰化家樂福店】
+【橫濱牛排、涮之華、武藏野森咖啡】之【台中LALAPORT店】
+【加洲風洋食館、涮乃葉】之【福科店、文心秀泰店、台中大遠百店、豐原家樂福店】', '電話：04-22230508
+地址：台中市北區三民路三段161號C棟8樓
+使用對象：教職員工生及校友', '04-22230508', '台中市北區三民路三段161號C棟8樓', '[{"label": "官網", "url": "https://www.grazie.com.tw/store/detail/20"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=12', '2026-10-15', 300);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ace6af5287', '藝奇新日本料理', '台中市北區', 'food', 'central', '特約優惠', '1. 每人每杯冰梅釀及味付杏鮑菇乙份。
+2. 優惠適用台中大墩店、福雅店、崇德店。', '電話：大墩店04-23200030福雅店04-24616022崇德店04-22382252
+地址：台中市北區崇德路一段 649 號 2 樓
+使用對象：教職員工生及校友', '大墩店04-23200030福雅店04-24616022崇德店04-22382252', '台中市北區崇德路一段 649 號 2 樓', '[{"label": "官網", "url": "https://www.ikki.com.tw/index.html"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=12', '2026-10-15', 301);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('d4598fffa5', '綠世界生態農場', '新竹縣北埔鄉', 'entertainment', 'north', '9折', '1. 員工本人及其親友(5人)可享半票優惠
+2. 於園區內持員工識別證消費,部分可享 9 折優惠｡
+3.當日壽星入園免費,及服務台可兌換禮品一份(需出示員工識別證及身分證)｡', '電話：03-5801000
+地址：新竹縣北埔鄉大湖村 7 鄰 20 號
+使用對象：教職員', '03-5801000', '新竹縣北埔鄉大湖村 7 鄰 20 號', '[{"label": "官網", "url": "https://www.green-world.com.tw/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": true}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=12', '2026-10-15', 302);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('1411401480', '美麗華皮件', '台中市大肚區', 'shopping', 'central', '5折', '1. Commodore全系列產品訂價5折。
+2. 每年實施一次為期一個月39折優惠專案。
+3. 正常使用情況下，提供「零配件永久免費保固」（運費自付）。', '電話：04-26993003
+地址：台中市大肚區沙田路二段308巷8-1號', '04-26993003', '台中市大肚區沙田路二段308巷8-1號', '[{"label": "官網", "url": "https://www.luggage.com.tw/"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=12', '2026-10-15', 303);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('cb0a151723', '龍興機車行', '台中市南區', 'services', 'central', '9折起', '1. 換2次機油送1次齒輪油
+2. 單次維修費滿500元以上打95折，滿1000元以上打9折', '電話：04-2285660704-22870965
+地址：台中市南區永東街65號', '04-2285660704-22870965', '台中市南區永東街65號', '[]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=12', '2026-10-15', 304);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('682528829f', '臺中市私立愛林幼兒園', '台中市南區', 'education', 'central', '消費贈品', '第一次入學時，贈送書包、餐具組、冬夏運動服各1套', '電話：04-22874571
+地址：台中市南區正氣街45號', '04-22874571', '台中市南區正氣街45號', '[]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=12', '2026-10-15', 305);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('4c8a4635b3', '臺中市私立親貝兒托嬰中心', '台中市南區', 'education', 'central', '9折', '每次註冊費9折優惠', '電話：04-22612618
+地址：台中市南區文心南十路195號', '04-22612618', '台中市南區文心南十路195號', '[]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=12', '2026-10-15', 306);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('5e18c33b7b', '六法資訊有限公司', '台中市南區', 'education', 'central', '9折', '1. 購買https://www.6laws.net/(S-link電子六法全書)網站上商品滿800元享9折優惠
+2. 團購5組六法高級會員(2年)帳號者，除享9折優惠價外，再加贈2組考題高級會員帳號(值3760元)
+3. 團購3組六法高級會員(2年)帳號者，除享9折優惠價外，再加贈1組考題高級會員帳號(值1880元)
+4. 教師電子書客製化製作享9折優惠', '電話：03-931199
+地址：台中市南區興大路145號', '03-931199', '台中市南區興大路145號', '[{"label": "官網", "url": "https://www.6laws.net/"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=12', '2026-10-15', 307);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9957556c79', '歐舒嫚美容美體館', '台中市南屯區', 'services', 'central', '專屬優惠價', '1. 首次體驗價999元(原價2500元):身體全背部精油舒壓60分鐘，出示識別證，再多贈送肩頸按摩10分鐘(限1次，女性體驗)
+2. 身體全背部精油舒壓60分鐘，10堂課程19800元(原價25000元)，體驗當天包療程，贈送(1) 身體全背部精油舒壓60分鐘
+5堂課程，(2)背部熱石課程2堂(使用期限為1年期)', '電話：04-24726098
+地址：台中市南屯區文心南三路586號', '04-24726098', '台中市南屯區文心南三路586號', '[{"label": "官網", "url": "https://www.facebook.com/pages/category/Day-Spa/歐舒嫚美容美體aromatale-spa館-2235856033355095/"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=12', '2026-10-15', 308);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7f63f10689', '明祐耳鼻喉科診所', '台中市中區', 'health', 'central', '掛號費優惠', '門診掛號費減免30元(健保自負額自行負擔)', '電話：04-22220007
+地址：台中市中區民權路160號', '04-22220007', '台中市中區民權路160號', '[{"label": "官網", "url": "https://guardian-ent.blogspot.com/"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=12', '2026-10-15', 309);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('dbc75a3a08', '昇活運動用品館', '台中市大里區', 'shopping', 'central', '消費贈品', '1. 憑教職員工證、學生證、校友證即可享有會員優惠
+2. 憑教職員工證、學生證、校友證來店穿線即贈握把布(昇活)
+3.教職員工、學生、校友，當月壽星憑證可再享有特別優惠折扣', '電話：04-24181997
+地址：台中市大里區國光路二段739號', '04-24181997', '台中市大里區國光路二段739號', '[]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=13', '2026-10-15', 310);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('d040ec659b', '永盛體育文教用品名店', '台中市西區', 'shopping', 'central', '8折', '1. 消費時免費辦理本店「VIP會員卡」，每年獲贈2張生日折價券(會員資料完整者)。:
+2. 憑本店「VIP會員卡」可享當季服飾、鞋子7-8折會員價。(專櫃商品、特殊商品本店之會員價計之)
+3. 運動用品、配件依本店之會員價計之。
+4. 團體訂購依實際情形另外議價。
+5. 單位會員卡年度累積消費者滿$10000送$100現金卷2張，滿$15000送現金卷3張，以此累積。(團體訂購不列入累計)
+6.備有消費免費私人停車場。', '電話：04-23221393
+地址：台中市西區公益路325 號', '04-23221393', '台中市西區公益路325 號', '[{"label": "官網", "url": "http://www.yssport.com.tw/"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=13', '2026-10-15', 311);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('434e43c2b4', '路易斯皮件有限公司', '台中市西屯區', 'shopping', 'central', '5折', '1.路易斯皮件 推廣系列產品訂價5折。
+2.每年實施乙次為期一個月、39折之特惠專案（時間另行協調公告）。
+3.正常使用下，提供〝零配件永久免費保固〞（運費自付）', '電話：電話：04-24612112傳真：04-24612272
+地址：台中市西屯區3段164-17號7樓', '電話：04-24612112傳真：04-24612272', '台中市西屯區3段164-17號7樓', '[]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=13', '2026-10-15', 312);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('2b2cf10988', '法藍瓷', '台北市松山區', 'shopping', 'north', '75折', '1.消費享75折優惠', '電話：02-27670116-312 劉小姐
+地址：台北市松山區民生東路五段167號13樓', '02-27670116-312 劉小姐', '台北市松山區民生東路五段167號13樓', '[{"label": "官網", "url": "http://www.franzcollection.com.tw/tw/start"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=13', '2026-10-15', 313);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('aa5860c6c7', '小林眼鏡', '台中市大里區', 'health', 'central', '65折起', '1. 一般眼鏡 65 折(限配整副)。
+2. 太陽眼鏡 65 折(限配整副)。
+3. 常戴型隱形眼鏡 75 折(限配整副)。
+4.保健食品 9 折。
+5.以上優惠不適用於國際精品專櫃、特價品、藥水、拋棄式隱形眼鏡及特殊訂製片
+6.遇週年慶、新開幕、或特別促銷低於以上優惠時，以較優惠價格為準。
+7.配鏡前請先出示證件。', '電話：02-26513858
+地址：台中市大里區大明路247號', '02-26513858', '台中市大里區大明路247號', '[{"label": "官網", "url": "http://www.kobayashi.com.tw/"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=13', '2026-10-15', 314);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ac46a9db57', '意得輯', '台北市內湖區', 'shopping', 'north', '特約優惠', '本校教職員生及校友於上傳文件時屬單位填寫「國立中興大學」並輸入折扣代碼「TWEDIT5」即可享有優惠。', '電話：0800-668636
+地址：台北市內湖區瑞光路223號1樓
+使用對象：教職員、在校學生、校友', '0800-668636', '台北市內湖區瑞光路223號1樓', '[{"label": "官網", "url": "https://www.editage.com.tw/"}]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=13', '2026-10-15', 315);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('bad1e65f89', '尚紘祥實業有限公司', '台中市南區', 'shopping', 'central', '66折起', '憑員工識別證、學生證、校友會證明 即可享有 66 折至 7 折之間的優惠。', '電話：04-22853141
+地址：台中市南區南門路 59 巷 94 號。', '04-22853141', '台中市南區南門路 59 巷 94 號。', '[{"label": "官網", "url": "https://tw.mall.yahoo.com/store/verage"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=13', '2026-10-15', 316);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('38a0ec2a96', '大台中和平中醫診所', '台中市中區', 'health', 'central', '掛號費優惠', '看診減掛號費 50 元', '電話：04-22202611
+地址：台中市中區民權路 156 號 1 樓
+使用對象：教職員、在校學生、校友', '04-22202611', '台中市中區民權路 156 號 1 樓', '[]', NULL, 0, '校友中心標示期限：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=13', '2026-10-15', 317);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('cc7bbdaadc', '慎安堂中醫診所', '台中市東區', 'health', 'central', '掛號費優惠', '看診免收掛號費 50 元及自付額 50 元。', '電話：04-22206496
+地址：台中市東區台中路 59 號', '04-22206496', '台中市東區台中路 59 號', '[]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=13', '2026-10-15', 318);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a6f4c86ec0', '國立中興大學附屬臺中高級農業職業學校員工子女非營利幼兒園', '台中市東區', 'education', 'central', '特約優惠', '招生期間提供本校員工子女、孫子女聯合教保服務(享優先入園權利，倘超過可招收人數時，則採抽籤方式辦理)', '電話：04-22807564
+地址：台中市東區台中路 283 號', '04-22807564', '台中市東區台中路 283 號', '[{"label": "官網", "url": "https://www.tcavs.tc.edu.tw/tcavsns/index.asp"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": true}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=13', '2026-10-15', 319);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('2b7ebbb1ab', '高佳林實業公司 (樂扣樂扣)', '台北市內湖區', 'shopping', 'north,central,south,east', '85折起', '1.一般商品(正品)享原價 85 折優惠。
+2.當期促銷品，享優惠價再 95 折優惠
+3.大宗團購另有優惠。
+4.優惠適用全國直營據點。
+5.優惠適用退休人員。', '電話：各店電話請參見高佳林實業公司網頁說明。
+地址：台北市內湖區新湖一路89號', '各店電話請參見高佳林實業公司網頁說明。', '台北市內湖區新湖一路89號', '[{"label": "官網", "url": "http://www.cjforest.com.tw/"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久；地址為公司/總店地址，優惠可於線上或多地使用', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=13', '2026-10-15', 320);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('12ead87382', '玉山銀行 台中分行(北台中消金中心)', '台中市西屯區', 'shopping', 'central', '5折', '1. 各項放款業務、投資理財、玉山證券等優惠專案，包含資金需求、基金扣款、證券下單皆有專業與快速的服務。
+2. 前三個月最低 2.08 %機動計息，第四個月起最低3.38%機動計息信用貸款，基金下單手續費 5 折優惠，玉山證券首年可享電子下單3.8折優惠。', '電話：04-25681313- 101業務承辦人：鍾明叡專員(0921-308527)
+地址：台中市西屯區永福路 138 號', '04-25681313- 101業務承辦人：鍾明叡專員(0921-308527)', '台中市西屯區永福路 138 號', '[{"label": "官網", "url": "http://www.esunbank.com.tw/"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=13', '2026-10-15', 321);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('f40f3507e1', '飛夢力運動整合行銷有限公司', '台中市北區', 'entertainment', 'north,central', '9折', '享周末系列課程一律 9 折', '電話：0989-787183
+地址：台中市北區新北里三民路三段114號8樓', '0989-787183', '台中市北區新北里三民路三段114號8樓', '[]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=14', '2026-10-15', 322);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ff3d73729f', '24-17運動健身俱樂部', '台中市北區', 'entertainment', 'central', '消費贈品', '憑 QR 碼購買運動卷可享買十送二之優惠並贈送價值 2500 元專業教練健康評估課程。', '電話：0917-815581
+地址：台中市北區尊賢街7 號 17 樓', '0917-815581', '台中市北區尊賢街7 號 17 樓', '[{"label": "官網", "url": "https://www.facebook.com/pages/24-17運動健身俱樂部/1456070037944233"}]', NULL, 0, '校友中心頁面未標示使用對象，依優惠內容判斷，消費前請向商家確認；校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=14', '2026-10-15', 323);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('bed884813d', '麗喆國民中小學', '台中市西屯區', 'education', 'central', '9折', '教職員之子女就讀本校，優待每人每學期國中小學雜費/註冊費九折 (含幼兒部、國小部、國中部及課後美語部)', '電話：04-24613099#736
+地址：台中市西屯區國安二路242巷199號
+使用對象：教職員', '04-24613099#736', '台中市西屯區國安二路242巷199號', '[]', NULL, 0, '校友中心標示期限：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NCHU', 'school', '中興大學校友中心', 'https://alumni.nchu.edu.tw/vstore.php?page=14', '2026-10-15', 324);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c1af90c2b6', '六宴食堂', '臺北市', 'food', 'north', '88折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，
+可享下列優惠：
+1. 所有產品88折優惠 (不與其他優惠活動併用)
+2. 團體訂單, 消費滿千可外送 (前一日預訂)
+3.完整菜單: https://6orientalsavor.com/#menu', '電話：02- 2937-5306
+地址：台北市文山區興隆路四段68-3號1樓
+期限：即日起～2027-08-31', '02- 2937-5306', '台北市文山區興隆路四段68-3號1樓', '[{"label": "官網", "url": "https://6orientalsavor.com/"}, {"label": "相關連結", "url": "https://www.mkkramen.com/food?fbclid=IwZXh0bgNhZW0CMTAAAR1AKQXN9KuaqXBC15QE5SY8AAfb7dNH3HLG0A3PI_JkaQmbttsLpXJnelU_aem_AZNjnBdWil0W4kPD-omxghB0EdpkuAfTbtp3C-LUWF4btwUNgkzLqd5mw8vljFlsv-ROEKKlLz0BxEdMWU7cRB8K"}]', '2027-08-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 325);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('65770795c1', '舒曼六號餐館【小巨蛋南京店】及【板橋新埔店】', '臺北市', 'food', 'north', '消費贈品', '憑效期內校友證及政大教職員工、學生有效證件，點餐前及結帳時主動出示，
+可享以下優惠： 免費兌換吧台手作甜點乙份
+*注意事項
+1. 每桌每次消費，限兌換優惠一份。
+2. 優惠不得與其它店內其他優惠活動併用。
+3. 優惠不適用外帶、外送、單點、禮券購買、禮券支付、兌現或找零，10%服務費另計。
+4. 贈品或贈送餐點以現場實物為準，若贈品或贈送餐點數量有限，得以等值贈品替換之。', '期限：即日起～2029-10-01', '', '', '[{"label": "官網", "url": "https://www.schumannsbistrono6.com/"}]', '2029-10-01', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 326);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('97dba409b4', '王品牛排', '臺北市', 'food', 'north', '消費贈品', '*(台北羅斯福店)即日起至10月31日，姓名中含「王」或「玉」任一字，
+內用兩客套餐，再款待「義式海鮮盤」乙份（價值689元，請參閱相關附件
+憑效期內校友證及政大教職員工、學生有效證件，
+點餐前及結帳時主動出示，可享以下優惠：
+1. 至王品牛排南京東店餐廳消費套餐，贈送「主廚私房菜」乙份。
+地址：台北市松山區南京東路四段169號
+2. 至王品牛排羅斯福店餐廳消費兩客套餐，贈送「海味雙饗」乙份。
+地址：台北市中正區羅斯福路二段9號
+注意事項
+每桌每次消費，限兌換優惠一份。
+優惠不得與其它店內其他優惠活動併用。
+優惠不適用外帶、外送、單點、禮券購買、禮券支付、兌現或找零，10%服務費
+另計。
+贈品或贈送餐點以現場實物為準，若贈品或贈送餐點數量有限，得以等值贈品替換之。
+兌換期限: 114/12/01~115/12/31(南京東店)/115/03/01~116/12/31(羅斯福店)', '電話：客服專線：0800-071-198
+地址：南京東店&羅斯福店
+期限：即日起～2026-12-31', '客服專線：0800-071-198', '南京東店&羅斯福店', '[{"label": "官網", "url": "https://www.wangsteak.com.tw/"}, {"label": "附件_王玉優惠活動(至20261031).jpg", "url": "https://media.nccu.email/93bf0f84f3b91bca02ed763f6b14cc6f.jpg"}, {"label": "附件_國王節期間限定(至20261031).jpg", "url": "https://media.nccu.email/8bc8d2b7591b55a289319d0057a747b9.jpg"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 327);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('778226b16c', '涮乃葉(信義遠百店)', '臺北市', 'food', 'north', '95折', '*平日用餐不限時(五小時)優惠活動至2026年底！
+*季節限定~即日起推出口感更好的美國極黑和牛！
+憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，
+平日可享原價95折優惠，周休二日及國定假日除外。', '電話：02-2723-0698
+地址：台北市台北市松仁路58號7樓 (信義遠百店)
+期限：即日起～2027-12-31', '02-2723-0698', '台北市台北市松仁路58號7樓 (信義遠百店)', '[{"label": "官網", "url": "https://syabuyo.com.tw/store_detail.php?id=18&area"}]', '2027-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 328);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b0205072e7', '金色三麥', '', 'food', 'north,central,south,east', '雙倍點數', '*尾牙春酒優惠活動(20261201~20270331) 請參閱附件
+*金色三麥集團會員系統及會員APP,可跨品牌消費點數累積; 請參閱附件,。
+1. 憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，
+可享C級特約優惠：會員消費贈送雙倍點數。
+2. 其餘不定期優惠, 依照商家推出之方案使用。', '期限：即日起～2026-12-31', '', '', '[{"label": "官網", "url": "https://www.lebledor.com/"}, {"label": "全省門市.jpg", "url": "https://media.nccu.email/b05e9b87b86c9c919f7eb776acf740fd.jpg"}, {"label": "附件_金色三麥集團會員系統及會員APP.jpg", "url": "https://media.nccu.email/7a07edebf6ec1d4d6d9e204898fcccfd.jpg"}, {"label": "附件_金色三麥事業群.jpg", "url": "https://media.nccu.email/249d1603b9b6f5c03cfcf051a008f39a.jpg"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 329);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('dcabb7c97e', 'SPORTS NATION', '臺北市', 'food', 'north', '消費贈品', '*最新優惠方案 請參閱相關附件
+*金色三麥集團會員系統及會員APP,可跨品牌消費點數累積; 請參閱附件。
+憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，可享下列優惠：
+1. 內用消費滿2000元贈280元以內的餐點或shot乙盤
+(6小杯 40ml店内特調調酒/满4000元招待兩份,依此類推)
+※50人以上不適用/優惠不併用。', '電話：0800-090-000
+地址：台北市忠孝東路四段515號1樓 (大巨蛋北側近松菸7號店)11號入口旁
+期限：即日起～2026-12-31', '0800-090-000', '台北市忠孝東路四段515號1樓 (大巨蛋北側近松菸7號店)11號入口旁', '[{"label": "官網", "url": "https://reurl.cc/LWLy4x"}, {"label": "附件_金色三麥集團會員系統及會員APP.jpg", "url": "https://media.nccu.email/1beaba8f47728b6c092c81e67fc70085.jpg"}, {"label": "附件_金色三麥事業群.jpg", "url": "https://media.nccu.email/8fbd2b26b0be7ff6a2a30437a7646193.jpg"}, {"label": "附件_金色三麥集團2026特約優惠一覽表.png", "url": "https://media.nccu.email/16b8a753714e07a24c85ca0ba67d2dfd.png"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 330);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('4edf28c998', '微兜', '臺北市、高雄市', 'food', 'north,south', '消費贈品', '*金色三麥集團會員系統及會員APP,可跨品牌消費點數累積; 請參閱附件,。
+1. 憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，
+可享下列優惠：
+平日週一到週五2pm-5pm內用消費不限金額
+招待美式女王咖啡或兜選紅茶乙杯。
+※20人以上不適用/優惠不併用
+2. 其餘不定期優惠, 依照商家推出之方案使用。', '期限：即日起～2026-12-31', '', '', '[{"label": "官網", "url": "https://www.petitdoux.com/"}, {"label": "全省門市.jpg", "url": "https://media.nccu.email/4b72b0b4adb6d4ccbc78cd9350f6a5a8.jpg"}, {"label": "附件_金色三麥集團會員系統及會員APP.jpg", "url": "https://media.nccu.email/117702c301ec0527a9259b10f54a0496.jpg"}, {"label": "附件_金色三麥事業群.jpg", "url": "https://media.nccu.email/0a9f5a23654a160c525719c0749a025b.jpg"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 331);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('785a7486c4', 'BAC cake & sweets', '臺北市、臺中市', 'food', 'north,central', '9折', '*金色三麥集團會員系統及會員APP,可跨品牌消費點數累積; 請參閱附件。
+1. 憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，可享以下優惠：
+門市購買6吋以上生日蛋糕享9折優惠。
+※如需宅配運費另計/優惠不併用
+2. 其餘不定期優惠, 依照商家推出之方案使用。', '期限：即日起～2026-12-31', '', '', '[{"label": "官網", "url": "https://www.baccake.com"}, {"label": "全省門市.jpg", "url": "https://media.nccu.email/d94490b4a45d0685b99d7f856e93d5dd.jpg"}, {"label": "附件_金色三麥集團會員系統及會員APP.jpg", "url": "https://media.nccu.email/194800f4875da87612726f140b9605c4.jpg"}, {"label": "附件_金色三麥事業群.jpg", "url": "https://media.nccu.email/932f50df88bc166e8376fc09f2af2690.jpg"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 332);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('52a590a01c', 'UMAMI 金色三麥', '臺北市', 'food', 'north', '9折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，
+可享以下優惠：
+1.消費享餐點原價9折優惠或點套餐乙份(商業午餐適用)送350ml精釀啤酒乙杯
+※以上說明優惠二擇一/20人以上不適用/優惠不併用
+2.其餘不定期優惠, 依照商家推出之方案使用。', '期限：即日起～2026-12-31', '', '', '[{"label": "官網", "url": "https://www.lebledor.com/location/umami"}, {"label": "全省門市.jpg", "url": "https://media.nccu.email/ca18854eeec26279d146addff4eafec1.jpg"}, {"label": "附件_金色三麥集團會員系統及會員APP.jpg", "url": "https://media.nccu.email/a33860f8deee1fc972d58ca9c328d090.jpg"}, {"label": "附件_金色三麥集團2026特約優惠一覽表.png", "url": "https://media.nccu.email/9beab441941d0da296885c0e08a7340b.png"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 333);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('79375cd944', '咖哩樹', '臺北市', 'food', 'north', '消費贈品', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，可享下列優惠：
+1. 消費任一主餐享免費升級乙份(升級內容：小菜兩項，搭配例湯或輕烘烤蕎麥綠茶擇一)
+※優惠不併用
+2. 其餘不定期優惠, 依照商家推出之方案使用。', '電話：02-7729 0799
+地址：103台北市大同區承德路一段1號號B3 (京站店)
+期限：即日起～2026-12-31', '02-7729 0799', '103台北市大同區承德路一段1號號B3 (京站店)', '[{"label": "官網", "url": "https://zh-cn.facebook.com/currytree.tw/?ref=page_internal"}, {"label": "附件_金色三麥集團會員系統及會員APP.jpg", "url": "https://media.nccu.email/9b6f871bfb401c0dc7562df03a5bb344.jpg"}, {"label": "附件_金色三麥事業群.jpg", "url": "https://media.nccu.email/22e6d5575461eceaeca39890804d007e.jpg"}, {"label": "附件_金色三麥集團2026特約優惠一覽表.png", "url": "https://media.nccu.email/c9a2efc4e3b43103f1d348aac34270e2.png"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 334);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('6a46a4db93', 'BLAH BLAH BAR', '臺北市', 'food', 'north', '消費贈品', '*金色三麥集團會員系統及會員APP,可跨品牌消費點數累積; 請參閱附件。
+憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，可享下列優惠:
+1. 享儲值優惠,購買酒卡並儲值單筆滿1000元,
+立即送椒麻雞洋芋片乙份
+(儲值2000元送兩份,以此類推,可累計赠送)
+※優惠不併用
+2. 其餘不定期優惠, 依照商家推出之方案使用。', '電話：02 2729 0609
+地址：台北市信義區松高路 12 號(新光三越 A8 B1)
+期限：即日起～2026-12-31', '02 2729 0609', '台北市信義區松高路 12 號(新光三越 A8 B1)', '[{"label": "官網", "url": "https://www.facebook.com/blahblahbar.a8/"}, {"label": "附件_金色三麥集團會員系統及會員APP.jpg", "url": "https://media.nccu.email/359027843717204c155f52cfcfab4ce1.jpg"}, {"label": "附件_金色三麥事業群.jpg", "url": "https://media.nccu.email/35a416fe1e79ec54b5b805ca97c4ad4d.jpg"}, {"label": "附件_金色三麥集團2026特約優惠一覽表.png", "url": "https://media.nccu.email/249a739573338eb3c0a57d38dafc4a43.png"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 335);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c8b8bb75d9', '原燒', '臺北市', 'food', 'north', '消費贈品', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，可享下列優惠：
+1. 消費套餐，贈送「嚴選雪花板腱／嚴選豬梅花」乙份 。
+2. 注意事項
+(1)每桌每次消費，限兌換優惠一份。
+(2)優惠不得與店內其他優惠活動併用。
+(3)優惠不適用外帶、外送、單點、禮券購買、禮券支付、兌現或找零，10％服務費另計 。
+(4)贈品或贈送餐點以現場實物為準，若贈品或贈送餐點數量有限, 得以等值贈品替換之 。
+(5)兌換期限：115/02/11~117/02/09 。
+(6)店家保有修改、解繹、終止或異動本活動之權利 。', '電話：(02)2388-8523
+地址：臺北市萬華區中華路一段90號2樓 (台北西門店)
+期限：即日起～2028-02-09', '(02)2388-8523', '臺北市萬華區中華路一段90號2樓 (台北西門店)', '[{"label": "官網", "url": "https://www.yakiyan.com/"}]', '2028-02-09', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 336);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('2cfe7bc0a3', '古拉爵 (新店家樂福店)', '新北市', 'food', 'north', '95折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，
+可享以下優惠:
+1. 除單點之酒類商品及氣泡水商品外，其餘全品類商品原價95折優惠，
+但服務費須另外收取(服務費以商品原價之10%計算)。
+2. 本優惠內容不得其他優惠方案、特惠商品、電子優惠券、優惠券、折價券、或禮券等等合併使用。
+3. 本優惠內容適用於周一至周日，
+但如屬人事行政局所公告之國定假日排除適用。', '電話：02-2914-4822
+地址：新北市新店區中興路三段1號7樓 (新店家樂福店)
+期限：即日起～2026-12-31', '02-2914-4822', '新北市新店區中興路三段1號7樓 (新店家樂福店)', '[{"label": "官網", "url": "https://www.grazie.com.tw/store/detail/8"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 337);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('09d81868ac', '橫濱牛排', '臺北市', 'food', 'north', '95折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，
+可享以下優惠:
+一、除單點之酒類商品及氣泡水商品外，某餘全品類商品原價 95 折優惠，
+但服務費須另外收取（服務費以商品原價之10％計箕）。
+二、本優惠內容不得與其他優惠方案、特惠商品、會員集點、
+優惠券、折價券丶或禮券等等合併使用
+三、本優惠內容適用於周一至周日，
+但如屬人事行政局所公告之國定假日排除適用。', '電話：02-8712-5575
+地址：台北市松山區南京東路三段337號 (微風南京店)
+期限：即日起～2027-05-31', '02-8712-5575', '台北市松山區南京東路三段337號 (微風南京店)', '[{"label": "官網", "url": "https://www.facebook.com/YokohamaTAIWANSKYLARK/"}]', '2027-05-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 338);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('1cb91280d1', '麥漢堡', '', 'food', 'north,central,south,east', '折$150', '*金色三麥集團會員系統及會員APP,可跨品牌消費點數累積; 請參閱附件。
+憑效期內校友證及教職員工、學生有效證件，可享下列優惠：
+1. 內用消費漢堡乙個贈當日內用自助酒牆即折抵150元
+(適用酒類/非酒類飲品,僅限當日內用消費折抵使用,每人當日限使用乙次)
+※20人以上不適用/優惠不併用
+2. 其餘不定期優惠, 依照商家推出之方案使用。', '期限：即日起～2026-12-31', '', '', '[{"label": "官網", "url": "https://www.facebook.com/sunmai.burger/"}, {"label": "附件_金色三麥集團會員系統及會員APP.jpg", "url": "https://media.nccu.email/669883dd378297ee50f4642d5135c37a.jpg"}, {"label": "附件_金色三麥事業群.jpg", "url": "https://media.nccu.email/db7fe7796236d80dd6cd8d89eb57ff7d.jpg"}, {"label": "附件_金色三麥集團2026特約優惠一覽表.png", "url": "https://media.nccu.email/380bcd41e782a9e6877e08dc81fe8c48.png"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 339);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('1ddc0f7ea9', 'SKYLARK 洋食.芳鄰 (和平公園店)', '臺北市', 'food', 'north', '95折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，可享下列優惠：
+1. 除單點之酒類商品及氣泡水商品外，其餘全品類商品原價95折優惠，
+但服務費須另外收取(服務費以商品原價之10%計算)。
+2. 本優惠內容不得與其他優惠方案、特惠商品、會員集點、優惠券、折價券、或禮券等等合併使用。
+3. 優惠內容適用於周一至周日，但如屬人事行政局所公告之國定假日排除適用。', '電話：02-2375-6364
+地址：台北市中正區懷寧街90號1樓
+期限：即日起～2027-02-03', '02-2375-6364', '台北市中正區懷寧街90號1樓', '[{"label": "官網", "url": "https://sky-lark.com.tw/"}]', '2027-02-03', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 340);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('6e37da0244', '涮乃葉(新店家樂福店)', '新北市', 'food', 'north', '95折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，可享下列優惠：
+1. 除單點之酒類商品及氣泡水商品外，其餘全品類商品原價95折優惠，
+但服務費須另外收取(服務費以商品原價之10%計算)。
+2. 本優惠內容不得與其他優惠方案、特惠商品、會員集點、電子優惠券、優惠券、折價券、或禮券等等合併使用。
+3. 本優惠內容適用於周一至周日，但如屬人事行政局所公告之國定假日排除適用。', '電話：(02)2914-9960
+地址：新北市新店區中興路三段1號7樓
+期限：即日起～2027-07-23', '(02)2914-9960', '新北市新店區中興路三段1號7樓', '[{"label": "官網", "url": "https://syabuyo.com.tw/store_detail.php?id=10009&area="}]', '2027-07-23', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 341);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('e099deab21', '陶板屋', '臺北市、新北市', 'food', 'north', '消費贈品', '憑效期內校友證及政大教職員工、學生有效證件，
+於點餐前及結帳時主動出示，可享以下優惠：
+1. 陶板屋台北光復南店消費套餐，贈送「主廚私房菜」乙份。
+地址: 台北市大安區光復南路286號B1
+2. 陶板屋新店北新店消費滿套餐，贈送「主廚私房菜」乙份。
+地址: 新北市新店區北新路2段108號2F
+注意事項
+每桌每次消費，限兌換優惠一份。
+優惠不得與其它店內其他優惠活動併用。
+優惠不適用外帶、外送、單點、禮券購買、禮券支付、兌現或找零，10%服務費
+另計。
+贈品或贈送餐點以現場實物為準，若贈品或贈送餐點數量有限，得以等值贈品替換之。
+兌換期限: 至115年12月31日', '地址：台北光復南店&新店北新店
+期限：即日起～2026-12-31', '', '台北光復南店&新店北新店', '[{"label": "官網", "url": "https://www.tokiya.com.tw/"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 342);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('d723008087', '欣葉日本料理', '臺北市、桃園市', 'food', 'north', '95折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，
+1. 成人平假日用餐享95折優惠(服務費恕不折扣)。
+2. 優惠內容不適用於兒童價及謝師宴、春酒尾牙專案其他特惠活動之優惠價。
+3. 特殊節日及國定假日不適用特約廠商相關折扣優惠。', '期限：即日起～2026-12-31', '', '', '[{"label": "官網", "url": "https://www.shinyeh.com.tw/content/zh/brand/Index.aspx?BrandId=4"}, {"label": "附件1-欣葉各分店資訊.jpg", "url": "https://media.nccu.email/c795926951c46d6887c1477d59b10d9c.jpg"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 343);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('4c963ffe6c', '呷哺呷哺', '臺北市', 'food', 'north', '88折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，
+可享下列優惠：
+內用餐點及外帶飲品享88折優惠
+(不得與其他優惠活動及特價商品併用，不包含服務費)。', '電話：(02)2536-6797
+地址：台北市中山區南京西路15號7樓 (新光南西三館)
+期限：即日起～2026-12-31', '(02)2536-6797', '台北市中山區南京西路15號7樓 (新光南西三館)', '[{"label": "官網", "url": "https://reurl.cc/gGg9OX"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 344);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('d5c5f27ee0', '欣葉SHABU SHABU', '臺北市', 'food', 'north', '95折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，
+可享下列優惠：
+1. 每人一杯梅子醋飲，消費享95折優惠。
+2. 當月壽星即贈欣葉暖麻糬乙份。(壽星須出示證明文件)
+*註1: 本優惠每桌限使用乙次，並適用於國定假日。
+*註2: 優惠內容不適用於外帶消費、春節期間（除夕至初五）、其他優惠活動或優惠價格。。', '電話：(02)2595-5595
+地址：台北市雙城街26號
+期限：即日起～2026-12-31', '(02)2595-5595', '台北市雙城街26號', '[{"label": "官網", "url": "https://www.shinyeh.com.tw/content/zh/brand/Index.aspx?BrandId=5"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 345);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('89e6feb426', '藍屋日本料理', '新北市', 'food', 'north', '95折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，
+1. 平日可享原價95折優惠(單點之酒類商品及氣泡水商品除外)
+服務費須另外收取（服務費以商品原價10%計算)
+2. 不與其他優惠方案、特惠商品、竜子優惠券、優惠券、折價券、或禮券等合併使用
+3. 如屬人事行政局所公告之國定假日排除適用。。', '電話：02-2951-3595
+地址：新北市板橋區新站路28號9F (板橋大遠百店)
+期限：即日起～2026-12-31', '02-2951-3595', '新北市板橋區新站路28號9F (板橋大遠百店)', '[{"label": "官網", "url": "https://aiya.com.tw/"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 346);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('d2089576d1', '古拉爵(板橋遠百新站店)', '新北市', 'food', 'north', '95折', '1. 憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，
+平日及周休二日可享原價95折優惠（服務費不折扣）
+2. 例假日、春節與國定假日恕不提供折扣
+3. 酒類商品不折扣', '電話：02-2951-1606
+地址：新北市板橋區新站路28號9樓
+期限：即日起～2027-12-31', '02-2951-1606', '新北市板橋區新站路28號9樓', '[{"label": "官網", "url": "https://grazie.com.tw/store/detail/11"}]', '2027-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 347);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('40760314c7', '隨意吧-公企店', '臺北市', 'food', 'north', '消費贈品', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，可享下列優惠：
+1.午餐:憑證點選主餐(飯麵、排餐均可),餐後享“是日甜點”乙份。
+2.下午茶:憑證點選開胃菜即贈【精選红酒乙杯】
+3.晚餐:憑證點選主餐(飯麵、排餐均可),即贈【精選紅酒乙杯】
+PS.不喝酒可更換指定無酒精飲品乙杯(預設水果茶)。
+4.以上活動一張證優惠四人,兩張優惠八人依此類推。
+5.獲贈紀念品一份
+其餘資訊請參考隨意吧臉書、IG公告, 或洽詢餐廳工作人員', '電話：(02)2341-6777
+地址：台北市大安區金華街187號
+期限：即日起', '(02)2341-6777', '台北市大安區金華街187號', '[{"label": "官網", "url": "https://reurl.cc/EQmoZn"}]', NULL, 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 348);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9892511c32', '湊湊火鍋.茶憩', '臺北市', 'food', 'north', '88折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，
+可享下列優惠：
+內用餐點及外帶飲品享88折優惠
+(不得與其他優惠活動及特價商品併用，不包含服務費)。', '電話：(02)27566986
+地址：台北市信義區忠孝東路四段515號1樓 (大巨蛋店)
+期限：即日起～2026-12-31', '(02)27566986', '台北市信義區忠孝東路四段515號1樓 (大巨蛋店)', '[{"label": "官網", "url": "https://reurl.cc/YEpDxa"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 349);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('545594440b', '茶米茶', '臺北市', 'food', 'north', '88折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，
+可享下列優惠：
+內用餐點及外帶飲品享88折優惠
+(不得與其他優惠活動及特價商品併用，不包含服務費)。', '電話：(02)2536-6797
+地址：台北市中山區南京西路15號7樓 (新光三越南西三館)
+期限：即日起～2026-12-31', '(02)2536-6797', '台北市中山區南京西路15號7樓 (新光三越南西三館)', '[{"label": "官網", "url": "https://reurl.cc/ekqXdW"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 350);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ea805f78cd', 'TOT 台味拾光', '臺北市', 'food', 'north', '95折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，平假日用餐享95折優惠。
+注意事項:
+1. 請於點餐及結帳時主動出示會員識別證告知服務人員方享優惠，點餐時未出示會員識別證恕無法享優惠。
+2. 不與其他優惠合併使用。
+3. 10%服務費另計。
+4.餐廳保留修改、解釋、終止本活動之權利。', '電話：02-2711-5866
+地址：台北市大安區建國南路177號
+期限：即日起～2026-12-31', '02-2711-5866', '台北市大安區建國南路177號', '[{"label": "官網", "url": "https://www.mediasphere.com.tw/restaurants/16"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 351);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('111d94978d', '132官舍', '新竹市', 'food', 'north', '95折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，
+平假日用餐享95折優惠。
+注意事項:
+1. 請於點餐及結帳時主動出示會員識別證告知服務人員方享優惠，點餐時未出示會員識別證恕無法享優惠。
+2.活動方案不適用包場及12人以上餐會、節慶專案等其他特惠活動之優惠價。
+3.不與其他優惠合併使用。
+4. 10%服務費另計。
+5.餐廳保留修改、解釋、終止本活動之權利。', '電話：(03) 535-0132
+地址：新竹市東區中央路132號 (新竹州警務部部長官舍)
+期限：即日起～2026-12-31', '(03) 535-0132', '新竹市東區中央路132號 (新竹州警務部部長官舍)', '[{"label": "官網", "url": "https://www.mediasphere.com.tw/restaurants/7"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 352);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('aed327a3ec', '荷悅餐廳-國立歷史博物館', '臺北市', 'food', 'north', '95折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，平假日用餐享95折優惠。
+注意事項:
+1. 請於點餐及結帳時主動出示會員識別證告知服務人員方享優惠，點餐時未出示會員識別證恕無法享優惠。
+2. 不與其他優惠合併使用。
+3. 10%服務費另計。
+4.餐廳保留修改、解釋、終止本活動之權利。
+*備註: 荷悅餐廳位於史博館內部，需有購買史博館相關入場門票才能進入', '電話：02-2388-5970
+地址：台北市中正區南海路49號4樓
+期限：即日起～2026-12-31', '02-2388-5970', '台北市中正區南海路49號4樓', '[{"label": "官網", "url": "https://www.mediasphere.com.tw/restaurants/12"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 353);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('6722dcd1e4', '直火1954 Bar&Grill', '臺北市', 'food', 'north', '95折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，平假日消費享95折優惠。
+注意事項:
+1. 請於點餐及結帳時主動出示有效識別證件，告知服務人員方享優惠，點餐時未出示識別證恕無法享優惠。
+2.活動方案不適用包場及10人以上餐會、節慶專案等其他特惠活動之優惠價。
+3.因老宅座位有限，煩請透過線上系統預約或於營業時間來電訂位。
+4.為傳達主廚完整的菜單概念，恕無法為您更換食材。
+5.不與其他優惠合併使用。
+6. 10%服務費另計。
+7.餐廳保留修改、解釋、終止本活動之權利。', '電話：02-2979-1256
+地址：新北市三重區正義南路86巷19號2樓(空軍三重ㄧ村)
+期限：即日起～2026-12-31', '02-2979-1256', '新北市三重區正義南路86巷19號2樓(空軍三重ㄧ村)', '[{"label": "官網", "url": "https://inline.app/booking/1954barandgrill/1954"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 354);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('985313c942', '樂埔薈所 Lepu Lounge', '臺北市', 'food', 'north', '95折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，平假日用餐享95折優惠。
+注意事項:
+1. 請於點餐及結帳時主動出示會員識別證告知服務人員方享優惠，點餐時未出示會員識別證恕無法享優惠。
+2.活動方案不適用包場及8人(含)以上餐會、節慶專案等其他特惠活動之優惠價。
+3.不與其他優惠合併使用。
+4. 10%服務費另計。
+5.餐廳保留修改、解釋、終止本活動之權利。', '電話：02-2782-0678
+地址：台北市大安區愛國東路3號
+期限：即日起～2026-12-31', '02-2782-0678', '台北市大安區愛國東路3號', '[{"label": "官網", "url": "https://reurl.cc/WR2pWD"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 355);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('57d60b1a92', '酸民拾味', '臺北市', 'food', 'north', '95折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，平假日消費享95折優惠。
+注意事項:
+1.請於點餐及結帳時主動出示有效識別證件，告知服務人員方享優惠，點餐時未出示識別證恕無法享優惠。
+2.折扣後須符合人均低消及包廂低消。
+3.因座位有限，煩請透過線上系統預約或於營業時間來電訂位。
+4.不與其他優惠合併使用。
+5. 10%服務費另計。
+6.餐廳保留修改、解釋、終止本活動之權利。', '電話：02-2978-0810
+地址：新北市三重區正義南路86巷21號 (空軍三重ㄧ村)
+期限：即日起～2026-12-31', '02-2978-0810', '新北市三重區正義南路86巷21號 (空軍三重ㄧ村)', '[{"label": "官網", "url": "http://bit.ly/3s5gzSs"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 356);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('03dceeed02', 'AURA', '臺北市', 'food', 'north', '95折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，平假日消費享95折優惠。
+注意事項:
+1. 請於點餐及結帳時主動出示有效識別證件，告知服務人員方享優惠，點餐時未出示識別證恕無法享優惠。
+2.活動方案不適用包場及10人以上餐會、節慶專案等其他特惠活動之優惠價。
+3.每位賓客低消為飲品ㄧ杯。
+4.不與其他優惠合併使用。
+5.免收10%服務費。
+6.餐廳保留修改、解釋、終止本活動之權利。', '電話：02-2979-1256
+地址：新北市三重區正義南路86巷19號1樓(空軍三重ㄧ村)
+期限：即日起～2026-12-31', '02-2979-1256', '新北市三重區正義南路86巷19號1樓(空軍三重ㄧ村)', '[{"label": "官網", "url": "https://www.mediasphere.com.tw/restaurants/9"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 357);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9148f83b87', '樂埔町', '臺北市', 'food', 'north', '95折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，
+平假日用餐享95折優惠。
+注意事項:
+1. 請於點餐及結帳時主動出示會員識別證告知服務人員方享優惠，點餐時未出示會員識別證恕無法享優惠。
+2.活動方案不適用包場及10人(含)以上餐會、節慶專案等其他特惠活動之優惠價。
+3.不與其他優惠合併使用。
+4. 10%服務費另計。
+5.餐廳保留修改、解釋、終止本活動之權利。', '電話：(02) 2395-1689
+地址：台北市大安區杭州南路二段67號
+期限：即日起～2026-12-31', '(02) 2395-1689', '台北市大安區杭州南路二段67號', '[{"label": "官網", "url": "https://reurl.cc/372dy0"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 358);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('35ec89c464', '新竹燈燈庵', '新竹市', 'food', 'north', '95折', '憑效期內校友證及政大教職員工、學生於點餐前出
+示有效證件，平假日消費享95折優惠。
+注意事項:
+1. 請於點餐及結帳時主動出示有效識別證件，告知服務人員方享優惠，點餐時未出示識別證恕無法享優惠。
+2. 活動方案不適用包場及10人以上餐會、節慶專案等其他特惠活動之優惠價。
+3. 因座位有限，煩請於營業時間來電訂位。
+4. 不與其他優惠合併使用。
+5. 10%服務費另計。
+6. 餐廳保留修改、解釋、終止本活動之權利。', '電話：03-5615777
+地址：新竹市東區南大路141號
+期限：即日起～2027-04-30', '03-5615777', '新竹市東區南大路141號', '[]', '2027-04-30', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 359);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7dcb552943', '起士公爵', '', 'food', 'north,central,south,east', '92折', '憑效期內校友證及教職員工、學生有效證件，可享下列優惠：
+1. 以下一間門市 商品單件92折:
+台南東橋：臺南市永康區東橋八街38號
+2. 以下三間百貨門市 商品2件92折：
+1)台北A11：台北新光三越信義新天地A11 B2F
+2)台北京站：京站時尚廣場B3F
+3)台南西門：台南新光三越西門店B2F
+3. 合約期間於起士公爵官網
+https://shop.cheeseduke.com.tw/
+消費不限金額，並於結帳時輸入專屬優惠代碼:2026friend，
+即可享商品92折優惠。', '電話：02-7756-5324
+期限：即日起～2026-12-31', '02-7756-5324', '', '[{"label": "官網", "url": "https://shop.cheeseduke.com.tw/"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 360);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('6ed25065fc', '心泰原創泰國料理', '臺北市', 'food', 'north', '消費贈品', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，可享下列優惠：
+1. 贈泰式奶茶乙杯 或 斑蘭檸檬香茅茶乙杯。
+2. 活動注意事項：
+■本優惠不得與套餐系列及店中其它優惠合併使用。
+■本優惠不適用於特殊節日活動。(如：農曆年、情人節、母親節、父親節等，依現場公告為準)
+■本優惠需消費單點才可享有（甜品、飲品、套餐不列入贈送條件）。
+■本優惠需事先主動出示優惠券並告知欲使用此優惠，結帳後恕不補贈。
+■本優惠每桌、每卡限贈乙次，不可拆桌。
+■本餐廳保有最終解釋權。', '電話：02-2708-5945
+地址：台北市大安區敦化南路二段81巷47號
+期限：即日起～2026-12-31', '02-2708-5945', '台北市大安區敦化南路二段81巷47號', '[{"label": "官網", "url": "http://www.spoon.com.tw/index.php?action=about&id=49"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 361);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('29d51c31b0', '晶湯匙泰式主題餐廳', '臺北市、新北市', 'food', 'north', '95折', '台北SOGO店: 台北市忠孝東路3段300號10樓 02-87725006
+台北京站店: 台北市承德路1段1號4樓 02-25526835
+新北京站小碧潭店：新北市新店區中央路159號5樓 02-8913-6185
+憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，可享下列優惠：
+1. 享95折優惠。
+2. 活動注意事項：
+■本優惠不得與套餐系列及店中其它優惠合併使用。
+■本優惠不適用於特殊節日活動。(如：農曆年、情人節、母親節、父親節等，依現場公告為準)
+■本優惠需消費單點才可享有（甜品、飲品、套餐不列入贈送條件）。
+■本優惠需事先主動出示優惠券並告知欲使用此優惠，結帳後恕不補贈。
+■本優惠每桌、每卡限贈乙次，不可拆桌。
+■本餐廳保有最終解釋權。', '期限：即日起～2026-12-31', '', '', '[{"label": "官網", "url": "http://www.spoon.com.tw/index.php?action=about&id=48"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 362);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('47e947f89c', '樂埔堂 LEPU TANG', '桃園市', 'food', 'north', '95折', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，平假日用餐享95折優惠。
+注意事項:
+1. 請於點餐及結帳時主動出示會員識別證告知服務人員方享優惠，點餐時未出示會員識別證恕無法享優惠。
+2. 不與其他優惠合併使用。
+3. 10%服務費另計。
+4.餐廳保留修改、解釋、終止本活動之權利。', '電話：03-332-1168
+地址：桃園市桃園區中正路77巷5號 (鄰近統領百貨商圈)
+期限：即日起～2026-12-31', '03-332-1168', '桃園市桃園區中正路77巷5號 (鄰近統領百貨商圈)', '[{"label": "官網", "url": "https://www.mediasphere.com.tw/restaurants/5"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 363);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('06dae7aabc', '山海樓', '臺北市', 'food', 'north', '回饋優惠', '一、優惠對象：效期內校友證之校友、教職員工及學生
+二、優惠內容：
+於GREEN&SAFE官方網站(https://www.green-n-safe.com/)註冊成為企業會員後，至各通路消費 (含GREEN&SAFE真食物專賣店門市/官網/客服、山海樓、農人餐桌)，當年度內的每筆消費均可享回饋金：
+消費新台幣49,999(含)以下，即可享實際消費之支付金額5%回饋金。
+消費達新台幣50,000(含)~99,999(含)，即可享實際消費之支付金額7%回饋金。
+消費達新台幣100,000(含)以上，即可享實際消費之支付金額10%回饋金。
+回饋金使用期限:回饋金累積年度為每年1月1日至12月31日，期間累計之回饋金至下一累積年度12月31日前有效。例如：2023年1月1日至2023年12月31日(含當日)累積之回饋金，有效使用期限為2024年12月31日(含當日)前，以此類推。
+1元回饋金價值等於新台幣1元，可於下次消費時抵用，無抵用門檻或金額的限制。
+三、註冊成為會員之步驟請參閱附件。
+四、註冊登入後"企業統編"(驗證碼)~請洽詢校友服務中心
+1. 校友可Email至校友服務中心信箱: alumni@nccu.edu.tw 告知校友證卡號或身分證字號
+2. 教職員工請至紀念品中心出示證件，可獲取"企業統編"(驗證碼)
+五、亦可攜帶有效(政大)證件，親臨"Green&Safe真食物專賣店"木柵店，店員可協助註冊
+(台北市文山區新光路一段143號 電話：02-2936-0965)', '電話：02-2351-3345
+地址：台北市仁愛路二段94號
+期限：即日起～2027-05-01', '02-2351-3345', '台北市仁愛路二段94號', '[{"label": "官網", "url": "https://www.mountain-n-seahouse.com/zh-hant/?mibextid=q5o4bk"}, {"label": "相關連結", "url": "https://www.green-n-safe.com/"}, {"label": "附件_企業會員註冊辦法.pdf", "url": "https://media.nccu.email/67857785f4d16c0524f5cde8c2bf4f3e.pdf"}]', '2027-05-01', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 364);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8569cff839', '農人餐桌', '臺北市', 'food', 'north', '回饋優惠', '一、優惠對象：效期內校友證之校友、教職員工及學生
+二、優惠內容：
+於GREEN&SAFE官方網站(https://www.green-n-safe.com/)註冊成為企業會員後，至各通路消費 (含GREEN&SAFE真食物專賣店門市/官網/客服、山海樓、農人餐桌)，當年度內的每筆消費均可享回饋金：
+消費新台幣49,999(含)以下，即可享實際消費之支付金額5%回饋金。
+消費達新台幣50,000(含)~99,999(含)，即可享實際消費之支付金額7%回饋金。
+消費達新台幣100,000(含)以上，即可享實際消費之支付金額10%回饋金。
+回饋金使用期限:回饋金累積年度為每年1月1日至12月31日，期間累計之回饋金至下一累積年度12月31日前有效。例如：2023年1月1日至2023年12月31日(含當日)累積之回饋金，有效使用期限為2024年12月31日(含當日)前，以此類推。
+1元回饋金價值等於新台幣1元，可於下次消費時抵用，無抵用門檻或金額的限制。
+三、註冊成為會員之步驟請參閱附件。
+四、註冊登入後"企業統編"(驗證碼)~請洽詢校友服務中心
+1. 校友可Email至校友服務中心信箱: alumni@nccu.edu.tw 告知校友證卡號或身分證字號
+2. 教職員工請至紀念品中心出示證件，可獲取"企業統編"(驗證碼)
+五、亦可攜帶有效(政大)證件，親臨"Green&Safe真食物專賣店"木柵店，店員可協助註冊
+(台北市文山區新光路一段143號 電話：02-2936-0965)', '電話：02-2322-3716
+地址：台北市重慶南路二段51號B1
+期限：即日起～2027-05-01', '02-2322-3716', '台北市重慶南路二段51號B1', '[{"label": "官網", "url": "https://m.facebook.com/afarmtable/?wtsid=rdr_0nhOcdiUxUpiXsX0l&mibextid=q5o4bk"}, {"label": "相關連結", "url": "https://www.green-n-safe.com/"}, {"label": "附件_企業會員註冊辦法.pdf", "url": "https://media.nccu.email/850ce6647ab8ad9d90f180ac489feb55.pdf"}]', '2027-05-01', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 365);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('dfc0437f7f', 'Île島嶼法式海鮮', '臺北市', 'food', 'north', '消費贈品', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，可享下列優惠：
+1. 特製前菜一份(憑一張識別證招待一份，兩張兩份，依此類推)。
+2. 平日或假日皆可，不包含特別假日(如母親節、聖誕節等)及國定假日(如中秋節、春節)。
+3. 本優惠內容不得與特惠商品、招待卡或禮券等其他優惠方案合併使用。', '電話：(02)8661-0257
+地址：台北市文山區一壽街16號
+期限：即日起～2027-05-25', '(02)8661-0257', '台北市文山區一壽街16號', '[{"label": "官網", "url": "https://reurl.cc/RrLKnr"}]', '2027-05-25', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 366);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('3dd76f613e', '阿默蛋糕', '', 'food', 'north,central,south,east', '9折起', '憑效期內校友證及教職員工有效證件，可享下列優惠：
+1. 各項產品可享有95折優惠【含小包裝商品（須以原價計算）】
+2. Amo咖啡廳：
+內用：單點或套餐可享有95折優惠，服務費不打折會以原價另加收一成。
+外帶：單點或套餐可享有9折優惠。', '期限：即日起～2026-12-31', '', '', '[{"label": "官網", "url": "https://www.amo.com.tw/tw/locations"}]', '2026-12-31', 0, '', '{"student": false, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 367);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('553ab44c18', 'foodpanda', '', 'food', 'north,central,south,east', '專屬優惠價', '憑效期內校友證及教職員工生證件可享網購特殊優惠價 :
+加入企業會員步驟及優惠內容請參閱相關附件', '電話：02-7750-0288 #60717
+期限：即日起', '02-7750-0288 #60717', '', '[{"label": "官網", "url": "https://forms.gle/am3rtbBYFu8ECT9G9"}, {"label": "附件_加入企業會員步驟及優惠內容.pdf", "url": "https://media.nccu.email/888d2f31f93e144474546dc91ddfc85b.pdf"}, {"label": "附件_企業會員優惠EDM.pdf", "url": "https://media.nccu.email/ef09455e88e6a445739ca93370731cf5.pdf"}]', NULL, 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 368);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('0bd121242a', '邀月茶坊', '臺北市', 'food', 'north', '85折起', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，可享以下優惠：
+1.泡茶消費85折
+2.喝茶與用餐搭配，可享正餐9折。
+備註：含茶葉､茶水費，只用餐無折扣優惠。', '電話：(02)2939-2025
+地址：台北市文山區指南路三段40巷6號
+期限：即日起', '(02)2939-2025', '台北市文山區指南路三段40巷6號', '[{"label": "官網", "url": "https://yytea.com.tw/product_list"}]', NULL, 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 369);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('33ad79e6c8', '力麗觀光', '南投縣、屏東縣、宜蘭縣', 'lodging', 'north,central,south', '專屬優惠價', '1. 憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照相關附件。
+2. 特約方案適用於：日月潭-月潭館/日潭館/哲園會館/溫德姆溫泉酒店；宜蘭-力麗威斯汀度假酒店
+3. 不定期優惠，請參考其他附件。', '電話：各飯店資訊請詳見官網
+地址：各飯店資訊請詳見官網
+期限：即日起～2026-12-31', '各飯店資訊請詳見官網', '各飯店資訊請詳見官網', '[{"label": "官網", "url": "https://www.lealeahotel.com/"}, {"label": "附件1_本專案適用飯店.pdf", "url": "https://media.nccu.email/4d128cf461c080c34968b70c972aef07.pdf"}, {"label": "附件2_力麗集團2026優惠方案.pdf", "url": "https://media.nccu.email/4930c73236ee8f38f268f2951c5fc828.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 370);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('f9914f4df3', '享沐時光莊園渡假酒店', '苗栗縣', 'lodging', 'central', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，
+於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容請參閱相關附件。
+*不提供一次性備品', '電話：037-742878
+地址：苗栗縣苑裡鎮石鎮里錦山八鄰8-1號
+期限：即日起～2026-12-30', '037-742878', '苗栗縣苑裡鎮石鎮里錦山八鄰8-1號', '[{"label": "官網", "url": "https://www.shinemoodresort.com.tw/"}, {"label": "附件_享沐時光2026優惠方案.pdf", "url": "https://media.nccu.email/70497d82644752ac7eb6ca1df94efe21.pdf"}, {"label": "飯店設施介紹注意事項.jpg", "url": "https://media.nccu.email/10ab21409a29058825e713d4bd1f3b38.jpg"}]', '2026-12-30', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 371);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('f29e25ab4c', '高雄日航酒店', '高雄市', 'lodging', 'south', '85折', '*【星芒皓月】中秋月餅禮盒 請參閱相關附件
+禮盒售價：1,680元
+訂購期間：即日起至 2026.9.25(售完為止)
+取貨日期：2026.8.26~9.25
+自取時間：10:00～19:00
+訂購專線：07-337-7005 # 6300~6303
+@早鳥優惠：2026年8月23日前預購，可享85折優惠
+禮盒內容：麻豆白柚2入、棗泥桂圓2入、日航X.O.醬烏魚子2入、柳橙蛋糕3入、栗子蛋糕3入；共12入。
+憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容請參閱相關附件。', '電話：07-537-8800
+地址：806023高雄市前鎮區林森四路268號
+期限：即日起～2026-12-31', '07-537-8800', '806023高雄市前鎮區林森四路268號', '[{"label": "官網", "url": "https://www.nikkokaohsiung.com/"}, {"label": "附件_高雄日航酒店特約優惠方案.pdf", "url": "https://media.nccu.email/7ea3cb9f2828b0c846c3fd7b0bd31148.pdf"}, {"label": "附件1_柳橙蛋糕與栗子蛋糕.jpg", "url": "https://media.nccu.email/c74f56c3d5594cc6c48579778db04e90.jpg"}, {"label": "附件2_X_O_醬烏魚子限定口味.jpg", "url": "https://media.nccu.email/a00e55ec751ccb39000228d10f775bca.jpg"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 372);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b0210d4535', '和苑三井花園飯店', '臺北市', 'lodging', 'north', '專屬優惠價', '請參閱附件 & 撥打專線02-2781-1131 預訂
+1. 憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件1。
+2. 特約方案適用於：台北忠孝
+3. 企業特約以「政大校友服務中心統編 74722973」作為訂房優惠代碼，
+預約訂房敬請洽詢訂房專線 +886-2-2781-1131
+或 email tpezhongxiao@gardenhotels.com.tw', '電話：(02)2781-1131
+地址：10652 台北市大安區忠孝東路三段30號
+期限：即日起～2026-12-31', '(02)2781-1131', '10652 台北市大安區忠孝東路三段30號', '[{"label": "官網", "url": "https://www.gardenhotels.co.jp/taipei-zhongxiao/tw/"}, {"label": "tpezhongxiao@gardenhotels.com.tw", "url": "https://nccu.edu.tw/cgi-bin/genMail?adr=tpezhongxiao@gardenhotels.com.tw&"}, {"label": "附件1_2025年10月-2026年12月特約優惠.pdf", "url": "https://media.nccu.email/3ef520e2d3662f1b1b3a305a7d679213.pdf"}, {"label": "附件_2026夏季限定訂房專案(7-9月).pdf", "url": "https://media.nccu.email/f7a626c99f2044d6fc026593c8a79dec.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 373);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('59b07352aa', '將捷金鬱金香酒店', '新北市', 'lodging', 'north', '專屬優惠價', '* 滬尾x北投(老爺)雙城住宿優惠(至20261230) 請參閱附件
+憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件。', '電話：02-2621-1918
+地址：新北市淡水區中正路一段2號
+期限：即日起～2026-12-30', '02-2621-1918', '新北市淡水區中正路一段2號', '[{"label": "官網", "url": "https://www.goldentulip-fabhotel.com.tw/"}, {"label": "附件_禮萊廣場購物優惠.png", "url": "https://media.nccu.email/2b6d930d5d1da945de6be388d0df1c13.png"}, {"label": "附件_將捷金鬱金香2026優惠方案.pdf", "url": "https://media.nccu.email/bfaabbd024c05f711b7934b256b94b03.pdf"}, {"label": "會員升級Line帳號綁定.png", "url": "https://media.nccu.email/bb210da312820b4320ae96962f31e1e9.png"}]', '2026-12-30', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 374);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('10d0c8fbe6', '晶華捷絲旅', '臺北市、高雄市、宜蘭縣、花蓮縣', 'lodging', 'north,south,east', '專屬優惠價', '*新增台北中山館 優惠方案請參閱相關附件
+1. 憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件。
+2. 特約方案適用於：高雄中正館、高雄站前館、花蓮中正館 (如相關附件)
+3. 特約方案適用於：台北台大尊賢館 (優惠至2026.12.20)、台北中山館(如相關附件)', '電話：各飯店資訊請詳見官網
+地址：各飯店資訊請詳見官網
+期限：即日起～2026-12-30', '各飯店資訊請詳見官網', '各飯店資訊請詳見官網', '[{"label": "官網", "url": "http://www.justsleep.com.tw"}, {"label": "附件_捷絲旅(高雄花蓮)2026優惠方案.pdf", "url": "https://media.nccu.email/347beee24adb59c52dfb8a71de2860cc.pdf"}, {"label": "附件_捷絲旅(台大尊賢館)2026優惠方案.pdf", "url": "https://media.nccu.email/0a0db574ca743d23bab957ada2f5e3b8.pdf"}, {"label": "附件_捷絲旅(台北中山館)2026優惠方案.pdf", "url": "https://media.nccu.email/1fe19f0ee8aa0558de6a07341a668933.pdf"}]', '2026-12-30', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 375);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('4332a2f51d', '長榮桂冠', '臺北市', 'lodging', 'north', '專屬優惠價', '1. 憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件1。
+2.特約方案適用於：長榮桂冠酒店(台北)', '電話：(02)2501-9988
+地址：請詳見官網
+期限：即日起～2026-12-30', '(02)2501-9988', '請詳見官網', '[{"label": "官網", "url": "https://www.evergreen-hotels.com/chain2/"}, {"label": "附件_長榮桂冠2026優惠方案.pdf", "url": "https://media.nccu.email/da1fb1894e048a8675dfcd4607a0b63f.pdf"}]', '2026-12-30', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 376);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('bdca216fc8', '慕舍酒店', '臺北市', 'lodging', 'north', '專屬優惠價', '一、憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件1。
+二、業務相關聯絡:
+涂經理
+專線 :02 -25002500-6772 #203', '電話：(02)2500-6770
+地址：台北市中山區建國北路一段61號
+期限：即日起～2026-12-31', '(02)2500-6770', '台北市中山區建國北路一段61號', '[{"label": "官網", "url": "https://hotelmvsa.com/"}, {"label": "附件_慕舍酒店2026優惠方案.pdf", "url": "https://media.nccu.email/fe8a319a73fbfbe5cc81db55deaa9a5c.pdf"}, {"label": "附件_2026平假旺日定義表.pdf", "url": "https://media.nccu.email/480352974cb42b3f2f66bbd09161e2bc.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 377);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('02f0482211', '桂田酒店', '臺南市', 'lodging', 'south', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住或用餐時憑證享優惠價，優惠內容請參照相關附件。', '電話：各飯店資訊請詳見官網
+地址：各飯店資訊請詳見官網
+期限：即日起～2026-12-30', '各飯店資訊請詳見官網', '各飯店資訊請詳見官網', '[{"label": "官網", "url": "https://www.queenaplaza.com/tainan/"}, {"label": "附件_台南桂田2026住宿優惠方案.pdf", "url": "https://media.nccu.email/8963d424bee61619c99470506a172187.pdf"}, {"label": "附件_台南桂田2026餐飲優惠方案.pdf", "url": "https://media.nccu.email/6831d165b7b9b48f270e2eb806de1cb6.pdf"}]', '2026-12-30', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 378);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('72378ad88d', '台東桂田喜來登酒店', '臺東縣', 'lodging', 'east', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，
+於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容請參閱相關附件。', '電話：08-932-8858
+地址：台東縣台東市正氣路316號
+期限：即日起～2026-12-30', '08-932-8858', '台東縣台東市正氣路316號', '[{"label": "官網", "url": "https://www.sheraton-taitung.com/"}, {"label": "附件_台東桂田喜來登2026優惠方案.pdf", "url": "https://media.nccu.email/3caf599d270606a6eb50422a62dc42e7.pdf"}]', '2026-12-30', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 379);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c66a27f578', '老爺酒店', '臺北市、臺南市', 'lodging', 'north,south', '專屬優惠價', '* 礁溪、知本、北投的老爺酒店為渡假飯店（價格浮動）
+如有訂房需求，聯繫窗口: 龔郁婷 Vivian
+連絡電語：02-2541-1999 ext. 226
+*南港老爺 如有訂房需求, 聯繫窗口: 李哲寧 Alan
+電話：02-2788-8586 #653
+訂房傳真：02-2788-8582
+1. 憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照相關附件。
+2. 特約方案適用於：南港老爺行旅、台南老爺行旅，及老爺會館台北南西、老爺會館台北林森。
+3. 老爺會館台北南西、台北林森
+業務聯繫甯口：梁珈瑄 Minnie 連絡電語： 02-2541-1999#202
+訂房專線： 02-2567-6077', '電話：各飯店資訊請詳見官網
+地址：各飯店資訊請詳見官網
+期限：即日起～2026-12-31', '各飯店資訊請詳見官網', '各飯店資訊請詳見官網', '[{"label": "官網", "url": "https://www.hotelroyal.com.tw/nangang/"}, {"label": "附件_老爺會館林森_中文簡介.pdf", "url": "https://media.nccu.email/9c8b1de623b724b9b66bed52b330da50.pdf"}, {"label": "附件_老爺會館南西__中文簡介.pdf", "url": "https://media.nccu.email/d39bfe0c3629a2e631f292a3d038f3ac.pdf"}, {"label": "附件_老爺會館(台北林森)2026優惠方案.pdf", "url": "https://media.nccu.email/f71320f81a6fb1c4e2c1ed888bb32844.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 380);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b4b2ef966a', '溪頭米堤大飯店', '南投縣', 'lodging', 'central', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容請參閱相關附件。', '電話：049-2612222
+地址：南投縣鹿谷鄉內湖村米堤街1號
+期限：即日起～2026-12-31', '049-2612222', '南投縣鹿谷鄉內湖村米堤街1號', '[{"label": "附件_溪頭米堤2026優惠方案.pdf", "url": "https://media.nccu.email/31bdc462a198f4c453a7decd332953e9.pdf"}, {"label": "附件_米堤2026特約優惠DM.jpg", "url": "https://media.nccu.email/6cdb01c9b93c561dc7188ab5002d817e.jpg"}, {"label": "附件_溪頭米堤_2026優惠專案DM.jpg", "url": "https://media.nccu.email/7725e133016e0b897d4cba5ea9b7ddd1.jpg"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 381);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('64ea8d855f', '渴望會館', '桃園市', 'lodging', 'north', '專屬優惠價', '1. 憑效期內校友證及政大教職員工、學生有效證件，
+於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參閱相關附件。
+2. 2026特約廠商訂房連結
+https://tlathena.ec-hotel.net/webhotel-v4/0726/rmProducts/2026X/special', '電話：(03)4072999
+地址：325桃園市龍潭區渴望路428號
+期限：即日起～2026-12-31', '(03)4072999', '325桃園市龍潭區渴望路428號', '[{"label": "官網", "url": "https://www.aspireresort.com.tw/"}, {"label": "相關連結", "url": "https://tlathena.ec-hotel.net/webhotel-v4/0726/rmProducts/2026X/special"}, {"label": "附件_渴望會館2026特約優惠DM.pdf", "url": "https://media.nccu.email/cafc0e32303ed5827257a2d48d832eb7.pdf"}, {"label": "附件_渴望會館2026特約優惠房價表.pdf", "url": "https://media.nccu.email/a50fd3b83081927754a533fcf4f55987.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 382);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8c99652ba8', '秐朗AKA Hotel (政大公企中心)', '臺北市', 'lodging', 'north', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+1. 入住時憑證享優惠價，優惠內容請參閱相關附件。
+2. 可獲贈紀念品一份', '電話：(02)2341-8828
+地址：臺北市大安區金華街187號2樓 (政大公企中心)
+期限：即日起～2026-12-30', '(02)2341-8828', '臺北市大安區金華街187號2樓 (政大公企中心)', '[{"label": "官網", "url": "https://www.akataipei.com/"}, {"label": "附件_秐朗AKA_2026優惠方案.pdf", "url": "https://media.nccu.email/bd117d40fd36860816f5ad4bbaaf1215.pdf"}]', '2026-12-30', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 383);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('566f303a4e', '大地酒店', '臺北市', 'lodging', 'north', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，
+於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容請參閱相關附件。', '電話：(02)5551-8888
+地址：台北市北投區奇岩路一號
+期限：即日起～2026-12-30', '(02)5551-8888', '台北市北投區奇岩路一號', '[{"label": "官網", "url": "https://www.thegaiahotel.com/"}, {"label": "附件_大地酒店2026優惠方案.pdf", "url": "https://media.nccu.email/244c11e49f6ddc674c48aa3ed9243c25.pdf"}]', '2026-12-30', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 384);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a4516da08c', '花蓮理想大地渡假飯店', '花蓮縣', 'lodging', 'east', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件。', '電話：(03)865-6789
+地址：花蓮縣壽豐鄉理想路1號
+期限：即日起～2026-12-31', '(03)865-6789', '花蓮縣壽豐鄉理想路1號', '[{"label": "官網", "url": "https://www.plcresort.com.tw/zh_TW"}, {"label": "接駁車時刻表.pdf", "url": "https://media.nccu.email/9f028a3beea1af3be5dd2d5c072259c8.pdf"}, {"label": "免費付費活動一覽表.pdf", "url": "https://media.nccu.email/c33fe560bf7a9ab0ae20e9443a1a1650.pdf"}, {"label": "附件_理想大地2026優惠方案.pdf", "url": "https://media.nccu.email/069881d1da5a6df856869a09642acc04.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 385);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b5ae09db2e', '村却國際溫泉酒店', '宜蘭縣', 'lodging', 'north', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，
+於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容請參閱相關附件。', '電話：03-905-7988
+地址：宜蘭縣羅東鎮站東路 190 號
+期限：即日起～2026-12-31', '03-905-7988', '宜蘭縣羅東鎮站東路 190 號', '[{"label": "官網", "url": "https://www.cuncyue.com/"}, {"label": "附件_村却2026優惠方案.pdf", "url": "https://media.nccu.email/b7202c21d84efd5128dc10d655e03642.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 386);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a51876da9d', '台北世聯商旅', '臺北市', 'lodging', 'north', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件1。', '電話：(02)2562-6161
+地址：104 台北市中山區松江路90巷5號
+期限：即日起～2026-12-30', '(02)2562-6161', '104 台北市中山區松江路90巷5號', '[{"label": "官網", "url": "https://tp.linkworldhotel.com.tw/contact.php"}, {"label": "附件_台北世聯2026優惠方案.pdf", "url": "https://media.nccu.email/d907a50160462f6014fd1091d8470374.pdf"}]', '2026-12-30', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 387);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('cddbadd3b1', '國賓飯店', '新竹市', 'lodging', 'north', '專屬優惠價', '1. 憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照 附件1_新竹國賓。
+2. 特約方案適用於：新竹國賓', '電話：各飯店資訊請詳見官網
+地址：各飯店資訊請詳見官網
+期限：即日起～2026-12-31', '各飯店資訊請詳見官網', '各飯店資訊請詳見官網', '[{"label": "官網", "url": "https://www.ambassador-hotels.com/tc"}, {"label": "附件_國賓(新竹)2026優惠方案.pdf", "url": "https://media.nccu.email/0c313d6c88269d42c3282852e923444d.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 388);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('3c41c54b25', '比歐緻居', '高雄市', 'lodging', 'south', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件。', '電話：07- 2817900
+地址：高雄市新興區中山一路14-26號
+期限：即日起～2026-12-30', '07- 2817900', '高雄市新興區中山一路14-26號', '[{"label": "官網", "url": "https://www.briohotel.com/"}, {"label": "附件_比歐緻居2026優惠方案.pdf", "url": "https://media.nccu.email/78d13fc8cdd74ba19c7fa8bf9467f030.pdf"}]', '2026-12-30', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 389);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('082c1f344c', '澎澄飯店', '澎湖縣', 'lodging', '', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件1。', '電話：(06)9235678
+地址：澎湖縣馬公市光復里同和路168號
+期限：即日起～2026-12-31', '(06)9235678', '澎湖縣馬公市光復里同和路168號', '[{"label": "官網", "url": "https://www.discoveryhotel.com.tw/"}, {"label": "附件_澎澄飯店2026年優惠方案.pdf", "url": "https://media.nccu.email/d77309d715d8271f8ccfcc816251ca37.pdf"}]', '2026-12-31', 0, '位於離島（澎湖縣）', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 390);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('5d81a3123d', '這一暫民宿', '宜蘭縣', 'lodging', 'north', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容請參閱相關附件。', '電話：0911-911-095
+地址：269宜蘭縣冬山鄉東興路115巷6號
+期限：即日起～2026-12-31', '0911-911-095', '269宜蘭縣冬山鄉東興路115巷6號', '[{"label": "官網", "url": "https://www.facebook.com/joysta.yilan"}, {"label": "附件_這一暫民宿2026特約優惠.pdf", "url": "https://media.nccu.email/7d029eb4a148e45f29cb4eea8db4e1b0.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 391);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7fcdedca02', '新大飯店商旅', '', 'lodging', 'north,central,south,east', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，
+於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件。', '期限：即日起～2026-12-31', '', '', '[{"label": "官網", "url": "http://www.sendale.com.tw/tainan/"}, {"label": "附件_新大2026優惠方案.pdf", "url": "https://media.nccu.email/9cc98174c3e746418d0a05d859e43ca0.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 392);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('10f91dcf8d', '浮雲客棧', '臺中市', 'lodging', 'central', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件1。', '電話：04-27065855
+地址：台中市西屯區西安街277巷59號 (逢甲商圈附近)
+期限：即日起～2026-12-31', '04-27065855', '台中市西屯區西安街277巷59號 (逢甲商圈附近)', '[{"label": "官網", "url": "https://www.kloudhotel.com.tw/zh-TW"}, {"label": "附件_浮雲客棧2026優惠方案.pdf", "url": "https://media.nccu.email/bc9bb87738eb74572b139e0ecc826b27.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 393);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('195ca2cb56', '金湖飯店', '金門縣', 'lodging', '', '專屬優惠價', '1. 憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件。
+2. 特約方案適用於：金門', '電話：(08)233-8688
+地址：金門縣金湖鎮太湖路二段 218號
+期限：即日起～2026-12-31', '(08)233-8688', '金門縣金湖鎮太湖路二段 218號', '[{"label": "官網", "url": "https://www.goldenlakehotel.com/TC/main.php?lg=T"}, {"label": "附件_金湖飯店2026優惠方案.pdf", "url": "https://media.nccu.email/e46b7f0fbc2ee98c624be7c91c716b06.pdf"}]', '2026-12-31', 0, '位於離島（金門縣）', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 394);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('dd791d4b40', '雀客旅館', '', 'lodging', 'north,central,south,east', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容請參閱相關附件。
+*訂房皆須以line 向指定窗口業務 林家緁 / 楊宛真 預訂。
+直接+ LINE@：@107fupja 電話：0908-875-370 或 0958-824-997', '期限：即日起～2026-12-31', '', '', '[{"label": "官網", "url": "https://www.checkinn.com.tw/"}, {"label": "附件_雀客2026優惠方案.pdf", "url": "https://media.nccu.email/6e85595c467100b2270d304f6e9713d0.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 395);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('feb007f830', '福華飯店', '南投縣', 'lodging', 'central', '專屬優惠價', '1. 憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件。
+2. 適用地點: 溪頭福華渡假飯店。', '電話：(04) 9261 2588
+地址：南投縣鹿谷鄉森林巷10號
+期限：即日起～2026-12-30', '(04) 9261 2588', '南投縣鹿谷鄉森林巷10號', '[{"label": "官網", "url": "http://www.howard-hotels.com.tw/"}, {"label": "附件_溪頭福華2026優惠方案.pdf", "url": "https://media.nccu.email/377dba1e8eb702e540c743ea930c3153.pdf"}]', '2026-12-30', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 396);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a98c61b8f4', '台北馥敦飯店', '臺北市', 'lodging', 'north', '專屬優惠價', '1. 憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件1。
+2. 此優惠方案僅適用於台北馥敦復南館。', '地址：106台北市大安區復興南路2段41號
+期限：即日起～2026-12-31', '', '106台北市大安區復興南路2段41號', '[{"label": "官網", "url": "http://www.taipeifullerton.com.tw/south/"}, {"label": "附件_台北馥敦2026優惠方案.pdf", "url": "https://media.nccu.email/7813afef5ae5bc67cec209f7b588dd6d.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 397);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('4b17812814', 'LDC雲朗觀光', '', 'lodging', 'north,central,south,east', '專屬優惠價', '1. 憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件1。
+2. 特約方案適用館別：嘉義/台中/礁溪/新莊/花蓮/高雄/桃園', '電話：各飯店資訊請詳見官網
+地址：各飯店資訊請詳見官網
+期限：即日起～2026-12-31', '各飯店資訊請詳見官網', '各飯店資訊請詳見官網', '[{"label": "官網", "url": "https://www.ldchotels.com/zh-hant/destinations/"}, {"label": "附件_雲朗2026優惠方案.pdf", "url": "https://media.nccu.email/85bb9c3274eb5fcd79c52b58fa639cf4.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 398);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('e37484274c', '旅居文旅', '', 'lodging', 'north,central,south,east', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件。', '期限：即日起～2026-12-31', '', '', '[{"label": "官網", "url": "https://group.hubhotel.com.tw/"}, {"label": "附件_旅居文旅集團2026優惠方案.pdf", "url": "https://media.nccu.email/8f55d7020af37a56f5760d685bbd6d82.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 399);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('abd6d03685', '享豪大飯店', '新竹縣', 'lodging', 'north', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件1。', '電話：03-656-5501
+地址：302 新竹縣竹北市信義街 7 號
+期限：即日起～2026-12-31', '03-656-5501', '302 新竹縣竹北市信義街 7 號', '[{"label": "官網", "url": "https://www.hotelbonza.com.tw/"}, {"label": "附件_享豪大飯店2026優惠方案.pdf", "url": "https://media.nccu.email/dcb9848dcea77e03f891326af5dec886.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 400);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('2f8a7863f7', '福容大飯店', '', 'lodging', 'north,central,south,east', '專屬優惠價', '1. 憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件。
+2. 適用城市型飯店，依各分店折扣略有不同。', '電話：各飯店資訊請詳見官網
+地址：各飯店資訊請詳見官網
+期限：即日起～2026-12-31', '各飯店資訊請詳見官網', '各飯店資訊請詳見官網', '[{"label": "官網", "url": "https://www.fullon-hotels.com.tw/tw/"}, {"label": "附件_福容商務2026優惠方案.pdf", "url": "https://media.nccu.email/6172db4483a0403f560f092c80eeb7a3.pdf"}, {"label": "附件_福容(台北一館)2026優惠方案(至0630).pdf", "url": "https://media.nccu.email/d5aba315c7734792aae70d6f456dbda7.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 401);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7321756b83', '太子文旅', '臺南市', 'lodging', 'south', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容參照附件1。
+*校友訂房請洽 (06)209-5199 #6101 汪小姐', '電話：06-275-8999
+地址：701台南市東區大學路2號
+期限：即日起～2026-12-31', '06-275-8999', '701台南市東區大學路2號', '[{"label": "官網", "url": "http://www.academyhotel.com.tw/zh-tw"}, {"label": "附件_太子文旅2026優惠方案.pdf", "url": "https://media.nccu.email/d4d7d0b761023ff2fd4753d65fad5459.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 402);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b349d39a1f', '天閣酒店', '臺北市、臺中市', 'lodging', 'north,central', '專屬優惠價', '1. 憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價。
+2. 如有訂房需求，請聯繫【天閣酒店集團訂房中心】，資訊如下：
+天閣酒店訂房中心(服務時間：週一至週六 09:00~18:00)
+電話：02-2523-5959
+傳真：02-2523-6777
+EMAIL：info@tango-hotels.com
+3. 特約方案適用於：
+天閣酒店：長安館、南西館、信義館、林森館、復興館、劍潭館、士林館及台中館。
+天雲旅棧：基河館、中山館、開封館。
+以上天閣集團資訊詳見附件1。', '電話：各飯店資訊請詳見官網
+地址：各飯店資訊請詳見官網
+期限：即日起～2026-12-31', '各飯店資訊請詳見官網', '各飯店資訊請詳見官網', '[{"label": "官網", "url": "http://www.tango-hotels.com/"}, {"label": "附件_天閣酒店集團.pdf", "url": "https://media.nccu.email/4e54944904b0c054b161c0b0888e93ff.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 403);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c4405a8dcb', '禧榕軒大飯店', '臺南市', 'lodging', 'south', '9折起', '1. 憑效期內校友證及教職員工生證件於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價。
+2. 於館內餐廳消費享平日九折、假日九五折之優惠［需出示識別蹬］，
+特殊節日及農曆春節期間不適用（日期定義依酒店現場公告為準）。
+3. 如有訂房需求，請洽訂房專線: 06-2222188', '電話：06-2222188
+地址：704 台南市北區成功路28號
+期限：即日起～2026-12-31', '06-2222188', '704 台南市北區成功路28號', '[{"label": "官網", "url": "https://www.grandbanyanhotel.com/"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 404);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('17088c17b9', 'AMBA意舍酒店', '臺北市', 'lodging', 'north', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，於預先訂房時主動告知所屬身份，
+入住時憑證享優惠價，優惠內容請洽詢業務窗口:
+李家漢經理 (02)2181 3211 分機3222
+albert.lee@ambahotels.com
+(1)台北松山意舍酒店: https://www.amba-hotels.com/en/songshan/
+(2)台北中山意舍酒店: https://www.amba-hotels.com/en/zhongshan/
+(3)台北西門町意舍酒店: https://www.amba-hotels.com/en/ximending/', '電話：02-2525-2828
+地址：各飯店資訊請詳見官網
+期限：即日起～2026-12-31', '02-2525-2828', '各飯店資訊請詳見官網', '[{"label": "官網", "url": "https://www.amba-hotels.com/tc/songshan/services/floor-guide"}, {"label": "相關連結", "url": "https://www.amba-hotels.com/en/songshan/"}, {"label": "相關連結", "url": "https://www.amba-hotels.com/en/zhongshan/"}, {"label": "相關連結", "url": "https://www.amba-hotels.com/en/ximending/"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 405);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ebdb23bbee', '長榮航空', '', 'transport', 'north,central,south,east', '92折', '長榮航空 BizFam 企業優惠
+【差旅人綁定專屬禮遇】
+1. BizFam 企業購票平台購票優惠：BizFam 平台推出專屬企業購票服務，符合條件可享官網票價 3% OFF，且可同步累積個人哩程及BizFam開票金額。
+2. BizFam 會員尊享福利：好康遍佈全球各地，出發至各航點，皆可享有 BizFam 精選特約商家之各項會員尊享，即刻綁定以解鎖更多福利。
+3.可獲得官網購票折扣碼優惠：購票可搭配長榮航空企業會員購票享最高92折之優惠票價。
+(限2026/9 月底前綁定，10月底前開票，2027/3月底前出發行程)
+*長榮航空企業會員BizFam網站: https://bizfam.evaair.com/BZES/
+*BizFam 加入流程 綁定教學影片:https://www.youtube.com/watch?v=e5GVVLOQxNs
+1. 掃描專屬 QR Code 或點擊 專屬綁定連結 :https://bizfam.evaair.com/BZES/join-us/corporate-identifier?identifier=ZW2XIVUX87
+2. 網頁驗證後，輸入您的 Email
+3. 收到 BizFam 平台邀請信
+3.1 若您已經是長榮航空無限萬哩遊會員，請直接使用會員卡號與密碼加入。
+3.2 若您尚未成為長榮航空無限萬哩遊會員，可直接透過連結申請會員並同時加入 BizFam。
+4. 恭喜完成！您已成為 BizFam 的一員
+現在您可以透過長榮航空 APP → 點選「無限萬哩遊」→ 點選「我的會員卡」看到 BizFam 專屬印記。', '電話：02-25011999
+期限：即日起', '02-25011999', '', '[{"label": "官網", "url": "https://bizfam.evaair.com/BZES/"}, {"label": "附件1_長榮航空企業會員優惠方案.pdf", "url": "https://media.nccu.email/2653fc0d0eaa53fadcc10a8e7b7fa6cc.pdf"}, {"label": "附件2_長榮航空企業會員EDM.pdf", "url": "https://media.nccu.email/091e46de7f6b4c27b384dca433fe9431.pdf"}]', NULL, 0, '頁面未載明適用對象（校友服務中心列為校友特約）；部分折扣碼限 2026/9 月底前綁定、10 月底前開票', '{"student": false, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 406);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9c56a1ea81', '中華航空', '', 'transport', 'north,central,south,east', '特約優惠', '*新增直飛鳳凰城班機及布拉格增班 請參閱附件
+憑效期內校友證及教職員工、學生有效證件，可享下列購票優惠
+1. 華航官網購票折扣優惠碼"示意圖" 如附件1
+請於下方紅框線內輸入 企業會員帳號，開票完成後無法補登，
+企業會員購票優惠折扣不可與其他促銷票價併用，官網呈現之價格均為最優惠票價。
+華航官網購票連結：https://www.china-airlines.com/tw/zh
+2. 企業會員帳號於機票上ENBOX或 FOP 欄位擇一輸入企業帳號
+請務必轉知予開票旅行社，開票完成後無法補登
+3. 企業帳號網路購票折扣~TW043514 (享華航官網價再額外3% off)
+4. 華航出國小叮嚀，如附件2
+5. 限開立及搭乘中華航空(297)及華信航空(803)航空營運之國際航線自營航班的機票。', '期限：即日起～2026-12-31', '', '', '[{"label": "官網", "url": "https://www.china-airlines.com/tw/zh"}, {"label": "附件1_華航企業會員網路購票優惠.pdf", "url": "https://media.nccu.email/3fa358e4f2677b57407ee8883c7bc2c3.pdf"}, {"label": "附件2_華航出國行前小叮嚀.pdf", "url": "https://media.nccu.email/d8e4a6154f582466c04ce08599442275.pdf"}, {"label": "附件3_鳳凰城航班及轉機介紹.pdf", "url": "https://media.nccu.email/48fc9061b551d393e03822254b7d298d.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 407);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('38995396fb', '聯合航空', '', 'transport', 'north,central,south,east', '特約優惠', '憑效期內校友證及教職員工、學生有效證件，可享下列優惠：
+1. 機票價格可享票面5%優惠
+*促銷艙及美國內陸航段不適用此優惠。
+2. 本優惠活動方案係由旅行社開立機票，
+使用前請務必告知服務旅行社欲使用聯合航空企業會員方案，
+服務旅行社額外優惠不受影響.
+*目前與聯合航空合作旅行社 請參閱附件', '期限：即日起', '', '', '[{"label": "附件一_聯合航空DM.pdf", "url": "https://media.nccu.email/fce8307c6adb5cf462a1f5fe77c3aa17.pdf"}, {"label": "附件二_聯合航空合作旅行社清單.pdf", "url": "https://media.nccu.email/e46fce29c6f01ff9b5d300b1b8c3469b.pdf"}]', NULL, 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 408);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('90f32eecd4', 'iRent', '', 'transport', 'north,central,south,east', '特約優惠', '一、憑效期內校友證、教職員證、學生證，可享下列優惠：
+1.全台和運租車門市車輛租賃服務(計日)特約專案R611
+官網線上預約完成→門市取車出示名片、員工證即享有租車優惠(僅限刷卡)，
+若親友用車，優惠身份者必須同行至現場出示(識別證明文件)方可使用本方案
+*租車流程請參閱附件1
+2.iRent APP無人自助租車消費後享有回饋10%租車折抵時數(以時計費)。
+*租車流程請參閱附件2
+二、 聯繫窗口: 周先生
+電話：(02) 2518-5299 #85077
+手機：0911915507
+Email: chou8088@hotaimotor.com.tw', '期限：即日起～2026-12-31', '', '', '[{"label": "官網", "url": "https://www.easyrent.com.tw/irent/web/index.shtml"}, {"label": "附件_iRent2026優惠方案.pdf", "url": "https://media.nccu.email/2bcc0108e78bb5e0f2319912f9c90f63.pdf"}, {"label": "附件1_iRent和運門市租車(計日)特約專案.pdf", "url": "https://media.nccu.email/3719228249cf20bd03aed7a0bc1b9859.pdf"}, {"label": "附件2_iRent_APP無人自助租車特約專案.pdf", "url": "https://media.nccu.email/34acddfcdba979ae7e58623bc8ba8b21.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": true}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 409);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('1ec5fc09e4', '荃能小客車機場接送', '', 'transport', 'north,central,south,east', '消費贈品', '1. 憑效期內校友證及政大教職員工、學生有效證件，
+享有機場接送服務優惠，內容詳見附件1及附件2。
+2. 您可透過全鋒客服中心進行機場接送預約服務
+24小時客服專線: 02-2775-9325，
+E-mail: Tmsbooking@tmsv.com.tw
+3. 提供預約表格如下附件，請填妥後回傳至客服中心，即可進行預約作業
+*備註: 附上行李尺寸對照表如附件，請自行評估預約可承載人數及行李之車款。', '電話：02-2775-9325
+地址：台北市忠孝東路4段270號15樓
+期限：即日起～2026-12-31', '02-2775-9325', '台北市忠孝東路4段270號15樓', '[{"label": "Tmsbooking@tmsv.com.tw", "url": "https://nccu.edu.tw/cgi-bin/genMail?adr=Tmsbooking@tmsv.com.tw&"}, {"label": "附件_預約表格.jpg", "url": "https://media.nccu.email/36a4dde19297fa386cd447a4064becbe.jpg"}, {"label": "附件_行李尺寸件數說明.jpg", "url": "https://media.nccu.email/998097f50b714f886e62e71e2339b995.jpg"}, {"label": "附件_貴賓接送報價單.pdf", "url": "https://media.nccu.email/d70687d798c9f15e1eb97cb039801fe2.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 410);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ceffcdde2b', '和運租車', '', 'transport', 'north,central,south,east', '專屬優惠價', '憑效期內校友證及政大教職員工、學生有效證件，可享
+機場接送、包車 優惠價格表 請參照附件)。', '電話：客服電話：0800-240-550
+期限：即日起～2026-12-31', '客服電話：0800-240-550', '', '[{"label": "官網", "url": "https://www.easyrent.com.tw/index.html"}, {"label": "附件1_和運租車全台門市預約電話表.pdf", "url": "https://media.nccu.email/3d7035bf64c76c96032c416c09fa66d9.pdf"}, {"label": "附件_和雲2026接送特約報價.docx", "url": "https://media.nccu.email/514c39193d04bfa538f98d0587fd28f9.docx"}]', '2026-12-31', 0, '頁面未標示地區，為全台或線上優惠', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 411);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9da2a6ad1a', '永成租車', '金門縣', 'transport', '', '7折起', '憑效期內校友證及教職員工、學生有效證件，可享下列優惠：
+1. 全車系租車7折 (詳附件1)
+2. 搭配指定民宿全房型85折 (詳附件2)
+(1)且停民宿
+https://www.booking.com/hotel/tw/qie-ting-min-su-jin-men-shi-qu-min-su-jin-da-fu-jin.zh-tw.html
+(2)珠山閒庭
+https://www.booking.com/hotel/tw/zhu-shan-xian-ting-jin-men-zhu-shan-ju-luo-gu-cuo-min-su.zh-tw.html
+(3)好悅會館
+https://www.booking.com/hotel/tw/hao-yue-hui-guan-jin-men-xian.zh-tw.html', '電話：0928304018
+地址：金門縣金寧鄉環島北路一段360號(且停民宿)
+期限：即日起～2027-02-28', '0928304018', '金門縣金寧鄉環島北路一段360號(且停民宿)', '[{"label": "官網", "url": "https://gogoout.com/zh-tw/store/418?startDate=2024-03-10&startHour=8&endDate=2024-03-11&endHour=8"}, {"label": "相關連結", "url": "https://www.booking.com/hotel/tw/qie-ting-min-su-jin-men-shi-qu-min-su-jin-da-fu-jin.zh-tw.html"}, {"label": "相關連結", "url": "https://www.booking.com/hotel/tw/zhu-shan-xian-ting-jin-men-zhu-shan-ju-luo-gu-cuo-min-su.zh-tw.html"}, {"label": "相關連結", "url": "https://www.booking.com/hotel/tw/hao-yue-hui-guan-jin-men-xian.zh-tw.html"}]', '2027-02-28', 0, '位於離島（金門縣）', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 412);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b5af9c2ae0', '有隻住在阿里山腳下的金緗雞', '', 'shopping', 'north,central,south,east', '88折', '憑效期內校友證及教職員工、學生證件可享網購特殊優惠價 :
+於官方網站消費，輸入專屬折扣碼 ECO2027
+並於備註欄備註 政治大學，消費可享88折優惠。
+請參閱相關附件', '電話：05-2840588
+地址：嘉義縣竹崎鄉林森路1132號
+期限：即日起～2027-10-06', '05-2840588', '嘉義縣竹崎鄉林森路1132號', '[{"label": "官網", "url": "https://www.jiazhuco.com.tw/"}, {"label": "附件_金緗雞特約優惠碼.jpg", "url": "https://media.nccu.email/f21c1eec38ad03855efdfb72cbe6e6d3.jpg"}, {"label": "附件_金緗雞簡介DM.jpg", "url": "https://media.nccu.email/d20da789d5c19db9d12ee24b88cfd34f.jpg"}]', '2027-10-06', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 413);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c4c44c352b', '臺鹽生技', '', 'shopping', 'north,central,south,east', '88折', '*10月好物優惠 請參閱附件
+憑效期內校友證及教職員工、學生有效證件，可享下列優惠：
+1.憑乙方會員識別證至臺鹽生技門市(直營及加盟門市，不含專櫃)消費，享臺鹽商品原價88折優惠。
+2.下載「臺鹽APP」將享有不定期優惠(如:每月一物、入會禮、生日禮、推薦禮、會員專屬優惠券等)。
+3.其他不定期優惠，請參閱附件。', '期限：即日起～2026-12-31', '', '', '[{"label": "官網", "url": "https://www.tybio.com.tw/taiyen/tw/product"}, {"label": "附件_台鹽門市通訊錄.pdf", "url": "https://media.nccu.email/4f8791183c0dc1a1440b2d452800698a.pdf"}, {"label": "附件_台鹽生技10月好物.jpg", "url": "https://media.nccu.email/36bd54e0b55ddc3c026a865ba5997f29.jpg"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 414);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('01ab72d012', '朵法亞生活美學館', '', 'shopping', 'north,central,south,east', '8折', '*新生入學祭活動，寢具折扣優惠 請參閱相關附件
+訂購連結：u2202aa.darphia.com
+優惠對象：政大校友、教職員工、學生
+訂購網址:https://www.darphia.com/one-page-stores/Welfare-Committee-Group-Buying-Website
+直接選取商品下單，享全館8折優惠
+*不定期特惠方案 請參閱其他附件', '期限：即日起～2027-05-31', '', '', '[{"label": "官網", "url": "https://www.darphia.com/"}, {"label": "u2202aa.darphia.com", "url": "http://u2202aa.darphia.com/"}, {"label": "相關連結", "url": "https://www.darphia.com/one-page-stores/Welfare-Committee-Group-Buying-Website"}, {"label": "附件1_全國通用版寢具DM_正面.jpg", "url": "https://media.nccu.email/c88ca09f83a26aa8d23dbfefc09bb029.jpg"}]', '2027-05-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 415);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('62626a5db2', 'Green&Safe真食物專賣店', '', 'food', 'north,central,south,east', '回饋優惠', '一、優惠對象：效期內校友證之校友、教職員工及學生
+二、優惠內容：
+於GREEN&SAFE官方網站(https://www.green-n-safe.com/)註冊成為企業會員後，至各通路消費 (含GREEN&SAFE真食物專賣店門市/官網/客服、山海樓、農人餐桌)，當年度內的每筆消費均可享回饋金：
+消費新台幣49,999(含)以下，即可享實際消費之支付金額5%回饋金。
+消費達新台幣50,000(含)~99,999(含)，即可享實際消費之支付金額7%回饋金。
+消費達新台幣100,000(含)以上，即可享實際消費之支付金額10%回饋金。
+回饋金使用期限:回饋金累積年度為每年1月1日至12月31日，期間累計之回饋金至下一累積年度12月31日前有效。例如：2023年1月1日至2023年12月31日(含當日)累積之回饋金，有效使用期限為2024年12月31日(含當日)前，以此類推。
+1元回饋金價值等於新台幣1元，可於下次消費時抵用，無抵用門檻或金額的限制。
+三、註冊成為會員之步驟請參閱附件。
+四、註冊登入後"企業統編"(驗證碼)~請洽詢校友服務中心
+1. 校友可Email至校友服務中心信箱: alumni@nccu.edu.tw 告知校友證卡號或身分證字號
+2. 教職員工請至紀念品中心出示證件，可獲取"企業統編"(驗證碼)
+五、亦可攜帶有效(政大)證件，親臨"Green&Safe真食物專賣店"木柵店，店員可協助註冊
+(台北市文山區新光路一段143號 電話：02-2936-0965)', '期限：即日起～2027-05-01', '', '', '[{"label": "官網", "url": "https://www.green-n-safe.com/"}, {"label": "附件_企業會員註冊辦法.pdf", "url": "https://media.nccu.email/fc1f7451e49efdbfd84ed42c78dea75c.pdf"}]', '2027-05-01', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 416);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('d9359e6258', '東元家電', '', 'shopping', 'north,central,south,east', '專屬優惠價', '憑效期內校友證及教職員工、學生有效證件，可享下列優惠：
+東元家電產品: 限量優惠。
+1.家電EDM提供優惠價格，有包含運費和樓層費(偏遠地區運費除外) ，大型家電有包含基本安裝，可宅配到府。
+2.已提供優惠價需事先匯款，如要訂購請寫e-mail給窗口，
+會提供匯款帳號給您，收到款項後會安排出貨，謝謝!
+空調產品
+1.一對一頂級變頻HS8空調 (需先匯款)
+2.一對一精品變頻GA5空調 (需先匯款)
+(1)優惠價請參考EDM。
+(2)如要訂購，已提供優惠價需事先匯款，
+公司收到款項才後會安排出貨和基本安裝。
+*如要訂購家電或空調產品，請先E-MAIL或來電查詢庫存量，或諮詢訂購的冷氣大小
+歡迎聯繫窗口:
+鍾昌珮經理 02-2655-3333 #3243, mandy@ejoy.net.tw', '電話：02-2655-3333 #2708
+期限：即日起～2026-12-31', '02-2655-3333 #2708', '', '[{"label": "官網", "url": "https://www.tecohome.com.tw/tw"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 417);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('4aee7248b1', '傑昇通信', '', 'services', 'north,central,south,east', '買一送一', '憑效期內校友證及政大教職員工、學生於點餐前出示有效證件，可享下列優惠：
+以下三種優惠可任選一種(不能同時使用，只能三選一)。
+1. 配件購物金 200 元
+2. imos 保護貼買一送一（不適用於曲面螢幕/低藍光/康寧）
+3. TOUGHER 玻璃保護貼買一送一（不適用於曲面螢幕）
+*配件購物金限用於售價300 元以上非手機品牌配件商品或保健品，且不可多券 併用在同一商品。
+*使用200元配件購物金消費或購買imos 保護貼或購買TOUGHER玻璃保護貼， 均再送傑納瑞抽取式衛生紙一串（6包）', '電話：請參閱網址
+地址：請參閱網址
+期限：即日起～2027-01-31', '請參閱網址', '請參閱網址', '[{"label": "官網", "url": "https://www.jyes.com.tw/"}]', '2027-01-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 418);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('58f70568bf', '棋建壂', '', 'shopping', 'north,central,south,east', '85折起', '*
+擁有政大校友證的校友及教職員工和學生，
+在結帳時憑出示相關證件, 可享下列優惠:
+*購買方式: 使用折價碼
+TEYUE9090-單筆消費8000(含)元以下享9折優惠
+TEYUE8888-單筆消費8001-10000元享88折優惠 T
+EYUE8585-單筆消費10001(含)元以上享85折優惠
+使用優惠折價碼後可在官網結帳頁面，透過LINE聯絡及出示識別證件', '電話：02-2456-8196
+期限：即日起～2026-10-29', '02-2456-8196', '', '[{"label": "官網", "url": "https://fj-flagship.com/"}]', '2026-10-29', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 419);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('aff78c57a2', '阿瘦皮鞋', '', 'shopping', 'north,central,south,east', '專屬優惠價', '校友專屬網頁 https://aso.tw/mP3sf
+憑效期內校友證及政大教職員工、學生有效證件，可享網購特殊優惠價 :
+1. 阿瘦自有品牌商品(鞋、包、配件)專屬福利價，商品不定期更新
+2. 專案鞋款男鞋2,200起，女鞋1,800起
+3. 阿瘦經銷合作商品專屬優惠價
+4. 眷屬親友同享優惠 (不用憑證件)
+5. 僅限線上專屬網頁購買，不適用於門市通路。', '期限：即日起～2026-11-30', '', '', '[{"label": "官網", "url": "https://aso.tw/mP3sf"}]', '2026-11-30', 0, '', '{"student": true, "staff": true, "alumni": true, "family": true}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 420);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8013ddc3a9', '飛利浦行動家電', '', 'shopping', 'north,central,south,east', '專屬優惠價', '凡有校友證之校友及教職員工生可享以下優惠：
+請個別註冊成為「飛利浦 行動家電」會員（https://www.philips.com.tw/ ），
+並於指定網頁(https://reurl.cc/z5mo9V )下單，
+可享有企業員工福利之優惠價格。', '期限：即日起～2026-10-31', '', '', '[{"label": "官網", "url": "https://www.philips.com.tw/"}, {"label": "相關連結", "url": "https://reurl.cc/z5mo9V"}]', '2026-10-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 421);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('897f848779', 'Dike 生活家電', '', 'shopping', 'north,central,south,east', '專屬優惠價', '凡有校友證之校友及教職員工生可享以下優惠：
+請自行個別註冊成為「DIKE 生活家電」會員(https://www.dike.tw/)後，
+並於指定網頁( https://reurl.cc/bm1v73)下單，始享企業員工福利價格優惠措施。', '期限：即日起～2026-10-31', '', '', '[{"label": "官網", "url": "https://www.dike.tw/"}, {"label": "相關連結", "url": "https://reurl.cc/bm1v73"}]', '2026-10-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 422);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('656642dff5', '壹偲Only Ease', '', 'shopping', 'north,central,south,east', '9折起', '*簡介及MENU請參閱附件
+憑效期內校友證及政大教職員工、學生有效證件，可享網購特殊優惠價 :
+1. 於實髏門市消費， 乙方自動升等甲方為總醫師會員（價值＄2300),
+2. 茶食飲全品項享93折優惠，保健營秦9折，
+同時享有總醫師會員所有優惠內容
+(包含不限於點數折抵現金）
+＊備註：可併用外帶9折之優惠
+＊若於官方網站（https://www.careonlyes.com. tw/）消費，
+請輸入優惠序號：NCCU, 即享全館9折。', '電話：客服專線 04-2243-4777
+期限：即日起～2027-05-15', '客服專線 04-2243-4777', '', '[{"label": "官網", "url": "https://www.careonlyes.com.tw/"}, {"label": "附件_簡介.jpg", "url": "https://media.nccu.email/527387790798d349c713b599b92340e7.jpg"}, {"label": "附件_簡介2.jpg", "url": "https://media.nccu.email/9f57a36c8f04edfeac6e38f2a5691ece.jpg"}, {"label": "附件_MENU.jpg", "url": "https://media.nccu.email/0eac7503d23a672a69686387616ff84e.jpg"}]', '2027-05-15', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 423);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('dc5465128d', '敲敲木工坊', '南投縣', 'shopping', 'central', '95折', '憑效期內校友證及政大教職員工、學生有效證件，可享：
+商品全面95折優惠(特價商品除外)。
+※營業時間：9:30-16:30
+1. 星期二、三固定公休，平日中午12:00-13:30遊客無法入園
+2. 六日，連續假日與國定假日正常營業
+3. DIY結帳時間：9:30-10:30 / 13:30-15:00 (請在此時段結帳完成)
+4. DIY終止時間：平日-早上至12:00，下午皆至16:30
+5. 若團體預約DIY者，請聯絡敲敲木業務，索取預約單(需二個禮拜前完成預約動作)，一般遊客於時間內前往，不需預約即可入館
+6.春節營業時間敬請電洽店家詢問。', '電話：(049)291-7803
+地址：南投縣埔里鎮大同街37號
+期限：即日起', '(049)291-7803', '南投縣埔里鎮大同街37號', '[{"label": "官網", "url": "https://www.kokomu.com/contact-us/"}]', NULL, 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 424);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('11e15d6196', '東森購物', '', 'shopping', 'north,central,south,east', '專屬優惠價', '憑效期內校友證及教職員工(不含學生)證件可享網購特殊優惠價 :
+* 福利專案及企業帳號綁定流程詳如附件
+* 註冊登入後企業福委之代碼~請洽詢校友服務中心
+(校友可Email至校友服務中心信箱: alumni@nccu.edu.tw 告知校友證卡號或身分證字號)
+(教職員工請至紀念品中心出示證件，可獲取登入密碼)
+* 到ETMall東森購物網站或下載APP，完成會員註冊並加入成為企業福委會員，
+即可享有享全站80萬商品「福利價」購物優惠；
+若想要買電視購物商品，可記商品編號後到東森購物官網或APP購買(東森購物保有變更、修改或終止之權利。)', '電話：客服專線 0800-057-999
+期限：即日起', '客服專線 0800-057-999', '', '[{"label": "官網", "url": "https://www.etmall.com.tw/"}, {"label": "政治大學x東森購物_五心級企業福利購專案.pdf", "url": "https://media.nccu.email/394ce983b0e62ef15ab8a880f9b07403.pdf"}]', NULL, 0, '', '{"student": false, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 425);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('14cd242d43', 'Mars eSIM', '', 'services', 'north,central,south,east', '85折', '1.憑有效政大信箱(~@nccu.edu.tw)在官網註冊帳戶，並完成認證，
+結帳時輸入折扣碼[ NCCU2026MO ] ，即享前20筆訂單85折優惠
+2.優惠碼期限: 2026.06.01~2027.05.31', '地址：請見網站
+期限：即日起～2027-05-31', '', '請見網站', '[{"label": "官網", "url": "https://store.marsesim.com/"}]', '2027-05-31', 0, '需以有效政大信箱 (@nccu.edu.tw) 註冊驗證；校友信箱是否適用未載明', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 426);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('18443984d9', '照互精準健康', '新北市', 'health', 'north', '85折', '憑效期內校友證及教職員工、學生有效證件，可享下列優惠：
+(商品優惠85折起)
+助眠生理光照明檯燈 原價$3,880 → $3,298
+五行腦波分析儀 + 中文圖像式APP 原價$28,800 → $24,480', '電話：(02)2904-6213
+地址：新北市新莊區中正路510號國璽樓9樓A棟 (輔仁大學技轉及資源整合中心進駐廠商MD993室)
+期限：即日起～2027-07-11', '(02)2904-6213', '新北市新莊區中正路510號國璽樓9樓A棟 (輔仁大學技轉及資源整合中心進駐廠商MD993室)', '[{"label": "官網", "url": "https://www.smartph.com.tw"}]', '2027-07-11', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 427);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b3931b137c', 'WUWOW美語', '', 'education', 'north,central,south,east', '85折', '憑效期內校友證及教職員工、學生有效證件，可享下列優惠：
+（一）乙方贈課活動【一對一語言程度分析課程_價值 2,000 元】，內容提供成人線上
+英語、兒童線上美語之口說程度檢測及學習報告建議服務，由甲方窗口協助布
+達乙方優惠活動內容，通知師生領取。
+（二）甲方員工透過乙方安排服務顧問、老師，進行線上語言諮詢課程，且
+若購買乙方品牌【WUWOW成人線上英文】、【WUWOW JUNIOR 兒童
+線上英文】之課程方案，甲方教職員工、學生、校友 出示相關識別證明，
+可享本人、眷屬、孩童報名乙方雙品牌所有課程方案，大專院校專屬 85 折優惠。', '電話：04-2323-6666
+期限：即日起～2027-03-31', '04-2323-6666', '', '[{"label": "官網", "url": "https://pse.is/8xluhc"}]', '2027-03-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": true}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 428);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('917126c869', 'Fly High Yoga', '臺北市、臺中市', 'entertainment', 'north,central', '95折', '憑效期內校友證及教職員工、學生有效證件，可享下列優惠：
+1. 至 Fly High Yoga 免費體驗瑜珈課程 1 堂。
+2. 後續購買常態課程方案，可享 特約 95 折優惠。
+3. 特約體驗資格限 未註冊過 App 且未曾參加體驗課之新學員。
+4. 體驗時須出示有效證件。
+5. 體驗資格 不可轉讓。
+*全台據點起參閱附件', '電話：04-24525265
+地址：台中市西屯區河南路二段317號 (河南教室；其他教室詳附件)
+期限：即日起～2026-12-31', '04-24525265', '台中市西屯區河南路二段317號 (河南教室；其他教室詳附件)', '[{"label": "官網", "url": "https://www.facebook.com/flyhighyogatw/?locale=zh_TW"}, {"label": "附件_全台據點.pdf", "url": "https://media.nccu.email/ffb648388974d2741b527cf9f59e94e0.pdf"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 429);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8015ac7567', '英倫牙醫', '', 'health', 'north,central,south,east', '掛號費優惠', '*新增全台數間診所, 請參閱相關附件。
+凡持有效期內校友證之校友(及眷屬)、政大教職員工(及眷屬)、學生，
+填寫病歷時，請於「介紹人」欄填寫：政大校友（政大）或 A341
+即可享有以下專屬優惠：
+（1）人工植牙含全鋯冠假牙、骨粉、膠原蛋白。
+（2）健保洗牙及一般治療健保項目診所
+(限楊梅光映美學、台中烏日日麗、彰化旭光美學診所)。
+★因為牙科看診項目較多，如需人工植牙外的服務如洗牙、一般矯正、隱適美矯正及美白項目，建議先以電話諮詢。
+• 植牙優惠價 37,500 元
+（含全鋯冠假牙、一般補骨、膠原蛋白）
+• 掛號費 50 元
+• 完成植牙手術後，將於次月郵寄「口腔清潔組」乙份（僅限特約單位）
+以上優惠適用於全台8間英倫牙醫診所 (如附件)', '期限：即日起～2026-12-31', '', '', '[{"label": "官網", "url": "https://www.endental.com.tw/"}, {"label": "附件_優惠方案.jpeg", "url": "https://media.nccu.email/a853e5066aa6a89dea8ca5f7faef0f0a.jpeg"}, {"label": "附件_英倫牙醫全省診所.jpeg", "url": "https://media.nccu.email/e649d31f29f6457def82980f329f0aea.jpeg"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": true}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 430);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('46e65e603b', '明峰診所（復健治療）', '臺北市', 'health', 'north', '9折起', '憑效期內校友證及教職員工、學生有效證件，可享下列優惠：
+1. 門診掛號費：掛號費折價50元
+2. 自費震波治療及射頻治療95折
+3. 輔具9折', '電話：(02)2309-8897
+地址：台北市文山區木柵路一段87號
+期限：即日起～2027-06-10', '(02)2309-8897', '台北市文山區木柵路一段87號', '[{"label": "官網", "url": "https://www.facebook.com/mingfeng.clinic/?locale=zh_TW"}]', '2027-06-10', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 431);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('11a609a566', '雅德思牙醫', '', 'health', 'north,central,south,east', '掛號費優惠', '一、凡持效期內校友證之校友及政大教職員工、學生及其配偶、子女、父母
+可享以下特約優惠：
+1. 預约門診掛號費：免費，惟仍須繳交健保部分負擔50元。
+2. 其他特約優惠方案 請參閱相關附件。
+二、歡迎加LINE@線上諮詢
+採線上預約制：加入LINE@進行免費線上諮詢。
+加入網址：https://lin.ee/erxVnzz
+或搜尋LINE@：@artis.tw（需要加＠）', '電話：0800-066-086
+期限：即日起～2026-12-31', '0800-066-086', '', '[{"label": "官網", "url": "https://www.artisticdc.com/locations/list"}, {"label": "相關連結", "url": "https://lin.ee/erxVnzz"}, {"label": "artis.tw", "url": "http://artis.tw/"}, {"label": "附件_特約優惠方案.jpg", "url": "https://media.nccu.email/17239f0793d2e18bf2706b68818a8bee.jpg"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": true}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 432);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('bf75a41245', '美麗人生 整形醫美診所', '新北市', 'health', 'north', '8折', '憑效期內校友證及教職員工、學生有效證件，可享下列優惠：
+消費享八折優惠', '電話：(02)8511-6666 #268
+地址：新北市三重區光復路一段45號2樓
+期限：即日起～2027-01-15', '(02)8511-6666 #268', '新北市三重區光復路一段45號2樓', '[{"label": "官網", "url": "https://www.merry-beauty.com.tw/"}]', '2027-01-15', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 433);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8750713d23', '美麗人生 美妝婦幼百貨', '新北市', 'shopping', 'north', '專屬優惠價', '憑效期內校友證及教職員工、學生有效證件，可享下列優惠：
+購物享會員價優惠
+(部分優惠或指定商品除外)', '電話：(02)8511-6666 #110
+地址：新北市三重區光復路一段45號1樓
+期限：即日起～2027-01-15', '(02)8511-6666 #110', '新北市三重區光復路一段45號1樓', '[{"label": "官網", "url": "https://www.merry-life.com.tw/environment/index/8"}]', '2027-01-15', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 434);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('dd72bc3777', '寶島牙醫', '臺北市', 'health', 'north', '95折', '憑效期內校友證及教職員工、學生有效證件，
+可享下列優惠：
+1. 掛號費折價50元。
+2. 矯正優惠，自鎖式傳統矯正及隱適美矯正95折。', '電話：(02)2939-1912
+地址：台北市文山區萬壽路11號
+期限：即日起～2027-08-31', '(02)2939-1912', '台北市文山區萬壽路11號', '[{"label": "官網", "url": "https://www.facebook.com/formosa.dentist"}]', '2027-08-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 435);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('67378811c2', '沐芯⽛醫', '臺北市', 'shopping', 'north', '95折', '憑效期內校友證及教職員工、學生有效證件可享如下優惠:
+1. 預约門診掛號費：免費，惟仍須繳交健保部分負擔50元。
+2. 固定式矯正/隱適美療程總額之95折
+3. 全院自費療程另享折扣', '電話：(02)2937-1266
+地址：台北市文山區木新路三段153號
+期限：即日起～2027-05-10', '(02)2937-1266', '台北市文山區木新路三段153號', '[{"label": "官網", "url": "https://www.alumni.nccu.edu.tw/benefit_vendor"}, {"label": "附件_沐芯LIEN_QR.jpg", "url": "https://media.nccu.email/69e6d7be4400c2b08166d3b758ee382b.jpg"}]', '2027-05-10', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 436);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8f65f26662', '自己做烘焙＆吳寶春自己做', '', 'food', 'north,central,south,east', '9折', '憑效期內校友證及教職員工、學生有效證件，可享下列優惠：
+1. 製作甜點費用享9折
+2. 當日壽星（須出示身分證件）可免費製作指定款蛋糕乙個，如欲製作其他
+品項，得依店舖現場公告規則加價升級。
+3. 烘焙菜單網址：https://www.mydiybc.com/index/menu
+注意事項：
+1. 9折僅限甜點費用，不含陪同費，且需單筆結帳。
+2. 因安全考量，12歲以下孩童無論是否有成人陪同，皆無法入場。
+3. 本優惠不可與其他優惠併用。', '期限：即日起～2027-08-31', '', '', '[{"label": "官網", "url": "https://www.mydiybc.com/"}, {"label": "相關連結", "url": "https://www.mydiybc.com/index/menu"}, {"label": "附件1_全省分店名單.jpg", "url": "https://media.nccu.email/128cb614854add2ca153e81ee0df5ccb.jpg"}]', '2027-08-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 437);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('62ad22a208', '收多易', '臺北市', 'services', 'north', '95折', '憑效期內校友證及教職員工、學生有效證件，可享下列優惠：
+1. 迷你倉庫租借 (限政大店) 享季繳以上方案租金額外95折。
+(優惠內容請參照附件1)
+2. 借址登記 (不限地區) 至收多易政大店辦理借址登記可加贈一個月租期。
+(可辦理借址登記的地點以收多易官網
+https://cws.storeasy.com.tw/services/%E8%99%9B%E6%93%AC%E8%BE%A6%E5%85%AC%E5%AE%A4-virtual-office
+所表列且辦理當下尚有名額之地點為準)
+(優惠內容請參照附件2)', '電話：(02)2938-8075
+地址：台北市文山區萬壽路27號2樓
+期限：即日起～2027-04-30', '(02)2938-8075', '台北市文山區萬壽路27號2樓', '[{"label": "官網", "url": "https://www.storeasy.com.tw/store/10185/zhengda-taipei-storage"}, {"label": "附件1_倉庫優惠方案.pdf", "url": "https://media.nccu.email/7704343f6e5313a6e51d61519822054e.pdf"}, {"label": "附件2_借址登記優惠方案.pdf", "url": "https://media.nccu.email/563f0169328cb432390309ed8ff8009f.pdf"}]', '2027-04-30', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 438);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('d6d7813dc6', '全民大劇團', '新北市', 'entertainment', 'north', '85折', '1. 憑效期內校友證及教職員工生證件可享:
+購票85折, 最低票價不優惠。
+2. 須填各演出節目之特定購票表單
+請洽全民大劇團陳小姐:
+(02)7730-2028 emilychen41924@gmail.com', '電話：(02)7730-2028
+地址：新北市新店區中正路540-1號
+期限：即日起', '(02)7730-2028', '新北市新店區中正路540-1號', '[{"label": "官網", "url": "https://www.facebook.com/ALLUPE0PLE"}]', NULL, 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NCCU', 'school', '政治大學校友服務中心', 'https://www.alumni.nccu.edu.tw/benefit_vendor', '2026-10-15', 439);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9f222a8862', '火山岩燒肉', '新竹縣竹北市', 'food', 'north', '消費贈品', '◎ 來店消費贈塔香雞腿丁一份, 出示識別證給予優惠,(不得併桌結帳)', '電話：03 668 8951
+地址：新竹縣竹北市自強北路230號
+合約到期日：永久', '03 668 8951', '新竹縣竹北市自強北路230號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-175707,r903.php?Lang=zh-tw"}, {"label": "岩漿火鍋-火山岩燒肉.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9MelF3TDNCMFlWOHhOVFUzT1RkZk1qYzRORFV3TTE4Mk9EZzVPQzV3WkdZPQ==&fname=WSGGIGB0USWWA100LOLKOKJGSTJGWTWW14JCYSYSCCQLOO40DCMKGHPOECOOVWGHNO00IDHHTSVWA020MOXSMO35WSROMKGCGGMP34B0YSYWCDA4CC10UWPKPKPOA125A4NORKGDXSMOWTB1KLEGCGNK2135A5A4"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-175707,r903.php?Lang=zh-tw', '2026-10-15', 440);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('3e92c6ab6e', '卡菲努努親子寵物餐廳', '新竹縣竹東鎮', 'food', 'north', '特約優惠', '◎ 來店消費享酥炸金元寶一份, 出示識別證給予優惠,(不得併桌結帳)', '電話：03-5821798#25
+地址：新竹縣竹東鎮明星一路138號
+合約到期日：永久', '03-5821798#25', '新竹縣竹東鎮明星一路138號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-284866,r903.php?Lang=zh-tw"}, {"label": "卡菲努努親子寵物餐廳.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9MemMwTDNCMFlWOHhOVFUzT0RsZk1UZzJNekE0TWw4Mk9EWTNOUzV3WkdZPQ==&fname=LOGGYSOKSS10A11050POJCYWKKMOWTHGYSB0DCNKQPQLXW40QKYWEG540054B4SSWW00VX05A404ROJGQOSWTSMO34B0FHYSGGVXDCTSUWB0WXFGUSCCWXPKNPPOHDKKDGA0NOXTXSMOLOYSWX24ZWYS44UXSSTSFC3030US20GCHHHH"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-284866,r903.php?Lang=zh-tw', '2026-10-15', 441);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('f33ac0a6a0', '森森燒肉', '', 'food', 'north,central,south,east', '9折', '森森燒肉全台門市,提供之優惠內容
+1.中區:台中公益店、台中中科店、台中洲際店
+北區:竹北莊敬店、新竹清大店、桃園春日店
+2. 員工示識別證消費,可享9折優惠。
+線上訂位請連結:
+https://reurl.cc/DjmodN', '電話：04-23150095
+地址：總店:台中市北屯區昌平東二路135號
+合約到期日：1151231', '04-23150095', '總店:台中市北屯區昌平東二路135號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-266433,r903.php?Lang=zh-tw"}, {"label": "2025森森燒肉合約書.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9MemN4TDNCMFlWOHhOVFUyT0RGZk9EQTJOekUxTWw4NE5UWTBNeTV3WkdZPQ==&fname=0054ROB0RKSSTXHH20XSTSXWWW30JDHCOPQKDCXS00IDWWB5ROB4LLLLB0OOFCUWWWTSYTHH442454MKVWXSUWICUSB0XSWSCCVX44FCYSUS01POPK00XXFCNO10XX21JCLKSWIGQOB4SWHCUS30A110"}, {"label": "相關連結", "url": "https://reurl.cc/DjmodN"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-266433,r903.php?Lang=zh-tw', '2026-10-15', 442);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('84267bf746', '客美多咖啡( 特約分店3家 台北龍江店/桃園藝文店/新竹公道店 )', '', 'food', 'north', '95折', '持證件享以下優惠：
+一、甲方職員至乙方各品牌餐廳消費或購買商品時,於結帳時出示員工識別證 名片 其他,並提供乙方相關識別圖檔,乙方提供優惠內容如下:
+(1)客美多咖啡龍江店消費享結帳總金額95折優惠,不得與其他優惠併用。
+(2) 單次消費折扣後滿2000元可享外送服務,運費以計程車跳表計算或依實際距離另行估價,因 安排專人配送,須提前1日預訂。
+(3)以上優惠,10%服務費以原價計算,服務費不折扣。
+二、本合約期間:自113年10月1日起生效。期滿自動續約,不需另簽合約。
+三、本優惠僅限員工本人使用,不得轉借他人使用。優惠內容不得與乙方會員卡或其他優惠券、優 惠專案合併使用。', '合約到期日：1131001滿期自動續約', '', '', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-276411,r903.php?Lang=zh-tw"}, {"label": "客美多餐廳_國立清華大學特約商店合約書台北龍江店1131001.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9MelU0TDNCMFlWOHhOVEF6TnpSZk16WXdPVEF5T0Y4ek5qZzBNeTV3WkdZPQ==&fname=WSGGTSB0RK404110EDLKWWLOSTTWWTWW2034CCGCQP51CC40NKROCDB4WW54B0OKYW54CD05VSPOA020ZSXSUWLKB0FGXSHCLPYT00PKNKTSGHPODGSSKLECPKPODH25JCNOUWJGZSB4A114ECVW40IC41GDQPMLA0B445FGFG0045QKRKPOUX25JC10B4ZWIG30MKWSFGIC40HCHDYTJGQPDCFCWXB42054VWB0YWCC4115HCHGRONOFCMOTW25OPQKNO24UTRLDGCCYSDC45EGSSOK30FCDGKKCD01HC2405MOMK30EGKKRKRKFHHCMLXTNOA0POTSFGSWPK54CDQKA400ZTKKWWJCA0YSTWNKUSICDGB0OKMKCCGD31A0"}, {"label": "客美多餐廳_國立清華大學特約商店合約書桃園藝文店.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9MelU0TDNCMFlWOHhOVEF6TnpWZk5EVTROREF3TVY4ek5qZzBOQzV3WkdZPQ==&fname=WSGGTSB0RK404110EDLKWWLOSTTWWTWW2034CCGCQP51CC40NKROCDB4WW54B0OKYW54CD05VSPOA020ZSXSUWLKB0FGXSHCLPYT00PKNKTSGHPODGSSKLECPKPODH25JCNOUWJGZSB4A114ECVW40IC41GDQPMLA0B445FGFG0045QKRKPOUX25JC10B4ZWIG30MKWSFGIC40HCHDYTJGQPDCFCWXB42054VWB0YWCC4115HCHGRONOFCMOTW25OPQKNO24IH51WSA5DCEC45FG14OKJGUSYW54TTIH20PO0524MK3030KKDGROFHXSMLXTNOA0POTSGHSWPK544550PKLKGDYX44XWPKICPKB0QLQL"}]', NULL, 1, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：1131001滿期自動續約', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-276411,r903.php?Lang=zh-tw', '2026-10-15', 443);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('377c616cf8', '元手壽司', '台中市屯區', 'food', 'central', '特約優惠', '持證件享以下優惠於結帳時出示識別證、名片、統編，甲方提供優惠 :
+乙方員工之識別證、名片、統編只限員工本人使用，不得轉借他人使用。
+阿官國際餐飲股份有限公司特約分店(元手壽司)
+店別
+地址
+訂位專線
+朝富店
+台中市西屯區朝富路246號
+04-22581978
+公益店
+台中市西區東興路三段152號
+04-23267528
+成功店
+新竹縣竹北市成功八路223號1樓
+03-6682785', '電話：04-23502887
+地址：台中市屯區工業六路18之1號
+合約到期日：永久', '04-23502887', '台中市屯區工業六路18之1號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-276140,r903.php?Lang=zh-tw"}, {"label": "元手壽司特約商店合作約定書.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9MemM0TDNCMFlWOHhOVEF5TXpaZk9EQTJNamM0TUY4eU9EQXhNaTV3WkdZPQ==&fname=LOGGVWOKYW00A1XXLOLKWTGD1430WTRL2034IC24CC05XW40DCMKFCFG00OOROEGNOTSTXYXVS04A0KKFCOKTSA150B0MK35ZTJDXWA0SWMK45VWFHPO45FCXSLKIDKKDGA0YSWTTWDG3500USB004NPUTGDQPOOWS30OPB4GG10STUSZTSSYT10IG10QKZWXSJGVX2020UWRKMK21GDNLRK"}]', NULL, 0, '合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-276140,r903.php?Lang=zh-tw', '2026-10-15', 444);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('4cdce8ff90', '竹蓮嚴選', '新竹市東區', 'food', 'north', '9折起', '优惠内容如下:
+1.透過竹蓮嚴選生鮮網(https://chulienyansyuan.waca.tw)代購新竹市竹蓮市場生鲜、熟食、餐點、生活百貨等,享外送95折、自取9折優惠
+2.不限金额外送免運費。
+3. 甲方相關識別證件,只限於本人使用,不得轉借他人使用。', '電話：03-5620628
+地址：新竹市東區竹蓮街15號3樓
+合約到期日：113.12.31(自動續約至永久)', '03-5620628', '新竹市東區竹蓮街15號3樓', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-269158,r903.php?Lang=zh-tw"}, {"label": "竹蓮嚴選.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9Memd3TDNCMFlWOHhORFV5TmpoZk9EWXdNalEzWHpnMU16QTNMbkJrWmc9PQ==&fname=WSGGKLQK004041KK50POROIGOOMOWT34FGB0HGKKTX25OO4034YWFC54ECOOOKGHSSCCGGMPA4NOLOYWMOMOQL00"}, {"label": "DM.jpg", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9Memd3TDNCMFlWOHhORFV5TmpsZk16SXpOelV3TUY4NE5UTTNOQzVxY0djPQ==&fname=QO54GHWXPKQOLPYXLO10USWTKOPKFGB1"}]', NULL, 1, '合約到期日：113.12.31(自動續約至永久)', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-269158,r903.php?Lang=zh-tw', '2026-10-15', 445);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('66bfeb76ea', '石憶食鍋', '新竹市', 'food', 'north', '95折', '網址 https://timmyblog.cc/seshp/
+新竹石憶食鍋合約優惠詳如下
+現金刷卡95折
+特約停車場', '電話：03-5153785
+地址：新竹市忠孝路51號
+合約到期日：永久', '03-5153785', '新竹市忠孝路51號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-261973,r903.php?Lang=zh-tw"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-261973,r903.php?Lang=zh-tw', '2026-10-15', 446);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('356554c787', '茂昌賀商行---草本茶新竹中正店', '新竹市', 'food', 'north', '9折起', '結帳前出示工作證或學生證給予外送之優惠
+優惠內容如下:
+1.外送單筆訂單金額滿300元以上享9折優惠.
+2.外帶來店消費出示證件,滿100元以上享95折優惠,滿300元以上9折優惠.', '電話：03-5259666
+地址：新竹市中正路206號
+合約到期日：永久(自動續約)', '03-5259666', '新竹市中正路206號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/450-1066-251209,c0.php?Lang=zh-tw"}, {"label": "2023草本茶新竹中正店.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9MemMyTDNCMFlWOHhNek13TXpaZk1UUTVORFF4Tmw4ME9EZ3hPUzV3WkdZPQ==&fname=0054ROB0RKSSTXHHGG04KP24KO30GDYSWS34DCXSNP5100B5OKJCGHEG00KKFCTWWW00UTZXDGVWMOWSYW30A000YSB0WSGCVXVXLOB0YSYWWXPO50SS20RKSS400144PKNOTX34XSMOWTB1KLEGCGNK2135A5A4"}]', NULL, 1, '合約到期日：永久(自動續約)', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/450-1066-251209,c0.php?Lang=zh-tw', '2026-10-15', 447);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('4782e23669', '憶客披薩', '新竹市', 'food', 'north', '9折', '店內用餐一律9折優惠(組合套餐,沙威瑪,蠶豆除外)
+外帶自取享有買大配大芝九折優惠.
+電話:03-5258342', '電話：03-5258342
+地址：新竹市中華路3段121巷1號
+合約到期日：1130801(永久自動續約)', '03-5258342', '新竹市中華路3段121巷1號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/450-1066-7755,c0.php?Lang=zh-tw"}]', NULL, 1, '合約到期日：1130801(永久自動續約)', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/450-1066-7755,c0.php?Lang=zh-tw', '2026-10-15', 448);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('52216a5d57', '辛麻辣鍋物餐廳', '新竹縣竹北市', 'food', 'north', '85折', '教職員工持證件享以下優惠：
+(ㅡ) 外送優惠：團體訂購滿3000元，本店外送至貴公司,每鍋附一杯(精選高山冷泡茶)
+(二) 內用雙重優惠：(1)點三鍋赠送一鍋 (2)點單鍋8.5折
+優惠至113-06-12', '電話：03-6675489
+地址：新竹縣竹北市勝利三街119號
+合約到期日：永久', '03-6675489', '新竹縣竹北市勝利三街119號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-230638,r903.php?Lang=zh-tw"}, {"label": "園區菜單1.png", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9Melk1TDNCMFlWOHhNakF3TVROZk1qUTBPREUwTUY4NE1UTXpPUzV3Ym1jPQ==&fname=LOGGROOKWWCGOOHHDGLKRKYWDCTW2534YSFGMPNPVX51XW40UWTSYS54US54CDFCNOWWUT0520FGNK24KOOKQL00"}, {"label": "園區菜單 2.png", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9Melk1TDNCMFlWOHhNakF3TVRSZk5UTXlNRFEyTUY4NE1UTXpPUzV3Ym1jPQ==&fname=LOGGROOKWWCGOOHHDGLKRKYWDCTW2534YSFGMPNPVX51XW40UWTSYS54QO54TSTSLOCCXT05DGFGLO24YW30QLYS"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-230638,r903.php?Lang=zh-tw', '2026-10-15', 449);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('4fe18cabcd', '宏常有限公司(囍瑞果汁、橄欖油)', '高雄市左營區', 'food', 'north,central,south,east', '93折', '登入網站購買商品，於結帳時輸入特約優惠專案代碼：
+(1)全館商品享結帳總金額93折優惠價。
+(2)不定期推出獨家限定款商品組合優惠價。
+(3)特約代碼：
+大橘網 https://www.orangefun.com.tw/
+特約商店代碼：22010059
+UG9 專業有機美酒網 https://ug9.com.tw/
+特約商店代碼：22020059', '電話：07-341-3992
+地址：高雄市左營區文科街80號', '07-341-3992', '高雄市左營區文科街80號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-228253,r903.php?Lang=zh-tw"}, {"label": "220429_DM.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9MekV5TDNCMFlWOHhNVGd3TnpSZk5UWTNNemsyTjE4ME9ERXlNUzV3WkdZPQ==&fname=0054ROB0RKKKCD11VSXS30WTVW30B425IGJCSSGC41VXWSTSWTFGLOEGECOKNOOKYWCCCD11VSPKDHDH"}, {"label": "相關連結", "url": "https://www.orangefun.com.tw/"}, {"label": "相關連結", "url": "https://ug9.com.tw/"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-228253,r903.php?Lang=zh-tw', '2026-10-15', 450);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('2b36b31821', '明昌越式餐館', '新竹市東區', 'food', 'north', '95折', '持證件享以下優惠：
+一、 全品項消費享95折優惠。
+二、 壽星持生日證件於生日當月單筆消費滿499元，送指定小菜(蝦醬空心菜或蛤蜊湯)，實際贈品以當時活動為準，當月優惠不限次數。
+三、 95折優惠與壽星優惠擇一使用。', '電話：03-5166046
+地址：新竹市東區學府路369號
+合約到期日：1151231', '03-5166046', '新竹市東區學府路369號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-227705,r903.php?Lang=zh-tw"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-227705,r903.php?Lang=zh-tw', '2026-10-15', 451);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('4b581cdf59', '珍煮丹-新竹清大店', '新竹市東區', 'food', 'north', '9折', '憑證9折', '電話：03 571 0610
+地址：新竹市東區建功一路45-3號
+合約到期日：永久', '03 571 0610', '新竹市東區建功一路45-3號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-188731,r903.php?Lang=zh-tw"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-188731,r903.php?Lang=zh-tw', '2026-10-15', 452);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('f7f3dd3903', 'Backhaus德式烘焙坊', '新竹縣竹北市', 'food', 'north', '9折', '優惠內容
+1. 出示識別證享現金9折優惠
+2. 優惠促銷活動及特價品不適用此折扣', '電話：03-6676986
+地址：新竹縣竹北市嘉豐五路二段37號', '03-6676986', '新竹縣竹北市嘉豐五路二段37號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-183710,r903.php?Lang=zh-tw"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-183710,r903.php?Lang=zh-tw', '2026-10-15', 453);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7bdaee4723', '韓國館(竹北)', '新竹縣竹北市', 'food', 'north', '95折', '優惠內容
+現金95折(信用卡、飲料、酒類及外送除外)', '電話：03-6567994
+地址：新竹縣竹北市縣政九路135巷32號1樓
+合約到期日：永久', '03-6567994', '新竹縣竹北市縣政九路135巷32號1樓', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-117171,r903.php?Lang=zh-tw"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-117171,r903.php?Lang=zh-tw', '2026-10-15', 454);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('4b63409df8', '岩漿火鍋台中公益店', '新竹縣竹北市', 'food', 'north', '消費贈品', '◎ 來店消費招待綜合丸拼盤一份及烏梅汁一壺, 出示識別證給予優惠,(不得併桌結帳)', '電話：03-5821798
+地址：新竹縣竹北市復興一街236號
+合約到期日：永久', '03-5821798', '新竹縣竹北市復興一街236號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-113746,r903.php?Lang=zh-tw"}, {"label": "岩漿火鍋台中公益店.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9Mell5TDNCMFlWOHhOVFUzT1RCZk16VTJNekEyT0Y4Mk9EWTROeTV3WkdZPQ==&fname=WSGGIGB0USWWA100LOLKOKJGSTJGWTWW14JCYSYSCCQLOO40DCMKGHPOWWOOKLOKDGKKZX00A404LK14MOPKTSLODGB0MKLKXTYTDCA0SWB0CDB4FHTSWXFCICXWB5ZXTSLKQKTXKKZWWT14STEGNKKK2135A5A4"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-113746,r903.php?Lang=zh-tw', '2026-10-15', 455);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('4e9d5076f2', '芽米健康鍋物', '新竹縣竹北市', 'food', 'north', '9折', '優惠內容
+出示相關證件，享全品項九折優惠', '電話：03-6503578
+地址：新竹縣竹北市文興路一段70號', '03-6503578', '新竹縣竹北市文興路一段70號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-110254,r903.php?Lang=zh-tw"}]', NULL, 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-110254,r903.php?Lang=zh-tw', '2026-10-15', 456);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('fdf113da42', '艾昇義式餐館(EISEN bistro)', '新竹市東區', 'food', 'north', '95折', '優惠內容
+憑證至店內用餐享95折優惠', '電話：03-5350008
+地址：新竹市東區復中里民權路208號
+合約到期日：永久', '03-5350008', '新竹市東區復中里民權路208號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-107152,r903.php?Lang=zh-tw"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-107152,r903.php?Lang=zh-tw', '2026-10-15', 457);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9dd9cecc62', '隆源餅行', '新竹縣北埔鄉', 'food', 'north', '95折', '優待內容
+1.自製品一律以95折優待
+2.寄賣品不再優惠', '電話：(03)580-2337
+地址：新竹縣北埔鄉中正路16號
+合約到期日：永久', '(03)580-2337', '新竹縣北埔鄉中正路16號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-7814,r903.php?Lang=zh-tw"}, {"label": "相關連結", "url": "http://www.ly-ps.com.tw/front/bin/home.phtml"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-7814,r903.php?Lang=zh-tw', '2026-10-15', 458);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('00069b9e52', '義式古拉爵(迎曦分店)', '新竹市', 'food', 'north', '95折', '1.員工用餐享有原價95折優惠
+2.當月壽星贈送飲料或甜點乙份
+3.特殊節日不提供95折優惠,如聖誕節、情人節、過年期間
+4.外帶不提供95折優惠
+5.本優惠僅限新竹迎曦分店使用
+6.義式古拉爵', '電話：03-543-7102
+地址：新竹市文化街10號1樓
+合約到期日：永久', '03-543-7102', '新竹市文化街10號1樓', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-60492,r903.php?Lang=zh-tw"}, {"label": "相關連結", "url": "http://www.grazie.com.tw/shopDetail.php?storeid=10"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-60492,r903.php?Lang=zh-tw', '2026-10-15', 459);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('5de3a805e4', '西市汕頭館(竹北店)', '新竹縣竹北市', 'food', 'north', '9折起', '現金9折
+刷卡95折
+電話: 03-5545910', '電話：03-6561801
+地址：新竹縣竹北市光明六路108號
+合約到期日：永久', '03-6561801', '新竹縣竹北市光明六路108號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-7799,r903.php?Lang=zh-tw"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-7799,r903.php?Lang=zh-tw', '2026-10-15', 460);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('e70e338967', '元世祖食品股份有限公司', '新竹縣竹北市', 'food', 'north', '9折起', '現金消費享9折優待，刷卡消費享95折優待(酒、水、飲料除外)', '電話：03-6583133
+地址：新竹縣竹北市莊敬南路91號
+合約到期日：永久', '03-6583133', '新竹縣竹北市莊敬南路91號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-78551,r903.php?Lang=zh-tw"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-78551,r903.php?Lang=zh-tw', '2026-10-15', 461);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a341c1ecb7', '媽媽魚(各門市皆適用)(泉勝科技股份有限公司)', '新竹縣竹北市', 'food', 'north,central,south,east', '95折', '1、憑員工識別證，到店消費，可享有媽媽魚自家商品95折之優惠。
+2、代理商品及季節特殊商品除外。
+※全省門市資訊請參閱附件
+媽媽魚全省門市客服專線：0800-221-881 www.mamafisch.com.tw', '電話：03-6673058
+地址：新竹縣竹北市六家二街86號
+合約到期日：永久', '03-6673058', '新竹縣竹北市六家二街86號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-27014,r903.php?Lang=zh-tw"}, {"label": "媽媽魚門市資訊.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9MelE0TDNCMFlWOHlOekF4TkY4ME5qWTROemMyWHpnMk5qRTRMbkJrWmc9PQ==&fname=WSGGXWB0MK1041NPHCLKSXZWZS3025HG2034SSHCQP51OO40UWTSFD54WW54B0OKWWTSUXHHDG04DC1450FGTSLOB0MO35HCHDJDA4VSWSA434UWOOA4KLFCZT10SSOO"}, {"label": "相關連結", "url": "http://www.mamafisch.com.tw"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-27014,r903.php?Lang=zh-tw', '2026-10-15', 462);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7df4a3864a', '勝興客棧', '苗栗縣三義鄉', 'food', 'central', '9折', '1.持識別證，消費滿500元以上享9折優待
+2.特約優惠之折扣不可與其他推廣、優惠一起使用
+3.若有需要特殊菜色須提前預訂', '電話：037-873883
+地址：苗栗縣三義鄉勝興村14鄰72號
+合約到期日：1151231', '037-873883', '苗栗縣三義鄉勝興村14鄰72號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-7824,r903.php?Lang=zh-tw"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-7824,r903.php?Lang=zh-tw', '2026-10-15', 463);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8558dfc94c', '王品餐飲服份有限公司(藝奇竹北光明分公司)', '新竹縣竹北市', 'food', 'north', '9折', '憑證至店內消費套餐享九折優惠
+不得與其他優惠併用
+優惠不適用禮券購買', '電話：03-5589622
+地址：新竹縣竹北市光明一路368號1、2樓
+合約到期日：永久', '03-5589622', '新竹縣竹北市光明一路368號1、2樓', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-72529,r903.php?Lang=zh-tw"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-72529,r903.php?Lang=zh-tw', '2026-10-15', 464);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('22bbc4b2aa', '王品夏慕尼(桃園中山東店)', '桃園市', 'food', 'north', '9折', '憑證享9折優惠及主廚私房菜(1成服務費另收)', '電話：03-3383557
+地址：桃園市中山東路51號2樓
+合約到期日：永久', '03-3383557', '桃園市中山東路51號2樓', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-45092,r903.php?Lang=zh-tw"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-45092,r903.php?Lang=zh-tw', '2026-10-15', 465);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c771bd1f61', '邀月茶坊', '台北市文山區', 'food', 'north', '9折', '優惠方案:
+泡茶，購買茶葉茶具享有9折優惠。
+
+電話02-29392025', '電話：02-29392025
+地址：台北市文山區指南路三段 40 巷 6 號
+合約到期日：永久', '02-29392025', '台北市文山區指南路三段 40 巷 6 號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-63085,r903.php?Lang=zh-tw"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-63085,r903.php?Lang=zh-tw', '2026-10-15', 466);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('74a2883bd3', '鄭玉珍餅舖(老街埔頭店)', '彰化縣鹿港鎮', 'food', 'central', '9折', '全店產品九折優惠
+
+電話:04-7788656、0937708873', '電話：04-7788656
+地址：彰化縣鹿港鎮埔頭街23號
+合約到期日：永久', '04-7788656', '彰化縣鹿港鎮埔頭街23號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-7648,r903.php?Lang=zh-tw"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-7648,r903.php?Lang=zh-tw', '2026-10-15', 467);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('73ba3ee2b6', '魏清海太陽堂老店食品有限公司', '台中市', 'food', 'central', '9折', '憑識別證，享9折優惠(特價品除外)
+電話:04-22295559', '電話：04-22295559
+地址：台中市中正路83號1樓
+合約到期日：永久', '04-22295559', '台中市中正路83號1樓', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-62895,r903.php?Lang=zh-tw"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-62895,r903.php?Lang=zh-tw', '2026-10-15', 468);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('faf6199504', '城堡花園蛋糕咖啡館', '桃園縣桃園市', 'food', 'north', '9折', '來店消費蛋糕9折優待(特價商品除外)
+電話: 03-3163290', '電話：03-3163290
+地址：桃園縣桃園市永安路511號
+合約到期日：永久', '03-3163290', '桃園縣桃園市永安路511號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-62900,r903.php?Lang=zh-tw"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-62900,r903.php?Lang=zh-tw', '2026-10-15', 469);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ca46bed5da', '糖村蛋糕(竹北自強店、文喜店)', '', 'food', 'north', '95折', '原價產品95折優惠(不得與其他優惠同時使用)
+http://www.sugar.com.tw/
+自強店:新竹縣竹北市自強南路210號 03 657 9236
+文喜店:新竹縣竹北市文喜街26號 03 558 5503', '合約到期日：永久', '', '', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-7748,r903.php?Lang=zh-tw"}, {"label": "相關連結", "url": "http://www.sugar.com.tw/"}, {"label": "相關連結", "url": "https://www.google.com.tw/search?sxsrf=ALeKk00QW2rWqFArGzObpdsy31xRawZw-A:1597198380370&source=hp&ei=JFAzX8aFAYTVmAWC_LHYDQ&q=%E7%B3%96%E6%9D%91%20%E7%AB%B9%E5%8C%97&oq=%E7%B3%96%E6%9D%91+%E7%AB%B9%E5%8C%97&gs_lcp=CgZwc3ktYWIQAzICCAAyAggAMgQIABAeMgQIABAeMgQIABAeMgQIABAeMgQIABAeMgQIABAeMgQIABAeMgQIABAeOgcIIxDqAhAnOggIABCxAxCDAToFCAAQsQM6CAgAEM0CEIsDOgQIIxAnOgQIABBDOgUIABDNAlDUDVi3MmCEOWgBcAB4AIABSYgB7QSSAQIxNJgBAKABAaoBB2d3cy13aXqwAQq4AQI&sclient=psy-ab&ved=2ahUKEwil0OPQy5TrAhU0L6YKHRIcDQMQvS4wAHoECAsQFg&uact=5&npsic=0&rflfq=1&rlha=0&rllag=24823174,121017316,1157&tbm=lcl&rldimm=3588775836397689443&lqi=Cg3ns5bmnZEg56u55YyXIgOIAQFaGgoH57OWIOadkSIP57OWIOadkSDnq7kg5YyX&rldoc=1&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!2m1!1e3!3sIAE,lf:1,lf_ui:4&rlst=f#"}]', NULL, 0, '合約到期日：永久', '{"student": false, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-7748,r903.php?Lang=zh-tw', '2026-10-15', 470);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('d1d0413e2c', '享住旅店', '基隆市中正區', 'lodging', 'north', '85折', '基隆館 優惠房價
+房型
+說明
+原價
+簽約價
+假日價
+豪華雙人客房
+11坪/一大床
+$4600
+$2100
+$2400
+精緻雙人客房
+7坪/一大床
+$3800
+$1800
+$2100
+標準雙人客房
+5坪/一大床
+$3200
+$1500
+$1800
+經濟單人客房
+3坪/一小床
+$2000
+$900
+$1200
+家庭溫馨客房
+11坪/兩大床
+$6000
+$2900
+$3200
+台北價 優惠房價
+房型
+說明
+原價
+簽約平日價
+豪華雙人客房
+6坪/一大床
+$4000
+房價參考
+BOOKING.COM 上的訂價打85
+折。
+「隨機房型」
+精緻雙人客房
+5坪/一大床
+$3800
+標準雙人客房
+5坪/一大床
+$3600
+商務雙人客房
+6坪/一小床
+$4200
+溫馨三人客房
+6坪/兩大床
+$4600
+商務三人客房
+6坪/兩大床
+$4800
+家庭溫馨客房
+6坪/兩大床
+$6000
+1. 以上優惠房價已含服務費、稅金，不包含早餐.
+2. 如遇連續假期會調整房費，不另通知.
+3.如遇連續假期會調整房費.
+4.假日定義：周五及周六及連續假日.
+5. 入住時間為下午三點，退房時間為隔日中午十二點
+6、每年暑假調整為旺季房價，', '電話：02-2426-1026
+地址：基隆市中正區信一路156號
+合約到期日：永久', '02-2426-1026', '基隆市中正區信一路156號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-120144,r904.php?Lang=zh-tw"}, {"label": "享住旅店合約書.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9MelU0TDNCMFlWOHhOVFkxTlRCZk9EazVPVGc1TlY4NE5qWTVNUzV3WkdZPQ==&fname=WSGGDGA0US10110050LKRKHGRKPKWT1434UW40XSTXNPLK40FCNK0154WWOOA0OKPOCCYXKKVS04A0KKFCOKTSA1KL34B1NOVXVXA4CCWSA434UWOOA4KLFCZT10SSOO"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-120144,r904.php?Lang=zh-tw', '2026-10-15', 471);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('71d65e5ba5', '楓樺台一渡假村', '南投縣埔里鎮', 'lodging', 'central', '65折起', '1.住宿平日享有定價65折NET優惠(依房型人數提供入園門票、早餐)
+2.住宿旺日入住花泉卉館每房加$1,000元、花卉驛棧每房加$500元，農曆春節不適用。
+3.假日、連續假日入住花泉卉館每房加$2,000元、花卉驛棧每房加$1,000元，農曆春節不適用。
+4.用餐免10%服務費。
+5.入園門票全票打9折,半票無優惠。
+結帳前需出示教職員識別證方可享上述之優惠，否則不予優惠。', '電話：049-2997848#8863
+地址：南投縣埔里鎮中山路一段176號
+合約到期日：114.12.31(合約到期自動展延1年)', '049-2997848#8863', '南投縣埔里鎮中山路一段176號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/450-1066-86529,c0.php?Lang=zh-tw"}, {"label": "2025楓樺台一渡假村特約合約書.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9MelV2Y0hSaFh6RTFOREE0TVY4NE1EQTJNakUyWHpVeE1ESTVMbkJrWmc9PQ==&fname=0054ROB0RKSSTXHH20XSTSXWWW3025KKRKNODCICNP25FGTSNKB4CD54GGECTTUS44POHD15DGB0MOWSKONKICHCWSROMKGC00JDNKPKNKTS01PO50SSKLPKLOPO25ZX44JC54TXRKPKHG20OPMO4035CCGDMLSSA0B4CDFGFGA4TSFCSSWSB505DGB0POGDQOOKA0KK20UWB1NOHD51NLRK"}]', '2026-12-31', 0, '合約到期日 114.12.31，合約到期自動展延1年；頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/450-1066-86529,c0.php?Lang=zh-tw', '2026-10-15', 472);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('cf8c74ac1e', '宜泰飯店', '宜蘭縣羅東鎮', 'lodging', 'north', '55折起', '優惠房價
+一般平日
+一般假日
+暑假平日
+暑假旺日
+暑假假日
+期間
+周日至周五
+周六
+周一至周四
+周日、周五
+周六
+優惠折扣
+55折
+8折
+65折
+7折
+95折
+1. 不適用農曆春節及連續假日
+2. 一房型提供自助早餐，每房提供一部停車位及全館免費WIFI
+3. 限一天前電話預訂，無法與其他優惠同時適用
+4. 相關房型定價、期間定義，入住須知及訂房相關規定請參考官網公告
+5.訂房限制:無法與其他優惠或團體併用,入住時出示員工相關證件(一張證件適用一房)
+6.乙方關係企業[西樺商務客棧]為本館四樓,合併適用住宿優惠內容,訂房請統一洽宜泰大飯店', '電話：03-9568488
+地址：宜蘭縣羅東鎮公正路155號6-13樓
+合約到期日：永久', '03-9568488', '宜蘭縣羅東鎮公正路155號6-13樓', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/450-1066-132008,c0.php?Lang=zh-tw"}, {"label": "宜泰大飯店合約書.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9Memc0TDNCMFlWOHhNalU0TXpWZk5EazVPRE0wTmw4NE1EVTVOUzV3WkdZPQ==&fname=WSGGTSB0NO40OOJHLOLKROJGKKMOWT242034CCGCCC25CC40NKROYSEGLO10B0OKLOTSIHZXA404TXXTFCOKTSXWSTB0WSHCA1JDXWTSPOA4GHB414SS24DCGCLK0115JCLKSXHGTWFGSWHCUS30A110"}, {"label": "相關連結", "url": "http://www.kavalan.com.tw/about.html"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/450-1066-132008,c0.php?Lang=zh-tw', '2026-10-15', 473);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('3ca420c69d', '會來尖石渡假村', '新竹縣尖石鄉', 'lodging', 'north', '85折起', '憑識別證可享下列優惠：
+1.泡湯85折
+2.用餐9折
+以上優惠不得與其它優惠合併使用；春節期間不適用優惠。', '電話：03-5841000
+地址：新竹縣尖石鄉嘉樂村3鄰177-1號', '03-5841000', '新竹縣尖石鄉嘉樂村3鄰177-1號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-217229,r904.php?Lang=zh-tw"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-217229,r904.php?Lang=zh-tw', '2026-10-15', 474);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c299619e71', '飛燕城堡渡假飯店', '台中市和平區', 'lodging', 'central', '折$300起', '優惠方案:
+不限平日假日不限房型,雙人房優惠300元,四人房優惠500元
+各項優惠不得合併使用
+遇特殊季節及假日如櫻花季、楓葉季等,房價調整不另行通知,
+(雙人房優惠300元,四人房優惠500元不變)', '電話：04-25989577
+地址：台中市和平區梨山里民族街46號', '04-25989577', '台中市和平區梨山里民族街46號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-86564,r904.php?Lang=zh-tw"}]', NULL, 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-86564,r904.php?Lang=zh-tw', '2026-10-15', 475);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('21e743bd0d', '梅林親水岸', '台中縣新社鄉', 'lodging', 'central', '8折', '1.憑證免費入園
+2.消費享餐飲8折優惠
+3.住宿贈送2客晚餐', '電話：04-25931234
+地址：台中縣新社鄉協成村南華街28-1號
+合約到期日：永久', '04-25931234', '台中縣新社鄉協成村南華街28-1號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-86813,r904.php?Lang=zh-tw"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-86813,r904.php?Lang=zh-tw', '2026-10-15', 476);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('f5ba510c59', '太一國際旅行社股份有限公司', '台北市', 'services', 'north', '早鳥每人折$5000', '凡出示有效之員工識別證，即可享有如下之優惠(以每人計算)
+太一國際旅行社優惠辦法
+(依太一官網公告之團體定價為基準價)
+提早報名(早鳥)
+3個月前
+每人優惠5000元
+2個月前
+每人優惠4000元
+1個月前
+每人優惠3000元
+網路PO文揪團
+每人優惠1000元
+FB粉絲團按讚
+每人優惠500元
+微電影廣告分享
+每人優惠1000元
+老鳥(客戶)推薦
+每人優惠500元
+特約企業優惠辦法(可合併上列優惠辦法使用)
+特約企業員工
+太一旅行社官網上全線產品適用，每人特約優惠1000元
+承辦獎勵旅遊
+依企業量身定做，價格另議
+特別促銷團
+特定日期促銷團體則不適用此特約優惠辦法
+太一國際旅行社服務內容
+1.歐洲旅遊諮詢服務&旅遊生涯規劃服務
+2.太一各線產品發表每周六(採預約制，若有異動將另行通知或以官網為主)
+11:00法國&西班牙線
+13:00德瑞&奧捷線
+15:30義大利全線
+發表地點：台北市中山北路二段44號15樓B室(會議室)
+預約電話：02-25673822行銷業務部
+3.太一歐洲專線解說服務(採預約制，請提前預約)
+4.太一旅遊資訊「T1 HAPPY　PASS 太一快樂通」不定期提供貴公司窗口
+5.太一FB粉絲團不定期特別企劃活動
+6.企業內外部獎勵旅遊量身訂作團體服務', '電話：02-25673822
+地址：台北市中山北路二段44號15樓B室
+合約到期日：永久', '02-25673822', '台北市中山北路二段44號15樓B室', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-105083,r929.php?Lang=zh-tw"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-105083,r929.php?Lang=zh-tw', '2026-10-15', 477);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('070adc35f4', '河堤小樹牙醫診所', '新竹縣竹北市', 'health', 'north', '9折起', '持證件享以下優惠：
+(一)掛號費優免 100元
+(二)自费溝隙封填/塗氟9折
+(三)顯微根管9.5折
+(四)一般假牙9折', '電話：03-6682977
+地址：新竹縣竹北市嘉豐六路二段172號
+合約到期日：118.5.31', '03-6682977', '新竹縣竹北市嘉豐六路二段172號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-273026,r931.php?Lang=zh-tw"}, {"label": "河堤小樹牙牙醫診所.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9Melk0TDNCMFlWOHhORGd3TXpkZk5UVXdNVEUxTmw4MU1qVTNOaTV3WkdZPQ==&fname=WSGGIGGHUSWW11HHHCLKUSZWYWMOWT24QO34CC20CCJDFG40FCROFCEG0054ROEGNOTSHHZXVS04LKWWXSMOTS14STICGCLKLPYTNOA0UWZWGHUWUSKK24FCZT40JD10TSLKQKTXKKZWWT14STEGNKKK2135A5A4"}]', '2029-05-31', 0, '', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-273026,r931.php?Lang=zh-tw', '2026-10-15', 478);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a2d5bf368f', '吉品通路行銷有限公司', '桃園市楊梅區', 'shopping', 'north', '7折', '1.不定期提供福利優惠產品資訊。
+2.提供比市售價格優惠五至七折之產品選購。
+※每檔產品皆有優惠期限或限量，該檔期結束後或產品售罄後，將無法購買該優惠價格。
+※若因天災及不可抗拒之事由，保有隨時修改及終止改檔次產品優惠之權利。', '電話：03-4750651
+地址：桃園市楊梅區幼獅路三段85巷2-2號2F', '03-4750651', '桃園市楊梅區幼獅路三段85巷2-2號2F', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-70229,r931.php?Lang=zh-tw"}]', NULL, 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-70229,r931.php?Lang=zh-tw', '2026-10-15', 479);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a9c76f8138', '三久太陽能', '台中市霧峰區', 'shopping', 'central', '特約優惠', '優惠內容
+完成安裝三久太陽能熱水器，每戶優惠1000元
+請於報價前出示員工識別證
+
+合約到期日: 1140101-1151231', '電話：04-23397171
+地址：台中市霧峰區民生路396號
+合約到期日：1111231', '04-23397171', '台中市霧峰區民生路396號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-203175,r931.php?Lang=zh-tw"}]', '2026-12-31', 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-203175,r931.php?Lang=zh-tw', '2026-10-15', 480);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('575d5e904e', '欣悅光診所', '新竹市', 'health', 'north', '掛號費優惠', '優惠內容
+優惠門診掛號費減免為100元，部分負擔50元(原掛號費150元部分負擔50元)
+FB: https://www.facebook.com/istarmoonlight/?ref=page_internal', '電話：03-5331265
+地址：新竹市民族路57號
+合約到期日：自動續約', '03-5331265', '新竹市民族路57號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-159864,r931.php?Lang=zh-tw"}, {"label": "相關連結", "url": "https://www.facebook.com/istarmoonlight/?ref=page_internal"}]', NULL, 1, '合約到期日：自動續約', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-159864,r931.php?Lang=zh-tw', '2026-10-15', 481);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('92e721d191', '亦芳理髮廳', '新竹市', 'services', 'north', '9折', '理髮100元打九折
+營業時間早上8:30至晚上8:30', '電話：03-5613017，0963-355803
+地址：新竹市南大路445號
+合約到期日：1241231', '03-5613017，0963-355803', '新竹市南大路445號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-114295,r931.php?Lang=zh-tw"}]', '2035-12-31', 0, '', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-114295,r931.php?Lang=zh-tw', '2026-10-15', 482);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('f127976529', '嘉心堂中醫診所', '新竹市', 'health', 'north', '95折', '1. 掛號費部分減免
+2. 產後坐月子中藥調理九五折
+3. 免費中醫諮詢', '電話：03-5653680
+地址：新竹市湳雅街176號
+合約到期日：1160118', '03-5653680', '新竹市湳雅街176號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-113692,r931.php?Lang=zh-tw"}]', '2027-01-18', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-113692,r931.php?Lang=zh-tw', '2026-10-15', 483);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a9b58d16ed', '新竹-永盛鎖匙刻印行', '新竹市', 'services', 'north', '9折', '開鎖、配鎖、印章、裝鎖、半角章、橡皮章、遙控器
+一律九折優惠', '電話：03-5715686
+地址：新竹市光復路2段366號
+合約到期日：永久', '03-5715686', '新竹市光復路2段366號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-94913,r931.php?Lang=zh-tw"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-94913,r931.php?Lang=zh-tw', '2026-10-15', 484);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('0a5ecd6f59', '貝格興業有限公司', '彰化市', 'shopping', 'central', '5折', '1.貝格興業所經銷之系列產品，定價5折優惠
+2.每年實施一個月3.9折之優惠專案
+3.正常使用下，提供零配件永久免費保固(運費自付)', '電話：04-7239328
+地址：彰化市龍涎北路226號
+合約到期日：永久', '04-7239328', '彰化市龍涎北路226號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-87505,r931.php?Lang=zh-tw"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-87505,r931.php?Lang=zh-tw', '2026-10-15', 485);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('d1c3b8c635', '蓓萌生技(股)公司', '新竹縣新埔鎮', 'shopping', 'north', '95折', '1、結帳金額再95折
+2、可搭配蓓萌現優惠合併使用', '電話：03-5895599分機135
+地址：新竹縣新埔鎮文山路亞東段909巷26號
+合約到期日：永久', '03-5895599分機135', '新竹縣新埔鎮文山路亞東段909巷26號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-79745,r931.php?Lang=zh-tw"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-79745,r931.php?Lang=zh-tw', '2026-10-15', 486);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('d227909f25', '莎拉公主婚紗攝影', '新竹市', 'services', 'north', '8折起', '1、結婚包套享專業外景車隊車輛服務5小時(超時另計)。
+2、贈結婚個性喜帖100份(不含版費)。
+3、享升級90*90無框畫個性屬名放大一張。
+4、享公主館手工婚紗升等9折。
+5、享個性公仔車頭彩升等免租金1組。
+6、享全館出租道具免租金。
+7、享美甲光療系列8折手部保養免費1次。
+8、全館攝影服務享檔案全贈。
+**本優惠惠不得以折退方式折讓金額。', '電話：03-5325197
+地址：新竹市金竹路18號
+合約到期日：永久', '03-5325197', '新竹市金竹路18號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-72620,r931.php?Lang=zh-tw"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-72620,r931.php?Lang=zh-tw', '2026-10-15', 487);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('165462bb4c', '優品通路行銷公司', '桃園縣楊梅市', 'shopping', 'north', '6折', '依時令、季節提供當季需求之家電及日常用品的特惠活動，約為市價4-6折
+開立發票另加5%稅金', '電話：03-4759116
+地址：桃園縣楊梅市楊新路四段2巷1弄20號
+合約到期日：永久', '03-4759116', '桃園縣楊梅市楊新路四段2巷1弄20號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-29525,r931.php?Lang=zh-tw"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-29525,r931.php?Lang=zh-tw', '2026-10-15', 488);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c7c9841170', '喜馬帝床墊(台灣西敏田股份有限公司)', '桃園縣新屋鄉', 'shopping', 'north', '消費贈品', '優惠方案: 凡購買喜馬帝床墊
+1.贈送比利時LATEXCO原裝進口人體工學乳膠枕2個(百貨公司乳膠枕檟格2300元/個)
+2.贈送保潔墊1床(保潔墊價格5尺:800元)
+3.贈送台灣製造100%純羊毛被1床(雙尺尺寸羊毛被市值約3000元)', '電話：03-4206385
+地址：桃園縣新屋鄉青田路376巷39-16號
+合約到期日：永久', '03-4206385', '桃園縣新屋鄉青田路376巷39-16號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-62994,r931.php?Lang=zh-tw"}, {"label": "相關連結", "url": "http://www.smartiff.com.tw"}]', NULL, 0, '合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-62994,r931.php?Lang=zh-tw', '2026-10-15', 489);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('deddd00b51', '儷生產後護理之家(新竹館/竹北館)', '新竹市', 'health', 'north', '消費贈品', '1.住滿指定房型 20 日以上加贈合約天數壹天(7坪房型 不適用 、不可折現 )
+2.若未帶員工識別證，不能享有本合約雙方同意之優待辦法。', '電話：(03) 526-7168、(03) 558-7068
+地址：新竹市林森路 233 號 5 樓、新竹縣竹北市光明一路306號
+合約到期日：永久', '(03) 526-7168、(03) 558-7068', '新竹市林森路 233 號 5 樓、新竹縣竹北市光明一路306號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-148300,r932.php?Lang=zh-tw"}, {"label": "儷生特約廠商合約書.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9MemcwTDNCMFlWOHhORFk1TXpOZk5UUXlOREkzTUY4d09Ea3pOQzV3WkdZPQ==&fname=LOGGVWOKMKPOOOMPEDLKFCMOQOMOWTGG14JC3514CCGDPO40YSQOPPB4WW54B0OKYW54ZXIHA40441XTRKXSTSWW50B0103541JDDCTSLKB030OKUS54XSFCYWKKCDLLTSLKQKTXKKZWWT14STEGNKKK2135A5A4"}]', NULL, 0, '合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-148300,r932.php?Lang=zh-tw', '2026-10-15', 490);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('69b81fcfc3', '皓齊牙醫診所', '新竹市', 'health', 'north', '掛號費優惠', '持證件優惠如下：
+1.全民健保門診治療掛號費優待100元，僅收部分負擔50元。
+2.特約優待掛號費之金額之規定而調整', '電話：03-5621009
+地址：新竹市南大路397號
+合約到期日：永久', '03-5621009', '新竹市南大路397號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-171972,r932.php?Lang=zh-tw"}, {"label": "112年清大特約-皓齊牙醫.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9Memc0TDNCMFlWOHhORGd3TXpsZk16STBPVEEyTlY4MU16RXhOQzV3WkdZPQ==&fname=WW54RPOKRK4441HHHCLKWTJGRK30WT14FGUWXS10TXNPLK40NKROA0B4WS10ROEGNOTSTXYXVS04A0KKFCOK4025YSRKXSGCGGRLYXFCROTSGHFGCCHGUWOKLOPO25ZXDGNO54TXVWHCA1MOPKRKCCYSIHRLSSTSUSUSFGUW20GCHHHH"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-171972,r932.php?Lang=zh-tw', '2026-10-15', 491);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b5bc674e47', '子玥產後護理之家', '新竹市東區', 'health', 'north', '95折', '優惠內容
+出示識別證入住總房價打95折及贈送親子裝禮盒一組', '電話：03-5789178
+地址：新竹市東區埔頂二路178號
+合約到期日：永久', '03-5789178', '新竹市東區埔頂二路178號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-200946,r932.php?Lang=zh-tw"}, {"label": "相關連結", "url": "https://www.cherishbaby.com.tw/?gclid=EAIaIQobChMI0470sdmz7wIViFZgCh3OrAUjEAAYASAAEgLCtvD_BwE"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-200946,r932.php?Lang=zh-tw', '2026-10-15', 492);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('54421a871c', '永康中醫聯合所', '台中市北屯區', 'health', 'central', '消費贈品', '優惠內容
+1. 首次就診(健保及自費)，除正規診療外，額外加贈保健品
+2. 於每次就診時出示特約卡(員工識別證)，以便給予特約優惠
+3. 採購自費產品時，依特約給予折扣優惠
+4. 若有需要，在三十名成員以上時可協調派遣專人免費舉辦健康講座
+5. 因應公益之需要，可協調派遣專人聯合舉辦義診活動
+以上優惠適用合作醫療體系如附件', '電話：04-22918736
+地址：台中市北屯區中清路二段416號
+合約到期日：永久', '04-22918736', '台中市北屯區中清路二段416號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-171975,r932.php?Lang=zh-tw"}, {"label": "永康中醫聯合診所合作醫療體系.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9Memt4TDNCMFlWODROekkxTmw4eE5ETTJOVFUyWHpRMk9ETTJMbkJrWmc9PQ==&fname=WSGGIGGH2044A1KKHCLKSXJGRK30WTIGKLB0XSXSQPGDOO40UWYWEG54WS10IGSSZTCCB500A404TXXTFCOKTSXWB0MO35HCNPVXXWA0ROA4CDFGUSOO45FCXSLKIDKKDGA0YSWTTWDG3500WS34YWMKQPRLQPVWYSDCJGPKGGOORKUSZT44XT1044LKICSX3430A0LKQOJCTWICZTA1LKQPSWYWKORK00SSPKROKK04POPO"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-171975,r932.php?Lang=zh-tw', '2026-10-15', 493);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('5f7c09e90c', '美日牙醫', '新竹市', 'health', 'north', '掛號費優惠', '1. 健保免掛號費(僅需付自負額)
+2. 每年免費塗氟一次
+3. 免費提供病患擠正，植牙等牙齒相關評估及建議
+4. 於本診所治療矯正、假牙，植牙享優惠折扣', '電話：03-5232502
+地址：新竹市東門街25號
+合約到期日：永久', '03-5232502', '新竹市東門街25號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-145734,r932.php?Lang=zh-tw"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-145734,r932.php?Lang=zh-tw', '2026-10-15', 494);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('bee6991f34', '廖健仲胃腸肝膽內科診所(梅約健康管理中心)', '新竹市東區', 'health', 'north', '9折起', '憑證可享下列優惠：
+(一)新竹梅約之「梅約健檢套組」享95折優惠。
+(二)皮膚理療及醫美產品可享9折優惠。
+(三)醫療級營養品9折
+連絡方式：
+新竹：新竹市東區西大路23號1-2F (03)561-2297
+竹東：竹東鎮長春路三段160號 (03)595-0928', '電話：(03)561-2297轉312
+地址：新竹市東區西大路23號1-2樓
+合約到期日：自動續約', '(03)561-2297轉312', '新竹市東區西大路23號1-2樓', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-10497,r932.php?Lang=zh-tw"}, {"label": "1080301梅約新竹健檢DM-1.png", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9Mekl4TDNCMFlWOHhNRFE1TjE4ek9UY3dPREExWHpnMk56QTRMbkJ1Wnc9PQ==&fname=WW54RPOKNPSSVXKKVS04ROWTZSB4TSB1WS34DCXSIHIDWSA5ROB4YWLLFGOOTTGHWW00UTZXDGVWMOWSYW30A000YSB0MKGC00JDKO40YSYWWXPO50OOA0RKKK40MP15TSLKJGGDMKNKJG3514JCCCNKHD35A544"}, {"label": "1080301梅約新竹健檢DM-2.png", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9Mekl4TDNCMFlWOHhNRFE1TjE4M01UWTROVFEwWHpnMk56QTRMbkJ1Wnc9PQ==&fname=WW54RPOKNPSSVXKKVS04ROWTZSB4TSB1WS34DCXSIHIDWSA5ROB4YWLLFGOOTTGHWW00UTZXDGVWMOWSYW30A000YSB0MKGC00JDKO40YSYWWXPO50OOA0RKKK40MP15TSLKJGGDMKSWJG3514JCCCNKHD35A544"}]', NULL, 1, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：自動續約', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-10497,r932.php?Lang=zh-tw', '2026-10-15', 495);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8c1efe6329', 'FUN輕鬆指壓工作坊', '新竹市', 'health', 'north', '特約優惠', '1.全身指壓1.5小時900元
+2.精油按摩1小時800元
+網址http://www.knead.48h.tw/', '電話：03-5712770
+地址：新竹市光復路二段350號3樓
+合約到期日：永久', '03-5712770', '新竹市光復路二段350號3樓', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-14005,r932.php?Lang=zh-tw"}, {"label": "相關連結", "url": "http://www.knead.48h.tw/"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-14005,r932.php?Lang=zh-tw', '2026-10-15', 496);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('223139d40c', 'V-Space 價值空間髮藝沙龍', '新竹縣竹北市', 'services', 'north', '9折', '當次來店消費可享洗+剪 / 燙髮、染髮、護髮、9折優惠,
+備註: 優惠項目不包含產品、局部性燙髮、染髮、單洗髮、單剪髮、頭皮spa
+縣政店 03-6571198 新竹縣竹北市縣政二路295號', '電話：03-6571198
+地址：新竹縣竹北市縣政二路295號
+合約到期日：永久', '03-6571198', '新竹縣竹北市縣政二路295號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-68832,r932.php?Lang=zh-tw"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-68832,r932.php?Lang=zh-tw', '2026-10-15', 497);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('2d02752487', '恩慈經典中醫診所', '新竹市東區', 'health', 'north', '掛號費優惠', '掛號費減免50元', '電話：03-6661236
+地址：新竹市東區光復路一段360-15號1樓
+合約到期日：永久', '03-6661236', '新竹市東區光復路一段360-15號1樓', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-74338,r932.php?Lang=zh-tw"}, {"label": "相關連結", "url": "http://www.classics-ccm.com.tw/brief_hsinchu.html"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-74338,r932.php?Lang=zh-tw', '2026-10-15', 498);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('2d452ca4bb', '經國電動車', '新竹市', 'services', 'north', '95折', '車款均享有現金95折優惠，不得與其他優惠共用', '電話：03-5263366
+地址：新竹市經國路402之1號
+合約到期日：1151231', '03-5263366', '新竹市經國路402之1號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-124307,r933.php?Lang=zh-tw"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-124307,r933.php?Lang=zh-tw', '2026-10-15', 499);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('99972f8d36', '利城汽車保養廠DAIHATSU', '新竹市', 'services', 'north', '95折', '優惠方案：(請主動出示證件)
+1.定保維修(百貨鈑烤除外)，現金、刷卡95折
+2.免費外出接送車
+3.免費安全行車檢查
+電話：03-5722742', '電話：03-5722742
+地址：新竹市忠孝路67號
+合約到期日：永久', '03-5722742', '新竹市忠孝路67號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-7922,r933.php?Lang=zh-tw"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-7922,r933.php?Lang=zh-tw', '2026-10-15', 500);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('0adb6f8fff', '達盛興汽車有限公司', '新竹市', 'services', 'north', '9折', '一、車輛定期檢驗優惠內容
+1.免費取車送車, 只收取檢驗規費450元。
+2.現場辦理行車執照更換。
+二、車輛保養維修及鈑金烤漆優惠內容
+1.免費取車送車, 只收取車輛保養維修費
+2.提供專屬車輛於必要情況下供取代步,解決無車可用之窘境。
+3.享有合成機油300元/升之優惠。
+4.零件維修9折。
+5.不分大小車型, 全車烤漆只要18000元、不含車頂17000元。', '電話：03-5753318
+地址：新竹市公道五路二段132號
+合約到期日：永久', '03-5753318', '新竹市公道五路二段132號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-7881,r933.php?Lang=zh-tw"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-7881,r933.php?Lang=zh-tw', '2026-10-15', 501);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7b72c8cda3', '城市綠洲股份有限公司', '', 'entertainment', 'north', '特約優惠', '1.提供識別證本人免入會費加入會員限一次。
+2.持識別證及會員卡，享3%購物回饋優惠。
+3.未持識別證等證明文件，無法享有特約購物優惠。
+4.適用對象：本校教職員工', '電話：03-5575298#216
+地址：新豐鄉康樂路一段169-1號
+合約到期日：永久有效', '03-5575298#216', '新豐鄉康樂路一段169-1號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-46820,r934.php?Lang=zh-tw"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久有效', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-46820,r934.php?Lang=zh-tw', '2026-10-15', 502);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7b39baac77', '名將體育器材有限公司', '新竹市', 'shopping', 'north', '65折起', '優惠內容
+1. 1F運動服飾、鞋特價再95折
+2. 運動或重量器材8折起，羽網球拍65折起、運動配件75折起
+3. 戶外衣鞋特價再95折
+4. THE NORTH FACE 85折、EASY MAIN 85折
+備註：基本上75折(含)以上產品均可再享95折，特定商品除外
+7折以下特價品與羽網桌球恕不再折扣', '電話：03-5266883
+地址：新竹市勝利路17號
+合約到期日：1140101至永久', '03-5266883', '新竹市勝利路17號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-9154,r934.php?Lang=zh-tw"}, {"label": "名將體育器材_附件(111年).pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9Mek0yTDNCMFlWOHhNVE0zTURoZk5UTTRPREF5TlY4M09UTTVPQzV3WkdZPQ==&fname=LOGGROOKYW4411YXHCLKUSJGZSMO25RL203440NKQPXT004034YW24LLWW54A0OKNOTSWWML2004POLOQOSWJGICWXTWMPHCLP3544PKYSUS50SWSSPOA0OKPKPOGG1144LKJGGDXSSWSSICDGB004WSQPRLPKQPROECUSQOWSTSRKB0DGTSPLJHEDXWPK10"}]', NULL, 0, '合約到期日：1140101至永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-9154,r934.php?Lang=zh-tw', '2026-10-15', 503);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('3d6c01d118', '凱恩斯撞球場', '新竹市', 'entertainment', 'north', '8折', '1、打球8折，定期提供折價卷。
+2、球桿8折
+3、協辦比賽、撞球教學指導', '電話：03-5777900
+地址：新竹市科園路19號
+合約到期日：永久', '03-5777900', '新竹市科園路19號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-10490,r934.php?Lang=zh-tw"}]', NULL, 0, '合約到期日：永久', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-10490,r934.php?Lang=zh-tw', '2026-10-15', 504);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a5c5c48a15', '新竹市紐約國際幼兒園', '', 'education', 'north', '特約優惠', '優惠內容：
+1.優先保留名額
+2.推薦人2000元才藝教育卷。', '電話：03-5641188
+合約到期日：1161231', '03-5641188', '', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-291431,r935.php?Lang=zh-tw"}, {"label": "紐約國際幼兒園-特約合作契約書114.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9MelF6TDNCMFlWOHhOVGs0T1RSZk1UYzFOVEU1TlY4ek1UUXhOeTV3WkdZPQ==&fname=WSGGUWQKYWPO41HHEDLKFCLOVWMOWT34FGB0XSKKCCVXOO40QKTSST54LO10B0OKNOTSIHYXA40454TXVWXSTSB150B0QLB10135A4VSYSYWCDA4SSTSKLFCLOPO00HHVSNO50SXVWB4JGYSOPIC0435NPQLB550A0B4YSUWFGTSJGRORKPOUX25JC10B4ZWTWB4KKNP20ROHGIC21XTPOTSXWMKJG45SSPOROFCYWKK41IHWW04DHHG"}]', '2027-12-31', 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-291431,r935.php?Lang=zh-tw', '2026-10-15', 505);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9b1096370b', '圍棋人科技股份有限公司', '', 'education', 'north,central,south,east', '5折', '(校園優惠於圍棋教室網站由校園信箱認證)圍棋人股份有限公司,旗下圍棋線上教育品牌『黑嘉嘉圍棋教室』(https://pse.is/3wmmh3)之所有線上課程相關產品五折優惠。
+合約自111年4月8日起至116年4月8日止。', '合約到期日：1160408', '', '', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-225892,r935.php?Lang=zh-tw"}, {"label": "特約商店合約書-圍棋人科技股份有限公司.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9MemMyTDNCMFlWOHhORGd3TXpaZk1qSTNPRGd4TUY4ME5EUTJNeTV3WkdZPQ==&fname=WSGGRPQK20QO41KKEDLKFCLOVWMOWT34FGB0YSLKQPA1LK40FCNK0154WWOOA0OKPOCCYXKKVS04A0KKFCOKTSA1KL34B1NOVXVXA4CCYSYWVS5050GGKLFCGCPO45ZXA4NOUWLORK30WSGCPKB0USMPHD35UTCCNK30ECTW00GGRO5444WSDHKK040441JG1430A0LKWSROCGMKNPNPSSA0LKB4NKDGFG54SWDCYWCCCD21LOPOROJGXSMOSW35OPQKGGYS00GDQP4434TS0154SS54PKSW"}, {"label": "相關連結", "url": "https://pse.is/3wmmh3"}]', '2027-04-08', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-225892,r935.php?Lang=zh-tw', '2026-10-15', 506);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('1aa4989681', '橙智國際教育集團', '', 'education', 'north', '85折起', '凡出示公司證件（識別證）或公司名片（需本人），於橙智教育集團旗下之教育中心，報名指定課程即享學費優惠：
+1.指定兒童團體公開班課程，可享學費9折優惠 >> 更多兒童課程資訊
+2.指定成人團體公開班課程，可享學費85折優惠 >> 更多成人課程資訊', '', '', '', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-219750,r935.php?Lang=zh-tw"}, {"label": "1101201特約商店合約書-橙智國際教育集團.jpg", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9MelExTDNCMFlWOHhNVE15TVRsZk9EVTROVGt3Tmw4Mk5UVTROUzVxY0djPQ==&fname=WW54RPOKRK44CD11A40430WTZSB4TSB1WS3440XSLPA1LKTSROB4YWLLFGOOTTGHZTPOGD10JCB054WSST14ICICWXTWMKHCGG35OOFCYSUSGHA4DGCCCDECIC4055ZX44JCRKWTMKDGUSICDGRKQKMP01UX31A5SW30USKLFGTSYSPKROXWZXXX2410YSMOZSXSWTIGYSEG14XS4405NOSSXWB0YWA434DCROFGYW40PPJHGGVW30WTXSPKWTB12034QL14LPZTNKQPKPNO1145"}, {"label": "相關連結", "url": "https://www.smartorange.com.tw/%e5%85%92%e7%ab%a5%e8%aa%b2%e7%a8%8b/"}, {"label": "相關連結", "url": "https://www.smartorange.com.tw/%e6%88%90%e4%ba%ba%e5%ad%b8%e7%bf%92/"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-219750,r935.php?Lang=zh-tw', '2026-10-15', 507);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7ac1519783', '新竹市研田幼兒園', '', 'education', 'north', '95折', '乙方各分園均適用。
+優惠內容：
+1.當年度註冊費95折,贈書包、餐袋、環保碗等用品。
+2.甲方員工應於至乙方報名時主動持員工識別證(或服務證明文件)交付乙方確認。', '電話：03-5223506
+合約到期日：1151231', '03-5223506', '', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-184405,r935.php?Lang=zh-tw"}]', '2026-12-31', 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-184405,r935.php?Lang=zh-tw', '2026-10-15', 508);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c7c6e99704', '中華汽車幼兒園(清大特約)', '桃園縣楊梅市', 'education', 'north', '消費贈品', '優惠項目
+1. 優先入園優惠：優先入園資格依園內公告規定
+2. 托育費用優惠：比照中華汽車退職員工子女優惠收費，另提供早上7:00-8:00及下午4:00-6:30延長托育免付費優惠，6:30-6:45為緩衝時間亦免付費
+3. 親職服務優惠：提供教養資訊或親職教育講座，開放親子日活動
+4. 其他優惠：首次入學報名幼兒園且完成註冊及贈送書包一個、圍兜一件及幼兒餐碗組一組，報名安親班且完成繳費即贈送禮品一份，另提供教養書刊及繪本外借服務', '電話：03-4755846#12101
+地址：桃園縣楊梅市秀才路618號
+合約到期日：永久', '03-4755846#12101', '桃園縣楊梅市秀才路618號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-181182,r935.php?Lang=zh-tw"}]', NULL, 0, '頁面未另註適用對象；人事室說明頁：消費前請出示服務證、校友證或學生證，若資料不符以合約書為準；合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": true}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-181182,r935.php?Lang=zh-tw', '2026-10-15', 509);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('76c143c495', '驅勢語言文教事業有限公司', '新竹市', 'education', 'north', '9折起', '持員工識別證可享有以下優惠
+1.按驅勢每月優惠方案，再享95折優惠
+2. 購買書教材可享9折優惠
+3. 免費英文程度分級測驗
+4. 免費多益、托福、全民英檢，IELTS模擬測驗各一次
+特約分校：館前校、南陽校、東區校、內湖校、桃園校、南崁校、中壢校、新竹校', '電話：03-5258180
+地址：新竹市東門街62號1樓
+合約到期日：永久', '03-5258180', '新竹市東門街62號1樓', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-126004,r935.php?Lang=zh-tw"}]', NULL, 0, '合約到期日：永久', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-126004,r935.php?Lang=zh-tw', '2026-10-15', 510);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7c79f682a5', '德川日語(新竹分校)', '新竹市', 'education', 'north', '9折起', '1.報名一律9折
+2.購買書籍享有優惠折扣
+3.可免費現場借閱書籍
+4.文書翻譯、口譯享有95折優惠，費用電洽。', '電話：03-5257360
+地址：新竹市中正路22號3樓', '03-5257360', '新竹市中正路22號3樓', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-7857,r935.php?Lang=zh-tw"}, {"label": "相關連結", "url": "http://www.facebook.com/tokugawahsinchu/"}]', NULL, 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-7857,r935.php?Lang=zh-tw', '2026-10-15', 511);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('f329116df9', '皇貴地政士事務所', '新竹縣竹東鎮', 'services', 'north', '85折', '營業項目：房屋、土地買賣過戶、贈與繼承、設定塗銷、保存登記、分割合併
+營業時間：星期一至五 9:00-20:00
+優惠方式:
+1.依新竹縣地政士公會收費標準所訂之代書費打85折(不含應繳稅金、規費)
+2.如為外縣市或偏遠地區則另酌收車馬費，實收費用可由雙方事先約定之
+3.如要諮詢地政相關業務，請先以電話聯絡。
+4.為節省雙方時間，電話聯絡後準備好資料，業務可迅速進行', '電話：03-5837555,0928649345
+地址：新竹縣竹東鎮二重里中興路3段136號
+合約到期日：1151231', '03-5837555,0928649345', '新竹縣竹東鎮二重里中興路3段136號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-9852,r937.php?Lang=zh-tw"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-9852,r937.php?Lang=zh-tw', '2026-10-15', 512);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('e384bc695a', '全國地政士事務所', '新竹市', 'services', 'north', '9折', '1.免費地政、稅務節稅諮詢
+2.委託辦理案件按地政士公會收費參考標準9折優惠
+3.如為外縣市或偏遠地區另收車馬費
+※各機關規費及相關費用實支實付', '電話：03-5420567
+地址：新竹市光華東一街7號
+合約到期日：1151231', '03-5420567', '新竹市光華東一街7號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-9860,r937.php?Lang=zh-tw"}]', '2026-12-31', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-9860,r937.php?Lang=zh-tw', '2026-10-15', 513);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ebb29669e9', '國泰人壽', '苗栗縣竹南鎮', 'services', 'north,central,south,east', '77折', '1.個人壽險最高優惠1~3%保費。
+2.旅平險辦易call保77折。
+3.汽機車強制險優惠(附駕傷另贈小贈品)
+4.團體意外險及疾病險 、活動公共意外責任險、優惠專案。
+5.公教人員專屬專案含眷屬(例房貸、儲蓄、公教長照、承辦)
+6.提供保單健檢、各家保險公司彙整、全方位專業金融服務、理財車禍諮詢
+7.承辦信用卡 證券開戶 線上操作教學
+8.代辦國泰保護獎學金申請
+聯絡人：謝麗美
+電話：037-551506
+行動：0911850536', '電話：037-551506
+地址：苗栗縣竹南鎮博愛街217號5樓
+合約到期日：1170320', '037-551506', '苗栗縣竹南鎮博愛街217號5樓', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-68865,r938.php?Lang=zh-tw"}]', '2028-03-20', 0, '', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-68865,r938.php?Lang=zh-tw', '2026-10-15', 514);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b21db51847', '金豪鎖印', '新竹市東區', 'services', 'north', '9折', '持證件享以下優惠：
+(1)一般公分木頭章給予五十元優待。
+(2)本店所有高級印章,一律九折優待。
+(3)各級鎖均至府上安裝,一律九折優待(鎖頭價格含安裝500~20000) (鑰匙價格20~1200)
+(4)特殊印章(原子章,橡皮章,回墨章日期章...)費用則依據價目表為準', '電話：0932374561
+地址：新竹市東區建中路32號
+合約到期日：113.08.15(自動續約)', '0932374561', '新竹市東區建中路32號', '[{"label": "人事室公告", "url": "https://person.site.nthu.edu.tw/p/406-1066-275198,r939.php?Lang=zh-tw"}, {"label": "金豪鎖印合約書.pdf", "url": "https://person.site.nthu.edu.tw/app/index.php?Action=downloadfile&file=WVhSMFlXTm9Memt2Y0hSaFh6RTBPVGN5TWw4Mk5UQXpNVFE0WHprMk5EUTVMbkJrWmc9PQ==&fname=DGGGVWTSYWXW11HH50POJGHGDCMO2534YSB0USHCQPRLXW40DCMKYSPOLOLKA0OKPOCCYXKKVS04A0KKFCOKTSA1KL34B1NOVXVXA4CCWSA434UWOOA4KLFCZT10SSOO"}]', NULL, 1, '合約到期日：113.08.15(自動續約)', '{"student": false, "staff": true, "alumni": false, "family": true}', 'NTHU', 'school', '清華大學人事室', 'https://person.site.nthu.edu.tw/p/406-1066-275198,r939.php?Lang=zh-tw', '2026-10-15', 515);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a5a518026c', '兄弟大飯店', '台北市', 'lodging', 'north', '特約優惠', '14F桂花廳(川菜小吃)
+商務特約代碼:【R0166A】國立陽明交通大學
+軍.公.教.醫.警.消.平日住宿優惠至2026/12/30止', '電話：02-27123456
+地址：台北市南京東路三段255號
+適用對象：教職員工、學生', '02-27123456', '台北市南京東路三段255號', '[{"label": "優惠公告", "url": "https://infonews.nycu.edu.tw/index.php?action=detail&id=20240500268"}]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認；已移除 2026/4/1-9/30 期間限定活動', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=0', '2026-10-15', 516);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('241fc891d8', '台北旅店集團 喜瑞飯店', '台北市中山區', 'lodging', 'north', '9折', '所有房型／訂房當日官網價格的9折優惠', '電話：02-7732-7777 / 02-2541-0077
+地址：台北市中山區長安東路64號
+適用對象：教職員工、學生、校友', '02-7732-7777 / 02-2541-0077', '台北市中山區長安東路64號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=0', '2026-10-15', 517);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('2be148d7a9', '桂田酒店(台南、台東館)', '台南市永康區', 'lodging', 'south', '9折', '餐飲9折另加原價一成服務費', '電話：02-2586-6908 / 02-2599-5785
+地址：台南市永康區永安一街99號
+適用對象：教職員工、學生、校友', '02-2586-6908 / 02-2599-5785', '台南市永康區永安一街99號', '[{"label": "優惠公告", "url": "https://infonews.nycu.edu.tw/index.php?action=detail&id=20250100116"}]', '2026-12-31', 0, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=0', '2026-10-15', 518);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('379113935d', '台北士林萬麗酒店', '台北市士林區', 'lodging', 'north', '特約優惠', '專屬訂房優惠：
+須透過校方郵件發送電子郵件至酒店訂房組或業務部。
+入住時請出示相關識別證或校方之邀請函。
+訂房組電郵：reservation@renaissancetaipei.com', '電話：02-8861-2389 #22610
+地址：台北市士林區中山北路五段470巷8號
+適用對象：教職員工', '02-8861-2389 #22610', '台北市士林區中山北路五段470巷8號', '[]', '2026-12-30', 0, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=0', '2026-10-15', 519);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('396909a7c8', '歐華酒店', '', 'lodging', 'north', '9折', '專屬優惠房價
+地中海牛排館享餐點 9 折優惠（不含酒水）
+歐麗蛋糕坊內用及外帶皆享 9 折優惠', '電話：02-2585-3258
+地址：10491台北市中山區林森北路646號
+適用對象：教職員工、學生、校友', '02-2585-3258', '10491台北市中山區林森北路646號', '[{"label": "優惠公告", "url": "https://www.rivierataipei.com/offers/rooms-deals/"}]', '2027-12-31', 0, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=0', '2026-10-15', 520);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('90c32f8901', '歐遊國際精品旅館', '雲林縣斗六市', 'lodging', 'north,central,south,east', '7折起', '合約代碼：87557573
+平日7折 、 假日8折
+全台適用', '電話：05-551 5555
+地址：雲林縣斗六市棒球十三街18號
+適用對象：教職員工', '05-551 5555', '雲林縣斗六市棒球十三街18號', '[]', '2026-12-31', 0, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=0', '2026-10-15', 521);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8174adb0c3', '六福村主題遊樂園', '新竹縣關西鎮', 'entertainment', 'north', '專屬優惠價', '六福村主題遊樂園 $690 元/人(原價$1,400 元)
+六福村主題遊樂園+六福水樂園(水陸聯票) $890 元/人(原價$1,800 元)
+憑證每日一人最多可買 2 張優惠票(含本人)', '電話：03-5475665 #3711
+地址：新竹縣關西鎮仁安里拱子溝60號
+適用對象：教職員工、學生、校友', '03-5475665 #3711', '新竹縣關西鎮仁安里拱子溝60號', '[{"label": "優惠公告", "url": "https://infonews.nycu.edu.tw/index.php?topflag=1&SuperType=10&SuperTypeNo=10&type=&id=20260400154&action=detail"}]', '2026-12-31', 0, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=1315964838', '2026-10-15', 522);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ce460482fa', '準休閒農場', '新北市五股區', 'entertainment', 'north', '消費贈品', '限本校教職員工優惠資訊，持職員證享免費入園優惠(一證抵五人)', '電話：02-2292-2466
+地址：新北市五股區新五路二段70號
+適用對象：教職員工', '02-2292-2466', '新北市五股區新五路二段70號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": false, "staff": true, "alumni": false, "family": true}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=1315964838', '2026-10-15', 523);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9eb2395c3b', '石上湯屋', '新竹縣尖石鄉', 'lodging', 'north', '特約優惠', '平日雙人泡湯券10張一套11000元
+平日雙人住宿券(星光泡湯券)10張一套30000元', '電話：03-5842605
+地址：新竹縣尖石鄉嘉樂村7鄰45號
+適用對象：教職員工、學生', '03-5842605', '新竹縣尖石鄉嘉樂村7鄰45號', '[{"label": "優惠公告", "url": "https://bulletinboard.nycu.edu.tw/"}]', '2027-08-17', 0, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=1315964838', '2026-10-15', 524);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8f75a91e20', '森森燒肉', '台中市北屯區', 'food', 'north,central,south,east', '9折', '全台門市:出示識別證消費，可享9折優惠
+當月壽星加入森森會員，贈永森花肉品一份
+掃描 QR Code 預約', '地址：台中市北屯區榮德路618號
+適用對象：教職員工、學生、校友', '', '台中市北屯區榮德路618號', '[]', '2029-07-01', 0, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=575458921', '2026-10-15', 525);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b425ff5602', '新竹牧場食品', '新竹市', 'food', 'north', '9折', '自製品9折（特價品除外）', '電話：03-5257070 / 03-5223675
+地址：新竹市中正路104-106號
+適用對象：教職員工', '03-5257070 / 03-5223675', '新竹市中正路104-106號', '[]', NULL, 0, '明細表註：校友及學生依各商家意願提供，請先行確認；備註：敦親睦鄰方案', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=575458921', '2026-10-15', 526);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('f9a9d5bdef', '田川日式料理竹北店', '新竹縣竹北市', 'food', 'north', '95折', '內用單點、合菜、套餐滿1000元以上，打95折酒水及外帶不打折。
+不含春節、父親節、母親節等特殊節日。', '電話：03-6673399
+地址：新竹縣竹北市莊敬南路117號
+適用對象：教職員工、學生、校友', '03-6673399', '新竹縣竹北市莊敬南路117號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=575458921', '2026-10-15', 527);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ed08eb4bd9', '梅門六條通/梅門德藝文創-林森分公司', '台北市中山區', 'food', 'north', '8折起', '餐飲：95折
+商品：9折
+場地借用：8折
+健康藝文品茗等活動辦理專案：優惠個案洽商', '電話：02-25633838
+地址：台北市中山區林森北路107巷69號1樓及B1
+適用對象：教職員工、學生、校友', '02-25633838', '台北市中山區林森北路107巷69號1樓及B1', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=575458921', '2026-10-15', 528);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9129faddde', '梅門新竹修生館', '新竹市', 'food', 'north', '8折起', '餐飲：95折
+商品：9折
+場地借用：8折
+健康藝文品茗等活動辦理專案：優惠個案洽商', '電話：03-5745874
+地址：新竹市東光路192號B1
+適用對象：教職員工、學生、校友', '03-5745874', '新竹市東光路192號B1', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=575458921', '2026-10-15', 529);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('987073ac69', '茗媛茶點-中壢店', '桃園市中壢區', 'food', 'north', '9折起', '全館零售商品系列(含茶葉禮盒等)：9折
+全館餐點：95折+贈送一份炸物
+現場優惠活動與特約優惠擇一使用', '電話：0955122891
+地址：桃園市中壢區崁頂路1025巷1-1號
+適用對象：教職員工、學生、校友', '0955122891', '桃園市中壢區崁頂路1025巷1-1號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=575458921', '2026-10-15', 530);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('87bad9da11', 'Magi PIanet 星球工坊', '台北市南港區', 'food', 'north', '9折', '折扣碼/MAGISDD
+9折優惠', '電話：(02)2651-1369
+地址：台北市南港區重陽路263巷3號2F
+適用對象：教職員工、學生、校友', '(02)2651-1369', '台北市南港區重陽路263巷3號2F', '[]', '2027-12-31', 0, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=575458921', '2026-10-15', 531);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9601e3ef5b', '媽媽魚安心超市', '新竹縣竹北市', 'food', 'north,central,south,east', '95折', '自家商品95折起
+全省適用- http://www.mamafisch.com.tw', '電話：03-6220298 #3201
+地址：新竹縣竹北市嘉政一街1號2樓
+適用對象：教職員工、學生、校友', '03-6220298 #3201', '新竹縣竹北市嘉政一街1號2樓', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=575458921', '2026-10-15', 532);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('91649ba57c', '豆戀迷 DOREMI', '', 'food', 'north', '9折起', '各地門市購買單杯享95折
+單筆訂單滿10杯以上享9折', '電話：03-571-6658
+地址：清大總店
+新竹市東區建功路37號
+適用對象：教職員工、學生、校友', '03-571-6658', '清大總店
+新竹市東區建功路37號', '[{"label": "優惠公告", "url": "https://infonews.nycu.edu.tw/index.php?topflag=1&SuperType=10&SuperTypeNo=10&type=&id=20260300577&action=detail"}]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=575458921', '2026-10-15', 533);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('5a7daee46d', '林三茶研所(清大店)', '新竹市東區', 'food', 'north', '95折', '現場購買或電話訂購享95折 (網路訂購無)', '電話：03 573 0588
+地址：新竹市東區軍功里建新路42號
+適用對象：教職員工、學生、校友', '03 573 0588', '新竹市東區軍功里建新路42號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=575458921', '2026-10-15', 534);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('4fbd2f2eb3', '2026谷軒日式食堂', '苗栗縣頭份鎮', 'food', 'central', '95折', 'DM菜單上商品95%
+酒水、合菜、包廂、及部分季節商品除外', '電話：037-688508
+地址：苗栗縣頭份鎮和平路232號
+適用對象：教職員工、學生、校友', '037-688508', '苗栗縣頭份鎮和平路232號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=575458921', '2026-10-15', 535);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8c8d105eb1', '儷生產後護理之家', '新竹縣竹北市', 'health', 'north', '特約優惠', '自112/1/1起，特約廠商之優惠項目將修改為：住滿20日以上加購合約天數壹天 ★不可折現。', '電話：03-5587068
+地址：新竹縣竹北市光明一路306號
+適用對象：教職員工、校友', '03-5587068', '新竹縣竹北市光明一路306號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": false, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=151916140', '2026-10-15', 536);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('529d32e675', '杏美皮膚科診所', '台北市士林區', 'health', 'north', '掛號費優惠', '掛號費優免50元', '電話：02-2871-5431
+地址：台北市士林區天母西路40-1號2樓
+適用對象：教職員工、學生、校友', '02-2871-5431', '台北市士林區天母西路40-1號2樓', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=151916140', '2026-10-15', 537);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('953798a52c', '禾心心理諮商所', '台南市北區', 'health', 'south', '特約優惠', '1,800-2,000元/時，共6次', '電話：06-3587725
+地址：台南市北區中華北路二段80巷65號
+適用對象：教職員工、學生、校友', '06-3587725', '台南市北區中華北路二段80巷65號', '[]', '2027-01-31', 0, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=151916140', '2026-10-15', 538);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('904e50d99d', '遠見眼科', '新竹市東區', 'health', 'north', '9折起', 'SMILE Pro 全飛秒近視雷： 現金價折1萬
+PRESBYOND LBV 裸視美 老花雷射：現金價折1萬
+飛秒雷射白內障：飛秒雷射手術9折、自費人工水晶體 95折', '電話：03-666 7531
+地址：新竹市東區慈濟路1號
+適用對象：教職員工、學生、校友', '03-666 7531', '新竹市東區慈濟路1號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=151916140', '2026-10-15', 539);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c60bd91cdf', '杏光骨科診所', '新竹市東區', 'health', 'north', '掛號費優惠', '掛號費100元+部分負擔50元
+僅限當次看診出示相關識別證給予優惠。', '電話：03-5776798
+地址：新竹市東區光復路一段511號
+適用對象：教職員工、學生、校友', '03-5776798', '新竹市東區光復路一段511號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=151916140', '2026-10-15', 540);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('12f752607d', '新竹風澤中醫診所', '新竹市', 'health', 'north', '掛號費優惠', '掛號費優免50', '電話：03-5335658
+地址：新竹市民族路157號
+適用對象：教職員工、學生', '03-5335658', '新竹市民族路157號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=151916140', '2026-10-15', 541);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('806e9855ea', '明威、紐約、天晴、夏研 牙醫診所', '新竹市東區', 'health', 'north', '9折', '自費項目優惠9折(未包含植體)', '電話：03-6667907 / 03-5152206 / 03-5775206 / 03-5773202
+地址：新竹市東區各診所
+適用對象：教職員工、學生、校友', '03-6667907 / 03-5152206 / 03-5775206 / 03-5773202', '新竹市東區各診所', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=151916140', '2026-10-15', 542);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('93d525302b', '有家親子診所', '新竹市東區', 'health', 'north', '掛號費優惠', '掛號費優惠折扣50', '電話：03-5710021
+地址：新竹市東區建美路17號
+適用對象：教職員工、學生', '03-5710021', '新竹市東區建美路17號', '[{"label": "優惠公告", "url": "https://infonews.nycu.edu.tw/index.php?topflag=1&SuperType=10&SuperTypeNo=10&type=&id=20260900173&action=detail"}]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=151916140', '2026-10-15', 543);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('410f5641f3', '光復中學附設實驗幼兒園', '新竹市', 'education', 'north', '折$1000', '註冊費減免1000', '電話：03-5753595
+地址：新竹市光復路二段153號
+適用對象：教職員工', '03-5753595', '新竹市光復路二段153號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=1351462818', '2026-10-15', 544);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('1e10841025', '新茗幼兒園', '臺北市北投區', 'education', 'north', '9折', '1. 註冊費9折
+2. 贈送書包1個', '電話：02-2821-6602
+地址：臺北市北投區立農街二段257-1號1樓
+適用對象：教職員工、校友', '02-2821-6602', '臺北市北投區立農街二段257-1號1樓', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": false, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=1351462818', '2026-10-15', 545);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('fc0be15811', '保安警察第一總隊附設職場互助教保服務中心', '臺北市北投區', 'education', 'north', '特約優惠', '2歲至入小學前幼兒無註冊費，每月平均月費2,000元，一學期6個月一次繳費12,000元（含課程／餐點／活動費）。', '電話：0906-239-625(吳小姐)
+地址：臺北市北投區立農街301號（綜合大樓2樓）
+適用對象：教職員工', '0906-239-625(吳小姐)', '臺北市北投區立農街301號（綜合大樓2樓）', '[]', NULL, 0, '明細表註：校友及學生依各商家意願提供，請先行確認；備註：委託社團法人臺北市教保托育協會辦理', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=1351462818', '2026-10-15', 546);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('e58eecdab8', '救國團新竹團委會「終身學習中心」', '新竹市', 'education', 'north', '85折', '所屬終身學習中心(演藝、西門、竹北中心)，在每期優惠截止日前，學費依訂價85折優惠', '電話：03-515-3383(分機52)，陳柔小姐
+地址：新竹市演藝路23號2樓
+適用對象：教職員工', '03-515-3383(分機52)，陳柔小姐', '新竹市演藝路23號2樓', '[]', '2026-12-31', 0, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": false, "staff": true, "alumni": false, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=1351462818', '2026-10-15', 547);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('f94548b3e9', '科技生活館', '新竹市', 'education', 'north', '9折', '特約廠商 9 折（憑識別證)
+報名課程:https://gislearning.com.tw', '電話：03 57778350
+地址：新竹市工業東二路 1 號 2 樓(集思會議中心 2 樓)
+適用對象：教職員工、學生、校友', '03 57778350', '新竹市工業東二路 1 號 2 樓(集思會議中心 2 樓)', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=1351462818', '2026-10-15', 548);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('4f3246983f', '銘新汽車工坊', '新竹市', 'services', 'north', '9折', '保養享9折優惠', '電話：0900-098-722
+地址：新竹市建華街25號
+適用對象：教職員工、學生、校友', '0900-098-722', '新竹市建華街25號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=1252939800', '2026-10-15', 549);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('03889312ae', '轟鑫汽車有限公司 (新竹、竹北廠)', '新竹市香山區', 'services', 'north', '9折', '馬牌輪胎牌價9折(含安裝、四輪定位)
+保養機油(含工資)9折
+道路救援
+免費到府牽車服務', '電話：03-5383378
+地址：新竹市香山區牛埔南路458號
+新竹縣竹北市縣政九路南段105號
+適用對象：教職員工、學生、校友', '03-5383378', '新竹市香山區牛埔南路458號
+新竹縣竹北市縣政九路南段105號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=1252939800', '2026-10-15', 550);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('496d3d0bd0', '恒通小客車租賃有限公司', '新竹市東區', 'transport', 'north', '9折', '預定車輛享9折優惠
+加入Line好友叫車，可得乘車券50元兩張
+推薦好友乘車服務成立，回饋贈送50元乘車券3張', '電話：(03)5611019 / 0916-195-398
+地址：新竹市東區食品路２６０巷３弄２４號
+適用對象：教職員工、學生、校友', '(03)5611019 / 0916-195-398', '新竹市東區食品路２６０巷３弄２４號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=1252939800', '2026-10-15', 551);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('fd19017558', '新竹市私立菁英汽車駕駛人訓練班', '新竹市東區', 'education', 'north', '特約優惠', '自排16000元，包含學費、代辦費、道考服務費，不包含體檢費。
+手排17500元，包含學費、代辦費、道考服務費，不包含體檢費。', '電話：03-5712999
+地址：新竹市東區埔頂路99巷75號
+適用對象：教職員工、學生、校友', '03-5712999', '新竹市東區埔頂路99巷75號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=1252939800', '2026-10-15', 552);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('3ebc8fbb35', '和運租車(和雲行動服務股份有限公司)', '台北市中山區', 'transport', 'north,central,south,east', '6折起', '全台和運門市日租車(官網車型定價平日六折 假日七折)
+專案代碼：R611
+統編：87557573', '電話：02-2504-6290
+地址：台北市中山區長安東路二段99號5樓
+適用對象：教職員工、學生、校友', '02-2504-6290', '台北市中山區長安東路二段99號5樓', '[]', '2026-12-31', 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=1252939800', '2026-10-15', 553);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('5830cc8b63', '駿發汽車美容', '新竹縣竹北市', 'services', 'north', '85折起', '專業美容或鍍膜工程，單台預約9折，兩台預約85折', '電話：03-6578880
+地址：新竹縣竹北市莊敬七街65號
+適用對象：教職員工、學生、校友', '03-6578880', '新竹縣竹北市莊敬七街65號', '[{"label": "優惠公告", "url": "https://infonews.nycu.edu.tw/index.php?action=detail&id=20261000004"}]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=1252939800', '2026-10-15', 554);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('bfeb0c8cc5', 'JINS', '', 'shopping', 'north', '9折', '新竹地區JINS眼鏡配鏡享9折優惠', '地址：新竹區門市
+適用對象：教職員工、學生', '', '新竹區門市', '[]', '2026-12-31', 0, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=2009255405', '2026-10-15', 555);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('6aaff0993e', '路易斯皮件有限公司', '台中市西屯區', 'shopping', 'central', '5折', '平日5折優惠', '電話：04-24612112
+地址：台中市西屯區福林路115號4樓
+適用對象：教職員工、學生、校友', '04-24612112', '台中市西屯區福林路115號4樓', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=2009255405', '2026-10-15', 556);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('e5629b1bc6', '捷尼皮件有限公司', '台中市南屯區', 'shopping', 'central', '5折', '全年度可享有本公司產品(全系列)定價的5折', '電話：0937-894186 詹閔如
+地址：台中市南屯區大墩五街326號4樓
+適用對象：教職員工、學生、校友', '0937-894186 詹閔如', '台中市南屯區大墩五街326號4樓', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=2009255405', '2026-10-15', 557);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9c7f55b851', '美麗華皮件工業股份有限公司', '台中市大肚區', 'shopping', 'central', '5折', '1.Commodore全系列產品定價5折
+2.正常使用下提供零配件永久免費保固(運費自付)', '電話：04-26993003
+地址：台中市大肚區沙田路二段308巷8-1號
+適用對象：教職員工、學生、校友', '04-26993003', '台中市大肚區沙田路二段308巷8-1號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=2009255405', '2026-10-15', 558);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('281defd3f5', '來禮皮件有限公司', '彰化市', 'shopping', 'central', '5折', '1.Commodore全系列產品定價5折
+2.正常使用下提供零配件永久免費保固(運費自付)', '電話：04-7273018
+地址：彰化市泰和中街21之9號1F
+適用對象：教職員工、學生、校友', '04-7273018', '彰化市泰和中街21之9號1F', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=2009255405', '2026-10-15', 559);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('48509a2ffe', '馬來西亞商白蘭氏三得利股份有限公司台灣分公司', '台北市松山區', 'shopping', 'north,central', '消費贈品', '購買【白蘭氏雞精60入】效期至2028.3.12， $2499
+加碼送瑜珈墊一份', '電話：02-6611-3923 / 04-781-0077
+地址：台北市松山區敦化北路88號13樓
+彰化縣鹿港鎮鹿工路18號（博物館）
+適用對象：教職員工、學生、校友', '02-6611-3923 / 04-781-0077', '台北市松山區敦化北路88號13樓
+彰化縣鹿港鎮鹿工路18號（博物館）', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=2009255405', '2026-10-15', 560);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8e064f3b32', 'SOSA羽球超市', '新竹市', 'shopping', 'north', '95折', '部分商品可享95折', '電話：03-5627777
+地址：新竹市光復路二段577號
+適用對象：教職員工、學生、校友', '03-5627777', '新竹市光復路二段577號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=2009255405', '2026-10-15', 561);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('03d005fe6d', '朵法婭寢具', '', 'shopping', 'north,central,south,east', '85折', '限時快閃-新生入學祭
+訂購連結：u2202aa.darphia.com
+優惠代碼：SVIP2401
+全館85折', '電話：02-2778-0037(#14) 林小姐
+地址：新北勢中和區板南路663號14樓
+適用對象：教職員工、學生、校友', '02-2778-0037(#14) 林小姐', '新北勢中和區板南路663號14樓', '[{"label": "優惠公告", "url": "http://u2202aa.darphia.com/"}]', '2027-01-01', 0, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=2009255405', '2026-10-15', 562);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('2778bb4209', '昌泰系統廚具櫥櫃公司', '台中市太平區', 'shopping', 'central', '買一送一', '現裝品脫買一送一', '電話：04-22709193
+地址：台中市太平區東平路249號
+適用對象：教職員工、學生、校友', '04-22709193', '台中市太平區東平路249號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": true, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=2009255405', '2026-10-15', 563);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('a37f73d1f0', '福健身工作室', '新竹縣竹北市', 'entertainment', 'north', '專屬優惠價', '特價389元(原價778元)', '電話：03-5530005
+地址：新竹縣竹北市光明六路829號
+適用對象：教職員工、學生', '03-5530005', '新竹縣竹北市光明六路829號', '[]', NULL, 1, '明細表註：校友及學生依各商家意願提供，請先行確認', '{"student": true, "staff": true, "alumni": false, "family": false}', 'NYCU', 'school', '陽明交通大學人事室', 'https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=2009255405', '2026-10-15', 564);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9aa0178290', '張瑋烤肉蛋吐司富國店', '花蓮', 'food', 'east', '消費贈品', '每張醫學系學生證滿100元贈送小杯紅茶一杯', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 565);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('b15badc84c', '吃肉時候', '花蓮', 'food', 'east', '折$10', '每張學生證折抵「10」元', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 566);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ca5f842b09', '冉冉yukkuri', '花蓮', 'food', 'east', '免服務費', '憑學生證「免服務費」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 567);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c6bfe1cb05', '幽靈餐車', '花蓮', 'food', 'east', '特約優惠', '憑學生證享「95」折', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 568);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('49b3955ab5', '哞哞牛肉麵', '花蓮', 'food', 'east', '折$10', '憑學生證滿150折10元或是加飯/麵免費', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 569);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('da12047ae9', '旭屋和風洋食', '花蓮', 'food', 'east', '95折', '憑學生證享「95折」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 570);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('66cabec730', 'PPD PASTA', '花蓮', 'food', 'east', '消費贈品', '憑學生證「外帶」滿兩百送一杯紅茶', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 571);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('cf4392be5f', '火鍋世家 花蓮國聯店', '花蓮', 'food', 'east', '95折', '憑學生證「主鍋享95折」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 572);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7c0a224bcd', '光輝老宅', '花蓮', 'food', 'east', '消費贈品', '憑學生證「紅茶、綠茶、梅果茶免費續杯」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 573);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c32c8c5762', '町屋丼飯太昌店', '花蓮', 'food', 'east', '折$10', '憑學生證「折10元」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 574);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('e71e403406', '瓦克茶飲中山店', '花蓮', 'food', 'east', '95折', '憑學生證「95折」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 575);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('d18a04e31b', '大好き丼物', '花蓮', 'food', 'east', '95折', '憑學生證「95折」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 576);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('1ac0cacc4c', '草太長', '花蓮', 'food', 'east', '消費贈品', '憑學生證「送隨機炸物」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 577);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('d043799a01', '花蓮市立丼物園', '花蓮', 'food', 'east', '免服務費', '憑學生證「免服務費」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 578);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('4167c91117', '強一鐵板燒', '花蓮', 'food', 'east', '9折', '憑學生證「九折」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 579);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('bb62d9c5a3', '瑞樂絲早午餐', '花蓮', 'food', 'east', '95折', '憑學生證「九五折」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 580);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('6787b57368', '大肚魚麵店', '花蓮', 'food', 'east', '9折', '憑學生證「九折」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 581);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9beab982df', '阿貝', '花蓮', 'food', 'east', '消費贈品', '憑學生證「每份主餐招待飲品一杯」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 582);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('dfc291f79f', 'Country Mothers', '花蓮', 'food', 'east', '9折起', '憑學生證「平日9折、例假日及國定假日95折」但過年期間不適用', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 583);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('7f9f81504d', '日嚐炙燒漢堡', '花蓮', 'food', 'east', '消費贈品', '憑學生證「送一顆蛋」、「滿兩百送飲料一杯」兩者可同時使用，但一天只能使用一次', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 584);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('1d31beb7ec', '海豚遇見貓', '花蓮', 'food', 'east', '95折', '憑學生證「95折」但特餐不適用', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 585);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('0de566dead', 'legendezo傳說咖啡甜點屋', '花蓮', 'food', 'east', '95折', '憑學生證「95折」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 586);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9563653702', '八方悅鍋物', '花蓮', 'food', 'east', '95折', '憑學生證「95折」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 587);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('771045e465', '美好漢堡', '花蓮', 'food', 'east', '折$10', '憑學生證「紅茶折10元」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 588);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9c6fbfdb9d', '肚咖喱', '花蓮', 'food', 'east', '折$20', '憑學生證「紅燒三寶牛肉麵折20元；紅燒牛肉麵、紅燒牛肉乾拌麵折10元」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 589);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('dad4c17090', '來打餃', '花蓮', 'food', 'east', '折$10', '憑學生證「點主餐（煎餃或丼飯）加湯品或飲品折10元」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 590);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('0b0dd0258e', '朝露珈琲', '花蓮', 'food', 'east', '特約優惠', '憑學生證「平日三百元咖啡喝到飽，以老闆提供的五種豆子為主」以及「購買200g的咖啡豆可以折抵內用低消100」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 591);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('75649c8927', '熬點', '花蓮', 'food', 'east', '95折', '憑學生證「單筆消費200元享95折優惠、當月壽星贈送 王子麵或是飲料（擇一） 」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 592);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('9d8abec4c2', '岢栗蕗女孩canele girl', '花蓮', 'food', 'east', '95折', '憑學生證「95折」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 593);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ea89931ccf', 'OZ restaurant 義式料理', '花蓮', 'food', 'east', '9折起', '憑學生證「個人主餐平日9折假日95折」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 594);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('e5d914de78', '萊可早午餐', '花蓮', 'food', 'east', '消費贈品', '憑學生證「滿80元且分享貼文或po限時動態贈送薯條一份」以及「自備環保杯折五元」', '', '', '', '[]', NULL, 0, '系學會頁面：特約僅限已繳交系學會費之醫學系學生', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 595);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('e66527b873', 'TOP手感烘焙', '花蓮', 'food', 'east', '專屬優惠價', '憑學生證享「95」折(會員價、特價商品除外)', '', '', '', '[]', NULL, 0, '慈濟大學學生會簽約特約商店，由醫學系系學會頁面整理轉載', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會（轉載慈濟大學學生會特約名單）', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 596);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ff3bb0fc30', '認真串國聯總店', '花蓮', 'food', 'east', '買10送1', '買10送1', '', '', '', '[]', NULL, 0, '慈濟大學學生會簽約特約商店，由醫學系系學會頁面整理轉載', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會（轉載慈濟大學學生會特約名單）', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 597);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('85f7030001', '認真串平價炭火燒烤-太昌店', '花蓮', 'food', 'east', '買10送1', '買10送1', '', '', '', '[]', NULL, 0, '慈濟大學學生會簽約特約商店，由醫學系系學會頁面整理轉載', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會（轉載慈濟大學學生會特約名單）', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 598);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('68a4e16855', '懶惰狗美式漢堡', '花蓮', 'food', 'east', '特約優惠', '單筆消費「95」折', '', '', '', '[]', NULL, 0, '慈濟大學學生會簽約特約商店，由醫學系系學會頁面整理轉載', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會（轉載慈濟大學學生會特約名單）', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 599);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('85636cf27d', '午夜快車宵夜店-花蓮分店', '花蓮', 'food', 'east', '消費贈品', '依照價格看情況送一份點心', '', '', '', '[]', NULL, 0, '慈濟大學學生會簽約特約商店，由醫學系系學會頁面整理轉載', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會（轉載慈濟大學學生會特約名單）', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 600);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('ab36ec2ae1', '來來牛排-花蓮中華店', '花蓮', 'food', 'east', '特約優惠', '平日「9」折，假日「95」折', '', '', '', '[]', NULL, 0, '慈濟大學學生會簽約特約商店，由醫學系系學會頁面整理轉載', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會（轉載慈濟大學學生會特約名單）', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 601);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('c0c96b01c9', '將門烤肉', '花蓮', 'food', 'east', '特約優惠', '出示學生證享「9」折(不含酒水、服務費、套餐)', '', '', '', '[]', NULL, 0, '慈濟大學學生會簽約特約商店，由醫學系系學會頁面整理轉載', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會（轉載慈濟大學學生會特約名單）', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 602);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('85a668df49', '一筷燒肉-花蓮吉安店', '花蓮', 'food', 'east', '特約優惠', '「9」折優惠(不得和其他活動並用)', '', '', '', '[]', NULL, 0, '慈濟大學學生會簽約特約商店，由醫學系系學會頁面整理轉載', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會（轉載慈濟大學學生會特約名單）', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 603);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('8946e980ec', '辛很守辣四川麻辣燙-花蓮店', '花蓮', 'food', 'east', '消費贈品', '滿85元，送王子麵或白飯', '', '', '', '[]', NULL, 0, '慈濟大學學生會簽約特約商店，由醫學系系學會頁面整理轉載', '{"student": true, "staff": false, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會（轉載慈濟大學學生會特約名單）', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 604);
+INSERT INTO deals (id, name, subtitle, category, regions, highlight, offer, info, phone, address, links, expires_on, auto_renew, notes, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order) VALUES ('1264835b0b', '鄂人口腔顏面外科牙醫診所', '花蓮', 'health', 'east', '8折起', '掛號費減免100元，自費項目學生8折、教職員9折', '', '', '', '[]', NULL, 0, '慈濟大學學生會簽約特約商店，由醫學系系學會頁面整理轉載', '{"student": true, "staff": true, "alumni": false, "family": false}', 'TCU', 'student_org', '慈濟大學醫學系系學會（轉載慈濟大學學生會特約名單）', 'https://medclub.tcu.edu.tw/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/', '2026-10-15', 605);

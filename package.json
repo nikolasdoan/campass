@@ -11,13 +11,15 @@
     "db:migrate:remote": "wrangler d1 migrations apply campuspass --remote",
     "db:seed:local": "wrangler d1 execute campuspass --local --file seed/deals.sql",
     "db:seed:remote": "wrangler d1 execute campuspass --remote --file seed/deals.sql",
-    "import": "python3 scripts/import_deals.py data/ntu-partners.xlsx"
+    "import": "python3 scripts/import_deals.py data/ntu-partners.xlsx",
+    "test:ui": "node tests/ui.mjs"
   },
   "dependencies": {
     "hono": "^4.13.13"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20261015.1",
+    "playwright": "^1.56.1",
     "typescript": "^7.0.2",
     "wrangler": "^4.151.0"
   }
