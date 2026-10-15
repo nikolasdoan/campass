@@ -15,6 +15,7 @@ const DICT = {
     "tab.saved": "收藏",
     "tab.me": "我的",
     "home": "CampusPass 首頁",
+    "home.short": "首頁",
 
     "explore.title": "探索優惠",
     "explore.lede": "整理學校、學院、系所與學生組織公告的特約優惠。",
@@ -254,6 +255,7 @@ const DICT = {
     "err.network": "無法連線，請稍後再試。",
     "err.generic": "發生錯誤，請稍後再試。",
     "err.offline": "目前離線，連線後再試。",
+    "err.offlineLogin": "目前離線，連線後再登入。",
     "err.rate_limited": "操作太頻繁，請稍候一分鐘再試。",
 
     "scan.title": "確認優惠使用",
@@ -340,6 +342,7 @@ const DICT = {
     "tab.saved": "Saved",
     "tab.me": "Account",
     "home": "CampusPass home",
+    "home.short": "home",
 
     "explore.title": "Explore deals",
     "explore.lede": "Partner discounts announced by universities, colleges, departments and student groups.",
@@ -582,6 +585,7 @@ const DICT = {
     "err.network": "Couldn't connect. Try again later.",
     "err.generic": "Something went wrong. Try again later.",
     "err.offline": "You're offline. Try again once you're connected.",
+    "err.offlineLogin": "You're offline. Sign in once you're connected.",
     "err.rate_limited": "Too many tries. Wait a minute and try again.",
 
     "scan.title": "Confirm a deal",

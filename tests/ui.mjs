@@ -22,8 +22,11 @@ const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePa
 const MOBILE = { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, deviceScaleFactor: 2 };
 const DESKTOP = { viewport: { width: 1280, height: 800 } };
 
+let ctxN = 0;
 async function newPage(opts, tag) {
-  const ctx = await browser.newContext({ ...opts, serviceWorkers: 'block' });
+  // A client IP of its own per context, so the per-IP rate limits never trip across checks.
+  const ip = `10.77.${Date.now() % 250}.${++ctxN}`;
+  const ctx = await browser.newContext({ ...opts, serviceWorkers: 'block', extraHTTPHeaders: { 'CF-Connecting-IP': ip } });
   const page = await ctx.newPage();
   page._errors = [];
   page.on('console', (m) => { if (m.type() === 'error') page._errors.push(`${tag}: ${m.text()}`); });
@@ -574,6 +577,208 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   }
   await shot(page, 'w360-merchants');
   allErrors.push(...page._errors);
+  await ctx.close();
+}
+
+/* ============ QA round 1 fixes: sessions, failures, races, a11y ============ */
+{
+  const { ctx, page } = await newPage(MOBILE, 'fixes');
+  const json = (status, body) => ({ status, contentType: 'application/json', body: JSON.stringify(body) });
+  const toastText = () => page.textContent('#toast');
+
+  // Unknown URLs: a not-found page, URL kept; trailing slashes canonicalised; a mangled pass URL.
+  await page.goto(B + '/nope/x', { waitUntil: 'networkidle' }); await settle(page, 300);
+  check('404: unknown path keeps its URL and shows a not-found page', new URL(page.url()).pathname === '/nope/x' && (await page.isVisible('#view-notfound')) && (await page.textContent('#notfoundBody')).includes('找不到這個頁面') && (await page.title()).startsWith('找不到這個頁面'));
+  check('404: the not-found title is the page heading', !!(await page.$('#notfoundBody [role="heading"][aria-level="1"]')));
+  await page.goto(B + '/saved/', { waitUntil: 'networkidle' }); await settle(page, 300);
+  check('404: /saved/ is canonicalised to /saved', new URL(page.url()).pathname === '/saved');
+  await page.goto(B + '/r/AB-CD', { waitUntil: 'networkidle' }); await settle(page, 300);
+  check('404: a mangled pass URL shows 找不到這張憑證 (title too)', (await page.textContent('#scanBody')).includes('找不到這張憑證') && (await page.title()).startsWith('找不到這張憑證'));
+  await page.goto(B + '/deal/no-such-deal', { waitUntil: 'networkidle' }); await settle(page, 300);
+  check('404: a missing deal titles the page 找不到這項優惠', (await page.title()).startsWith('找不到這項優惠'));
+
+  // A cancelled sign-in returns to the page it started from: toast there, parameter stripped.
+  await page.goto(B + `/deal/${FULL}?login_error=access_denied`, { waitUntil: 'networkidle' }); await settle(page, 300);
+  check('login_error: toast on the page it started from, URL cleaned', new URL(page.url()).pathname === `/deal/${FULL}` && !page.url().includes('login_error') && (await toastText()).includes('已取消'));
+
+  // Region picker: a radio group with arrow keys, Home/End and Enter.
+  await page.goto(B + '/', { waitUntil: 'networkidle' }); await page.waitForSelector('#list .item');
+  await page.click('[data-pick="region"]'); await settle(page, 350);
+  const roles = await page.evaluate(() => { const d = document.querySelector('dialog[open]'); return { group: d.querySelector('.opts').getAttribute('role'), radios: [...d.querySelectorAll('.opt')].every((b) => b.getAttribute('role') === 'radio' && b.hasAttribute('aria-checked')), li: [...d.querySelectorAll('.opts > li')].every((l) => l.getAttribute('role') === 'none'), stops: [...d.querySelectorAll('.opt')].filter((b) => b.tabIndex === 0).length, focused: document.activeElement.dataset.value }; });
+  check('picker: radiogroup > none > radio, one Tab stop on the chosen option', roles.group === 'radiogroup' && roles.radios && roles.li && roles.stops === 1 && roles.focused === 'all', JSON.stringify(roles));
+  await page.keyboard.press('ArrowDown');
+  const afterDown = await page.evaluate(() => document.activeElement.dataset.value);
+  await page.keyboard.press('End');
+  const afterEnd = await page.evaluate(() => document.activeElement.dataset.value);
+  await page.keyboard.press('Home'); await page.keyboard.press('ArrowUp');
+  const wrapped = await page.evaluate(() => document.activeElement.dataset.value);
+  check('picker: ArrowDown / End / Home+ArrowUp move focus (wrapping)', afterDown === 'north' && afterEnd === 'east' && wrapped === 'east', `${afterDown} ${afterEnd} ${wrapped}`);
+  await page.keyboard.press('Enter'); await settle(page, 350);
+  check('picker: Enter picks the focused option and closes', !(await page.$('dialog[open]')) && (await page.textContent('[data-pick="region"]')).includes('東部'));
+  await page.click('[data-reset]'); await settle(page, 150);
+
+  // Filters and the place in the list survive the Google round trip (simulated: start → dev-login).
+  await page.route('**/auth/google/start**', (r) => { const next = new URL(r.request().url()).searchParams.get('next') || '/'; r.fulfill({ status: 302, headers: { Location: `/auth/dev-login?email=fixes-${STUDENT}&next=${encodeURIComponent(next)}` } }); });
+  await page.click('[data-cat="food"]'); await settle(page, 150);
+  await page.fill('#q', '飯'); await settle(page, 300);
+  const rows = await page.$$eval('#list .item', (l) => l.map((x) => x.dataset.id));
+  const target = rows[Math.min(rows.length - 1, 12)];
+  await page.$eval(`#list .item[data-id="${target}"]`, (li) => li.scrollIntoView({ block: 'center' })); await settle(page, 300);
+  const topBefore = await page.$eval(`#list .item[data-id="${target}"]`, (li) => li.getBoundingClientRect().top);
+  await page.click(`#list .item[data-id="${target}"] .star`); await settle(page, 350);
+  const navDone = page.waitForNavigation({ waitUntil: 'networkidle', timeout: 10000 }).catch(() => {});
+  await page.click('dialog[open] .gbtn'); await navDone;
+  await page.waitForSelector('#list .item'); await settle(page, 900);
+  const back = await page.evaluate((id) => ({ q: document.querySelector('#q').value, cat: document.querySelector('[data-cat][aria-pressed="true"]')?.dataset.cat, top: document.querySelector(`#list .item[data-id="${id}"]`)?.getBoundingClientRect().top, star: document.querySelector(`#list .item[data-id="${id}"] .star`)?.getAttribute('aria-pressed') }), target);
+  check('sign-in: search, category and scroll position survive the round trip, star saved', back.q === '飯' && back.cat === 'food' && Math.abs(back.top - topBefore) < 30 && back.star === 'true', `${JSON.stringify(back)} vs top ${topBefore}`);
+  await page.unroute('**/auth/google/start**');
+  await page.evaluate((id) => fetch('/api/favorites/' + id, { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: '{}' }), target);
+  await page.click('[data-reset]').catch(() => {}); await settle(page, 150);
+
+  // "expired" after Back into Google's picker while signed in: no error toast.
+  await page.goto(B + '/?login_error=expired', { waitUntil: 'networkidle' }); await settle(page, 500);
+  check('login_error=expired while signed in: no error toast', !(await page.$('#toast.show.err')) && !page.url().includes('login_error'));
+
+  // Favourite race: on, off within one slow PUT → the last tap wins, on the server too.
+  await page.goto(B + `/deal/${FULL}`, { waitUntil: 'networkidle' }); await page.waitForSelector('#detail .prose');
+  await page.evaluate((id) => fetch('/api/favorites/' + id, { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: '{}' }), FULL);
+  await page.reload({ waitUntil: 'networkidle' }); await page.waitForSelector('#detail .prose');
+  let favCalls = 0;
+  await page.route('**/api/favorites/**', async (r) => { favCalls++; await new Promise((ok) => setTimeout(ok, 1200)); r.continue(); });
+  await page.click('#dhead [data-star]'); await settle(page, 100);
+  await page.click('#dhead [data-star]'); await settle(page, 3200);
+  const srvFavs = (await apiGet(page, '/api/me')).data.favorites;
+  check('favourite race: on+off → not saved in the UI and on the server', (await page.getAttribute('#dhead [data-star]', 'aria-pressed')) === 'false' && !srvFavs.includes(FULL) && favCalls <= 2, `calls ${favCalls}`);
+  await page.click('#dhead [data-star]'); await settle(page, 100);
+  await page.click('#dhead [data-star]'); await settle(page, 100);
+  await page.click('#dhead [data-star]'); await settle(page, 3200);
+  check('favourite race: on+off+on → saved in the UI and on the server', (await page.getAttribute('#dhead [data-star]', 'aria-pressed')) === 'true' && (await apiGet(page, '/api/me')).data.favorites.includes(FULL));
+  await page.unroute('**/api/favorites/**');
+
+  // Double pass: a slow redeem, a re-render across the breakpoint, a second tap → one request.
+  let redeemCalls = 0;
+  await page.route('**/api/deals/*/redeem', async (r) => { redeemCalls++; await new Promise((ok) => setTimeout(ok, 1500)); r.continue(); });
+  await page.click('[data-redeem]'); await settle(page, 200);
+  await page.setViewportSize({ width: 1024, height: 768 }); await settle(page, 200);
+  await page.setViewportSize({ width: 390, height: 844 }); await settle(page, 200);
+  check('double pass: the CTA stays busy through a re-render', await page.$eval('[data-redeem]', (b) => b.disabled && b.textContent.includes('開啟中')));
+  await page.click('[data-redeem]', { force: true }).catch(() => {});
+  await page.waitForSelector('dialog.pass .pass-qr svg'); await settle(page, 600);
+  check('double pass: one request, one pass dialog with its QR', redeemCalls === 1 && (await page.$$('dialog.pass')).length === 1 && !!(await page.$('dialog.pass #passClock:not(:empty)')), `calls ${redeemCalls}`);
+  await page.unroute('**/api/deals/*/redeem');
+  await page.keyboard.press('Escape'); await settle(page, 700);
+  if (await page.$('dialog.ask')) { await page.click('dialog.ask [data-outcome="not_used"]'); await settle(page, 600); }
+
+  // The countdown runs on the server's clock (server_now), not the phone's: a phone 10 min fast.
+  await page.addInitScript(() => { const real = Date.now; Date.now = () => real() + 10 * 60e3; });
+  await page.reload({ waitUntil: 'networkidle' }); await page.waitForSelector('[data-redeem]'); await settle(page);
+  await page.click('[data-redeem]'); await page.waitForSelector('dialog.pass .pass-qr svg'); await settle(page);
+  const left = await page.textContent('#passLeft'); const clock = await page.textContent('#passClock');
+  const tpe = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Taipei', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(new Date());
+  check('pass: countdown and clock use server_now despite a phone clock 10 min fast', /^1[45]:[0-5]\d$/.test(left) && clock.slice(0, 5) === tpe, `${left} ${clock} vs ${tpe}`);
+  await page.keyboard.press('Escape'); await settle(page, 700);
+  if (await page.$('dialog.ask')) await page.keyboard.press('Escape');
+  await settle(page, 300);
+
+  // A toast while a dialog is open is announced: the live region moves into the dialog.
+  await page.click('#detail [data-report]'); await page.waitForSelector('dialog.report textarea');
+  await page.route('**/api/deals/*/report', (r) => r.fulfill(json(500, { error: 'boom' })));
+  await page.fill('dialog.report textarea', 'live region check');
+  await page.click('dialog.report [type="submit"]'); await settle(page, 300);
+  check('toast: announced inside an open dialog (#live in the dialog)', await page.evaluate(() => !!document.querySelector('dialog[open] #live') && document.querySelector('#live').textContent.includes('送出失敗')));
+  // 429 from the report: a friendly message, the text kept.
+  await page.unroute('**/api/deals/*/report');
+  await page.route('**/api/deals/*/report', (r) => r.fulfill(json(429, { error: 'rate_limited' })));
+  await page.click('dialog.report [type="submit"]'); await settle(page, 300);
+  check('429: report says to wait a minute, text kept', (await toastText()).includes('稍候一分鐘') && (await page.inputValue('dialog.report textarea')) === 'live region check');
+  await page.unroute('**/api/deals/*/report');
+
+  // Expired session (cookies cleared) mid-report: signed out, detail locked, sign-in offered;
+  // after signing in again the report reopens with the text.
+  await ctx.clearCookies();
+  await page.fill('dialog.report textarea', 'kept across sign-in');
+  await page.click('dialog.report [type="submit"]'); await settle(page, 500);
+  check('401: report → sign-in sheet (expired reason), detail locked again', (await page.textContent('dialog[open]')).includes('登入已過期') && !!(await page.$('#detail .lockcard')) && (await rect(page, '#detailUse')).display === 'none');
+  check('toast: the live region goes back to the page when its dialog closes', await page.evaluate(() => document.querySelector('#live')?.parentElement === document.body));
+  await page.goto(B + `/auth/dev-login?email=fixes-${STUDENT}&next=/deal/${FULL}`, { waitUntil: 'networkidle' });
+  await page.waitForSelector('dialog.report textarea', { timeout: 5000 }).catch(() => {});
+  check('401: after signing in the report reopens with the text', (await page.inputValue('dialog.report textarea').catch(() => '')) === 'kept across sign-in');
+  await page.keyboard.press('Escape'); await settle(page);
+  // …and a star: the sheet opens and the star is kept for after sign-in.
+  await page.evaluate((id) => fetch('/api/favorites/' + id, { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: '{}' }), FULL);
+  await page.reload({ waitUntil: 'networkidle' }); await page.waitForSelector('#detail .prose');
+  await ctx.clearCookies();
+  await page.click('#dhead [data-star]'); await settle(page, 600);
+  check('401: star → sign-in sheet, the star kept for after sign-in', (await page.textContent('dialog[open]')).includes('登入已過期') && (await page.evaluate(() => sessionStorage.getItem('cp_pending_fav'))) === FULL);
+  await page.goto(B + `/auth/dev-login?email=fixes-${STUDENT}&next=/deal/${FULL}`, { waitUntil: 'networkidle' }); await settle(page, 900);
+  check('401: the star is saved after signing in again', (await apiGet(page, '/api/me')).data.favorites.includes(FULL));
+
+  // /api/me failing (offline or 5xx) is not "signed out": the last known account stays.
+  await page.route('**/api/me', (r) => r.abort('internetdisconnected'));
+  await page.goto(B + '/me', { waitUntil: 'domcontentloaded' }); await settle(page, 900);
+  check('me failure: /me keeps the account (no Google sign-in prompt), offers retry', (await page.textContent('#meBody')).includes(`fixes-${STUDENT}`) && !(await page.$('#meBody .gbtn')) && !!(await page.$('#meBody [data-retry-me]')));
+  await page.goto(B + '/saved', { waitUntil: 'domcontentloaded' }); await settle(page, 900);
+  check('me failure: /saved shows a retry, not a sign-in prompt', !(await page.$('#savedBody .gbtn')) && !!(await page.$('#savedBody [data-retry-me]')));
+  await page.unroute('**/api/me');
+  await page.click('#savedBody [data-retry-me]'); await settle(page, 900);
+  check('me failure: retry recovers the saved list', !!(await page.$(`#savedBody .item[data-id="${FULL}"]`)));
+
+  // A request that hangs gives up (timeout) and shows the error with a retry that works.
+  await page.route('**/api/deals', () => {}); // never answers
+  await page.goto(B + '/', { waitUntil: 'domcontentloaded' });
+  const skelRows = await page.evaluate(() => ({ cats: document.querySelectorAll('#cats .pill').length, filters: document.querySelectorAll('#filterRow .pill').length }));
+  check('loading: filter rows hold placeholder pills (no layout shift)', skelRows.cats > 0 && skelRows.filters > 0, JSON.stringify(skelRows));
+  await page.waitForSelector('#list [data-retry]', { timeout: 16000 }).catch(() => {});
+  check('timeout: a hung /api/deals ends in the error state with 重試', !!(await page.$('#list [data-retry]')) && (await page.getAttribute('#list', 'aria-busy')) === 'false');
+  await page.unroute('**/api/deals');
+  await page.click('#list [data-retry]'); await page.waitForSelector('#list .item', { timeout: 8000 }).catch(() => {});
+  check('timeout: 重試 loads the list', (await itemCount(page)) > 0);
+
+  // Detail load error (row already known): an inline retry.
+  const anyId = await page.$eval('#list .item', (li) => li.dataset.id);
+  await page.route(`**/api/deals/${anyId}`, (r) => r.fulfill(json(500, { error: 'boom' })));
+  await page.click(`#list .item[data-id="${anyId}"] .pick`); await settle(page, 500);
+  check('detail error: inline note with a 重試 button', !!(await page.$('#detailBody [data-retry-detail]')));
+  await page.unroute(`**/api/deals/${anyId}`);
+  await page.click('#detailBody [data-retry-detail]'); await settle(page, 700);
+  check('detail error: 重試 loads the deal', !(await page.$('#detailBody [data-retry-detail]')) && !!(await page.$('#detailBody .dhero')));
+  await page.click('#dhead [data-close-detail]'); await settle(page);
+
+  // 429 on the merchant lead form.
+  await page.goto(B + '/merchants', { waitUntil: 'networkidle' }); await page.waitForSelector('#leadForm');
+  await page.route('**/api/merchant-leads', (r) => r.fulfill(json(429, { error: 'rate_limited' })));
+  await page.fill('#lead_shop_name', 'QA 429'); await page.fill('#lead_phone', '0912345678');
+  await page.click('#leadForm [type="submit"]'); await settle(page, 400);
+  check('429: lead form says to wait a minute', (await page.textContent('#leadErr')).includes('稍候一分鐘'));
+  await page.unroute('**/api/merchant-leads');
+  await page.fill('#lead_phone', 'abc'); await page.click('#leadForm [type="submit"]'); await settle(page, 200);
+  check('lead: a phone without 7 digits is flagged', (await page.textContent('#lead_phone_err')).includes('電話格式不正確'));
+
+  // Delete account: confirm dialog explains, then signed out with a toast.
+  await page.goto(B + '/me', { waitUntil: 'networkidle' }); await page.waitForSelector('[data-delete-account]');
+  await page.click('[data-delete-account]'); await page.waitForSelector('dialog.confirm[open]');
+  check('delete: confirm dialog explains what is deleted', (await page.textContent('dialog.confirm')).includes('永久刪除') && (await page.textContent('dialog.confirm')).includes('無法復原'));
+  await shot(page, 'me-delete-confirm');
+  await page.click('dialog.confirm [data-delete-confirm]'); await settle(page, 900);
+  check('delete: signed out, toast shown, account gone on the server', (await toastText()).includes('帳號已刪除') && !!(await page.$('#meBody .gbtn')) && (await apiGet(page, '/api/me')).data.user === null && (await page.evaluate(() => localStorage.getItem('cp_me'))) === null);
+
+  allErrors.push(...page._errors.filter((e) => !/Failed to load resource|net::ERR_/.test(e)));
+  await ctx.close();
+}
+
+// Shop: pasted 「ＧＧ６３ - ＣＦ」 (full width, separators), the way back from a scan result.
+{
+  const { ctx, page } = await newPage(MOBILE, 'fixes-shop');
+  await page.goto(B + SHOP, { waitUntil: 'networkidle' }); await page.waitForSelector('#shopCode');
+  check('shop: the shop manifest is linked once the key is valid', (await page.getAttribute('link[rel="manifest"]', 'href')).startsWith('/api/merchant/'));
+  await page.focus('#shopCode');
+  await page.evaluate(() => { const i = document.querySelector('#shopCode'); i.value = 'ｇｇ６３ - ｃｆ'; i.dispatchEvent(new Event('input', { bubbles: true })); });
+  check('shop: a full-width, spaced paste normalises to 6 characters', (await page.inputValue('#shopCode')) === 'GG63CF' && (await page.getAttribute('#shopCode', 'maxlength')) === null);
+  await page.goto(B + '/r/ZZZZZZ', { waitUntil: 'networkidle' }); await page.waitForSelector('#scanBody .scanstate');
+  check('scan: every result links back to the shop page', (await page.getAttribute('#scanBody .scanactions a', 'href')) === SHOP);
+  await page.goto(B + '/m/not-a-real-key-123', { waitUntil: 'networkidle' }); await settle(page, 300);
+  check('shop: an invalid key keeps the app manifest', (await page.getAttribute('link[rel="manifest"]', 'href')) === '/manifest.webmanifest');
+  allErrors.push(...page._errors.filter((e) => !/Failed to load resource/.test(e)));
   await ctx.close();
 }
 

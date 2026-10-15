@@ -1069,15 +1069,22 @@ function detailHTML(d, { locked, loading, error }) {
         ? `<a class="row" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(d.address)}" target="_blank" rel="noopener noreferrer">${icon("map-pin")}<span class="rtxt"><b>${esc(d.address)}</b><small>${esc(t("detail.openMap"))}</small></span>${icon("external-link", "go")}</a>`
         : "",
     ].join("");
-    const links = (Array.isArray(d.links) ? d.links : [])
-      .map((l) => ({ label: l?.label || l?.url, url: safeUrl(l?.url || "") }))
-      .filter((l) => l.url)
+    const linkList = (Array.isArray(d.links) ? d.links : [])
+      .map((l) => ({ label: String(l?.label || l?.url || ""), url: safeUrl(l?.url || "") }))
+      .filter((l) => l.url);
+    const links = linkList
       .map((l) => {
         let host = "";
+        let path = "";
         try {
-          host = new URL(l.url).hostname.replace(/^www\./, "");
+          const u = new URL(l.url);
+          host = u.hostname.replace(/^www\./, "");
+          path = decodeURI(u.pathname + u.search).replace(/\/$/, "");
         } catch {}
-        const sub = host && host !== String(l.label).replace(/^www\./, "") ? `<small>${esc(host)}</small>` : "";
+        // Rows that would read the same (six 「fubon.com」) also show where each one goes.
+        const same = host === l.label.replace(/^www\./, "") || linkList.filter((x) => x.label === l.label).length > 1;
+        const where = same ? (path ? `${host}${path}`.slice(0, 80) : "") : host;
+        const sub = where ? `<small>${esc(where)}</small>` : "";
         return `<a class="row" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${icon("link")}<span class="rtxt"><b>${esc(l.label)}</b>${sub}</span>${icon("external-link", "go")}</a>`;
       })
       .join("");
@@ -1647,7 +1654,10 @@ const shopHome = () => {
  *  phone it leads to the shop page, not to the student app. */
 const minibrand = () => {
   const home = shopHome();
-  return `<a class="minibrand" href="${esc(home || "/")}" data-nav aria-label="${esc(home ? t("scan.shopPage") : t("home"))}">${MARK}<span class="wordmark">campuspass</span></a>`;
+  // The accessible name starts with the visible wordmark (WCAG 2.5.3); where it goes follows.
+  return `<a class="minibrand" href="${esc(home || "/")}" data-nav>${MARK}<span class="wordmark">campuspass</span><span class="sr-only"> ${esc(
+    home ? t("scan.shopPage") : t("home.short")
+  )}</span></a>`;
 };
 const loadingCard = () => `<section class="card"><div class="dskel"><i style="width:30%"></i><i style="width:60%;height:22px"></i><i></i><i style="width:80%"></i></div></section>`;
 
@@ -2064,7 +2074,8 @@ function showView(name) {
     if (a.dataset.tab === name) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
   }
-  els.appbarTitle.textContent = name === "saved" ? t("saved.title") : name === "me" ? t("me.title") : name === "merchants" ? t("merchants.title") : "";
+  const barTitle = { saved: "saved.title", me: "me.title", merchants: "merchants.title", notfound: "notfound.title" }[name];
+  els.appbarTitle.textContent = barTitle ? t(barTitle) : "";
   els.appbarBack.hidden = name !== "merchants";
   if (name === "saved") renderSaved();
   if (name === "me") renderMe();
@@ -2292,6 +2303,11 @@ function onClick(e) {
   const theme = t0.closest("button[data-theme]");
   if (theme) return setTheme(theme.dataset.theme);
   if (t0.closest("[data-login]")) {
+    if (!navigator.onLine) {
+      e.preventDefault(); // Google can't be reached: say so instead of a browser error page
+      toast(t("err.offlineLogin"), { error: true });
+      return;
+    }
     // Leaving for Google: let the link navigate (full page), just refresh `next` first, and
     // remember the filters and the place in the list for when the page comes back.
     t0.closest("[data-login]").href = loginHref();
