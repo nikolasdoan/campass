@@ -126,9 +126,9 @@ async function upsertUser(db: D1Database, p: GoogleProfile): Promise<number> {
 }
 
 const LIST_FIELDS =
-  "id, name, subtitle, category, regions, highlight, expires_on, auto_renew, eligibility, schools, source_level, source_org, sort_order";
+  "id, name, subtitle, category, regions, area, highlight, expires_on, auto_renew, eligibility, schools, source_level, source_org, sort_order";
 const PUBLIC_FIELDS =
-  "id, name, subtitle, category, regions, highlight, expires_on, auto_renew, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order";
+  "id, name, subtitle, category, regions, area, highlight, expires_on, auto_renew, eligibility, schools, source_level, source_org, source_url, retrieved_on, sort_order";
 
 function parseDeal(row: Record<string, any>) {
   return {
@@ -535,14 +535,39 @@ app.get("/api/merchant/:key", async (c) => {
   return c.json({ label: mk.label, deals: deals.results, confirmed_30d: stats?.confirmed_30d ?? 0 });
 });
 
-type PassRow = { id: number; deal_id: string; confirmed_at: string | null; fresh: number; name: string };
+type PassRow = {
+  id: number;
+  deal_id: string;
+  confirmed_at: string | null;
+  fresh: number;
+  name: string;
+  highlight: string;
+  eligibility: string;
+  schools: string;
+  email: string;
+};
+
+/** What the cashier needs to decide: the deal, who it is for, and the student's (masked) Google
+ *  account. Signing in with Google does not prove enrolment, so the shop still checks the student ID. */
+function passForCashier(r: PassRow) {
+  const [local, domain = ""] = r.email.split("@");
+  return {
+    deal: r.name,
+    highlight: r.highlight,
+    eligibility: JSON.parse(r.eligibility || "{}"),
+    schools: r.schools ? r.schools.split(",") : [],
+    account: { masked: `${local.slice(0, 1)}***@${domain}`, domain, school_domain: /\.edu\.tw$/.test(domain) },
+  };
+}
 
 /** Look up a pass for a shop. Unknown codes and other shops' codes give the same answer. */
 async function passForShop(db: D1Database, mk: MerchantKey, rawCode: string): Promise<PassRow | null> {
   const code = normCode(rawCode);
   const r = await db.prepare(
-    `SELECT r.id, r.deal_id, r.confirmed_at, r.created_at > datetime('now', ?) AS fresh, d.name
-       FROM redemptions r JOIN deals d ON d.id = r.deal_id WHERE r.code = ?`
+    `SELECT r.id, r.deal_id, r.confirmed_at, r.created_at > datetime('now', ?) AS fresh,
+            d.name, d.highlight, d.eligibility, d.schools, COALESCE(u.email, '') AS email
+       FROM redemptions r JOIN deals d ON d.id = r.deal_id LEFT JOIN users u ON u.id = r.user_id
+      WHERE r.code = ?`
   )
     .bind(`-${CONFIRM_MINUTES} minutes`, code)
     .first<PassRow>();
@@ -557,7 +582,7 @@ app.get("/api/merchant/pass/:code", async (c) => {
   const r = await passForShop(c.env.DB, mk, c.req.param("code"));
   if (!r) return c.json({ error: "invalid_code", shop: mk.label }, 404);
   const status = r.confirmed_at ? "already_confirmed" : r.fresh ? "ok" : "expired_code";
-  return c.json({ shop: mk.label, deal: r.name, status });
+  return c.json({ shop: mk.label, status, ...passForCashier(r) });
 });
 
 // Confirm a pass: from the shop page (key in the URL) or a paired phone (key in the cookie).
@@ -603,7 +628,7 @@ async function confirmPass(c: any, key: string | undefined) {
     .bind(await sha256(key!), r.id)
     .run();
   if (!done.meta.changes) return c.json({ error: "already_confirmed", deal: r.name }, 409);
-  return c.json({ ok: true, deal: r.name });
+  return c.json({ ok: true, ...passForCashier(r) });
 }
 
 // ---------- admin (Bearer ADMIN_TOKEN) ----------
