@@ -1,0 +1,38 @@
+{
+  "name": "CampusPass 校園優惠",
+  "short_name": "CampusPass",
+  "description": "把學校、校友會與企業給學生和教職員的優惠整理在一起：住宿、餐飲、交通、軟體，一頁查得到，收藏常用的。",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "background_color": "#FAFAFA",
+  "theme_color": "#FFFFFF",
+  "lang": "zh-Hant-TW",
+  "dir": "ltr",
+  "orientation": "any",
+  "categories": ["lifestyle", "shopping", "education"],
+  "icons": [
+    { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "收藏",
+      "short_name": "收藏",
+      "description": "我收藏的優惠",
+      "url": "/saved",
+      "icons": [{ "src": "/icons/shortcut-saved-96.png", "sizes": "96x96", "type": "image/png" }]
+    },
+    {
+      "name": "我的",
+      "short_name": "我的",
+      "description": "帳號與身分設定",
+      "url": "/me",
+      "icons": [{ "src": "/icons/shortcut-me-96.png", "sizes": "96x96", "type": "image/png" }]
+    }
+  ]
+}
