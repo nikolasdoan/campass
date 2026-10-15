@@ -12,7 +12,10 @@
     "db:seed:local": "wrangler d1 execute campuspass --local --file seed/deals.sql",
     "db:seed:remote": "wrangler d1 execute campuspass --remote --file seed/deals.sql",
     "import": "python3 scripts/import_deals.py data/ntu-partners.xlsx",
-    "test:ui": "node tests/ui.mjs"
+    "test:ui": "node tests/ui.mjs",
+    "test:api": "node tests/api.mjs",
+    "mock-google": "node tests/mock-google.mjs",
+    "test": "node tests/api.mjs && node tests/ui.mjs"
   },
   "dependencies": {
     "hono": "^4.13.13"

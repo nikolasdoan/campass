@@ -112,6 +112,14 @@ function parseDeal(row: Record<string, any>) {
 
 // ---------- middleware ----------
 
+// Same security headers as public/_headers, for responses the Worker builds itself.
+app.use("*", async (c, next) => {
+  await next();
+  c.header("X-Content-Type-Options", "nosniff");
+  c.header("Referrer-Policy", "strict-origin-when-cross-origin");
+  c.header("X-Frame-Options", "DENY");
+});
+
 // Resolve the session cookie to a user for every API/auth request.
 app.use("*", async (c, next) => {
   c.set("user", null);
