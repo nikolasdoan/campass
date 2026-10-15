@@ -143,6 +143,11 @@ function parseDeal(row: Record<string, any>) {
 
 // ---------- middleware ----------
 
+// Must match public/_headers. Inline scripts are allowed only by hash (offline.html, admin.html);
+// tests/api.mjs checks every inline script's hash is listed, so an edit can't silently break a page.
+const CSP =
+  "default-src 'self'; script-src 'self' 'sha256-eg/GVhaY6e7kjpJgCA+ekMoWWMbDQ6XOPncWNb9Fyis=' 'sha256-fUHrlWPUYpTBGc8gg8/54cfUIZmCuQE3WVSJyNRPlcI=' 'sha256-zuyku6vxOpPkFaBOjh2ULpQ4wwTDU3y9ZCFrAd9UXWc='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.googleusercontent.com; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'";
+
 // Same security headers as public/_headers, for responses the Worker builds itself.
 app.use("*", async (c, next) => {
   await next();
@@ -152,6 +157,7 @@ app.use("*", async (c, next) => {
   c.header("X-Content-Type-Options", "nosniff");
   c.header("Referrer-Policy", "strict-origin-when-cross-origin");
   c.header("X-Frame-Options", "DENY");
+  c.header("Content-Security-Policy", CSP);
 });
 
 // Resolve the session cookie to a user for every API/auth request.

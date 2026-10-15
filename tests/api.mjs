@@ -79,6 +79,21 @@ const idx = await anon.req("/");
 check("security headers on pages", idx.headers.get("x-content-type-options") === "nosniff" && !!idx.headers.get("x-frame-options"));
 check("security headers on API", (await anon.req("/api/deals")).headers.get("x-frame-options") === "DENY");
 
+// CSP: every inline <script> on our pages must be allowed by hash, and the Worker's CSP must
+// match the static one, or a page silently stops working.
+{
+  const { createHash } = await import("node:crypto");
+  const pageCsp = idx.headers.get("content-security-policy") || "";
+  check("CSP on pages", pageCsp.includes("script-src 'self'") && pageCsp.includes("frame-ancestors 'none'"));
+  check("Worker CSP matches the static CSP", (await anon.req("/api/deals")).headers.get("content-security-policy") === pageCsp);
+  for (const path of ["/", "/offline", "/admin"]) {
+    const html = await (await anon.req(path)).text();
+    const inline = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map((m) => m[1]);
+    const missing = inline.filter((js) => !pageCsp.includes(`'sha256-${createHash("sha256").update(js).digest("base64")}'`));
+    check(`CSP allows every inline script on ${path} (${inline.length})`, missing.length === 0, `${missing.length} missing`);
+  }
+}
+
 // ---------- session + favourites ----------
 const me0 = await anon.json("/api/me");
 check("signed-out /api/me", me0.body?.user === null && Array.isArray(me0.body?.favorites));

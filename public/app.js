@@ -3,11 +3,11 @@
    a pushed full-screen page on a phone) · /merchants (商家合作) · /m/:key (a shop's private
    confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
    Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=8";
-import { t, getLang, setLang, applyLang, schoolName } from "./js/i18n.js?v=8";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=8";
-import { toast, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=8";
-import { qrSVG } from "./js/qr.js?v=8";
+import { icon } from "./js/icons.js?v=9";
+import { t, getLang, setLang, applyLang, schoolName } from "./js/i18n.js?v=9";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=9";
+import { toast, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=9";
+import { qrSVG } from "./js/qr.js?v=9";
 
 /* ---------- constants ---------- */
 
@@ -1502,7 +1502,7 @@ function startPassTimers() {
   const tick = () => {
     if (pass !== p) return;
     tickPass();
-    p.tick = setTimeout(tick, 1000 - (Date.now() % 1000) + 5); // on the second, like a watch
+    p.tick = setTimeout(tick, 1000 - (nowMs() % 1000) + 5); // on the (server's) second, like a watch
   };
   tick();
   pollPass();

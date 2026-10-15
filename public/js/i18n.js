@@ -1,6 +1,6 @@
 /* Every UI string, in zh-TW and en. Deal content (names, offers) stays Chinese.
    Write 臺 not 台 in UI copy. Labels never wrap: the English is shortened, not the layout. */
-import { storage } from "./util.js?v=8";
+import { storage } from "./util.js?v=9";
 
 const LANG_KEY = "cp_lang";
 
@@ -392,7 +392,7 @@ const DICT = {
     "elig.staff": "Staff",
     "elig.alumni": "Alumni",
     "elig.family": "Family",
-    "elig.noStudent": "Not for students",
+    "elig.noStudent": "No students",
 
     "cat.food": "Food",
     "cat.lodging": "Stays",

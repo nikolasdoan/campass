@@ -84,7 +84,7 @@ function shellAssets(html) {
 }
 
 /* What the cached shell asks for, for pruning: its exact asset URLs, and its ?v= values (a
-   module imported by app.js, e.g. /js/util.js?v=8, is current when the shell is on v=8). */
+   module imported by app.js, e.g. /js/util.js?v=9, is current when the shell is on v=8). */
 async function shellRefs(cache) {
   const res = await cache.match(SHELL);
   if (!res) return null;
@@ -282,7 +282,7 @@ function isCurrent(href, refs) {
   return !!v && refs.versions.has(v);
 }
 
-/* Several ?v= copies of one file (/app.js?v=7, /app.js?v=8): keep the copy the cached shell
+/* Several ?v= copies of one file (/app.js?v=7, /app.js?v=9): keep the copy the cached shell
    references, and the one just fetched (the shell may be a moment behind a fresh deploy);
    drop the rest. With nothing current among them, keep the highest version. Never deletes the
    version the shell asks for, so an offline launch never mixes old JS/CSS under new HTML. */
