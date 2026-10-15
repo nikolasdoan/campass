@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { getCookie, setCookie, deleteCookie } from "hono/cookie";
-import { googleAuthUrl, exchangeCode, newPkce } from "./google";
+import { googleAuthUrl, exchangeCode, newPkce, type GoogleEndpoints } from "./google";
 
 export interface Env {
   DB: D1Database;
@@ -10,6 +10,14 @@ export interface Env {
   ADMIN_TOKEN?: string;
   /** Local development only: enables /auth/dev-login without Google. Never set in production. */
   DEV_LOGIN?: string;
+  /** Local testing only (needs DEV_LOGIN): base URL of a mock Google OAuth server (tests/mock-google.mjs). */
+  GOOGLE_MOCK_URL?: string;
+}
+
+/** Real Google endpoints, or the local mock when testing the OAuth flow end to end. */
+function googleEndpoints(env: Env): GoogleEndpoints | undefined {
+  if (env.DEV_LOGIN !== "true" || !env.GOOGLE_MOCK_URL) return undefined;
+  return { auth: `${env.GOOGLE_MOCK_URL}/auth`, token: `${env.GOOGLE_MOCK_URL}/token` };
 }
 
 type User = {
@@ -160,6 +168,7 @@ app.get("/auth/google/start", async (c) => {
       redirectUri: `${origin}/auth/google/callback`,
       state,
       challenge,
+      endpoints: googleEndpoints(c.env),
     })
   );
 });
@@ -187,6 +196,7 @@ app.get("/auth/google/callback", async (c) => {
       clientId: c.env.GOOGLE_CLIENT_ID,
       clientSecret: c.env.GOOGLE_CLIENT_SECRET,
       redirectUri: `${new URL(c.req.url).origin}/auth/google/callback`,
+      endpoints: googleEndpoints(c.env),
     });
     if (!profile.email_verified) return fail("email_unverified");
     const userId = await upsertUser(c.env.DB, profile);

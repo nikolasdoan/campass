@@ -3,3 +3,6 @@ GOOGLE_CLIENT_SECRET=your-google-client-secret
 ADMIN_TOKEN=change-me
 # Lets you sign in locally at /auth/dev-login?email=you@example.com without Google
 DEV_LOGIN=true
+# Optional: test the real OAuth code path against tests/mock-google.mjs (dev only)
+# GOOGLE_CLIENT_ID=mock-client-id
+# GOOGLE_MOCK_URL=http://localhost:9876

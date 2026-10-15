@@ -1,7 +1,11 @@
 // Google OAuth 2.0 / OpenID Connect (authorization code flow with PKCE).
 
-const AUTH_ENDPOINT = "https://accounts.google.com/o/oauth2/v2/auth";
-const TOKEN_ENDPOINT = "https://oauth2.googleapis.com/token";
+export type GoogleEndpoints = { auth: string; token: string };
+
+export const GOOGLE_ENDPOINTS: GoogleEndpoints = {
+  auth: "https://accounts.google.com/o/oauth2/v2/auth",
+  token: "https://oauth2.googleapis.com/token",
+};
 
 function base64url(bytes: Uint8Array): string {
   return btoa(String.fromCharCode(...bytes)).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
@@ -13,7 +17,13 @@ export async function newPkce() {
   return { verifier, challenge: base64url(new Uint8Array(digest)) };
 }
 
-export function googleAuthUrl(opts: { clientId: string; redirectUri: string; state: string; challenge: string }) {
+export function googleAuthUrl(opts: {
+  clientId: string;
+  redirectUri: string;
+  state: string;
+  challenge: string;
+  endpoints?: GoogleEndpoints;
+}) {
   const params = new URLSearchParams({
     client_id: opts.clientId,
     redirect_uri: opts.redirectUri,
@@ -24,7 +34,7 @@ export function googleAuthUrl(opts: { clientId: string; redirectUri: string; sta
     code_challenge_method: "S256",
     prompt: "select_account",
   });
-  return `${AUTH_ENDPOINT}?${params}`;
+  return `${(opts.endpoints ?? GOOGLE_ENDPOINTS).auth}?${params}`;
 }
 
 function decodeJwtPayload(jwt: string): Record<string, any> {
@@ -46,8 +56,9 @@ export async function exchangeCode(opts: {
   clientId: string;
   clientSecret: string;
   redirectUri: string;
+  endpoints?: GoogleEndpoints;
 }) {
-  const res = await fetch(TOKEN_ENDPOINT, {
+  const res = await fetch((opts.endpoints ?? GOOGLE_ENDPOINTS).token, {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({
