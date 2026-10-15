@@ -4,9 +4,9 @@ CampusPass is built by two Claude Code cloud sessions working in parallel.
 
 | | campass-1 (lead) | campass-2 (ops + worker) |
 |---|---|---|
-| Session | `session_01AA5mMxnjoRazi9GzHcw1Jx` | reports its id to campass-1 on start |
+| Session | `session_01AA5mMxnjoRazi9GzHcw1Jx` | `session_018CfGki3hLwAyQhaDipxXcv` |
 | Authority | Product, code, data and design decisions; merges all work | Everything on Cloudflare: deploys, production D1, Worker secrets. Nothing reaches production except through campass-2 |
-| Branch | `claude/jolly-maxwell-e43rxf` (the integration branch) | its own designated branch, started from the integration branch |
+| Branch | `claude/jolly-maxwell-e43rxf` (the integration branch) | `claude/youthful-hopper-3gqd9h` (started from the integration branch) |
 
 ## Who owns which files
 
@@ -14,7 +14,7 @@ No two sessions edit the same file. If you need a change in a file you don't own
 
 | campass-1 | campass-2 |
 |---|---|
-| `public/**`, `src/**`, `scripts/**`, `migrations/**`, `tests/**` | `wrangler.jsonc` (database id, Google client id, routes) |
+| `public/**`, `src/**`, `scripts/**`, `migrations/**`, `tests/**` (incl. `tests/api.mjs`, `tests/mock-google.mjs`) | `wrangler.jsonc` (database id, Google client id, routes) |
 | `data/deals.json`, `seed/deals.sql`, `data/sources/ntu-research.*`, `data/sources/other-schools.*` | new source files `data/sources/<school>.json` + `.md` (one pair per school) |
 | `README.md`, `docs/**` | `.github/**` (CI/deploy workflows, if agreed), `docs/ops.md` |
 
