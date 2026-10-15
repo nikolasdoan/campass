@@ -35,6 +35,14 @@ function checkSecurityHeaders(label, res) {
   check(`${label} X-Content-Type-Options: nosniff`, (xcto || "").toLowerCase() === "nosniff", `got ${xcto ?? "none"}`);
 }
 
+function checkPageHeaders(label, res) {
+  const csp = res.headers.get("content-security-policy") || "";
+  check(`${label} Content-Security-Policy present`, /default-src 'self'/.test(csp) && /script-src 'self'/.test(csp), csp ? "unexpected policy" : "none");
+  check(`${label} CSP blocks framing and inline scripts`, /frame-ancestors 'none'/.test(csp) && !/script-src[^;]*'unsafe-inline'/.test(csp));
+  const hsts = res.headers.get("strict-transport-security") || "";
+  check(`${label} Strict-Transport-Security`, /max-age=\d{7,}/.test(hsts), `got ${hsts || "none"}`);
+}
+
 async function step(name, fn) {
   try {
     await fn();
@@ -67,6 +75,7 @@ await step("GET /", async () => {
   const res = await get("/");
   check("GET / 200 HTML", res.status === 200 && ctype(res).includes("text/html"), `${res.status} ${ctype(res)}`);
   checkSecurityHeaders("/", res);
+  checkPageHeaders("/", res);
 });
 
 await step("GET /deal/<id>", async () => {
@@ -102,6 +111,13 @@ await step("GET /sw.js", async () => {
 await step("GET /offline", async () => {
   const res = await get("/offline");
   check("GET /offline 200 HTML", res.status === 200 && ctype(res).includes("text/html"), `${res.status} ${ctype(res)}`);
+  checkPageHeaders("/offline", res);
+});
+
+await step("GET /admin.html", async () => {
+  const res = await fetch(BASE + "/admin.html"); // follows the /admin.html -> /admin redirect
+  const html = res.ok ? await res.text() : "";
+  check("GET /admin.html 200 HTML, noindex", res.status === 200 && /name="robots" content="noindex/.test(html), `${res.status}`);
 });
 
 await step("GET /auth/dev-login", async () => {
