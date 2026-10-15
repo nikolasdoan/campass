@@ -15,8 +15,9 @@
     "test:ui": "node tests/ui.mjs",
     "test:api": "node tests/api.mjs",
     "mock-google": "node tests/mock-google.mjs",
-    "test": "node tests/api.mjs && node tests/ui.mjs && node tests/pwa.mjs",
-    "test:pwa": "node tests/pwa.mjs"
+    "test": "node tests/api.mjs && node tests/ui.mjs && node tests/pwa.mjs && node tests/admin.mjs",
+    "test:pwa": "node tests/pwa.mjs",
+    "test:admin": "node tests/admin.mjs"
   },
   "dependencies": {
     "hono": "^4.13.13"
