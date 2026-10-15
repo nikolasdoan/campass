@@ -100,6 +100,13 @@ curl -X POST -H "Content-Type: application/json" -d '{"cron":"17 19 * * *"}' \
 # -> {"success":true,...,"result":{"outcome":"ok"}}
 ```
 
+## Rate limiting
+
+`wrangler.jsonc` → `ratelimits`: `RL_FORMS` (10/min per IP and bucket, used by reports and shop leads) and
+`RL_CONFIRM` (30/min per IP, shop pass confirmations). Missing bindings mean no limit. `namespace_id` is
+shared across the whole Cloudflare account, so the ids are distinctive (`20261001`, `20261002`) and must not be
+reused by other Workers. A burst of local test runs within one minute can hit these limits (429); wait a minute.
+
 ## Rollback
 
 ```bash

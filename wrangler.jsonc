@@ -20,6 +20,12 @@
   "vars": {
     "GOOGLE_CLIENT_ID": ""
   },
+  // Per-IP limits read by src/index.ts (absent binding = unlimited). namespace_id is account-wide:
+  // distinctive ids so other Workers on the account (bizmap etc.) never share these counters.
+  "ratelimits": [
+    { "name": "RL_FORMS", "namespace_id": "20261001", "simple": { "limit": 10, "period": 60 } },
+    { "name": "RL_CONFIRM", "namespace_id": "20261002", "simple": { "limit": 30, "period": 60 } }
+  ],
   // Daily cleanup at 03:17 Asia/Taipei (19:17 UTC): expired sessions, data past retention
   "triggers": { "crons": ["17 19 * * *"] },
   "observability": { "enabled": true }
