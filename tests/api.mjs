@@ -156,6 +156,13 @@ check("honeypot lead accepted silently", (await anon.json("/api/merchant-leads",
 const after = (await anon.json("/admin/stats", { headers: ADMIN })).body;
 check("only the real leads were stored", after.merchants.leads === before.merchants.leads + 2, `${before.merchants.leads} -> ${after.merchants.leads}`);
 check("stats has the go/no-go gate", after.gate?.students_using_twice?.target === 30 && after.gate?.shops_would_pay?.target === 5);
+await anon.json("/api/merchant-leads", { method: "POST", json: { shop_name: "=HYPERLINK(\"http://x\")", email: "f@example.com" } });
+check("CSV export neutralises formulas", (await (await anon.req("/admin/merchants.csv", { headers: ADMIN })).text()).includes(`"'=HYPERLINK(""http://x"")"`));
+const dup = { shop_name: "重複店", email: "dup@example.com", interest: "featured_paid" };
+const g0 = (await anon.json("/admin/stats", { headers: ADMIN })).body.gate.shops_would_pay.value;
+for (let i = 0; i < 3; i++) await anon.json("/api/merchant-leads", { method: "POST", json: dup });
+check("repeat leads from one shop count once in the gate", (await anon.json("/admin/stats", { headers: ADMIN })).body.gate.shops_would_pay.value === g0 + 1);
+check("pass response carries server expiry", !!pass.expires_at && !!pass.server_now);
 check("admin CSVs", (await Promise.all(["users", "reports", "redemptions", "merchants"].map((n) => anon.req(`/admin/${n}.csv`, { headers: ADMIN })))).every((r) => r.status === 200));
 
 // ---------- logout ----------
@@ -201,6 +208,12 @@ if (!mockUp) {
   check("callback in another browser rejected", ((await oauth("a@example.com", { crossBrowser: true })).location || "").includes("login_error=expired"));
   const evil = await oauth("a@example.com", { next: "https://evil.example" });
   check("open redirect blocked", new URL(evil.location, B).origin === new URL(B).origin, evil.location);
+  for (const n of ["/\t/evil.example", "/%09/evil.example", "/\n/evil.example", "/\\evil.example", "/\r\n//evil.example"]) {
+    const r = await oauth("a@example.com", { next: n });
+    check(`redirect blocked for ${JSON.stringify(n)}`, new URL(r.location, B).origin === new URL(B).origin, r.location);
+  }
+  const dl = await fetch(`${B}/auth/dev-login?email=a@b.c&next=${encodeURIComponent("/\t/evil.example")}`, { redirect: "manual" });
+  check("dev-login next is sanitised too", dl.status === 302 && new URL(dl.headers.get("location"), B).origin === new URL(B).origin, dl.headers.get("location"));
   const evil2 = await oauth("a@example.com", { next: "//evil.example" });
   check("protocol-relative redirect blocked", new URL(evil2.location, B).origin === new URL(B).origin, evil2.location);
 }

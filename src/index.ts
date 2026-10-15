@@ -10,6 +10,9 @@ export interface Env {
   ADMIN_TOKEN?: string;
   /** Local development only: enables /auth/dev-login without Google. Never set in production. */
   DEV_LOGIN?: string;
+  /** Workers Rate Limiting bindings (wrangler.jsonc "ratelimits"); absent = no limit. */
+  RL_FORMS?: RateLimit;
+  RL_CONFIRM?: RateLimit;
   /** Local testing only (needs DEV_LOGIN): base URL of a mock Google OAuth server (tests/mock-google.mjs). */
   GOOGLE_MOCK_URL?: string;
 }
@@ -54,8 +57,18 @@ function isSecure(url: string) {
 
 /** Only allow same-site relative paths as post-login redirect targets. */
 function safeNext(next: string | undefined | null): string {
-  if (!next || !next.startsWith("/") || next.startsWith("//") || next.startsWith("/\\")) return "/";
-  return next;
+  // Browsers drop tab/CR/LF inside URLs and treat "\\" like "/", so "/\t/evil.example" would become
+  // "//evil.example". Reject control characters and backslashes, then require our own origin.
+  if (!next || !next.startsWith("/") || /[\u0000-\u001f\u007f\\]/.test(next)) return "/";
+  const base = "https://campuspass.invalid";
+  let u: URL;
+  try {
+    u = new URL(next, base);
+  } catch {
+    return "/";
+  }
+  if (u.origin !== base) return "/";
+  return u.pathname + u.search + u.hash;
 }
 
 async function createSession(c: any, userId: number) {
@@ -320,6 +333,7 @@ app.delete("/api/favorites/:id", requireUser, async (c) => {
 });
 
 app.post("/api/deals/:id/report", requireUser, async (c) => {
+  if (await limited(c.env.RL_FORMS, c, "report")) return c.json({ error: "rate_limited" }, 429);
   const user = c.get("user")!;
   const body = await c.req.json<{ message?: string }>().catch(() => ({ message: "" }));
   const message = (body.message ?? "").trim().slice(0, 1000);
@@ -330,6 +344,14 @@ app.post("/api/deals/:id/report", requireUser, async (c) => {
   return c.json({ ok: true });
 });
 
+/** True when this caller is over the limit for this bucket. Keys on the client IP (Cloudflare sets it). */
+async function limited(limiter: RateLimit | undefined, c: any, bucket: string): Promise<boolean> {
+  if (!limiter) return false;
+  const ip = c.req.header("CF-Connecting-IP") ?? "local";
+  const { success } = await limiter.limit({ key: `${bucket}:${ip}` });
+  return !success;
+}
+
 // ---------- redemption evidence ----------
 //
 // Existing deals are redeemed by showing a student card, so CampusPass cannot see the
@@ -339,8 +361,21 @@ app.post("/api/deals/:id/report", requireUser, async (c) => {
 
 const CODE_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // no 0/O/1/I
 const PASS_MINUTES = 15; // the pass shows a countdown
+const PASS_REUSE_MARGIN = 5; // re-opening reuses a pass only while 5+ minutes remain
 // A shop may confirm a little after the pass's countdown ends (a busy counter), but not much later.
 const CONFIRM_MINUTES = 30;
+
+/** created_at is D1's UTC "YYYY-MM-DD HH:MM:SS"; expires_at/server_now let the pass count down
+ *  correctly even when the phone's clock is wrong. */
+function passBody(row: { code: string; created_at: string }) {
+  const created = Date.parse(row.created_at.replace(" ", "T") + "Z");
+  return {
+    ...row,
+    valid_minutes: PASS_MINUTES,
+    expires_at: new Date(created + PASS_MINUTES * 60e3).toISOString(),
+    server_now: new Date().toISOString(),
+  };
+}
 
 function newCode(len = 6): string {
   const bytes = crypto.getRandomValues(new Uint8Array(len));
@@ -358,9 +393,9 @@ app.post("/api/deals/:id/redeem", requireUser, async (c) => {
       WHERE user_id = ? AND deal_id = ? AND created_at > datetime('now', ?) AND confirmed_at IS NULL AND outcome IS NULL
       ORDER BY created_at DESC LIMIT 1`
   )
-    .bind(user.id, id, `-${PASS_MINUTES} minutes`)
+    .bind(user.id, id, `-${PASS_MINUTES - PASS_REUSE_MARGIN} minutes`)
     .first<{ code: string; created_at: string }>();
-  if (recent) return c.json({ ...recent, valid_minutes: PASS_MINUTES });
+  if (recent) return c.json(passBody(recent));
   for (let i = 0; i < 5; i++) {
     const code = newCode();
     const row = await c.env.DB.prepare(
@@ -368,7 +403,7 @@ app.post("/api/deals/:id/redeem", requireUser, async (c) => {
     )
       .bind(code, user.id, id)
       .first<{ code: string; created_at: string }>();
-    if (row) return c.json({ ...row, valid_minutes: PASS_MINUTES });
+    if (row) return c.json(passBody(row));
   }
   return c.json({ error: "try_again" }, 503);
 });
@@ -402,6 +437,7 @@ app.post("/api/redemptions/:code/outcome", requireUser, async (c) => {
 
 // Shops that want to be listed or would pay for featured placement. Public form.
 app.post("/api/merchant-leads", async (c) => {
+  if (await limited(c.env.RL_FORMS, c, "lead")) return c.json({ error: "rate_limited" }, 429);
   const b = await c.req.json<Record<string, string>>().catch(() => ({}) as Record<string, string>);
   if (b.website) return c.json({ ok: true }); // honeypot: bots fill every field
   const f = (k: string, max = 200) => String(b[k] ?? "").trim().slice(0, max);
@@ -475,6 +511,7 @@ async function passForShop(db: D1Database, mk: MerchantKey, rawCode: string): Pr
 
 // Paired shop phone opened /r/<code> (by scanning the pass QR): show what it would confirm.
 app.get("/api/merchant/pass/:code", async (c) => {
+  if (await limited(c.env.RL_CONFIRM, c, "confirm")) return c.json({ error: "rate_limited" }, 429);
   const mk = await merchantKey(c.env.DB, getCookie(c, MERCHANT_COOKIE));
   if (!mk) return c.json({ error: "not_merchant" }, 403);
   const r = await passForShop(c.env.DB, mk, c.req.param("code"));
@@ -512,6 +549,7 @@ app.get("/api/merchant/:key/manifest.webmanifest", async (c) => {
 });
 
 async function confirmPass(c: any, key: string | undefined) {
+  if (await limited(c.env.RL_CONFIRM, c, "confirm")) return c.json({ error: "rate_limited" }, 429);
   const mk = await merchantKey(c.env.DB, key);
   if (!mk) return c.json({ error: "not_merchant" }, 403);
   const body = await c.req.json().catch(() => ({}));
@@ -541,8 +579,10 @@ function csv(rows: Record<string, unknown>[]): string {
   if (!rows.length) return "";
   const cols = Object.keys(rows[0]);
   const esc = (v: unknown) => {
-    const s = v == null ? "" : String(v);
-    return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+    let s = v == null ? "" : String(v);
+    // Spreadsheet formula injection: public form text must never start a formula in Excel/Sheets.
+    if (/^[=+\-@\t\r]/.test(s)) s = `'${s}`;
+    return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
   };
   return [cols.join(","), ...rows.map((r) => cols.map((k) => esc(r[k])).join(","))].join("\n") + "\n";
 }
@@ -614,7 +654,9 @@ app.get("/admin/stats", async (c) => {
           WHERE created_at > datetime('now','-30 days') AND (outcome = 'used' OR confirmed_at IS NOT NULL)
           GROUP BY user_id HAVING COUNT(*) >= 2)`),
       n("SELECT COUNT(*) AS n FROM merchant_leads"),
-      n("SELECT COUNT(*) AS n FROM merchant_leads WHERE interest IN ('featured_paid','exclusive_deal')"),
+      // Distinct shops (by contact), so repeated posts can't inflate the gate.
+      n(`SELECT COUNT(DISTINCT lower(trim(shop_name)) || '|' || lower(CASE WHEN email <> '' THEN email ELSE phone END)) AS n
+           FROM merchant_leads WHERE interest IN ('featured_paid','exclusive_deal')`),
       db.prepare(
         `SELECT d.name, COUNT(*) AS views FROM deal_views v JOIN deals d ON d.id = v.deal_id
           WHERE v.created_at > datetime('now','-30 days') GROUP BY v.deal_id ORDER BY views DESC LIMIT 10`
@@ -629,7 +671,7 @@ app.get("/admin/stats", async (c) => {
     // The go/no-go gate from docs/business-review.md, over the last 30 days.
     gate: {
       students_using_twice: { value: redeemTwice30, target: 30, note: "users with >=2 self-reported or confirmed uses" },
-      shops_would_pay: { value: payLeads, target: 5, note: "merchant leads choosing featured_paid or exclusive_deal" },
+      shops_would_pay: { value: payLeads, target: 5, note: "distinct shops whose lead chose featured_paid or exclusive_deal (self-declared; verify by contacting them)" },
     },
     users: { total: users, ntu_domain: ntu, active_7d: active7, active_30d: active30, returning_30d: repeat30 },
     usage_30d: { deal_views: views30, passes_opened: passes30, self_reported_used: used30, refused_at_shop: refused30, merchant_confirmed: confirmed30 },
