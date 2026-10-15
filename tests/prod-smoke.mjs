@@ -37,7 +37,7 @@ function checkSecurityHeaders(label, res) {
 
 function checkPageHeaders(label, res) {
   const csp = res.headers.get("content-security-policy") || "";
-  check(`${label} Content-Security-Policy present`, /default-src 'self'/.test(csp) && /script-src 'self'/.test(csp), csp ? "unexpected policy" : "none");
+  check(`${label} Content-Security-Policy present`, /default-src 'self'/.test(csp) && /script-src 'self'/.test(csp), csp ? `got ${csp.slice(0, 60)}…` : "none");
   check(`${label} CSP blocks framing and inline scripts`, /frame-ancestors 'none'/.test(csp) && !/script-src[^;]*'unsafe-inline'/.test(csp));
   const hsts = res.headers.get("strict-transport-security") || "";
   check(`${label} Strict-Transport-Security`, /max-age=\d{7,}/.test(hsts), `got ${hsts || "none"}`);

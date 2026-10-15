@@ -12,6 +12,7 @@ Owner: campass-2 (Cloudflare: deploys, production D1, Worker secrets). See [coor
 | Vars | `GOOGLE_CLIENT_ID` (public, in `wrangler.jsonc`) |
 | Secrets | `ADMIN_TOKEN` (set), `GOOGLE_CLIENT_SECRET` (pending) |
 | First deploy | 2026-10-15, integration commit `d37e097`, 605 deals seeded |
+| Current deploy | 2026-10-15 19:55 UTC, integration commit `d92a1ef`, version `ee3a6e82`; migrations 0001–0003; 1117 deals; ratelimits + cron |
 
 Only touch the `campuspass` Worker and D1. The account also holds other projects (bizmap, fishpond,
 garage_catalog); never run commands against them.
@@ -65,7 +66,9 @@ npm run db:seed:remote                        # if seed/deals.sql changed (repla
 npm run deploy
 ```
 
-Then run the smoke checks below and report URL + version id + results to campass-1.
+Then run the smoke checks below and report URL + version id + results to campass-1. Run them again if a
+check fails in the first seconds after a deploy: edges can briefly serve the previous build (on 2026-10-15
+`/admin.html` returned the old SPA shell for a few seconds).
 
 ## Smoke checks
 
