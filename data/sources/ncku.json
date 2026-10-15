@@ -1,0 +1,1752 @@
+[
+  {
+    "name": "太子文旅",
+    "subtitle": "台南市東區",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市東區大學路2號",
+    "phone": "06-2758999",
+    "highlight": "特約優惠",
+    "offer": "憑校友VIP卡、校友卡，享有住宿優惠(不得與其他優惠合併使用)",
+    "info": "電話：06-2758999\n地址：台南市東區大學路2號\n使用對象：校友VIP卡、校友卡",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單標示「*校友強力推薦」；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "香格里拉台南遠東國際大飯店",
+    "subtitle": "台南市東區",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市東區大學路西段89號",
+    "phone": "06-7028888",
+    "highlight": "特約優惠",
+    "offer": "憑校友VIP卡、校友卡、成功大學職員證、學生證享有住宿優惠(農曆春節期間不適用)",
+    "info": "電話：06-7028888\n傳真：06-7027799\n地址：台南市東區大學路西段89號\n使用對象：校友VIP卡、校友卡、成大職員證、學生證",
+    "links": [
+      {
+        "label": "官網",
+        "url": "http://www.shangri-la.com/tc/tainan/fareasternplazashangrila/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單標示「*校友強力推薦」；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "康橋商旅",
+    "subtitle": "高雄五甲館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市鳳山區五甲福德街143巷22號",
+    "phone": "07-8122840",
+    "highlight": "特約優惠",
+    "offer": "憑校友卡、成功大學職員證，享有住宿優惠\n*訂房時請告知成大統編69115908",
+    "info": "電話：07-8122840\n傳真：07-8122848\n地址：高雄市鳳山區五甲福德街143巷22號\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "康橋商旅",
+    "subtitle": "高雄三多館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市苓雅區三多一路94號(高速公路旁)",
+    "phone": "07-7248800",
+    "highlight": "特約優惠",
+    "offer": "憑校友卡、成功大學職員證，享有住宿優惠\n*訂房時請告知成大統編69115908",
+    "info": "電話：07-7248800\n傳真：07-7248855\n地址：高雄市苓雅區三多一路94號(高速公路旁)\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "康橋商旅",
+    "subtitle": "台南民生館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市民生路二段299號",
+    "phone": "06-2245566",
+    "highlight": "特約優惠",
+    "offer": "憑校友卡、成功大學職員證，享有住宿優惠\n*訂房時請告知成大統編69115908",
+    "info": "電話：06-2245566\n傳真：06-2245577\n地址：台南市民生路二段299號\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "康橋商旅",
+    "subtitle": "員林館",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "彰化縣員林鎮靜修路10號(華成市場旁)",
+    "phone": "04-8381866",
+    "highlight": "特約優惠",
+    "offer": "憑校友卡、成功大學職員證，享有住宿優惠\n*訂房時請告知成大統編69115908",
+    "info": "電話：04-8381866\n傳真：04-8381877\n地址：彰化縣員林鎮靜修路10號(華成市場旁)\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "康橋商旅",
+    "subtitle": "高雄六合夜市中正館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市前金區中正四路112號",
+    "phone": "07-2881166",
+    "highlight": "特約優惠",
+    "offer": "憑校友卡、成功大學職員證，享有住宿優惠\n*訂房時請告知成大統編69115908",
+    "info": "電話：07-2881166\n傳真：07-2871166\n地址：高雄市前金區中正四路112號\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "康橋商旅",
+    "subtitle": "城市之星 高雄新崛江館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市新興區五福二路198號(臨近新崛江)",
+    "phone": "07-2165566",
+    "highlight": "特約優惠",
+    "offer": "憑校友卡、成功大學職員證，享有住宿優惠\n*訂房時請告知成大統編69115908",
+    "info": "電話：07-2165566\n傳真：07-2165511\n地址：高雄市新興區五福二路198號(臨近新崛江)\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "康橋商旅",
+    "subtitle": "城市之星 高雄漢神館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市前金區中華四路290號(近漢神百貨)",
+    "phone": "07-2815566",
+    "highlight": "特約優惠",
+    "offer": "憑校友卡、成功大學職員證，享有住宿優惠\n*訂房時請告知成大統編69115908",
+    "info": "電話：07-2815566\n傳真：07-2815511\n地址：高雄市前金區中華四路290號(近漢神百貨)\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "康橋商旅",
+    "subtitle": "高雄站前雄中館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市三民區建國三路44號(火車站旁)",
+    "phone": "07-2875566",
+    "highlight": "特約優惠",
+    "offer": "憑校友卡、成功大學職員證，享有住宿優惠\n*訂房時請告知成大統編69115908",
+    "info": "電話：07-2875566\n傳真：07-2878866\n地址：高雄市三民區建國三路44號(火車站旁)\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "康橋商旅",
+    "subtitle": "高雄後驛九如館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市三民區九如二路339號(臨近後火車站)",
+    "phone": "07-3153366",
+    "highlight": "特約優惠",
+    "offer": "憑校友卡、成功大學職員證，享有住宿優惠\n*訂房時請告知成大統編69115908",
+    "info": "電話：07-3153366\n傳真：07-3153322\n地址：高雄市三民區九如二路339號(臨近後火車站)\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "康橋商旅",
+    "subtitle": "高雄光榮碼頭館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市苓雅區青年二路169號(臨近碼頭)",
+    "phone": "07-3343377",
+    "highlight": "特約優惠",
+    "offer": "憑校友卡、成功大學職員證，享有住宿優惠\n*訂房時請告知成大統編69115908",
+    "info": "電話：07-3343377\n傳真：07-3341177\n地址：高雄市苓雅區青年二路169號(臨近碼頭)\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "康橋商旅",
+    "subtitle": "台南赤崁樓館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市民權路二段97號(近赤崁樓)",
+    "phone": "06-2253377",
+    "highlight": "特約優惠",
+    "offer": "憑校友卡、成功大學職員證，享有住宿優惠\n*訂房時請告知成大統編69115908",
+    "info": "電話：06-2253377\n傳真：06-2253311\n地址：台南市民權路二段97號(近赤崁樓)\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "康橋商旅",
+    "subtitle": "高雄中山八德館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市新興區中山一路289號(臨近火車站)",
+    "phone": "07-2883399",
+    "highlight": "特約優惠",
+    "offer": "憑校友卡、成功大學職員證，享有住宿優惠\n*訂房時請告知成大統編69115908",
+    "info": "電話：07-2883399\n傳真：07-2883355\n地址：高雄市新興區中山一路289號(臨近火車站)\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "康橋商旅",
+    "subtitle": "高雄覺民館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市三民區覺民路291號",
+    "phone": "07-3903377",
+    "highlight": "特約優惠",
+    "offer": "憑校友卡、成功大學職員證，享有住宿優惠\n*訂房時請告知成大統編69115908",
+    "info": "電話：07-3903377\n傳真：07-3903355\n地址：高雄市三民區覺民路291號\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "康橋大飯店",
+    "subtitle": "台東館",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "台東市中興路一段209巷16號(傳廣路口)",
+    "phone": "089-229226",
+    "highlight": "特約優惠",
+    "offer": "憑校友卡、成功大學職員證，享有住宿優惠\n*訂房時請告知成大統編69115908",
+    "info": "電話：089-229226\n傳真：089-227200\n地址：台東市中興路一段209巷16號(傳廣路口)\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "康橋大飯店",
+    "subtitle": "高雄六合夜市七賢館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市新興區同愛路30號(臨近六合夜市)",
+    "phone": "07-2885588",
+    "highlight": "特約優惠",
+    "offer": "憑校友卡、成功大學職員證，享有住宿優惠\n*訂房時請告知成大統編69115908",
+    "info": "電話：07-2885588\n傳真：07-2875577\n地址：高雄市新興區同愛路30號(臨近六合夜市)\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "康橋大飯店",
+    "subtitle": "高雄站前館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市三民區建國二路295號(前火車站斜對面)",
+    "phone": "07-2386677",
+    "highlight": "特約優惠",
+    "offer": "憑校友卡、成功大學職員證，享有住宿優惠\n*訂房時請告知成大統編69115908",
+    "info": "電話：07-2386677\n傳真：07-2388989\n地址：高雄市三民區建國二路295號(前火車站斜對面)\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "康橋大飯店",
+    "subtitle": "高雄三多商圈館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市苓雅區林森二路10號(臨三多商圈)",
+    "phone": "07-5379800",
+    "highlight": "特約優惠",
+    "offer": "憑校友卡、成功大學職員證，享有住宿優惠\n*訂房時請告知成大統編69115908",
+    "info": "電話：07-5379800\n傳真：07-5379700\n地址：高雄市苓雅區林森二路10號(臨三多商圈)\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "康橋大飯店",
+    "subtitle": "花蓮站前館",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市國連五路101號(臨近火車站)",
+    "phone": "03-8359333",
+    "highlight": "特約優惠",
+    "offer": "憑校友卡、成功大學職員證，享有住宿優惠\n*訂房時請告知成大統編69115908",
+    "info": "電話：03-8359333\n傳真：03-8358222\n地址：花蓮市國連五路101號(臨近火車站)\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "娜路彎大酒店",
+    "subtitle": "台東市",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "娜路彎銀河酒店 台東市豐新路66號；娜路彎花園酒店 台東市新興路77號；娜路彎會館 台東市中興路二段385號",
+    "phone": "0985846680",
+    "highlight": "專屬優惠價",
+    "offer": "訂房時請告知「國立成功大學」或統編「69115908」，並於入住時出示校友VIP卡、校友卡、成功大學職員證、成功大學學生證，則可享特約專案優惠價。\n(優惠內容依飯店公告及規定為主)",
+    "info": "電話：0985846680\n地址：娜路彎銀河酒店 台東市豐新路66號；娜路彎花園酒店 台東市新興路77號；娜路彎會館 台東市中興路二段385號\n訂房專線：0985846680 黃小姐（娜路彎大酒店(股)公司）\n使用對象：校友VIP卡、校友卡、成大職員證、成大學生證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "義大皇家酒店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "",
+    "phone": "07-6568166-51102",
+    "highlight": "專屬優惠價",
+    "offer": "訂房時請告知「國立成功大學」或統編「69115908」，並於入住時出示校友VIP卡、校友卡、成功大學職員證、成功大學學生證，則可享特約專案優惠價。\n(優惠內容依飯店公告及規定為主)",
+    "info": "電話：07-6568166-51102\n傳真：07-6568177\n使用對象：校友VIP卡、校友卡、成大職員證、成大學生證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單未列地址；地區依電話區碼 07（高雄）判定；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "義大天悅酒店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "",
+    "phone": "07-6568166-51102",
+    "highlight": "專屬優惠價",
+    "offer": "訂房時請告知「國立成功大學」或統編「69115908」，並於入住時出示校友VIP卡、校友卡、成功大學職員證、成功大學學生證，則可享特約專案優惠價。\n(優惠內容依飯店公告及規定為主)",
+    "info": "電話：07-6568166-51102\n傳真：07-6568177\n使用對象：校友VIP卡、校友卡、成大職員證、成大學生證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單未列地址；地區依電話區碼 07（高雄）判定；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "台南大飯店",
+    "subtitle": "台南市中西區",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市中西區成功路1號",
+    "phone": "06-2232857",
+    "highlight": "專屬優惠價",
+    "offer": "憑校友VIP卡、校友卡、成功大學職員證、成功大學學生證，則可享住房優惠價。\n1.優惠價已含加值型營業稅及服務費。\n2.本合約房價不適用於農曆春節期間、連續假日、國定假日及並前夕；平假日定義依飯店規範。",
+    "info": "電話：06-2232857\n傳真：06-2268502\n地址：台南市中西區成功路1號\n其他電話：06-2289101\nEmail：booking@hotel-tainan.com.tw\n使用對象：校友VIP卡、校友卡、成大職員證、成大學生證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "府城食府",
+    "subtitle": "台南市",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市華平路152號",
+    "phone": "06-2951000",
+    "highlight": "9折",
+    "offer": "憑校友卡享九折優惠，另酌收原價10％之服務費（不包含喜宴、桌席、特惠品、酒水以及企業禮盒）\n(本合約有效期限:即日起~)",
+    "info": "電話：06-2951000\n傳真：06-2951000\n地址：台南市華平路152號\n使用對象：校友卡",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "另收原價10%服務費；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "東東粵菜餐廳",
+    "subtitle": "台南市北區",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市北區北安路一段145-2號",
+    "phone": "06-2515577",
+    "highlight": "9折",
+    "offer": "憑校友卡享九折優惠，另酌收原價10％之服務費（不包含喜宴、桌席、特惠品、酒水以及企業禮盒）\n(本合約有效期限:即日起~)",
+    "info": "電話：06-2515577\n傳真：06-2515899\n地址：台南市北區北安路一段145-2號\n使用對象：校友卡",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "另收原價10%服務費；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "東饌魚翅餐廳",
+    "subtitle": "台南市",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市華平路156號",
+    "phone": "06-2952288",
+    "highlight": "9折",
+    "offer": "憑校友卡享九折優惠，另酌收原價10％之服務費（不包含喜宴、桌席、特惠品、酒水以及企業禮盒）\n(本合約有效期限:即日起~)",
+    "info": "電話：06-2952288\n傳真：06-2951006\n地址：台南市華平路156號\n使用對象：校友卡",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "另收原價10%服務費；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "東大門韓國烤肉料理館",
+    "subtitle": "永華店",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市安平區永華路2段131號",
+    "phone": "06-2935118",
+    "highlight": "9折",
+    "offer": "憑校友卡享九折優惠，另酌收原價10％之服務費（不包含喜宴、桌席、特惠品、酒水以及企業禮盒）\n(本合約有效期限:即日起~)",
+    "info": "電話：06-2935118\n傳真：06-2935117\n地址：台南市安平區永華路2段131號\n使用對象：校友卡",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "另收原價10%服務費；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "東大門韓式燒烤暢食料理館",
+    "subtitle": "澄清店",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市鳥松區公園路45號",
+    "phone": "07-7317177",
+    "highlight": "9折",
+    "offer": "憑校友卡享九折優惠，另酌收原價10％之服務費（不包含喜宴、桌席、特惠品、酒水以及企業禮盒）\n(本合約有效期限:即日起~)",
+    "info": "電話：07-7317177\n傳真：07-7317178\n地址：高雄市鳥松區公園路45號\n使用對象：校友卡",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "另收原價10%服務費；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "Toka東加和漢創作料理",
+    "subtitle": "台南市",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市永華路二段41號",
+    "phone": "06-2936988",
+    "highlight": "9折",
+    "offer": "憑校友卡享九折優惠，另酌收原價10％之服務費（不包含喜宴、桌席、特惠品、酒水以及企業禮盒）\n(本合約有效期限:即日起~)",
+    "info": "電話：06-2936988\n傳真：06-2939088\n地址：台南市永華路二段41號\n使用對象：校友卡",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "另收原價10%服務費；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "東悅坊港式飲茶",
+    "subtitle": "台南市安平區",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市安平區慶平路539號B1",
+    "phone": "06-2997755",
+    "highlight": "9折",
+    "offer": "憑校友卡享九折優惠，另酌收原價10％之服務費（不包含喜宴、桌席、特惠品、酒水以及企業禮盒）\n(本合約有效期限:即日起~)",
+    "info": "電話：06-2997755\n傳真：06-2997751\n地址：台南市安平區慶平路539號B1\n使用對象：校友卡",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "另收原價10%服務費；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "咖啡部屋",
+    "subtitle": "台南市東區",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市東區中華東路三段332號(文化中心)",
+    "phone": "06-3358951",
+    "highlight": "9折",
+    "offer": "憑校友卡享九折優惠，另酌收原價10％之服務費（不包含喜宴、桌席、特惠品、酒水以及企業禮盒）\n(本合約有效期限:即日起~)",
+    "info": "電話：06-3358951\n傳真：06-2608196\n地址：台南市東區中華東路三段332號(文化中心)\n使用對象：校友卡",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "另收原價10%服務費；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "亞堤咖啡烘焙",
+    "subtitle": "台南市",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市崇明十街28號",
+    "phone": "06-3359245",
+    "highlight": "9折",
+    "offer": "憑校友卡享九折優惠，早餐及特價品除外，消費滿壹仟元（折扣後），即贈送亞堤烘焙課程壹次（需預約）",
+    "info": "電話：06-3359245\n地址：台南市崇明十街28號\n聯絡人：郭燕玲\n使用對象：校友卡",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "天下大飯店-圓頂西餐廳",
+    "subtitle": "台南市北區",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市北區成功路202號",
+    "phone": "06-2290271-1307",
+    "highlight": "9折",
+    "offer": "凡成大人(含成大教職員工、學生、校友、成大醫院員工)消費時出示證件，可享下列優惠：\n(1)用餐消費享9折，需加收10%服務費。\n(2)餐飲禮券大宗採購，滿50,000元送6,000元。\n(3)餐飲禮券大宗採購，滿100,000元送15,000元。\n(若適逢餐廳舉辦促銷活動，請擇一優惠參加，本優惠內容不與其他優惠活動同時合併使用。)\n(本合約有效期限:即日起~)",
+    "info": "電話：06-2290271-1307\n傳真：06-2210725\n地址：台南市北區成功路202號\n聯絡人：翁紹凱主任\nEmail：sales@laplaza.com.tw\n使用對象：成大教職員工、學生、校友、成大醫院員工",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "成大醫院員工亦適用；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "虎山雷創意蛋塔",
+    "subtitle": "台南市仁德區",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "717台南市仁德區文賢路一段31號",
+    "phone": "06-2660116",
+    "highlight": "9折",
+    "offer": "校友卡持卡人來店消費，可享商品九折之優惠。\n(本合約有效期限:即日起~)",
+    "info": "電話：06-2660116\n地址：717台南市仁德區文賢路一段31號\n公司名稱：虎山雷商行\nFB：搜尋「虎山雷創意蛋塔」\n使用對象：校友卡",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "地果咖啡有限公司",
+    "subtitle": "台南市仁德區",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市仁德區大同路三段838號",
+    "phone": "06-2903131",
+    "highlight": "95折",
+    "offer": "凡國立成功大學校友及教職員，消費時出示校友VIP卡、校友卡、識別證，即享有95折優惠。\n(本合約有效期限:即日起~)",
+    "info": "電話：06-2903131\n地址：台南市仁德區大同路三段838號\n使用對象：校友及教職員（校友VIP卡、校友卡、識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "多那之",
+    "subtitle": "東寧門市",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "701台南市東區東寧路269號",
+    "phone": "06-2375888",
+    "highlight": "95折",
+    "offer": "凡憑校友卡、成功大學職員證等可供辨識之證件，可享全館自製西點蛋糕、麵包、咖啡95折優惠(酒會、餐盒、節慶商品及特價品除外)\n(本合約有效期限:即日起~)",
+    "info": "電話：06-2375888\n傳真：06-2367833\n地址：701台南市東區東寧路269號\n使用對象：校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "辰星咖啡",
+    "subtitle": "台南市東區",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市東區府連東路47號",
+    "phone": "06-2357613",
+    "highlight": "9折",
+    "offer": "凡國立成功大學校友及教職員工生，於結帳時出示校友VIP卡、校友卡、識別證或學生證，可享9折優惠。\n(含所有飲品、咖啡豆及相關器材等)",
+    "info": "電話：06-2357613\n地址：台南市東區府連東路47號\n使用對象：校友及教職員工生（校友VIP卡、校友卡、識別證或學生證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "萬國牛排館",
+    "subtitle": "小東店",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市北區小東路151號",
+    "phone": "06-2080436",
+    "highlight": "95折",
+    "offer": "凡國立成功大學校友及教職員工生，於結帳時出示校友VIP卡、校友卡、識別證或學生證，可享95折優惠。",
+    "info": "電話：06-2080436\n地址：台南市北區小東路151號\n使用對象：校友及教職員工生（校友VIP卡、校友卡、識別證或學生證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "歡樂平價牛排/康牛小吃店",
+    "subtitle": "台南市永康區",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市永康區永大路二段811號",
+    "phone": "06-2717389",
+    "highlight": "9折",
+    "offer": "凡國立成功大學校友及教職員工生，於結帳時出示校友VIP卡、校友卡、識別證或學生證，可享9折優惠(消費200元以上)。\n(本合約有效期限:即日起~)",
+    "info": "電話：06-2717389\n地址：台南市永康區永大路二段811號\n使用對象：校友及教職員工生（校友VIP卡、校友卡、識別證或學生證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "決哥手烘咖啡吧",
+    "subtitle": "台南市",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市勝利路187號",
+    "phone": "06-2356999",
+    "highlight": "消費贈品",
+    "offer": "凡國立成功大學校友及教職員工生，於結帳時出示校友VIP卡、校友卡、識別證或學生證，購買飲品、耳掛、豆子，即加贈點數1點。\n(活動與特價優惠不可累計)",
+    "info": "電話：06-2356999\n地址：台南市勝利路187號\n使用對象：校友及教職員工生（校友VIP卡、校友卡、識別證或學生證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "五鮮級餐飲文化有限公司",
+    "subtitle": "高雄市前鎮區",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市前鎮區實業路160號",
+    "phone": "07-8419555",
+    "highlight": "消費贈品",
+    "offer": "凡國立成功大學校友及教職員工生，於消費點餐時出示「相關識別證」，可享滿四鍋送海鮮拼盤一份優惠。\n(本合約有效期限:即日起~)",
+    "info": "電話：07-8419555\n傳真：07-8413555\n地址：高雄市前鎮區實業路160號\n使用對象：校友及教職員工生",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "喜鴻餐飲股份有限公司",
+    "subtitle": "台南市東區",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市東區大同路一段231號",
+    "phone": "06-2130198-806",
+    "highlight": "特約優惠",
+    "offer": "憑證件享有優惠",
+    "info": "電話：06-2130198-806\n傳真：06-2130198\n地址：台南市東區大同路一段231號\n聯絡人：彭晶翎",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單僅寫「憑證件享有優惠」，未載明折扣內容與證件種類；名單未載明適用對象，依名單標題「VIP卡及校友卡特約商店名單」視為限校友；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "Magi Planet 星球工坊",
+    "subtitle": "全台門市",
+    "category": "entertainment",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "誠品信義門市 台北市信義區松高路11號B2F；微風台北車站門市 台北市中正區北平西路3號2樓",
+    "phone": "02-87893388",
+    "highlight": "9折",
+    "offer": "憑校友VIP卡、校友卡、成功大學職員證於全台門市消費，可享9折優惠。\n(本合約有效期限:即日起~)",
+    "info": "電話：02-87893388\n地址：誠品信義門市 台北市信義區松高路11號B2F；微風台北車站門市 台北市中正區北平西路3號2樓\n門市：誠品信義門市 02-87893388；微風台北車站門市 02-77565079\n公司名稱：星奕企業股份有限公司\n使用對象：校友VIP卡、校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "原列於美食餐飲類；名單僅列兩家台北門市，但優惠適用「全台門市」；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "夏慕尼",
+    "subtitle": "台南永華店",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市安平區永華路2段129號",
+    "phone": "06-2950707",
+    "highlight": "消費贈品",
+    "offer": "憑校友VIP卡、校友卡、成功大學職員證於夏慕尼台南永華店消費，可享以下優惠。\n1.贈送[主廚私房菜]乙份。\n注意事項：\n1.每桌每次消費，限兌換優惠一份。\n2.優惠不得與其它店內其他優惠活動併用。\n3.優惠不適用外帶、外送、單點、禮券購買、禮券支付、兌現或找零，10%服務費另計。\n4.贈品或贈送餐點以現場實物為準，若贈品或贈送餐點數量有限，乙方同意甲方得以等值贈品替換之。\n5.優惠期限：自113年1月1日起\n6.廠商保有修改、解釋、終止或異動本活動之權利。\n(本合約有效期限:即日起~)",
+    "info": "電話：06-2950707\n地址：台南市安平區永華路2段129號\n公司名稱：王品餐飲股份有限公司\n使用對象：校友VIP卡、校友卡、成大職員證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單中此列編號與聚鍋重複（皆為26）；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "中華航空",
+    "subtitle": "官網購票",
+    "category": "transport",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "台南市東門路一段358號6樓A室",
+    "phone": "06-2358099#2356",
+    "highlight": "特約優惠",
+    "offer": "凡透過華航網站網路購票，只要輸入促銷代碼TW023670，即可享購票優惠",
+    "info": "電話：06-2358099#2356\n傳真：06-2357299\n地址：台南市東門路一段358號6樓A室\n台南營業所 羅小姐",
+    "links": [
+      {
+        "label": "華航訂票",
+        "url": "https://www.china-airlines.com/tw/zh/booking/book-flights/flight-search"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單未載明適用對象，依名單標題「VIP卡及校友卡特約商店名單」視為限校友；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "長榮航空",
+    "subtitle": "企業會員網路購票",
+    "category": "transport",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "高雄市苓雅區四維四路177號",
+    "phone": "07-337-8707",
+    "highlight": "專屬優惠價",
+    "offer": "個人直接上網訂購票享優惠票價：使用長榮航空企業會員網路購票之帳號密碼登入企業會員網路購票平台。\n（帳號密碼載於成大校友中心特約商店名單PDF，此處不轉載）",
+    "info": "電話：07-337-8707\n傳真：07-2696801\n地址：高雄市苓雅區四維四路177號\n訂位專線：07-337-8707",
+    "links": [
+      {
+        "label": "企業會員購票平台",
+        "url": "https://booking.evaair.com/flyeva/EVA/B2C/CIBS/login.aspx?lang=zh-tw"
+      },
+      {
+        "label": "成大校友中心名單",
+        "url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單公開列出企業會員帳號與密碼，本資料刻意不轉載；名單未載明適用對象，依名單標題「VIP卡及校友卡特約商店名單」視為限校友；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "中國東方航空",
+    "subtitle": "官網購票",
+    "category": "transport",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "台北市民生東路3段134號5樓",
+    "phone": "02-40556868",
+    "highlight": "特約優惠",
+    "offer": "限使用促銷代碼【NCKUMU】於中國東方航空台灣網站購票適用(http://tw.ceair.com/)\n成功大學專屬購票優惠網址連結：https://static.ceair.com/newwebsite/tw/Promotion2020/college/2020NCKUMU/pc/index.html",
+    "info": "電話：02-40556868\n傳真：02-25450781\n地址：台北市民生東路3段134號5樓\n東航台北客服中心：40556868，手機直撥 02-40556868\n詳細活動內容請洽東航台灣呼叫中心客服專線：4128118，手機直撥加03（週一至週日含法定假日，24小時全年無休）",
+    "links": [
+      {
+        "label": "東航台灣網站",
+        "url": "http://tw.ceair.com/"
+      },
+      {
+        "label": "成大專屬優惠頁",
+        "url": "https://static.ceair.com/newwebsite/tw/Promotion2020/college/2020NCKUMU/pc/index.html"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "專屬優惠頁為2020年活動網址，可能已失效；名單未載明適用對象，依名單標題「VIP卡及校友卡特約商店名單」視為限校友；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "寶夫人藥品有限公司",
+    "subtitle": "台南市",
+    "category": "health",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市東光路一段142號",
+    "phone": "06-2361101",
+    "highlight": "9折",
+    "offer": "憑校友卡享九折優惠，（特惠商品恕不合併折扣）",
+    "info": "電話：06-2361101\n傳真：06-3356708\n地址：台南市東光路一段142號\n其他電話：0938-895256\n使用對象：校友卡",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "博士韋爾股份有限公司",
+    "subtitle": "總店（台中市大里區）",
+    "category": "shopping",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市大里區仁化路692號",
+    "phone": "04-24960707",
+    "highlight": "8折",
+    "offer": "持校友卡者優惠如下：\n博士韋爾股份有限公司公告定價打八折優惠。\n此優惠僅限博士韋爾總店",
+    "info": "電話：04-24960707\n地址：台中市大里區仁化路692號\n聯絡人：曾德建先生\n商品：空氣濾淨器\n使用對象：校友卡",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "成功大學文學院外語中心",
+    "subtitle": "台南市 光復校區",
+    "category": "education",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市大學路1號 光復校區文學院外語中心",
+    "phone": "06-2757575-52020",
+    "highlight": "9折",
+    "offer": "凡持國立成功大學校友卡可享九折優惠",
+    "info": "電話：06-2757575-52020\n地址：台南市大學路1號 光復校區文學院外語中心\n使用對象：校友卡",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "采豐數位股份有限公司",
+    "subtitle": "成大授權紀念商品（官網）",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "",
+    "phone": "02-29458912",
+    "highlight": "消費贈品",
+    "offer": "網站購物車結帳時，在備註欄填寫\"我有成大VIP卡或校友卡\" 即享消費滿2000元，隨貨贈送成大專屬御守乙個，如贈品送完，會改贈其他成大專屬好禮(市價200以上)",
+    "info": "電話：02-29458912\n聯絡人：蕭丁偉先生\n使用對象：成大VIP卡或校友卡",
+    "links": [
+      {
+        "label": "成大紀念品網站",
+        "url": "http://nckugift.colaz.com.tw"
+      },
+      {
+        "label": "酷樂網",
+        "url": "http://www.colaz.com.tw"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "線上購物，名單未列實體地址；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "宏恩眼鏡",
+    "subtitle": "東平店",
+    "category": "health",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市東平路48號",
+    "phone": "06-2087366",
+    "highlight": "特約優惠",
+    "offer": "凡持國立成功大學校友VIP卡、校友卡、職員證或學生證，消費結帳後另享折扣優惠。",
+    "info": "電話：06-2087366\n地址：台南市東平路48號\n聯絡人：蔡先生\n使用對象：校友VIP卡、校友卡、職員證或學生證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單未載明折扣幅度；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "蘭卉生技",
+    "subtitle": "台南市東區",
+    "category": "shopping",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市東區北門路二段16號文化創意園區L棟2B",
+    "phone": "06-2365256",
+    "highlight": "7折起",
+    "offer": "持國立成功大學校友卡、職員證消費享所有產品定價8折優惠\n持校友VIP卡享7折優惠",
+    "info": "電話：06-2365256\n傳真：06-2225267\n地址：台南市東區北門路二段16號文化創意園區L棟2B\n聯絡人：簡玗芳小姐\n使用對象：校友卡、職員證（VIP卡7折）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "http://www.lanhui-biotech.com"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "朵法婭生活美學有限公司",
+    "subtitle": "官網",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "新北市中和區板南路663號14樓",
+    "phone": "02-27780037-14",
+    "highlight": "85折",
+    "offer": "消費時憑校友證、學生證或教職員工生識別證，優惠如下：\n於朵法亞生活美學官網使用優惠代碼：SVIP2401\n*全館85折，不與館內其他優惠共用。\n合約期間：自中華民國114年1月1日起至115年1月1日止。(雙方同意若無變更合約將自動展期)",
+    "info": "電話：02-27780037-14\n地址：新北市中和區板南路663號14樓\n使用對象：校友證、學生證或教職員工生識別證",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.darphia.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "合約原訂至2026-01-01，條文載明「若無變更合約將自動展期」，視同自動續約；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  },
+  {
+    "name": "喜鴻旅行社",
+    "subtitle": "台南市安平區",
+    "category": "services",
+    "regions": [
+      "south"
+    ],
+    "address": "708台南市安平區永華路2段248號12樓之5",
+    "phone": "06-2130198-806",
+    "highlight": "特約優惠",
+    "offer": "校友凡持成大校友VIP卡、校友卡或成大教職人員\n(1)國際機票及國際訂房\n(2)國外套裝自由行\n(3)國外團體旅遊，提供含國際機票、飯店、交通、領隊及餐食之全包式旅遊\n(4)國內團體旅遊，提供含機票(高鐵)、飯店、交通、領隊及餐食之全包式旅遊\n(5)國內訂房\n(6)協助其他應甲方要求之差旅或旅遊等服務事項\n惟量身訂做、促銷及特惠團體...等不適用上述特惠範（原文於此截斷）",
+    "info": "電話：06-2130198-806\n地址：708台南市安平區永華路2段248號12樓之5\n聯絡人：彭晶翎小姐\n使用對象：成大校友VIP卡、校友卡或成大教職人員",
+    "links": [
+      {
+        "label": "官網",
+        "url": "http://www.besttour.com.tw"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "名單最後一頁文字於「特惠範」處截斷，未載明折扣幅度；名單更新日期 2025-01-07（114年1月7日），內容可能已過時，消費前請先向店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NCKU"
+    ],
+    "source_level": "school",
+    "source_org": "成功大學校友聯絡中心",
+    "source_url": "https://alumni.ncku.edu.tw/var/file/4/1004/img/772889412.pdf",
+    "retrieved_on": "2026-10-15"
+  }
+]
