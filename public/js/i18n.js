@@ -235,7 +235,7 @@ const DICT = {
     "err.generic": "發生錯誤，請稍後再試。",
 
     "scan.title": "確認優惠使用",
-    "scan.passTitle": "CampusPass 優惠使用憑證",
+    "scan.passTitle": "只有合作店家可以確認",
     "scan.notMerchant": "這是 CampusPass 優惠使用憑證，只有合作店家的手機可以確認。",
     "scan.notMerchantHint": "如果你是店家，想加入合作或了解確認方式，請看「商家合作」。",
     "scan.forMerchants": "商家合作",
@@ -534,7 +534,7 @@ const DICT = {
     "err.generic": "Something went wrong. Try again later.",
 
     "scan.title": "Confirm a deal",
-    "scan.passTitle": "CampusPass deal pass",
+    "scan.passTitle": "For partner shops only",
     "scan.notMerchant": "This is a CampusPass deal pass. Only a partner shop's phone can confirm it.",
     "scan.notMerchantHint": "Run a shop? See “For merchants” to join or to learn how confirming works.",
     "scan.forMerchants": "For merchants",

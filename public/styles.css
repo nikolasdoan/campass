@@ -433,6 +433,157 @@ textarea.field:focus{ outline:none; border-color:var(--dot); box-shadow:0 0 0 3p
 .acct .item-btn .ic{ width:17px; height:17px; color:var(--ink-2); }
 .acct .sep{ height:1px; margin:6px -6px; background:var(--line); }
 
+/* ---------- 使用優惠: the detail's action bar ----------
+   A strip under the panel header on a desktop; a bottom bar above the tab bar on a phone. */
+.duse{ display:grid; gap:6px; padding:12px 20px 14px; background:var(--surface); border-bottom:1px solid var(--line); }
+.btn-cta{ min-height:52px; padding:16px 32px; border-radius:999px; background:var(--accent-fill); color:var(--on-accent); font-size:15px; font-weight:600;
+  box-shadow:0 10px 30px rgba(140,82,255,.28); }
+.btn-cta:hover:not(:disabled){ background:color-mix(in srgb,var(--accent-fill) 88%,#000); }
+.btn-cta:disabled{ box-shadow:none; }
+.btn-cta .ic{ width:19px; height:19px; stroke-width:2; }
+.duse .btn-cta{ width:100%; }
+.usehint{ margin:0; font-size:12px; color:var(--muted); text-align:center; }
+.duse.is-expired .usehint{ color:var(--ink-2); }
+.btn-lg{ min-height:48px; padding:12px 32px; font-size:15px; }
+
+/* ---------- the in-store pass (modal on a desktop, full screen on a phone) ---------- */
+dialog.pass .dlg-card{ width:min(400px,calc(100vw - 32px)); padding:30px 24px 22px; text-align:center; overflow-x:hidden; }
+/* The shimmer: a band sweeping across the top edge. With the ticking clock, it tells a
+   live pass from a screenshot at a glance. */
+.pass-live{ position:absolute; top:0; left:0; right:0; height:4px; overflow:hidden; background:var(--tile-tint); }
+.pass-live i{ position:absolute; top:0; bottom:0; left:0; width:45%;
+  background:linear-gradient(90deg,transparent,var(--dot),transparent); animation:passSweep 1.8s var(--ease-standard) infinite; }
+@keyframes passSweep{ from{ transform:translateX(-100%); } to{ transform:translateX(230%); } }
+.pass.is-confirmed .pass-live{ background:var(--seal-wash); }
+.pass.is-confirmed .pass-live i{ background:linear-gradient(90deg,transparent,var(--seal),transparent); }
+.pass .dlg-x{ position:absolute; top:10px; right:8px; margin:0; }
+.pass-eyebrow{ display:flex; align-items:center; justify-content:center; gap:6px; margin:0 0 6px; font-size:12px; font-weight:600; color:var(--muted); letter-spacing:.02em; }
+.pass-eyebrow svg{ width:19px; height:16px; color:var(--dot); }
+.pass-name{ margin:0 0 8px; font-size:19px; line-height:1.35; font-weight:600; letter-spacing:-0.01em; overflow-wrap:anywhere; }
+.pass-stage{ display:grid; justify-items:center; gap:10px; margin:16px 0 12px; }
+.pass-qr{ width:min(248px,64vw,34dvh); aspect-ratio:1; border-radius:12px; background:#FFFFFF; box-shadow:0 0 0 1px var(--line); overflow:hidden; }
+.pass-qr .qr{ display:block; width:100%; height:100%; }
+.pass-qr.wait{ animation:pulse 1.2s var(--ease-standard) infinite; }
+.pass-qr.failed{ display:grid; place-items:center; padding:20px; color:#48484A; font-size:13px; }
+.pass-qr.failed p{ margin:0; }
+.pass-state{ display:inline-flex; align-items:center; gap:6px; margin:0; font-size:12px; font-weight:600; color:var(--seal-ink); }
+.pass-state i{ width:8px; height:8px; border-radius:50%; background:var(--seal); animation:pulse 1.2s var(--ease-standard) infinite; }
+.pass-code{ display:grid; gap:2px; }
+.pass-code span{ font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
+.pass-code b{ font:600 34px/1.15 var(--mono); letter-spacing:.12em; color:var(--ink); white-space:nowrap; }
+.pass.is-expired .pass-code b{ color:var(--muted); text-decoration:line-through; text-decoration-thickness:2px; }
+.pass-meta{ display:grid; grid-template-columns:1fr 1fr; margin:14px 0 0; border:1px solid var(--line); border-radius:12px; }
+.pass-meta div{ padding:8px 6px; }
+.pass-meta div + div{ border-left:1px solid var(--line); }
+.pass-meta dt{ font-size:11.5px; color:var(--muted); }
+.pass-meta dd{ margin:0; font:600 21px/1.3 var(--mono); color:var(--ink); }
+.pass-meta dd.low{ color:var(--warn); }
+.pass-who{ margin:12px 0 4px; font-size:13px; color:var(--ink-2); overflow-wrap:anywhere; }
+.pass-instr{ margin:0; font-size:12.5px; line-height:1.6; color:var(--muted); }
+.pass-done{ display:grid; justify-items:center; gap:6px; padding:18px 0 8px; }
+.okmark{ display:grid; place-items:center; width:104px; height:104px; border-radius:50%; background:var(--seal); color:var(--surface);
+  animation:okPop var(--dur-panel) var(--ease-decel); }
+.okmark .ic{ width:56px; height:56px; stroke-width:2.6; }
+@keyframes okPop{ from{ opacity:0; transform:scale(.6); } }
+.pass-done b{ margin-top:6px; font-size:21px; font-weight:600; color:var(--seal-ink); }
+.pass-done .when{ font-size:13.5px; color:var(--ink-2); }
+.pass-expired{ display:grid; justify-items:center; gap:6px; width:100%; padding:8px 0; }
+.pass-expired .eic{ display:grid; place-items:center; width:48px; height:48px; border-radius:50%; background:var(--chip); color:var(--muted); }
+.pass-expired b{ font-size:17px; font-weight:600; }
+.pass-expired p{ margin:0; font-size:13px; color:var(--muted); }
+.pass-expired > .btn{ margin-top:8px; }
+.pass-ask{ display:grid; gap:10px; width:100%; margin:8px 0 0; padding:12px; border-radius:12px; background:var(--chip); }
+.pass-ask > b{ font-size:14.5px; }
+.ask-done{ display:inline-flex; align-items:center; justify-content:center; gap:6px; margin:0; font-size:14px; color:var(--seal-ink); }
+.ask-done .ic{ width:17px; height:17px; }
+.askbtns{ display:grid; gap:8px; }
+.askbtns .btn{ width:100%; min-height:44px; }
+.pass-ask .btn-outline{ background:var(--surface); }
+
+/* ---------- shop pages (/m/:key, /r/:code) and /merchants ---------- */
+html.chrome-min{ --rail-w:0px; --nav-h:0px; }
+html.chrome-min .rail,html.chrome-min .tabbar,html.chrome-min .tabbar-fade,html.chrome-min .appbar-actions{ display:none !important; }
+html.chrome-min .install{ display:none !important; } /* /pwa.js's card: installing would open "/", not the shop page */
+.col-min{ max-width:560px; }
+.minibody{ display:grid; gap:16px; padding:8px 16px 40px; }
+.minibrand{ display:none; }
+.minihead{ padding:12px 4px 0; }
+.minihead .eyebrow{ margin-bottom:6px; }
+.minihead .pagetitle{ overflow-wrap:anywhere; }
+.shopcount{ margin:6px 0 0; font-size:14px; color:var(--ink-2); }
+.shopcount b{ margin:0 2px; font-size:20px; font-weight:600; color:var(--ink); }
+input.field{ display:block; width:100%; height:44px; padding:0 12px; border:1px solid var(--line); border-radius:8px; background:var(--surface);
+  color:var(--ink); font-size:15px; }
+input.field:focus{ outline:none; border-color:var(--dot); box-shadow:0 0 0 3px var(--tile-tint); }
+.field[aria-invalid="true"]{ border-color:var(--warn); }
+.field::placeholder{ color:var(--muted); }
+.coderow{ display:grid; grid-template-columns:minmax(0,1fr) auto; gap:8px; }
+input.codefield{ height:56px; padding:0 8px; font:600 28px var(--mono); letter-spacing:.22em; text-align:center; text-transform:uppercase; }
+.coderow .btn-lg{ min-height:56px; padding:0 24px; font-size:16px; }
+.fieldhint{ margin:6px 0 0; font-size:12px; color:var(--muted); }
+.result{ display:flex; align-items:flex-start; gap:12px; margin-top:14px; padding:14px; border-radius:12px; text-align:left; }
+.result > .ic{ width:30px; height:30px; flex:none; stroke-width:2; }
+.result b{ display:block; font-size:16px; font-weight:600; }
+.result span{ display:block; margin-top:2px; font-size:13px; color:var(--ink-2); overflow-wrap:anywhere; }
+.result.ok{ background:var(--seal-wash); color:var(--seal-ink); animation:dlgIn var(--dur-panel) var(--ease-decel); }
+.result.err{ background:color-mix(in srgb,var(--warn) 9%,transparent); color:var(--warn); }
+.result.err b{ font-size:14.5px; font-weight:500; }
+.shopdeals{ display:grid; gap:12px; margin:0; padding:0; list-style:none; }
+.shopdeals li{ display:grid; justify-items:start; gap:3px; }
+.shopdeals b{ font-size:15px; font-weight:600; }
+.shopdeals span:not(.badge){ font-size:13px; color:var(--ink-2); }
+.howrow{ display:flex; gap:12px; }
+.howrow .ic{ width:22px; height:22px; margin-top:1px; color:var(--dot); }
+.card .howrow p{ margin:0; color:var(--ink); }
+.card .paired{ display:flex; gap:8px; margin:14px 0 0; padding-top:12px; border-top:1px solid var(--line); }
+.paired .ic{ width:16px; height:16px; margin-top:2px; color:var(--seal); }
+.scancard{ display:grid; justify-items:center; gap:14px; padding:28px 20px 24px; text-align:center; }
+.scancard .eyebrow{ justify-content:center; margin:0; }
+.scanstate{ display:grid; justify-items:center; gap:8px; }
+.scanstate .pagetitle{ font-size:22px; outline:none; overflow-wrap:anywhere; }
+.card .scanstate p{ margin:0; max-width:360px; font-size:14px; color:var(--ink-2); }
+.bigic{ display:grid; place-items:center; width:64px; height:64px; border-radius:50%; background:var(--tile-tint); color:var(--dot); }
+.bigic .ic{ width:30px; height:30px; }
+.scanstate.muted .bigic{ background:var(--chip); color:var(--muted); }
+.okmark.big{ width:120px; height:120px; }
+.okmark.big .ic{ width:64px; height:64px; }
+.scanstate.ok .pagetitle{ color:var(--seal-ink); font-size:26px; }
+.card .scancode{ margin:0; font:500 14px var(--mono); letter-spacing:.06em; color:var(--muted); }
+.card .scanhint{ margin:0; max-width:360px; font-size:13px; color:var(--muted); }
+.scanactions{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px; }
+.scancard .btn-cta{ margin-top:4px; }
+.pitchlede{ font-size:15px; }
+.card .pitchlede{ margin-bottom:16px; color:var(--ink); }
+.pitch{ display:grid; gap:16px; margin:0; padding:0; list-style:none; }
+.pitch li{ display:grid; grid-template-columns:40px minmax(0,1fr); gap:12px; }
+.pic{ display:grid; place-items:center; width:40px; height:40px; border-radius:10px; background:var(--tile-tint); color:var(--dot); }
+.pitch b{ font-size:15px; font-weight:600; }
+.card .pitch p{ margin:2px 0 0; font-size:13.5px; }
+.card h2.cardtitle{ margin:0 0 4px; font-size:17px; letter-spacing:-0.01em; color:var(--ink); }
+.fld{ margin-top:14px; min-width:0; }
+.fieldlbl .req{ margin-left:6px; font-size:12px; font-weight:400; color:var(--muted); }
+.fldpair{ display:grid; grid-template-columns:1fr 1fr; gap:0 12px; }
+.fldpair + .fieldhint{ margin-top:4px; }
+.fielderr{ margin:4px 0 0; font-size:12.5px; color:var(--warn); }
+textarea.field{ min-height:84px; }
+#reportMsg{ min-height:120px; }
+fieldset.radios{ margin:16px 0 0; padding:0; border:0; }
+fieldset.radios legend{ padding:0; }
+.radio{ display:flex; align-items:center; gap:10px; min-height:44px; margin-top:6px; padding:0 12px; border:1px solid var(--line); border-radius:10px;
+  font-size:14.5px; cursor:pointer; transition:border-color var(--dur-tap) var(--ease-standard), background-color var(--dur-tap) var(--ease-standard); }
+.radio input{ flex:none; width:18px; height:18px; margin:0; accent-color:var(--accent-fill); }
+.radio:has(input:checked){ border-color:var(--dot); background:var(--tile-tint); }
+.radio:has(input:focus-visible){ outline:2px solid var(--dot); outline-offset:2px; }
+/* The honeypot: off screen, out of the tab order and the accessibility tree; bots still fill it. */
+.hp{ position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden; }
+.formerr{ margin:12px 0 0; font-size:13px; color:var(--warn); }
+.formerr:empty{ display:none; }
+#leadForm > .btn-block{ margin-top:18px; }
+#leadForm > .fine{ margin:12px 0 0; }
+.card-links{ padding:6px 8px; }
+.card-links .row{ min-height:52px; }
+.listfoot a,.card a[data-nav]:not(.row):not(.btn){ color:var(--dot); text-underline-offset:2px; }
+
 /* ---------- toast ---------- */
 .toast{ position:fixed; inset:auto auto calc(var(--nav-h) + 20px) 50%; margin:0; padding:7px 14px; border:0; border-radius:999px; max-width:calc(100vw - 32px);
   background:color-mix(in srgb,var(--ink) 88%,transparent); color:var(--surface); font-size:12.5px; font-weight:500; line-height:1.4; text-align:center;
@@ -540,6 +691,56 @@ textarea.field:focus{ outline:none; border-color:var(--dot); box-shadow:0 0 0 3p
   .seg button{ min-height:40px; }
   .opt{ min-height:48px; }
   .toast{ bottom:calc(var(--nav-h) + 36px); }
+}
+
+/* Desktop: the 使用優惠 strip sits under the panel header, above the scrolling body. */
+@media (min-width:821px){
+  .detail.open .duse{ order:1; }
+  .detail.open .dbody{ order:2; }
+  .appbar-back{ display:none; }
+  .minibrand{ display:inline-flex; align-items:center; gap:8px; justify-self:start; margin:28px 0 0; color:var(--dot); text-decoration:none; }
+  .minibrand svg{ width:30px; height:26px; }
+  .minibrand .wordmark{ font-size:26px; }
+}
+
+/* Phone: the bar above the tab bar, the pass full screen, shop pages with the wordmark. */
+@media (max-width:820px){
+  .duse{ position:absolute; left:0; right:0; bottom:var(--nav-h); z-index:2; padding:10px calc(16px + var(--sar)) 12px calc(16px + var(--sal)); border-bottom:0; }
+  .duse::before{ content:""; position:absolute; left:0; right:0; bottom:100%; height:24px; pointer-events:none;
+    background:linear-gradient(to bottom,color-mix(in srgb,var(--surface) 0%,transparent),var(--surface)); }
+  .duse .usehint{ display:none; }
+  .duse.is-expired .usehint{ display:block; }
+  .detail.has-use .dbody{ padding-bottom:calc(var(--nav-h) + 40px + 76px); }
+  .duse.is-expired ~ .dbody,.detail.has-use:has(.duse.is-expired) .dbody{ padding-bottom:calc(var(--nav-h) + 40px + 96px); }
+
+  dialog.dlg.pass{ inset:0; height:100%; }
+  dialog.pass .dlg-card{ display:flex; flex-direction:column; width:100%; height:100%; max-height:none; border-radius:0; box-shadow:none;
+    padding:calc(28px + var(--sat)) calc(20px + var(--sar)) calc(20px + var(--sab)) calc(20px + var(--sal)); }
+  dialog.pass .dlg-card::before{ display:none; }
+  dialog.pass .dlg-card > :nth-child(3){ margin-top:auto; }
+  dialog.pass .dlg-card > :last-child{ margin-bottom:auto; }
+  dialog.pass .pass-live{ top:var(--sat); }
+  .pass .dlg-x{ top:calc(8px + var(--sat)); right:calc(6px + var(--sar)); }
+  .pass-qr{ width:min(280px,72vw,38dvh); }
+  .pass-meta{ width:100%; }
+
+  body[data-route="merchants"],body[data-route="shop"],body[data-route="scan"]{ background:var(--page); }
+  body[data-route="merchants"] .tabbar-fade{ background:linear-gradient(to bottom,transparent,var(--page)); opacity:.9; }
+  html.chrome-min .brand{ display:flex; flex:1; }
+  html.chrome-min .appbar-title{ display:none; }
+  .appbar-back{ margin-left:-10px; flex:none; }
+  .appbar:has(.appbar-back:not([hidden])){ padding-left:calc(8px + var(--sal)); }
+  .minibody{ padding:12px calc(16px + var(--sar)) 40px calc(16px + var(--sal)); }
+  input.field{ font-size:16px; }
+  input.codefield{ font-size:28px; }
+}
+@media (max-width:480px){
+  .fldpair{ grid-template-columns:minmax(0,1fr); }
+}
+@media (max-width:379px){
+  .pass-code b{ font-size:30px; }
+  input.codefield{ letter-spacing:.14em; font-size:24px; }
+  .coderow .btn-lg{ padding:0 18px; }
 }
 
 /* Phones: denser badge rows so a deal stays about three list lines tall. */
