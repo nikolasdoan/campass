@@ -90,7 +90,7 @@
     'body.has-overlay .install,html:has(dialog[open],[role=dialog][open],.sheet.open,[data-sheet-open]) .install' +
       '{opacity:0;transform:translateY(14px);pointer-events:none}' +
 
-    '.cp-update{position:fixed;z-index:80;left:50%;bottom:var(--_bottom);transform:translateX(-50%);' +
+    '.cp-update{position:fixed;z-index:80;left:50%;bottom:var(--_bottom);transform:translateX(-50%);max-width:calc(100vw - 32px);' +
       'min-height:40px;padding:0 16px;border:0;border-radius:999px;cursor:pointer;white-space:nowrap;' +
       'font-size:13px;font-weight:500;background:color-mix(in srgb,var(--_ink) 88%,transparent);color:var(--_surface);' +
       'box-shadow:0 8px 24px rgb(0 0 0/.18);' +
@@ -122,6 +122,79 @@
     var done = function () { node.remove(); };
     node.addEventListener('transitionend', done, { once: true });
     setTimeout(done, 400);
+  }
+
+  /* ── Placement ──────────────────────────────────────────────────────────────────────
+     The card and the toast float above everything fixed at the bottom of the screen: the
+     tab bar (--nav-h) and any action bar (the detail's 使用優惠 bar on a phone, .usebar or
+     [data-usebar] elsewhere). The bar's top edge is measured, so a bar of any height works.
+     With both up, the toast stacks above the card; neither ever covers the other. */
+  var BARS = '.usebar,[data-usebar],#detailUse,.duse';
+  var GAP = 12;
+  var probe = null;
+  function navPx() {
+    if (!probe || !probe.isConnected) {
+      probe = document.createElement('div');
+      probe.setAttribute('aria-hidden', 'true');
+      probe.style.cssText = 'position:fixed;left:0;bottom:0;width:0;visibility:hidden;pointer-events:none;' +
+        'height:var(--nav-h,env(safe-area-inset-bottom,0px))';
+      document.body.appendChild(probe);
+    }
+    return probe.getBoundingClientRect().height;
+  }
+  function shown(el) {
+    if (!el || el.hidden) return null;
+    var r = el.getBoundingClientRect();
+    if (!r.width || !r.height) return null;
+    var cs = getComputedStyle(el);
+    if (cs.visibility === 'hidden' || cs.display === 'none' || Number(cs.opacity) === 0) return null;
+    return r;
+  }
+  /* Distance from the bottom of the viewport that floating UI has to clear. */
+  function floorPx() {
+    var H = window.innerHeight, W = window.innerWidth, floor = navPx();
+    var bars = document.querySelectorAll(BARS);
+    for (var i = 0; i < bars.length; i++) {
+      var r = shown(bars[i]);
+      // Only a bar on screen, in the lower part of it (on a desktop the bar is a strip at the top).
+      if (!r || r.top < H * 0.4 || r.top >= H || r.right <= 0 || r.left >= W) continue;
+      floor = Math.max(floor, H - r.top);
+    }
+    return floor;
+  }
+  var cardShown = function (card) {
+    return card && card.dataset.state !== 'leave' && !busy() && !root.classList.contains('chrome-min') && shown(card);
+  };
+  function layout() {
+    var card = document.getElementById('cpInstall');
+    var toast = document.querySelector('.cp-update');
+    if (!card && !toast) return;
+    var bottom = floorPx() + GAP;
+    if (card) card.style.bottom = bottom + 'px';
+    if (toast) toast.style.bottom = (cardShown(card) ? bottom + card.offsetHeight + 8 : bottom) + 'px';
+  }
+  var queued = false;
+  function relayout() {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(function () { queued = false; layout(); });
+  }
+  var watching = false;
+  function watchLayout() {
+    if (watching) return;
+    watching = true;
+    // Whatever opens, closes or moves a bar: routes, the detail panel, dialogs, resizes.
+    new MutationObserver(relayout).observe(document.body, {
+      subtree: true, childList: true, attributes: true, attributeFilter: ['class', 'hidden', 'open'],
+    });
+    window.addEventListener('resize', relayout);
+    window.addEventListener('popstate', relayout);
+    document.addEventListener('transitionend', relayout, true);
+    document.addEventListener('animationend', relayout, true);
+  }
+  function place(node) {
+    watchLayout();
+    layout();
   }
 
   /* ── Service worker + update toast ──────────────────────────────────────────────── */
@@ -163,6 +236,7 @@
         setTimeout(function () { if (!refreshing) { refreshing = true; location.reload(); } }, 3000);
       });
       enter(t);
+      place(t);
     };
 
     var watch = function (reg) {
@@ -185,18 +259,34 @@
       });
     };
 
-    /* What this page already loaded (app.js's module imports, icons) went to the network before
-       the worker was in control; give the list to the worker so an offline launch has them. */
+    /* What this page already loaded went to the network before the worker was in control:
+       the exact (versioned) URLs of its own <script>/<link> tags, what those imported (module
+       imports, fonts, icons: the Performance API), and the public deal list. Give the list to
+       the worker so an offline launch after a single visit has all of it. */
+    var STATIC = /\.(?:css|js|mjs|svg|png|jpe?g|webp|avif|gif|ico|woff2?|webmanifest)$/i;
+    var loadedUrls = function () {
+      var seen = {}, out = [];
+      var add = function (u) {
+        try {
+          var x = new URL(u, location.href);
+          if (x.origin !== location.origin || x.pathname === '/sw.js') return;
+          if (!STATIC.test(x.pathname) && !(x.pathname === '/api/deals' && !x.search)) return;
+          if (!seen[x.href]) { seen[x.href] = 1; out.push(x.href); }
+        } catch (e) { /* ignore */ }
+      };
+      var tags = document.querySelectorAll('script[src],link[href][rel~="stylesheet"],link[href][rel~="modulepreload"],' +
+        'link[href][rel~="preload"],link[href][rel~="icon"],link[href][rel~="apple-touch-icon"]');
+      for (var i = 0; i < tags.length; i++) add(tags[i].getAttribute('src') || tags[i].getAttribute('href'));
+      try {
+        performance.getEntriesByType('resource').forEach(function (e) { add(e.name); });
+      } catch (e) { /* no Performance API */ }
+      add('/api/deals');
+      return out;
+    };
     var handOverLoadedAssets = function () {
       navigator.serviceWorker.ready.then(function (reg) {
-        if (!reg.active || !window.performance || !performance.getEntriesByType) return;
-        var urls = performance.getEntriesByType('resource').map(function (e) { return e.name; })
-          .filter(function (u) {
-            try {
-              var x = new URL(u);
-              return x.origin === location.origin && /\.(?:css|js|mjs|svg|png|jpe?g|webp|avif|gif|ico|woff2?)$/i.test(x.pathname);
-            } catch (e) { return false; }
-          });
+        if (!reg.active) return;
+        var urls = loadedUrls();
         if (urls.length) reg.active.postMessage({ type: 'CACHE_URLS', urls: urls });
       }).catch(function () {});
     };
@@ -350,6 +440,7 @@
     if (document.getElementById('cpInstall')) return null;
     var card = buildCard(platform);
     enter(card);
+    place(card);
     return card;
   }
 
@@ -360,8 +451,15 @@
     return showCard(p);
   };
 
+  /* A shop's counter page (/m/<key>, /r/<code>): installing from there would open the student
+     app, not the shop page, so the card never shows there and never spends an ask. */
+  var shopPage = function () {
+    return /^\/(?:m|r)\//.test(location.pathname) || root.classList.contains('chrome-min');
+  };
+
   (function schedule() {
     if (isStandalone()) { write(OFF, 'installed'); return; }
+    if (shopPage()) return;
     if (read(OFF)) return;
 
     var firstAt = Number(read(FIRST) || 0);
@@ -381,7 +479,8 @@
       // Not in the first minute of the very first visit: let them see what it is first.
       var early = firstAt + FIRST_WAIT_MS - Date.now();
       if (early > 0) { again(early); return; }
-      if (busy()) { if (deferrals-- > 0) again(3000); return; }
+      // Busy, on a shop page (reached in-app), or the update toast is up: wait, ask nothing.
+      if (busy() || shopPage() || document.querySelector('.cp-update')) { if (deferrals-- > 0) again(3000); return; }
       // Android/Chrome: only with a real install to offer. Nothing else can install from a card.
       if (!isIOS && !deferred) {
         onInstallable = function () { again(SETTLE_MS); };

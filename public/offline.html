@@ -4,12 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>離線 · CampusPass</title>
-<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#202026" media="(prefers-color-scheme: dark)">
+<!-- The status bar matches this page's background (--page), light or dark with the system… -->
+<meta name="theme-color" content="#FAFAFA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#17171B" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
 <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
 <script>
-/* Same theme switch as the app (localStorage cp_theme), applied before paint. */
-try { var t = localStorage.getItem('cp_theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+/* …unless the reader picked a theme in the app (localStorage cp_theme): then that theme, for
+   the page and the status bar both, applied before paint like index.html does. */
+(function () {
+  try {
+    var t = localStorage.getItem('cp_theme');
+    if (t !== 'light' && t !== 'dark') return;
+    document.documentElement.dataset.theme = t;
+    var c = t === 'dark' ? '#17171B' : '#FAFAFA';
+    var m = document.querySelectorAll('meta[name="theme-color"]');
+    for (var i = 0; i < m.length; i++) m[i].setAttribute('content', c);
+  } catch (e) { /* storage blocked: follow the system */ }
+})();
 </script>
 <style>
 :root{ color-scheme:light;
