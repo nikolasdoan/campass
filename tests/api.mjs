@@ -10,10 +10,15 @@ const check = (name, ok, detail = "") => {
 };
 
 /** A cookie jar per simulated browser. */
+// Each simulated browser gets its own client IP, so the per-IP rate limits (RL_FORMS 10/min,
+// RL_CONFIRM 30/min) don't trip across checks. Cloudflare overwrites this header in production.
+let ipSeq = 0;
+const RUN = Date.now().toString(36);
 function browser() {
   const jar = new Map();
+  const ip = `test-${RUN}-${++ipSeq}`;
   async function req(path, opts = {}) {
-    const headers = { ...(opts.headers || {}) };
+    const headers = { "CF-Connecting-IP": ip, ...(opts.headers || {}) };
     if (jar.size) headers.Cookie = [...jar].map(([k, v]) => `${k}=${v}`).join("; ");
     if (opts.json !== undefined) {
       headers["Content-Type"] = "application/json";
@@ -171,6 +176,13 @@ const after = (await anon.json("/admin/stats", { headers: ADMIN })).body;
 check("only the real leads were stored", after.merchants.leads === before.merchants.leads + 2, `${before.merchants.leads} -> ${after.merchants.leads}`);
 check("stats has the go/no-go gate", after.gate?.students_using_twice?.target === 30 && after.gate?.shops_would_pay?.target === 5);
 await anon.json("/api/merchant-leads", { method: "POST", json: { shop_name: "=HYPERLINK(\"http://x\")", email: "f@example.com" } });
+{
+  const spammer = browser();
+  const codes = [];
+  for (let i = 0; i < 11; i++) codes.push((await spammer.json("/api/merchant-leads", { method: "POST", json: { shop_name: "x" } })).status);
+  check("lead form is rate limited per client (11th post -> 429)", codes.slice(0, 10).every((c) => c === 400) && codes[10] === 429, codes.join(","));
+  check("another client is not affected", (await browser().json("/api/merchant-leads", { method: "POST", json: { shop_name: "x" } })).status === 400);
+}
 check("CSV export neutralises formulas", (await (await anon.req("/admin/merchants.csv", { headers: ADMIN })).text()).includes(`"'=HYPERLINK(""http://x"")"`));
 const dup = { shop_name: `重複店 ${Date.now()}`, email: "dup@example.com", interest: "featured_paid" };
 const g0 = (await anon.json("/admin/stats", { headers: ADMIN })).body.gate.shops_would_pay.value;
