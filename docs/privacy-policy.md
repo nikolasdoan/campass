@@ -88,20 +88,20 @@ Observability），會處理您的 IP 位址、瀏覽器資訊與請求紀錄。
 
 | 資料 | 保存期間（提案） |
 |---|---|
-| 登入工作階段 | 30 天後失效並刪除 |
+| 登入工作階段 | 30 天後失效，並於每日自動清理時刪除 |
 | 帳號資料、收藏 | 至您要求刪除帳號為止；連續 [3] 年未登入者刪除 |
-| 使用日、優惠瀏覽紀錄 | 2 年，之後僅保留去識別化的統計數字 |
-| 優惠通行證紀錄 | 2 年 |
+| 使用日、優惠瀏覽紀錄 | 2 年後刪除（每日自動清理） |
+| 優惠通行證紀錄 | 2 年後刪除（每日自動清理） |
 | 錯誤回報 | 處理完畢後 1 年 |
 | 商家合作表單 | 至商家撤回或要求刪除為止 |
 | Cloudflare 技術紀錄 | 依 Cloudflare 設定，通常數日 **【待確認】** |
 
 **地區 【待律師確認：個資法第 21 條國際傳輸】**：資料儲存於 Cloudflare D1 資料庫（位於美國東部地區），網站由
-Cloudflare 全球節點提供。登入由 Google 處理。網頁字型由 Google Fonts 載入，您的瀏覽器會因此連線至 Google 伺服器。
+Cloudflare 全球節點提供。登入由 Google 處理。網頁字型由本服務自行提供，不會連線至第三方字型服務。
 
 **對象**：
 - 本服務營運者（`[營運者名稱]`），僅限需要時存取。
-- 受託處理者：Cloudflare, Inc.（主機與資料庫）；Google LLC（登入驗證、字型、大頭貼圖片）。
+- 受託處理者：Cloudflare, Inc.（主機與資料庫）；Google LLC（登入驗證、大頭貼圖片）。
 - 商家：商家確認通行證時，只會看到優惠名稱與代碼是否有效，**看不到您的姓名、電子郵件或任何帳號資料**。
 - 除法律要求外，不提供給其他第三人；本服務不提供個人資料給學校。
 
@@ -211,18 +211,18 @@ The Service's own database does not store IP addresses.
 
 ### 4. Period, region, recipients and method of use
 
-**Retention [PROPOSAL]**: sessions expire and are deleted after 30 days; the account and saved deals are kept
-until you ask for deletion, or deleted after [3] years without sign-in; active days and deal views are kept for
-2 years, after which only de-identified totals remain; pass records 2 years; reports 1 year after they are
+**Retention [PROPOSAL]**: sessions expire after 30 days and are deleted by the daily cleanup; the account and saved deals are kept
+until you ask for deletion, or deleted after [3] years without sign-in; active days, deal views and pass records are
+deleted after 2 years by the daily cleanup; reports 1 year after they are
 handled; shop partnership leads until the shop withdraws or asks for deletion; Cloudflare technical logs per
 Cloudflare's settings, typically a few days **[TO CONFIRM]**.
 
 **Region [LAWYER: PDPA Art. 21 cross-border transfer]**: data is stored in a Cloudflare D1 database in the
 Eastern North America region (United States) and served from Cloudflare's global network. Sign-in is handled
-by Google. Web fonts are loaded from Google Fonts, so your browser connects to Google's servers.
+by Google. Web fonts are served by the Service itself; no third-party font service is contacted.
 
 **Recipients**: the operator, on a need-to-know basis; processors Cloudflare, Inc. (hosting, database) and
-Google LLC (sign-in, fonts, profile pictures). When a shop confirms a pass it sees only the deal name and
+Google LLC (sign-in, profile pictures). When a shop confirms a pass it sees only the deal name and
 whether the code is valid — **never your name, email or any account data**. No data is given to schools or to
 other third parties except where the law requires.
 
@@ -263,15 +263,16 @@ Changes are posted on the Service with a new "last updated" date; significant ch
 
 ## 實作備註 Implementation notes (for the team, remove before publishing)
 
-These are gaps between the proposed policy and the current code (2026-10-15), for campass-1 to decide on:
+Status of the gaps between this policy and the code (updated 2026-10-15, integration `f27b3dc`):
 
-1. **Expired sessions are not deleted**: `sessions` rows stay after `expires_at`. A scheduled cleanup (Cron
-   Trigger) is needed for "deleted after 30 days".
-2. **No retention jobs** for `visits`, `deal_views`, `redemptions`, `reports`, `merchant_leads`, or inactive users.
-3. **No self-service account deletion**: deletion requests are manual (`DELETE FROM users` cascades only to
-   `sessions` and `favorites`; `visits`, `deal_views`, `redemptions`, `reports` have no foreign key and must be
-   deleted by `user_id` explicitly; `merchant_leads.user_id` should be set to NULL).
-4. **Google Fonts** is loaded from `fonts.googleapis.com`, which shares visitors' IPs with Google. Self-hosting
-   the two fonts would remove a recipient and simplify the cross-border section.
-5. **Workers Observability** is enabled in `wrangler.jsonc`; confirm its log retention for the plan in use.
+1. **Done** — expired sessions are deleted by `cleanup()`, run daily by the Cron Trigger `17 19 * * *`
+   (03:17 Asia/Taipei) in `wrangler.jsonc`, and on demand via `POST /admin/cleanup`.
+2. **Partly done** — `cleanup()` deletes `visits`, `deal_views` and `redemptions` older than 730 days. Still
+   manual: reports (1 year after handling), inactive accounts ([3] years without sign-in) and merchant leads
+   (until withdrawn). The retention table above is still a proposal until those are decided.
+3. **Done (API)** — `DELETE /api/me` deletes the user's sessions, favourites, visits, deal views, passes and
+   reports, unlinks their merchant leads, then deletes the user. The self-service button on /me is pending; once
+   it ships, add it to section 5 ("行使方式" / "How").
+4. **Done** — fonts are self-hosted (`public/fonts/`); Google Fonts is no longer a recipient.
+5. **Open** — Workers Observability is enabled in `wrangler.jsonc`; confirm its log retention for the plan in use.
 6. The `cp_merchant` cookie lasts 365 days; the policy states that.
