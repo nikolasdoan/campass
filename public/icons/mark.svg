@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="66 96 380 320" fill="currentColor" aria-hidden="true">
+  <!-- CampusPass mark only (no tile). Inherits colour from `color`; cut-outs are transparent. -->
+  <defs>
+    <mask id="cp-mark-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+      <rect x="86" y="146" width="340" height="220" rx="30" fill="#fff"/>
+      <g fill="#000">
+        <circle cx="322" cy="146" r="28"/>
+        <circle cx="322" cy="366" r="28"/>
+        <circle cx="322" cy="200" r="9"/>
+        <circle cx="322" cy="238" r="9"/>
+        <circle cx="322" cy="276" r="9"/>
+        <circle cx="322" cy="314" r="9"/>
+        <rect x="132" y="210" width="128" height="26" rx="13"/>
+        <rect x="132" y="262" width="84" height="26" rx="13"/>
+      </g>
+    </mask>
+  </defs>
+  <g transform="rotate(-12 256 256)">
+    <rect width="512" height="512" mask="url(#cp-mark-cut)"/>
+  </g>
+</svg>

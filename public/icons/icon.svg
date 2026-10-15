@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="CampusPass 校園優惠">
+  <!-- CampusPass mark: a pass with a torn-off stub (notches + perforation), tilted so it reads
+       as a ticket in hand rather than a rectangle. Purple tile, so it holds on light and dark tabs.
+       The PNGs in this folder are rendered from this geometry. -->
+  <defs>
+    <mask id="cp-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+      <rect x="86" y="146" width="340" height="220" rx="30" fill="#fff"/>
+      <g fill="#000">
+        <circle cx="322" cy="146" r="28"/>
+        <circle cx="322" cy="366" r="28"/>
+        <circle cx="322" cy="200" r="9"/>
+        <circle cx="322" cy="238" r="9"/>
+        <circle cx="322" cy="276" r="9"/>
+        <circle cx="322" cy="314" r="9"/>
+        <rect x="132" y="210" width="128" height="26" rx="13"/>
+        <rect x="132" y="262" width="84" height="26" rx="13"/>
+      </g>
+    </mask>
+  </defs>
+  <rect width="512" height="512" rx="104" fill="#8C52FF"/>
+  <g transform="rotate(-12 256 256)">
+    <rect width="512" height="512" fill="#FFFFFF" mask="url(#cp-cut)"/>
+  </g>
+</svg>
