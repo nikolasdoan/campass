@@ -38,7 +38,7 @@ Dark mode: the same block twice, identical — under
 Theme choice is stored in `localStorage cp_theme` (`light`/`dark`/absent = system) and applied by an
 inline `<head>` script **before** CSS loads (no flash).
 
-Fonts: one Google Fonts request
+Fonts (CampusPass self-hosts glyph subsets in public/fonts/ instead): one Google Fonts request
 `https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Serif+TC:wght@700&display=swap`
 (wordmark only); the UI uses the system `--sans` stack (no web font for Chinese UI text).
 

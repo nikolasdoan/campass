@@ -1,3 +1,10 @@
+/* Wordmark fonts, self-hosted (no visitor IPs go to Google). They are glyph subsets holding only
+   "campuspass" and 校園優惠; the UI itself uses the system --sans stack. SIL OFL 1.1: fonts/OFL.txt. */
+@font-face{ font-family:"Instrument Serif"; font-style:italic; font-weight:400; font-display:swap;
+  src:url("/fonts/instrument-serif-italic-wordmark.woff2") format("woff2"); }
+@font-face{ font-family:"Noto Serif TC"; font-style:normal; font-weight:700; font-display:swap;
+  src:url("/fonts/noto-serif-tc-700-wordmark.woff2") format("woff2"); }
+
 /* CampusPass — Tecxmate Design System v1.1 (docs/design-system.md).
    Structure and patterns follow tecxmate/bizmap: the 72px rail on a desktop, a top app bar and
    a bottom tab bar on a phone (≤820px), bizmap's .item rows, pills, sheets and account menu. */
