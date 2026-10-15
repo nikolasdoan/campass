@@ -100,6 +100,9 @@ check("favourite remove", (await stu.json(`/api/favorites/${full.id}`, { method:
 check("CSRF: cross-site origin rejected", (await stu.json(`/api/favorites/${full.id}`, { method: "PUT", origin: "https://evil.example" })).status === 403);
 check("CSRF: missing origin rejected", (await stu.json(`/api/favorites/${full.id}`, { method: "PUT", origin: false })).status === 403);
 
+check("per-user responses are no-store", ((await stu.req(`/api/deals/${full.id}`)).headers.get("cache-control") || "").includes("no-store") && ((await stu.req("/api/me")).headers.get("cache-control") || "").includes("no-store"));
+check("public deal list is cacheable", ((await anon.req("/api/deals")).headers.get("cache-control") || "").includes("public"));
+
 // ---------- reports ----------
 check("report needs a message", (await stu.json(`/api/deals/${full.id}/report`, { method: "POST", json: { message: "  " } })).status === 400);
 check("report saved", (await stu.json(`/api/deals/${full.id}/report`, { method: "POST", json: { message: "API test — ignore" } })).body?.ok === true);

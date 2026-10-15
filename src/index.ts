@@ -146,6 +146,9 @@ function parseDeal(row: Record<string, any>) {
 // Same security headers as public/_headers, for responses the Worker builds itself.
 app.use("*", async (c, next) => {
   await next();
+  // Anything that can depend on the caller (session, shop cookie, admin) must never be cached by a
+  // browser, the service worker or a proxy. Only the public deal list opts in to caching.
+  if (!c.res.headers.has("Cache-Control")) c.header("Cache-Control", "private, no-store");
   c.header("X-Content-Type-Options", "nosniff");
   c.header("Referrer-Policy", "strict-origin-when-cross-origin");
   c.header("X-Frame-Options", "DENY");
