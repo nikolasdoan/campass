@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>CampusPass 管理後台 · Admin</title>
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#202026" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
+<script>
+/* Same theme choice as the app (localStorage cp_theme), applied before the stylesheet. */
+(function () {
+  try {
+    var th = localStorage.getItem('cp_theme');
+    if (th === 'light' || th === 'dark') document.documentElement.setAttribute('data-theme', th);
+  } catch (e) {}
+})();
+</script>
+<link rel="stylesheet" href="/admin.css?v=1">
+<script type="module" src="/admin.js?v=1"></script>
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="wordmark">campuspass</span>
+    <span class="brand-sub">管理後台 <span class="en">Admin</span></span>
+  </div>
+  <div class="top-actions" id="topActions" hidden>
+    <span class="updated" id="updated" aria-live="polite"></span>
+    <button class="btn btn-sm btn-secondary" id="refresh" type="button">重新整理 <span class="en">Refresh</span></button>
+    <button class="btn btn-sm btn-outline" id="signout" type="button">登出 <span class="en">Sign out</span></button>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- Signed out: token entry. The token is kept in sessionStorage only. -->
+  <section class="card signin" id="signin" aria-labelledby="signinTitle">
+    <h1 id="signinTitle">管理員登入 <span class="en">Admin sign-in</span></h1>
+    <p class="muted">輸入 ADMIN_TOKEN。權杖只存在這個分頁（sessionStorage），關閉分頁即清除。<br>
+      <span class="en">Enter the ADMIN_TOKEN. It is kept in this tab only and cleared when the tab closes.</span></p>
+    <form id="signinForm" autocomplete="off">
+      <label class="field">
+        <span class="lbl">管理權杖 <span class="en">Admin token</span></span>
+        <input id="token" name="token" type="password" autocomplete="off" spellcheck="false" required>
+      </label>
+      <button class="btn btn-primary" type="submit">登入 <span class="en">Sign in</span></button>
+    </form>
+    <p class="msg" id="signinMsg" role="alert"></p>
+  </section>
+
+  <div id="dash" hidden>
+    <p class="msg" id="dashMsg" role="alert"></p>
+
+    <section class="card" aria-labelledby="gateTitle">
+      <h2 id="gateTitle">是否繼續 <span class="en">Go / no-go gate</span></h2>
+      <p class="muted small">近 30 天。門檻來自 docs/business-review.md。<span class="en">Last 30 days; targets from docs/business-review.md.</span></p>
+      <div class="gate" id="gate"></div>
+    </section>
+
+    <section class="card" aria-labelledby="usersTitle">
+      <h2 id="usersTitle">使用者 <span class="en">Users</span></h2>
+      <div class="tiles" id="users"></div>
+    </section>
+
+    <section class="card" aria-labelledby="usageTitle">
+      <h2 id="usageTitle">使用情形（近 30 天）<span class="en">Usage, last 30 days</span></h2>
+      <p class="muted small">優惠使用分三級證據，分開計算。<span class="en">Redemptions are counted as three evidence tiers, reported separately.</span></p>
+      <div class="tiles" id="usage"></div>
+    </section>
+
+    <section class="card" aria-labelledby="merchTitle">
+      <h2 id="merchTitle">商家 <span class="en">Shops</span></h2>
+      <div class="tiles" id="merchants"></div>
+    </section>
+
+    <div class="two">
+      <section class="card" aria-labelledby="topViewedTitle">
+        <h2 id="topViewedTitle">最多瀏覽 <span class="en">Most viewed</span></h2>
+        <div id="topViewed"></div>
+      </section>
+      <section class="card" aria-labelledby="topRedeemedTitle">
+        <h2 id="topRedeemedTitle">最多使用 <span class="en">Most passes</span></h2>
+        <div id="topRedeemed"></div>
+      </section>
+    </div>
+
+    <section class="card" aria-labelledby="exportTitle">
+      <h2 id="exportTitle">匯出 CSV <span class="en">Export CSV</span></h2>
+      <p class="muted small">含個人資料，請妥善保管，勿外流。<span class="en">Contains personal data. Keep it private.</span></p>
+      <div class="btnrow" id="csvButtons">
+        <button class="btn btn-outline" type="button" data-csv="users">使用者 <span class="en">Users</span></button>
+        <button class="btn btn-outline" type="button" data-csv="reports">錯誤回報 <span class="en">Reports</span></button>
+        <button class="btn btn-outline" type="button" data-csv="redemptions">通行證 <span class="en">Passes</span></button>
+        <button class="btn btn-outline" type="button" data-csv="merchants">商家合作 <span class="en">Shop leads</span></button>
+      </div>
+      <p class="msg" id="exportMsg" role="status"></p>
+    </section>
+
+    <section class="card" aria-labelledby="keyTitle">
+      <h2 id="keyTitle">建立商家確認連結 <span class="en">Create a shop link</span></h2>
+      <p class="muted small">店家用這個連結確認學生的通行證。連結只會顯示一次。<span class="en">The shop confirms student passes with this link. It is shown only once.</span></p>
+      <form id="keyForm" autocomplete="off">
+        <label class="field">
+          <span class="lbl">店家名稱（顯示在確認頁）<span class="en">Shop name, shown on its page</span></span>
+          <input id="keyLabel" type="text" maxlength="80" required>
+        </label>
+        <label class="field">
+          <span class="lbl">搜尋優惠 <span class="en">Find deals</span></span>
+          <input id="dealSearch" type="search" placeholder="店名 · Shop name" aria-controls="dealResults">
+        </label>
+        <ul class="results" id="dealResults" aria-label="搜尋結果 Search results"></ul>
+        <div class="picked" id="picked" aria-live="polite"></div>
+        <button class="btn btn-primary" type="submit" id="keySubmit">建立連結 <span class="en">Create link</span></button>
+      </form>
+      <p class="msg" id="keyMsg" role="alert"></p>
+      <div class="keyout" id="keyOut" hidden>
+        <p class="warn-text">請現在複製或列印，之後無法再次查看。<span class="en">Copy or print it now; it cannot be shown again.</span></p>
+        <div class="copyrow">
+          <input id="keyUrl" type="text" readonly aria-label="商家連結 Shop link">
+          <button class="btn btn-secondary" type="button" id="keyCopy">複製 <span class="en">Copy</span></button>
+          <button class="btn btn-outline" type="button" id="keyPrint">列印 <span class="en">Print</span></button>
+        </div>
+        <div class="printcard" id="printCard">
+          <p class="print-label" id="printLabel"></p>
+          <div class="qr" id="keyQr"></div>
+          <p class="print-note">用店內手機開啟一次即完成配對。<br>Open once on the counter phone to pair it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="maintTitle">
+      <h2 id="maintTitle">維護 <span class="en">Maintenance</span></h2>
+      <p class="muted small">刪除過期登入及超過 2 年的使用日、瀏覽與通行證紀錄（每天 03:17 也會自動執行）。<span class="en">Deletes expired sessions and visits, views and passes older than 2 years (also runs daily at 03:17).</span></p>
+      <button class="btn btn-outline" type="button" id="cleanup">立即清理 <span class="en">Run cleanup</span></button>
+      <p class="msg" id="cleanupMsg" role="status"></p>
+    </section>
+  </div>
+</main>
+</body>
+</html>
