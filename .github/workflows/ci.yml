@@ -81,18 +81,30 @@ jobs:
         run: npx playwright install-deps chromium
 
       - name: Start mock Google and wrangler dev
+        id: servers
         run: |
           nohup node tests/mock-google.mjs > mock-google.log 2>&1 &
           nohup npx wrangler dev --port 8787 > wrangler-dev.log 2>&1 &
           timeout 120 bash -c 'until curl -sf http://localhost:8787/api/me > /dev/null; do sleep 2; done'
 
+      # Each suite runs even if an earlier one failed, so one red suite doesn't hide the others.
       - name: API tests
+        if: ${{ !cancelled() && steps.servers.outcome == 'success' }}
         run: npm run test:api
 
       - name: UI tests
+        if: ${{ !cancelled() && steps.servers.outcome == 'success' }}
         run: npm run test:ui
 
+      - name: PWA tests
+        if: ${{ !cancelled() && steps.servers.outcome == 'success' }}
+        # Lets Playwright's offline/route-abort reach the service worker (else offline checks pass falsely).
+        env:
+          PW_EXPERIMENTAL_SERVICE_WORKER_NETWORK_EVENTS: "1"
+        run: npm run test:pwa
+
       - name: Admin dashboard tests
+        if: ${{ !cancelled() && steps.servers.outcome == 'success' }}
         run: node tests/admin.mjs
 
       - name: Upload test results
