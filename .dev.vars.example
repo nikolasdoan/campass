@@ -1,0 +1,5 @@
+# Copy to .dev.vars for local development (never commit .dev.vars)
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+ADMIN_TOKEN=change-me
+# Lets you sign in locally at /auth/dev-login?email=you@example.com without Google
+DEV_LOGIN=true

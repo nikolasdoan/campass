@@ -1,0 +1,24 @@
+{
+  "name": "campuspass",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "db:migrate:local": "wrangler d1 migrations apply campuspass --local",
+    "db:migrate:remote": "wrangler d1 migrations apply campuspass --remote",
+    "db:seed:local": "wrangler d1 execute campuspass --local --file seed/deals.sql",
+    "db:seed:remote": "wrangler d1 execute campuspass --remote --file seed/deals.sql",
+    "import": "python3 scripts/import_deals.py data/ntu-partners.xlsx"
+  },
+  "dependencies": {
+    "hono": "^4.13.13"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261015.1",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.151.0"
+  }
+}

@@ -1,0 +1,2547 @@
+[
+  {
+    "id": "649bd31c3d",
+    "name": "福容大飯店",
+    "subtitle": "全台分館",
+    "category": "lodging",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，並提供臺灣大學統編：03734301，入住時憑臺大證件享優惠價",
+    "info": "電話：各分館資訊請詳見官網\n地址：各分館資訊請詳見官網(台北一館、台北二館、桃園、桃園機場捷運A8、高雄、淡水漁人碼頭、福隆(旅館區)、福隆貝悅(VILLA區)、花蓮、林口、中壢、水里、高雄、墾丁、澎湖) \n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，並提供臺灣大學統編：03734301，入住時憑臺大證件享優惠價\n網站：http://www.fullon-hotels.com.tw/",
+    "phone": "",
+    "address": "",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1onqOQ3q7uu1yZbEO0N8CTIiD1dfRrwLi/view?usp=drive_link"
+      },
+      {
+        "label": "fullon-hotels.com.tw",
+        "url": "http://www.fullon-hotels.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 1
+  },
+  {
+    "id": "394d45755e",
+    "name": "福容大飯店",
+    "subtitle": "福容徠旅-林口館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，並提供臺灣大學統編：03734301，入住時憑臺大證件享優惠價",
+    "info": "電話：03-327-7338\n地址：桃園市龜山區文二一街68號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，並提供臺灣大學統編：03734301，入住時憑臺大證件享優惠價\n網站：https://www.fullon-hotels.com.tw/fullon-poshtels/tw/",
+    "phone": "03-327-7338",
+    "address": "桃園市龜山區文二一街68號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1dqMtiwTe0fSa5uuy0pCoBlU6z4L7ztTr/view?usp=drive_link"
+      },
+      {
+        "label": "fullon-hotels.com.tw",
+        "url": "https://www.fullon-hotels.com.tw/fullon-poshtels/tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 2
+  },
+  {
+    "id": "58a27e58ee",
+    "name": "台北福華大飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價。",
+    "info": "電話：02-2700-2323\n地址：台北市大安區仁愛路三段160號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價。\n網站：https://www.howard-hotels.com.tw/zh_TW/HotelBusiness/91",
+    "phone": "02-2700-2323",
+    "address": "台北市大安區仁愛路三段160號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/15KDhB-sMG-2mwbTcn7zOv9Qe1aBpaFrJ/view?usp=drive_link"
+      },
+      {
+        "label": "howard-hotels.com.tw",
+        "url": "https://www.howard-hotels.com.tw/zh_TW/HotelBusiness/91"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 3
+  },
+  {
+    "id": "821f828b40",
+    "name": "公務人力發展學院",
+    "subtitle": "福華國際文教會館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友(含眷屬)，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價。",
+    "info": "電話：02-7712-2323\n地址：臺北市大安區新生南路三段30號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友(含眷屬)，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價。\n網站：https://www.howard-hotels.com.tw/zh_TW/HotelBusiness/96",
+    "phone": "02-7712-2323",
+    "address": "臺北市大安區新生南路三段30號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1oeGCch6e8IP0gDVJ4DCJlkVy5Kjr8LDs/view?usp=drive_link"
+      },
+      {
+        "label": "howard-hotels.com.tw",
+        "url": "https://www.howard-hotels.com.tw/zh_TW/HotelBusiness/96"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 4
+  },
+  {
+    "id": "2428fcbcbe",
+    "name": "石門水庫福華渡假飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價",
+    "info": "電話：(03)4112323\n地址：桃園市龍潭區大平里民富街 176 號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價\n網站：https://www.howard-hotels.com.tw/zh_TW/HotelVacation/116",
+    "phone": "(03)4112323",
+    "address": "桃園市龍潭區大平里民富街 176 號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/17-mdrJdHX2ioMQbHHFG3yT5rdhzc_vbX/view?usp=drive_link"
+      },
+      {
+        "label": "howard-hotels.com.tw",
+        "url": "https://www.howard-hotels.com.tw/zh_TW/HotelVacation/116"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 5
+  },
+  {
+    "id": "183ac2ddb5",
+    "name": "新竹福華大飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價。",
+    "info": "電話：03-5282323\n地址：新竹市北區中正路178號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價。\n網站：https://www.howard-hotels.com.tw/zh_TW/HotelBusiness/101",
+    "phone": "03-5282323",
+    "address": "新竹市北區中正路178號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1PGNYUCKeBQOgCkSo7WsMGTQY1DiBVMwp/view?usp=drive_link"
+      },
+      {
+        "label": "howard-hotels.com.tw",
+        "url": "https://www.howard-hotels.com.tw/zh_TW/HotelBusiness/101"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 6
+  },
+  {
+    "id": "adf6688a8d",
+    "name": "圓山大飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時請提供臺灣大學名稱及合約號碼C03734301享優惠價",
+    "info": "電話：(02)2886-8888\n地址：台北市中山區中山北路4段1號 \n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時請提供臺灣大學名稱及合約號碼C03734301享優惠價\n網站：https://grand-hotel.org/tw/official/main.aspx?gh=TP",
+    "phone": "(02)2886-8888",
+    "address": "台北市中山區中山北路4段1號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1TNDzvkC8cQv_uj_VWlifrJDLI8X--qOA/view?usp=drive_link"
+      },
+      {
+        "label": "grand-hotel.org",
+        "url": "https://grand-hotel.org/tw/official/main.aspx?gh=TP"
+      }
+    ],
+    "expires_on": "2026-12-30",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 7
+  },
+  {
+    "id": "e8679ee0e5",
+    "name": "兄弟大飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大在職教職員工及在學學生，預先訂房時主動告知所屬身份或臺灣大學特約代碼《AJ536A 國立台灣大學》，入住時憑臺大證件享優惠價(校友及眷屬不適用)",
+    "info": "電話：(02)2712-3456 \n地址：台北市南京東路三段255號\n訂房信箱：reservation@brotherhotel.com.tw\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大在職教職員工及在學學生，預先訂房時主動告知所屬身份或臺灣大學特約代碼《AJ536A 國立台灣大學》，入住時憑臺大證件享優惠價(校友及眷屬不適用)\n網站：http://www.brotherhotel.com.tw/",
+    "phone": "(02)2712-3456",
+    "address": "台北市南京東路三段255號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1XBlCXkRF2-rd0c3Ar2S0AzvuSBYCV2cz/view?usp=drive_link"
+      },
+      {
+        "label": "brotherhotel.com.tw",
+        "url": "http://www.brotherhotel.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-30",
+    "auto_renew": false,
+    "notes": "校友、眷屬不適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 8
+  },
+  {
+    "id": "8d4206f70d",
+    "name": "安居台北",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價",
+    "info": "電話：(02)2704-5888 \n地址：台北市大安區新生南路一段157巷10號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價\n網站：http://www.thecornerhouse.com.tw/",
+    "phone": "(02)2704-5888",
+    "address": "台北市大安區新生南路一段157巷10號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1iekbG1E9PLexFcxyH7kYrIn9giOAVMiu/view?usp=drive_link"
+      },
+      {
+        "label": "thecornerhouse.com.tw",
+        "url": "http://www.thecornerhouse.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 9
+  },
+  {
+    "id": "eb3b37666d",
+    "name": "捷絲旅-臺大尊賢館",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價",
+    "info": "電話：(02)7735-5000   \n地址：台北市大安區羅斯福路四段83號\n營業時間：24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價\n網站：https://event.silkshotelgroup.com/Home/Justsleep\n訂房中心信箱: rsvn@justsleephotels.com\n\n臺大教職員工、學生及校友適用訂房專頁連結：https://reurl.cc/Eg5Evk，專案代碼NTUEX\n\n\n臺大系所或相關單位代訂房，請以電話或e-mail訂房，並提供代訂系所加蓋系所章",
+    "phone": "(02)7735-5000",
+    "address": "台北市大安區羅斯福路四段83號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1xcHEQ7rl6MFSqC2KkesOwe-LDI6H_Cel/view?usp=drive_link"
+      },
+      {
+        "label": "event.silkshotelgroup.com",
+        "url": "https://event.silkshotelgroup.com/Home/Justsleep"
+      },
+      {
+        "label": "reurl.cc",
+        "url": "https://reurl.cc/Eg5Evk"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 10
+  },
+  {
+    "id": "cd57a42718",
+    "name": "洛碁飯店集團",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "非公開合約，訂房請洽專線或信箱\n\n訂房專線：02-2531-2858\n訂房信箱：reservation@gwh.global\n\n來信或來電請告知為台大教職員工、學生、校友及眷屬，\n入住時請出示臺大證件。",
+    "info": "電話：各分館資訊請詳見官網\n地址：各分館資訊請詳見官網(南港館、松山館、忠孝館、南京館、建北館、三貝茲館、驛館、中華館、新仕界館、林森館、山水閣館、舞衣南京館、花華分館)\n營業時間：24小時\n營業項目：住宿服務\n網站：https://greenworldhotels.com/",
+    "phone": "",
+    "address": "",
+    "links": [
+      {
+        "label": "greenworldhotels.com",
+        "url": "https://greenworldhotels.com/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 11
+  },
+  {
+    "id": "0aee5fcfb4",
+    "name": "柯達大飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價",
+    "info": "電話：各分館資訊請詳見官網\n地址：各分館資訊請詳見官網(台北南京、台北長安、台北松江、台北二店、台北一店、台北天津、台北林森、台北敦南、永和店、基隆店)\n網站：http://www.khotel.com.tw/zh-TW/\n營業時間：24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價",
+    "phone": "",
+    "address": "",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1BwYP7EeU4uuWqh_gvSOwJsa9DLfmA_im/view?usp=drive_link"
+      },
+      {
+        "label": "khotel.com.tw",
+        "url": "http://www.khotel.com.tw/zh-TW/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 12
+  },
+  {
+    "id": "607d36bbdc",
+    "name": "台北世聯商旅",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，需於訂房時主動告知臺灣大學之名稱，入住時憑證享優惠價。",
+    "info": "電話：02-2562-6161\n地址：台北市松江路90巷5號\n網站：https://tp.linkworldhotel.com.tw/\n營業時間：24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，需於訂房時主動告知臺灣大學之名稱，入住時憑證享優惠價。",
+    "phone": "02-2562-6161",
+    "address": "台北市松江路90巷5號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1rr2xuufUGSoT3ICqe3vvbY8Wiek5OKZd/view?usp=drive_link"
+      },
+      {
+        "label": "tp.linkworldhotel.com.tw",
+        "url": "https://tp.linkworldhotel.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 13
+  },
+  {
+    "id": "3fcf0e120a",
+    "name": "承億文旅",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "依身分別提供優惠內容請參照右側優惠連結(臺大教職員工、學生及校友)。訂房時主動告知臺灣大學之名稱或統編(03734301)，入住時憑臺大證件享優惠價。",
+    "info": "電話：各分館資訊請詳見官網\n地址：各分館資訊請詳見官網 (淡水吹風、花蓮山知道、小承輕旅-高雄館、潭日月、桃城茶樣子)\n網站：http://www.hotelday.com.tw/hotel03.aspx\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：\n依身分別提供優惠內容請參照右側優惠連結(臺大教職員工、學生及校友)。訂房時主動告知臺灣大學之名稱或統編(03734301)，入住時憑臺大證件享優惠價。",
+    "phone": "",
+    "address": "",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1s2pHUEjJKN7A5NzXgaNsriHijWAq9R6w/view?usp=drive_link"
+      },
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/11kC4Kq-TPEm0nCVN_uP-uauEkzbwdqch/view?usp=drive_link"
+      },
+      {
+        "label": "hotelday.com.tw",
+        "url": "http://www.hotelday.com.tw/hotel03.aspx"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 14
+  },
+  {
+    "id": "d32b1853e7",
+    "name": "旅居文旅集團",
+    "subtitle": "文旅、驛站、青旅膠囊旅店系列",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工、學生、校友及眷屬，需於訂房時主動告知臺灣大學之名稱，入住時憑臺大證件享優惠價。\n\n訂房步驟:\n企業客戶部訂房LINE ID：@hubhotels\n加好友連結：https://lin.ee/C0OQzZ\n\n請註明：公司名稱&統編、預訂館別、預訂日期&退房日期、入住房型\n\n由企業客戶部顧襄理 Tommy 專人提供即時報價\n\n\n透過企業客戶訂房，除享訂房優惠，指定館店再享高鐵優惠折扣。\n適用館別：旅居文旅 台北松山機場館／板橋車站館／中壢館／高雄亞灣館\n\n高鐵車票優惠折扣：\n▪️ 平日（週一至週四）：78 折\n▪️ 假日（週五至週日及疏運期間）：85 折",
+    "info": "電話：各分館資訊請詳見官網\n地址：各分館資訊請詳見官網\n \n旅居文旅系列：松山機場館、中山館、板橋車站館、土城館、中壢館、亞灣館、一心館、七賢館、台中文心館、新泰館\n旅居驛站系列：西門驛站-西寧館、西門驛站-昆明館、松山驛站、板橋驛站-湳雅夜市館、板橋驛站-亞東館\n台灣青旅膠囊旅店：台灣青旅膠囊旅店\n \n營業時間：24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工、學生、校友及眷屬，需於訂房時主動告知臺灣大學之名稱，入住時憑臺大證件享優惠價。",
+    "phone": "",
+    "address": "",
+    "links": [
+      {
+        "label": "lin.ee",
+        "url": "https://lin.ee/C0OQzZ"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 15
+  },
+  {
+    "id": "9977085199",
+    "name": "相鐵飯店GRAND FRESA",
+    "subtitle": "台北西門",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "非公開合約，訂房請洽專線或信箱，\n臺大教職員工、學生、校友及眷屬，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價 \n\n訂房專線：02-2331-6203\n訂房信箱： gf_taipeiximen@sotetsu-group.jp",
+    "info": "電話： 02-2331-6203 \n地址：台北市中正區中華路一段 57 號 \n營業時間： 24 小時 \n營業項目：住宿服務 \n網站： https://sotetsu-hotels.com/tw/grand-fresa/taipeiximen/",
+    "phone": "02-2331-6203",
+    "address": "台北市中正區中華路一段 57 號",
+    "links": [
+      {
+        "label": "sotetsu-hotels.com",
+        "url": "https://sotetsu-hotels.com/tw/grand-fresa/taipeiximen/"
+      }
+    ],
+    "expires_on": "2026-12-17",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 16
+  },
+  {
+    "id": "9ad9930527",
+    "name": "台北旅店集團",
+    "subtitle": "喜瑞飯店、丹迪旅店、新驛旅店",
+    "category": "lodging",
+    "regions": [
+      "north",
+      "central"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價",
+    "info": "電話：各分館資訊請詳見官網\n地址：各分館資訊請詳見官網(喜瑞飯店、丹迪旅店天津店、丹迪旅店大安森林公園店、丹迪旅店天母店、新驛旅店台北車站一館、新驛旅店台北車站二館、新驛旅店台北車站三館、新驛旅店西門店、新驛旅店復興北路店、新驛旅店台中車站店)\n營業時間：24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價",
+    "phone": "",
+    "address": "",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1hQkuNvAh3lOaVUngsvyDi2tIDhJC69_D/view?usp=drive_link"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 17
+  },
+  {
+    "id": "6a13476d10",
+    "name": "台北馥敦-復南館",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "特約優惠",
+    "offer": "臺大教職員工生及校友 (眷屬/親朋好友亦可)，\n以台灣大學名義訂房享住宿優惠。 (預先訂房時主動告知所屬身份)",
+    "info": "電話：02-2705-6161\n地址：台北市大安區復興南路2段41號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友 (眷屬/親朋好友亦可)，\n以台灣大學名義訂房享住宿優惠。 (預先訂房時主動告知所屬身份)\n網站：http://www.taipeifullerton.com.tw/south/",
+    "phone": "02-2705-6161",
+    "address": "台北市大安區復興南路2段41號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1Xqfh-Vz_IXqAf2d_RhKMTALX0Z4FOqN9/view?usp=drive_link"
+      },
+      {
+        "label": "taipeifullerton.com.tw",
+        "url": "http://www.taipeifullerton.com.tw/south/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 18
+  },
+  {
+    "id": "90513d3148",
+    "name": "Hanns Summer",
+    "subtitle": "瀚寓夏天",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，即可享合約優惠價",
+    "info": "電話：(02)7755-7747 \n地址：台北市中正區汀洲路三段62 號 \n營業時間：24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，即可享合約優惠價\n網站：https://www.hannssummer.com/about-hanns-summer/\n酒店無附設停車場，配合的特約停車場資訊如下：\n禮客outlet (台北市中正區思源街16號) \n限高：200公分\n費用：NT$350\n停車優惠時段：入住當天中午12點後至隔天中午12點前，停車優惠期間可無限次進出，辦理入住手續時需主動告知車號以便享有優惠價，若未告知車號則需依停車場當天費率計算",
+    "phone": "(02)7755-7747",
+    "address": "台北市中正區汀洲路三段62 號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1N-rBCyvtSwcg_zBKsw-fdoDCNdo8KhKH/view?usp=drive_link"
+      },
+      {
+        "label": "hannssummer.com",
+        "url": "https://www.hannssummer.com/about-hanns-summer/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 19
+  },
+  {
+    "id": "6bdb7485a0",
+    "name": "Hanns House",
+    "subtitle": "瀚寓酒店",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，即可享合約優惠價",
+    "info": "電話：(02)8758-3777 \n地址：台北市信義區基隆路一段206號 \n營業時間：24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，即可享合約優惠價",
+    "phone": "(02)8758-3777",
+    "address": "台北市信義區基隆路一段206號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1q5o_DiT3uyWPnRgXiKJ8cjZSseXVzXcJ/view?usp=drive_link"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 20
+  },
+  {
+    "id": "caea9732a2",
+    "name": "新莊凱悅嘉軒酒店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，歡迎透過新莊凱悅嘉軒酒店官網Hyatt-place-new-taipei-city-xinzhuang 於特惠房價下拉式選單中選擇「公司或團體編號」，輸入7位數字合約代碼CR#(1032494)進行預訂。",
+    "info": "電話：(02) 8522-9980\n地址：台北市新莊區新北大道三段79號\n營業時間：24小時\n營業項目：住宿服務\n網站：https://www.hyatt.com/hyatt-place/zh-HK/tpezn-hyatt-place-new-taipei-city-xinzhuang\n\n優惠內容：臺大教職員工生及校友，歡迎透過新莊凱悅嘉軒酒店官網Hyatt-place-new-taipei-city-xinzhuang 於特惠房價下拉式選單中選擇「公司或團體編號」，輸入7位數字合約代碼CR#(1032494)進行預訂。",
+    "phone": "(02) 8522-9980",
+    "address": "台北市新莊區新北大道三段79號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1V_c9XNWR6XzzMF0XPAqIPMj3IpaCNCjF/view?usp=drive_link"
+      },
+      {
+        "label": "hyatt.com",
+        "url": "https://www.hyatt.com/hyatt-place/zh-HK/tpezn-hyatt-place-new-taipei-city-xinzhuang"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 21
+  },
+  {
+    "id": "dacfee6dc3",
+    "name": "臺大徐州路文教會館",
+    "subtitle": "梧邸酒店台北杭州",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "highlight": "專屬房價",
+    "offer": "適用本校教職員工生及其他所屬人員(不含退休人員、校友)， \n退休人員、校友憑證(憑本校提供證件樣張)使用住宿設施，享官網基本方案9折優惠\n\n\n115 年臺灣大學專屬房價表:不含早餐(早餐憑證加購 享 9 折優惠)\n房型           平日        假日         旺日\n標準客房  $2,500    $4,100     $5,200\n豪華客房  $3,200    $5,200     $6,300\n\n\n平假日定義表:\n平日(白底) 日到四\n假日(桃紅底) 五六/連假/春節\n旺日(黃底) 演唱會/展期>> 依照展期演唱會發布, 不定期調整。\n\n\n訂房請按此連結:https://ood-hotel.hexa.tw/hexa/booking?start=2026-01-14&end=2026-01-15&adults=2&children=0&room=1&is_user=true&tab=roomsEl&duration=1 (臺大訂房專案)",
+    "info": "徐州路會館BOT案導入ESG永續及綠建築規劃，全館計73間房，鄰近臺北捷運善導寺站，以「雀客旅館台北杭州」名稱對外營運，現有標準、高級、豪華客房、行政套房(含無障礙房型)等房型，屬「國民旅遊卡」特約商店，該會館優先提供教學、實習、檢定、考試、研究、會議、學術交流、展演、參訪、體育競技及其他具教育意涵之活動與服務之人員住宿及餐飲交流。\n\n電話：02-2393-3598\n地址：台北市中正區杭州南路一段12號\n營業時間：24小時\n營業項目：住宿服務\n會館網站：ood-hotel.com\n\n管理單位：臺大總務處-經營管理組",
+    "phone": "02-2393-3598",
+    "address": "台北市中正區杭州南路一段12號",
+    "links": [
+      {
+        "label": "ood-hotel.hexa.tw",
+        "url": "https://ood-hotel.hexa.tw/hexa/booking?start=2026-01-14&end=2026-01-15&adults=2&children=0&room=1&is_user=true&tab=roomsEl&duration=1"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 22
+  },
+  {
+    "id": "ecb0f64d4a",
+    "name": "溪頭福華渡假飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，並提供臺灣大學統編：03734301，入住時憑臺大證件享優惠價",
+    "info": "電話：049-2612588\n地址： 南投縣鹿谷鄉內湖村森林巷10號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，並提供臺灣大學統編：03734301，入住時憑臺大證件享優惠價\n網站：https://www.howard-hotels.com.tw/zh_TW/HotelVacation/146",
+    "phone": "049-2612588",
+    "address": "南投縣鹿谷鄉內湖村森林巷10號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1nKhcV5Q4qZU5tHDR5VVErjnpDdkDnGcQ/view?usp=drive_link"
+      },
+      {
+        "label": "howard-hotels.com.tw",
+        "url": "https://www.howard-hotels.com.tw/zh_TW/HotelVacation/146"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 23
+  },
+  {
+    "id": "8ead898b72",
+    "name": "台中大毅老爺行旅",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價",
+    "info": "電話：(04)2376-6732\n地址：台中市西區英才路601號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價\n網站：https://www.hotelroyal.com.tw/zh-tw/taichung",
+    "phone": "(04)2376-6732",
+    "address": "台中市西區英才路601號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1Y9niTVTpr7FX9Oc7GXN-KN9pqrkp7ukh/view?usp=drive_link"
+      },
+      {
+        "label": "hotelroyal.com.tw",
+        "url": "https://www.hotelroyal.com.tw/zh-tw/taichung"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 24
+  },
+  {
+    "id": "624ac1e8ff",
+    "name": "寶島53行館",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，請以電話訂房，並主動告知臺灣大學與特約編號（統編03734301）之名稱，入住時憑臺大證件享優惠價",
+    "info": "電話：04-2220-5368\n地址：台中市中區中山路 27 號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，請以電話訂房，並主動告知臺灣大學與特約編號（統編03734301）之名稱，入住時憑臺大證件享優惠價 \n網站：https://www.53hotel.com.tw/ch/about.html",
+    "phone": "04-2220-5368",
+    "address": "台中市中區中山路 27 號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1NY1Po9eJeV8B0XSt4Wb5J7TshUoS4ML4/view?usp=drive_link"
+      },
+      {
+        "label": "53hotel.com.tw",
+        "url": "https://www.53hotel.com.tw/ch/about.html"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 25
+  },
+  {
+    "id": "690ab0fbf8",
+    "name": "虎尾春秋文創設計旅店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工、學生及校友於結帳時出示臺大識別證享優惠價，詳右列優惠連結",
+    "info": "電話：05-636-0618\n地址：雲林縣虎尾鎮信義路69號\n營業時間： 24小時\n營業項目：住宿服務\n網站：http://www.huweihotel.com.tw/\n優惠內容：臺大教職員工、學生及校友於結帳時出示臺大識別證享優惠價，詳右列優惠連結",
+    "phone": "05-636-0618",
+    "address": "雲林縣虎尾鎮信義路69號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1SppYz0YPrzttOgb-yMX6SKN2HxllDJzr/view?usp=drive_link"
+      },
+      {
+        "label": "huweihotel.com.tw",
+        "url": "http://www.huweihotel.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 26
+  },
+  {
+    "id": "5b85ab45bb",
+    "name": "臺中勤美洲際酒店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "highlight": "特約優惠",
+    "offer": "訂房請洽專線或信箱，並主動說明為國立臺灣大學所屬身份(教職員工、學生、校友)，且於入住時出示識別證",
+    "info": "訂房專線：04-2328-1268\n地址：台中市西區館前路77號\n訂房信箱：reservations@taichungic.com\n網站：https://www.ihg.com/intercontinental/hotels/tw/zh/taichung/rmqtt/hoteldetail\n優惠內容：訂房請洽專線或信箱，並主動說明為國立臺灣大學所屬身份(教職員工、學生、校友)，且於入住時出示識別證",
+    "phone": "04-2328-1268",
+    "address": "台中市西區館前路77號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1jmQ49Ux0OMa1tnpqyHL7u8qtudTkd1pa/view?usp=drive_link"
+      },
+      {
+        "label": "ihg.com",
+        "url": "https://www.ihg.com/intercontinental/hotels/tw/zh/taichung/rmqtt/hoteldetail"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 27
+  },
+  {
+    "id": "021c9edf98",
+    "name": "康橋商旅",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "central",
+      "south",
+      "east"
+    ],
+    "highlight": "特約優惠",
+    "offer": "電話：各分館資訊請詳見官網\n地址：各分館資訊請詳見官網（彰化員林館、台南赤崁樓館、台南民生館、高雄站前館、高雄站東九如館、高雄中山八德館、高雄七賢館、高雄中正館、高雄三多商圈館、高雄光榮碼頭館、高雄漢神館、高雄衛武營館、高雄覺民館、高雄五甲館、台東館）\n訂房：各分館獨立作業，房價請洽各分館，入住請出示臺灣大學識別證，並告知臺大統編03734301\n營業時間： 24小時\n營業項目：住宿服務\n網站： https://www.kindness-hotel.com.tw/",
+    "info": "電話：各分館資訊請詳見官網\n地址：各分館資訊請詳見官網（彰化員林館、台南赤崁樓館、台南民生館、高雄站前館、高雄站東九如館、高雄中山八德館、高雄七賢館、高雄中正館、高雄三多商圈館、高雄光榮碼頭館、高雄漢神館、高雄衛武營館、高雄覺民館、高雄五甲館、台東館）\n訂房：各分館獨立作業，房價請洽各分館，入住請出示臺灣大學識別證，並告知臺大統編03734301\n營業時間： 24小時\n營業項目：住宿服務\n網站： https://www.kindness-hotel.com.tw/",
+    "phone": "",
+    "address": "",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1ToCD_naKa984j05n5D27PIyjGiyRT_gF/view?usp=drive_link"
+      },
+      {
+        "label": "kindness-hotel.com.tw",
+        "url": "https://www.kindness-hotel.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 28
+  },
+  {
+    "id": "d0cf78f8cf",
+    "name": "台中富信大飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價",
+    "info": "電話：04-2229-7008\n地址：台中市中區市府路14號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價\n網站：https://www.fushin-hotel.com.tw/taichung/tw/",
+    "phone": "04-2229-7008",
+    "address": "台中市中區市府路14號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/12U_Tiq5uQkmmeSv-HcOeeml-qpkr-Cab/view?usp=drive_link"
+      },
+      {
+        "label": "fushin-hotel.com.tw",
+        "url": "https://www.fushin-hotel.com.tw/taichung/tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 29
+  },
+  {
+    "id": "1205868f9f",
+    "name": "高雄福華大飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價。",
+    "info": "電話：07-236-2323\n地址：高雄市七賢一路311號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價。\n網站：https://www.howard-hotels.com.tw/zh_TW/HotelBusiness/136",
+    "phone": "07-236-2323",
+    "address": "高雄市七賢一路311號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1axe3nuecxlndOMpIN6XZCUvbfc9K__Uw/view?usp=drive_link"
+      },
+      {
+        "label": "howard-hotels.com.tw",
+        "url": "https://www.howard-hotels.com.tw/zh_TW/HotelBusiness/136"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 30
+  },
+  {
+    "id": "6203f3434c",
+    "name": "承億酒店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價\n\n2026合約簽署中，敬請期待\n（合約簽署完成前， 可適用合約優惠價，訂房請洽承億酒店-蕭先生Eric）",
+    "info": "電話：(07)333-3999\n地址：高雄市前鎮區林森四路189號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價\n網站：https://www.taiurbanresort.com.tw/",
+    "phone": "(07)333-3999",
+    "address": "高雄市前鎮區林森四路189號",
+    "links": [
+      {
+        "label": "taiurbanresort.com.tw",
+        "url": "https://www.taiurbanresort.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 31
+  },
+  {
+    "id": "b915ae7f3a",
+    "name": "台南富信大飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價",
+    "info": "電話：06-2227085\n地址：台南市北區成功路336號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價\n網站：http://www.fushin-hotel.com.tw/tainan/tw/",
+    "phone": "06-2227085",
+    "address": "台南市北區成功路336號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1kQr6onLbcaI3vgFJ8bT3GQjwgvcuEqNC/view?usp=drive_link"
+      },
+      {
+        "label": "fushin-hotel.com.tw",
+        "url": "http://www.fushin-hotel.com.tw/tainan/tw/"
+      }
+    ],
+    "expires_on": "2027-01-02",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 32
+  },
+  {
+    "id": "4ac72f4667",
+    "name": "台南富華大飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價",
+    "info": "電話： 06-2227085\n地址：台南市中西區忠義路二段28號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價\n網站：http://www.fuward-hotel.com.tw/tainan/tw/about/",
+    "phone": "06-2227085",
+    "address": "台南市中西區忠義路二段28號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1kQr6onLbcaI3vgFJ8bT3GQjwgvcuEqNC/view?usp=drive_link"
+      },
+      {
+        "label": "fuward-hotel.com.tw",
+        "url": "http://www.fuward-hotel.com.tw/tainan/tw/about/"
+      }
+    ],
+    "expires_on": "2027-01-02",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 33
+  },
+  {
+    "id": "439b2a9d4d",
+    "name": "高雄萬豪酒店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "適用臺灣大學在職教職員工，訂房請使用臺大ntu電子信箱聯繫，入住時憑臺大教職員證件享優惠價",
+    "info": "電話：07-559-9111\n訂房專線：07-559-9168 \n訂房電子信箱：reservations@khhmarriott.com\n地址：高雄市鼓山區龍德新路222號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：適用臺灣大學在職教職員工，訂房請使用臺大ntu電子信箱聯繫，入住時憑臺大教職員證件享優惠價 \n網站：https://www.khhmarriott.com/",
+    "phone": "07-559-9111",
+    "address": "高雄市鼓山區龍德新路222號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1XjrGIiTpQ7QRlHdlJMSArWFrzPSpEyBB/view?usp=drive_link"
+      },
+      {
+        "label": "khhmarriott.com",
+        "url": "https://www.khhmarriott.com/"
+      }
+    ],
+    "expires_on": "2026-12-30",
+    "auto_renew": false,
+    "notes": "學生、校友、眷屬不適用",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 34
+  },
+  {
+    "id": "7f38cb8eec",
+    "name": "台南大飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價",
+    "info": "電話：06-2289101\n訂房專線：06-2232857\n訂房信箱：booking@hotel-tainan.com.tw\n地址：台南市中西區成功路 1 號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價\n網站：https://www.hotel-tainan.com.tw/about/",
+    "phone": "06-2289101",
+    "address": "台南市中西區成功路 1 號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1emmYP-lmQILyRu_mphPJPM5i3AAwP3GN/view?usp=drive_link"
+      },
+      {
+        "label": "hotel-tainan.com.tw",
+        "url": "https://www.hotel-tainan.com.tw/about/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 35
+  },
+  {
+    "id": "4645027d9c",
+    "name": "臺邦商旅",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工、學生及校友（含眷屬），預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價",
+    "info": "電話：06-2931888\n地址：台南市安平區永華二街199號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工、學生及校友（含眷屬），預先訂房時主動告知所屬身份，入住時憑臺大證件享優惠價 \n網站：https://www.taipungsuites.com.tw/",
+    "phone": "06-2931888",
+    "address": "台南市安平區永華二街199號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1H6D1HwnJG-tfKMRL9EVW7nO2CSujEe42/view?usp=drive_link"
+      },
+      {
+        "label": "taipungsuites.com.tw",
+        "url": "https://www.taipungsuites.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 36
+  },
+  {
+    "id": "0cb9e401aa",
+    "name": "娜路彎大酒店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，並提供本校統編：03734301，入住時憑臺大證件享優惠價",
+    "info": "電話：089－239－666\n地址：台東市連航路66號\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，並提供本校統編：03734301，入住時憑臺大證件享優惠價\n營業時間： 24小時\n營業項目：住宿服務\n\n網站：https://www.naruwan-hotel.com.tw/tw_new/hotel-main.html",
+    "phone": "089－239－666",
+    "address": "台東市連航路66號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1myB_itnxPWrZ67axsbDj1-1RScCUWZ7s/view?usp=drive_link"
+      },
+      {
+        "label": "naruwan-hotel.com.tw",
+        "url": "https://www.naruwan-hotel.com.tw/tw_new/hotel-main.html"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 37
+  },
+  {
+    "id": "ea751d528d",
+    "name": "娜路彎會館",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，並提供本校統編：03734301，入住時憑臺大證件享優惠價\n\n2026優惠內容同上(娜路彎大酒店)",
+    "info": "電話：089－235－500\n地址：台東市中興路二段 385 號\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，並提供本校統編：03734301，入住時憑臺大證件享優惠價\n營業時間： 24小時\n營業項目：住宿服務\n\n網站：https://www.naruwan-inn.com.tw/New/tw_new/hotel-main.html",
+    "phone": "089－235－500",
+    "address": "台東市中興路二段 385 號",
+    "links": [
+      {
+        "label": "naruwan-inn.com.tw",
+        "url": "https://www.naruwan-inn.com.tw/New/tw_new/hotel-main.html"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 38
+  },
+  {
+    "id": "836151c562",
+    "name": "娜路彎花園酒店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，並提供本校統編：03734301，入住時憑臺大證件享優惠價\n\n2026優惠內容同上(娜路彎大酒店)",
+    "info": "電話：089-231111\n地址：台東市新興路77號\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，並提供本校統編：03734301，入住時憑臺大證件享優惠價\n營業時間： 24小時\n營業項目：住宿服務\n\n網站：https://www.naruwan-garden.com.tw/New/tw_new/hotel-main.html",
+    "phone": "089-231111",
+    "address": "台東市新興路77號",
+    "links": [
+      {
+        "label": "naruwan-garden.com.tw",
+        "url": "https://www.naruwan-garden.com.tw/New/tw_new/hotel-main.html"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 39
+  },
+  {
+    "id": "aace2bc2b9",
+    "name": "娜路彎銀河行館",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "highlight": "專屬優惠價",
+    "offer": "臺大教職員工生及校友，預先訂房時主動告知所屬身份，並提供本校統編：03734301，入住時憑臺大證件享優惠價\n\n2026優惠內容同上(娜路彎大酒店)",
+    "info": "電話：089-383366\n地址：台東市豐興路 88 號\n\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：臺大教職員工生及校友，預先訂房時主動告知所屬身份，並提供本校統編：03734301，入住時憑臺大證件享優惠價\n網站：https://www.naruwan-galaxy-place.com.tw/New/tw_new/hotel-main.html",
+    "phone": "089-383366",
+    "address": "台東市豐興路 88 號",
+    "links": [
+      {
+        "label": "naruwan-galaxy-place.com.tw",
+        "url": "https://www.naruwan-galaxy-place.com.tw/New/tw_new/hotel-main.html"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 40
+  },
+  {
+    "id": "765625b1ff",
+    "name": "頭城農場-頭城休閒旅館",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "highlight": "6折",
+    "offer": "1.憑本人工作證明及本人名片，本人享有六折優惠\n2.同行者享八折優惠\n3.一張證件一次最多可訂三間\n4.本優惠專案：限週一~四使用，連續假日與暑假期間(七~八月)不適用",
+    "info": "電話：(03) 9772-222\n地址：宜蘭縣頭城鎮更新路125-2號\n營業時間： 24小時\n營業項目：住宿服務\n優惠內容：\n1.憑本人工作證明及本人名片，本人享有六折優惠\n2.同行者享八折優惠\n3.一張證件一次最多可訂三間\n4.本優惠專案：限週一~四使用，連續假日與暑假期間(七~八月)不適用\n網站：https://www.tcfarm.com.tw/",
+    "phone": "(03) 9772-222",
+    "address": "宜蘭縣頭城鎮更新路125-2號",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1_StyoaGs0CyTY1dHmjGucLOaNbaiECuL/view?usp=sharing"
+      },
+      {
+        "label": "tcfarm.com.tw",
+        "url": "https://www.tcfarm.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 41
+  },
+  {
+    "id": "b2ae8b7a3a",
+    "name": "中華航空",
+    "subtitle": "",
+    "category": "transport",
+    "regions": [],
+    "highlight": "97折",
+    "offer": "中華航空-航班及優惠訊息\n臺大企業會員帳號：TW003802\n\n線上購票優惠：輸入企業會員帳號TW003802購買機票享優惠 97折 ( 限定由臺灣出發之機票，非臺灣出發則無優惠。)\n並可累積機票淨額，回饋免費機票補助本校清寒學生\n\n\n(本優惠僅限本校教職員工、學生、 校友使用，航空公司將不定期檢核票務資訊，若經查證非本校身分別使用，航空公司有權調整其違規者會員權利。)",
+    "info": "中華航空線上購票\n\n購票時輸入企業會員帳號TW003802\n\n企業會員優惠折扣不可與其他促銷票價併用\n\n按 搜尋航班 後，呈現之價格均為最優惠票價",
+    "phone": "",
+    "address": "",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 42
+  },
+  {
+    "id": "b55717db61",
+    "name": "長榮航空",
+    "subtitle": "",
+    "category": "transport",
+    "regions": [],
+    "highlight": "企業會員",
+    "offer": "長榮航空-航班相關訊息\n臺大企業會員TPE2088\n\n目前無優惠折扣，惟由<旅行社訂購團體票>，並輸入臺大企業會員TPE2088，可累積機票淨額，並回饋免費機票補助本校清寒學生",
+    "info": "長榮航空線上購票",
+    "phone": "",
+    "address": "",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 43
+  },
+  {
+    "id": "695f081b82",
+    "name": "台灣高鐵",
+    "subtitle": "",
+    "category": "transport",
+    "regions": [],
+    "highlight": "企業會員",
+    "offer": "目前購買高鐵車票無優惠折扣，惟於各購票通路購票時，告知或輸入臺大企業會員統編(03734301)可累計全校旅費，並依累積狀況回饋乘車優惠券予本校國內清寒學生。\n\n(早鳥65折(含以下)優惠專案、大學生優惠、少年優惠短期專案、享有其他特殊優惠之團體專案(如:指定車次團體或校外教學)；高鐵假期、各式聯套票、敬老/愛心/孩童票、回數/定期票、企業會員優惠專案及持悠遊聯名卡、一卡通感應以上搭乘者皆無法累計)\n\n\n詳細內容請參閱高鐵企業會員網站---點選企業會員 https://www.thsrc.com.tw/ArticleContent/b8cedefe-62fa-459e-9d1e-aac0e0f754a2",
+    "info": "目前購買高鐵車票無優惠折扣，惟於各購票通路購票時，告知或輸入臺大企業會員統編(03734301)可累計全校旅費，並依累積狀況回饋乘車優惠券予本校國內清寒學生。\n\n(早鳥65折(含以下)優惠專案、大學生優惠、少年優惠短期專案、享有其他特殊優惠之團體專案(如:指定車次團體或校外教學)；高鐵假期、各式聯套票、敬老/愛心/孩童票、回數/定期票、企業會員優惠專案及持悠遊聯名卡、一卡通感應以上搭乘者皆無法累計)\n\n\n詳細內容請參閱高鐵企業會員網站---點選企業會員 https://www.thsrc.com.tw/ArticleContent/b8cedefe-62fa-459e-9d1e-aac0e0f754a2",
+    "phone": "",
+    "address": "",
+    "links": [
+      {
+        "label": "thsrc.com.tw",
+        "url": "https://www.thsrc.com.tw/ArticleContent/b8cedefe-62fa-459e-9d1e-aac0e0f754a2"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 44
+  },
+  {
+    "id": "76f4cfcf37",
+    "name": "山富旅遊",
+    "subtitle": "",
+    "category": "transport",
+    "regions": [],
+    "highlight": "企業會員",
+    "offer": "山富旅遊(https://www.travel4u.com.tw/)\n\n設定企業會員步驟及登入\n申請之會員帳號須為臺大@ntu.edu.tw的信箱",
+    "info": "山富旅遊(https://www.travel4u.com.tw/)\n\n設定企業會員步驟及登入\n申請之會員帳號須為臺大@ntu.edu.tw的信箱",
+    "phone": "",
+    "address": "",
+    "links": [
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1pl0k93gkXEtuWPwihDHShFjz4I_xLMDG/view?usp=sharing"
+      },
+      {
+        "label": "travel4u.com.tw",
+        "url": "https://www.travel4u.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 45
+  },
+  {
+    "id": "474edbc0f1",
+    "name": "媽媽魚安心超市",
+    "subtitle": "",
+    "category": "food",
+    "regions": [],
+    "highlight": "95折起",
+    "offer": "臺大教職員工生及校友至全省門市消費，憑臺大證件享95折起\n(代理商品及季節特殊商品除外)",
+    "info": "客服專線：0800-221881\n電話：各門市資訊請詳見官網(全台北中南共13家門市)\n地址：各門市資訊請詳見官網(全台北中南共13家門市)\n營業項目：海鮮、魚類販售\n網站：http://www.mamafisch.com.tw/",
+    "phone": "0800-221881",
+    "address": "",
+    "links": [
+      {
+        "label": "mamafisch.com.tw",
+        "url": "http://www.mamafisch.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 46
+  },
+  {
+    "id": "26036ac167",
+    "name": "臺大癌醫美食街",
+    "subtitle": "",
+    "category": "food",
+    "regions": [],
+    "highlight": "9折",
+    "offer": "臺大教職員工生憑識別證 9折 優惠",
+    "info": "電話：02-2732-9186 (杏一管理中心)\n地址：106 台北市大安區基隆路三段155巷57號 \n營業項目：餐飲服務\n網站：http://www.ntucc.gov.tw/ntucc/Fpage.action?muid=134&fid=93\n管理單位：臺大癌醫中心醫院 (02)2322-0322",
+    "phone": "02-2732-9186 (杏一管理中心)",
+    "address": "106 台北市大安區基隆路三段155巷57號",
+    "links": [
+      {
+        "label": "ntucc.gov.tw",
+        "url": "http://www.ntucc.gov.tw/ntucc/Fpage.action?muid=134&fid=93"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 47
+  },
+  {
+    "id": "bd603be34e",
+    "name": "潮味決-台北公館店",
+    "subtitle": "",
+    "category": "food",
+    "regions": [],
+    "highlight": "特約優惠",
+    "offer": "●        凡單碗消費滿150元，出示臺大識別證件，即可免費兌換下列商品 五 擇 一：\n          ---麻辣豆腐、麻辣鴨血、潮滷/麻辣魚板、三杯/潮滷/麻辣魚蛋、時蔬\n\n●        上述優惠不得與其他優惠方式合併使用",
+    "info": "電話：(02)2368-2737\n地址：台北市中正區羅斯福路三段284巷8號1樓（北側）",
+    "phone": "(02)2368-2737",
+    "address": "台北市中正區羅斯福路三段284巷8號1樓（北側）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 48
+  },
+  {
+    "id": "1b3be75da6",
+    "name": "WOW 美食休閒網",
+    "subtitle": "",
+    "category": "food",
+    "regions": [],
+    "highlight": "特約優惠",
+    "offer": "請至「WOW美食休閒網」瀏覽商店完整優惠消費資訊\n\n臺大教職員工、學生、校友及眷屬，以手機出示 「WOW美食休閒網驚喜卡」即可享特別優惠。\n\n請將臺大識別證拍照或掃描，Email至臺大財務管理處-公務信箱ntufinance@ntu.edu.tw，\n\n信件主旨註明：索取 「WOW美食休閒網驚喜卡」，財務處即提供1組序號\n供手機下載APP後開通使用。\n\n註：WOW美食休閒網所合作店家，部分可能與臺大單獨簽約店家重覆，敬請自行比價後擇優使用。",
+    "info": "WOW美食休閒網與多家特約商店合作，享有各類美食餐廳、休閒娛樂、消費購物、交通運輸、美容美髮、教育學習、電影院、KTV、美髮美容、運動用品、精品服飾等折扣優惠。\n\n下載APP 請搜尋: <WOWCARD 哇卡好>\n\n客服中心\n電話：04-2251-8770\n傳真：04-2251-5007\n客服信箱:dot@isys.tw",
+    "phone": "04-2251-8770",
+    "address": "",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "一個序號綁定一支手機，序號使用效期自開通起算二年，若中途有更換手機或使用相關問題，麻煩提供註冊帳號給客服04-2251-8770重置.",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 49
+  },
+  {
+    "id": "8bea10ea9c",
+    "name": "TARTINE唐緹",
+    "subtitle": "公館店",
+    "category": "food",
+    "regions": [],
+    "highlight": "9折",
+    "offer": "憑臺大識別證至「唐緹公館店」消費享售價9折優惠\n\n優惠商品:麵包、西點、中點、蛋糕、伴手禮、現場製作飲品等品項\n(限門市現場自取)\n\n備註：\n此優惠不適用下列商品:大宗訂單、茶會、餐盒、喜餅、彌月、特價品、外製品、外送、宅配等",
+    "info": "聯絡電話：（02）2428 1598\n門市地址：台北市中正區羅斯福路四段6號\n　　　　　近捷運公館站4號出口\n\n營業時間：每週一至日09:30-21:30",
+    "phone": "（02）2428 1598",
+    "address": "台北市中正區羅斯福路四段6號",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 50
+  },
+  {
+    "id": "35152e5d88",
+    "name": "六六茶室",
+    "subtitle": "",
+    "category": "food",
+    "regions": [],
+    "highlight": "9折",
+    "offer": "憑有效 台大NTU 身分（學生證 / 教職員工證 / 校友證 (含眷屬證 ）\n\n1.全店茶葉茶具及內用9折\n\n2.自辦講座與茶會費用 : 與六六社群內同價\n\n3.首次來店加入並六六Line群 : 招待精品茶茶點一份\n\n4.團體/系學會包場（10人內）: 總價9 折含稅，並贈送每人茶點一份\n\n5.(特別加碼)週一～週四9:30–17:00 內用品茗或是包場活動 : 88 折,與早鳥時段優惠擇一使用",
+    "info": "電話：0905 016 802\n地址：台北市中山區龍江路155巷5號\n電子信箱：jingcs0307@gmail.com\n\n營業項目：現泡台灣原葉茶飲（內用／外帶）-茶套餐品茗體驗（含茶點）-每月主題式茶會與講座活-花藝、茶文化體驗課程-泡茶師桌邊服務（預約制）（中/英/日）-空間租借（茶席、攝影、活動）-茶禮盒訂製與企業贈禮規劃",
+    "phone": "0905 016 802",
+    "address": "台北市中山區龍江路155巷5號",
+    "links": [],
+    "expires_on": "2027-08-17",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 51
+  },
+  {
+    "id": "29a2766aa2",
+    "name": "怪咖屋",
+    "subtitle": "THE WACKO HOUSE",
+    "category": "food",
+    "regions": [],
+    "highlight": "專屬優惠價",
+    "offer": "憑臺大識別憑證至本店用餐，提供以下優惠：\n \n 1、早午餐 全部餐飲之商品定價給予九折之優惠價格，服務費另計 。\n 2、不限平日或假日。\n 3、不限內用或外帶。\n 4、本優惠內容不適用外送及晚間酒吧 。\n 5、若有任何優惠內容之調整或產品價格之變動，以店內報價公布為主。",
+    "info": "電話：02 2365 0119\n地址：台北市中正區師大路 164 號",
+    "phone": "02 2365 0119",
+    "address": "台北市中正區師大路 164 號",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 52
+  },
+  {
+    "id": "6a130e96fa",
+    "name": "于記杏仁",
+    "subtitle": "",
+    "category": "food",
+    "regions": [],
+    "highlight": "95折",
+    "offer": "結帳時出示臺大員工識別證\n 提供優惠內容如下：以下優惠二擇一 ( 符合外送規範亦享有以上優惠)\n ( 1 ) 結帳享 95 折優惠價 ( 不得與店櫃現有優惠併行 ) \n ( 2 ) 同品項餐點買十送一",
+    "info": "營業項目：杏仁甜品專賣店\n客服電話：0800-288-758\n網站：http://yustofu.com.tw\n全台各門市(地址/電話/營業時間)：請詳見官網",
+    "phone": "0800-288-758",
+    "address": "",
+    "links": [
+      {
+        "label": "yustofu.com.tw",
+        "url": "http://yustofu.com.tw"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 53
+  },
+  {
+    "id": "0ddf98ebc8",
+    "name": "樂田麵包屋",
+    "subtitle": "台電大樓店",
+    "category": "food",
+    "regions": [],
+    "highlight": "9折",
+    "offer": "結帳時出示臺大員工識別證\n1. 全品項享9折優惠(不含線上預訂自取、外送、宅配、早餐三明治、晚安優惠品及外購品)。\n2. 本優惠不得與其他優惠活動併用。\n3. 甲方保有活動內容調整及最終解釋之權利。",
+    "info": "電話：02-23621299\n地址：臺北市大安區羅斯福路三段249號",
+    "phone": "02-23621299",
+    "address": "臺北市大安區羅斯福路三段249號",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 54
+  },
+  {
+    "id": "e8518447e0",
+    "name": "東森得易購股份有限公司",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [],
+    "highlight": "85折起",
+    "offer": "東森購物客服專線0800-057-999\n\n本校教職員手機登入/註冊成為東森購物會員（www.etmall.com.tw）\n登入後於APP右下角進入會員專區→帳號管理→企業福委專區\n於企業福委專區所顯示的三個欄位輸入專屬企業代碼『03734301』(臺灣大學統編)\n完成綁定後立即贈送100枚東森E幣，且可消費正價商品享有企業福利價(全站商品85折起，部分商品除外)。",
+    "info": "營業項目：網路購物\n網站 : http://www.etmall.com.tw\n連絡人：周彭升蔚\n連絡電話(02)2943-7888 #5142",
+    "phone": "",
+    "address": "",
+    "links": [
+      {
+        "label": "etmall.com.tw",
+        "url": "http://www.etmall.com.tw"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 55
+  },
+  {
+    "id": "45bbefd740",
+    "name": "台灣大哥大",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [],
+    "highlight": "專案優惠",
+    "offer": "不定期優惠專案 (限教職員工/員眷一等親、二等親)，依專案說明。\n申辦時請輸入統編03734301",
+    "info": "客服電話：0809-000-809\n營業項目：通訊與手機等\n\n台灣大哥大－中小企業事業專員\n葉子瑀小姐\nTel: 02-6638-6888#10322\nMobile: 0958-226-107\nE-mail : ziyuyeh@taiwanmobile.com",
+    "phone": "0809-000-809",
+    "address": "",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 56
+  },
+  {
+    "id": "40dccb7857",
+    "name": "LEECO禮客",
+    "subtitle": "Outlet公館店",
+    "category": "shopping",
+    "regions": [],
+    "highlight": "95折",
+    "offer": "持台大教職員工生(含校友)證件，全面95折(部分商品除外)",
+    "info": "網站：http://www.leecooutlet.com.tw/index.php\n聯絡人：黃世豪\n客服電話：02 2362 5556\n地址：台北市中正區思源街16號(自來水園區正對面)",
+    "phone": "02 2362 5556",
+    "address": "台北市中正區思源街16號(自來水園區正對面)",
+    "links": [
+      {
+        "label": "leecooutlet.com.tw",
+        "url": "http://www.leecooutlet.com.tw/index.php"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 57
+  },
+  {
+    "id": "0ec9a0a9c2",
+    "name": "東元電機股份有限公司",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [],
+    "highlight": "專屬優惠價",
+    "offer": "東元家電產品: 限量優惠。 \n 1.家電EDM提供優惠價格，有包含運費和樓層費(偏遠地區運費除外) ，大型家電有包含基本安裝，可宅配到府。 \n 2.已提供優惠價需事先匯款，如要訂購請寫e-mail給窗口，\n   會提供匯款帳號給您，收到款項後會安排出貨，謝謝!\n \n\n空調產品 \n1.一對一頂級變頻HS8空調 (需先匯款)\n2.一對一精品變頻GA5空調 (需先匯款)\n\n(1)優惠價請參考EDM。\n(2)如要訂購，已提供優惠價需事先匯款，\n公司收到款項才後會安排出貨和基本安裝。",
+    "info": "東元家電和空調產品，請參考dm。\n\n如要訂購家電或空調品，請先E-MAIL或來電查詢庫存量和諮詢訂購冷氣大小，歡迎聯繫以下窗口:\n\n\n東元集團關係企業-安悅電氣 (安悅國際有限公司)\n鍾昌珮 02-2655-3333 #3243\nmandy@ejoy.net.tw",
+    "phone": "",
+    "address": "",
+    "links": [],
+    "expires_on": "2027-12-31",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 58
+  },
+  {
+    "id": "0a70faede8",
+    "name": "foodpanda",
+    "subtitle": "富胖達",
+    "category": "shopping",
+    "regions": [],
+    "highlight": "特約優惠",
+    "offer": "🎊foodpanda x NTU 企業客戶優惠方案🎊\n 【如何升級foodpanda企業帳號？】\n 企業帳號是免費升級的!!! 現在升級再送免運券~\n 升級企業帳號後，可以隨時在網頁/APP中切換個人帳號 / 企業帳號使用，不僅可享有一般個人帳號的優惠，我們也會針對企業用戶推出不定期的優惠活動哦~\n 速速前往升級 https://forms.gle/am3rtbBYFu8ECT9G9\n 記得加入專屬Line官方帳號 @foodpanda4b 完成升級領取《NTU專屬神秘禮》~~\n \n 【如果你是外送控？】\n 外送重度依賴者凡開通企業帳號並訂閱panda pro，還有拿不完的企客優惠🎉\n 趕快至官方Line帳號(@foodpanda4b)索取《企客專案價》\n \n 【部門訂餐特方便】\n 貼心提醒: 升級企業帳號還可享有以下服務\n 1. 可提前7天預訂美食並使用團購功能\n 2. 一站式服務 (從配餐到結帳；主食到零食全部交給我們幫忙~)\n 3. 訂單優先處理權(小幫手在line上可隨時服務您)\n 4. 企業外燴配餐、商務會議訂餐、零食配送服務 (零食櫃、慶生會、Parties、Team Building讓foodpanda送~~~)\n 5. 電子優惠碼(檔期活動、業務獎勵、尾牙/春酒抽獎、送禮兩相宜)",
+    "info": "更多優惠資訊趕快加入Line官方帳號 @foodpanda4b\n\n【foodpanda 企業貴賓平台申請書】foodpanda Corporate Application\nhttps://forms.gle/am3rtbBYFu8ECT9G9\n\n需要協助，請洽02-2736-1278 #16155   cherry小姐",
+    "phone": "",
+    "address": "",
+    "links": [
+      {
+        "label": "申請表單",
+        "url": "https://forms.gle/am3rtbBYFu8ECT9G9"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 59
+  },
+  {
+    "id": "d6dc55c1de",
+    "name": "永和耕莘托嬰中心",
+    "subtitle": "新北市私立",
+    "category": "services",
+    "regions": [],
+    "highlight": "95折",
+    "offer": "本校在職之教職員工生憑證件上有《國立臺灣大學》字樣之識別證享下列優惠：\n\n1.托育費用之優惠：月費 95 折\n2.托兒服務之優惠：（具體優惠項目以實際提供為準）\n3.其他優惠：贈送書包、永和耕莘醫院醫療優惠(具體優惠項目以實際提供為準)",
+    "info": "電話：02-2923-8352\n地址：新北市永和區國光路116巷17號\n網站：https://zh-tw.facebook.com/baby29238352/",
+    "phone": "02-2923-8352",
+    "address": "新北市永和區國光路116巷17號",
+    "links": [
+      {
+        "label": "zh-tw.facebook.com",
+        "url": "https://zh-tw.facebook.com/baby29238352/"
+      }
+    ],
+    "expires_on": "2028-07-31",
+    "auto_renew": false,
+    "notes": "校友、眷屬不適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 60
+  },
+  {
+    "id": "d7d9a5251f",
+    "name": "霍華斯 (Wordvice Inc.)",
+    "subtitle": "",
+    "category": "services",
+    "regions": [],
+    "highlight": "8折",
+    "offer": "優惠內容：\n📌教職員工生及校友透過 Wordvice 台灣官網（https://wordvice.com.tw/）上傳文件，提交訂單時，於結帳畫面最上方優惠券欄位輸入優惠代碼「NTU20」，可享英文編修/中翻英服務 8折 優惠。\n📌付款方式：信用卡、Paypal\n\n🔹註：本折扣不得與其他優惠併用，霍華斯保留優惠解釋權力。",
+    "info": "電話：02-7738-1133\nLINE：@wordvicetw\n營業項目：英文編修/翻譯服務\n網站：https://wordvice.com.tw/ \n臉書專頁：https://www.facebook.com/wordvicetaiwan/",
+    "phone": "02-7738-1133",
+    "address": "",
+    "links": [
+      {
+        "label": "wordvice.com.tw",
+        "url": "https://wordvice.com.tw/"
+      },
+      {
+        "label": "facebook.com",
+        "url": "https://www.facebook.com/wordvicetaiwan/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 61
+  },
+  {
+    "id": "cab9f8e88f",
+    "name": "美艾聯和股份有限公司 (NJE)",
+    "subtitle": "",
+    "category": "services",
+    "regions": [],
+    "highlight": "95折",
+    "offer": "優惠內容：教職員工生及校友透過NJE官網上傳文件並主動提供折價券編號(NJEPRO106)\n，可享英文編修、學術翻譯 95折。\n 註：本折扣不得與NJE例行折扣併用，NJE保留優惠解釋權力。",
+    "info": "電話：02-2219-4719\n營業項目：英文編修/翻譯服務\n網站：https://www.novaisedit.com/",
+    "phone": "02-2219-4719",
+    "address": "",
+    "links": [
+      {
+        "label": "novaisedit.com",
+        "url": "https://www.novaisedit.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 62
+  },
+  {
+    "id": "3a3b93a9ce",
+    "name": "FedEx聯邦快遞",
+    "subtitle": "",
+    "category": "services",
+    "regions": [],
+    "highlight": "7折",
+    "offer": "優惠內容：臺灣大學所屬研究機關及科室單位填寫申請書開立FedEx新帳號即享有7折特惠方案\n※個人帳號恕無法適用.\n \n優惠項目：\n台灣進出口一般型及經濟型服務，限常溫運送包裹\n危險品/管制品及需要溫控寄送包裹需事先詢價, 不適用於7折優惠\n寄送內容物須受進出口國家之海關規範, 詳細運送時間請提供運送國家名稱及郵遞區號 洽 0800-075-075轉1-0-1與客服人員聯絡",
+    "info": "網站：https://www.fedex.com/zh-tw/campaign/getstarted.html\n營業項目：進出口國際快遞文件或包裹,快速送達歐美及亞洲各大城市",
+    "phone": "",
+    "address": "",
+    "links": [
+      {
+        "label": "fedex.com",
+        "url": "https://www.fedex.com/zh-tw/campaign/getstarted.html"
+      },
+      {
+        "label": "優惠說明文件",
+        "url": "https://drive.google.com/file/d/1YE0Vzk0igxejZl0ZAx-tntPvrR6ERanE/view?usp=sharing"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 63
+  },
+  {
+    "id": "82303c4708",
+    "name": "SOS Repair維修中心",
+    "subtitle": "",
+    "category": "services",
+    "regions": [],
+    "highlight": "9折",
+    "offer": "1.蘋果產品(iPhone、iPad、Mac)維修、憑臺大識別證學生、教職員工、校友享9折優惠。\n(認證零件，原廠零件另議)\n\n2.符合上述優惠1身份者之家人(憑身分證明)，適用與臺大員工本人相同優惠條件。\n(認證零件，原廠零件另議)",
+    "info": "電話：02-2396-0505\n\n地址：台北市中正區青島東路21-3號\n\n信箱：SOSREPAIR0505@gmail.com\n\nLINE連結：https://lin.ee/sSZiFBV",
+    "phone": "02-2396-0505",
+    "address": "台北市中正區青島東路21-3號",
+    "links": [
+      {
+        "label": "lin.ee",
+        "url": "https://lin.ee/sSZiFBV"
+      }
+    ],
+    "expires_on": "2026-08-31",
+    "auto_renew": false,
+    "notes": "眷屬適用（憑身分證）",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 64
+  },
+  {
+    "id": "f156de7a77",
+    "name": "富邦人壽保險股份有限公司",
+    "subtitle": "",
+    "category": "services",
+    "regions": [],
+    "highlight": "保費折扣",
+    "offer": "臺灣大學教職員保險專案 \n\n適用保險商品：富滿利利率變動型年金保險 甲型))( 、欣平安福保本終身保險( 、新安心寶倍終身健康保險( 、全心照護終身健康保險( 、精準守護防癌定期健康保險(\n上述AJA1/HIW4/XDN2 適用集體彙繳保費折扣，詳細資訊請洽整合行銷部 溫智安，電話(02)2176\n5188 分機27617 。\n\n★富邦人壽商品資訊，可連結下方參考：\n\n富滿利利率變動型年金保險 甲型\nhttps://www.fubon.com/life/product/selling/marketing/057597F9115B4AEF96701234F55F5B98/SAY\n\n欣平安福保本終身保險\nhttps://www.fubon.com/life/product/personal/accident/AJA1\n\n新安心寶倍終身健康保險\nhttps://www.fubon.com/life/product/personal/medical/HIW4\n\n全心照護終身健康保險\nhttps://www.fubon.com/life/product/personal/medical/XDN2\n\n精準守護防癌定期健康保險\nhttps://www.fubon.com/life/product/personal/medical/CLO",
+    "info": "電話：(02)8771-6699\n地址：台北市信義區松高路77號8樓\n網站：https://www.fubon.com/life/\n\n詳細資訊洽整合行銷部 溫智安小姐，電話(02)2176-5188 #27617",
+    "phone": "(02)8771-6699",
+    "address": "台北市信義區松高路77號8樓",
+    "links": [
+      {
+        "label": "fubon.com",
+        "url": "https://www.fubon.com/life/product/selling/marketing/057597F9115B4AEF96701234F55F5B98/SAY"
+      },
+      {
+        "label": "fubon.com",
+        "url": "https://www.fubon.com/life/product/personal/accident/AJA1"
+      },
+      {
+        "label": "fubon.com",
+        "url": "https://www.fubon.com/life/product/personal/medical/HIW4"
+      },
+      {
+        "label": "fubon.com",
+        "url": "https://www.fubon.com/life/product/personal/medical/XDN2"
+      },
+      {
+        "label": "fubon.com",
+        "url": "https://www.fubon.com/life/product/personal/medical/CLO"
+      },
+      {
+        "label": "fubon.com",
+        "url": "https://www.fubon.com/life/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 65
+  },
+  {
+    "id": "0b32eed68a",
+    "name": "吉貓寓所",
+    "subtitle": "",
+    "category": "services",
+    "regions": [],
+    "highlight": "折 $500",
+    "offer": "本校教職員工、學生及校友(含眷屬)結帳時請出示識別證，享有\n\n（1）住宿服務折價新台幣500元\n（2）美容服務折價新台幣200元",
+    "info": "純貓住宿｜頂級美容｜預約制\n電話：(02) 2709-1225\n地址：台北市大安區和平東路二段 297 號 3 樓\n信箱：info@luckycatresort.tw\n預約請加入官方 LINE：@luckycatresort",
+    "phone": "(02) 2709-1225",
+    "address": "台北市大安區和平東路二段 297 號 3 樓",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "眷屬證適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 66
+  },
+  {
+    "id": "687d2c4fce",
+    "phone": "",
+    "address": "",
+    "links": [
+      {
+        "label": "reurl.cc",
+        "url": "https://reurl.cc/6dn5OV"
+      }
+    ],
+    "schools": [
+      "NTU"
+    ],
+    "source_level": "school",
+    "source_org": "臺大財務管理處（短期優惠）",
+    "source_url": "https://homepage.ntu.edu.tw/~ntufinance/benefit.html",
+    "retrieved_on": "2026-10-15",
+    "sort_order": 67,
+    "name": "美國聯合航空",
+    "subtitle": "United Airlines",
+    "category": "transport",
+    "regions": [],
+    "offer": "由臺灣出發至美洲（美國、加拿大、中/南美洲 (古巴除外)、墨西哥）之聯合航空/全日空航線，享有票價5%折扣。\n請透過指定服務旅行社訂票 https://reurl.cc/6dn5OV\n\n開票日116/04/30前（出發日116/10/31前），本校教職員工、學生敬請多加利用！（管理單位：臺大國際處）",
+    "info": "",
+    "expires_on": "2027-04-30",
+    "auto_renew": false,
+    "notes": "短期優惠",
+    "highlight": "95折",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    }
+  }
+]
