@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>CampusPass 校園優惠</title>
-<meta name="description" content="CampusPass 校園優惠整合平台：把學校、學院與學生組織公告的特約優惠整理成一份可搜尋的清單，標示原公告單位與資料擷取日。">
+<meta name="description" content="CampusPass 校園優惠整合平臺：把學校、學院與學生組織公告的特約優惠整理成一份可搜尋的清單，標示原公告單位與資料擷取日。">
 <meta property="og:title" content="CampusPass 校園優惠">
 <meta property="og:description" content="把學校與學生組織公告的特約優惠整理成一份可搜尋的清單。">
 <meta property="og:type" content="website">
@@ -19,38 +19,16 @@
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
-<script>
-/* Before the stylesheet, so the first paint is already in the right theme, language and
-   display mode (no flash). Stored values are validated, never trusted. */
-(function () {
-  var d = document.documentElement;
-  try {
-    var th = localStorage.getItem('cp_theme');
-    if (th === 'light' || th === 'dark') {
-      d.setAttribute('data-theme', th);
-      var c = th === 'dark' ? '#202026' : '#FFFFFF';
-      var m = document.querySelectorAll('meta[name="theme-color"]');
-      for (var i = 0; i < m.length; i++) m[i].setAttribute('content', c);
-    }
-  } catch (e) { /* storage blocked: follow the system */ }
-  try {
-    if (localStorage.getItem('cp_lang') === 'en') { d.lang = 'en'; d.setAttribute('data-lang', 'en'); }
-  } catch (e) {}
-  try {
-    if (matchMedia('(display-mode: standalone)').matches || matchMedia('(display-mode: minimal-ui)').matches ||
-        navigator.standalone === true) d.classList.add('is-standalone');
-  } catch (e) {}
-})();
-</script>
+<script src="/boot.js?v=8"></script>
 <link rel="preload" href="/fonts/instrument-serif-italic-wordmark.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/noto-serif-tc-700-wordmark.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=7">
-<link rel="modulepreload" href="/js/i18n.js?v=7">
-<link rel="modulepreload" href="/js/util.js?v=7">
-<link rel="modulepreload" href="/js/icons.js?v=7">
-<link rel="modulepreload" href="/js/ui.js?v=7">
-<link rel="modulepreload" href="/js/qr.js?v=7">
-<script type="module" src="/app.js?v=7"></script>
+<link rel="stylesheet" href="/styles.css?v=8">
+<link rel="modulepreload" href="/js/i18n.js?v=8">
+<link rel="modulepreload" href="/js/util.js?v=8">
+<link rel="modulepreload" href="/js/icons.js?v=8">
+<link rel="modulepreload" href="/js/ui.js?v=8">
+<link rel="modulepreload" href="/js/qr.js?v=8">
+<script type="module" src="/app.js?v=8"></script>
 <script src="/pwa.js" defer></script>
 </head>
 <body data-route="explore">
@@ -91,7 +69,7 @@
 <!-- Phone (≤820px): the top app bar. -->
 <header class="appbar" id="appbar">
   <button class="iconbtn appbar-back" id="appbarBack" type="button" data-back hidden aria-label="返回" data-i18n-aria="detail.back"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg></button>
-  <a class="brand" href="/" data-nav aria-label="CampusPass 首頁" data-i18n-aria="home">
+  <a class="brand" href="/" data-nav>
     <svg class="brandmark" aria-hidden="true"><use href="#cp-mark"/></svg>
     <span class="wordmark">campuspass</span><span class="wordmark-zh i18n-zh">校園優惠</span>
   </a>
@@ -161,6 +139,11 @@
     </section>
     <section class="view" id="view-scan" aria-label="確認優惠使用" data-i18n-aria="scan.title" hidden>
       <div class="col col-page col-min"><div id="scanBody" class="minibody"></div></div>
+    </section>
+
+    <!-- Any other path: a not-found state, with the URL kept as typed. -->
+    <section class="view" id="view-notfound" aria-labelledby="notfoundTitle" hidden>
+      <div class="col col-page"><div id="notfoundBody"></div></div>
     </section>
   </main>
 

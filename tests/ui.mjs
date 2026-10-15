@@ -35,6 +35,16 @@ const noHScroll = (page) => page.evaluate(() => document.documentElement.scrollW
 const rect = (page, sel) => page.evaluate((s) => { const e = document.querySelector(s); if (!e) return null; const r = e.getBoundingClientRect(); return { top: r.top, bottom: r.bottom, left: r.left, right: r.right, width: r.width, height: r.height, display: getComputedStyle(e).display, vis: getComputedStyle(e).visibility }; }, sel);
 const itemCount = (page, scope = '#list') => page.$$eval(`${scope} .item`, (l) => l.length);
 const settle = (page, ms = 450) => page.waitForTimeout(ms);
+// Rows use content-visibility:auto, so the page grows a little as rows are first painted:
+// scroll to the bottom until the height stops changing.
+async function scrollBottom(page) {
+  for (let i = 0, h = -1; i < 8; i++) {
+    const nh = await page.evaluate(() => { scrollTo(0, document.documentElement.scrollHeight); return document.documentElement.scrollHeight; });
+    if (nh === h) break;
+    h = nh;
+    await page.waitForTimeout(150);
+  }
+}
 const allErrors = [];
 
 /* ================= PHONE ================= */
@@ -56,7 +66,7 @@ const allErrors = [];
   await shot(page, 'phone-explore');
 
   // Scroll to the very bottom: last row must clear the tab bar.
-  await page.evaluate(() => scrollTo(0, document.documentElement.scrollHeight));
+  await scrollBottom(page);
   await settle(page, 300);
   const last = await page.evaluate(() => { const l = [...document.querySelectorAll('#list .item')].pop().getBoundingClientRect(); return { top: l.top, bottom: l.bottom }; });
   const navTop = (await rect(page, '#tabbar')).top;
@@ -207,7 +217,7 @@ const allErrors = [];
   const tabLbl = await page.evaluate(() => document.querySelector('#tabbar .tab').getBoundingClientRect().bottom);
   check('standalone: tab buttons sit above the home indicator', tabLbl <= 844 - 34 + 0.5, `${tabLbl}`);
   await shot(page, 'standalone-explore');
-  await page.evaluate(() => scrollTo(0, document.documentElement.scrollHeight)); await settle(page, 300);
+  await scrollBottom(page); await settle(page, 300);
   const last2 = await page.evaluate(() => [...document.querySelectorAll('#list .item')].pop().getBoundingClientRect().bottom);
   check('standalone: last row clears the tab bar', last2 <= (await rect(page, '#tabbar')).top, `${last2}`);
   await shot(page, 'standalone-explore-bottom');
@@ -252,7 +262,7 @@ const allErrors = [];
   await page.click('#list .item:nth-child(2) .pick'); await settle(page);
   await page.keyboard.press('Escape'); await settle(page);
   check('desktop: Esc closes the panel', (await rect(page, '#detail')).display === 'none' && new URL(page.url()).pathname === '/');
-  await page.evaluate(() => scrollTo(0, document.documentElement.scrollHeight)); await settle(page, 200);
+  await scrollBottom(page); await settle(page, 200);
   const last = await page.evaluate(() => [...document.querySelectorAll('#list .item')].pop().getBoundingClientRect().bottom);
   check('desktop: last row reachable', last <= 800);
   await page.evaluate(() => scrollTo(0, 0));
@@ -448,9 +458,20 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   await shot(page, 'ask-phone');
   await page.click('dialog.ask [data-outcome="used"]'); await settle(page, 600);
   check('ask: answer posts outcome=used', (await apiGet(page, `/api/redemptions/${code2}`)).data?.outcome === 'used' && !(await page.$('dialog.ask')));
-  await page.click('[data-redeem]'); await page.waitForSelector('dialog.pass'); await settle(page);
-  await page.keyboard.press('Escape'); await settle(page, 700);
-  check('ask: asked once per pass', !(await page.$('dialog.ask')));
+  // An answered pass is not reused: re-opening issues a new code, and that one may be asked about.
+  await page.click('[data-redeem]'); await page.waitForSelector('dialog.pass .pass-qr svg'); await settle(page);
+  const code2b = await passCode(page);
+  check('ask: an answered pass is not reused (new code)', code2b !== code2, `${code2} → ${code2b}`);
+  await page.keyboard.press('Escape'); await page.waitForSelector('dialog.ask[open]', { timeout: 3000 }).catch(() => {});
+  check('ask: the new pass is asked about', !!(await page.$('dialog.ask[open]')));
+  // Dismissed without an answer: re-opening within the window reuses the same pass and code,
+  // and it is not asked about twice.
+  await page.keyboard.press('Escape'); await settle(page, 500);
+  check('ask: focus returns to 使用優惠 after the prompt closes', await page.evaluate(() => document.activeElement?.matches('[data-redeem]')));
+  await page.click('[data-redeem]'); await page.waitForSelector('dialog.pass .pass-qr svg'); await settle(page);
+  check('ask: an unanswered pass is reused (same code)', (await passCode(page)) === code2b);
+  await page.keyboard.press('Escape'); await settle(page, 900);
+  check('ask: asked once per pass code', !(await page.$('dialog.ask')));
   // 店家不接受 → refused, and the report dialog opens prefilled.
   await page.goto(B + `/deal/${OTHER[1]}`, { waitUntil: 'networkidle' }); await page.waitForSelector('[data-redeem]');
   await page.click('[data-redeem]'); await page.waitForSelector('dialog.pass .pass-qr svg');
@@ -460,8 +481,8 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   check('ask: refused posts and offers the report, prefilled', (await apiGet(page, `/api/redemptions/${code3}`)).data?.outcome === 'refused' && (await page.inputValue('dialog.report textarea').catch(() => '')).includes('店家表示不接受') && !(await page.$eval('dialog.report [type="submit"]', (b) => b.disabled)));
   await shot(page, 'ask-refused-report');
   await page.keyboard.press('Escape'); await settle(page);
-  await page.goto(B + `/deal/${EXPIRED}`, { waitUntil: 'networkidle' }); await page.waitForSelector('#detailUse .btn-cta');
-  check('pass: expired deal → 使用優惠 disabled with the reason', await page.$eval('#detailUse .btn-cta', (b) => b.disabled) && (await page.textContent('#detailUse')).includes('已過期'));
+  await page.goto(B + `/deal/${EXPIRED}`, { waitUntil: 'networkidle' }); await page.waitForSelector('#detailUse .usehint');
+  check('pass: expired deal → no usable 使用優惠, the reason shown', await page.$eval('#detailUse .btn-cta', (b) => b.disabled) && (await page.textContent('#detailUse')).includes('已過期'));
   await shot(page, 'pass-expired-deal');
   allErrors.push(...page._errors);
   await ctx.close();

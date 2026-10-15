@@ -1,13 +1,14 @@
 /* Shared chrome: the toast and the dialog (sheet on a phone, modal or popover on a desktop).
    One blocking dialog at a time, as the design system asks. */
-import { isPhone } from "./util.js?v=7";
+import { isPhone } from "./util.js?v=8";
 
 /* ---------- toast ---------- */
 
 let toastTimer = 0;
 
 /** A short message over everything (top layer, so it shows above an open dialog too),
- *  announced through the polite live region. */
+ *  announced through the polite live region. A modal dialog makes everything outside it inert,
+ *  live regions included, so while one is open the region moves into it. */
 export function toast(message, { error = false, ms = 2800 } = {}) {
   const el = document.getElementById("toast");
   const live = document.getElementById("live");
@@ -15,6 +16,8 @@ export function toast(message, { error = false, ms = 2800 } = {}) {
   el.textContent = message;
   el.classList.toggle("err", error);
   if (live) {
+    const host = [...document.querySelectorAll("dialog[open]")].pop() || document.body;
+    if (live.parentNode !== host) host.append(live);
     live.textContent = "";
     // A fresh text node after a tick, so a repeated message is announced again.
     setTimeout(() => (live.textContent = message), 30);
@@ -48,7 +51,8 @@ const FOCUSABLE =
 
 function trapTab(e) {
   if (e.key !== "Tab") return;
-  const items = [...e.currentTarget.querySelectorAll(FOCUSABLE)].filter((el) => el.offsetParent !== null);
+  // Tab stops only: a radio group's unchosen options (tabindex=-1) are reached with the arrows.
+  const items = [...e.currentTarget.querySelectorAll(FOCUSABLE)].filter((el) => el.offsetParent !== null && el.tabIndex >= 0);
   if (!items.length) return;
   const first = items[0];
   const last = items[items.length - 1];
@@ -64,11 +68,13 @@ function trapTab(e) {
 /**
  * Open a modal dialog. `html` is trusted markup built by the caller (escape untrusted values
  * first). Elements with [data-close] close it. `anchor` (desktop only) turns it into a popover
- * placed next to that element; on a phone every dialog is a bottom sheet.
+ * placed next to that element; on a phone every dialog is a bottom sheet. `returnFocus` (an
+ * element, or a function returning one when the dialog closes) is where focus goes afterwards
+ * when the dialog was not opened from a control, e.g. after a timer.
  */
-export function openDialog({ html, cls = "", label = "", labelledBy = "", anchor = null, placement = "below", onClose = null }) {
+export function openDialog({ html, cls = "", label = "", labelledBy = "", anchor = null, placement = "below", onClose = null, returnFocus = null }) {
   closeDialog({ instant: true, restoreFocus: false });
-  const opener = document.activeElement;
+  const opener = returnFocus || document.activeElement;
   const dlg = document.createElement("dialog");
   dlg.className = `dlg ${cls}`.trim();
   if (labelledBy) dlg.setAttribute("aria-labelledby", labelledBy);
@@ -127,9 +133,12 @@ export function closeDialog({ instant = false, restoreFocus = true } = {}) {
   document.documentElement.classList.remove("has-dialog");
   const finish = () => {
     if (dlg.open) dlg.close();
+    const live = document.getElementById("live");
+    if (live && dlg.contains(live)) document.body.append(live);
     dlg.remove();
     // After close(): while a modal is open everything outside it is inert and refuses focus.
-    if (restoreFocus && opener && document.contains(opener)) opener.focus({ preventScroll: true });
+    const target = typeof opener === "function" ? opener() : opener;
+    if (restoreFocus && target && document.contains(target)) target.focus({ preventScroll: true });
   };
   if (instant) finish();
   else {

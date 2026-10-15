@@ -1,13 +1,13 @@
 /* Every UI string, in zh-TW and en. Deal content (names, offers) stays Chinese.
    Write 臺 not 台 in UI copy. Labels never wrap: the English is shortened, not the layout. */
-import { storage } from "./util.js?v=7";
+import { storage } from "./util.js?v=8";
 
 const LANG_KEY = "cp_lang";
 
 const DICT = {
   zh: {
     "app.name": "CampusPass",
-    "app.tagline": "校園優惠整合平台",
+    "app.tagline": "校園優惠整合平臺",
     "skip": "跳至主要內容",
     "nav.main": "主選單",
     "nav.tabs": "分頁",
@@ -54,6 +54,8 @@ const DICT = {
     "exp.renewUntil": "{d}，到期後自動續約",
     "exp.expiredLong": "已於 {d} 到期",
     "exp.soonLong": "{d} 到期（剩 {n} 天）",
+    "exp.today": "今天到期",
+    "exp.todayLong": "{d} 到期（今天）",
 
     "elig.student": "學生",
     "elig.staff": "教職員",
@@ -121,6 +123,7 @@ const DICT = {
     "signin.body": "以 Google 帳號登入，即可查看每項優惠的完整條件、訂房代碼與聯絡方式，並收藏常用的優惠。",
     "signin.short": "登入",
     "signin.saveReason": "以 Google 帳號登入即可收藏優惠，換裝置也找得到；還能查看每項優惠的完整條件、訂房代碼與聯絡方式。",
+    "signin.expiredReason": "登入已過期，請重新登入。登入後會回到這裡，剛才的操作也會保留。",
 
     "saved.title": "收藏",
     "saved.lede": "你收藏的優惠，已過期的也會保留。",
@@ -129,6 +132,8 @@ const DICT = {
     "saved.emptyTitle": "還沒有收藏",
     "saved.emptyBody": "在優惠旁點星號即可收藏。",
     "saved.browse": "瀏覽優惠",
+    "saved.offlineTitle": "目前離線",
+    "saved.offlineBody": "連線後會顯示你的收藏。",
 
     "me.title": "我的",
     "me.signedOutTitle": "尚未登入",
@@ -150,7 +155,15 @@ const DICT = {
     "me.installBtn": "安裝",
     "me.installIOS": "在 Safari 點「分享」，再選「加入主畫面」。",
     "me.contact": "發現資料有誤？請在該優惠頁點「回報錯誤」。",
-    "disclaimer": "CampusPass 為獨立整理之索引，非臺大官方網站；優惠以商家及原公告單位為準。",
+    "me.loadFailed": "無法載入帳號",
+    "me.offlineNote": "目前離線，顯示上次的帳號資料。",
+    "me.delete": "刪除帳號",
+    "me.deleteHint": "永久刪除你的帳號、收藏與使用紀錄。",
+    "del.title": "刪除帳號？",
+    "del.body": "這會永久刪除你的帳號、收藏、優惠使用紀錄與錯誤回報，並登出所有裝置。店家已確認的使用紀錄會保留給店家，但不再與你連結。這個動作無法復原。",
+    "del.confirm": "刪除帳號",
+    "del.deleting": "刪除中…",
+    "disclaimer": "CampusPass 為獨立整理之索引，非任何學校之官方網站；優惠以商家及原公告單位為準。",
 
     "account.menu": "帳戶選單",
     "account.settings": "帳戶與設定",
@@ -165,6 +178,10 @@ const DICT = {
     "toast.reportSent": "感謝回報，我們會盡快確認",
     "toast.reportFailed": "送出失敗，請稍後再試",
     "toast.sessionExpired": "登入已過期，請重新登入",
+    "toast.deleted": "帳號已刪除",
+    "toast.deleteFailed": "無法刪除帳號，請稍後再試",
+    "toast.offline": "目前離線，顯示上次載入的資料",
+    "toast.online": "已恢復連線",
 
     "login.access_denied": "已取消 Google 登入",
     "login.expired": "登入逾時，請再試一次",
@@ -194,6 +211,8 @@ const DICT = {
     "pass.instr": "請出示給店員。合作店家可掃描 QR 確認；其他店家請依原本方式出示學生證。",
     "pass.confirmed": "店家已確認",
     "pass.confirmedAt": "{t} 由店家確認",
+    "pass.status": "狀態",
+    "pass.statusConfirmed": "已確認",
     "pass.expired": "憑證已過期",
     "pass.expiredBody": "需要時可以重新開啟一張新的憑證。",
     "pass.renew": "重新開啟憑證",
@@ -208,6 +227,7 @@ const DICT = {
     "ask.thanks": "謝謝你的回覆",
     "ask.failed": "無法送出，請稍後再試",
     "ask.refusedReport": "{d} 出示優惠，店家表示不接受。",
+    "ask.confirmedThanks": "店家已確認這次使用，謝謝！",
 
     "shop.title": "店家確認",
     "shop.eyebrow": "合作店家",
@@ -216,9 +236,9 @@ const DICT = {
     "shop.codeLabel": "輸入學生出示的 6 碼代碼",
     "shop.codeHint": "代碼在學生手機憑證的 QR code 下方。",
     "shop.codeShort": "請輸入完整的 6 碼代碼。",
-    "shop.confirm": "確認",
+    "shop.confirm": "確認使用",
     "shop.confirming": "確認中…",
-    "shop.ok": "已確認",
+    "shop.ok": "已確認使用",
     "shop.howTitle": "使用方式",
     "shop.how": "把這個網頁加入書籤或主畫面。學生出示 QR 時，用手機相機掃描即可確認；也可輸入 6 碼代碼。",
     "shop.paired": "這支手機已設定為本店的確認裝置。",
@@ -229,10 +249,12 @@ const DICT = {
 
     "err.invalid_code": "找不到這組代碼，或不是本店的優惠。請再確認一次。",
     "err.already_confirmed": "這張憑證已經確認過了，同一張憑證只能確認一次。",
-    "err.expired_code": "這張憑證已過期（超過 2 小時），請學生重新開啟。",
+    "err.expired_code": "這張憑證已過期（開啟超過 30 分鐘），請學生重新開啟。",
     "err.not_merchant": "這個店家連結已停用。",
     "err.network": "無法連線，請稍後再試。",
     "err.generic": "發生錯誤，請稍後再試。",
+    "err.offline": "目前離線，連線後再試。",
+    "err.rate_limited": "操作太頻繁，請稍候一分鐘再試。",
 
     "scan.title": "確認優惠使用",
     "scan.passTitle": "只有合作店家可以確認",
@@ -249,9 +271,10 @@ const DICT = {
     "scan.already": "這張憑證已經確認過了",
     "scan.alreadyBody": "同一張憑證只能確認一次。",
     "scan.expired": "這張憑證已過期",
-    "scan.expiredBody": "憑證開啟已超過 2 小時，請學生在 CampusPass 重新開啟。",
+    "scan.expiredBody": "憑證開啟已超過 30 分鐘，請學生在 CampusPass 重新開啟。",
     "scan.invalid": "找不到這張憑證",
     "scan.invalidBody": "代碼不存在，或不是本店的優惠。",
+    "scan.shopPage": "本店頁面",
 
     "merchants.title": "商家合作",
     "merchants.lede": "CampusPass 整理學生可用的特約優惠。",
@@ -287,6 +310,7 @@ const DICT = {
     "lead.errShop": "請填寫店名。",
     "lead.errContact": "請填寫 Email 或電話。",
     "lead.errEmail": "Email 格式不正確。",
+    "lead.errPhone": "電話格式不正確。",
     "lead.failed": "送出失敗，請稍後再試。",
     "lead.doneTitle": "已收到，謝謝",
     "lead.doneBody": "我們會用你留下的聯絡方式回覆你。",
@@ -301,6 +325,9 @@ const DICT = {
     "cancel": "取消",
     "close": "關閉",
     "dialog.pick": "選擇{what}",
+    "labelSep": "：",
+    "notfound.title": "找不到這個頁面",
+    "notfound.body": "網址可能有誤，或頁面已移除。",
   },
 
   en: {
@@ -317,7 +344,7 @@ const DICT = {
     "explore.title": "Explore deals",
     "explore.lede": "Partner discounts announced by universities, colleges, departments and student groups.",
     "search.label": "Search deals",
-    "search.placeholder": "Search merchants, offers, sources",
+    "search.placeholder": "Search deals or shops",
     "search.clear": "Clear search",
     "search.shortcut": "Press / to search",
     "filter.categories": "Categories",
@@ -333,6 +360,7 @@ const DICT = {
     "count.one": "1 deal",
     "list.label": "Deals",
     "list.expiredHidden": "{n} expired deals are not listed; saved ones stay in Saved.",
+    "list.expiredHidden.one": "1 expired deal is not listed; saved ones stay in Saved.",
     "empty.noResults": "No matching deals",
     "empty.noResultsHint": "Try other keywords, or reset the filters.",
     "empty.loadFailed": "Couldn't load deals",
@@ -353,6 +381,9 @@ const DICT = {
     "exp.renewUntil": "{d}, then renews automatically",
     "exp.expiredLong": "Expired on {d}",
     "exp.soonLong": "Ends {d} ({n} days left)",
+    "exp.soonLong.one": "Ends {d} (1 day left)",
+    "exp.today": "Ends today",
+    "exp.todayLong": "Ends today ({d})",
 
     "elig.student": "Students",
     "elig.staff": "Staff",
@@ -420,6 +451,7 @@ const DICT = {
     "signin.body": "Sign in with Google to see every deal's full terms, booking codes and contact details, and to save the ones you use.",
     "signin.short": "Sign in",
     "signin.saveReason": "Sign in with Google to save deals and find them on any device, and to see every deal's full terms, booking codes and contact details.",
+    "signin.expiredReason": "Your session expired. Sign in again to pick up where you left off.",
 
     "saved.title": "Saved",
     "saved.lede": "Deals you saved, including expired ones.",
@@ -428,6 +460,8 @@ const DICT = {
     "saved.emptyTitle": "Nothing saved yet",
     "saved.emptyBody": "Tap the star next to a deal to save it.",
     "saved.browse": "Browse deals",
+    "saved.offlineTitle": "You're offline",
+    "saved.offlineBody": "Your saved deals will show once you're connected.",
 
     "me.title": "Account",
     "me.signedOutTitle": "Not signed in",
@@ -449,7 +483,15 @@ const DICT = {
     "me.installBtn": "Install",
     "me.installIOS": "In Safari, tap Share, then “Add to Home Screen”.",
     "me.contact": "Found a mistake? Use “Report an error” on the deal's page.",
-    "disclaimer": "CampusPass is an independent index, not an official NTU website. The merchant and the original announcing office have the final word on every deal.",
+    "me.loadFailed": "Couldn't load your account",
+    "me.offlineNote": "You're offline. Showing your account as last loaded.",
+    "me.delete": "Delete account",
+    "me.deleteHint": "Permanently delete your account, saved deals and pass history.",
+    "del.title": "Delete your account?",
+    "del.body": "This permanently deletes your account, saved deals, pass history and reports, and signs you out on every device. Uses a shop already confirmed stay in the shop's records but are no longer linked to you. This can't be undone.",
+    "del.confirm": "Delete account",
+    "del.deleting": "Deleting…",
+    "disclaimer": "CampusPass is an independent index, not an official website of any university. The merchant and the original announcing office have the final word on every deal.",
 
     "account.menu": "Account menu",
     "account.settings": "Account & settings",
@@ -464,6 +506,10 @@ const DICT = {
     "toast.reportSent": "Thanks — we'll check it soon",
     "toast.reportFailed": "Couldn't send. Try again later.",
     "toast.sessionExpired": "Your session expired. Please sign in again.",
+    "toast.deleted": "Your account was deleted",
+    "toast.deleteFailed": "Couldn't delete the account. Try again later.",
+    "toast.offline": "You're offline. Showing what was loaded last.",
+    "toast.online": "Back online",
 
     "login.access_denied": "Google sign-in was cancelled",
     "login.expired": "Sign-in timed out. Please try again.",
@@ -493,6 +539,8 @@ const DICT = {
     "pass.instr": "Show this to the cashier. Partner shops can scan the QR to confirm; elsewhere, show your student ID as usual.",
     "pass.confirmed": "Confirmed by the shop",
     "pass.confirmedAt": "Confirmed by the shop at {t}",
+    "pass.status": "Status",
+    "pass.statusConfirmed": "Confirmed",
     "pass.expired": "Pass expired",
     "pass.expiredBody": "You can open a new pass whenever you need one.",
     "pass.renew": "Open a new pass",
@@ -507,6 +555,7 @@ const DICT = {
     "ask.thanks": "Thanks for letting us know",
     "ask.failed": "Couldn't send. Try again later.",
     "ask.refusedReport": "Showed the deal on {d}; the shop wouldn't accept it.",
+    "ask.confirmedThanks": "The shop already confirmed this use. Thanks!",
 
     "shop.title": "Shop confirm",
     "shop.eyebrow": "Partner shop",
@@ -515,7 +564,7 @@ const DICT = {
     "shop.codeLabel": "Enter the student's 6-character code",
     "shop.codeHint": "The code is under the QR code on the student's pass.",
     "shop.codeShort": "Enter all 6 characters of the code.",
-    "shop.confirm": "Confirm",
+    "shop.confirm": "Confirm use",
     "shop.confirming": "Confirming…",
     "shop.ok": "Confirmed",
     "shop.howTitle": "How it works",
@@ -528,10 +577,12 @@ const DICT = {
 
     "err.invalid_code": "Code not found, or it isn't for your shop's deal. Please check it.",
     "err.already_confirmed": "This pass was already confirmed. Each pass can be confirmed once.",
-    "err.expired_code": "This pass has expired (over 2 hours old). Ask the student to open a new one.",
+    "err.expired_code": "This pass has expired (opened over 30 minutes ago). Ask the student to open a new one.",
     "err.not_merchant": "This shop link is no longer active.",
     "err.network": "Couldn't connect. Try again later.",
     "err.generic": "Something went wrong. Try again later.",
+    "err.offline": "You're offline. Try again once you're connected.",
+    "err.rate_limited": "Too many tries. Wait a minute and try again.",
 
     "scan.title": "Confirm a deal",
     "scan.passTitle": "For partner shops only",
@@ -548,9 +599,10 @@ const DICT = {
     "scan.already": "This pass was already confirmed",
     "scan.alreadyBody": "Each pass can be confirmed once.",
     "scan.expired": "This pass has expired",
-    "scan.expiredBody": "It was opened over 2 hours ago. Ask the student to open a new one in CampusPass.",
+    "scan.expiredBody": "It was opened over 30 minutes ago. Ask the student to open a new one in CampusPass.",
     "scan.invalid": "Pass not found",
     "scan.invalidBody": "The code doesn't exist, or it isn't for your shop's deal.",
+    "scan.shopPage": "Shop page",
 
     "merchants.title": "For merchants",
     "merchants.lede": "CampusPass lists the partner discounts students can use.",
@@ -586,6 +638,7 @@ const DICT = {
     "lead.errShop": "Enter your shop's name.",
     "lead.errContact": "Enter an email or a phone number.",
     "lead.errEmail": "That email doesn't look right.",
+    "lead.errPhone": "That phone number doesn't look right.",
     "lead.failed": "Couldn't send. Try again later.",
     "lead.doneTitle": "Thanks, we got it",
     "lead.doneBody": "We'll reply using the contact details you left.",
@@ -600,6 +653,9 @@ const DICT = {
     "cancel": "Cancel",
     "close": "Close",
     "dialog.pick": "Choose {what}",
+    "labelSep": ": ",
+    "notfound.title": "Page not found",
+    "notfound.body": "The link may be wrong, or the page was removed.",
   },
 };
 

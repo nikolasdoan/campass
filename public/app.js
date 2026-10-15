@@ -3,11 +3,11 @@
    a pushed full-screen page on a phone) · /merchants (商家合作) · /m/:key (a shop's private
    confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
    Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=7";
-import { t, getLang, setLang, applyLang, schoolName } from "./js/i18n.js?v=7";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone } from "./js/util.js?v=7";
-import { toast, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=7";
-import { qrSVG } from "./js/qr.js?v=7";
+import { icon } from "./js/icons.js?v=8";
+import { t, getLang, setLang, applyLang, schoolName } from "./js/i18n.js?v=8";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=8";
+import { toast, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=8";
+import { qrSVG } from "./js/qr.js?v=8";
 
 /* ---------- constants ---------- */
 
@@ -25,7 +25,12 @@ const PENDING_FAV = "cp_pending_fav";
 const DEFAULT_SCHOOL = "NTU";
 const SCHOOL_KEY = "cp_school";
 const SOON_DAYS = 30;
-const TODAY = todayTW();
+// Today in Taipei. Not a constant: an installed app can stay open past midnight
+// (refreshed on visibilitychange and at Taipei midnight, see watchToday()).
+let today = todayTW();
+const ME_KEY = "cp_me"; // the last signed-in name and email, so offline isn't shown as signed out
+const RETURN_KEY = "cp_return"; // Explore filters and scroll, kept across the Google round trip
+const DRAFT_KEY = "cp_report_draft"; // a report interrupted by an expired session
 
 const GOOGLE_G =
   '<svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>';
@@ -40,14 +45,14 @@ const state = {
   user: null,
   favs: new Set(),
   favOrder: [], // newest first, as /api/me returns them
-  meStatus: "loading", // loading | ready
+  meStatus: "loading", // loading | ready | error (network or server failure; user may be the cached one)
   filters: { q: "", cat: "all", region: "all", school: storage.get(SCHOOL_KEY) || DEFAULT_SCHOOL, students: true },
   route: { name: "explore", id: null },
   base: "explore", // the list view under an open detail
   detail: new Map(), // id → { deal, locked }
   detailSeq: 0,
 };
-const VIEWS = ["explore", "saved", "me", "merchants", "shop", "scan"];
+const VIEWS = ["explore", "saved", "me", "merchants", "shop", "scan", "notfound"];
 // Shop-facing pages run on a counter phone: no tabs, no account chrome.
 const MINIMAL = new Set(["shop", "scan"]);
 const scrollPos = Object.fromEntries(VIEWS.map((v) => [v, 0]));
@@ -58,15 +63,16 @@ const els = {
   railFoot: $("railFoot"), q: $("q"), qclear: $("qclear"), cats: $("cats"), catWrap: $("catWrap"), filterRow: $("filterRow"),
   list: $("list"), exploreFoot: $("exploreFoot"), savedBody: $("savedBody"), meBody: $("meBody"),
   detail: $("detail"), dhead: $("dhead"), detailBody: $("detailBody"), detailUse: $("detailUse"), appbarBack: $("appbarBack"),
-  merchantsBody: $("merchantsBody"), shopBody: $("shopBody"), scanBody: $("scanBody"),
+  merchantsBody: $("merchantsBody"), shopBody: $("shopBody"), scanBody: $("scanBody"), notfoundBody: $("notfoundBody"),
 };
 
 /* ---------- data helpers ---------- */
 
 function expiry(d) {
-  if (d.auto_renew) return { kind: "renew", date: d.expires_on || "" };
+  // An auto-renewing deal whose date has passed has renewed: the old date says nothing.
+  if (d.auto_renew) return { kind: "renew", date: d.expires_on && d.expires_on >= today ? d.expires_on : "" };
   if (!d.expires_on) return null;
-  const left = daysBetween(TODAY, d.expires_on);
+  const left = daysBetween(today, d.expires_on);
   if (left < 0) return { kind: "expired", date: d.expires_on };
   if (left <= SOON_DAYS) return { kind: "soon", date: d.expires_on, left };
   return { kind: "until", date: d.expires_on };
@@ -78,6 +84,7 @@ function expiryChip(d) {
   if (!e) return "";
   if (e.kind === "renew") return `<span class="chip">${icon("refresh-cw")}${esc(t("exp.renew"))}</span>`;
   if (e.kind === "expired") return `<span class="chip expired">${esc(t("exp.expired"))}</span>`;
+  if (e.kind === "soon" && !e.left) return `<span class="chip soon">${icon("clock")}${esc(t("exp.today"))}</span>`;
   if (e.kind === "soon")
     return `<span class="chip soon" title="${esc(t("exp.soonLong", { d: fmtDate(e.date), n: e.left }))}">${icon("clock")}${esc(t("exp.soon", { d: fmtDate(e.date).slice(5) }))}</span>`;
   return `<span class="chip">${esc(t("exp.until", { d: fmtDate(e.date) }))}</span>`;
@@ -88,7 +95,7 @@ function expiryLong(d) {
   if (!e) return t("exp.none");
   if (e.kind === "renew") return e.date ? t("exp.renewUntil", { d: fmtDate(e.date) }) : t("exp.renewLong");
   if (e.kind === "expired") return t("exp.expiredLong", { d: fmtDate(e.date) });
-  if (e.kind === "soon") return t("exp.soonLong", { d: fmtDate(e.date), n: e.left });
+  if (e.kind === "soon") return t(e.left ? "exp.soonLong" : "exp.todayLong", { d: fmtDate(e.date), n: e.left });
   return t("exp.untilLong", { d: fmtDate(e.date) });
 }
 
@@ -116,10 +123,17 @@ function prepare(deals) {
 
 /* ---------- API ---------- */
 
+/* A train tunnel doesn't fail a request, it hangs it: give up after a while so every caller's
+   error state (with its retry) shows instead of a spinner forever. */
+const API_TIMEOUT_MS = { GET: 12000, other: 15000 };
+
 async function api(method, url, body) {
+  const ctl = new AbortController();
+  const timer = setTimeout(() => ctl.abort(), API_TIMEOUT_MS[method] || API_TIMEOUT_MS.other);
   try {
     const res = await fetch(url, {
       method,
+      signal: ctl.signal,
       credentials: "same-origin",
       // Per-person and live answers are never served from the HTTP cache.
       cache: method === "GET" && /^\/api\/(me|redemptions|merchant)\b/.test(url) ? "no-store" : "default",
@@ -130,11 +144,45 @@ async function api(method, url, body) {
     try {
       data = await res.json();
     } catch {}
+    setOnline(true);
     // The server's clock (Date header), so the pass countdown survives a wrong phone clock.
-    return { ok: res.ok, status: res.status, data, date: res.headers.get("Date") };
+    return { ok: res.ok, status: res.status, data, date: res.headers.get("Date"), at: Date.now() };
   } catch {
+    if (!navigator.onLine) setOnline(false);
     return { ok: false, status: 0, data: null };
+  } finally {
+    clearTimeout(timer);
   }
+}
+
+/** The message for a failed request: offline, too many tries, or the caller's own. */
+function errText(r, key) {
+  if (r.status === 0) return t(navigator.onLine ? "err.network" : "err.offline");
+  if (r.status === 429) return t("err.rate_limited");
+  return t(key);
+}
+
+/* ---------- online / offline ----------
+   A subtle signal (html.is-offline, a toast when it changes) and recovery when the connection
+   comes back: everything that failed for lack of a network loads again by itself. */
+
+let online = navigator.onLine !== false;
+
+function setOnline(on) {
+  if (on === online) return;
+  online = on;
+  document.documentElement.classList.toggle("is-offline", !on);
+  toast(t(on ? "toast.online" : "toast.offline"), { ms: 3500 });
+  if (on) recover();
+}
+
+function recover() {
+  loadMe();
+  if (state.dealsStatus === "error") loadDeals();
+  const r = state.route;
+  if (r.name === "shop" && shop.status === "error") loadShop(r.key);
+  if (r.name === "scan" && scan.status === "error") loadScan(r.code);
+  if (r.name === "deal" && !state.detail.has(r.id) && state.detailMissing !== r.id) renderDetail(r.id);
 }
 
 async function loadDeals({ quiet = false } = {}) {
@@ -153,19 +201,53 @@ async function loadDeals({ quiet = false } = {}) {
     state.dealsStatus = "error";
   }
   renderExplore();
+  restorePlace();
   renderSaved();
   if (state.route.name === "me") renderMe();
-  if (state.route.name === "deal" && !state.detail.has(state.route.id)) renderDetail(state.route.id);
+  if (state.route.name === "deal" && !state.detail.has(state.route.id) && state.detailMissing !== state.route.id) renderDetail(state.route.id);
 }
 
-async function loadMe() {
-  const r = await api("GET", "/api/me");
-  if (r.ok && r.data) {
-    state.user = r.data.user || null;
-    state.favOrder = Array.isArray(r.data.favorites) ? r.data.favorites.slice() : [];
-    state.favs = new Set(state.favOrder);
+/** Only the name and email, never the session: enough to keep showing "signed in" offline. */
+function cacheMe(user) {
+  storage.set(ME_KEY, user ? JSON.stringify({ email: String(user.email || ""), name: String(user.name || "") }) : null);
+}
+function cachedMe() {
+  try {
+    const u = JSON.parse(storage.get(ME_KEY) || "null");
+    return u && typeof u.email === "string" && u.email ? { email: u.email, name: typeof u.name === "string" ? u.name : "" } : null;
+  } catch {
+    return null;
   }
-  state.meStatus = "ready";
+}
+
+let meSeq = 0;
+let meLoadedAt = 0;
+
+async function loadMe() {
+  const seq = ++meSeq;
+  const r = await api("GET", "/api/me");
+  if (seq !== meSeq) return; // a newer refresh is on its way
+  const before = state.user?.email || null;
+  const refresh = meLoadedAt > 0;
+  if (r.ok && r.data) {
+    meLoadedAt = Date.now();
+    state.user = r.data.user || null;
+    cacheMe(state.user);
+    let order = Array.isArray(r.data.favorites) ? r.data.favorites.slice() : [];
+    // A star still on its way to the server wins over the list read before it arrived.
+    for (const [id, f] of favSync) order = f.want ? [id, ...order.filter((x) => x !== id)] : order.filter((x) => x !== id);
+    state.favOrder = order;
+    state.favs = new Set(order);
+    state.meStatus = "ready";
+  } else {
+    // Offline or a server error is not "signed out": keep the user we knew (this page's, else
+    // the cached copy) and say what happened instead of asking them to sign in again.
+    if (!state.user) state.user = cachedMe();
+    state.meStatus = "error";
+  }
+  // Signed in or out in another tab since the last check: details cached for the other state go.
+  const switched = refresh && state.meStatus === "ready" && before !== (state.user?.email || null);
+  if (switched) state.detail.clear();
   renderAccountChrome();
   syncStars();
   renderSaved();
@@ -173,17 +255,33 @@ async function loadMe() {
   if (state.route.name === "deal") {
     // Signed in after the detail was first shown locked: fetch the full deal.
     const cached = state.detail.get(state.route.id);
-    if (state.user && cached?.locked) {
+    if (switched || (state.user && cached?.locked && state.meStatus === "ready")) {
       state.detail.delete(state.route.id);
       renderDetail(state.route.id);
     } else renderDetailHead();
   }
+  if (state.meStatus !== "ready") return;
   // The star tapped before signing in, saved now that we're back.
   const pending = storage.get(PENDING_FAV, "session");
   if (pending) {
     storage.set(PENDING_FAV, null, "session");
     if (state.user && !state.favs.has(pending)) toggleFav(pending);
   }
+  // A report that an expired session interrupted: open it again, text kept.
+  const draft = storage.get(DRAFT_KEY, "session");
+  if (draft && state.user) {
+    storage.set(DRAFT_KEY, null, "session");
+    try {
+      const { id, text } = JSON.parse(draft);
+      if (state.route.name === "deal" && state.route.id === id && !dialogOpen()) openReport({ id, draft: String(text || "") });
+    } catch {}
+  }
+}
+
+/** Another tab may have signed in or out, or saved deals, meanwhile: refresh when we come back
+ *  (at most every 30 s). */
+function refreshMeIfStale() {
+  if (document.visibilityState === "visible" && Date.now() - meLoadedAt > 30e3) loadMe();
 }
 
 /* ---------- filtering ---------- */
@@ -266,8 +364,10 @@ function skeletonRows(n = 7) {
   return Array.from({ length: n }, () => '<li class="skel" aria-hidden="true"><i class="t"></i><span class="l"><i></i><i></i><i></i></span></li>').join("");
 }
 
-function emptyHTML({ ic, title, body, action = "" }) {
-  return `<div class="empty"><span class="eic">${icon(ic)}</span><b>${esc(title)}</b>${body ? `<p>${esc(body)}</p>` : ""}${action}</div>`;
+/** `h1`: the state is the whole page (the minimal shop pages, 404), so its title is the heading. */
+function emptyHTML({ ic, title, body, action = "", h1 = "" }) {
+  const head = h1 ? ` role="heading" aria-level="1" id="${esc(h1)}" tabindex="-1"` : "";
+  return `<div class="empty"><span class="eic">${icon(ic)}</span><b${head}>${esc(title)}</b>${body ? `<p>${esc(body)}</p>` : ""}${action}</div>`;
 }
 
 function syncStars() {
@@ -291,6 +391,13 @@ function syncStars() {
 }
 
 /* ---------- Explore ---------- */
+
+/** Placeholder pills while the list loads (or failed), so the toolbar doesn't grow by a row
+ *  when the data arrives. */
+function filterSkeleton() {
+  els.cats.innerHTML = '<span class="pill is-skel" aria-hidden="true"></span>'.repeat(6);
+  els.filterRow.innerHTML = '<span class="pill fpill is-skel" aria-hidden="true"></span>'.repeat(3);
+}
 
 function buildFilterControls() {
   // Category pills: built once per data/language, then updated in place so focus survives.
@@ -316,6 +423,9 @@ function buildFilterControls() {
 function renderExplore() {
   const busy = state.dealsStatus === "loading";
   els.list.setAttribute("aria-busy", String(busy));
+  if (busy || state.dealsStatus === "error") {
+    if (!state.deals.length && !els.cats.querySelector("[data-cat]")) filterSkeleton();
+  }
   if (busy) {
     els.list.innerHTML = skeletonRows();
     els.exploreFoot.innerHTML = "";
@@ -355,13 +465,15 @@ function renderExplore() {
   if (reg) {
     reg.querySelector("[data-label]").textContent = f.region === "all" ? t("filter.region") : t(`region.${f.region}`);
     reg.classList.toggle("on", f.region !== "all");
-    reg.setAttribute("aria-label", `${t("filter.region")}: ${f.region === "all" ? t("filter.regionAll") : t(`region.${f.region}`)}`);
+    // The accessible name starts with the visible label (WCAG 2.5.3).
+    reg.setAttribute("aria-label", `${t("filter.region")}${t("labelSep")}${f.region === "all" ? t("filter.regionAll") : t(`region.${f.region}`)}`);
   }
   const sch = els.filterRow.querySelector('[data-pick="school"]');
   if (sch) {
     sch.querySelector("[data-label]").textContent = f.school === "all" ? t("filter.school") : schoolName(f.school);
     sch.classList.toggle("on", f.school !== "all");
-    sch.setAttribute("aria-label", `${t("filter.school")}: ${f.school === "all" ? t("filter.schoolAll") : schoolName(f.school, true)}`);
+    sch.setAttribute("aria-label", `${t("filter.school")}${t("labelSep")}${f.school === "all" ? t("filter.schoolAll") : schoolName(f.school)}`);
+    sch.title = f.school === "all" ? "" : schoolName(f.school, true);
   }
   const reset = els.filterRow.querySelector("[data-reset]");
   if (reset) reset.hidden = !filtersActive();
@@ -399,19 +511,90 @@ const merchantsLinkHTML = () => `${esc(t("foot.merchants"))} <a href="/merchants
 const FIRST_ROWS = 40;
 const CHUNK_ROWS = 250;
 let fillRaf = 0;
+let fill = null; // the rows still to append: { deals, i }
 
 function fillList(deals) {
   cancelAnimationFrame(fillRaf);
   els.list.replaceChildren(...deals.slice(0, FIRST_ROWS).map(rowEl));
-  let i = FIRST_ROWS;
+  fill = { deals, i: FIRST_ROWS };
   const more = () => {
-    if (i >= deals.length) return;
-    els.list.append(...deals.slice(i, i + CHUNK_ROWS).map(rowEl));
-    i += CHUNK_ROWS;
+    if (fill.i >= deals.length) return;
+    els.list.append(...deals.slice(fill.i, fill.i + CHUNK_ROWS).map(rowEl));
+    fill.i += CHUNK_ROWS;
     markSelected();
-    if (i < deals.length) fillRaf = requestAnimationFrame(more);
+    if (fill.i < deals.length) fillRaf = requestAnimationFrame(more);
   };
   if (deals.length > FIRST_ROWS) fillRaf = requestAnimationFrame(more);
+}
+
+/** Append every row still pending now (to scroll to one far down the list). */
+function flushList() {
+  cancelAnimationFrame(fillRaf);
+  if (fill && fill.i < fill.deals.length) {
+    els.list.append(...fill.deals.slice(fill.i).map(rowEl));
+    fill.i = fill.deals.length;
+    markSelected();
+  }
+}
+
+/* ---------- back from Google: the same filters and the same place in the list ----------
+   Signing in is a full-page round trip. Before leaving, Explore's filters and the row at the top
+   of the screen (or the one whose star was tapped) go to sessionStorage; after the page comes
+   back and the list loads, both are restored. */
+
+let returnPlace = null; // { anchor, top, y }
+
+function saveReturn() {
+  const f = state.filters;
+  const rows = [...els.list.querySelectorAll(".item")];
+  const pending = storage.get(PENDING_FAV, "session");
+  const below = $("toolbar").getBoundingClientRect().bottom; // rows under the sticky toolbar don't count
+  const li = (pending && rows.find((r) => r.dataset.id === pending)) || rows.find((r) => r.getBoundingClientRect().bottom > below + 8);
+  storage.set(
+    RETURN_KEY,
+    JSON.stringify({
+      path: location.pathname,
+      at: Date.now(),
+      filters: { q: f.q, cat: f.cat, region: f.region, students: f.students },
+      anchor: state.base === "explore" && li ? li.dataset.id : null,
+      top: li ? Math.round(li.getBoundingClientRect().top) : 0,
+      y: state.base === "explore" ? Math.round(scrollY) : 0,
+    }),
+    "session"
+  );
+}
+
+function takeReturn() {
+  const raw = storage.get(RETURN_KEY, "session");
+  if (!raw) return;
+  storage.set(RETURN_KEY, null, "session");
+  try {
+    const r = JSON.parse(raw);
+    if (r.path !== location.pathname || !(Date.now() - r.at < 15 * 60e3)) return;
+    const f = r.filters || {};
+    if (typeof f.q === "string") state.filters.q = els.q.value = f.q.slice(0, 200);
+    if (f.cat === "all" || CATEGORIES.includes(f.cat)) state.filters.cat = f.cat;
+    if (f.region === "all" || REGIONS.includes(f.region)) state.filters.region = f.region;
+    if (typeof f.students === "boolean") state.filters.students = f.students;
+    els.qclear.hidden = !els.q.value;
+    returnPlace = { anchor: typeof r.anchor === "string" ? r.anchor : null, top: +r.top || 0, y: +r.y || 0 };
+  } catch {}
+}
+
+/** Once the list is in: scroll the remembered row back to where it was on screen. */
+function restorePlace() {
+  const p = returnPlace;
+  if (!p || state.dealsStatus !== "ready") return;
+  returnPlace = null;
+  if (state.base !== "explore") return;
+  let li = p.anchor && els.list.querySelector(`.item[data-id="${CSS.escape(p.anchor)}"]`);
+  if (p.anchor && !li) {
+    flushList();
+    li = els.list.querySelector(`.item[data-id="${CSS.escape(p.anchor)}"]`);
+  }
+  if (li) scrollTo(0, scrollY + li.getBoundingClientRect().top - p.top);
+  else if (p.y) scrollTo(0, p.y);
+  scrollPos.explore = scrollY;
 }
 
 function markSelected() {
@@ -420,19 +603,26 @@ function markSelected() {
   if (id) for (const li of document.querySelectorAll(`.item[data-id="${CSS.escape(id)}"]`)) li.classList.add("sel");
 }
 
+/* The region and school pickers are a radio group: one Tab stop (the chosen option), the arrow
+   keys, Home and End move between options, Enter or Space picks one and closes the picker. */
 function openPicker(kind, anchor) {
   const f = state.filters;
   const isRegion = kind === "region";
   const { all, counts } = isRegion ? facetCounts("region", (d) => d.regions) : facetCounts("school", (d) => d.schools);
-  const values = isRegion ? REGIONS : [...new Set(state.deals.flatMap((d) => d.schools))].sort();
   const cur = isRegion ? f.region : f.school;
+  // Schools by their visible name; codes we have no name for (test data) only when chosen.
+  const values = isRegion
+    ? REGIONS
+    : [...new Set(state.deals.flatMap((d) => d.schools))]
+        .filter((v) => v === cur || schoolName(v, true) !== v)
+        .sort((a, b) => schoolName(a, true).localeCompare(schoolName(b, true), getLang() === "en" ? "en" : "zh-Hant"));
   const label = (v) => (v === "all" ? t(isRegion ? "filter.regionAll" : "filter.schoolAll") : isRegion ? t(`region.${v}`) : schoolName(v, true));
   const opts = ["all", ...values]
     .map(
       (v) =>
-        `<li><button class="opt" type="button" role="menuitemradio" data-value="${esc(v)}" aria-checked="${v === cur}">${icon("check")}<span>${esc(
-          label(v)
-        )}</span><span class="n">${v === "all" ? all : counts.get(v) || 0}</span></button></li>`
+        `<li role="none"><button class="opt" type="button" role="radio" data-value="${esc(v)}" aria-checked="${v === cur}" tabindex="${v === cur ? 0 : -1}">${icon(
+          "check"
+        )}<span>${esc(label(v))}</span><span class="n">${v === "all" ? all : counts.get(v) || 0}</span></button></li>`
     )
     .join("");
   const title = t(isRegion ? "filter.region" : "filter.school");
@@ -440,10 +630,21 @@ function openPicker(kind, anchor) {
     cls: "picker",
     label: t("dialog.pick", { what: title }),
     anchor,
-    html: `<div class="dlg-head pick-head"><h2>${esc(title)}</h2><button class="iconbtn dlg-x" type="button" data-close aria-label="${esc(t("close"))}">${icon("x")}</button></div>
-      <ul class="opts" role="menu">${opts}</ul>`,
+    html: `<div class="dlg-head pick-head"><h2 id="pickTitle">${esc(title)}</h2><button class="iconbtn dlg-x" type="button" data-close aria-label="${esc(t("close"))}">${icon("x")}</button></div>
+      <ul class="opts" role="radiogroup" aria-labelledby="pickTitle">${opts}</ul>`,
   });
-  dlg.querySelector('[aria-checked="true"]')?.focus();
+  const radios = [...dlg.querySelectorAll(".opt")];
+  (radios.find((b) => b.tabIndex === 0) || radios[0])?.focus();
+  dlg.addEventListener("keydown", (e) => {
+    const i = radios.indexOf(document.activeElement);
+    if (i < 0) return;
+    const to = { ArrowDown: i + 1, ArrowRight: i + 1, ArrowUp: i - 1, ArrowLeft: i - 1, Home: 0, End: radios.length - 1 }[e.key];
+    if (to === undefined) return;
+    e.preventDefault();
+    const next = radios[(to + radios.length) % radios.length];
+    for (const b of radios) b.tabIndex = b === next ? 0 : -1;
+    next.focus();
+  });
   dlg.addEventListener("click", (e) => {
     const b = e.target.closest("[data-value]");
     if (!b) return;
@@ -480,6 +681,11 @@ function renderSaved() {
     body.innerHTML = `<ul class="list" aria-busy="true">${skeletonRows(4)}</ul>`;
     return;
   }
+  if (state.meStatus === "error" && !meLoadedAt) {
+    // Never loaded the account on this page (offline, or the server failed): no sign-in prompt.
+    body.innerHTML = meErrorHTML(state.user ? "saved" : "me");
+    return;
+  }
   if (!state.user) {
     body.innerHTML = emptyHTML({
       ic: "star",
@@ -510,10 +716,23 @@ function renderSaved() {
 
 /* ---------- Me ---------- */
 
+/** No inline onerror (the CSP allows no inline script): a broken picture is removed by the
+ *  document-level error listener in init(). */
 function avatarHTML(user, cls = "") {
   const initial = (user.name || user.email || "?").trim().charAt(0).toUpperCase();
   const pic = safeUrl(user.picture || "");
-  return `<span class="avatar ${cls}">${pic ? `<img src="${esc(pic)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}${pic ? "" : esc(initial)}</span>`;
+  return `<span class="avatar ${cls}">${pic ? `<img src="${esc(pic)}" alt="" referrerpolicy="no-referrer" data-avatar>` : ""}${pic ? "" : esc(initial)}</span>`;
+}
+
+/** /me or /saved when the account couldn't be loaded: offline or a server error, with a retry. */
+function meErrorHTML(kind) {
+  const offline = !navigator.onLine;
+  return emptyHTML({
+    ic: offline ? "wifi-off" : "circle-alert",
+    title: kind === "saved" ? t("saved.offlineTitle") : t("me.loadFailed"),
+    body: kind === "saved" ? t("saved.offlineBody") : t(offline ? "err.offline" : "empty.loadFailedHint"),
+    action: `<button class="btn btn-outline btn-sm" type="button" data-retry-me>${esc(t("retry"))}</button>`,
+  });
 }
 
 function segHTML(name, current, options) {
@@ -544,12 +763,15 @@ function installAvailable() {
 
 function renderMe() {
   const u = state.user;
+  const stale = state.meStatus === "error";
   let account;
   if (state.meStatus === "loading") account = `<section class="card"><div class="dskel"><i style="width:40%"></i><i style="width:70%"></i></div></section>`;
   else if (u)
     account = `<section class="card" aria-label="${esc(t("account.settings"))}"><div class="profile">${avatarHTML(u, "lg")}
       <div class="who"><b>${esc(u.name || u.email)}</b><span>${esc(u.email)}</span></div>
-      <button class="btn btn-outline btn-sm" type="button" data-signout>${icon("log-out")}${esc(t("me.signout"))}</button></div></section>`;
+      <button class="btn btn-outline btn-sm" type="button" data-signout>${icon("log-out")}${esc(t("me.signout"))}</button></div>
+      ${stale ? `<p class="fine">${esc(t(navigator.onLine ? "me.loadFailed" : "me.offlineNote"))} <button class="linkbtn" type="button" data-retry-me>${esc(t("retry"))}</button></p>` : ""}</section>`;
+  else if (stale) account = `<section class="card">${meErrorHTML("me")}</section>`;
   else
     account = `<section class="card signincard"><h2>${esc(t("me.signedOutTitle"))}</h2><p>${esc(t("me.signedOutBody"))}</p>${googleButton()}
       <p class="fine">${esc(t("privacy.note"))}</p></section>`;
@@ -580,12 +802,12 @@ function renderMe() {
     )}</small></span>${icon("chevron-right", "go")}</a></section>
     <section class="card"><h2>${esc(t("me.about"))}</h2>
       <p>${esc(t("me.aboutBody"))}</p>
-      <p>${merchantsLinkHTML()}</p>
       <p class="disclaimer">${esc(t("disclaimer"))}</p>
       ${srcList ? `<h2 style="margin-top:16px">${esc(t("me.sources"))}</h2><ul class="srclist">${srcList}</ul>` : ""}
       <p class="fine" style="margin-top:12px">${esc(t("me.contact"))}</p>
     </section>
-    <section class="card"><h2>${esc(t("me.privacy"))}</h2><p>${esc(t("privacy.note"))}</p></section>
+    <section class="card"><h2>${esc(t("me.privacy"))}</h2><p>${esc(t("privacy.note"))}</p>
+      ${u && !stale ? `<div class="setrow"><span>${esc(t("me.deleteHint"))}</span><button class="btn btn-outline btn-sm btn-danger" type="button" data-delete-account>${esc(t("me.delete"))}</button></div>` : ""}</section>
     <p class="mefoot">CampusPass · ${esc(t("app.tagline"))}</p>`;
 }
 
@@ -593,7 +815,8 @@ function renderMe() {
 
 function renderAccountChrome() {
   const u = state.user;
-  if (state.meStatus === "loading") {
+  // Loading, or failed with no account known: neither an avatar nor a pointless sign-in prompt.
+  if (state.meStatus === "loading" || (state.meStatus === "error" && !u)) {
     els.railFoot.innerHTML = "";
     els.appbarActions.innerHTML = "";
     return;
@@ -634,7 +857,9 @@ function googleButton() {
   return `<a class="gbtn" href="${esc(loginHref())}" data-login>${GOOGLE_G}<span>${esc(t("google.signin"))}</span></a>`;
 }
 
+/** reason: "save" (a star tapped signed out) · "expired" (a 401 mid-action) · "" */
 function openSignin(reason = "", onClose = null) {
+  const why = { save: "signin.saveReason", expired: "signin.expiredReason" }[reason] || "signin.body";
   openDialog({
     onClose,
     cls: "signin",
@@ -642,16 +867,24 @@ function openSignin(reason = "", onClose = null) {
     html: `<button class="iconbtn dlg-x" type="button" data-close aria-label="${esc(t("close"))}">${icon("x")}</button>
       <div class="dlg-center"><span class="lic">${MARK}</span>
       <h2 id="signinTitle">${esc(t("signin.title"))}</h2>
-      <p class="dlg-body">${esc(reason === "save" ? t("signin.saveReason") : t("signin.body"))}</p>
-      ${googleButton()}
+      <p class="dlg-body">${esc(t(why))}</p>
+      ${googleButton().replace("<a ", "<a autofocus ")}
       <p class="dlg-fine">${esc(t("privacy.note"))}</p></div>`,
   });
 }
 
 async function signOut() {
   const r = await api("POST", "/api/logout");
-  if (!r.ok) return toast(t("toast.signoutFailed"), { error: true });
+  if (!r.ok) return toast(errText(r, "toast.signoutFailed"), { error: true });
+  becomeSignedOut();
+  toast(t("toast.signedOut"));
+}
+
+/** Back to signed out on this page: no user, no favourites, details re-fetched (locked). */
+function becomeSignedOut() {
   state.user = null;
+  state.meStatus = "ready";
+  cacheMe(null);
   state.favs = new Set();
   state.favOrder = [];
   state.detail.clear();
@@ -660,7 +893,37 @@ async function signOut() {
   renderSaved();
   if (state.route.name === "me") renderMe();
   if (state.route.name === "deal") renderDetail(state.route.id);
-  toast(t("toast.signedOut"));
+  else renderUseBar();
+}
+
+/** 刪除帳號: say exactly what goes, then DELETE /api/me. */
+function confirmDeleteAccount() {
+  const dlg = openDialog({
+    cls: "confirm",
+    labelledBy: "delTitle",
+    html: `<div class="dlg-head"><h2 id="delTitle">${esc(t("del.title"))}</h2><button class="iconbtn dlg-x" type="button" data-close aria-label="${esc(t("close"))}">${icon("x")}</button></div>
+      <p class="dlg-body">${esc(t("del.body"))}</p>
+      <div class="dlg-actions"><button class="btn btn-ghost" type="button" data-close autofocus>${esc(t("cancel"))}</button>
+      <button class="btn btn-outline btn-danger" type="button" data-delete-confirm>${esc(t("del.confirm"))}</button></div>`,
+  });
+  const btn = dlg.querySelector("[data-delete-confirm]");
+  btn.addEventListener("click", async () => {
+    btn.disabled = true;
+    btn.textContent = t("del.deleting");
+    const r = await api("DELETE", "/api/me");
+    if (r.ok || r.status === 401) {
+      // 401: the session was already gone; the account can't be reached from here any more.
+      closeDialog({ restoreFocus: false });
+      if (r.ok) storage.set(ASKED_KEY, null);
+      becomeSignedOut();
+      toast(t(r.ok ? "toast.deleted" : "toast.sessionExpired"), { error: !r.ok });
+      $("meTitle")?.focus?.();
+      return;
+    }
+    btn.disabled = false;
+    btn.textContent = t("del.confirm");
+    toast(errText(r, "toast.deleteFailed"), { error: true });
+  });
 }
 
 /* ---------- favourites (optimistic) ---------- */
@@ -677,7 +940,12 @@ function setFav(id, on) {
   if (state.route.name === "saved" || state.base === "saved") renderSaved();
 }
 
-async function toggleFav(id, btn) {
+/* Taps can outrun the network (on, off, on…). Per deal, one request at a time: while one is in
+   flight only the latest wish is kept, and a follow-up is sent if it differs from what the
+   server was last told. The final state is always the last tap. */
+const favSync = new Map(); // id → { want, server }
+
+function toggleFav(id, btn) {
   if (!state.user) {
     storage.set(PENDING_FAV, id, "session");
     openSignin("save", () => storage.set(PENDING_FAV, null, "session"));
@@ -690,20 +958,29 @@ async function toggleFav(id, btn) {
     void btn.offsetWidth;
     btn.classList.add("pop");
   }
-  const r = await api(on ? "PUT" : "DELETE", `/api/favorites/${encodeURIComponent(id)}`);
-  if (r.ok) {
-    toast(t(on ? "toast.saved" : "toast.unsaved"));
+  const f = favSync.get(id);
+  if (f) f.want = on;
+  else syncFav(id, on);
+}
+
+async function syncFav(id, want) {
+  const f = { want, server: !want };
+  favSync.set(id, f);
+  let r;
+  while (f.want !== f.server) {
+    const sent = f.want;
+    r = await api(sent ? "PUT" : "DELETE", `/api/favorites/${encodeURIComponent(id)}`);
+    if (!r.ok) break;
+    f.server = sent;
+  }
+  favSync.delete(id);
+  if (!r || r.ok) {
+    if (r) toast(t(f.server ? "toast.saved" : "toast.unsaved"));
     return;
   }
-  setFav(id, !on);
-  if (r.status === 401) {
-    state.user = null;
-    state.favs = new Set();
-    state.favOrder = [];
-    renderAccountChrome();
-    syncStars();
-    toast(t("toast.sessionExpired"), { error: true });
-  } else toast(t("toast.saveFailed"), { error: true });
+  setFav(id, f.server); // back to what the server has
+  if (r.status === 401) dropSession({ fav: f.want ? id : null });
+  else toast(errText(r, "toast.saveFailed"), { error: true });
 }
 
 /* ---------- detail ---------- */
@@ -734,10 +1011,12 @@ function renderUseBar() {
     return;
   }
   const expired = isExpired(c.deal);
+  // Re-rendered (language, resize, a refreshed account) while the pass is opening: stay busy.
+  const busy = redeeming === state.route.id;
   els.detailUse.classList.toggle("is-expired", expired);
-  els.detailUse.innerHTML = `<button class="btn btn-cta" type="button" data-redeem${expired ? ' disabled aria-describedby="useWhy"' : ""}>${icon(
+  els.detailUse.innerHTML = `<button class="btn btn-cta" type="button" data-redeem${expired ? ' disabled aria-describedby="useWhy"' : busy ? " disabled" : ""}>${icon(
     "qr-code"
-  )}<span>${esc(t("use.cta"))}</span></button>
+  )}<span>${esc(t(busy ? "use.opening" : "use.cta"))}</span></button>
     <p class="usehint" id="useWhy">${esc(t(expired ? "use.expired" : "use.hint"))}</p>`;
 }
 
@@ -773,7 +1052,9 @@ function detailHTML(d, { locked, loading, error }) {
   const schools = d.schools.map((s) => schoolName(s, true)).join(getLang() === "en" ? ", " : "、");
   let content = "";
   if (loading) content = `<div class="dsec"><div class="dskel"><i style="width:30%"></i><i></i><i style="width:85%"></i><i style="width:60%"></i></div></div>`;
-  else if (error) content = `<div class="note">${icon("circle-alert")}<span>${esc(t("detail.loadFailed"))}</span></div>`;
+  else if (error)
+    content = `<div class="note">${icon("circle-alert")}<span>${esc(error === true ? t("detail.loadFailed") : error)}</span></div>
+      <p><button class="btn btn-outline btn-sm" type="button" data-retry-detail>${esc(t("retry"))}</button></p>`;
   else if (locked)
     content = `<section class="lockcard" aria-labelledby="lockTitle">
       <span class="lic">${icon("lock")}</span>
@@ -841,6 +1122,7 @@ function detailHTML(d, { locked, loading, error }) {
 
 async function renderDetail(id, { focus = false } = {}) {
   const seq = ++state.detailSeq;
+  if (state.detailMissing === id) state.detailMissing = null;
   const cached = state.detail.get(id);
   const base = cached?.deal || state.byId.get(id);
   if (cached) {
@@ -862,18 +1144,20 @@ async function renderDetail(id, { focus = false } = {}) {
     els.detailBody.innerHTML = detailHTML(deal, { locked: !!r.data.locked });
     setTitle();
   } else if (r.status === 404) {
+    state.detailMissing = id;
     els.detailBody.innerHTML = emptyHTML({
       ic: "search-x",
       title: t("detail.notFound"),
       body: t("detail.notFoundHint"),
       action: `<a class="btn btn-outline btn-sm" href="/" data-nav>${esc(t("detail.backToExplore"))}</a>`,
     });
+    setTitle();
   } else if (base) {
-    els.detailBody.innerHTML = detailHTML(base, { error: true });
+    els.detailBody.innerHTML = detailHTML(base, { error: r.status === 0 ? errText(r) : true });
   } else {
     els.detailBody.innerHTML = emptyHTML({
-      ic: "circle-alert",
-      title: t("detail.loadFailed"),
+      ic: navigator.onLine ? "circle-alert" : "wifi-off",
+      title: r.status === 0 ? errText(r) : t("detail.loadFailed"),
       action: `<button class="btn btn-outline btn-sm" type="button" data-retry-detail>${esc(t("retry"))}</button>`,
     });
   }
@@ -932,7 +1216,10 @@ async function share() {
   }
 }
 
-function openReport({ id = state.route.id, prefill = "" } = {}) {
+const REPORT_MAX = 1000; // characters (code points: an emoji counts once), as the server cuts
+
+/** prefill: a started sentence (cursor after it, on a new line) · draft: text kept from before. */
+function openReport({ id = state.route.id, prefill = "", draft = "" } = {}) {
   const d = state.detail.get(id)?.deal || state.byId.get(id);
   if (!state.user) return openSignin();
   const dlg = openDialog({
@@ -942,8 +1229,8 @@ function openReport({ id = state.route.id, prefill = "" } = {}) {
       <p class="dlg-body">${esc(t("report.body", { name: d?.name || "" }))}</p>
       <form id="reportForm" novalidate>
         <label class="fieldlbl" for="reportMsg">${esc(t("report.label"))}</label>
-        <textarea class="field" id="reportMsg" maxlength="1000" required placeholder="${esc(t("report.placeholder"))}" autofocus></textarea>
-        <div class="counter" aria-hidden="true"><span id="reportN">0</span>/1000</div>
+        <textarea class="field" id="reportMsg" required placeholder="${esc(t("report.placeholder"))}" autofocus></textarea>
+        <div class="counter" aria-hidden="true"><span id="reportN">0</span>/${REPORT_MAX}</div>
         <div class="dlg-actions"><button class="btn btn-ghost" type="button" data-close>${esc(t("cancel"))}</button>
         <button class="btn btn-primary" type="submit" disabled>${esc(t("report.submit"))}</button></div>
       </form>`,
@@ -951,13 +1238,16 @@ function openReport({ id = state.route.id, prefill = "" } = {}) {
   const ta = dlg.querySelector("textarea");
   const submit = dlg.querySelector('[type="submit"]');
   const sync = () => {
-    dlg.querySelector("#reportN").textContent = ta.value.length;
+    // maxlength counts UTF-16 units (an emoji is 2): limit and count characters instead.
+    const chars = [...ta.value];
+    if (chars.length > REPORT_MAX) ta.value = chars.slice(0, REPORT_MAX).join("");
+    dlg.querySelector("#reportN").textContent = Math.min(chars.length, REPORT_MAX);
     submit.disabled = !ta.value.trim();
   };
   ta.addEventListener("input", sync);
-  if (prefill) {
+  if (prefill || draft) {
     // From 「店家不接受」: start the report for them, cursor at the end to add details.
-    ta.value = `${prefill}\n`;
+    ta.value = draft || `${prefill}\n`;
     sync();
     ta.setSelectionRange(ta.value.length, ta.value.length);
   }
@@ -972,27 +1262,26 @@ function openReport({ id = state.route.id, prefill = "" } = {}) {
       closeDialog();
       toast(t("toast.reportSent"));
     } else if (r.status === 401) {
-      closeDialog({ instant: true });
-      state.user = null;
-      renderAccountChrome();
-      toast(t("toast.sessionExpired"), { error: true });
+      dropSession({ report: { id, text: ta.value } });
     } else {
       submit.disabled = false;
       submit.textContent = t("report.submit");
-      toast(t("toast.reportFailed"), { error: true });
+      toast(errText(r, "toast.reportFailed"), { error: true });
     }
   });
 }
 
-/** A 401 in the middle of something: back to signed-out, and say so. */
-function dropSession() {
-  state.user = null;
-  state.favs = new Set();
-  state.favOrder = [];
-  renderAccountChrome();
-  syncStars();
-  renderUseBar();
-  toast(t("toast.sessionExpired"), { error: true });
+/** A 401 in the middle of something: the session expired or was revoked. Back to signed out
+ *  everywhere on the page (the detail locks again), keep what was being done (the star, the
+ *  report text) and offer sign-in right away; after the Google round trip it completes. */
+function dropSession({ fav = null, report = null } = {}) {
+  if (fav) storage.set(PENDING_FAV, fav, "session");
+  if (report) storage.set(DRAFT_KEY, JSON.stringify(report), "session");
+  becomeSignedOut();
+  openSignin("expired", () => {
+    storage.set(PENDING_FAV, null, "session");
+    storage.set(DRAFT_KEY, null, "session");
+  });
 }
 
 /* ---------- in-store pass ----------
@@ -1008,13 +1297,15 @@ const TPE_TIME = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Taipei", hou
 const TPE_HM = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Taipei", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
 
 let pass = null; // the open pass: { code, dealId, deal, expiresAt, skew, confirmedAt, outcome, expired, dlg, tick, poll, qr }
+let redeeming = null; // the deal id whose pass is being opened (one request at a time)
 let wakeLock = null;
 
 /** SQLite's datetime('now') is UTC "YYYY-MM-DD HH:MM:SS". */
 const utcMs = (s) => Date.parse(`${String(s).replace(" ", "T")}Z`);
 /** T97C5B → "T97C 5B": easier to read out and to type. */
 const groupCode = (c) => `${c.slice(0, 4)} ${c.slice(4)}`;
-const normCode = (v) => String(v).toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 6);
+// Full-width letters from zhuyin IMEs (ＡＢＣ) are ABC, as on the server.
+const normCode = (v) => String(v).normalize("NFKC").toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 6);
 const nowMs = () => Date.now() + (pass?.skew || 0);
 
 /** s***@ntu.edu.tw: enough for the cashier to see a school address, nothing more. */
@@ -1031,35 +1322,46 @@ async function openPass(btn) {
   const id = state.route.id;
   const c = state.detail.get(id);
   if (!state.user) return openSignin();
-  if (!c || c.locked || isExpired(c.deal) || btn.disabled) return;
-  const label = btn.querySelector("span");
-  btn.disabled = true;
-  label.textContent = t("use.opening");
+  if (!c || c.locked || isExpired(c.deal) || btn.disabled || redeeming || pass) return;
+  redeeming = id;
+  renderUseBar(); // disabled, 「開啟中…」
   const r = await api("POST", `/api/deals/${encodeURIComponent(id)}/redeem`);
-  btn.disabled = false;
-  label.textContent = t("use.cta");
+  redeeming = null;
+  renderUseBar();
   if (r.status === 401) return dropSession();
-  if (!r.ok || !r.data?.code) return toast(t("use.failed"), { error: true });
-  if (state.route.name !== "deal" || state.route.id !== id) return; // navigated away meanwhile
+  if (r.status === 410) return toast(t("use.expired"), { error: true });
+  if (!r.ok || !r.data?.code) return toast(errText(r, "use.failed"), { error: true });
+  if (state.route.name !== "deal" || state.route.id !== id || pass) return; // navigated away meanwhile
 
-  pass = { dealId: id, deal: c.deal };
-  setPassData(r.data, r.date);
+  const p = { dealId: id, deal: c.deal };
+  setPassData(p, r);
+  pass = p;
   // A history entry of its own, so Back (and Android's back gesture) closes the pass.
-  history.pushState({ ...(history.state || {}), pass: pass.code }, "", location.pathname + location.search);
-  pass.dlg = openDialog({ cls: "pass", labelledBy: "passTitle", html: passHTML(), onClose: onPassClosed });
+  history.pushState({ ...(history.state || {}), pass: p.code }, "", location.pathname + location.search);
+  // onClose names its own pass: a stale close must never clear a newer one.
+  p.dlg = openDialog({ cls: "pass", labelledBy: "passTitle", html: passHTML(), onClose: () => onPassClosed(p) });
   drawPass();
   startPassTimers();
   keepAwake(true);
 }
 
-function setPassData(data, date) {
-  const server = date ? Date.parse(date) : NaN;
-  // Trust the server clock only when it clearly differs: the Date header has 1s resolution.
-  const skew = Number.isFinite(server) && Math.abs(server - Date.now()) > 3000 ? server - Date.now() : 0;
-  Object.assign(pass, {
+/** The countdown runs on the server's clock: expires_at and server_now (when the response was
+ *  made) give the offset to this phone's clock, so a phone set minutes wrong still counts right. */
+function setPassData(p, r) {
+  const data = r.data;
+  const serverNow = Date.parse(data.server_now || "");
+  let skew = 0;
+  if (Number.isFinite(serverNow)) skew = serverNow - (r.at || Date.now());
+  else {
+    // Older answers: the Date header, trusted only when it clearly differs (1 s resolution).
+    const server = r.date ? Date.parse(r.date) : NaN;
+    if (Number.isFinite(server) && Math.abs(server - Date.now()) > 3000) skew = server - Date.now();
+  }
+  const exp = Date.parse(data.expires_at || "");
+  Object.assign(p, {
     code: data.code,
     skew,
-    expiresAt: utcMs(data.created_at) + (data.valid_minutes || 15) * 60e3,
+    expiresAt: Number.isFinite(exp) ? exp : utcMs(data.created_at) + (data.valid_minutes || 15) * 60e3,
     confirmedAt: null,
     outcome: null,
     expired: false,
@@ -1073,7 +1375,7 @@ function passHTML() {
     <button class="iconbtn dlg-x" type="button" data-close aria-label="${esc(t("pass.close"))}">${icon("x")}</button>
     <div class="pass-head">
       <p class="pass-eyebrow">${MARK}<span>${esc(t("pass.title"))}</span></p>
-      <h2 id="passTitle" class="pass-name">${esc(d.name)}</h2>
+      <h2 id="passTitle" class="pass-name" tabindex="-1" autofocus>${esc(d.name)}</h2>
       ${d.highlight ? `<span class="badge">${esc(d.highlight)}</span>` : ""}
     </div>
     <div class="pass-stage" id="passStage"></div>
@@ -1145,8 +1447,15 @@ function tickPass() {
   const s = Math.ceil(Math.max(0, p.expiresAt - now) / 1000);
   p.dlg.querySelector("#passClock").textContent = TPE_TIME.format(now);
   const left = p.dlg.querySelector("#passLeft");
+  if (p.confirmedAt) {
+    // Confirmed: nothing is running out any more, so the countdown gives way to the status.
+    left.previousElementSibling.textContent = t("pass.status");
+    left.textContent = t("pass.statusConfirmed");
+    left.classList.remove("low");
+    return;
+  }
   left.textContent = `${String(Math.floor(s / 60)).padStart(2, "0")}:${String(s % 60).padStart(2, "0")}`;
-  left.classList.toggle("low", s <= 60 && !p.confirmedAt);
+  left.classList.toggle("low", s <= 60);
   if (!s && !p.expired) {
     p.expired = true;
     // Ask 「優惠有用成功嗎？」 right here, once, unless the shop already confirmed it.
@@ -1243,35 +1552,44 @@ async function renewPass(btn) {
       closeDialog();
       return dropSession();
     }
-    return toast(t("use.failed"), { error: true });
+    return toast(r.status === 410 ? t("use.expired") : errText(r, "use.failed"), { error: true });
   }
-  setPassData(r.data, r.date);
+  setPassData(p, r);
   history.replaceState({ ...(history.state || {}), pass: p.code }, "");
   drawPass();
   startPassTimers();
   keepAwake(true);
 }
 
-/** The pass closed (✕, Esc, Back): stop everything, then ask once how it went. */
-function onPassClosed() {
-  const p = pass;
+/** The pass closed (✕, Esc, Back): stop everything, then ask once per pass code how it went. */
+function onPassClosed(p) {
   if (!p) return;
-  stopPassTimers();
+  clearTimeout(p.tick);
+  clearInterval(p.poll);
+  p.poll = 0;
+  if (pass !== p) return;
   pass = null;
   keepAwake(false);
   // Closed with ✕ or Esc: drop the pass's history entry too (Back already has).
   if (history.state?.pass) history.back();
   if (p.confirmedAt || p.outcome || wasAsked(p.code)) return;
   markAsked(p.code);
-  // After the close animation, and never over a dialog the reader opened since.
-  setTimeout(() => !dialogOpen() && askOutcome(p.code, p.dealId), 340);
+  // After the close animation, and never over a dialog the reader opened since. The shop may
+  // have confirmed in the last seconds: then there is nothing to ask.
+  setTimeout(async () => {
+    const r = await api("GET", `/api/redemptions/${encodeURIComponent(p.code)}`);
+    if (r.ok && (r.data?.confirmed_at || r.data?.outcome)) return;
+    if (!dialogOpen() && !pass) askOutcome(p.code, p.dealId);
+  }, 340);
 }
 
 function askOutcome(code, dealId) {
   openDialog({
     cls: "ask",
     labelledBy: "askTitle",
-    html: `<div class="dlg-head"><h2 id="askTitle">${esc(t("ask.title"))}</h2><button class="iconbtn dlg-x" type="button" data-close aria-label="${esc(t("close"))}">${icon("x")}</button></div>
+    // Opened from a timer, not a control: afterwards focus goes back to 使用優惠 (or the deal).
+    returnFocus: () => els.detailUse.querySelector("[data-redeem]") || els.detailBody.querySelector("#detailName"),
+    html: `<div class="dlg-head"><h2 id="askTitle" tabindex="-1" autofocus>${esc(t("ask.title"))}</h2><button class="iconbtn dlg-x" type="button" data-close aria-label="${esc(t("close"))}">${icon("x")}</button></div>
       <p class="dlg-body">${esc(t("ask.body"))}</p>${askButtonsHTML(code, dealId)}`,
   });
 }
@@ -1283,13 +1601,20 @@ async function answerOutcome(btn) {
   const btns = [...box.querySelectorAll("button")];
   for (const b of btns) b.disabled = true;
   const r = await api("POST", `/api/redemptions/${encodeURIComponent(code)}/outcome`, { outcome });
+  if (r.status === 409) {
+    // The shop confirmed this pass meanwhile: nothing to correct, just thank them.
+    if (pass?.code === code) pass.outcome = "used";
+    if (box.closest("dialog.pass")) box.closest(".pass-ask").innerHTML = `<p class="ask-done">${icon("check")}${esc(t("ask.confirmedThanks"))}</p>`;
+    else closeDialog();
+    return toast(t("ask.confirmedThanks"));
+  }
   if (!r.ok) {
     for (const b of btns) b.disabled = false;
     if (r.status === 401) {
       closeDialog();
       return dropSession();
     }
-    return toast(t("ask.failed"), { error: true });
+    return toast(errText(r, "ask.failed"), { error: true });
   }
   if (pass?.code === code) pass.outcome = outcome;
   toast(t("ask.thanks"));
@@ -1309,10 +1634,21 @@ async function answerOutcome(btn) {
 
 const shop = { key: null, status: "idle", data: null, result: null, code: "" };
 const scan = { code: null, status: "idle", data: null, at: 0 };
-const PASS_ERRORS = ["invalid_code", "already_confirmed", "expired_code", "not_merchant"];
+const PASS_ERRORS = ["invalid_code", "already_confirmed", "expired_code", "not_merchant", "rate_limited"];
+// The paired shop's own page, remembered on its counter phone so every scan result can lead
+// back to it (the key is already in this phone's bookmark and history).
+const SHOP_KEY = "cp_shop";
+const shopHome = () => {
+  const k = storage.get(SHOP_KEY);
+  return k && /^[A-Za-z0-9_-]{8,64}$/.test(k) ? `/m/${k}` : "";
+};
 
-/** The wordmark on the shop pages' desktop layout (a phone shows it in the app bar). */
-const minibrand = () => `<a class="minibrand" href="/" data-nav aria-label="${esc(t("home"))}">${MARK}<span class="wordmark">campuspass</span></a>`;
+/** The wordmark on the shop pages' desktop layout (a phone shows it in the app bar). On a paired
+ *  phone it leads to the shop page, not to the student app. */
+const minibrand = () => {
+  const home = shopHome();
+  return `<a class="minibrand" href="${esc(home || "/")}" data-nav aria-label="${esc(home ? t("scan.shopPage") : t("home"))}">${MARK}<span class="wordmark">campuspass</span></a>`;
+};
 const loadingCard = () => `<section class="card"><div class="dskel"><i style="width:30%"></i><i style="width:60%;height:22px"></i><i></i><i style="width:80%"></i></div></section>`;
 
 async function loadShop(key) {
@@ -1322,7 +1658,11 @@ async function loadShop(key) {
   if (shop.key !== key) return;
   shop.status = r.ok && r.data?.label ? "ready" : r.status === 404 ? "invalid" : "error";
   shop.data = r.data;
-  if (state.route.name === "shop") {
+  if (shop.status === "ready") storage.set(SHOP_KEY, key);
+  else if (shop.status === "invalid" && storage.get(SHOP_KEY) === key) storage.set(SHOP_KEY, null);
+  if (state.route.name === "shop" && state.route.key === key) {
+    // The shop's own manifest only for a real shop ("Add to Home Screen" opens this page).
+    if (shop.status === "ready") setManifest(`/api/merchant/${encodeURIComponent(key)}/manifest.webmanifest`);
     renderShop();
     setTitle();
   }
@@ -1353,8 +1693,9 @@ function renderShop() {
     const invalid = shop.status === "invalid";
     b.innerHTML = `${minibrand()}<section class="card">${emptyHTML({
       ic: invalid ? "store" : "circle-alert",
-      title: t(invalid ? "shop.invalidTitle" : "shop.loadFailed"),
+      title: invalid ? t("shop.invalidTitle") : shop.data?.error === "rate_limited" ? t("err.rate_limited") : t(navigator.onLine ? "shop.loadFailed" : "err.offline"),
       body: invalid ? t("shop.invalidBody") : "",
+      h1: "shopTitle",
       action: invalid
         ? `<a class="btn btn-outline btn-sm" href="/merchants" data-nav>${esc(t("scan.forMerchants"))}</a>`
         : `<button class="btn btn-outline btn-sm" type="button" data-retry-shop>${esc(t("retry"))}</button>`,
@@ -1378,7 +1719,7 @@ function renderShop() {
         <label class="fieldlbl" id="shopCodeLbl" for="shopCode">${esc(t("shop.codeLabel"))}</label>
         <div class="coderow">
           <input class="field codefield" id="shopCode" name="code" type="text" inputmode="text" autocomplete="off" autocapitalize="characters"
-            autocorrect="off" spellcheck="false" maxlength="8" enterkeyhint="done" aria-describedby="shopCodeHint" value="${esc(shop.code)}">
+            autocorrect="off" spellcheck="false" enterkeyhint="done" aria-describedby="shopCodeHint" value="${esc(shop.code)}">
           <button class="btn btn-primary btn-lg" type="submit">${esc(t("shop.confirm"))}</button>
         </div>
         <p class="fieldhint" id="shopCodeHint">${esc(t("shop.codeHint"))}</p>
@@ -1388,12 +1729,14 @@ function renderShop() {
     ${deals ? `<section class="card"><h2>${esc(t("shop.deals"))}</h2><ul class="shopdeals">${deals}</ul></section>` : ""}
     <section class="card"><h2>${esc(t("shop.howTitle"))}</h2>
       <div class="howrow">${icon("scan-line")}<p>${esc(t("shop.how"))}</p></div>
-      <p class="fine paired">${icon("shield-check")}<span>${esc(t("shop.paired"))} ${esc(t("shop.private"))}</span></p>
+      <p class="fine paired">${icon("shield-check")}<span>${esc([t("shop.paired"), t("shop.private")].join(getLang() === "en" ? " " : ""))}</span></p>
     </section>`;
   const form = b.querySelector("#shopForm");
   const input = form.querySelector("#shopCode");
-  input.addEventListener("input", () => {
-    // Auto-uppercase, drop spaces and dashes (a code read out as 「T97C 5B」 still works).
+  const tidy = (e) => {
+    if (e?.isComposing) return; // mid-IME: tidy once the composition ends
+    // Auto-uppercase, full-width to half-width, drop spaces and dashes (a code pasted as
+    // 「T97C - 5B」 still works). No maxlength: it would cut a paste before it is tidied.
     const v = normCode(input.value);
     if (v !== input.value) input.value = v;
     shop.code = v;
@@ -1401,7 +1744,9 @@ function renderShop() {
       shop.result = null;
       b.querySelector("#shopResult").innerHTML = "";
     }
-  });
+  };
+  input.addEventListener("input", tidy);
+  input.addEventListener("compositionend", () => tidy());
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     submitShop(form);
@@ -1432,7 +1777,11 @@ async function submitShop(form) {
     input.value = "";
   } else {
     const err = r.data?.error;
-    shop.result = { ok: false, key: r.status === 0 ? "err.network" : PASS_ERRORS.includes(err) ? `err.${err}` : "err.generic", deal: r.data?.deal || "" };
+    shop.result = {
+      ok: false,
+      key: r.status === 0 ? (navigator.onLine ? "err.network" : "err.offline") : PASS_ERRORS.includes(err) ? `err.${err}` : "err.generic",
+      deal: r.data?.deal || "",
+    };
   }
   show();
   input.focus({ preventScroll: true });
@@ -1444,11 +1793,26 @@ async function loadScan(code) {
   const r = await api("GET", `/api/merchant/pass/${encodeURIComponent(code)}`);
   if (scan.code !== code) return;
   scan.data = r.data;
-  if (r.status === 403) scan.status = "not_merchant";
+  if (r.status === 429 || r.status === 0) scan.status = "error";
+  else if (r.status === 403) scan.status = "not_merchant";
   else if (r.status === 404) scan.status = "invalid_code";
   else if (r.ok && ["ok", "already_confirmed", "expired_code"].includes(r.data?.status)) scan.status = r.data.status;
   else scan.status = "error";
-  if (state.route.name === "scan") renderScan();
+  if (state.route.name === "scan") {
+    renderScan();
+    setTitle();
+  }
+}
+
+/** The scan page's heading, also its document title. */
+function scanTitle() {
+  const s = scan.status;
+  if (s === "not_merchant") return t("scan.passTitle");
+  if (s === "done") return t("scan.done");
+  if (s === "already_confirmed") return t("scan.already");
+  if (s === "expired_code") return t("scan.expired");
+  if (s === "invalid_code") return t("scan.invalid");
+  return t("scan.title");
 }
 
 function scanStateHTML(ic, title, body, tone = "") {
@@ -1475,10 +1839,12 @@ function renderScan() {
     return;
   }
   if (s === "error") {
+    const why = scan.data?.error === "rate_limited" ? "err.rate_limited" : navigator.onLine ? "err.network" : "err.offline";
     b.innerHTML = `${minibrand()}<section class="card">${emptyHTML({
       ic: "circle-alert",
-      title: t("err.network"),
+      title: t(why),
       action: `<button class="btn btn-outline btn-sm" type="button" data-retry-scan>${esc(t("retry"))}</button>`,
+      h1: "scanTitle",
     })}</section>`;
     return;
   }
@@ -1496,7 +1862,10 @@ function renderScan() {
   else if (s === "already_confirmed") inner = scanStateHTML("circle-check", t("scan.already"), t("scan.alreadyBody"), "muted") + codeLine;
   else if (s === "expired_code") inner = scanStateHTML("clock", t("scan.expired"), t("scan.expiredBody"), "muted") + codeLine;
   else inner = scanStateHTML("search-x", t("scan.invalid"), t("scan.invalidBody"), "muted") + codeLine;
-  b.innerHTML = `${minibrand()}<section class="card scancard">${shopLine}${inner}</section>`;
+  // The cashier's way back to the shop page (its count and the code field) from every result.
+  const home = shopHome();
+  const back = home && s !== "ok" ? `<div class="scanactions"><a class="btn btn-outline" href="${esc(home)}" data-nav>${icon("store")}${esc(t("scan.shopPage"))}</a></div>` : "";
+  b.innerHTML = `${minibrand()}<section class="card scancard">${shopLine}${inner}${back}</section>`;
 }
 
 async function confirmScan(btn) {
@@ -1507,14 +1876,15 @@ async function confirmScan(btn) {
     scan.status = "done";
     scan.at = Date.now();
     scan.data = { ...scan.data, deal: r.data?.deal || scan.data?.deal };
-  } else if (PASS_ERRORS.includes(r.data?.error)) {
+  } else if (PASS_ERRORS.includes(r.data?.error) && r.status !== 429) {
     scan.status = r.data.error;
   } else {
     btn.disabled = false;
     btn.querySelector("span").textContent = t("scan.confirm");
-    return toast(t(r.status === 0 ? "err.network" : "err.generic"), { error: true });
+    return toast(errText(r, "err.generic"), { error: true });
   }
   renderScan();
+  setTitle();
   els.scanBody.querySelector("#scanTitle")?.focus({ preventScroll: true });
 }
 
@@ -1540,7 +1910,7 @@ function renderMerchants() {
   const kept = form ? Object.fromEntries(new FormData(form)) : {};
   const pitch = [
     ["file-text", "p1"],
-    ["star", "p2"],
+    ["megaphone", "p2"],
     ["scan-line", "p3"],
   ]
     .map(([ic, k]) => `<li><span class="pic">${icon(ic)}</span><div><b>${esc(t(`merchants.${k}t`))}</b><p>${esc(t(`merchants.${k}`))}</p></div></li>`)
@@ -1617,8 +1987,11 @@ async function submitLead(form) {
   for (const k of LEAD_FIELDS) v[k] = String(v[k] || "").trim();
   const errs = {};
   if (!v.shop_name) errs.shop_name = t("lead.errShop");
+  // As the server: a valid email, or a phone number with at least 7 digits.
+  const phoneOk = v.phone.normalize("NFKC").replace(/\D/g, "").length >= 7;
   if (v.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email)) errs.email = t("lead.errEmail");
   else if (!v.email && !v.phone) errs.email = t("lead.errContact");
+  else if (!v.email && !phoneOk) errs.phone = t("lead.errPhone");
   for (const k of ["shop_name", "email", "phone"]) setFieldError(form, k, errs[k] || "");
   const errBox = form.querySelector("#leadErr");
   errBox.textContent = "";
@@ -1642,7 +2015,7 @@ async function submitLead(form) {
     done?.querySelector("b")?.focus({ preventScroll: true });
   } else if (r.data?.error === "shop_and_contact_required") {
     setFieldError(form, v.shop_name ? "email" : "shop_name", t(v.shop_name ? "lead.errContact" : "lead.errShop"));
-  } else errBox.textContent = t("lead.failed");
+  } else errBox.textContent = errText(r, "lead.failed");
 }
 
 /* ---------- router ---------- */
@@ -1657,8 +2030,15 @@ function parse(path) {
   if (m) return { name: "deal", id: m[1] };
   m = p.match(/^\/m\/([A-Za-z0-9_-]{8,64})$/);
   if (m) return { name: "shop", key: m[1] };
-  m = p.match(/^\/r\/([A-Za-z0-9]{4,12})$/);
-  if (m) return { name: "scan", code: m[1].toUpperCase() };
+  m = p.match(/^\/r\/([^/]{1,64})$/);
+  if (m) {
+    // A mangled pass URL still lands on the scan page, which says the pass wasn't found.
+    let raw = m[1];
+    try {
+      raw = decodeURIComponent(raw);
+    } catch {}
+    return { name: "scan", code: String(raw).normalize("NFKC").toUpperCase().replace(/[^A-Z0-9]/g, "") };
+  }
   return null;
 }
 
@@ -1691,10 +2071,21 @@ function showView(name) {
   if (name === "merchants") renderMerchants();
   if (name === "shop") renderShop();
   if (name === "scan") renderScan();
+  if (name === "notfound") renderNotFound();
   if (changed) {
     scrollTo(0, scrollPos[name] || 0);
     onScroll();
   }
+}
+
+function renderNotFound() {
+  els.notfoundBody.innerHTML = emptyHTML({
+    ic: "search-x",
+    title: t("notfound.title"),
+    body: t("notfound.body"),
+    action: `<a class="btn btn-outline btn-sm" href="/" data-nav>${esc(t("detail.backToExplore"))}</a>`,
+    h1: "notfoundTitle",
+  });
 }
 
 function setNoIndex(on) {
@@ -1717,15 +2108,18 @@ function route() {
     const { pass: _stale, ...rest } = history.state; // Forward onto a closed pass: drop it
     history.replaceState(rest, "");
   }
-  let r = parse(location.pathname);
-  if (!r) {
-    history.replaceState(null, "", "/");
-    r = { name: "explore" };
+  // One URL per page: /saved/ → /saved.
+  if (location.pathname.length > 1 && location.pathname.endsWith("/")) {
+    history.replaceState(history.state, "", (location.pathname.replace(/\/+$/, "") || "/") + location.search + location.hash);
   }
+  // Unknown paths keep their URL and show a not-found page (never a silent jump to Explore).
+  const r = parse(location.pathname) || { name: "notfound" };
   const prev = state.route;
   state.route = r;
-  // A shop page offers its own manifest, so "Add to Home Screen" there opens the shop page.
-  setManifest(r.name === "shop" ? `/api/merchant/${encodeURIComponent(r.key)}/manifest.webmanifest` : "/manifest.webmanifest");
+  // A shop page offers its own manifest, so "Add to Home Screen" there opens the shop page —
+  // linked only once the key is known to be valid (loadShop), never for a mistyped one.
+  const shopReady = r.name === "shop" && shop.key === r.key && shop.status === "ready";
+  setManifest(shopReady ? `/api/merchant/${encodeURIComponent(r.key)}/manifest.webmanifest` : "/manifest.webmanifest");
   if (r.name === "deal") {
     // The list under the detail: the one it was opened from (kept in history.state, so Back and
     // Forward restore it), else the tab we're on; a cold deep link sits on Explore.
@@ -1741,7 +2135,10 @@ function route() {
     const wasDetail = els.detail.classList.contains("open");
     state.base = r.name;
     if (r.name === "shop" && (shop.key !== r.key || shop.status === "error")) loadShop(r.key);
-    if (r.name === "scan" && (scan.code !== r.code || prev.name !== "scan")) loadScan(r.code);
+    if (r.name === "scan" && (scan.code !== r.code || prev.name !== "scan")) {
+      if (/^[A-Z0-9]{6}$/.test(r.code)) loadScan(r.code);
+      else Object.assign(scan, { code: r.code, status: "invalid_code", data: null }); // not a pass code at all
+    }
     setDetailOpen(false);
     showView(r.name);
     setTitle();
@@ -1758,8 +2155,11 @@ function setTitle() {
   const r = state.route;
   if (r.name === "deal") {
     const d = state.detail.get(r.id)?.deal || state.byId.get(r.id);
-    document.title = `${d?.name || t("detail.label")} · CampusPass`;
-  } else if (r.name === "explore") document.title = getLang() === "en" ? "CampusPass — campus deals" : "CampusPass 校園優惠";
+    const name = state.detailMissing === r.id ? t("detail.notFound") : d?.name || t("detail.label");
+    document.title = `${name} · CampusPass`;
+  } else if (r.name === "notfound") document.title = `${t("notfound.title")} · CampusPass`;
+  else if (r.name === "scan") document.title = `${scanTitle()} · CampusPass`;
+  else if (r.name === "explore") document.title = getLang() === "en" ? "CampusPass — campus deals" : "CampusPass 校園優惠";
   else if (r.name === "shop") document.title = `${shop.data?.label ? `${shop.data.label} · ` : ""}${t("shop.title")} · CampusPass`;
   else {
     const key = { saved: "saved.title", me: "me.title", merchants: "merchants.title", scan: "scan.title" }[r.name];
@@ -1836,7 +2236,7 @@ function onClick(e) {
   if (cat) {
     state.filters.cat = cat.dataset.cat;
     renderExplore();
-    cat.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
+    cat.scrollIntoView({ block: "nearest", inline: "nearest", behavior: reducedMotion() ? "auto" : "smooth" });
     if (scrollY > 0) scrollTo({ top: 0 });
     return;
   }
@@ -1849,7 +2249,14 @@ function onClick(e) {
   if (pick) return openPicker(pick.dataset.pick, pick);
   if (t0.closest("[data-reset]")) return resetFilters();
   if (t0.closest("[data-retry]")) return loadDeals();
-  if (t0.closest("[data-retry-detail]")) return renderDetail(state.route.id);
+  if (t0.closest("[data-retry-detail]")) return renderDetail(state.route.id, { focus: true });
+  if (t0.closest("[data-retry-me]")) {
+    state.meStatus = "loading";
+    renderSaved();
+    if (state.route.name === "me") renderMe();
+    return loadMe();
+  }
+  if (t0.closest("[data-delete-account]")) return confirmDeleteAccount();
 
   if (t0.closest("[data-signin]")) return openSignin();
   if (t0.closest("#railAvatar")) return openAccountMenu($("railAvatar"));
@@ -1885,8 +2292,10 @@ function onClick(e) {
   const theme = t0.closest("button[data-theme]");
   if (theme) return setTheme(theme.dataset.theme);
   if (t0.closest("[data-login]")) {
-    // Leaving for Google: let the link navigate (full page), just refresh `next` first.
+    // Leaving for Google: let the link navigate (full page), just refresh `next` first, and
+    // remember the filters and the place in the list for when the page comes back.
     t0.closest("[data-login]").href = loginHref();
+    saveReturn();
     return;
   }
 
@@ -1913,7 +2322,7 @@ function onClick(e) {
   }
   const same = state.route.name === r.name && url.pathname === location.pathname;
   if (same) {
-    scrollTo({ top: 0, behavior: "smooth" });
+    scrollTo({ top: 0, behavior: reducedMotion() ? "auto" : "smooth" });
     return;
   }
   navigate(url.pathname, { state: { inApp: true } });
@@ -1968,17 +2377,59 @@ function onDetailScroll() {
   els.detail.classList.toggle("scrolled", past);
 }
 
-function loginErrorToast() {
+/** A cancelled or failed sign-in comes back to the page it started from with ?login_error=. */
+async function loginErrorToast(me) {
   const params = new URLSearchParams(location.search);
   const reason = params.get("login_error");
   if (!reason) return;
   params.delete("login_error");
   const qs = params.toString();
-  history.replaceState(history.state, "", location.pathname + (qs ? `?${qs}` : ""));
+  history.replaceState(history.state, "", location.pathname + (qs ? `?${qs}` : "") + location.hash);
+  storage.set(PENDING_FAV, null, "session");
+  storage.set(DRAFT_KEY, null, "session");
+  // Browser Back into Google's account picker after signing in replays the callback, which
+  // answers "expired": no error for someone who is in fact signed in.
+  if (reason === "expired") {
+    await me;
+    if (state.user) return;
+  }
   const key = `login.${reason}`;
   const msg = t(key);
   toast(msg === key ? t("login.generic") : msg, { error: true, ms: 4500 });
-  storage.set(PENDING_FAV, null, "session");
+}
+
+/* ---------- a page left open: midnight, other tabs ---------- */
+
+/** "Today" moves on at Taipei midnight, also in an installed app left open overnight. */
+function refreshToday() {
+  const now = todayTW();
+  if (now === today) return;
+  today = now;
+  rowCache.clear(); // expiry chips
+  if (state.dealsStatus === "ready") buildFilterControls();
+  renderExplore();
+  renderSaved();
+  if (state.route.name === "deal") {
+    const c = state.detail.get(state.route.id);
+    if (c) els.detailBody.innerHTML = detailHTML(c.deal, { locked: c.locked });
+    renderDetailHead();
+  }
+}
+
+function watchToday() {
+  // Milliseconds to the next Taipei midnight (UTC+8, no DST), plus a little.
+  const tpe = Date.now() + 8 * 3600e3;
+  setTimeout(() => {
+    refreshToday();
+    watchToday();
+  }, 864e5 - (tpe % 864e5) + 2000);
+}
+
+function onVisible() {
+  onPassVisibility();
+  if (document.visibilityState !== "visible") return;
+  refreshToday();
+  refreshMeIfStale();
 }
 
 function init() {
@@ -2013,17 +2464,25 @@ function init() {
   new MutationObserver(applyInert).observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
   addEventListener("cp:deals-updated", () => loadDeals({ quiet: true }));
   addEventListener("cp:installable", () => state.route.name === "me" && renderMe());
-  document.addEventListener("visibilitychange", onPassVisibility);
+  document.addEventListener("visibilitychange", onVisible);
   addEventListener("pageshow", (e) => {
     if (e.persisted) loadMe(); // back from Google via bfcache
   });
+  addEventListener("online", () => setOnline(true));
+  addEventListener("offline", () => setOnline(false));
+  // A broken avatar picture leaves the initial's circle (no inline onerror: CSP).
+  document.addEventListener("error", (e) => e.target?.matches?.("img[data-avatar]") && e.target.remove(), true);
+  watchToday();
 
+  document.documentElement.classList.toggle("is-offline", !online);
+  takeReturn();
   renderExplore();
   renderAccountChrome();
   route();
-  loginErrorToast();
   loadDeals();
-  loadMe();
+  const me = loadMe();
+  loginErrorToast(me);
+  if (!online) toast(t("toast.offline"), { ms: 3500 });
 }
 
 init();

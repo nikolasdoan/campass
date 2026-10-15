@@ -90,10 +90,13 @@ export function fmtDate(iso) {
   return iso ? String(iso).slice(0, 10).replace(/-/g, "/") : "";
 }
 
-/** Search normalisation: full-width → half-width, case-folded, 臺 ≡ 台. */
+/** Search normalisation: full-width → half-width, case-folded, 臺 ≡ 台, and without the
+ *  invisible characters text copied from LINE or the web often carries (zero-width spaces,
+ *  direction marks, BOM). */
 export function norm(s) {
   return String(s ?? "")
     .normalize("NFKC")
+    .replace(/[\u200B-\u200F\u202A-\u202E\u2060-\u2064\uFEFF]/g, "")
     .toLowerCase()
     .replace(/臺/g, "台")
     .trim();
