@@ -1,110 +1,128 @@
 # CampusPass 校園優惠
 
 One place for every existing student discount. CampusPass indexes partner deals that schools and
-student organisations already publish (starting with the NTU Finance Office list), so students can
-search them, sign in with Google to see the full terms, and save the ones they use.
+student organisations already publish — today ~1,100 deals from 12 schools, starting with NTU — so
+students can search them, sign in with Google to see the full terms, save the ones they use, and show
+a pass at the counter that partner shops can confirm with a QR scan.
 
-> CampusPass is an independent index, not an official NTU website. Deals are subject to the merchant
-> and the original publisher.
+> CampusPass is an independent index, not an official website of any school. Deals are subject to the
+> merchant and the original publisher.
+
+Live: <https://campuspass.niko-tecx.workers.dev> · Business review: [docs/business-review.md](docs/business-review.md)
 
 ## Stack
 
-- **Cloudflare Workers** ([Hono](https://hono.dev)) serves the API and the static site (Workers static assets).
-- **Cloudflare D1** (SQLite) holds the deals, users, sessions, favourites, deal views and reports.
-- **Google Sign-In** (OAuth 2.0 / OpenID Connect, authorization-code flow with PKCE). Every sign-in records
-  the user's email, name, email domain, first and last login time and login count.
-- **Frontend**: vanilla HTML/CSS/JS PWA in `public/`, using the Tecxmate design system
-  ([docs/design-system.md](docs/design-system.md)). No build step.
+- **Cloudflare Workers** ([Hono](https://hono.dev)) serves the API and the static site (Workers static assets),
+  with a daily Cron Trigger for cleanup and Workers Rate Limiting on public forms and shop scans.
+- **Cloudflare D1** (SQLite): deals, users, sessions, favourites, visits, deal views, redemption passes,
+  reports, merchant leads, shop links.
+- **Google Sign-In** (OAuth 2.0 / OpenID Connect, code flow with PKCE). Every sign-in records the user's
+  email, name, email domain, login days and count.
+- **Frontend**: vanilla HTML/CSS/JS PWA in `public/` (installable, works offline after one visit), using the
+  Tecxmate design system ([docs/design-system.md](docs/design-system.md)). No build step.
 
 ```
-src/index.ts           Worker: auth, API, admin endpoints
-src/google.ts          Google OAuth helpers
-migrations/            D1 schema
-scripts/import_deals.py  Spreadsheet + data/sources/*.json  ->  data/deals.json + seed/deals.sql
-data/ntu-partners.xlsx NTU Finance Office partner list (source)
-data/sources/          Additional researched sources (JSON + notes)
-seed/deals.sql         Generated seed (do not edit by hand)
-public/                The website / PWA
+src/index.ts             Worker: auth, API, redemption, shops, admin, cleanup
+src/google.ts            Google OAuth helpers
+migrations/              D1 schema (apply in order)
+scripts/import_deals.py  data/ntu-partners.xlsx + data/sources/*.json -> data/deals.json + seed/deals.sql
+data/sources/            Researched sources per school (JSON + a .md report each)
+seed/deals.sql           Generated seed (do not edit by hand)
+public/                  The PWA (app.js, js/, styles.css, sw.js, pwa.js, boot.js, fonts/, icons/)
+public/admin.html        Founder dashboard (go/no-go gate, CSVs, shop links)
+tests/                   api.mjs, ui.mjs, pwa.mjs, admin.mjs, prod-smoke.mjs, mock-google.mjs
+docs/                    design system, business review, coordination, ops runbook, privacy, terms
 ```
 
-## What is public and what needs sign-in
+## What students and shops can do
 
 | | Signed out | Signed in |
 |---|---|---|
-| Partner names, category, region, discount badge, eligibility, expiry, source | ✅ | ✅ |
+| Browse/search deals: name, category, region, school, discount badge, eligibility, expiry, source | ✅ | ✅ |
 | Full terms, booking codes, phone, address, links | 🔒 | ✅ |
-| Save deals, report a wrong deal | 🔒 | ✅ |
+| Save deals, report a wrong deal, delete account | 🔒 | ✅ |
+| 使用優惠: a 15-minute pass with QR + one-time code | 🔒 | ✅ |
 
-The server enforces this: `GET /api/deals/:id` returns only public fields unless the session is valid.
+The server enforces the gating: `GET /api/deals/:id` returns only public fields without a session.
+
+**Redemption evidence** (see the business review): a pass opened → the student's own answer
+("did it work?") → a **shop confirmation**, the only verified tier. Shops need no app: an admin creates a
+private shop link (`/m/<key>`) on the dashboard; the cashier opens it once on the counter phone (this pairs
+the phone), then scans a student's pass QR with the phone camera and taps 確認. Codes work once and expire.
+
+**Merchant leads**: `/merchants` collects shops that want to be listed or would pay for featured placement.
 
 ## 1. Google Cloud setup (once)
 
 1. Open <https://console.cloud.google.com> and select your project.
-2. **APIs & Services → OAuth consent screen** (Google Auth Platform):
-   user type **External**; app name `CampusPass`; support email; scopes `openid`, `email`, `profile`
-   (non-sensitive, no Google review needed). Click **Publish app** — while it is in *Testing*, only listed
-   test users can sign in.
+2. **APIs & Services → OAuth consent screen** (Google Auth Platform): user type **External**; app name
+   `CampusPass`; support email; scopes `openid`, `email`, `profile` (non-sensitive, no review). Click
+   **Publish app** — while in *Testing*, only listed test users can sign in.
 3. **Credentials → Create credentials → OAuth client ID**, type **Web application**:
-   - Authorized JavaScript origins: `http://localhost:8787`, `https://campuspass.<your-subdomain>.workers.dev`
+   - Authorized JavaScript origins: `http://localhost:8787`, `https://campuspass.niko-tecx.workers.dev`
    - Authorized redirect URIs: `http://localhost:8787/auth/google/callback`,
-     `https://campuspass.<your-subdomain>.workers.dev/auth/google/callback`
-4. Keep the **Client ID** (goes in `wrangler.jsonc`) and the **Client secret** (goes in a Cloudflare secret).
-   Never commit the secret.
+     `https://campuspass.niko-tecx.workers.dev/auth/google/callback`
+4. The **Client ID** goes in `wrangler.jsonc` (`vars.GOOGLE_CLIENT_ID`); the **Client secret** goes in a
+   Cloudflare secret. Never commit the secret.
 
-## 2. Cloudflare setup (once)
+## 2. Cloudflare (deploys are owned by campass-2; see [docs/ops.md](docs/ops.md))
 
 ```bash
 npm install
-npx wrangler login
-npx wrangler d1 create campuspass          # copy the database_id into wrangler.jsonc
-# put your Google Client ID into wrangler.jsonc -> vars.GOOGLE_CLIENT_ID
-npx wrangler secret put GOOGLE_CLIENT_SECRET
-npx wrangler secret put ADMIN_TOKEN        # any long random string, for the admin CSV endpoints
-npm run db:migrate:remote
-npm run db:seed:remote
-npm run deploy                             # prints https://campuspass.<subdomain>.workers.dev
+npx wrangler d1 migrations apply campuspass --remote   # before deploying code that needs them
+npm run db:seed:remote                                 # replaces the deals table (~1,100 rows)
+printf %s "$GOOGLE_CLIENT_SECRET" | npx wrangler secret put GOOGLE_CLIENT_SECRET
+npx wrangler secret put ADMIN_TOKEN
+npm run deploy
+BASE=https://campuspass.niko-tecx.workers.dev ADMIN_TOKEN=... node tests/prod-smoke.mjs
 ```
 
-Everything above fits in the Workers and D1 free tiers.
+Everything fits in the Workers and D1 free tiers.
 
-## Local development
+## Local development and tests
 
 ```bash
-cp .dev.vars.example .dev.vars     # set GOOGLE_CLIENT_SECRET; DEV_LOGIN=true enables a local test login
-npm run db:migrate:local
-npm run db:seed:local
-npm run dev                        # http://localhost:8787
+cp .dev.vars.example .dev.vars   # DEV_LOGIN=true; optional GOOGLE_MOCK_URL for the OAuth mock
+npm run db:migrate:local && npm run db:seed:local
+npm run dev                      # http://localhost:8787
+npm run mock-google              # optional: http://localhost:9876, exercises the real OAuth code path
+npm test                         # api (115) + ui (198) + pwa (29) + admin (36)
 ```
 
-With `DEV_LOGIN=true` you can sign in without Google at
-`http://localhost:8787/auth/dev-login?email=you@example.com`. **Never set `DEV_LOGIN` in production.**
+- `/auth/dev-login?email=you@example.com` signs in without Google (only with `DEV_LOGIN=true`; **never
+  in production** — it 404s there).
+- The PWA suite needs `PW_EXPERIMENTAL_SERVICE_WORKER_NETWORK_EVENTS=1` so offline also reaches the
+  service worker. CI (`.github/workflows/ci.yml`) runs all suites on every push to `claude/**`.
+- Tests run in Chromium only; Safari/iOS behaviour (standalone, safe areas) is emulated, not tested on WebKit.
 
 ## Updating the deals
 
-1. Replace `data/ntu-partners.xlsx` with the newer export, and/or add a researched source as
-   `data/sources/<name>.json` (same record shape as `data/deals.json`; every record needs `source_org`
-   and `source_url`).
-2. `npm run import` — regenerates `data/deals.json` and `seed/deals.sql`. Manual corrections
-   (eligibility, display names, discount badges) live in `OVERRIDES` in `scripts/import_deals.py`.
-3. `npm run db:seed:remote` — replaces the `deals` table (≈70 row writes).
+1. Replace `data/ntu-partners.xlsx` and/or add `data/sources/<school>.json` (same record shape as
+   `data/deals.json`; every record needs `source_org` and `source_url` you actually fetched).
+2. `npm run import` — regenerates `data/deals.json` and `seed/deals.sql` (corrections live in `OVERRIDES`
+   in `scripts/import_deals.py`). CI fails if the committed seed is stale.
+3. Deploy the seed (`npm run db:seed:remote`). Deal ids are stable hashes, so saved deals survive.
 
-Deal ids are stable hashes of the merchant name, so saved deals survive re-imports.
+## Founder dashboard and data
 
-## Collected emails and stats
+Open `/admin.html` and paste the `ADMIN_TOKEN` (kept for the browser tab only). It shows the go/no-go gate
+(students using deals twice in 30 days vs 30; shops that would pay vs 5), active and returning users,
+redemption evidence by tier, top deals, CSV downloads (users, reports, redemptions, merchant leads), shop
+link creation, and a manual cleanup. The same data is at `/admin/stats` and `/admin/*.csv` with
+`Authorization: Bearer $ADMIN_TOKEN`.
 
-All admin endpoints need `Authorization: Bearer $ADMIN_TOKEN`.
+## Privacy and security
 
-```bash
-curl -H "Authorization: Bearer $ADMIN_TOKEN" https://<host>/admin/users.csv    # every signed-in user
-curl -H "Authorization: Bearer $ADMIN_TOKEN" https://<host>/admin/reports.csv  # "this deal is wrong" reports
-curl -H "Authorization: Bearer $ADMIN_TOKEN" https://<host>/admin/stats        # users, NTU users, views, top deals
-```
+- Stored: Google email, name, picture, email domain; login days; favourites; deal views; passes; reports;
+  merchant leads. Session tokens and shop keys are stored as SHA-256 hashes. No student ID images.
+- Users can delete their account (/me). A daily job deletes expired sessions and activity older than two
+  years. Fonts are self-hosted; no third-party requests besides Google sign-in and avatars.
+- Headers: CSP (`script-src 'self'` + hashes), HSTS, `X-Frame-Options: DENY`, nosniff; per-user responses
+  are `private, no-store`; CSRF origin checks on every state-changing API call; per-IP rate limits.
+- Drafts for lawyer review: [docs/privacy-policy.md](docs/privacy-policy.md), [docs/terms.md](docs/terms.md)
+  (個人資料保護法).
 
-Or query D1 directly: `npx wrangler d1 execute campuspass --remote --command "SELECT email, created_at FROM users"`.
+## Working on this repo
 
-## Privacy
-
-CampusPass stores only what Google returns for the `openid email profile` scopes (email, name, picture),
-the login times, favourites, deal views and reports. Session tokens are stored as SHA-256 hashes.
-Nothing is sold or shared. No student ID images are stored (per the business plan). Have the privacy
-notice reviewed under Taiwan's Personal Data Protection Act (個人資料保護法) before scaling.
+Two Claude Code sessions build CampusPass: campass-1 (lead: product, code, data) and campass-2 (Cloudflare,
+deploys, CI). Roles, file ownership and the deploy flow are in [docs/coordination.md](docs/coordination.md).
