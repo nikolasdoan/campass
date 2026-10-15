@@ -1,0 +1,399 @@
+/* Every UI string, in zh-TW and en. Deal content (names, offers) stays Chinese.
+   Write 臺 not 台 in UI copy. Labels never wrap: the English is shortened, not the layout. */
+import { storage } from "./util.js";
+
+const LANG_KEY = "cp_lang";
+
+const DICT = {
+  zh: {
+    "app.name": "CampusPass",
+    "app.tagline": "校園優惠整合平台",
+    "skip": "跳至主要內容",
+    "nav.main": "主選單",
+    "nav.tabs": "分頁",
+    "tab.explore": "探索",
+    "tab.saved": "收藏",
+    "tab.me": "我的",
+    "home": "CampusPass 首頁",
+
+    "explore.title": "探索優惠",
+    "explore.lede": "整理學校、學院、系所與學生組織公告的特約優惠。",
+    "search.label": "搜尋優惠",
+    "search.placeholder": "搜尋商家、優惠或來源",
+    "search.clear": "清除搜尋",
+    "search.shortcut": "按 / 搜尋",
+    "filter.categories": "類別",
+    "filter.filters": "篩選條件",
+    "cat.all": "全部",
+    "filter.students": "學生適用",
+    "filter.region": "地區",
+    "filter.regionAll": "全部地區",
+    "filter.school": "學校",
+    "filter.schoolAll": "全部學校",
+    "filter.reset": "清除篩選",
+    "count": "{n} 項優惠",
+    "list.label": "優惠列表",
+    "list.expiredHidden": "另有 {n} 項已過期的優惠未列出；已收藏的仍可在「收藏」查看。",
+    "empty.noResults": "找不到符合的優惠",
+    "empty.noResultsHint": "試試其他關鍵字，或清除篩選條件。",
+    "empty.loadFailed": "無法載入優惠",
+    "empty.loadFailedHint": "請檢查網路連線後再試一次。",
+    "retry": "重試",
+
+    "row.save": "收藏",
+    "row.unsave": "取消收藏",
+    "row.saveName": "收藏「{name}」",
+    "row.unsaveName": "取消收藏「{name}」",
+    "exp.until": "至 {d}",
+    "exp.soon": "即將到期 · {d}",
+    "exp.renew": "自動續約",
+    "exp.expired": "已過期",
+    "exp.none": "未載明期限",
+    "exp.untilLong": "{d} 止",
+    "exp.renewLong": "到期後自動續約",
+    "exp.renewUntil": "{d}，到期後自動續約",
+    "exp.expiredLong": "已於 {d} 到期",
+    "exp.soonLong": "{d} 到期（剩 {n} 天）",
+
+    "elig.student": "學生",
+    "elig.staff": "教職員",
+    "elig.alumni": "校友",
+    "elig.family": "眷屬",
+
+    "cat.food": "美食",
+    "cat.lodging": "住宿",
+    "cat.transport": "交通",
+    "cat.shopping": "購物",
+    "cat.services": "生活服務",
+    "cat.entertainment": "休閒娛樂",
+    "cat.health": "醫療保健",
+    "cat.education": "教育學習",
+
+    "region.north": "北部",
+    "region.central": "中部",
+    "region.south": "南部",
+    "region.east": "東部",
+    "region.national": "全臺",
+
+    "level.school": "學校",
+    "level.college": "學院",
+    "level.department": "系所",
+    "level.student_org": "學生組織",
+    "level.merchant": "商家",
+    "level.platform": "CampusPass",
+
+    "detail.label": "優惠詳情",
+    "detail.back": "返回",
+    "detail.close": "關閉詳情",
+    "detail.share": "分享",
+    "detail.eligibility": "適用對象",
+    "detail.validity": "有效期限",
+    "detail.regions": "地區",
+    "detail.schools": "學校",
+    "detail.source": "資料來源",
+    "detail.sourceLevel": "公告單位層級：{l}",
+    "detail.retrieved": "資料擷取日 {d}",
+    "detail.sourceLink": "查看原始公告",
+    "detail.offer": "優惠內容",
+    "detail.contact": "聯絡資訊",
+    "detail.phone": "電話",
+    "detail.address": "地址",
+    "detail.openMap": "在 Google 地圖開啟",
+    "detail.links": "相關連結",
+    "detail.notes": "備註",
+    "detail.info": "原始公告內容",
+    "detail.report": "回報錯誤",
+    "detail.reportHint": "資訊有誤或優惠已結束？告訴我們。",
+    "detail.notFound": "找不到這項優惠",
+    "detail.notFoundHint": "它可能已下架，或連結有誤。",
+    "detail.loadFailed": "無法載入詳細內容，請稍後再試。",
+    "detail.backToExplore": "回到探索",
+    "detail.expiredNote": "這項優惠已過期，以下內容僅供參考。",
+    "detail.verify": "使用前請向商家確認；優惠以商家及原公告單位為準。",
+
+    "lock.title": "登入後查看完整優惠",
+    "lock.body": "登入後查看完整優惠條件、訂房代碼與聯絡方式",
+    "google.signin": "使用 Google 登入",
+    "privacy.note": "我們只會記錄你的 Email、名稱與登入時間，用於提供服務與統計；不會出售或提供給第三方。",
+
+    "signin.title": "登入 CampusPass",
+    "signin.body": "以 Google 帳號登入，即可查看每項優惠的完整條件、訂房代碼與聯絡方式，並收藏常用的優惠。",
+    "signin.short": "登入",
+    "signin.saveReason": "登入後即可收藏優惠，換手機也找得到。",
+
+    "saved.title": "收藏",
+    "saved.lede": "你收藏的優惠，已過期的也會保留。",
+    "saved.signedOutTitle": "登入後即可收藏",
+    "saved.signedOutBody": "收藏的優惠會同步到你的帳號，換裝置也找得到。",
+    "saved.emptyTitle": "還沒有收藏",
+    "saved.emptyBody": "在優惠旁點星號即可收藏。",
+    "saved.browse": "瀏覽優惠",
+
+    "me.title": "我的",
+    "me.signedOutTitle": "尚未登入",
+    "me.signedOutBody": "登入後可查看完整優惠內容並收藏常用的優惠。",
+    "me.settings": "設定",
+    "me.language": "語言",
+    "me.theme": "外觀",
+    "theme.light": "淺色",
+    "theme.dark": "深色",
+    "theme.system": "系統",
+    "me.signout": "登出",
+    "me.about": "關於 CampusPass",
+    "me.aboutBody": "CampusPass 把各校、學院、系所與學生組織公告的特約優惠整理成一份可搜尋的清單，並標示每項優惠的原公告單位與資料擷取日。",
+    "me.sources": "目前收錄的資料來源",
+    "me.privacy": "隱私",
+    "me.contact": "發現資料有誤？請在該優惠頁點「回報錯誤」。",
+    "disclaimer": "CampusPass 為獨立整理之索引，非臺大官方網站；優惠以商家及原公告單位為準。",
+
+    "account.menu": "帳戶選單",
+    "account.settings": "帳戶與設定",
+
+    "toast.saved": "已收藏",
+    "toast.unsaved": "已取消收藏",
+    "toast.saveFailed": "無法更新收藏，請稍後再試",
+    "toast.signedOut": "已登出",
+    "toast.signoutFailed": "登出失敗，請稍後再試",
+    "toast.linkCopied": "已複製連結",
+    "toast.copyFailed": "無法複製連結",
+    "toast.reportSent": "感謝回報，我們會盡快確認",
+    "toast.reportFailed": "送出失敗，請稍後再試",
+    "toast.sessionExpired": "登入已過期，請重新登入",
+
+    "login.access_denied": "已取消 Google 登入",
+    "login.expired": "登入逾時，請再試一次",
+    "login.state_mismatch": "登入驗證失敗，請再試一次",
+    "login.email_unverified": "此 Google 帳號的 Email 尚未驗證",
+    "login.google_error": "Google 登入失敗，請稍後再試",
+    "login.generic": "登入失敗，請再試一次",
+
+    "report.title": "回報錯誤",
+    "report.body": "「{name}」哪裡有誤？例如優惠已結束、電話或地址變更。",
+    "report.label": "說明",
+    "report.placeholder": "請描述問題",
+    "report.submit": "送出",
+    "report.sending": "送出中…",
+    "cancel": "取消",
+    "close": "關閉",
+    "dialog.pick": "選擇{what}",
+  },
+
+  en: {
+    "app.name": "CampusPass",
+    "app.tagline": "Campus discounts in one place",
+    "skip": "Skip to content",
+    "nav.main": "Main",
+    "nav.tabs": "Tabs",
+    "tab.explore": "Explore",
+    "tab.saved": "Saved",
+    "tab.me": "Account",
+    "home": "CampusPass home",
+
+    "explore.title": "Explore deals",
+    "explore.lede": "Partner discounts announced by universities, colleges, departments and student groups.",
+    "search.label": "Search deals",
+    "search.placeholder": "Search merchants, offers, sources",
+    "search.clear": "Clear search",
+    "search.shortcut": "Press / to search",
+    "filter.categories": "Categories",
+    "filter.filters": "Filters",
+    "cat.all": "All",
+    "filter.students": "Students",
+    "filter.region": "Region",
+    "filter.regionAll": "All regions",
+    "filter.school": "School",
+    "filter.schoolAll": "All schools",
+    "filter.reset": "Reset",
+    "count": "{n} deals",
+    "count.one": "1 deal",
+    "list.label": "Deals",
+    "list.expiredHidden": "{n} expired deals are not listed; saved ones stay in Saved.",
+    "empty.noResults": "No matching deals",
+    "empty.noResultsHint": "Try other keywords, or reset the filters.",
+    "empty.loadFailed": "Couldn't load deals",
+    "empty.loadFailedHint": "Check your connection and try again.",
+    "retry": "Retry",
+
+    "row.save": "Save",
+    "row.unsave": "Unsave",
+    "row.saveName": "Save {name}",
+    "row.unsaveName": "Remove {name} from saved",
+    "exp.until": "Until {d}",
+    "exp.soon": "Ends {d}",
+    "exp.renew": "Auto-renews",
+    "exp.expired": "Expired",
+    "exp.none": "No end date",
+    "exp.untilLong": "Until {d}",
+    "exp.renewLong": "Renews automatically",
+    "exp.renewUntil": "{d}, then renews automatically",
+    "exp.expiredLong": "Expired on {d}",
+    "exp.soonLong": "Ends {d} ({n} days left)",
+
+    "elig.student": "Students",
+    "elig.staff": "Staff",
+    "elig.alumni": "Alumni",
+    "elig.family": "Family",
+
+    "cat.food": "Food",
+    "cat.lodging": "Stays",
+    "cat.transport": "Transport",
+    "cat.shopping": "Shopping",
+    "cat.services": "Services",
+    "cat.entertainment": "Leisure",
+    "cat.health": "Health",
+    "cat.education": "Learning",
+
+    "region.north": "North",
+    "region.central": "Central",
+    "region.south": "South",
+    "region.east": "East",
+    "region.national": "Nationwide",
+
+    "level.school": "University",
+    "level.college": "College",
+    "level.department": "Department",
+    "level.student_org": "Student group",
+    "level.merchant": "Merchant",
+    "level.platform": "CampusPass",
+
+    "detail.label": "Deal details",
+    "detail.back": "Back",
+    "detail.close": "Close details",
+    "detail.share": "Share",
+    "detail.eligibility": "Who it's for",
+    "detail.validity": "Valid",
+    "detail.regions": "Regions",
+    "detail.schools": "Schools",
+    "detail.source": "Source",
+    "detail.sourceLevel": "Announced by: {l}",
+    "detail.retrieved": "Retrieved {d}",
+    "detail.sourceLink": "Original notice",
+    "detail.offer": "Offer",
+    "detail.contact": "Contact",
+    "detail.phone": "Phone",
+    "detail.address": "Address",
+    "detail.openMap": "Open in Google Maps",
+    "detail.links": "Links",
+    "detail.notes": "Notes",
+    "detail.info": "Original listing",
+    "detail.report": "Report an error",
+    "detail.reportHint": "Wrong details, or the deal ended? Let us know.",
+    "detail.notFound": "Deal not found",
+    "detail.notFoundHint": "It may have been removed, or the link is wrong.",
+    "detail.loadFailed": "Couldn't load the details. Try again later.",
+    "detail.backToExplore": "Back to Explore",
+    "detail.expiredNote": "This deal has expired. The details are kept for reference.",
+    "detail.verify": "Confirm with the merchant before use; the merchant and the original notice prevail.",
+
+    "lock.title": "Sign in to see the full deal",
+    "lock.body": "Sign in to see the full terms, booking codes and contact details",
+    "google.signin": "Sign in with Google",
+    "privacy.note": "We only record your email, name and sign-in time, to run the service and for statistics. We never sell or share them with third parties.",
+
+    "signin.title": "Sign in to CampusPass",
+    "signin.body": "Sign in with Google to see every deal's full terms, booking codes and contact details, and to save the ones you use.",
+    "signin.short": "Sign in",
+    "signin.saveReason": "Sign in to save deals and find them on any device.",
+
+    "saved.title": "Saved",
+    "saved.lede": "Deals you saved, including expired ones.",
+    "saved.signedOutTitle": "Sign in to save deals",
+    "saved.signedOutBody": "Saved deals sync to your account, so they follow you to any device.",
+    "saved.emptyTitle": "Nothing saved yet",
+    "saved.emptyBody": "Tap the star next to a deal to save it.",
+    "saved.browse": "Browse deals",
+
+    "me.title": "Account",
+    "me.signedOutTitle": "Not signed in",
+    "me.signedOutBody": "Sign in to see full deal details and save the ones you use.",
+    "me.settings": "Settings",
+    "me.language": "Language",
+    "me.theme": "Appearance",
+    "theme.light": "Light",
+    "theme.dark": "Dark",
+    "theme.system": "System",
+    "me.signout": "Sign out",
+    "me.about": "About CampusPass",
+    "me.aboutBody": "CampusPass collects the partner discounts announced by universities, colleges, departments and student groups into one searchable list, and shows each deal's original source and retrieval date.",
+    "me.sources": "Sources included",
+    "me.privacy": "Privacy",
+    "me.contact": "Found a mistake? Use “Report an error” on the deal's page.",
+    "disclaimer": "CampusPass is an independent index, not an official NTU website. The merchant and the original announcing office have the final word on every deal.",
+
+    "account.menu": "Account menu",
+    "account.settings": "Account & settings",
+
+    "toast.saved": "Saved",
+    "toast.unsaved": "Removed from saved",
+    "toast.saveFailed": "Couldn't update saved deals. Try again.",
+    "toast.signedOut": "Signed out",
+    "toast.signoutFailed": "Couldn't sign out. Try again.",
+    "toast.linkCopied": "Link copied",
+    "toast.copyFailed": "Couldn't copy the link",
+    "toast.reportSent": "Thanks — we'll check it soon",
+    "toast.reportFailed": "Couldn't send. Try again later.",
+    "toast.sessionExpired": "Your session expired. Please sign in again.",
+
+    "login.access_denied": "Google sign-in was cancelled",
+    "login.expired": "Sign-in timed out. Please try again.",
+    "login.state_mismatch": "Sign-in check failed. Please try again.",
+    "login.email_unverified": "This Google account's email isn't verified",
+    "login.google_error": "Google sign-in failed. Try again later.",
+    "login.generic": "Sign-in failed. Please try again.",
+
+    "report.title": "Report an error",
+    "report.body": "What's wrong with “{name}”? For example, the deal ended or the phone number changed.",
+    "report.label": "Details",
+    "report.placeholder": "Describe the problem",
+    "report.submit": "Send",
+    "report.sending": "Sending…",
+    "cancel": "Cancel",
+    "close": "Close",
+    "dialog.pick": "Choose {what}",
+  },
+};
+
+/** School codes → short and full names. Unknown codes fall back to the code itself. */
+const SCHOOLS = {
+  NTU: { zh: ["臺大", "國立臺灣大學"], en: ["NTU", "National Taiwan University"] },
+  NTNU: { zh: ["臺師大", "國立臺灣師範大學"], en: ["NTNU", "National Taiwan Normal University"] },
+  NTUST: { zh: ["臺科大", "國立臺灣科技大學"], en: ["NTUST", "National Taiwan University of Science and Technology"] },
+  NCCU: { zh: ["政大", "國立政治大學"], en: ["NCCU", "National Chengchi University"] },
+  NTHU: { zh: ["清大", "國立清華大學"], en: ["NTHU", "National Tsing Hua University"] },
+  NYCU: { zh: ["陽明交大", "國立陽明交通大學"], en: ["NYCU", "National Yang Ming Chiao Tung University"] },
+  NCKU: { zh: ["成大", "國立成功大學"], en: ["NCKU", "National Cheng Kung University"] },
+};
+
+let lang = storage.get(LANG_KEY) === "en" ? "en" : "zh";
+
+export const getLang = () => lang;
+
+export function t(key, vars) {
+  let s = DICT[lang][key];
+  if (vars && vars.n === 1 && DICT[lang][key + ".one"]) s = DICT[lang][key + ".one"];
+  if (s == null) s = DICT.zh[key] ?? key;
+  if (vars) s = s.replace(/\{(\w+)\}/g, (_, k) => (vars[k] ?? ""));
+  return s;
+}
+
+export function schoolName(code, full = false) {
+  const entry = SCHOOLS[code];
+  return entry ? entry[lang][full ? 1 : 0] : code;
+}
+
+export function setLang(next) {
+  lang = next === "en" ? "en" : "zh";
+  storage.set(LANG_KEY, lang);
+  applyLang();
+}
+
+/** Reflect the language on <html> and on every static [data-i18n] node in the shell. */
+export function applyLang(root = document) {
+  const html = document.documentElement;
+  html.lang = lang === "en" ? "en" : "zh-Hant-TW";
+  html.dataset.lang = lang;
+  for (const el of root.querySelectorAll("[data-i18n]")) el.textContent = t(el.dataset.i18n);
+  for (const el of root.querySelectorAll("[data-i18n-aria]")) el.setAttribute("aria-label", t(el.dataset.i18nAria));
+  for (const el of root.querySelectorAll("[data-i18n-title]")) el.title = t(el.dataset.i18nTitle);
+  for (const el of root.querySelectorAll("[data-i18n-ph]")) el.placeholder = t(el.dataset.i18nPh);
+}
