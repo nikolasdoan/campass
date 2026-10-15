@@ -132,6 +132,13 @@ check("unknown code 404", (await shop.json("/api/merchant/confirm", { method: "P
 check("shop confirms", (await shop.json("/api/merchant/confirm", { method: "POST", json: { code: pass.code } })).body?.ok === true);
 check("second confirm is 409", (await shop.json(`/api/merchant/${key}/confirm`, { method: "POST", json: { code: ` ${pass.code.slice(0, 3)}-${pass.code.slice(3)} ` } })).status === 409);
 check("student pass shows confirmed", !!(await stu.json(`/api/redemptions/${pass.code}`)).body?.confirmed_at);
+check("a confirmed pass is not reused: re-opening gives a new code", (await stu.json(`/api/deals/${full.id}/redeem`, { method: "POST" })).body?.code !== pass.code);
+check("shop count is per shop link", (await shop.json(`/api/merchant/${key}`)).body?.confirmed_30d === 1);
+const sameDeal = (await anon.json("/admin/merchant-keys", { method: "POST", headers: ADMIN, json: { label: "同品牌分店", deal_ids: [full.id] } })).body.url.split("/m/")[1];
+check("another branch of the same deal starts at 0", (await browser().json(`/api/merchant/${sameDeal}`)).body?.confirmed_30d === 0);
+const sm = await anon.json(`/api/merchant/${key}/manifest.webmanifest`);
+check("shop manifest opens the shop page", sm.body?.start_url === `/m/${key}` && sm.body?.id === `/m/${key}`);
+check("shop manifest 404 for bad key", (await anon.json("/api/merchant/nope/manifest.webmanifest")).status === 404);
 check("outcome saved", (await stu.json(`/api/redemptions/${pass.code}/outcome`, { method: "POST", json: { outcome: "used" } })).body?.ok === true);
 check("shop confirm needs same origin", (await shop.json("/api/merchant/confirm", { method: "POST", origin: "https://evil.example", json: { code: pass.code } })).status === 403);
 

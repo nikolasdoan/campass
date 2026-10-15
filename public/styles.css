@@ -184,7 +184,10 @@ html.is-scrolled .toolbar{ border-bottom-color:var(--line); }
 /* ---------- list rows (bizmap .item) ---------- */
 .list{ margin:0; padding:0; list-style:none; }
 .item{ position:relative; display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:start; border-bottom:1px solid var(--line);
-  transition:background-color var(--dur-tap) var(--ease-standard); }
+  transition:background-color var(--dur-tap) var(--ease-standard);
+  /* With every school selected the list is ~1,100 rows: rows off screen skip layout and paint
+     (sizes are remembered once a row has been seen, so the scrollbar settles). */
+  content-visibility:auto; contain-intrinsic-size:auto 112px; }
 .item:hover{ background:color-mix(in srgb,var(--chip) 70%,transparent); }
 .item.sel{ background:var(--chip); box-shadow:inset 3px 0 0 var(--dot); }
 .pick{ display:grid; grid-template-columns:40px minmax(0,1fr); gap:12px; min-width:0; padding:12px 0 13px 16px; color:inherit; text-decoration:none; }
@@ -690,6 +693,8 @@ fieldset.radios legend{ padding:0; }
   .dlg-actions .btn{ flex:1; min-height:44px; }
   .seg button{ min-height:40px; }
   .opt{ min-height:48px; }
+  /* Long pickers (12 schools): leave the backdrop in view, so a list cut mid-row reads as scrollable. */
+  dialog.picker .dlg-card{ max-height:min(85dvh,calc(100dvh - var(--sat) - 24px)); }
   .toast{ bottom:calc(var(--nav-h) + 36px); }
 }
 

@@ -313,7 +313,7 @@ for (const w of [360, 414, 820, 821]) {
 }
 
 /* ============ redemption: pass, shop pairing, scan landing, outcome, /merchants ============ */
-// QR decoding needs jsQR (not a project dependency): `npm i jsqr` anywhere and point JSQR_PATH
+// QR decoding uses jsQR (a dev dependency); JSQR_PATH can point at another copy's entry file
 // at its dist/jsQR.js, or install it here. Without it the decode checks are skipped, not passed.
 let jsQR = null;
 try { jsQR = (await import(process.env.JSQR_PATH || 'jsqr')).default; } catch {}
@@ -555,7 +555,10 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   await ctx.close();
 }
 
-const filtered = allErrors.filter((e) => !/Service Worker registration blocked/.test(e));
+// The shop/scan checks provoke 403/404/409/410 answers on purpose; Chromium logs every non-2xx
+// fetch as a console error. Only those, and only on those pages, are expected.
+const EXPECTED_HTTP = /^(shop|scan-anon|w360-redeem): Failed to load resource: the server responded with a status of (403|404|409|410)\b/;
+const filtered = allErrors.filter((e) => !/Service Worker registration blocked/.test(e) && !EXPECTED_HTTP.test(e));
 check('no console errors', filtered.length === 0, filtered.join(' | '));
 await browser.close();
 const failed = results.filter((r) => !r.ok);

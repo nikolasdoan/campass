@@ -330,7 +330,7 @@ app.post("/api/deals/:id/redeem", requireUser, async (c) => {
   // Reuse a pass opened in the last few minutes so re-opening doesn't inflate counts.
   const recent = await c.env.DB.prepare(
     `SELECT code, created_at FROM redemptions
-      WHERE user_id = ? AND deal_id = ? AND created_at > datetime('now', ?)
+      WHERE user_id = ? AND deal_id = ? AND created_at > datetime('now', ?) AND confirmed_at IS NULL
       ORDER BY created_at DESC LIMIT 1`
   )
     .bind(user.id, id, `-${PASS_MINUTES} minutes`)
@@ -422,9 +422,9 @@ app.get("/api/merchant/:key", async (c) => {
   const deals = await c.env.DB.prepare(`SELECT id, name, subtitle, highlight FROM deals WHERE id IN (${marks})`).bind(...ids).all();
   const stats = await c.env.DB.prepare(
     `SELECT COUNT(*) AS confirmed_30d FROM redemptions
-      WHERE deal_id IN (${marks}) AND confirmed_at > datetime('now', '-30 days')`
+      WHERE confirmed_key = ? AND confirmed_at > datetime('now', '-30 days')`
   )
-    .bind(...ids)
+    .bind(await sha256(key))
     .first<{ confirmed_30d: number }>();
   return c.json({ label: mk.label, deals: deals.results, confirmed_30d: stats?.confirmed_30d ?? 0 });
 });
@@ -457,6 +457,30 @@ app.get("/api/merchant/pass/:code", async (c) => {
 app.post("/api/merchant/confirm", (c) => confirmPass(c, getCookie(c, MERCHANT_COOKIE)));
 app.post("/api/merchant/:key/confirm", (c) => confirmPass(c, c.req.param("key")));
 
+// The shop page links this manifest instead of the app's, so a home-screen icon added
+// from /m/<key> opens the shop page rather than Explore.
+app.get("/api/merchant/:key/manifest.webmanifest", async (c) => {
+  const key = c.req.param("key");
+  const mk = await merchantKey(c.env.DB, key);
+  if (!mk) return c.json({ error: "not_found" }, 404);
+  const res = await c.env.ASSETS.fetch(new URL("/manifest.webmanifest", c.req.url));
+  const base = (await res.json()) as Record<string, unknown>;
+  const start = `/m/${key}`;
+  const manifest = {
+    ...base,
+    id: start,
+    start_url: start,
+    scope: "/",
+    name: `${mk.label} · CampusPass 店家`,
+    short_name: "CP 店家",
+    shortcuts: undefined,
+  };
+  return c.body(JSON.stringify(manifest), 200, {
+    "Content-Type": "application/manifest+json",
+    "Cache-Control": "no-store",
+  });
+});
+
 async function confirmPass(c: any, key: string | undefined) {
   const mk = await merchantKey(c.env.DB, key);
   if (!mk) return c.json({ error: "not_merchant" }, 403);
@@ -465,9 +489,13 @@ async function confirmPass(c: any, key: string | undefined) {
   if (!r) return c.json({ error: "invalid_code" }, 404);
   if (r.confirmed_at) return c.json({ error: "already_confirmed", deal: r.name }, 409);
   if (!r.fresh) return c.json({ error: "expired_code", deal: r.name }, 410);
-  await c.env.DB.prepare("UPDATE redemptions SET confirmed_at = datetime('now'), confirmed_via = 'merchant' WHERE id = ?")
-    .bind(r.id)
+  // The `confirmed_at IS NULL` guard makes a double tap (or two cashiers) count once.
+  const done = await c.env.DB.prepare(
+    "UPDATE redemptions SET confirmed_at = datetime('now'), confirmed_via = 'merchant', confirmed_key = ? WHERE id = ? AND confirmed_at IS NULL"
+  )
+    .bind(await sha256(key!), r.id)
     .run();
+  if (!done.meta.changes) return c.json({ error: "already_confirmed", deal: r.name }, 409);
   return c.json({ ok: true, deal: r.name });
 }
 

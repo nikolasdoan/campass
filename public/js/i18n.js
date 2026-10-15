@@ -1,6 +1,6 @@
 /* Every UI string, in zh-TW and en. Deal content (names, offers) stays Chinese.
    Write 臺 not 台 in UI copy. Labels never wrap: the English is shortened, not the layout. */
-import { storage } from "./util.js?v=5";
+import { storage } from "./util.js?v=6";
 
 const LANG_KEY = "cp_lang";
 
@@ -616,6 +616,7 @@ const SCHOOLS = {
   NCHU: { zh: ["中興", "國立中興大學"], en: ["NCHU", "National Chung Hsing University"] },
   TMU: { zh: ["北醫", "臺北醫學大學"], en: ["TMU", "Taipei Medical University"] },
   TCU: { zh: ["慈大", "慈濟大學"], en: ["TCU", "Tzu Chi University"] },
+  KSU: { zh: ["崑山科大", "崑山科技大學"], en: ["KSU", "Kun Shan University"] },
   CMU: { zh: ["中國醫", "中國醫藥大學"], en: ["CMU", "China Medical University"] },
 };
 

@@ -3,11 +3,11 @@
    a pushed full-screen page on a phone) · /merchants (商家合作) · /m/:key (a shop's private
    confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
    Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=5";
-import { t, getLang, setLang, applyLang, schoolName } from "./js/i18n.js?v=5";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone } from "./js/util.js?v=5";
-import { toast, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=5";
-import { qrSVG } from "./js/qr.js?v=5";
+import { icon } from "./js/icons.js?v=6";
+import { t, getLang, setLang, applyLang, schoolName } from "./js/i18n.js?v=6";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone } from "./js/util.js?v=6";
+import { toast, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=6";
+import { qrSVG } from "./js/qr.js?v=6";
 
 /* ---------- constants ---------- */
 
@@ -370,8 +370,9 @@ function renderExplore() {
   const shown = state.deals.filter((d) => matches(d, terms));
   const fc = $("fcount");
   if (fc) fc.textContent = t("count", { n: shown.length });
-  if (shown.length) els.list.replaceChildren(...shown.map(rowEl));
+  if (shown.length) fillList(shown);
   else {
+    cancelAnimationFrame(fillRaf);
     els.list.innerHTML = "";
     const li = document.createElement("li");
     li.innerHTML = emptyHTML({
@@ -391,6 +392,27 @@ function renderExplore() {
 
 /** 「店家想登錄優惠或洽談合作？商家合作」: the list footer and the About card. */
 const merchantsLinkHTML = () => `${esc(t("foot.merchants"))} <a href="/merchants" data-nav>${esc(t("foot.merchantsLink"))}</a>`;
+
+/* With every school selected the list is ~1,100 rows. The first screenful goes in at once;
+   the rest follows in chunks on the next frames, so a tap on a filter paints immediately.
+   A newer render cancels the chunks still pending. */
+const FIRST_ROWS = 40;
+const CHUNK_ROWS = 250;
+let fillRaf = 0;
+
+function fillList(deals) {
+  cancelAnimationFrame(fillRaf);
+  els.list.replaceChildren(...deals.slice(0, FIRST_ROWS).map(rowEl));
+  let i = FIRST_ROWS;
+  const more = () => {
+    if (i >= deals.length) return;
+    els.list.append(...deals.slice(i, i + CHUNK_ROWS).map(rowEl));
+    i += CHUNK_ROWS;
+    markSelected();
+    if (i < deals.length) fillRaf = requestAnimationFrame(more);
+  };
+  if (deals.length > FIRST_ROWS) fillRaf = requestAnimationFrame(more);
+}
 
 function markSelected() {
   const id = state.route.name === "deal" ? state.route.id : null;
@@ -1683,6 +1705,11 @@ function setNoIndex(on) {
   } else if (!on && m) m.remove();
 }
 
+function setManifest(href) {
+  const link = document.querySelector('link[rel="manifest"]');
+  if (link && link.getAttribute("href") !== href) link.setAttribute("href", href);
+}
+
 function route() {
   // The pass has a history entry of its own: Back closes it and changes nothing else.
   if (pass && !history.state?.pass) closeDialog();
@@ -1697,6 +1724,8 @@ function route() {
   }
   const prev = state.route;
   state.route = r;
+  // A shop page offers its own manifest, so "Add to Home Screen" there opens the shop page.
+  setManifest(r.name === "shop" ? `/api/merchant/${encodeURIComponent(r.key)}/manifest.webmanifest` : "/manifest.webmanifest");
   if (r.name === "deal") {
     // The list under the detail: the one it was opened from (kept in history.state, so Back and
     // Forward restore it), else the tab we're on; a cold deep link sits on Explore.
