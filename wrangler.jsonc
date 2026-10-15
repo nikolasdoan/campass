@@ -13,8 +13,7 @@
     {
       "binding": "DB",
       "database_name": "campuspass",
-      // Replace with the id printed by `npx wrangler d1 create campuspass`
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      "database_id": "e2fd1b29-9117-44ef-9995-ac74f03e15b9",
       "migrations_dir": "migrations"
     }
   ],
