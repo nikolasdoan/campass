@@ -85,6 +85,46 @@ curl -s -o /dev/null -w "%{http_code}\n" $U/admin/stats                         
 Results of the first deploy (2026-10-15): all pass, except `/auth/google/start` which correctly reports
 "not configured" until the Google client id/secret exist.
 
+## How the founder tests on a phone
+
+Live URL: https://campuspass.niko-tecx.workers.dev. You need two phones: one is the **student**, the other the
+**shop's counter phone**.
+
+**0. Until Google sign-in is configured** (`GOOGLE_CLIENT_ID` + `GOOGLE_CLIENT_SECRET`, see "Google sign-in"),
+登入 shows "Google login is not configured". You can still browse deals, filters, deal pages (locked terms), install
+the app, open /merchants and /admin.html, and pair a shop phone (steps 1–3). Steps 4–6 need a signed-in student, so
+they wait for the creds. There is no test login in production (`DEV_LOGIN` is never set there).
+
+**1. Install the app (student phone)**
+- iPhone: open the URL in **Safari** → Share → **加入主畫面** → 新增. (The /me page shows the same hint.)
+- Android: open the URL in **Chrome** → ⋮ menu → **Install app** (or 加到主畫面), or tap 安裝 when the prompt appears.
+- Open it from the home screen: it should start full screen, with the bottom tab bar above the home indicator.
+
+**2. Create a shop link (any device)**: open `/admin.html`, enter the ADMIN_TOKEN, go to 建立商家確認連結, type
+a shop name, search a deal (e.g. 福華), pick it, 建立連結. Copy the link or print the QR. It is shown only once.
+
+**3. Pair the shop phone**: open the link once on the second phone **in its normal browser** (Safari on iPhone,
+Chrome on Android). The page shows the shop name and its 30-day count; the phone is now paired (cookie, 365 days).
+On iPhone, pair in Safari, not in a home-screen copy: the iPhone camera opens scanned links in Safari, and
+home-screen apps on iOS keep their own cookies, so a pairing made there is not seen by the camera's Safari.
+The shop page also has a box to type a 6-character code by hand.
+
+**4. Sign in (student phone)**: 我的 → 使用 Google 登入. You come back to the same page, signed in.
+
+**5. Use a deal**: open the deal from step 2 → **使用優惠**. A full-screen pass opens with a 6-character code, a QR, a
+live clock and a 15-minute countdown.
+
+**6. Shop confirms**: point the shop phone's normal camera at the QR → open the link → **確認使用** → big ✓. Within
+about 5 seconds the student's pass flips to 店家已確認. (Or type the code on the shop page.) The shop can confirm
+within 30 minutes of the pass opening, once per code.
+
+**7. Check the numbers**: `/admin.html` → refresh. Expect: users +1, 開啟通行證 (tier 1) +1, 店家確認 (tier 3) +1,
+the deal in 最多使用. If the student closes the pass and answers 優惠有用成功嗎？ with 有，用成功了, 自述已使用 (tier 2) goes up.
+Two confirmed or self-reported uses by the same student in 30 days count towards the go/no-go gate.
+
+**Clean up after testing**: the student can delete the test account on /me (刪除帳號). That removes its favourites, passes and
+reports; shop-confirmed uses stay in the shop's count but are no longer linked to the account.
+
 ## Scheduled cleanup (Cron Trigger)
 
 `wrangler.jsonc` → `"triggers": { "crons": ["17 19 * * *"] }` runs the Worker's `scheduled()` handler daily at
