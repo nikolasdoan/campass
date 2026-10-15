@@ -171,3 +171,8 @@ All badges are now 8 characters or fewer.
 **Other:** CJK compatibility ideographs copied from the NCHU source (for example 林 U+F9F4 in 高佳林, and ⽛ in 沐芯⽛醫) were normalised to standard characters in 13 records, so that name search works.
 
 **Validation:** Both JSON files load. Every record has name, a valid category, source_url, source_org, schools, regions and 4 boolean eligibility flags. `scripts/import_deals.py` ran without errors (605 deals, no skips), and `data/deals.json` and `seed/deals.sql` were then restored with git checkout.
+
+
+## Update 2026-10-15 (campass-2)
+
+NCU, NCKU, CMU and KSU were extracted by campass-2 into their own files (`ncu.json`, `ncku.json`, `cmu.json`, `ksu.json`, each with a `.md` report). The CMU row above (≈24 posts) is stale: the index has 9 pages / 209 posts, 197 kept.
