@@ -226,6 +226,40 @@ check("admin CSVs", (await Promise.all(["users", "reports", "redemptions", "merc
 check("logout", (await stu.json("/api/logout", { method: "POST" })).body?.ok === true);
 check("session gone after logout", (await stu.json("/api/me")).body?.user === null);
 
+// ---------- school identities ("CampusPass cards") ----------
+{
+  const signedOut = (await anon.json("/api/me")).body;
+  check("signed-out /api/me lists features", signedOut.features && signedOut.features.dev_login === true && Array.isArray(signedOut.identities));
+  const idu = await devLogin(`card-${Date.now()}@ntu.edu.tw`);
+  let me = (await idu.json("/api/me")).body;
+  check("a school-domain sign-in creates its card", me.identities.length === 1 && me.identities[0].school === "NTU" && me.identities[0].method === "dev" && me.identities[0].active === true, JSON.stringify(me.identities));
+  const before = me.user.email;
+  const link = await idu.req(`/auth/dev-login?email=${encodeURIComponent(`same-${Date.now()}@g.nccu.edu.tw`)}&link=1&next=/me`);
+  check("adding a second school keeps the same account", new URL(link.headers.get("location"), B).searchParams.get("identity_added") === "NCCU" && (await idu.json("/api/me")).body.user.email === before);
+  me = (await idu.json("/api/me")).body;
+  check("both cards are listed", me.identities.map((i) => i.school).sort().join() === "NCCU,NTU");
+  const bad = await idu.req(`/auth/dev-login?email=x@gmail.com&link=1&next=/me`);
+  check("a non-school domain is refused", new URL(bad.headers.get("location"), B).searchParams.get("identity_error") === "unknown_school");
+  check("ntnu.edu.tw is not mistaken for ntu.edu.tw", new URL((await idu.req(`/auth/dev-login?email=z@ntnu.edu.tw&link=1&next=/me`)).headers.get("location"), B).searchParams.get("identity_added") === "NTNU");
+  const n1 = (await idu.json("/api/me")).body.identities.length;
+  await idu.req(`/auth/dev-login?email=z@ntnu.edu.tw&link=1&next=/me`);
+  check("re-verifying the same email updates the card (no duplicate)", (await idu.json("/api/me")).body.identities.length === n1);
+  const ntuCard = (await idu.json("/api/me")).body.identities.find((i) => i.school === "NTU");
+  check("card role can be changed", (await idu.json(`/api/identities/${ntuCard.id}`, { method: "PATCH", json: { role: "alumni" } })).body?.ok === true && (await idu.json("/api/me")).body.identities.find((i) => i.id === ntuCard.id).role === "alumni");
+  check("bad role is 400", (await idu.json(`/api/identities/${ntuCard.id}`, { method: "PATCH", json: { role: "admin" } })).status === 400);
+  const other = await devLogin(`other-${Date.now()}@ntu.edu.tw`);
+  check("someone else's card is 404", (await other.json(`/api/identities/${ntuCard.id}`, { method: "DELETE" })).status === 404);
+  check("email-code verification is a stub for now", (await idu.json("/api/identities/email-code", { method: "POST", json: {} })).status === 501);
+  await idu.json(`/api/identities/${ntuCard.id}`, { method: "PATCH", json: { role: "student" } });
+  // The cashier sees the student's cards for this deal's schools only.
+  const p2 = (await idu.json(`/api/deals/${full.id}/redeem`, { method: "POST" })).body;
+  const cs = (await shop.json(`/api/merchant/pass/${p2.code}`)).body;
+  check("cashier sees the student's matching school card", Array.isArray(cs.verified) && cs.verified.some((v) => v.school === "NTU") && !cs.verified.some((v) => v.school === "NCCU"), JSON.stringify(cs.verified));
+  const nccuCard = (await idu.json("/api/me")).body.identities.find((i) => i.school === "NCCU");
+  check("a card can be removed", (await idu.json(`/api/identities/${nccuCard.id}`, { method: "DELETE" })).body?.ok === true && !(await idu.json("/api/me")).body.identities.some((i) => i.school === "NCCU"));
+  check("account deletion removes the cards too", (await idu.json("/api/me", { method: "DELETE" })).body?.ok === true);
+}
+
 // ---------- account deletion + cleanup ----------
 const gone = await devLogin(`delete-${Date.now()}@ntu.edu.tw`);
 await gone.json(`/api/favorites/${full.id}`, { method: "PUT" });
@@ -260,6 +294,16 @@ if (!mockUp) {
   const ok = await oauth(`oauth-${Date.now()}@ntu.edu.tw`);
   check("Google sign-in returns to `next`", new URL(ok.location, B).pathname === "/saved", ok.location || ok.error);
   check("Google sign-in creates a session", !!(await ok.b.json("/api/me")).body?.user);
+  check("a school Google account gets a Google-verified card", (await ok.b.json("/api/me")).body.identities.some((i) => i.school === "NTU" && i.method === "google"));
+  {
+    // Linking a second school via Google keeps the session's account.
+    const before = (await ok.b.json("/api/me")).body.user.email;
+    const start = await ok.b.req(`/auth/google/start?link=1&next=/me`);
+    const g = await fetch(`${start.headers.get("location")}&login_hint=${encodeURIComponent(`link-${Date.now()}@gs.ncku.edu.tw`)}`, { redirect: "manual" });
+    const done = await ok.b.req(g.headers.get("location"));
+    const loc = new URL(done.headers.get("location"), B);
+    check("Google link adds a card without switching account", loc.searchParams.get("identity_added") === "NCKU" && (await ok.b.json("/api/me")).body.user.email === before, loc.toString());
+  }
   {
     // A real (Google) account on a school domain shows as a school mailbox to the cashier.
     const gp = (await ok.b.json(`/api/deals/${full.id}/redeem`, { method: "POST" })).body;

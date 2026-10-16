@@ -1,6 +1,7 @@
 import { Hono } from "hono";
 import { getCookie, setCookie, deleteCookie } from "hono/cookie";
 import { googleAuthUrl, exchangeCode, newPkce, type GoogleEndpoints } from "./google";
+import { addIdentity, listIdentities, ROLES } from "./identities";
 
 export interface Env {
   DB: D1Database;
@@ -228,7 +229,9 @@ app.get("/auth/google/start", async (c) => {
   const state = randomToken(16);
   const { verifier, challenge } = await newPkce();
   const next = safeNext(c.req.query("next"));
-  setCookie(c, OAUTH_COOKIE, JSON.stringify({ state, verifier, next }), {
+  // link=1: add the Google account's school as an identity on the signed-in account (no account switch).
+  const link = c.req.query("link") === "1" && c.get("user") ? c.get("user")!.id : null;
+  setCookie(c, OAUTH_COOKIE, JSON.stringify({ state, verifier, next, link }), {
     httpOnly: true,
     secure: isSecure(c.req.url),
     sameSite: "Lax",
@@ -249,7 +252,7 @@ app.get("/auth/google/start", async (c) => {
 app.get("/auth/google/callback", async (c) => {
   const raw = getCookie(c, OAUTH_COOKIE);
   deleteCookie(c, OAUTH_COOKIE, { path: "/auth" });
-  let saved: { state: string; verifier: string; next: string } | null = null;
+  let saved: { state: string; verifier: string; next: string; link?: number | null } | null = null;
   try {
     saved = raw ? JSON.parse(raw) : null;
   } catch {
@@ -277,7 +280,14 @@ app.get("/auth/google/callback", async (c) => {
       endpoints: googleEndpoints(c.env),
     });
     if (!profile.email_verified) return fail("email_unverified");
+    if (saved.link) {
+      // Adding a school card to the account that started the flow (it must still be signed in).
+      if (c.get("user")?.id !== saved.link) return fail("expired");
+      const school = await addIdentity(c.env.DB, saved.link, profile.email, "google");
+      return c.redirect(withParam(saved.next, school ? "identity_added" : "identity_error", school ?? "unknown_school"));
+    }
     const userId = await upsertUser(c.env.DB, profile);
+    await addIdentity(c.env.DB, userId, profile.email, "google"); // a school Google account verifies itself
     await createSession(c, userId);
     return c.redirect(safeNext(saved.next));
   } catch (e) {
@@ -290,10 +300,24 @@ app.get("/auth/google/callback", async (c) => {
 app.get("/auth/dev-login", async (c) => {
   if (c.env.DEV_LOGIN !== "true") return c.notFound();
   const email = (c.req.query("email") || "dev@example.com").toLowerCase();
+  const user = c.get("user");
+  if (c.req.query("link") === "1" && user) {
+    // Test-only stand-in for "verify with your school Google account": adds a card to this account.
+    const school = await addIdentity(c.env.DB, user.id, email, "dev");
+    return c.redirect(withParam(c.req.query("next"), school ? "identity_added" : "identity_error", school ?? "unknown_school"));
+  }
   const userId = await upsertUser(c.env.DB, { sub: `dev:${email}`, email, email_verified: true, name: email.split("@")[0] });
+  await addIdentity(c.env.DB, userId, email, "dev");
   await createSession(c, userId);
   return c.redirect(safeNext(c.req.query("next")));
 });
+
+/** A safe same-site path with one query parameter added. */
+function withParam(next: string | undefined | null, key: string, value: string): string {
+  const u = new URL(safeNext(next), "https://x");
+  u.searchParams.set(key, value);
+  return u.pathname + u.search + u.hash;
+}
 
 app.post("/api/logout", async (c) => {
   const token = getCookie(c, SESSION_COOKIE);
@@ -310,6 +334,7 @@ app.delete("/api/me", requireUser, async (c) => {
   await db.batch([
     db.prepare("DELETE FROM sessions WHERE user_id = ?").bind(id),
     db.prepare("DELETE FROM favorites WHERE user_id = ?").bind(id),
+    db.prepare("DELETE FROM user_identities WHERE user_id = ?").bind(id),
     db.prepare("DELETE FROM visits WHERE user_id = ?").bind(id),
     db.prepare("DELETE FROM deal_views WHERE user_id = ?").bind(id),
     // A shop's confirmation is also the shop's record: keep it, but anonymised (user 0 never exists).
@@ -332,7 +357,13 @@ function taipeiDay(offsetDays = 0): string {
 
 app.get("/api/me", async (c) => {
   const user = c.get("user");
-  if (!user) return c.json({ user: null, favorites: [] });
+  // What sign-in/verification methods this deployment offers (the UI shows only these).
+  const features = {
+    google: !!(c.env.GOOGLE_CLIENT_ID && c.env.GOOGLE_CLIENT_SECRET),
+    dev_login: c.env.DEV_LOGIN === "true",
+    email_code: false,
+  };
+  if (!user) return c.json({ user: null, favorites: [], identities: [], features });
   // One row per user per active day: feeds weekly/monthly active and repeat-use stats.
   c.executionCtx.waitUntil(
     c.env.DB.prepare("INSERT OR IGNORE INTO visits (user_id, day) VALUES (?, ?)").bind(user.id, taipeiDay()).run()
@@ -343,6 +374,8 @@ app.get("/api/me", async (c) => {
   return c.json({
     user: { email: user.email, name: user.name, picture: user.picture },
     favorites: favs.results.map((r) => r.deal_id),
+    identities: await listIdentities(c.env.DB, user.id),
+    features,
   });
 });
 
@@ -369,6 +402,29 @@ app.get("/api/deals/:id", async (c) => {
   );
   return c.json({ deal: parseDeal(row), locked: false });
 });
+
+// ---------- school identities ----------
+
+app.patch("/api/identities/:id", requireUser, async (c) => {
+  const role = str((await jsonBody(c)).role, 10);
+  if (!(ROLES as readonly string[]).includes(role)) return c.json({ error: "bad_role" }, 400);
+  const res = await c.env.DB.prepare("UPDATE user_identities SET role = ? WHERE id = ? AND user_id = ?")
+    .bind(role, Number(c.req.param("id")), c.get("user")!.id)
+    .run();
+  if (!res.meta.changes) return c.json({ error: "not_found" }, 404);
+  return c.json({ ok: true });
+});
+
+app.delete("/api/identities/:id", requireUser, async (c) => {
+  const res = await c.env.DB.prepare("DELETE FROM user_identities WHERE id = ? AND user_id = ?")
+    .bind(Number(c.req.param("id")), c.get("user")!.id)
+    .run();
+  if (!res.meta.changes) return c.json({ error: "not_found" }, 404);
+  return c.json({ ok: true });
+});
+
+// Verifying by a one-time code to the school email needs an email provider (not chosen yet).
+app.post("/api/identities/email-code", requireUser, (c) => c.json({ error: "not_configured" }, 501));
 
 // Full details of the user's saved deals in one call, for the offline copy (cp_saved_cache).
 // Unlike /api/deals/:id this records no views: syncing isn't the student looking at a deal.
@@ -577,6 +633,7 @@ type PassRow = {
   schools: string;
   email: string;
   google_sub: string;
+  verified: string; // JSON array of the student's active identities, from the query
 };
 
 /** What the cashier needs to decide: the deal, who it is for, and the student's (masked) Google
@@ -591,6 +648,10 @@ function passForCashier(r: PassRow) {
     offer: [...(r.offer || "")].slice(0, 400).join(""),
     eligibility: JSON.parse(r.eligibility || "{}"),
     schools: r.schools ? r.schools.split(",") : [],
+    // The student's active school cards that this deal is for (Google-verified unless method says dev).
+    verified: (JSON.parse(r.verified || "[]") as { school: string; role: string; method: string; verified_at: string }[]).filter(
+      (v) => v && (r.schools ? r.schools.split(",").includes(v.school) : false)
+    ),
     // A dev-login account (DEV_LOGIN on, for testing) can claim any email, so it is never shown as a
     // school mailbox and is flagged as a test login.
     account: test
@@ -605,7 +666,9 @@ async function passForShop(db: D1Database, mk: MerchantKey, rawCode: string): Pr
   const r = await db.prepare(
     `SELECT r.id, r.deal_id, r.confirmed_at, r.created_at > datetime('now', ?) AS fresh,
             d.name, d.highlight, d.offer, d.eligibility, d.schools, COALESCE(u.email, '') AS email,
-            COALESCE(u.google_sub, '') AS google_sub
+            COALESCE(u.google_sub, '') AS google_sub,
+            (SELECT json_group_array(json_object('school', i.school, 'role', i.role, 'method', i.method, 'verified_at', i.verified_at))
+               FROM user_identities i WHERE i.user_id = r.user_id AND i.expires_at > datetime('now')) AS verified
        FROM redemptions r JOIN deals d ON d.id = r.deal_id LEFT JOIN users u ON u.id = r.user_id
       WHERE r.code = ?`
   )
