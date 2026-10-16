@@ -79,6 +79,7 @@ check("service worker served as JS", ((await anon.req("/sw.js")).headers.get("co
 const idx = await anon.req("/");
 check("security headers on pages", idx.headers.get("x-content-type-options") === "nosniff" && !!idx.headers.get("x-frame-options"));
 check("security headers on API", (await anon.req("/api/deals")).headers.get("x-frame-options") === "DENY");
+check("HSTS on Worker-built responses too", !!(await anon.req("/api/me")).headers.get("strict-transport-security"));
 
 // CSP: every inline <script> on our pages must be allowed by hash, and the Worker's CSP must
 // match the static one, or a page silently stops working.
@@ -111,6 +112,13 @@ check("signed-in detail unlocked with offer + links", unlocked.body?.locked === 
 check("favourite add", (await stu.json(`/api/favorites/${full.id}`, { method: "PUT" })).body?.ok === true);
 check("favourite add is idempotent", (await stu.json(`/api/favorites/${full.id}`, { method: "PUT" })).body?.ok === true);
 check("favourite shows in /api/me", (await stu.json("/api/me")).body?.favorites?.includes(full.id));
+{
+  const views0 = (await anon.json("/admin/stats", { headers: ADMIN })).body.usage_30d.deal_views;
+  const fd = await stu.json("/api/favorites/details");
+  check("saved-deal details in one call (with terms)", fd.status === 200 && fd.body.deals.some((d) => d.id === full.id && typeof d.offer === "string"));
+  check("bulk saved-deal sync records no views", (await anon.json("/admin/stats", { headers: ADMIN })).body.usage_30d.deal_views === views0);
+  check("bulk saved-deal sync needs login", (await anon.json("/api/favorites/details")).status === 401);
+}
 check("favourite unknown deal 404", (await stu.json("/api/favorites/nope", { method: "PUT" })).status === 404);
 check("favourite remove", (await stu.json(`/api/favorites/${full.id}`, { method: "DELETE" })).body?.ok === true);
 check("CSRF: cross-site origin rejected", (await stu.json(`/api/favorites/${full.id}`, { method: "PUT", origin: "https://evil.example" })).status === 403);
@@ -166,6 +174,7 @@ check("shop page loads and pairs the phone", page.body?.label === "測試店" &&
 check("invalid shop key 404", (await anon.json("/api/merchant/not-a-key")).status === 404);
 const seen = (await shop.json(`/api/merchant/pass/${pass.code}`)).body;
 check("paired phone sees the pass", seen?.status === "ok");
+check("cashier sees the deal's terms", typeof seen?.offer === "string" && seen.offer.length > 0);
 check("cashier sees the deal, eligibility and the masked school account", seen?.deal && seen?.eligibility && /^.\*\*\*@ntu\.edu\.tw$/.test(seen?.account?.masked || "") && seen.account.school_domain === true, JSON.stringify(seen?.account));
 const fw = pass.code.replace(/[A-Z0-9]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) + 0xfee0));
 check("paired phone, full-width code (zhuyin IME)", (await shop.json(`/api/merchant/pass/${encodeURIComponent(fw)}`)).body?.status === "ok");

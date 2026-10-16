@@ -158,6 +158,7 @@ app.use("*", async (c, next) => {
   c.header("Referrer-Policy", "strict-origin-when-cross-origin");
   c.header("X-Frame-Options", "DENY");
   c.header("Content-Security-Policy", CSP);
+  c.header("Strict-Transport-Security", "max-age=31536000");
 });
 
 // Resolve the session cookie to a user for every API/auth request.
@@ -351,6 +352,17 @@ app.get("/api/deals/:id", async (c) => {
   return c.json({ deal: parseDeal(row), locked: false });
 });
 
+// Full details of the user's saved deals in one call, for the offline copy (cp_saved_cache).
+// Unlike /api/deals/:id this records no views: syncing isn't the student looking at a deal.
+app.get("/api/favorites/details", requireUser, async (c) => {
+  const { results } = await c.env.DB.prepare(
+    `SELECT d.* FROM favorites f JOIN deals d ON d.id = f.deal_id WHERE f.user_id = ? ORDER BY f.created_at DESC`
+  )
+    .bind(c.get("user")!.id)
+    .all();
+  return c.json({ deals: results.map(parseDeal) });
+});
+
 app.put("/api/favorites/:id", requireUser, async (c) => {
   const user = c.get("user")!;
   const id = c.req.param("id");
@@ -542,6 +554,7 @@ type PassRow = {
   fresh: number;
   name: string;
   highlight: string;
+  offer: string;
   eligibility: string;
   schools: string;
   email: string;
@@ -554,6 +567,8 @@ function passForCashier(r: PassRow) {
   return {
     deal: r.name,
     highlight: r.highlight,
+    // The shop link belongs to this deal's merchant, so its own terms are fine to show.
+    offer: [...(r.offer || "")].slice(0, 400).join(""),
     eligibility: JSON.parse(r.eligibility || "{}"),
     schools: r.schools ? r.schools.split(",") : [],
     account: { masked: `${local.slice(0, 1)}***@${domain}`, domain, school_domain: /\.edu\.tw$/.test(domain) },
@@ -565,7 +580,7 @@ async function passForShop(db: D1Database, mk: MerchantKey, rawCode: string): Pr
   const code = normCode(rawCode);
   const r = await db.prepare(
     `SELECT r.id, r.deal_id, r.confirmed_at, r.created_at > datetime('now', ?) AS fresh,
-            d.name, d.highlight, d.eligibility, d.schools, COALESCE(u.email, '') AS email
+            d.name, d.highlight, d.offer, d.eligibility, d.schools, COALESCE(u.email, '') AS email
        FROM redemptions r JOIN deals d ON d.id = r.deal_id LEFT JOIN users u ON u.id = r.user_id
       WHERE r.code = ?`
   )
