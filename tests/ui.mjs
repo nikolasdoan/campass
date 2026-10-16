@@ -659,6 +659,9 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   // "expired" after Back into Google's picker while signed in: no error toast.
   await page.goto(B + '/?login_error=expired', { waitUntil: 'networkidle' }); await settle(page, 500);
   check('login_error=expired while signed in: no error toast', !(await page.$('#toast.show.err')) && !page.url().includes('login_error'));
+  // Google not set up yet on this deployment: a calm notice, not an error.
+  await page.goto(B + '/saved?login_error=not_configured', { waitUntil: 'networkidle' }); await settle(page, 500);
+  check('login_error=not_configured: "opens soon" notice, not an error toast', (await page.textContent('#toast.show').catch(() => '')).includes('即將開放') && !(await page.$('#toast.show.err')) && page.url().endsWith('/saved'));
 
   // Favourite race: on, off within one slow PUT → the last tap wins, on the server too.
   await page.goto(B + `/deal/${FULL}`, { waitUntil: 'networkidle' }); await page.waitForSelector('#detail .prose');

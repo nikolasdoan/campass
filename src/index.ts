@@ -223,7 +223,10 @@ const requireUser = async (c: any, next: any) => {
 
 app.get("/auth/google/start", async (c) => {
   if (!c.env.GOOGLE_CLIENT_ID || !c.env.GOOGLE_CLIENT_SECRET) {
-    return c.text("Google login is not configured (GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET).", 500);
+    // Not set up yet (client id/secret pending): back to the page with a friendly notice, not an error page.
+    const back = new URL(safeNext(c.req.query("next")), "https://x");
+    back.searchParams.set("login_error", "not_configured");
+    return c.redirect(back.pathname + back.search);
   }
   const origin = new URL(c.req.url).origin;
   const state = randomToken(16);

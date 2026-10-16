@@ -1,6 +1,6 @@
 /* Every UI string, in zh-TW and en. Deal content (names, offers) stays Chinese.
    Write 臺 not 台 in UI copy. Labels never wrap: the English is shortened, not the layout. */
-import { storage } from "./util.js?v=13";
+import { storage } from "./util.js?v=14";
 
 const LANG_KEY = "cp_lang";
 
@@ -196,6 +196,7 @@ const DICT = {
     "login.email_unverified": "此 Google 帳號的 Email 尚未驗證",
     "login.google_error": "Google 登入失敗，請稍後再試",
     "login.generic": "登入失敗，請再試一次",
+    "login.not_configured": "Google 登入即將開放",
 
     "report.title": "回報錯誤",
     "report.body": "「{name}」哪裡有誤？例如優惠已結束、電話或地址變更。",
@@ -611,6 +612,7 @@ const DICT = {
     "login.email_unverified": "This Google account's email isn't verified",
     "login.google_error": "Google sign-in failed. Try again later.",
     "login.generic": "Sign-in failed. Please try again.",
+    "login.not_configured": "Google sign-in opens soon",
 
     "report.title": "Report an error",
     "report.body": "What's wrong with “{name}”? For example, the deal ended or the phone number changed.",

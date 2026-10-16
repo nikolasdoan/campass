@@ -3,11 +3,11 @@
    a pushed full-screen page on a phone) · /merchants (商家合作) · /m/:key (a shop's private
    confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
    Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=13";
-import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=13";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=13";
-import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=13";
-import { qrSVG } from "./js/qr.js?v=13";
+import { icon } from "./js/icons.js?v=14";
+import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=14";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=14";
+import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=14";
+import { qrSVG } from "./js/qr.js?v=14";
 
 /* ---------- constants ---------- */
 
@@ -3137,7 +3137,7 @@ async function loginErrorToast(me) {
   }
   const key = `login.${reason}`;
   const msg = t(key);
-  toast(msg === key ? t("login.generic") : msg, { error: true, ms: 4500 });
+  toast(msg === key ? t("login.generic") : msg, { error: reason !== "not_configured", ms: 4500 });
 }
 
 /* ---------- a page left open: midnight, other tabs ---------- */
