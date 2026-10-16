@@ -102,6 +102,7 @@ const DICT = {
     "detail.contact": "聯絡資訊",
     "detail.phone": "電話",
     "detail.address": "地址",
+    "detail.area": "地點",
     "detail.openMap": "在 Google 地圖開啟",
     "detail.links": "相關連結",
     "detail.notes": "備註",
@@ -115,8 +116,9 @@ const DICT = {
     "detail.expiredNote": "這項優惠已過期，以下內容僅供參考。",
     "detail.verify": "使用前請向商家確認；優惠以商家及原公告單位為準。",
 
-    "lock.title": "登入後查看完整優惠",
-    "lock.body": "登入後查看完整優惠條件、訂房代碼與聯絡方式",
+    "lock.title": "登入看完整條件",
+    "lock.body": "登入後可查看優惠條件與聯絡方式。",
+    "lock.bodyLodging": "登入後可查看優惠條件、訂房代碼與聯絡方式。",
     "google.signin": "使用 Google 登入",
     "privacy.note": "我們只會記錄你的 Email、名稱與登入時間，用於提供服務與統計；不會出售或提供給第三方。",
 
@@ -135,6 +137,8 @@ const DICT = {
     "saved.browse": "瀏覽優惠",
     "saved.offlineTitle": "目前離線",
     "saved.offlineBody": "連線後會顯示你的收藏。",
+    "saved.expiredHead": "已過期",
+    "offline.copy": "離線顯示，上次更新 {d}",
 
     "me.title": "我的",
     "me.signedOutTitle": "尚未登入",
@@ -152,7 +156,7 @@ const DICT = {
     "me.privacy": "隱私",
     "me.app": "App",
     "me.install": "安裝 CampusPass",
-    "me.installHint": "加到主畫面，像 App 一樣開啟。",
+    "me.installHint": "加入主畫面，像 App 一樣開啟。",
     "me.installBtn": "安裝",
     "me.installIOS": "在 Safari 點「分享」，再選「加入主畫面」。",
     "me.contact": "發現資料有誤？請在該優惠頁點「回報錯誤」。",
@@ -166,8 +170,8 @@ const DICT = {
     "del.deleting": "刪除中…",
     "disclaimer": "CampusPass 為獨立整理之索引，非任何學校之官方網站；優惠以商家及原公告單位為準。",
 
-    "account.menu": "帳戶選單",
-    "account.settings": "帳戶與設定",
+    "account.menu": "帳號選單",
+    "account.settings": "帳號與設定",
 
     "toast.saved": "已收藏",
     "toast.unsaved": "已取消收藏",
@@ -181,7 +185,7 @@ const DICT = {
     "toast.sessionExpired": "登入已過期，請重新登入",
     "toast.deleted": "帳號已刪除",
     "toast.deleteFailed": "無法刪除帳號，請稍後再試",
-    "toast.offline": "目前離線，顯示上次載入的資料",
+    "toast.offline": "離線中，顯示上次的資料",
     "toast.online": "已恢復連線",
 
     "login.access_denied": "已取消 Google 登入",
@@ -209,7 +213,9 @@ const DICT = {
     "pass.now": "現在時間",
     "pass.left": "剩餘有效時間",
     "pass.live": "有效中",
-    "pass.instr": "請出示給店員。合作店家可掃描 QR 確認；其他店家請依原本方式出示學生證。",
+    "pass.instr": "請出示給店員；合作店家可掃描 QR 確認。",
+    "pass.idToo": "請同時出示學生證",
+    "pass.doneInstr": "已完成，可以關閉這個畫面。",
     "pass.confirmed": "店家已確認",
     "pass.confirmedAt": "{t} 由店家確認",
     "pass.status": "狀態",
@@ -220,9 +226,9 @@ const DICT = {
     "pass.close": "關閉憑證",
     "pass.qrFailed": "QR code 無法載入，請讓店員輸入上方代碼。",
 
-    "ask.title": "優惠有用成功嗎？",
+    "ask.title": "這次優惠有成功使用嗎？",
     "ask.body": "你的回答會幫助我們確認哪些優惠真的能用。",
-    "ask.used": "有，用成功了",
+    "ask.used": "成功使用",
     "ask.refused": "店家不接受",
     "ask.notUsed": "沒有使用",
     "ask.thanks": "謝謝你的回覆",
@@ -247,6 +253,8 @@ const DICT = {
     "shop.invalidTitle": "這個店家連結無效或已停用",
     "shop.invalidBody": "請聯絡 CampusPass 取得新的連結。",
     "shop.loadFailed": "無法載入，請檢查網路連線後再試一次。",
+    "shop.iosSafari": "請用 Safari 開啟並保留此頁，掃描 QR 才能直接確認；若加入主畫面，請改用輸入代碼。",
+    "shop.iosStandalone": "從主畫面開啟時，用相機掃描 QR 會跳到 Safari，無法直接確認；請在上方輸入代碼。",
 
     "err.invalid_code": "找不到這組代碼，或不是本店的優惠。請再確認一次。",
     "err.already_confirmed": "這張憑證已經確認過了，同一張憑證只能確認一次。",
@@ -277,6 +285,16 @@ const DICT = {
     "scan.invalid": "找不到這張憑證",
     "scan.invalidBody": "代碼不存在，或不是本店的優惠。",
     "scan.shopPage": "本店頁面",
+    "scan.enterCode": "店家：請在你的店家頁輸入此代碼",
+    "cashier.deal": "優惠",
+    "cashier.for": "適用對象",
+    "cashier.account": "學生的 Google 帳號",
+    "cashier.schoolMail": "學校信箱",
+    "cashier.idCheck": "請核對學生證後再確認",
+    "cashier.idCheckBody": "Google 帳號不能證明學籍，請確認學生證與適用對象相符。",
+    "cashier.only": "限{who}",
+    "cashier.schoolsMore": "{list}等 {n} 校",
+    "cashier.whoSep": "、",
 
     "merchants.title": "商家合作",
     "merchants.lede": "CampusPass 整理學生可用的特約優惠。",
@@ -330,6 +348,10 @@ const DICT = {
     "labelSep": "：",
     "notfound.title": "找不到這個頁面",
     "notfound.body": "網址可能有誤，或頁面已移除。",
+    "badge.partnerRate": "專屬優惠價",
+    "badge.partnerDeal": "特約優惠",
+    "pills.prev": "往左捲動類別",
+    "pills.next": "往右捲動類別",
   },
 
   en: {
@@ -432,6 +454,7 @@ const DICT = {
     "detail.contact": "Contact",
     "detail.phone": "Phone",
     "detail.address": "Address",
+    "detail.area": "Area",
     "detail.openMap": "Open in Google Maps",
     "detail.links": "Links",
     "detail.notes": "Notes",
@@ -445,8 +468,9 @@ const DICT = {
     "detail.expiredNote": "This deal has expired. The details are kept for reference.",
     "detail.verify": "Confirm with the merchant before use; the merchant and the original notice prevail.",
 
-    "lock.title": "Sign in to see the full deal",
-    "lock.body": "Sign in to see the full terms, booking codes and contact details",
+    "lock.title": "Sign in for the full terms",
+    "lock.body": "Sign in to see the terms and contact details.",
+    "lock.bodyLodging": "Sign in to see the terms, booking codes and contact details.",
     "google.signin": "Sign in with Google",
     "privacy.note": "We only record your email, name and sign-in time, to run the service and for statistics. We never sell or share them with third parties.",
 
@@ -465,6 +489,8 @@ const DICT = {
     "saved.browse": "Browse deals",
     "saved.offlineTitle": "You're offline",
     "saved.offlineBody": "Your saved deals will show once you're connected.",
+    "saved.expiredHead": "Expired",
+    "offline.copy": "Offline copy, last updated {d}",
 
     "me.title": "Account",
     "me.signedOutTitle": "Not signed in",
@@ -511,7 +537,7 @@ const DICT = {
     "toast.sessionExpired": "Your session expired. Please sign in again.",
     "toast.deleted": "Your account was deleted",
     "toast.deleteFailed": "Couldn't delete the account. Try again later.",
-    "toast.offline": "You're offline. Showing what was loaded last.",
+    "toast.offline": "Offline. Showing what was loaded last.",
     "toast.online": "Back online",
 
     "login.access_denied": "Google sign-in was cancelled",
@@ -539,7 +565,9 @@ const DICT = {
     "pass.now": "Time now",
     "pass.left": "Valid for",
     "pass.live": "Live",
-    "pass.instr": "Show this to the cashier. Partner shops can scan the QR to confirm; elsewhere, show your student ID as usual.",
+    "pass.instr": "Show this to the cashier; partner shops can scan the QR to confirm.",
+    "pass.idToo": "Show your student ID too",
+    "pass.doneInstr": "All done. You can close this pass.",
     "pass.confirmed": "Confirmed by the shop",
     "pass.confirmedAt": "Confirmed by the shop at {t}",
     "pass.status": "Status",
@@ -550,7 +578,7 @@ const DICT = {
     "pass.close": "Close pass",
     "pass.qrFailed": "The QR code couldn't load. Ask the cashier to type the code above.",
 
-    "ask.title": "Did the deal work?",
+    "ask.title": "Did the deal work this time?",
     "ask.body": "Your answer helps us check which deals really work.",
     "ask.used": "Yes, it worked",
     "ask.refused": "Shop refused it",
@@ -577,6 +605,8 @@ const DICT = {
     "shop.invalidTitle": "This shop link is invalid or no longer active",
     "shop.invalidBody": "Contact CampusPass for a new link.",
     "shop.loadFailed": "Couldn't load. Check your connection and try again.",
+    "shop.iosSafari": "Keep this page open in Safari so scanning a QR confirms directly. If you add it to the home screen, type the code instead.",
+    "shop.iosStandalone": "From the home screen, scanning a QR opens Safari, which can't confirm it. Type the code above instead.",
 
     "err.invalid_code": "Code not found, or it isn't for your shop's deal. Please check it.",
     "err.already_confirmed": "This pass was already confirmed. Each pass can be confirmed once.",
@@ -607,6 +637,16 @@ const DICT = {
     "scan.invalid": "Pass not found",
     "scan.invalidBody": "The code doesn't exist, or it isn't for your shop's deal.",
     "scan.shopPage": "Shop page",
+    "scan.enterCode": "Shop staff: enter this code on your shop page",
+    "cashier.deal": "Deal",
+    "cashier.for": "For",
+    "cashier.account": "Student's Google account",
+    "cashier.schoolMail": "School email",
+    "cashier.idCheck": "Check the student ID before confirming",
+    "cashier.idCheckBody": "A Google account doesn't prove enrolment. Check that the student ID matches who the deal is for.",
+    "cashier.only": "{who} only",
+    "cashier.schoolsMore": "{list} +{n} more",
+    "cashier.whoSep": ", ",
 
     "merchants.title": "For merchants",
     "merchants.lede": "CampusPass lists the partner discounts students can use.",
@@ -660,6 +700,10 @@ const DICT = {
     "labelSep": ": ",
     "notfound.title": "Page not found",
     "notfound.body": "The link may be wrong, or the page was removed.",
+    "badge.partnerRate": "Partner rate",
+    "badge.partnerDeal": "Partner deal",
+    "pills.prev": "Scroll categories left",
+    "pills.next": "Scroll categories right",
   },
 };
 
@@ -690,6 +734,15 @@ export function t(key, vars) {
   if (s == null) s = DICT.zh[key] ?? key;
   if (vars) s = s.replace(/\{(\w+)\}/g, (_, k) => (vars[k] ?? ""));
   return s;
+}
+
+/** Both languages' text for a key (search matches either, whatever the UI language). */
+export const tBoth = (key) => [DICT.zh[key], DICT.en[key]].filter(Boolean);
+
+/** Every name a school goes by (short and full, zh and en), for search. */
+export function schoolAliases(code) {
+  const e = SCHOOLS[code];
+  return e ? [code, ...e.zh, ...e.en] : [code];
 }
 
 export function schoolName(code, full = false) {

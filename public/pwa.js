@@ -169,17 +169,30 @@
     if (cs.visibility === 'hidden' || cs.display === 'none' || Number(cs.opacity) === 0) return null;
     return r;
   }
-  /* Distance from the bottom of the viewport that floating UI has to clear. */
-  function floorPx() {
+  /* A bar docked to the screen: pinned itself (the phone's 使用優惠 bar), or sitting on the
+     bottom edge inside a pinned panel (the desktop detail's footer). Not one in the flow of a
+     panel that scrolls, which is wherever the reader scrolled it. */
+  function docked(el, r, H) {
+    var pos = getComputedStyle(el).position;
+    if (pos !== 'static' && pos !== 'relative') return true;
+    if (r.bottom < H - 2) return false;
+    for (var a = el.parentElement; a && a !== document.body; a = a.parentElement) {
+      var p = getComputedStyle(a).position;
+      if (p === 'fixed' || p === 'sticky') return true;
+    }
+    return false;
+  }
+  /* Distance from the bottom of the viewport that floating UI spanning [left, right] has to
+     clear: the tab bar, and any docked bar in the lower part of the screen under that span (on a
+     desktop the bar may be a strip at the top, or the footer of the side panel). */
+  function floorPx(left, right) {
     var H = window.innerHeight, W = window.innerWidth, floor = navPx();
     var bars = document.querySelectorAll(BARS);
     for (var i = 0; i < bars.length; i++) {
       var r = shown(bars[i]);
-      // Only a bar pinned to the screen (not one in the flow of a desktop panel, which scrolls),
-      // on screen, in the lower part of it (on a desktop the bar may be a strip at the top).
       if (!r || r.top < H * 0.4 || r.top >= H || r.right <= 0 || r.left >= W) continue;
-      var pos = getComputedStyle(bars[i]).position;
-      if (pos === 'static' || pos === 'relative') continue;
+      if (r.right <= left || r.left >= right) continue;
+      if (!docked(bars[i], r, H)) continue;
       floor = Math.max(floor, H - r.top);
     }
     return floor;
@@ -211,7 +224,9 @@
     var card = document.getElementById('cpInstall');
     var toast = document.querySelector('.cp-update');
     if (!card && !toast) { if (lastFloor > 0) publish(0, []); return; }
-    var y = floorPx() + GAP, top = 0, what = [];
+    // The horizontal span the stack covers: the card's when it is up (the widest), else the toast's.
+    var span = cardUp(card) ? card.getBoundingClientRect() : (toast ? toast.getBoundingClientRect() : null);
+    var y = floorPx(span ? span.left : 0, span && span.width ? span.right : window.innerWidth) + GAP, top = 0, what = [];
     if (card) {
       card.style.bottom = y + 'px';
       if (cardUp(card)) { y += card.offsetHeight + STACK; top = y; what.push('card'); }

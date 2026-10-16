@@ -4,9 +4,9 @@
    confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
    Workers SPA fallback. */
 import { icon } from "./js/icons.js?v=9";
-import { t, getLang, setLang, applyLang, schoolName } from "./js/i18n.js?v=9";
+import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases } from "./js/i18n.js?v=9";
 import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=9";
-import { toast, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=9";
+import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=9";
 import { qrSVG } from "./js/qr.js?v=9";
 
 /* ---------- constants ---------- */
@@ -16,7 +16,30 @@ const CAT_ICON = {
   food: "utensils", lodging: "bed-double", transport: "bus", shopping: "shopping-bag",
   services: "wrench", entertainment: "ticket", health: "heart-pulse", education: "graduation-cap",
 };
+// The default order of 全部: by category in this order (so food comes first, not the source
+// sheet's 39 hotels), then the source's own sort_order within each category.
+const CAT_ORDER = ["food", "shopping", "services", "entertainment", "health", "education", "transport", "lodging"];
+const catWeight = (c) => (CAT_ORDER.includes(c) ? CAT_ORDER.indexOf(c) : CAT_ORDER.length);
+// A few English words students type that are not the category's own label.
+const CAT_WORDS = { lodging: ["hotel", "accommodation"], food: ["restaurant", "dining"] };
 const REGIONS = ["north", "central", "south", "east"];
+// City or county (as it starts a deal's `area`, after norm(): 臺 → 台) → its English name, so
+// "Tainan" finds 臺南市 deals.
+const CITY_EN = [
+  ["台北", "taipei"], ["新北", "new taipei"], ["台中", "taichung"], ["台南", "tainan"], ["高雄", "kaohsiung"],
+  ["新竹", "hsinchu"], ["桃園", "taoyuan"], ["基隆", "keelung"], ["宜蘭", "yilan"], ["花蓮", "hualien"],
+  ["台東", "taitung"], ["南投", "nantou"], ["苗栗", "miaoli"], ["彰化", "changhua"], ["雲林", "yunlin"],
+  ["嘉義", "chiayi"], ["屏東", "pingtung"], ["澎湖", "penghu"], ["金門", "kinmen"],
+];
+// 九折 ≡ 9折, 九五折 ≡ 95折: the sheets use both.
+const ZH_DIGIT = { "〇": "0", "零": "0", "一": "1", "二": "2", "兩": "2", "三": "3", "四": "4", "五": "5", "六": "6", "七": "7", "八": "8", "九": "9" };
+const searchNorm = (s) => norm(s).replace(/([〇零一二兩三四五六七八九]{1,2})折/g, (_, n) => `${[...n].map((c) => ZH_DIGIT[c]).join("")}折`);
+// Deal content (names, offers, sources) is Chinese whatever the UI language: marked so a
+// screen reader in English mode reads it with a Chinese voice (WCAG 3.1.2).
+const ZH = ' lang="zh-Hant-TW"';
+const zh = (s) => `<span${ZH}>${esc(s)}</span>`;
+// The generic badges have an English name; any other badge is deal content.
+const GENERIC_BADGE = { "專屬優惠價": "badge.partnerRate", "特約優惠": "badge.partnerDeal" };
 const ELIG = ["student", "staff", "alumni", "family"];
 const THEME_KEY = "cp_theme";
 const PENDING_FAV = "cp_pending_fav";
@@ -107,8 +130,28 @@ function regionsLabel(regions) {
 
 const catLabel = (c) => t(`cat.${c}`);
 
-function metaLine(d) {
-  return [catLabel(d.category), regionsLabel(d.regions), d.source_org].filter(Boolean).join(" · ");
+/** 美食 · 臺北市大安區 · 臺大財務管理處: the area when known (more useful than 北部), else the regions. */
+function metaHTML(d) {
+  const where = d.area ? zh(d.area) : esc(regionsLabel(d.regions));
+  return [esc(catLabel(d.category)), where, d.source_org ? zh(d.source_org) : ""].filter(Boolean).join(" · ");
+}
+
+/** The deal's badge: the generic ones in the UI language, anything else as written (Chinese). */
+function badgeHTML(text) {
+  if (!text) return "";
+  const key = GENERIC_BADGE[text];
+  return key && getLang() === "en" ? `<span class="badge">${esc(t(key))}</span>` : `<span class="badge"${ZH}>${esc(text)}</span>`;
+}
+
+/** What search looks in: the deal's own text, plus the names of its category, regions, schools
+ *  and city in both languages, so "hotel", "Tainan", "NTU" or 大安 all find it. */
+function searchHay(d) {
+  const area = norm(d.area || "");
+  const parts = [d.name, d.subtitle, d.highlight, d.source_org, d.area, ...tBoth(`cat.${d.category}`), ...(CAT_WORDS[d.category] || [])];
+  for (const r of d.regions) parts.push(...tBoth(`region.${r}`));
+  for (const sc of d.schools) parts.push(...schoolAliases(sc));
+  for (const [city, en] of CITY_EN) if (area.startsWith(city)) parts.push(en);
+  return searchNorm(parts.filter(Boolean).join(" "));
 }
 
 function prepare(deals) {
@@ -116,9 +159,9 @@ function prepare(deals) {
     d.regions ||= [];
     d.schools ||= [];
     d.eligibility ||= {};
-    d._hay = norm([d.name, d.subtitle, d.highlight, d.source_org].join(" "));
+    d._hay = searchHay(d);
   }
-  return deals.sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0));
+  return deals.sort((a, b) => catWeight(a.category) - catWeight(b.category) || (a.sort_order ?? 0) - (b.sort_order ?? 0));
 }
 
 /* ---------- API ---------- */
@@ -182,6 +225,8 @@ function recover() {
   const r = state.route;
   if (r.name === "shop" && shop.status === "error") loadShop(r.key);
   if (r.name === "scan" && scan.status === "error") loadScan(r.code);
+  // Kept copies shown while offline give way to the live deal.
+  for (const [id, c] of state.detail) if (c.offline) state.detail.delete(id);
   if (r.name === "deal" && !state.detail.has(r.id) && state.detailMissing !== r.id) renderDetail(r.id);
 }
 
@@ -220,6 +265,87 @@ function cachedMe() {
   }
 }
 
+/* ---------- saved deals, readable offline ----------
+   The signed-in reader's saved deals in full (as /api/deals/:id returned them), kept in this
+   browser's localStorage so /saved and those deals' terms, address and phone still read offline
+   (a student underground showing the cashier the terms). One account at a time: wiped on
+   sign-out, account deletion and when another account signs in. Never in the service worker's
+   cache, which every account on the device shares. Filled when a saved deal is opened or saved. */
+const SAVED_CACHE = "cp_saved_cache";
+let savedCache = readSavedCache(); // { email, at, order: [id], deals: { id: deal } } | null
+
+function readSavedCache() {
+  try {
+    const c = JSON.parse(storage.get(SAVED_CACHE) || "null");
+    if (!c || typeof c.email !== "string" || !c.email || !c.deals || typeof c.deals !== "object") return null;
+    const order = Array.isArray(c.order) ? c.order.filter((x) => typeof x === "string") : Object.keys(c.deals);
+    return { email: c.email, at: +c.at || 0, order, deals: c.deals };
+  } catch {
+    return null;
+  }
+}
+
+function writeSavedCache() {
+  storage.set(SAVED_CACHE, savedCache ? JSON.stringify(savedCache) : null);
+}
+
+function wipeSavedCache() {
+  savedCache = null;
+  storage.set(SAVED_CACHE, null);
+}
+
+/** This account's copy: a fresh one when there is none, or it belongs to another account. */
+function cacheFor(email) {
+  if (!email) return null;
+  if (savedCache?.email !== email) savedCache = { email, at: 0, order: [], deals: {} };
+  return savedCache;
+}
+
+/** The kept copy of a saved deal, only for the account it was kept for. */
+function cachedDeal(id) {
+  const c = savedCache;
+  const d = c && state.user && c.email === state.user.email ? c.deals[id] : null;
+  if (!d || typeof d !== "object" || d.id !== id) return null;
+  if (!d._hay) prepare([d]);
+  return d;
+}
+
+/** Bring the copy in line with the saved list the server just gave (or a star just synced). */
+function syncSavedCache() {
+  const c = cacheFor(state.user?.email);
+  if (!c) return;
+  c.order = state.favOrder.slice();
+  for (const id of Object.keys(c.deals)) if (!state.favs.has(id)) delete c.deals[id];
+  c.at = Date.now();
+  writeSavedCache();
+}
+
+/** Keep a saved deal's full detail (opened, or just saved). The search index is not stored. */
+function keepSaved(deal) {
+  const c = cacheFor(state.user?.email);
+  if (!c || !deal?.id || !state.favs.has(deal.id)) return;
+  const { _hay, ...plain } = deal;
+  c.deals[deal.id] = plain;
+  c.at = Date.now();
+  writeSavedCache();
+}
+
+/** Just saved from a list row: fetch the full deal once, so it reads offline too. */
+async function fetchForSaved(id) {
+  const open = state.detail.get(id);
+  if (open && !open.locked && !open.offline) return keepSaved(open.deal);
+  const email = state.user?.email;
+  const r = await api("GET", `/api/deals/${encodeURIComponent(id)}`);
+  if (r.ok && r.data?.deal && !r.data.locked && state.user?.email === email) keepSaved(r.data.deal);
+}
+
+/** 「離線顯示，上次更新 10/16 08:05」 (Taipei time). */
+const TPE_STAMP = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Taipei", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
+function offlineNoteHTML(at) {
+  const p = Object.fromEntries(TPE_STAMP.formatToParts(at || Date.now()).map((x) => [x.type, x.value]));
+  return `<div class="note offnote" role="note">${icon("wifi-off")}<span>${esc(t("offline.copy", { d: `${p.month}/${p.day} ${p.hour}:${p.minute}` }))}</span></div>`;
+}
+
 let meSeq = 0;
 let meLoadedAt = 0;
 
@@ -239,11 +365,18 @@ async function loadMe() {
     state.favOrder = order;
     state.favs = new Set(order);
     state.meStatus = "ready";
+    if (state.user) syncSavedCache();
+    else wipeSavedCache(); // signed out (here or in another tab): the copy goes with the account
   } else {
     // Offline or a server error is not "signed out": keep the user we knew (this page's, else
     // the cached copy) and say what happened instead of asking them to sign in again.
     if (!state.user) state.user = cachedMe();
     state.meStatus = "error";
+    // Never loaded on this page: the saved list as last kept, so the stars and 收藏 still show.
+    if (!meLoadedAt && state.user && savedCache?.email === state.user.email && !state.favOrder.length) {
+      state.favOrder = savedCache.order.slice();
+      state.favs = new Set(state.favOrder);
+    }
   }
   // Signed in or out in another tab since the last check: details cached for the other state go.
   const switched = refresh && state.meStatus === "ready" && before !== (state.user?.email || null);
@@ -287,12 +420,13 @@ function refreshMeIfStale() {
 /* ---------- filtering ---------- */
 
 function queryTerms() {
-  return norm(state.filters.q).split(/\s+/).filter(Boolean);
+  return searchNorm(state.filters.q).split(/\s+/).filter(Boolean);
 }
 
+/** skip: a facet to leave out (its own counts), or "expiry" (what the filters hide by date alone). */
 function matches(d, terms, skip = "") {
   const f = state.filters;
-  if (isExpired(d)) return false;
+  if (skip !== "expiry" && isExpired(d)) return false;
   if (f.students && !d.eligibility.student) return false;
   if (skip !== "cat" && f.cat !== "all" && d.category !== f.cat) return false;
   if (skip !== "region" && f.region !== "all" && !d.regions.includes(f.region)) return false;
@@ -313,9 +447,10 @@ function facetCounts(facet, keyOf) {
   return { all, counts };
 }
 
+/** The school is the reader's context (remembered), not a filter: Reset keeps it. */
 const filtersActive = () => {
   const f = state.filters;
-  return f.q.trim() !== "" || f.cat !== "all" || f.region !== "all" || f.school !== DEFAULT_SCHOOL || !f.students;
+  return f.q.trim() !== "" || f.cat !== "all" || f.region !== "all" || !f.students;
 };
 
 /* ---------- rows ---------- */
@@ -326,7 +461,7 @@ const rowCache = new Map();
 // a row only warns when students can't use the deal.
 function badgesHTML(d) {
   const warn = d.eligibility.student ? "" : `<span class="mini warn">${esc(t("elig.noStudent"))}</span>`;
-  return `${d.highlight ? `<span class="badge">${esc(d.highlight)}</span>` : ""}${expiryChip(d)}${warn}`;
+  return `${badgeHTML(d.highlight)}${expiryChip(d)}${warn}`;
 }
 
 function starHTML(d) {
@@ -345,9 +480,9 @@ function rowEl(d) {
   li.innerHTML = `<a class="pick" href="/deal/${encodeURIComponent(d.id)}" data-deal="${esc(d.id)}">
     <span class="cattile" aria-hidden="true">${icon(CAT_ICON[d.category] || "ticket")}</span>
     <span class="itxt">
-      <span class="nm">${esc(d.name)}</span>
-      ${d.subtitle ? `<span class="sub">${esc(d.subtitle)}</span>` : ""}
-      <span class="meta">${esc(metaLine(d))}</span>
+      <span class="nm"${ZH}>${esc(d.name)}</span>
+      ${d.subtitle ? `<span class="sub"${ZH}>${esc(d.subtitle)}</span>` : ""}
+      <span class="meta">${metaHTML(d)}</span>
       <span class="badges">${badgesHTML(d)}</span>
     </span></a>${starHTML(d)}`;
   rowCache.set(d.id, li);
@@ -452,8 +587,12 @@ function renderExplore() {
   const catCounts = facetCounts("cat", (d) => [d.category]);
   for (const b of els.cats.querySelectorAll("[data-cat]")) {
     const c = b.dataset.cat;
+    const n = c === "all" ? catCounts.all : catCounts.counts.get(c) || 0;
     b.setAttribute("aria-pressed", String(f.cat === c));
-    b.querySelector(".n").textContent = c === "all" ? catCounts.all : catCounts.counts.get(c) || 0;
+    b.querySelector(".n").textContent = n;
+    // Nothing to show there (with this search and these filters): not a dead end to tap into.
+    // The chosen pill stays enabled, so focus and the way back are never lost.
+    b.disabled = c !== "all" && !n && f.cat !== c;
   }
   const stu = els.filterRow.querySelector('[data-toggle="students"]');
   if (stu) {
@@ -497,7 +636,8 @@ function renderExplore() {
   }
   markSelected();
 
-  const expired = state.deals.filter(isExpired).length;
+  // Only what these filters and this search hide because of its date, not the whole dataset.
+  const expired = state.deals.filter((d) => isExpired(d) && matches(d, terms, "expiry")).length;
   els.exploreFoot.innerHTML = `${expired ? `<p>${esc(t("list.expiredHidden", { n: expired }))}</p>` : ""}<p>${esc(t("disclaimer"))}</p>
     <p>${merchantsLinkHTML()}</p>`;
 }
@@ -616,13 +756,21 @@ function openPicker(kind, anchor) {
     : [...new Set(state.deals.flatMap((d) => d.schools))]
         .filter((v) => v === cur || schoolName(v, true) !== v)
         .sort((a, b) => schoolName(a, true).localeCompare(schoolName(b, true), getLang() === "en" ? "en" : "zh-Hant"));
-  const label = (v) => (v === "all" ? t(isRegion ? "filter.regionAll" : "filter.schoolAll") : isRegion ? t(`region.${v}`) : schoolName(v, true));
+  // A school shows its short name (the one on the filter pill) with the full name below it, so a
+  // long English name never pushes the count off a phone screen.
+  const label = (v) => {
+    if (v === "all") return `<span>${esc(t(isRegion ? "filter.regionAll" : "filter.schoolAll"))}</span>`;
+    if (isRegion) return `<span>${esc(t(`region.${v}`))}</span>`;
+    const short = schoolName(v);
+    const full = schoolName(v, true);
+    return `<span class="optlbl">${esc(short)}${full !== short ? `<small>${esc(full)}</small>` : ""}</span>`;
+  };
   const opts = ["all", ...values]
     .map(
       (v) =>
         `<li role="none"><button class="opt" type="button" role="radio" data-value="${esc(v)}" aria-checked="${v === cur}" tabindex="${v === cur ? 0 : -1}">${icon(
           "check"
-        )}<span>${esc(label(v))}</span><span class="n">${v === "all" ? all : counts.get(v) || 0}</span></button></li>`
+        )}${label(v)}<span class="n">${v === "all" ? all : counts.get(v) || 0}</span></button></li>`
     )
     .join("");
   const title = t(isRegion ? "filter.region" : "filter.school");
@@ -658,9 +806,9 @@ function openPicker(kind, anchor) {
   });
 }
 
+/** Clears the search and the filters; the chosen school stays (it is the reader's own context). */
 function resetFilters() {
-  Object.assign(state.filters, { q: "", cat: "all", region: "all", school: DEFAULT_SCHOOL, students: true });
-  storage.set(SCHOOL_KEY, null);
+  Object.assign(state.filters, { q: "", cat: "all", region: "all", students: true });
   els.q.value = "";
   els.qclear.hidden = true;
   renderExplore();
@@ -673,15 +821,22 @@ function updatePillMask() {
   w.classList.toggle("more-r", p.scrollLeft + p.clientWidth < p.scrollWidth - 2);
 }
 
+/** Desktop ‹ ›: a mouse can reach the pills cut off at either masked edge (bizmap's pill arrows). */
+function scrollPills(dir) {
+  els.cats.scrollBy({ left: dir * els.cats.clientWidth * 0.8, behavior: reducedMotion() ? "auto" : "smooth" });
+}
+
 /* ---------- Saved ---------- */
 
 function renderSaved() {
   const body = els.savedBody;
-  if (state.meStatus === "loading" || (state.user && state.dealsStatus === "loading")) {
+  // The account couldn't be loaded on this page, but this browser kept its saved deals: show those.
+  const offline = state.meStatus === "error" && !meLoadedAt && !!state.user && savedCache?.email === state.user.email;
+  if (state.meStatus === "loading" || (state.user && state.dealsStatus === "loading" && !offline)) {
     body.innerHTML = `<ul class="list" aria-busy="true">${skeletonRows(4)}</ul>`;
     return;
   }
-  if (state.meStatus === "error" && !meLoadedAt) {
+  if (state.meStatus === "error" && !meLoadedAt && !offline) {
     // Never loaded the account on this page (offline, or the server failed): no sign-in prompt.
     body.innerHTML = meErrorHTML(state.user ? "saved" : "me");
     return;
@@ -691,13 +846,14 @@ function renderSaved() {
       ic: "star",
       title: t("saved.signedOutTitle"),
       body: t("saved.signedOutBody"),
-      action: `${googleButton()}<p class="dlg-fine" style="max-width:340px">${esc(t("privacy.note"))}</p>`,
+      action: `${googleButton()}<p class="dlg-fine narrow">${esc(t("privacy.note"))}</p>`,
     });
     return;
   }
-  const deals = state.favOrder.map((id) => state.byId.get(id)).filter(Boolean);
+  const deals = state.favOrder.map((id) => state.byId.get(id) || cachedDeal(id)).filter(Boolean);
+  const note = offline ? offlineNoteHTML(savedCache.at) : "";
   if (!deals.length) {
-    body.innerHTML = emptyHTML({
+    body.innerHTML = note + emptyHTML({
       ic: "star",
       title: t("saved.emptyTitle"),
       body: t("saved.emptyBody"),
@@ -705,11 +861,24 @@ function renderSaved() {
     });
     return;
   }
-  const ul = document.createElement("ul");
-  ul.className = "list";
-  ul.setAttribute("aria-labelledby", "savedTitle");
-  ul.append(...deals.map(savedRowEl));
-  body.replaceChildren(ul);
+  // Usable deals first; expired ones stay (as the lede promises), grouped at the bottom.
+  const live = deals.filter((d) => !isExpired(d));
+  const gone = deals.filter(isExpired);
+  const list = (rows, label) => {
+    const ul = document.createElement("ul");
+    ul.className = "list";
+    ul.setAttribute("aria-labelledby", label || "savedTitle");
+    ul.append(...rows.map(savedRowEl));
+    return ul;
+  };
+  const parts = [];
+  if (note) parts.push(Object.assign(document.createElement("div"), { innerHTML: note }).firstElementChild);
+  if (live.length) parts.push(list(live));
+  if (gone.length) {
+    parts.push(Object.assign(document.createElement("h2"), { className: "listhead", id: "savedExpiredHead", textContent: t("saved.expiredHead") }));
+    parts.push(list(gone, "savedExpiredHead"));
+  }
+  body.replaceChildren(...parts);
   syncStars();
   markSelected();
 }
@@ -765,7 +934,7 @@ function renderMe() {
   const u = state.user;
   const stale = state.meStatus === "error";
   let account;
-  if (state.meStatus === "loading") account = `<section class="card"><div class="dskel"><i style="width:40%"></i><i style="width:70%"></i></div></section>`;
+  if (state.meStatus === "loading") account = `<section class="card"><div class="dskel"><i class="w40"></i><i class="w70"></i></div></section>`;
   else if (u)
     account = `<section class="card" aria-label="${esc(t("account.settings"))}"><div class="profile">${avatarHTML(u, "lg")}
       <div class="who"><b>${esc(u.name || u.email)}</b><span>${esc(u.email)}</span></div>
@@ -788,7 +957,7 @@ function renderMe() {
   for (const d of state.deals) sources.set(d.source_org, (sources.get(d.source_org) || 0) + 1);
   const srcList = [...sources]
     .sort((a, b) => b[1] - a[1])
-    .map(([org, n]) => `<li><span>${esc(org)}</span><span>${esc(t("count", { n }))}</span></li>`)
+    .map(([org, n]) => `<li><span${ZH}>${esc(org)}</span><span>${esc(t("count", { n }))}</span></li>`)
     .join("");
 
   els.meBody.innerHTML = `${account}
@@ -803,8 +972,8 @@ function renderMe() {
     <section class="card"><h2>${esc(t("me.about"))}</h2>
       <p>${esc(t("me.aboutBody"))}</p>
       <p class="disclaimer">${esc(t("disclaimer"))}</p>
-      ${srcList ? `<h2 style="margin-top:16px">${esc(t("me.sources"))}</h2><ul class="srclist">${srcList}</ul>` : ""}
-      <p class="fine" style="margin-top:12px">${esc(t("me.contact"))}</p>
+      ${srcList ? `<h2 class="srclist-head">${esc(t("me.sources"))}</h2><ul class="srclist">${srcList}</ul>` : ""}
+      <p class="fine contactline">${esc(t("me.contact"))}</p>
     </section>
     <section class="card"><h2>${esc(t("me.privacy"))}</h2><p>${esc(t("privacy.note"))}</p>
       ${u && !stale ? `<div class="setrow"><span>${esc(t("me.deleteHint"))}</span><button class="btn btn-outline btn-sm btn-danger" type="button" data-delete-account>${esc(t("me.delete"))}</button></div>` : ""}</section>
@@ -885,6 +1054,7 @@ function becomeSignedOut() {
   state.user = null;
   state.meStatus = "ready";
   cacheMe(null);
+  wipeSavedCache();
   state.favs = new Set();
   state.favOrder = [];
   state.detail.clear();
@@ -976,6 +1146,8 @@ async function syncFav(id, want) {
   favSync.delete(id);
   if (!r || r.ok) {
     if (r) toast(t(f.server ? "toast.saved" : "toast.unsaved"));
+    syncSavedCache();
+    if (f.server) fetchForSaved(id);
     return;
   }
   setFav(id, f.server); // back to what the server has
@@ -992,7 +1164,7 @@ function renderDetailHead() {
   const on = state.favs.has(id);
   els.dhead.innerHTML = `
     <button class="iconbtn" type="button" data-close-detail aria-label="${esc(t(phone ? "detail.back" : "detail.close"))}">${icon("chevron-left", "back-ic")}${icon("x", "close-ic")}</button>
-    <p class="dhead-title" aria-hidden="true">${esc(d?.name || "")}</p>
+    <p class="dhead-title" aria-hidden="true"${ZH}>${esc(d?.name || "")}</p>
     ${d ? `<button class="iconbtn" type="button" data-share aria-label="${esc(t("detail.share"))}">${icon("share")}</button>
     <button class="iconbtn${on ? " saved" : ""}" type="button" data-star="${esc(id)}" aria-pressed="${on}" aria-label="${esc(t(on ? "row.unsave" : "row.save"))}">${icon("star")}</button>` : ""}`;
   renderUseBar();
@@ -1003,7 +1175,8 @@ function renderDetailHead() {
  *  with the reason. */
 function renderUseBar() {
   const c = state.route.name === "deal" ? state.detail.get(state.route.id) : null;
-  const show = !!(state.user && c && !c.locked);
+  // Not on a kept offline copy: a pass needs the server.
+  const show = !!(state.user && c && !c.locked && !c.offline);
   els.detail.classList.toggle("has-use", show);
   els.detailUse.hidden = !show;
   if (!show) {
@@ -1041,17 +1214,17 @@ function phoneRows(phone) {
     .filter(Boolean)
     .map((p) => {
       const href = telHref(p);
-      const inner = `${icon("phone")}<span class="rtxt"><b>${esc(p)}</b><small>${esc(t("detail.phone"))}</small></span>`;
+      const inner = `${icon("phone")}<span class="rtxt"><b${ZH}>${esc(p)}</b><small>${esc(t("detail.phone"))}</small></span>`;
       return href ? `<a class="row" href="${esc(href)}">${inner}</a>` : `<div class="row">${inner}</div>`;
     })
     .join("");
 }
 
-function detailHTML(d, { locked, loading, error }) {
+function detailHTML(d, { locked, loading, error, offlineAt }) {
   const exp = expiry(d);
   const schools = d.schools.map((s) => schoolName(s, true)).join(getLang() === "en" ? ", " : "、");
   let content = "";
-  if (loading) content = `<div class="dsec"><div class="dskel"><i style="width:30%"></i><i></i><i style="width:85%"></i><i style="width:60%"></i></div></div>`;
+  if (loading) content = `<div class="dsec"><div class="dskel"><i class="w30"></i><i></i><i class="w85"></i><i class="w60"></i></div></div>`;
   else if (error)
     content = `<div class="note">${icon("circle-alert")}<span>${esc(error === true ? t("detail.loadFailed") : error)}</span></div>
       <p><button class="btn btn-outline btn-sm" type="button" data-retry-detail>${esc(t("retry"))}</button></p>`;
@@ -1059,14 +1232,14 @@ function detailHTML(d, { locked, loading, error }) {
     content = `<section class="lockcard" aria-labelledby="lockTitle">
       <span class="lic">${icon("lock")}</span>
       <h3 id="lockTitle">${esc(t("lock.title"))}</h3>
-      <p>${esc(t("lock.body"))}</p>
+      <p>${esc(t(d.category === "lodging" ? "lock.bodyLodging" : "lock.body"))}</p>
       ${googleButton()}
       <p class="fine">${esc(t("privacy.note"))}</p></section>`;
   else {
     const contact = [
       d.phone ? phoneRows(d.phone) : "",
       d.address
-        ? `<a class="row" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(d.address)}" target="_blank" rel="noopener noreferrer">${icon("map-pin")}<span class="rtxt"><b>${esc(d.address)}</b><small>${esc(t("detail.openMap"))}</small></span>${icon("external-link", "go")}</a>`
+        ? `<a class="row" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(d.address)}" target="_blank" rel="noopener noreferrer">${icon("map-pin")}<span class="rtxt"><b${ZH}>${esc(d.address)}</b><small>${esc(t("detail.openMap"))}</small></span>${icon("external-link", "go")}</a>`
         : "",
     ].join("");
     const linkList = (Array.isArray(d.links) ? d.links : [])
@@ -1089,15 +1262,15 @@ function detailHTML(d, { locked, loading, error }) {
       })
       .join("");
     content = `
-      ${d.offer ? `<section class="dsec"><h3>${esc(t("detail.offer"))}</h3><p class="prose">${linkify(d.offer)}</p></section>` : ""}
+      ${d.offer ? `<section class="dsec"><h3>${esc(t("detail.offer"))}</h3><p class="prose"${ZH}>${linkify(d.offer)}</p></section>` : ""}
       ${contact ? `<section class="dsec"><h3>${esc(t("detail.contact"))}</h3><div class="rows">${contact}</div></section>` : ""}
       ${links ? `<section class="dsec"><h3>${esc(t("detail.links"))}</h3><div class="rows">${links}</div></section>` : ""}
-      ${d.notes ? `<section class="dsec"><h3>${esc(t("detail.notes"))}</h3><p class="prose">${linkify(d.notes)}</p></section>` : ""}
-      ${d.info ? `<details class="info"><summary>${esc(t("detail.info"))}${icon("chevron-down")}</summary><p class="prose">${linkify(d.info)}</p></details>` : ""}`;
+      ${d.notes ? `<section class="dsec"><h3>${esc(t("detail.notes"))}</h3><p class="prose"${ZH}>${linkify(d.notes)}</p></section>` : ""}
+      ${d.info ? `<details class="info"><summary>${esc(t("detail.info"))}${icon("chevron-down")}</summary><p class="prose"${ZH}>${linkify(d.info)}</p></details>` : ""}`;
   }
   const srcUrl = safeUrl(d.source_url || "");
   const source = `<section class="dsec"><h3>${esc(t("detail.source"))}</h3><div class="srccard">
-      <b>${esc(d.source_org || "")}</b>
+      <b${ZH}>${esc(d.source_org || "")}</b>
       ${d.source_level ? `<span>${esc(t("detail.sourceLevel", { l: t(`level.${d.source_level}`) }))}</span>` : ""}
       ${srcUrl ? `<a href="${esc(srcUrl)}" target="_blank" rel="noopener noreferrer">${esc(t("detail.sourceLink"))}${icon("external-link")}</a>` : ""}
       ${d.retrieved_on ? `<span class="when">${esc(t("detail.retrieved", { d: fmtDate(d.retrieved_on) }))}</span>` : ""}
@@ -1109,15 +1282,17 @@ function detailHTML(d, { locked, loading, error }) {
       : "";
   return `
     <div class="dhero">
-      <div class="eyebrow">${icon(CAT_ICON[d.category] || "ticket")}<span>${esc([catLabel(d.category), regionsLabel(d.regions)].filter(Boolean).join(" · "))}</span></div>
-      <h2 class="dname" id="detailName" tabindex="-1">${esc(d.name)}</h2>
-      ${d.subtitle ? `<p class="dsub">${esc(d.subtitle)}</p>` : ""}
-      <div class="badges">${d.highlight ? `<span class="badge">${esc(d.highlight)}</span>` : ""}${expiryChip(d)}</div>
+      <div class="eyebrow">${icon(CAT_ICON[d.category] || "ticket")}<span>${[esc(catLabel(d.category)), d.area ? zh(d.area) : esc(regionsLabel(d.regions))].filter(Boolean).join(" · ")}</span></div>
+      <h2 class="dname" id="detailName" tabindex="-1"${ZH}>${esc(d.name)}</h2>
+      ${d.subtitle ? `<p class="dsub"${ZH}>${esc(d.subtitle)}</p>` : ""}
+      <div class="badges">${badgeHTML(d.highlight)}${expiryChip(d)}</div>
     </div>
+    ${offlineAt ? offlineNoteHTML(offlineAt) : ""}
     ${exp?.kind === "expired" ? `<div class="note">${icon("triangle-alert")}<span>${esc(t("detail.expiredNote"))}</span></div>` : ""}
     <section class="dsec"><h3>${esc(t("detail.eligibility"))}</h3>${eligHTML(d)}</section>
     <section class="dsec"><dl class="facts">
       <dt>${esc(t("detail.validity"))}</dt><dd>${esc(expiryLong(d))}</dd>
+      ${d.area ? `<dt>${esc(t("detail.area"))}</dt><dd${ZH}>${esc(d.area)}</dd>` : ""}
       ${d.regions.length ? `<dt>${esc(t("detail.regions"))}</dt><dd>${esc(regionsLabel(d.regions))}</dd>` : ""}
       ${schools ? `<dt>${esc(t("detail.schools"))}</dt><dd>${esc(schools)}</dd>` : ""}
     </dl></section>
@@ -1127,17 +1302,33 @@ function detailHTML(d, { locked, loading, error }) {
     <p class="dfine">${esc(t("detail.verify"))}<br>${esc(t("disclaimer"))}</p>`;
 }
 
+/** The detail body, with the 使用優惠 bar placed right after the deal's heading (DOM and tab
+ *  order: the name, then its one action; a phone still pins the bar to the bottom). */
+function setDetailBody(html) {
+  els.detailBody.innerHTML = html;
+  const hero = els.detailBody.querySelector(".dhero");
+  if (hero) hero.after(els.detailUse);
+  else els.detailBody.append(els.detailUse);
+}
+
+const detailFor = (c) => detailHTML(c.deal, { locked: c.locked, offlineAt: c.offline });
+
 async function renderDetail(id, { focus = false } = {}) {
   const seq = ++state.detailSeq;
   if (state.detailMissing === id) state.detailMissing = null;
   const cached = state.detail.get(id);
   const base = cached?.deal || state.byId.get(id);
+  // A saved deal this browser kept: shown in full at once (no skeleton), refreshed below.
+  const kept = cached ? null : cachedDeal(id);
   if (cached) {
-    els.detailBody.innerHTML = detailHTML(prepare([cached.deal])[0], { locked: cached.locked });
+    prepare([cached.deal]);
+    setDetailBody(detailFor(cached));
+  } else if (kept) {
+    setDetailBody(detailHTML(kept, {}));
   } else if (base) {
-    els.detailBody.innerHTML = detailHTML(base, { loading: true });
+    setDetailBody(detailHTML(base, { loading: true }));
   } else {
-    els.detailBody.innerHTML = `<div class="dskel" style="padding-top:20px"><i style="width:30%"></i><i style="width:70%;height:22px"></i><i></i><i style="width:80%"></i></div>`;
+    setDetailBody(`<div class="dskel hero"><i class="w30"></i><i class="w70 tall"></i><i></i><i class="w80"></i></div>`);
   }
   renderDetailHead();
   if (focus) focusDetail();
@@ -1145,32 +1336,43 @@ async function renderDetail(id, { focus = false } = {}) {
 
   const r = await api("GET", `/api/deals/${encodeURIComponent(id)}`);
   if (seq !== state.detailSeq || state.route.id !== id) return;
+  const again = focus && els.detailBody.contains(document.activeElement);
   if (r.ok && r.data?.deal) {
     const deal = prepare([r.data.deal])[0];
     state.detail.set(id, { deal, locked: !!r.data.locked });
-    els.detailBody.innerHTML = detailHTML(deal, { locked: !!r.data.locked });
+    if (!r.data.locked) keepSaved(deal);
+    setDetailBody(detailHTML(deal, { locked: !!r.data.locked }));
     setTitle();
   } else if (r.status === 404) {
     state.detailMissing = id;
-    els.detailBody.innerHTML = emptyHTML({
-      ic: "search-x",
-      title: t("detail.notFound"),
-      body: t("detail.notFoundHint"),
-      action: `<a class="btn btn-outline btn-sm" href="/" data-nav>${esc(t("detail.backToExplore"))}</a>`,
-    });
+    setDetailBody(
+      emptyHTML({
+        ic: "search-x",
+        title: t("detail.notFound"),
+        body: t("detail.notFoundHint"),
+        action: `<a class="btn btn-outline btn-sm" href="/" data-nav>${esc(t("detail.backToExplore"))}</a>`,
+      })
+    );
     setTitle();
+  } else if (kept) {
+    // Offline (or the server failed): the kept copy, saying how old it is.
+    const c = { deal: kept, locked: false, offline: savedCache?.at || Date.now() };
+    state.detail.set(id, c);
+    setDetailBody(detailFor(c));
   } else if (base) {
-    els.detailBody.innerHTML = detailHTML(base, { error: r.status === 0 ? errText(r) : true });
+    setDetailBody(detailHTML(base, { error: r.status === 0 ? errText(r) : true }));
   } else {
-    els.detailBody.innerHTML = emptyHTML({
-      ic: navigator.onLine ? "circle-alert" : "wifi-off",
-      title: r.status === 0 ? errText(r) : t("detail.loadFailed"),
-      action: `<button class="btn btn-outline btn-sm" type="button" data-retry-detail>${esc(t("retry"))}</button>`,
-    });
+    setDetailBody(
+      emptyHTML({
+        ic: navigator.onLine ? "circle-alert" : "wifi-off",
+        title: r.status === 0 ? errText(r) : t("detail.loadFailed"),
+        action: `<button class="btn btn-outline btn-sm" type="button" data-retry-detail>${esc(t("retry"))}</button>`,
+      })
+    );
   }
   renderDetailHead();
   syncStars();
-  if (focus) focusDetail();
+  if (focus || again) focusDetail();
 }
 
 function focusDetail() {
@@ -1299,7 +1501,7 @@ function dropSession({ fav = null, report = null } = {}) {
    so a screenshot is easy to tell apart. */
 
 const PASS_POLL_MS = 4000;
-const ASKED_KEY = "cp_outcome_asked"; // codes already asked 「優惠有用成功嗎？」 (ask once)
+const ASKED_KEY = "cp_outcome_asked"; // codes already asked 「這次優惠有成功使用嗎？」 (ask once)
 const TPE_TIME = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Taipei", hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h23" });
 const TPE_HM = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Taipei", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
 
@@ -1309,8 +1511,8 @@ let wakeLock = null;
 
 /** SQLite's datetime('now') is UTC "YYYY-MM-DD HH:MM:SS". */
 const utcMs = (s) => Date.parse(`${String(s).replace(" ", "T")}Z`);
-/** T97C5B → "T97C 5B": easier to read out and to type. */
-const groupCode = (c) => `${c.slice(0, 4)} ${c.slice(4)}`;
+/** T97C5B → "T97 C5B": easier to read out and to type (3+3, as six-character codes usually are). */
+const groupCode = (c) => `${c.slice(0, 3)} ${c.slice(3)}`;
 // Full-width letters from zhuyin IMEs (ＡＢＣ) are ABC, as on the server.
 const normCode = (v) => String(v).normalize("NFKC").toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 6);
 const nowMs = () => Date.now() + (pass?.skew || 0);
@@ -1382,8 +1584,8 @@ function passHTML() {
     <button class="iconbtn dlg-x" type="button" data-close aria-label="${esc(t("pass.close"))}">${icon("x")}</button>
     <div class="pass-head">
       <p class="pass-eyebrow">${MARK}<span>${esc(t("pass.title"))}</span></p>
-      <h2 id="passTitle" class="pass-name" tabindex="-1" autofocus>${esc(d.name)}</h2>
-      ${d.highlight ? `<span class="badge">${esc(d.highlight)}</span>` : ""}
+      <h2 id="passTitle" class="pass-name" tabindex="-1" autofocus${ZH}>${esc(d.name)}</h2>
+      ${badgeHTML(d.highlight)}
     </div>
     <div class="pass-stage" id="passStage"></div>
     <div class="pass-code"><span>${esc(t("pass.code"))}</span><b id="passCode" translate="no"></b></div>
@@ -1392,7 +1594,8 @@ function passHTML() {
       <div><dt>${esc(t("pass.left"))}</dt><dd class="num" id="passLeft"></dd></div>
     </dl>
     <p class="pass-who">${esc(maskEmail(state.user?.email))}</p>
-    <p class="pass-instr">${esc(t("pass.instr"))}</p>`;
+    <p class="pass-id" id="passId">${icon("id-card")}<span>${esc(t("pass.idToo"))}</span></p>
+    <p class="pass-instr" id="passInstr">${esc(t("pass.instr"))}</p>`;
 }
 
 function askButtonsHTML(code, dealId) {
@@ -1410,6 +1613,9 @@ function drawPass() {
   p.dlg.classList.toggle("is-confirmed", !!p.confirmedAt);
   p.dlg.classList.toggle("is-expired", p.expired && !p.confirmedAt);
   p.dlg.querySelector("#passCode").textContent = groupCode(p.code);
+  // Once the shop has confirmed, the "show this to the cashier" footer is done with.
+  p.dlg.querySelector("#passId").hidden = !!p.confirmedAt;
+  p.dlg.querySelector("#passInstr").textContent = t(p.confirmedAt ? "pass.doneInstr" : "pass.instr");
   if (p.confirmedAt) {
     stage.innerHTML = `<div class="pass-done" role="status"><span class="okmark">${icon("check")}</span><b>${esc(t("pass.confirmed"))}</b>
       <span class="when num">${esc(t("pass.confirmedAt", { t: TPE_HM.format(p.confirmedAt) }))}</span></div>`;
@@ -1465,7 +1671,7 @@ function tickPass() {
   left.classList.toggle("low", s <= 60);
   if (!s && !p.expired) {
     p.expired = true;
-    // Ask 「優惠有用成功嗎？」 right here, once, unless the shop already confirmed it.
+    // Ask 「這次優惠有成功使用嗎？」 right here, once, unless the shop already confirmed it.
     if (!p.confirmedAt && !p.outcome && !wasAsked(p.code)) {
       p.askInline = true;
       markAsked(p.code);
@@ -1659,7 +1865,7 @@ const minibrand = () => {
     home ? t("scan.shopPage") : t("home.short")
   )}</span></a>`;
 };
-const loadingCard = () => `<section class="card"><div class="dskel"><i style="width:30%"></i><i style="width:60%;height:22px"></i><i></i><i style="width:80%"></i></div></section>`;
+const loadingCard = () => `<section class="card"><div class="dskel"><i class="w30"></i><i class="w60 tall"></i><i></i><i class="w80"></i></div></section>`;
 
 async function loadShop(key) {
   Object.assign(shop, { key, status: "loading", data: null, result: null, code: "" });
@@ -2216,7 +2422,7 @@ function changeLang(v) {
   if (state.route.name === "me") renderMe();
   if (state.route.name === "deal") {
     const c = state.detail.get(state.route.id);
-    if (c) els.detailBody.innerHTML = detailHTML(c.deal, { locked: c.locked });
+    if (c) setDetailBody(detailFor(c));
     renderDetailHead();
   }
   showView(currentView);
@@ -2427,7 +2633,7 @@ function refreshToday() {
   renderSaved();
   if (state.route.name === "deal") {
     const c = state.detail.get(state.route.id);
-    if (c) els.detailBody.innerHTML = detailHTML(c.deal, { locked: c.locked });
+    if (c) setDetailBody(detailFor(c));
     renderDetailHead();
   }
 }

@@ -11,17 +11,10 @@ let toastTimer = 0;
  *  live regions included, so while one is open the region moves into it. */
 export function toast(message, { error = false, ms = 2800 } = {}) {
   const el = document.getElementById("toast");
-  const live = document.getElementById("live");
   if (!el) return;
   el.textContent = message;
   el.classList.toggle("err", error);
-  if (live) {
-    const host = [...document.querySelectorAll("dialog[open]")].pop() || document.body;
-    if (live.parentNode !== host) host.append(live);
-    live.textContent = "";
-    // A fresh text node after a tick, so a repeated message is announced again.
-    setTimeout(() => (live.textContent = message), 30);
-  }
+  announce(message);
   try {
     if (el.matches(":popover-open")) el.hidePopover();
     el.showPopover();
@@ -40,6 +33,17 @@ export function toast(message, { error = false, ms = 2800 } = {}) {
       } catch {}
     }, 220);
   }, ms);
+}
+
+/** Say `message` through the polite live region (a toast, a page that changed). */
+export function announce(message) {
+  const live = document.getElementById("live");
+  if (!live) return;
+  const host = [...document.querySelectorAll("dialog[open]")].pop() || document.body;
+  if (live.parentNode !== host) host.append(live);
+  live.textContent = "";
+  // A fresh text node after a tick, so a repeated message is announced again.
+  setTimeout(() => (live.textContent = message), 30);
 }
 
 /* ---------- dialog ---------- */
@@ -115,7 +119,9 @@ function placePopover(dlg, anchor, placement) {
   let left;
   let top;
   if (placement === "right") {
-    left = r.right + 10;
+    // Clear the rail's edge (the avatar sits inside it), never overlap it.
+    const rail = anchor.closest(".rail");
+    left = Math.max(r.right + 10, rail ? rail.getBoundingClientRect().right + 8 : 0);
     top = Math.min(r.bottom - hgt, innerHeight - hgt - 10);
   } else {
     left = Math.min(Math.max(10, r.left), innerWidth - w - 10);

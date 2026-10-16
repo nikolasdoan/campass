@@ -263,6 +263,16 @@ const isOfflinePage = (page) => page.evaluate(() => /離線/.test(document.title
       check(`${tag} none covers the tab bar or the 使用優惠 bar`, !covers.length, covers.join(' ') || info);
       if (!stepsAside) check(`${tag} order bottom-up: card → update toast → app toast`, b.card && b.update && b.toast && b.card.top >= b.update.bottom - 0.5 && b.update.top >= b.toast.bottom - 0.5, info);
       check(`${tag} all inside the viewport`, (stepsAside ? ['update', 'toast'] : ['card', 'update', 'toast']).every((k) => b[k] && b[k].top >= 0 && b[k].bottom <= b.H && b[k].left >= 0 && b[k].right <= b.W), info);
+      // The contract holds in styles.css itself, not only through pwa.js's !important safety net.
+      const own = await page.evaluate(() => {
+        const sheet = document.getElementById('cp-pwa-style')?.sheet; if (!sheet) return null;
+        const i = [...sheet.cssRules].findIndex((r) => r.selectorText && r.selectorText.includes('#toast'));
+        if (i < 0) return null;
+        const text = sheet.cssRules[i].cssText; const before = document.getElementById('toast').getBoundingClientRect().bottom;
+        sheet.deleteRule(i); const after = document.getElementById('toast').getBoundingClientRect().bottom; sheet.insertRule(text, i);
+        return { before, after };
+      });
+      check(`${tag} styles.css alone puts the app toast on --float-floor`, own && Math.abs(own.before - own.after) < 1, JSON.stringify(own));
       if (label === '1280') {
         const mid = (r) => (r.left + r.right) / 2;
         check(`${tag} update toast and app toast share one centre line`, b.update && b.toast && Math.abs(mid(b.update) - mid(b.toast)) < 1.5, b.update && b.toast ? `${mid(b.update)} vs ${mid(b.toast)}` : '');
