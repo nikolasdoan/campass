@@ -662,6 +662,7 @@ input.codefield{ height:56px; padding:0 8px; font:600 28px var(--mono); letter-s
 .cashterms .linkbtn{ margin-top:4px; }
 .mailtag{ display:inline-flex; align-items:center; padding:1px 8px; border-radius:999px; background:var(--seal-wash); color:var(--seal-ink);
   font-size:var(--fs-caption); font-weight:600; line-height:18px; white-space:nowrap; }
+.mailtag.testtag{ background:color-mix(in srgb,var(--warn) 11%,transparent); color:var(--warn-ink); }
 .idcheck{ display:flex; gap:10px; align-items:flex-start; width:100%; margin:14px 0; padding:12px 14px; border-radius:12px; background:var(--tile-tint);
   color:var(--ink); text-align:left; }
 .idcheck > .ic{ width:22px; height:22px; margin-top:1px; color:var(--dot); }

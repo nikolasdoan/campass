@@ -13,6 +13,8 @@ export interface Env {
   /** Workers Rate Limiting bindings (wrangler.jsonc "ratelimits"); absent = no limit. */
   RL_FORMS?: RateLimit;
   RL_CONFIRM?: RateLimit;
+  /** Local dev and CI only: serve plain http (no redirect to https). Never set in production. */
+  ALLOW_HTTP?: string;
   /** Local testing only (needs DEV_LOGIN): base URL of a mock Google OAuth server (tests/mock-google.mjs). */
   GOOGLE_MOCK_URL?: string;
 }
@@ -150,12 +152,14 @@ const CSP =
 
 // Plain-HTTP requests to the Worker's paths (/api, /auth, /admin) go to HTTPS first, so the session
 // cookie is only ever set over HTTPS (isSecure() reads the URL). Static pages don't reach the Worker:
-// the zone's "Always Use HTTPS" covers them. Local dev and CI (DEV_LOGIN, never set in production) stay
-// on http; `wrangler dev` presents local requests under the custom domain's hostname, so the
-// hostname can't tell them apart.
+// the zone's "Always Use HTTPS" covers them. Local dev and CI stay on http (ALLOW_HTTP, or the mock
+// Google server, neither ever set in production). It doesn't key on DEV_LOGIN, which the founder may
+// switch on in production for testing. `wrangler dev` presents local requests under the custom
+// domain's hostname, so the hostname can't tell them apart.
 app.use("*", async (c, next) => {
   const url = new URL(c.req.url);
-  if (url.protocol === "http:" && c.env.DEV_LOGIN !== "true") {
+  const local = c.env.ALLOW_HTTP === "true" || !!c.env.GOOGLE_MOCK_URL;
+  if (url.protocol === "http:" && !local) {
     url.protocol = "https:";
     return c.redirect(url.toString(), 308);
   }
@@ -572,12 +576,14 @@ type PassRow = {
   eligibility: string;
   schools: string;
   email: string;
+  google_sub: string;
 };
 
 /** What the cashier needs to decide: the deal, who it is for, and the student's (masked) Google
  *  account. Signing in with Google does not prove enrolment, so the shop still checks the student ID. */
 function passForCashier(r: PassRow) {
   const [local, domain = ""] = r.email.split("@");
+  const test = r.google_sub.startsWith("dev:");
   return {
     deal: r.name,
     highlight: r.highlight,
@@ -585,7 +591,11 @@ function passForCashier(r: PassRow) {
     offer: [...(r.offer || "")].slice(0, 400).join(""),
     eligibility: JSON.parse(r.eligibility || "{}"),
     schools: r.schools ? r.schools.split(",") : [],
-    account: { masked: `${local.slice(0, 1)}***@${domain}`, domain, school_domain: /\.edu\.tw$/.test(domain) },
+    // A dev-login account (DEV_LOGIN on, for testing) can claim any email, so it is never shown as a
+    // school mailbox and is flagged as a test login.
+    account: test
+      ? { masked: `${local.slice(0, 1)}***@${domain}`, domain, school_domain: false, test: true }
+      : { masked: `${local.slice(0, 1)}***@${domain}`, domain, school_domain: /\.edu\.tw$/.test(domain), test: false },
   };
 }
 
@@ -594,7 +604,8 @@ async function passForShop(db: D1Database, mk: MerchantKey, rawCode: string): Pr
   const code = normCode(rawCode);
   const r = await db.prepare(
     `SELECT r.id, r.deal_id, r.confirmed_at, r.created_at > datetime('now', ?) AS fresh,
-            d.name, d.highlight, d.offer, d.eligibility, d.schools, COALESCE(u.email, '') AS email
+            d.name, d.highlight, d.offer, d.eligibility, d.schools, COALESCE(u.email, '') AS email,
+            COALESCE(u.google_sub, '') AS google_sub
        FROM redemptions r JOIN deals d ON d.id = r.deal_id LEFT JOIN users u ON u.id = r.user_id
       WHERE r.code = ?`
   )
@@ -742,20 +753,22 @@ app.get("/admin/stats", async (c) => {
   const d30 = taipeiDay(-29);
   const n = (sql: string, ...args: unknown[]) =>
     db.prepare(sql).bind(...args).first<{ n: number }>().then((r) => r?.n ?? 0);
+  // Dev-login (test) accounts never count: DEV_LOGIN may be on in production while the founder tests.
+  const REAL = "user_id NOT IN (SELECT id FROM users WHERE google_sub LIKE 'dev:%')";
   const [users, ntu, active7, active30, repeat30, views30, passes30, used30, refused30, confirmed30, redeemTwice30, leads, payLeads, topViewed, topRedeemed] =
     await Promise.all([
-      n("SELECT COUNT(*) AS n FROM users"),
-      n("SELECT COUNT(*) AS n FROM users WHERE email_domain IN ('ntu.edu.tw','g.ntu.edu.tw')"),
-      n("SELECT COUNT(DISTINCT user_id) AS n FROM visits WHERE day >= ?", d7),
-      n("SELECT COUNT(DISTINCT user_id) AS n FROM visits WHERE day >= ?", d30),
-      n("SELECT COUNT(*) AS n FROM (SELECT user_id FROM visits WHERE day >= ? GROUP BY user_id HAVING COUNT(*) >= 2)", d30),
-      n("SELECT COUNT(*) AS n FROM deal_views WHERE created_at > datetime('now','-30 days')"),
-      n("SELECT COUNT(*) AS n FROM redemptions WHERE created_at > datetime('now','-30 days')"),
-      n("SELECT COUNT(*) AS n FROM redemptions WHERE outcome = 'used' AND created_at > datetime('now','-30 days')"),
-      n("SELECT COUNT(*) AS n FROM redemptions WHERE outcome = 'refused' AND created_at > datetime('now','-30 days')"),
-      n("SELECT COUNT(*) AS n FROM redemptions WHERE confirmed_at IS NOT NULL AND created_at > datetime('now','-30 days')"),
+      n("SELECT COUNT(*) AS n FROM users WHERE google_sub NOT LIKE 'dev:%'"),
+      n("SELECT COUNT(*) AS n FROM users WHERE email_domain IN ('ntu.edu.tw','g.ntu.edu.tw') AND google_sub NOT LIKE 'dev:%'"),
+      n(`SELECT COUNT(DISTINCT user_id) AS n FROM visits WHERE day >= ? AND ${REAL}`, d7),
+      n(`SELECT COUNT(DISTINCT user_id) AS n FROM visits WHERE day >= ? AND ${REAL}`, d30),
+      n(`SELECT COUNT(*) AS n FROM (SELECT user_id FROM visits WHERE day >= ? AND ${REAL} GROUP BY user_id HAVING COUNT(*) >= 2)`, d30),
+      n(`SELECT COUNT(*) AS n FROM deal_views WHERE created_at > datetime('now','-30 days') AND ${REAL}`),
+      n(`SELECT COUNT(*) AS n FROM redemptions WHERE created_at > datetime('now','-30 days') AND ${REAL}`),
+      n(`SELECT COUNT(*) AS n FROM redemptions WHERE outcome = 'used' AND created_at > datetime('now','-30 days') AND ${REAL}`),
+      n(`SELECT COUNT(*) AS n FROM redemptions WHERE outcome = 'refused' AND created_at > datetime('now','-30 days') AND ${REAL}`),
+      n(`SELECT COUNT(*) AS n FROM redemptions WHERE confirmed_at IS NOT NULL AND created_at > datetime('now','-30 days') AND ${REAL}`),
       n(`SELECT COUNT(*) AS n FROM (SELECT user_id FROM redemptions
-          WHERE created_at > datetime('now','-30 days') AND (outcome = 'used' OR confirmed_at IS NOT NULL)
+          WHERE created_at > datetime('now','-30 days') AND (outcome = 'used' OR confirmed_at IS NOT NULL) AND ${REAL}
           GROUP BY user_id HAVING COUNT(*) >= 2)`),
       n("SELECT COUNT(*) AS n FROM merchant_leads"),
       // Distinct shops (by contact), so repeated posts can't inflate the gate.

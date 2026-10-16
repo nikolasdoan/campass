@@ -1,6 +1,6 @@
 /* Every UI string, in zh-TW and en. Deal content (names, offers) stays Chinese.
    Write 臺 not 台 in UI copy. Labels never wrap: the English is shortened, not the layout. */
-import { storage } from "./util.js?v=11";
+import { storage } from "./util.js?v=12";
 
 const LANG_KEY = "cp_lang";
 
@@ -296,6 +296,7 @@ const DICT = {
     "cashier.for": "適用對象",
     "cashier.account": "學生的 Google 帳號",
     "cashier.schoolMail": "學校信箱",
+    "cashier.testLogin": "測試登入（未經 Google 驗證）",
     "cashier.idCheck": "請核對學生證後再確認",
     "cashier.idCheckBody": "Google 帳號不能證明學籍，請確認學生證與適用對象相符。",
     "cashier.only": "限{who}",
@@ -654,6 +655,7 @@ const DICT = {
     "cashier.for": "For",
     "cashier.account": "Student's Google account",
     "cashier.schoolMail": "School email",
+    "cashier.testLogin": "Test login (not verified by Google)",
     "cashier.idCheck": "Check the student ID before confirming",
     "cashier.idCheckBody": "A Google account doesn't prove enrolment. Check that the student ID matches who the deal is for.",
     "cashier.only": "{who} only",

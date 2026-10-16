@@ -3,11 +3,11 @@
    a pushed full-screen page on a phone) · /merchants (商家合作) · /m/:key (a shop's private
    confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
    Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=11";
-import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases } from "./js/i18n.js?v=11";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=11";
-import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=11";
-import { qrSVG } from "./js/qr.js?v=11";
+import { icon } from "./js/icons.js?v=12";
+import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases } from "./js/i18n.js?v=12";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=12";
+import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=12";
+import { qrSVG } from "./js/qr.js?v=12";
 
 /* ---------- constants ---------- */
 
@@ -1981,7 +1981,8 @@ function cashierHTML(x, { deal = true } = {}) {
   if (!x) return "";
   const forText = cashierFor(x);
   const a = x.account || {};
-  const acct = a.masked ? `<span translate="no">${esc(a.masked)}</span>${a.school_domain ? ` <span class="mailtag">${esc(t("cashier.schoolMail"))}</span>` : ""}` : "";
+  const tag = a.test ? ` <span class="mailtag testtag">${esc(t("cashier.testLogin"))}</span>` : a.school_domain ? ` <span class="mailtag">${esc(t("cashier.schoolMail"))}</span>` : "";
+  const acct = a.masked ? `<span translate="no">${esc(a.masked)}</span>${tag}` : "";
   const rows = [
     deal && x.deal ? `<dt>${esc(t("cashier.deal"))}</dt><dd><b${ZH}>${esc(x.deal)}</b>${x.highlight ? ` ${badgeHTML(x.highlight)}` : ""}</dd>` : "",
     !deal && x.highlight ? `<dt>${esc(t("cashier.deal"))}</dt><dd>${badgeHTML(x.highlight)}</dd>` : "",

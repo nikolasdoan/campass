@@ -420,7 +420,7 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   await sp.goto(B + `/r/${code}`, { waitUntil: 'networkidle' }); await sp.waitForSelector('[data-scan-confirm]');
   check('scan: paired phone sees shop + deal + 確認使用', (await sp.textContent('#scanBody')).includes('台北福華') && (await sp.textContent('#scanBody')).includes('台北福華大飯店') && (await sp.textContent('[data-scan-confirm]')).includes('確認使用'));
   const scanText = await sp.textContent('#scanBody');
-  check('scan: cashier sees who the deal is for, the masked account (學校信箱) and 請核對學生證', scanText.includes('限臺大學生') && scanText.includes('r***@ntu.edu.tw') && scanText.includes('學校信箱') && scanText.includes('請核對學生證後再確認') && !scanText.includes(STUDENT), scanText.replace(/\s+/g, ' ').slice(0, 160));
+  check('scan: cashier sees who the deal is for, the masked account (a dev login is flagged 測試登入, not 學校信箱) and 請核對學生證', scanText.includes('限臺大學生') && scanText.includes('r***@ntu.edu.tw') && scanText.includes('測試登入') && !scanText.includes('學校信箱') && scanText.includes('請核對學生證後再確認') && !scanText.includes(STUDENT), scanText.replace(/\s+/g, ' ').slice(0, 160));
   const terms = BY_ID.get(FULL).offer.slice(0, 12);
   check('scan: cashier sees the deal terms (優惠條件)', (await sp.textContent('#scanBody .cashfacts')).includes('優惠條件') && (await sp.textContent('#scanBody .cashoffer')).includes(terms));
   check('scan: the ID check comes before 確認使用', await sp.evaluate(() => !!(document.querySelector('.idcheck').compareDocumentPosition(document.querySelector('[data-scan-confirm]')) & Node.DOCUMENT_POSITION_FOLLOWING)));
@@ -940,7 +940,7 @@ const liveText = (page) => page.evaluate(() => document.getElementById('live')?.
   check('shop (iOS Safari): keep this page in Safari, or type the code', (await sp.textContent('#shopBody')).includes('請用 Safari 開啟並保留此頁') && !!(await sp.$('#shopBody .confirmcard .idcheck')));
   await sp.fill('#shopCode', code); await sp.click('#shopForm [type="submit"]'); await sp.waitForSelector('#shopResult .result.ok');
   const res = await sp.textContent('#shopResult');
-  check('shop: a typed code shows the deal, its terms, who it is for and the masked account', res.includes('台北福華大飯店') && res.includes(BY_ID.get(FULL).offer.slice(0, 12)) && res.includes('限臺大') && res.includes('q***@') && res.includes('學校信箱'), res.replace(/\s+/g, ' ').slice(0, 160));
+  check('shop: a typed code shows the deal, its terms, who it is for and the masked account', res.includes('台北福華大飯店') && res.includes(BY_ID.get(FULL).offer.slice(0, 12)) && res.includes('限臺大') && res.includes('q***@') && res.includes('測試登入'), res.replace(/\s+/g, ' ').slice(0, 160));
   await shopI.ctx.close();
   const standalone = await newPage(IPHONE, 'shop');
   await standalone.page.addInitScript(() => Object.defineProperty(navigator, 'standalone', { get: () => true }));
