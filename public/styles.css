@@ -655,6 +655,11 @@ input.codefield{ height:56px; padding:0 8px; font:600 28px var(--mono); letter-s
 .facts.cashfacts{ width:100%; margin:14px 0; padding:12px 14px; border-radius:10px; background:var(--chip); text-align:left; font-size:var(--fs-ui); }
 .cashfacts dd{ display:flex; flex-wrap:wrap; align-items:center; gap:4px 6px; min-width:0; overflow-wrap:anywhere; }
 .cashfacts dd b{ font-weight:600; }
+/* The deal's terms on cashier screens: three lines, 展開 (shown by JS only when the clamp cuts) opens them. */
+.cashfacts dd.cashterms{ display:block; }
+.cashoffer{ margin:0; white-space:pre-line; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; line-clamp:3; overflow:hidden; }
+.cashoffer.open{ display:block; -webkit-line-clamp:unset; line-clamp:none; overflow:visible; }
+.cashterms .linkbtn{ margin-top:4px; }
 .mailtag{ display:inline-flex; align-items:center; padding:1px 8px; border-radius:999px; background:var(--seal-wash); color:var(--seal-ink);
   font-size:var(--fs-caption); font-weight:600; line-height:18px; white-space:nowrap; }
 .idcheck{ display:flex; gap:10px; align-items:flex-start; width:100%; margin:14px 0; padding:12px 14px; border-radius:12px; background:var(--tile-tint);

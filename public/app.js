@@ -3,11 +3,11 @@
    a pushed full-screen page on a phone) · /merchants (商家合作) · /m/:key (a shop's private
    confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
    Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=10";
-import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases } from "./js/i18n.js?v=10";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=10";
-import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=10";
-import { qrSVG } from "./js/qr.js?v=10";
+import { icon } from "./js/icons.js?v=11";
+import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases } from "./js/i18n.js?v=11";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=11";
+import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=11";
+import { qrSVG } from "./js/qr.js?v=11";
 
 /* ---------- constants ---------- */
 
@@ -1137,7 +1137,8 @@ function confirmDeleteAccount() {
     const r = await api("DELETE", "/api/me");
     if (r.ok || r.status === 401) {
       // 401: the session was already gone; the account can't be reached from here any more.
-      closeDialog({ restoreFocus: false });
+      // At once: while the modal is still closing, everything outside it is inert and refuses focus.
+      closeDialog({ instant: true, restoreFocus: false });
       if (r.ok) storage.set(ASKED_KEY, null);
       becomeSignedOut();
       toast(t(r.ok ? "toast.deleted" : "toast.sessionExpired"), { error: !r.ok });
@@ -1456,9 +1457,9 @@ function applyInert() {
   const cover = els.detail.classList.contains("open") && isPhone();
   els.main.inert = cover;
   els.appbar.inert = cover;
-  // While it is the whole page (phone), the detail is the main landmark (<main> is inert then).
-  if (cover) els.detail.setAttribute("role", "main");
-  else els.detail.removeAttribute("role");
+  // While it is the whole page (phone), the detail is the main landmark (<main> is inert then);
+  // beside the list (desktop) it is complementary. A <div>, since <aside> may not be role=main.
+  els.detail.setAttribute("role", cover ? "main" : "complementary");
   document.body.classList.toggle("has-overlay", cover || dialogOpen());
 }
 

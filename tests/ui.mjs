@@ -421,6 +421,8 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   check('scan: paired phone sees shop + deal + 確認使用', (await sp.textContent('#scanBody')).includes('台北福華') && (await sp.textContent('#scanBody')).includes('台北福華大飯店') && (await sp.textContent('[data-scan-confirm]')).includes('確認使用'));
   const scanText = await sp.textContent('#scanBody');
   check('scan: cashier sees who the deal is for, the masked account (學校信箱) and 請核對學生證', scanText.includes('限臺大學生') && scanText.includes('r***@ntu.edu.tw') && scanText.includes('學校信箱') && scanText.includes('請核對學生證後再確認') && !scanText.includes(STUDENT), scanText.replace(/\s+/g, ' ').slice(0, 160));
+  const terms = BY_ID.get(FULL).offer.slice(0, 12);
+  check('scan: cashier sees the deal terms (優惠條件)', (await sp.textContent('#scanBody .cashfacts')).includes('優惠條件') && (await sp.textContent('#scanBody .cashoffer')).includes(terms));
   check('scan: the ID check comes before 確認使用', await sp.evaluate(() => !!(document.querySelector('.idcheck').compareDocumentPosition(document.querySelector('[data-scan-confirm]')) & Node.DOCUMENT_POSITION_FOLLOWING)));
   await shot(sp, 'scan-paired');
   const t0 = Date.now();
@@ -480,13 +482,17 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   await page.keyboard.press('Escape'); await page.waitForSelector('dialog.ask[open]', { timeout: 3000 }).catch(() => {});
   check('ask: the new pass is asked about', !!(await page.$('dialog.ask[open]')));
   // Dismissed without an answer: re-opening within the window reuses the same pass and code,
-  // and it is not asked about twice.
+  // and closing it again asks again (a new attempt, still unanswered).
   await page.keyboard.press('Escape'); await settle(page, 500);
   check('ask: focus returns to 使用優惠 after the prompt closes', await page.evaluate(() => document.activeElement?.matches('[data-redeem]')));
   await page.click('[data-redeem]'); await page.waitForSelector('dialog.pass .pass-qr svg'); await settle(page);
   check('ask: an unanswered pass is reused (same code)', (await passCode(page)) === code2b);
-  await page.keyboard.press('Escape'); await settle(page, 900);
-  check('ask: asked once per pass code', !(await page.$('dialog.ask')));
+  await page.keyboard.press('Escape'); await page.waitForSelector('dialog.ask[open]', { timeout: 3000 }).catch(() => {});
+  check('ask: a re-opened, still unanswered pass is asked about again on close', !!(await page.$('dialog.ask[open]')));
+  if (await page.$('dialog.ask[open]')) await page.click('dialog.ask [data-close]');
+  await settle(page, 500);
+  // Closed once more without re-opening: one ask per opening, not a second one.
+  check('ask: dismissing the ask does not bring it back by itself', !(await page.$('dialog.ask')));
   // 店家不接受 → refused, and the report dialog opens prefilled.
   await page.goto(B + `/deal/${OTHER[1]}`, { waitUntil: 'networkidle' }); await page.waitForSelector('[data-redeem]');
   await page.click('[data-redeem]'); await page.waitForSelector('dialog.pass .pass-qr svg');
@@ -658,7 +664,7 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   await page.evaluate((id) => fetch('/api/favorites/' + id, { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: '{}' }), FULL);
   await page.reload({ waitUntil: 'networkidle' }); await page.waitForSelector('#detail .prose');
   let favCalls = 0;
-  await page.route('**/api/favorites/**', async (r) => { favCalls++; await new Promise((ok) => setTimeout(ok, 1200)); r.continue(); });
+  await page.route('**/api/favorites/**', async (r) => { if (r.request().method() !== 'GET') favCalls++; await new Promise((ok) => setTimeout(ok, 1200)); r.continue(); });
   await page.click('#dhead [data-star]'); await settle(page, 100);
   await page.click('#dhead [data-star]'); await settle(page, 3200);
   const srvFavs = (await apiGet(page, '/api/me')).data.favorites;
@@ -775,6 +781,7 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   await shot(page, 'me-delete-confirm');
   await page.click('dialog.confirm [data-delete-confirm]'); await settle(page, 900);
   check('delete: signed out, toast shown, account gone on the server', (await toastText()).includes('帳號已刪除') && !!(await page.$('#meBody .gbtn')) && (await apiGet(page, '/api/me')).data.user === null && (await page.evaluate(() => localStorage.getItem('cp_me'))) === null);
+  check('delete: focus lands on the page heading, not <body>', await page.evaluate(() => document.activeElement?.id === 'meTitle'));
 
   allErrors.push(...page._errors.filter((e) => !/Failed to load resource|net::ERR_/.test(e)));
   await ctx.close();
@@ -788,6 +795,8 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   await page.focus('#shopCode');
   await page.evaluate(() => { const i = document.querySelector('#shopCode'); i.value = 'ｇｇ６３ - ｃｆ'; i.dispatchEvent(new Event('input', { bubbles: true })); });
   check('shop: a full-width, spaced paste normalises to 6 characters', (await page.inputValue('#shopCode')) === 'GG63CF' && (await page.getAttribute('#shopCode', 'maxlength')) === null);
+  await page.evaluate(() => { const i = document.querySelector('#shopCode'); i.value = 'abcd-efg'; i.dispatchEvent(new Event('input', { bubbles: true })); });
+  check('shop: a 7th character is not dropped silently (hint, first 6 kept)', (await page.inputValue('#shopCode')) === 'ABCDEF' && (await page.textContent('#shopResult')).includes('已保留前 6 碼'));
   await page.goto(B + '/r/ZZZZZZ', { waitUntil: 'networkidle' }); await page.waitForSelector('#scanBody .scanstate');
   check('scan: every result links back to the shop page', (await page.getAttribute('#scanBody .scanactions a', 'href')) === SHOP);
   await page.goto(B + '/m/not-a-real-key-123', { waitUntil: 'networkidle' }); await settle(page, 300);
@@ -896,7 +905,10 @@ const liveText = (page) => page.evaluate(() => document.getElementById('live')?.
   await page.goto(B + '/saved', { waitUntil: 'networkidle' }); await page.waitForSelector('#savedBody .item');
   const groups = await page.evaluate(() => [...document.querySelectorAll('#savedBody .list')].map((ul) => [...ul.querySelectorAll('.item')].map((li) => li.dataset.id)));
   check('saved: usable deals first, expired ones under 已過期 at the bottom', groups.length === 2 && groups[0].includes(FULL) && groups[1].includes(EXPIRED) && (await page.textContent('#savedBody .listhead')) === '已過期', JSON.stringify(groups));
-  // The network goes away (a tunnel): the account and the deal can't load.
+  // The network goes away (a tunnel): the browser says offline, the account and the deal can't load
+  // (the shell itself would come from the service worker, blocked in these tests).
+  await page.addInitScript(() => { if (sessionStorage.getItem('__fakeOffline')) Object.defineProperty(Navigator.prototype, 'onLine', { get: () => false }); });
+  await page.evaluate(() => sessionStorage.setItem('__fakeOffline', '1'));
   await page.route('**/api/me', (r) => r.abort()); await page.route('**/api/deals/**', (r) => r.abort()); await page.route('**/api/deals', (r) => r.abort());
   await page.goto(B + '/saved', { waitUntil: 'domcontentloaded' }); await page.waitForSelector('#savedBody .offnote', { timeout: 15000 }).catch(() => {});
   check('offline: /saved lists the kept saved deals, labelled 離線顯示，上次更新', (await page.textContent('#savedBody .offnote').catch(() => '')).includes('離線顯示，上次更新') && !!(await page.$(`#savedBody .item[data-id="${FULL}"]`)));
@@ -906,6 +918,7 @@ const liveText = (page) => page.evaluate(() => document.getElementById('live')?.
   check('offline: a saved deal opens with its terms and address, marked offline, no 使用優惠', det.includes(BY_ID.get(FULL).address || '仁愛路') && !!(await page.$('#detailBody .prose')) && det.includes('離線顯示') && (await rect(page, '#detailUse')).display === 'none');
   await shot(page, 'qa2-detail-offline');
   await page.unroute('**/api/me'); await page.unroute('**/api/deals/**'); await page.unroute('**/api/deals');
+  await page.evaluate(() => sessionStorage.removeItem('__fakeOffline'));
   // Another account signs in on this browser: A's copy is gone.
   await page.goto(B + `/auth/dev-login?email=qa2-b-${STUDENT}&next=/saved`, { waitUntil: 'networkidle' }); await settle(page, 600);
   c = await cache();
@@ -927,13 +940,92 @@ const liveText = (page) => page.evaluate(() => document.getElementById('live')?.
   check('shop (iOS Safari): keep this page in Safari, or type the code', (await sp.textContent('#shopBody')).includes('請用 Safari 開啟並保留此頁') && !!(await sp.$('#shopBody .confirmcard .idcheck')));
   await sp.fill('#shopCode', code); await sp.click('#shopForm [type="submit"]'); await sp.waitForSelector('#shopResult .result.ok');
   const res = await sp.textContent('#shopResult');
-  check('shop: a typed code shows the deal, who it is for and the masked account', res.includes('台北福華大飯店') && res.includes('限臺大') && res.includes('q***@') && res.includes('學校信箱'), res.replace(/\s+/g, ' ').slice(0, 160));
+  check('shop: a typed code shows the deal, its terms, who it is for and the masked account', res.includes('台北福華大飯店') && res.includes(BY_ID.get(FULL).offer.slice(0, 12)) && res.includes('限臺大') && res.includes('q***@') && res.includes('學校信箱'), res.replace(/\s+/g, ' ').slice(0, 160));
   await shopI.ctx.close();
   const standalone = await newPage(IPHONE, 'shop');
   await standalone.page.addInitScript(() => Object.defineProperty(navigator, 'standalone', { get: () => true }));
   await standalone.page.goto(B + SHOP, { waitUntil: 'networkidle' }); await standalone.page.waitForSelector('#shopCode');
   check('shop (iOS home screen): scanning opens Safari, so type the code', (await standalone.page.textContent('#shopBody')).includes('用相機掃描 QR 會跳到 Safari'));
   await standalone.ctx.close();
+}
+
+// Saved deals sync in bulk (/api/favorites/details: no views), including ones saved on another device.
+{
+  const { ctx, page } = await newPage(MOBILE, 'qa2-sync');
+  const U = `qa2-sync-${STUDENT}`;
+  await page.goto(B + `/auth/dev-login?email=${U}&next=/`, { waitUntil: 'networkidle' }); await page.waitForSelector('#list .item');
+  await page.evaluate((id) => fetch('/api/favorites/' + id, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: '{}' }), EXPIRED); // "another device"
+  const detailGets = [];
+  page.on('request', (r) => { const u = new URL(r.url()); if (/^\/api\/deals\/[^/]+$/.test(u.pathname)) detailGets.push(u.pathname); });
+  const bulk = page.waitForResponse((r) => r.url().includes('/api/favorites/details'), { timeout: 8000 }).catch(() => null);
+  await page.reload({ waitUntil: 'networkidle' }); await bulk; await settle(page, 400);
+  const cache = () => page.evaluate(() => JSON.parse(localStorage.getItem('cp_saved_cache') || 'null'));
+  let c = await cache();
+  check('sync: on app start the full saved deals arrive in one request (also those saved elsewhere)', c?.email === U && !!c.deals[EXPIRED] && 'offer' in c.deals[EXPIRED] && c.order.includes(EXPIRED));
+  const id = await page.$eval('#list .item', (li) => li.dataset.id);
+  await page.click(`#list .item[data-id="${id}"] .star`); await settle(page, 2200);
+  c = await cache();
+  check('sync: a star from the list is kept in full with no per-deal request (no extra views)', !!c?.deals[id] && 'offer' in c.deals[id] && detailGets.length === 0, `${detailGets.join(',')}`);
+  await page.click(`#list .item[data-id="${id}"] .star`); await settle(page, 2200);
+  check('sync: unsaving drops it from the kept copy', !(await cache())?.deals[id]);
+  // The server fails while online: /saved says so, not 「目前離線」.
+  await page.route('**/api/me', (r) => r.fulfill({ status: 500, contentType: 'application/json', body: '{}' }));
+  await page.evaluate(() => localStorage.removeItem('cp_saved_cache'));
+  await page.goto(B + '/saved', { waitUntil: 'networkidle' }); await settle(page, 500);
+  const sv = await page.textContent('#savedBody');
+  check('saved: a server error while online is not called offline', sv.includes('無法載入收藏') && !sv.includes('目前離線') && !!(await page.$('#savedBody [data-retry-me]')), sv.replace(/\s+/g, ' ').slice(0, 80));
+  await page.unroute('**/api/me');
+  allErrors.push(...page._errors.filter((e) => !/Failed to load resource/.test(e)));
+  await ctx.close();
+}
+
+// Offline, an answer from a cache is not "back online" (no false 「已恢復連線」).
+{
+  const { ctx, page } = await newPage(MOBILE, 'qa2-online');
+  await page.goto(B + '/', { waitUntil: 'networkidle' }); await page.waitForSelector('#list .item');
+  const list = await apiGet(page, '/api/deals');
+  await page.evaluate(() => { window.__toasts = []; new MutationObserver(() => window.__toasts.push(document.getElementById('toast').textContent)).observe(document.getElementById('toast'), { childList: true, characterData: true, subtree: true }); });
+  await ctx.setOffline(true); await settle(page, 300);
+  // What the service worker does offline: /api/deals answered from its cache.
+  await page.route('**/api/deals', (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(list.data) }));
+  await page.evaluate(() => dispatchEvent(new Event('cp:deals-updated'))); await settle(page, 800);
+  const toasts = await page.evaluate(() => window.__toasts);
+  check('offline: a cached answer does not flash 已恢復連線', toasts.some((x) => x.includes('離線')) && !toasts.some((x) => x.includes('已恢復連線')), JSON.stringify(toasts));
+  await page.unroute('**/api/deals');
+  await ctx.setOffline(false); await settle(page, 800);
+  check('online again: 已恢復連線 once the network is really back', (await page.evaluate(() => window.__toasts)).some((x) => x.includes('已恢復連線')));
+  await ctx.close();
+}
+
+// Back from Google onto a deep row: it lands where it was (rows above are content-visibility placeholders).
+{
+  const { ctx, page } = await newPage(MOBILE, 'qa2-deep');
+  await page.route('**/auth/google/start**', (r) => { const next = new URL(r.request().url()).searchParams.get('next') || '/'; r.fulfill({ status: 302, headers: { Location: `/auth/dev-login?email=qa2-deep-${STUDENT}&next=${encodeURIComponent(next)}` } }); });
+  await page.goto(B + '/', { waitUntil: 'networkidle' }); await page.waitForSelector('#list .item');
+  await scrollBottom(page); await page.evaluate(() => scrollTo(0, 0)); await settle(page, 200);
+  await page.mouse.wheel(0, 6000); await settle(page, 600);
+  const target = await page.evaluate(() => [...document.querySelectorAll('#list .item')].find((li) => li.getBoundingClientRect().top > 300)?.dataset.id);
+  const before = await page.$eval(`#list .item[data-id="${target}"]`, (li) => li.getBoundingClientRect().top);
+  await page.click(`#list .item[data-id="${target}"] .star`); await settle(page, 350);
+  const navDone = page.waitForNavigation({ waitUntil: 'networkidle', timeout: 10000 }).catch(() => {});
+  await page.click('dialog[open] .gbtn'); await navDone;
+  await page.waitForSelector('#list .item'); await settle(page, 1200);
+  const after = await page.evaluate((id) => document.querySelector(`#list .item[data-id="${id}"]`)?.getBoundingClientRect().top, target);
+  check('sign-in: a deep-scrolled row comes back within a few px', Math.abs(after - before) <= 8, `${before} → ${after}`);
+  await page.evaluate((id) => fetch('/api/favorites/' + id, { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: '{}' }), target);
+  await ctx.close();
+}
+
+// Desktop deep link, signed in, the list answering first: one deal request (one view), heading focused.
+{
+  const { ctx, page } = await newPage(DESKTOP, 'qa2-deeplink');
+  await page.goto(B + `/auth/dev-login?email=qa2-dl-${STUDENT}&next=/`, { waitUntil: 'networkidle' }); await page.waitForSelector('#list .item');
+  let gets = 0;
+  await page.route(`**/api/deals/${FULL}`, async (r) => { gets++; await new Promise((res) => setTimeout(res, 700)); await r.continue(); });
+  await page.goto(B + `/deal/${FULL}`, { waitUntil: 'networkidle' }); await page.waitForSelector('#detail .prose'); await settle(page, 600);
+  check('deep link: the deal is fetched once (one view)', gets === 1, `${gets}`);
+  check('deep link: focus is on the deal heading, not <body>', await page.evaluate(() => document.activeElement?.id === 'detailName'));
+  await ctx.close();
 }
 
 // The shop/scan checks provoke 403/404/409/410 answers on purpose; Chromium logs every non-2xx
