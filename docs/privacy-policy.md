@@ -13,7 +13,7 @@
 最後更新：[發布日期]
 
 CampusPass（「本服務」）是一個整理各校與學生組織已公開之特約優惠的獨立索引網站，網址為
-`https://campuspass.niko-tecx.workers.dev`（未來可能變更網域）。本政策依《個人資料保護法》（下稱「個資法」）第 8 條
+`https://pass.tecxmate.com`。本政策依《個人資料保護法》（下稱「個資法」）第 8 條
 說明本服務如何蒐集、處理及利用您的個人資料。
 
 ### 1. 蒐集者
@@ -147,7 +147,7 @@ Cloudflare 全球節點提供。登入由 Google 處理。網頁字型由本服�
 Last updated: [publication date]
 
 CampusPass (the "Service") is an independent index of partner discounts that schools and student organisations
-have already published, at `https://campuspass.niko-tecx.workers.dev` (the domain may change). This policy is
+have already published, at `https://pass.tecxmate.com`. This policy is
 the notice required by Article 8 of Taiwan's Personal Data Protection Act (PDPA). It describes what the Service
 collects and how it is used. If the two language versions differ, the Chinese version prevails **[LAWYER]**.
 
