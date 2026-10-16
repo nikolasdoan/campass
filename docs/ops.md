@@ -11,7 +11,7 @@ Owner: campass-2 (Cloudflare: deploys, production D1, Worker secrets). See [coor
 | D1 | `campuspass`, id `e2fd1b29-9117-44ef-9995-ac74f03e15b9`, region ENAM |
 | Vars | `GOOGLE_CLIENT_ID` (public, in `wrangler.jsonc`) |
 | Secrets | `ADMIN_TOKEN` (set), `GOOGLE_CLIENT_SECRET` (pending) |
-| ⚠ TEMPORARY | `DEV_LOGIN=true` set 2026-10-16 ~03:55 UTC at the founder's request so they can test without Google. Remove with `npx wrangler secret delete DEV_LOGIN` when testing ends or Google creds arrive. While set: `/auth/dev-login?email=…` signs anyone in as a separate `dev:` account (real Google accounts are not reachable), and the http→https redirect on Worker paths is off. Delete test accounts on /me before re-enabling stats-based decisions. |
+| Test login | `DEV_LOGIN` was on in production 2026-10-16 ~03:55–05:00 UTC for founder testing; **removed** (`wrangler secret delete DEV_LOGIN`), `/auth/dev-login` → 404. Two `dev:` test accounts remain (excluded from stats; their sessions stay valid until they expire or are deleted). |
 | First deploy | 2026-10-15, integration commit `d37e097`, 605 deals seeded |
 | Current deploy | 2026-10-16 04:48 UTC, integration commit `627fb07`, version `251862c5`; migrations 0001–0005 (user_identities); school identity cards (CampusPass 校園卡) |
 | Previous deploy | 2026-10-16 04:13 UTC, `8ee118a`, version `4d547ed2` (rollback target; 0005 is additive, so rolling back code leaves the table unused) |
