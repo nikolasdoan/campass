@@ -54,6 +54,7 @@ jobs:
           GOOGLE_CLIENT_ID=mock-client-id
           GOOGLE_CLIENT_SECRET=ci
           GOOGLE_MOCK_URL=http://localhost:9876
+          ALLOW_HTTP=true
           EOF
           npx wrangler d1 migrations apply campuspass --local
           npx wrangler d1 execute campuspass --local --file seed/deals.sql
