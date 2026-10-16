@@ -138,8 +138,10 @@ await step("GET /auth/google/start", async () => {
   const loc = res.headers.get("location") || "";
   if (res.status === 302 && loc.startsWith("https://accounts.google.com/")) {
     report("PASS", "GET /auth/google/start 302 to accounts.google.com");
+  } else if (res.status === 302 && /login_error=not_configured/.test(loc)) {
+    report("WARN", "GET /auth/google/start", "302 login_error=not_configured: Google client id/secret pending");
   } else if (res.status === 500 && /not configured/i.test(await res.text())) {
-    report("WARN", "GET /auth/google/start", "500 not configured: Google client id/secret pending");
+    report("WARN", "GET /auth/google/start", "500 not configured: Google client id/secret pending (pre-61cc779 build)");
   } else {
     report("FAIL", "GET /auth/google/start 302 to accounts.google.com", `${res.status} ${loc}`);
   }
