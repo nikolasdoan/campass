@@ -13,8 +13,8 @@ Owner: campass-2 (Cloudflare: deploys, production D1, Worker secrets). See [coor
 | Secrets | `ADMIN_TOKEN` (set), `GOOGLE_CLIENT_SECRET` (pending) |
 | Test login | `DEV_LOGIN` was on in production 2026-10-16 ~03:55–05:00 UTC for founder testing; **removed** (`wrangler secret delete DEV_LOGIN`), `/auth/dev-login` → 404. Two `dev:` test accounts remain (excluded from stats; their sessions stay valid until they expire or are deleted). |
 | First deploy | 2026-10-15, integration commit `d37e097`, 605 deals seeded |
-| Current deploy | 2026-10-16 04:48 UTC, integration commit `627fb07`, version `251862c5`; migrations 0001–0005 (user_identities); school identity cards (CampusPass 校園卡) |
-| Previous deploy | 2026-10-16 04:13 UTC, `8ee118a`, version `4d547ed2` (rollback target; 0005 is additive, so rolling back code leaves the table unused) |
+| Current deploy | 2026-10-16 06:57 UTC, integration commit `61cc779`, version `57a26b06`; sign-in without Google creds returns to the page with 「Google 登入即將開放」 (no 500); DEV_LOGIN off |
+| Previous deploy | 2026-10-16 04:48 UTC, `627fb07`, version `251862c5` (rollback target) |
 | Test shop link | label `campass-2 smoke` (deal 58a27e58ee), created 2026-10-16 for the deploy check; counts in shop stats |
 
 Only touch the `campuspass` Worker and D1. The account also holds other projects (bizmap, fishpond,
@@ -181,6 +181,13 @@ errors, no functional impact). `curl` does not receive the injected script, so o
 Decision (founder, 2026-10-16): exclude `pass.tecxmate.com` in Web Analytics → tecxmate.com site → Rules (Exclude,
 host `pass.tecxmate.com`, path `*`); the token is read-only there. Rocket Loader / minify / email obfuscation inject
 nothing (checked in a browser).
+
+## Flaky UI tests
+
+`tests/ui.mjs` occasionally fails one different check per run in CI (2026-10-16: "auth: report submits and
+closes" on d4170d8, "sign-in: a deep-scrolled row comes back" on 61cc779; both passed on re-run and locally).
+Gate rule used: re-run failed jobs once (`rerun_failed_jobs`) and run the suite locally on the exact commit; deploy
+only if both are green, and report the flake to campass-1.
 
 ## Rollback
 
