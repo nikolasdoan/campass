@@ -148,6 +148,20 @@ function parseDeal(row: Record<string, any>) {
 const CSP =
   "default-src 'self'; script-src 'self' 'sha256-eg/GVhaY6e7kjpJgCA+ekMoWWMbDQ6XOPncWNb9Fyis=' 'sha256-fUHrlWPUYpTBGc8gg8/54cfUIZmCuQE3WVSJyNRPlcI=' 'sha256-zuyku6vxOpPkFaBOjh2ULpQ4wwTDU3y9ZCFrAd9UXWc='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.googleusercontent.com; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'";
 
+// Plain-HTTP requests to the Worker's paths (/api, /auth, /admin) go to HTTPS first, so the session
+// cookie is only ever set over HTTPS (isSecure() reads the URL). Static pages don't reach the Worker:
+// the zone's "Always Use HTTPS" covers them. Local dev and CI (DEV_LOGIN, never set in production) stay
+// on http; `wrangler dev` presents local requests under the custom domain's hostname, so the
+// hostname can't tell them apart.
+app.use("*", async (c, next) => {
+  const url = new URL(c.req.url);
+  if (url.protocol === "http:" && c.env.DEV_LOGIN !== "true") {
+    url.protocol = "https:";
+    return c.redirect(url.toString(), 308);
+  }
+  await next();
+});
+
 // Same security headers as public/_headers, for responses the Worker builds itself.
 app.use("*", async (c, next) => {
   await next();

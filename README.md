@@ -84,7 +84,7 @@ Everything fits in the Workers and D1 free tiers.
 ```bash
 cp .dev.vars.example .dev.vars   # DEV_LOGIN=true; optional GOOGLE_MOCK_URL for the OAuth mock
 npm run db:migrate:local && npm run db:seed:local
-npm run dev                      # http://localhost:8787
+npm run dev                      # http://localhost:8787 (--local-upstream keeps the custom domain out of local URLs)
 npm run mock-google              # optional: http://localhost:9876, exercises the real OAuth code path
 npm test                         # api (115) + ui (198) + pwa (29) + admin (36)
 ```
