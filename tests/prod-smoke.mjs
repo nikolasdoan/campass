@@ -129,7 +129,12 @@ await step("http -> https", async () => {
 
 await step("GET /auth/dev-login", async () => {
   const res = await get("/auth/dev-login?email=smoke@example.com");
-  if (res.status === 302) report("WARN", "GET /auth/dev-login", "302: DEV_LOGIN is ON (test login); remove it when testing ends");
+  if (res.status === 302) {
+    // The test login just created an account; delete it again so the smoke test leaves no data behind.
+    const cookie = (res.headers.getSetCookie?.() || []).map((c) => c.split(";")[0]).join("; ");
+    if (cookie) await fetch(BASE + "/api/me", { method: "DELETE", headers: { Cookie: cookie, Origin: BASE } });
+    report("WARN", "GET /auth/dev-login", "302: DEV_LOGIN is ON (test login); remove it when testing ends");
+  }
   else check("GET /auth/dev-login 404 (DEV_LOGIN off)", res.status === 404, `${res.status}`);
 });
 

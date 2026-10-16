@@ -11,7 +11,7 @@ Owner: campass-2 (Cloudflare: deploys, production D1, Worker secrets). See [coor
 | D1 | `campuspass`, id `e2fd1b29-9117-44ef-9995-ac74f03e15b9`, region ENAM |
 | Vars | `GOOGLE_CLIENT_ID` (public, in `wrangler.jsonc`) |
 | Secrets | `ADMIN_TOKEN` (set), `GOOGLE_CLIENT_SECRET` (pending) |
-| Test login | `DEV_LOGIN` was on in production 2026-10-16 ~03:55–05:00 UTC for founder testing; **removed** (`wrangler secret delete DEV_LOGIN`), `/auth/dev-login` → 404. Two `dev:` test accounts remain (excluded from stats; their sessions stay valid until they expire or are deleted). |
+| Test login | `DEV_LOGIN` was on in production 2026-10-16 ~03:55–05:00 UTC for founder testing; **removed**, `/auth/dev-login` → 404. Both `dev:` test accounts (incl. one created by prod-smoke) deleted 2026-10-16 07:10 UTC with their sessions, views and passes; production has 0 users. |
 | First deploy | 2026-10-15, integration commit `d37e097`, 605 deals seeded |
 | Current deploy | 2026-10-16 06:57 UTC, integration commit `61cc779`, version `57a26b06`; sign-in without Google creds returns to the page with 「Google 登入即將開放」 (no 500); DEV_LOGIN off |
 | Previous deploy | 2026-10-16 04:48 UTC, `627fb07`, version `251862c5` (rollback target) |
@@ -169,7 +169,7 @@ curl -X PUT -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -H "Content-Type: a
   -d '{"hostname":"pass.tecxmate.com","zone_id":"<tecxmate.com zone id>","service":"campuspass","environment":"production"}'
 ```
 
-**HTTPS:** on 2026-10-16 `http://pass.tecxmate.com` (and `http://…workers.dev`) served the app over plain HTTP
+**HTTPS:** Always Use HTTPS is ON for the zone (founder, 2026-10-16): `http://pass.tecxmate.com/*` → 301 https. Earlier, plain HTTP served the app with no redirect.
 with no redirect: the zone's "Always Use HTTPS" is off. Over HTTP the HSTS header is ignored, the service worker
 cannot register and cookies lose `Secure`. Fix in the dashboard (token has no zone-settings access): SSL/TLS →
 Edge Certificates → Always Use HTTPS (whole zone), or Rules → Redirect Rules → "Redirect from HTTP to HTTPS"
