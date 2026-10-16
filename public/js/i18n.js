@@ -1,6 +1,6 @@
 /* Every UI string, in zh-TW and en. Deal content (names, offers) stays Chinese.
    Write 臺 not 台 in UI copy. Labels never wrap: the English is shortened, not the layout. */
-import { storage } from "./util.js?v=9";
+import { storage } from "./util.js?v=10";
 
 const LANG_KEY = "cp_lang";
 
@@ -645,7 +645,7 @@ const DICT = {
     "cashier.idCheck": "Check the student ID before confirming",
     "cashier.idCheckBody": "A Google account doesn't prove enrolment. Check that the student ID matches who the deal is for.",
     "cashier.only": "{who} only",
-    "cashier.schoolsMore": "{list} +{n} more",
+    "cashier.schoolsMore": "{list} +{more} more",
     "cashier.whoSep": ", ",
 
     "merchants.title": "For merchants",

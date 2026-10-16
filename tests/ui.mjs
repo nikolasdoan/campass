@@ -12,6 +12,8 @@ const EXPECT = (() => {
 })();
 const OUT = process.env.SHOTS_DIR || new URL('../test-results/', import.meta.url).pathname;
 mkdirSync(OUT, { recursive: true });
+const DATA = JSON.parse(readFileSync(new URL('../data/deals.json', import.meta.url), 'utf8'));
+const BY_ID = new Map(DATA.map((d) => [d.id, d]));
 const EXPIRED = '82303c4708';
 const FULL = '58a27e58ee'; // has phone + address
 const results = [];
@@ -104,8 +106,9 @@ const allErrors = [];
   await shot(page, 'phone-region-sheet');
   check('phone: region picker opens as bottom sheet', await page.evaluate(() => { const d = document.querySelector('dialog[open]'); if (!d) return false; const r = d.getBoundingClientRect(); return Math.abs(r.bottom - innerHeight) < 2 && r.width === innerWidth; }));
   await page.click('dialog[open] [data-value="east"]'); await settle(page, 400);
-  const metas = await page.$$eval('#list .item .meta', (m) => m.map((x) => x.textContent));
-  check('phone: region filter (東部)', metas.length > 0 && metas.every((m) => m.includes('東部') || m.includes('全臺')), `${metas.length}`);
+  // The row's meta shows the area (花蓮縣…) when known, the region otherwise: check the data.
+  const eastIds = await page.$$eval('#list .item', (l) => l.map((x) => x.dataset.id));
+  check('phone: region filter (東部)', eastIds.length > 0 && eastIds.every((id) => BY_ID.get(id)?.regions.includes('east')), `${eastIds.length}`);
   await page.click('[data-reset]'); await settle(page, 150);
   check('phone: reset filters', (await itemCount(page)) === EXPECT.student);
 
@@ -113,7 +116,9 @@ const allErrors = [];
   const firstId = await page.$eval('#list .item', (li) => li.dataset.id);
   await page.click(`#list .item[data-id="${firstId}"] .pick`); await settle(page);
   check('phone: detail route pushed', new URL(page.url()).pathname === `/deal/${firstId}`);
-  check('phone: locked detail shows login card', await page.isVisible('#detail .lockcard') && (await page.textContent('#detail .lockcard')).includes('登入後查看完整優惠條件、訂房代碼與聯絡方式'));
+  const lockText = await page.textContent('#detail .lockcard');
+  const lodging = BY_ID.get(firstId)?.category === 'lodging';
+  check('phone: locked detail shows login card (訂房代碼 only for lodging)', await page.isVisible('#detail .lockcard') && lockText.includes('登入看完整條件') && lockText.includes('登入後可查看優惠條件') && lockText.includes('訂房代碼') === lodging, lockText.replace(/\s+/g, ' ').trim().slice(0, 60));
   const det = await rect(page, '#detail');
   check('phone: detail is a full-screen page', det.top === 0 && det.left === 0 && det.width === 390 && det.vis === 'visible');
   await shot(page, 'phone-detail-locked');
@@ -372,7 +377,7 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   check('pass: phone pass is full screen', dlg && dlg.top === 0 && dlg.left === 0 && dlg.width === 390 && Math.abs(dlg.height - 844) < 1, JSON.stringify(dlg));
   check('pass: body.has-overlay while the pass is open', await page.evaluate(() => document.body.classList.contains('has-overlay')));
   const code = await passCode(page);
-  check('pass: code shown in 4+2 groups', /^[A-HJ-NP-Z2-9]{4} [A-HJ-NP-Z2-9]{2}$/.test(await page.textContent('#passCode')), await page.textContent('#passCode'));
+  check('pass: code shown in 3+3 groups', /^[A-HJ-NP-Z2-9]{3} [A-HJ-NP-Z2-9]{3}$/.test(await page.textContent('#passCode')), await page.textContent('#passCode'));
   const left1 = await page.textContent('#passLeft');
   const clock1 = await page.textContent('#passClock');
   check('pass: 15-minute countdown', /^1[45]:[0-5]\d$/.test(left1), left1);
@@ -382,7 +387,8 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   check('pass: clock and countdown tick', (await page.textContent('#passClock')) !== clock1 && (await page.textContent('#passLeft')) !== '15:00');
   check('pass: shimmer bar animates', await page.$eval('.pass-live i', (i) => getComputedStyle(i).animationName === 'passSweep'));
   check('pass: masked email', (await page.textContent('.pass-who')).trim() === 'r***@ntu.edu.tw', await page.textContent('.pass-who'));
-  check('pass: instruction text', (await page.textContent('.pass-instr')).includes('合作店家可掃描 QR 確認；其他店家請依原本方式出示學生證'));
+  check('pass: instruction text', (await page.textContent('.pass-instr')).includes('合作店家可掃描 QR 確認'));
+  check('pass: asks for the student ID too', (await page.isVisible('#passId')) && (await page.textContent('#passId')).includes('請同時出示學生證'));
   check('pass: QR is black on white', await page.$eval('.pass-qr svg', (s) => s.querySelector('rect').getAttribute('fill') === '#FFFFFF' && s.querySelector('path').getAttribute('fill') === '#000000'));
   qrCheck('pass: QR decodes to /r/<code> (phone)', await decodeQR(page, '.pass-qr'), `${B}/r/${code}`);
   check('pass: own redemption readable while open', (await apiGet(page, `/api/redemptions/${code}`)).data?.code === code);
@@ -413,15 +419,19 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   await shot(sp, 'shop-invalid');
   await sp.goto(B + `/r/${code}`, { waitUntil: 'networkidle' }); await sp.waitForSelector('[data-scan-confirm]');
   check('scan: paired phone sees shop + deal + 確認使用', (await sp.textContent('#scanBody')).includes('台北福華') && (await sp.textContent('#scanBody')).includes('台北福華大飯店') && (await sp.textContent('[data-scan-confirm]')).includes('確認使用'));
-  check('scan: no student data on the shop side', !(await sp.textContent('#scanBody')).includes('@'));
+  const scanText = await sp.textContent('#scanBody');
+  check('scan: cashier sees who the deal is for, the masked account (學校信箱) and 請核對學生證', scanText.includes('限臺大學生') && scanText.includes('r***@ntu.edu.tw') && scanText.includes('學校信箱') && scanText.includes('請核對學生證後再確認') && !scanText.includes(STUDENT), scanText.replace(/\s+/g, ' ').slice(0, 160));
+  check('scan: the ID check comes before 確認使用', await sp.evaluate(() => !!(document.querySelector('.idcheck').compareDocumentPosition(document.querySelector('[data-scan-confirm]')) & Node.DOCUMENT_POSITION_FOLLOWING)));
   await shot(sp, 'scan-paired');
   const t0 = Date.now();
   await sp.click('[data-scan-confirm]'); await sp.waitForSelector('.scanstate.ok');
   check('scan: confirm → big ✓ with time', /\d\d:\d\d 確認/.test(await sp.textContent('#scanBody')));
+  check('scan: the confirmed result still shows the deal and who it is for', (await sp.textContent('#scanBody .cashfacts')).includes('台北福華大飯店') && (await sp.textContent('#scanBody .cashfacts')).includes('限臺大'));
   await shot(sp, 'scan-confirmed');
   await page.waitForSelector('dialog.pass .pass-done', { timeout: 7000 }).catch(() => {});
   const flipped = Date.now() - t0;
   check('pass: student pass flips to 店家已確認 within ~5s', (await page.$('dialog.pass .pass-done')) && flipped < 6000 && (await page.textContent('.pass-done')).includes('店家已確認'), `${flipped}ms`);
+  check('pass: once confirmed, the footer says done (no "show the cashier")', (await page.textContent('#passInstr')).includes('已完成') && !(await page.isVisible('#passId')));
   await shot(page, 'pass-phone-confirmed');
   await sp.goto(B + SHOP, { waitUntil: 'networkidle' }); await sp.waitForSelector('#shopCode');
   await sp.fill('#shopCode', code.toLowerCase()); await sp.press('#shopCode', 'Enter');
@@ -440,6 +450,8 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   const anonText = await anon.page.textContent('#scanBody');
   check('scan: unpaired phone sees the explanation', anonText.includes('這是 CampusPass 優惠使用憑證，只有合作店家的手機可以確認。') && !!(await anon.page.$('#scanBody a[href="/merchants"]')) && !!(await anon.page.$('#scanBody a[href="/"]')));
   check('scan: unpaired phone sees no student or deal data', !anonText.includes('@') && !anonText.includes('福華') && !(await anon.page.$('[data-scan-confirm]')));
+  // iOS: a shop paired in its home-screen app scans into Safari, unpaired: the code to type on the shop page.
+  check('scan: unpaired phone shows the code (3+3) to enter on the shop page', (await anon.page.textContent('.scanbig')) === `${code.slice(0, 3)} ${code.slice(3)}` && anonText.includes('店家：請在你的店家頁輸入此代碼'));
   await shot(anon.page, 'scan-unpaired');
   await anon.page.goto(B + `/deal/${FULL}`, { waitUntil: 'networkidle' }); await anon.page.waitForSelector('#detail .lockcard');
   check('pass: signed out → sign-in card, no 使用優惠', (await rect(anon.page, '#detailUse')).display === 'none');
@@ -456,7 +468,7 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   await page.click('[data-redeem]'); await page.waitForSelector('dialog.pass .pass-qr svg');
   const code2 = await passCode(page);
   await page.click('dialog.pass [data-close]'); await page.waitForSelector('dialog.ask[open]', { timeout: 3000 }).catch(() => {});
-  check('ask: closing the pass asks 優惠有用成功嗎？ with 3 answers', (await page.textContent('dialog.ask')).includes('優惠有用成功嗎') && (await page.$$('dialog.ask [data-outcome]')).length === 3);
+  check('ask: closing the pass asks 這次優惠有成功使用嗎？ with 3 answers', (await page.textContent('dialog.ask')).includes('這次優惠有成功使用嗎') && (await page.$$('dialog.ask [data-outcome]')).length === 3);
   check('ask: the pass history entry is gone', !(await page.evaluate(() => history.state?.pass)));
   await shot(page, 'ask-phone');
   await page.click('dialog.ask [data-outcome="used"]'); await settle(page, 600);
@@ -496,8 +508,10 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   const { ctx, page } = await newPage(DESKTOP, 'pass-desktop');
   await page.goto(B + `/auth/dev-login?email=desk-${STUDENT}&next=/deal/${FULL}`, { waitUntil: 'networkidle' });
   await page.waitForSelector('#detail .prose'); await settle(page);
-  const head = await rect(page, '#dhead'); const use = await rect(page, '#detailUse');
-  check('pass: desktop 使用優惠 strip right under the panel header', Math.abs(use.top - head.bottom) < 1 && use.right <= 1280.5, `${head.bottom} ${use.top}`);
+  const hero = await rect(page, '#detailBody .dhero'); const use = await rect(page, '#detailUse');
+  check('pass: desktop 使用優惠 follows the deal heading (DOM and screen)', await page.$eval('#detailUse', (u) => u.previousElementSibling?.classList.contains('dhero')) && use.top >= hero.bottom - 1 && use.right <= 1280.5, `${hero.bottom} ${use.top}`);
+  await page.focus('#detailName'); await page.keyboard.press('Tab');
+  check('pass: desktop tab order is deal name → 使用優惠', await page.evaluate(() => document.activeElement?.matches('[data-redeem]')));
   await shot(page, 'desktop-detail-use');
   await page.click('[data-redeem]'); await page.waitForSelector('dialog.pass .pass-qr svg'); await settle(page);
   const card = await rect(page, 'dialog.pass .dlg-card');
@@ -530,7 +544,7 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   await page.goto(B + '/me', { waitUntil: 'networkidle' }); await settle(page);
   check('merchants: /me has a 商家合作 row', !!(await page.$('#meBody a.row[href="/merchants"]')));
   await page.click('#meBody a.row[href="/merchants"]'); await page.waitForSelector('#leadForm');
-  check('merchants: in-app route, no tab highlighted, back button shown', new URL(page.url()).pathname === '/merchants' && !(await page.$('#tabbar [aria-current]')) && (await page.isVisible('#appbarBack')));
+  check('merchants: in-app route, only the parent 我的 tab marked, back button shown', new URL(page.url()).pathname === '/merchants' && !(await page.$('#tabbar [aria-current="page"]')) && (await page.getAttribute('#tabbar [data-tab="me"]', 'aria-current')) === 'true' && (await page.isVisible('#appbarBack')));
   check('merchants: pitch + 4 interest options', (await page.textContent('#merchantsBody')).includes('CampusPass 整理學生可用的特約優惠') && (await page.$$('#leadForm input[name="interest"]')).length === 4
     && (await page.textContent('#leadForm .radios')).includes('洽談 CampusPass 專屬優惠'));
   const hp = await page.evaluate(() => { const w = document.querySelector('.hp'); const i = w.querySelector('input'); const r = w.getBoundingClientRect(); return { aria: w.getAttribute('aria-hidden'), tab: i.tabIndex, left: r.right, disp: getComputedStyle(i).display }; });
@@ -718,7 +732,7 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   await page.goto(B + '/me', { waitUntil: 'domcontentloaded' }); await settle(page, 900);
   check('me failure: /me keeps the account (no Google sign-in prompt), offers retry', (await page.textContent('#meBody')).includes(`fixes-${STUDENT}`) && !(await page.$('#meBody .gbtn')) && !!(await page.$('#meBody [data-retry-me]')));
   await page.goto(B + '/saved', { waitUntil: 'domcontentloaded' }); await settle(page, 900);
-  check('me failure: /saved shows a retry, not a sign-in prompt', !(await page.$('#savedBody .gbtn')) && !!(await page.$('#savedBody [data-retry-me]')));
+  check('me failure: /saved shows the kept list (offline note) with a retry, not a sign-in prompt', !(await page.$('#savedBody .gbtn')) && !!(await page.$('#savedBody [data-retry-me]')) && !!(await page.$(`#savedBody .item[data-id="${FULL}"]`)));
   await page.unroute('**/api/me');
   await page.click('#savedBody [data-retry-me]'); await settle(page, 900);
   check('me failure: retry recovers the saved list', !!(await page.$(`#savedBody .item[data-id="${FULL}"]`)));
@@ -780,6 +794,146 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   check('shop: an invalid key keeps the app manifest', (await page.getAttribute('link[rel="manifest"]', 'href')) === '/manifest.webmanifest');
   allErrors.push(...page._errors.filter((e) => !/Failed to load resource/.test(e)));
   await ctx.close();
+}
+
+/* ================= QA round 2 ================= */
+const TODAY_TPE = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Taipei' });
+const isActive = (x) => x.auto_renew || !x.expires_on || x.expires_on >= TODAY_TPE;
+const liveText = (page) => page.evaluate(() => document.getElementById('live')?.textContent || '');
+
+// Explore: order, search aliases, Reset keeps the school, the expired note follows the filters.
+{
+  const { ctx, page } = await newPage(MOBILE, 'qa2-explore');
+  await page.goto(B + '/', { waitUntil: 'networkidle' }); await page.waitForSelector('#list .item');
+  const firstCat = BY_ID.get(await page.$eval('#list .item', (li) => li.dataset.id))?.category;
+  check('order: 全部 opens with food, not the source sheet\'s hotels', firstCat === 'food', firstCat);
+  const ids = () => page.$$eval('#list .item', (l) => l.map((x) => x.dataset.id));
+  await page.fill('#q', 'Tainan'); await settle(page, 250);
+  let got = await ids();
+  check('search: an English city name finds deals by area (Tainan → 臺南)', got.length > 0 && got.every((id) => (BY_ID.get(id)?.area || '').startsWith('臺南')), `${got.length}`);
+  await page.fill('#q', '大安區'); await settle(page, 250);
+  got = await ids();
+  check('search: the area matches (大安區)', got.length > 0 && got.some((id) => (BY_ID.get(id)?.area || '').includes('大安區')), `${got.length}`);
+  check('list: the row meta shows the area', (await page.$eval('#list .item .meta', (m) => m.textContent)).includes('區'));
+  await page.fill('#q', '九折'); await settle(page, 250);
+  const nine = (await ids()).length;
+  await page.fill('#q', '9折'); await settle(page, 250);
+  check('search: 九折 ≡ 9折', nine > 0 && nine === (await ids()).length, `${nine}`);
+  await page.fill('#q', 'hotel'); await settle(page, 250);
+  got = await ids();
+  check('search: English category words (hotel → 住宿)', got.length > 0 && got.every((id) => BY_ID.get(id)?.category === 'lodging'), `${got.length}`);
+  check('pills: zero-count categories are disabled, 全部 is not', (await page.$$eval('[data-cat]', (l) => l.filter((b) => b.querySelector('.n').textContent === '0').every((b) => b.disabled))) && !(await page.$eval('[data-cat="all"]', (b) => b.disabled)));
+  await page.fill('#q', 'xyzzy'); await settle(page, 250);
+  check('expired note: hidden when nothing is hidden by date', !(await page.textContent('#exploreFoot')).includes('已過期'));
+  await page.fill('#q', ''); await settle(page, 250);
+  const expNTU = DATA.filter((x) => x.schools.includes('NTU') && x.eligibility.student && !isActive(x)).length;
+  check('expired note: counts only what these filters hide by date', (await page.textContent('#exploreFoot')).includes(`另有 ${expNTU} 項已過期`), `${expNTU}`);
+  await page.click('[data-pick="school"]'); await settle(page, 400);
+  check('school picker: short name with the full name under it, every count shown', await page.evaluate(() => [...document.querySelectorAll('dialog[open] .opt')].every((b) => { const n = b.querySelector('.n').getBoundingClientRect(); return n.right <= innerWidth && n.width > 0; }) && !!document.querySelector('dialog[open] .optlbl small')));
+  await page.click('dialog[open] [data-value="NCCU"]'); await settle(page, 400);
+  check('reset: a chosen school alone is not a filter (no Reset link)', await page.$eval('#filterRow [data-reset]', (b) => b.hidden));
+  await page.fill('#q', 'zzzz'); await settle(page, 250);
+  await page.click('#list [data-reset]'); await settle(page, 250);
+  check('reset: keeps the chosen school, clears the search', (await page.textContent('[data-pick="school"] [data-label]')) === '政大' && (await page.inputValue('#q')) === '' && (await page.evaluate(() => localStorage.getItem('cp_school'))) === 'NCCU');
+  await page.click('[data-pick="school"]'); await settle(page, 400);
+  await page.click('dialog[open] [data-value="NTU"]'); await settle(page, 400);
+  // Route changes are announced; a child page marks its parent tab; 404 doesn't repeat its title.
+  await page.click('#tabbar [data-tab="saved"]'); await settle(page, 300);
+  check('a11y: a tab change is announced (polite live region)', (await liveText(page)) === '收藏');
+  await page.click('#tabbar [data-tab="me"]'); await settle(page, 300);
+  check('me: the app-bar avatar/sign-in is hidden on /me', await page.$eval('#appbarActions', (e) => e.hidden));
+  await page.click('#meBody a[href="/merchants"]'); await settle(page, 300);
+  check('merchants: the 我的 tab is marked as the parent (aria-current=true)', (await page.getAttribute('#tabbar [data-tab="me"]', 'aria-current')) === 'true' && !(await page.$('#tabbar [aria-current="page"]')));
+  await page.goto(B + '/nope', { waitUntil: 'networkidle' }); await settle(page, 300);
+  check('404: the app bar does not repeat the page title', (await page.textContent('#appbarTitle')) === '');
+  await page.goto(B + `/deal/${FULL}`, { waitUntil: 'networkidle' }); await settle(page, 400);
+  check('a11y: on a phone the open detail is the main landmark', (await page.getAttribute('#detail', 'role')) === 'main');
+  allErrors.push(...page._errors);
+  await ctx.close();
+}
+
+// Desktop, English: deal content is marked Chinese; pill ‹ ›; popovers across the 820px breakpoint.
+{
+  const { ctx, page } = await newPage(DESKTOP, 'qa2-desktop');
+  await page.addInitScript(() => localStorage.setItem('cp_lang', 'en'));
+  await page.goto(B + `/auth/dev-login?email=qa2-desk-${STUDENT}&next=/`, { waitUntil: 'networkidle' }); await page.waitForSelector('#list .item');
+  check('lang: EN page, Chinese deal names marked zh-Hant-TW', (await page.getAttribute('html', 'lang')) === 'en' && (await page.$eval('#list .item .nm', (e) => e.closest('[lang]').lang)) === 'zh-Hant-TW');
+  check('lang: generic badges are English in EN', !(await page.$$eval('#list .item .badge', (l) => l.some((b) => b.textContent === '專屬優惠價' || b.textContent === '特約優惠'))));
+  const arrows = await page.evaluate(() => ({ wrap: document.getElementById('catWrap').className, r: getComputedStyle(document.querySelector('.pillarrow.r')).display, l: getComputedStyle(document.querySelector('.pillarrow.l')).display }));
+  check('pills: a › button shows at the cut-off edge (desktop), ‹ hidden at the start', /more-r/.test(arrows.wrap) && arrows.r !== 'none' && arrows.l === 'none', JSON.stringify(arrows));
+  await page.click('.pillarrow.r'); await settle(page, 700);
+  check('pills: › scrolls the category row', (await page.$eval('#cats', (c) => c.scrollLeft)) > 0 && (await page.$eval('.pillarrow.l', (b) => getComputedStyle(b).display)) !== 'none');
+  await page.click('#list .item .pick'); await settle(page, 500);
+  check('lang: detail name and offer are zh-Hant-TW in EN', (await page.$eval('#detailName', (e) => e.closest('[lang]').lang)) === 'zh-Hant-TW');
+  await page.keyboard.press('Escape'); await settle(page, 300);
+  // Account popover clears the rail; crossing to a phone closes it.
+  await page.click('#railAvatar'); await settle(page, 350);
+  const pop = await rect(page, 'dialog.acct'); const rail = await rect(page, '#rail');
+  check('account menu: the popover does not overlap the rail', pop.left >= rail.right + 7, `${pop.left} vs ${rail.right}`);
+  await page.setViewportSize({ width: 800, height: 800 }); await settle(page, 400);
+  check('breakpoint: an open account popover closes when the window becomes a phone', !(await page.$('dialog[open]')));
+  await page.setViewportSize({ width: 1280, height: 800 }); await settle(page, 300);
+  await page.click('[data-pick="region"]'); await settle(page, 350);
+  check('breakpoint: the region picker opens as a popover on a desktop', !!(await page.$('dialog.picker.dlg-pop[open]')));
+  await page.setViewportSize({ width: 800, height: 800 }); await settle(page, 500);
+  const sheet = await page.evaluate(() => { const d = document.querySelector('dialog.picker[open]'); if (!d) return null; const r = d.getBoundingClientRect(); return { pop: d.classList.contains('dlg-pop'), bottom: r.bottom, width: r.width, h: innerHeight }; });
+  check('breakpoint: the open picker re-opens as a bottom sheet on a phone', sheet && !sheet.pop && Math.abs(sheet.bottom - sheet.h) < 2 && sheet.width === 800, JSON.stringify(sheet));
+  await page.keyboard.press('Escape'); await settle(page, 400);
+  allErrors.push(...page._errors);
+  await ctx.close();
+}
+
+// Saved deals readable offline (cp_saved_cache), expired grouped last, wiped on sign-out / another account.
+{
+  const { ctx, page } = await newPage(MOBILE, 'qa2-offline');
+  const A = `qa2-a-${STUDENT}`;
+  await page.goto(B + `/auth/dev-login?email=${A}&next=/deal/${FULL}`, { waitUntil: 'networkidle' }); await page.waitForSelector('#detail .prose');
+  await page.click('#dhead [data-star]'); await settle(page, 1200);
+  const cache = () => page.evaluate(() => JSON.parse(localStorage.getItem('cp_saved_cache') || 'null'));
+  let c = await cache();
+  check('offline copy: saving a deal keeps its full detail for this account', c?.email === A && c.order.includes(FULL) && !!c.deals[FULL]?.address && !!c.deals[FULL]?.offer, JSON.stringify(c && { email: c.email, order: c.order }));
+  await page.evaluate((id) => fetch('/api/favorites/' + id, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: '{}' }), EXPIRED);
+  await page.goto(B + '/saved', { waitUntil: 'networkidle' }); await page.waitForSelector('#savedBody .item');
+  const groups = await page.evaluate(() => [...document.querySelectorAll('#savedBody .list')].map((ul) => [...ul.querySelectorAll('.item')].map((li) => li.dataset.id)));
+  check('saved: usable deals first, expired ones under 已過期 at the bottom', groups.length === 2 && groups[0].includes(FULL) && groups[1].includes(EXPIRED) && (await page.textContent('#savedBody .listhead')) === '已過期', JSON.stringify(groups));
+  // The network goes away (a tunnel): the account and the deal can't load.
+  await page.route('**/api/me', (r) => r.abort()); await page.route('**/api/deals/**', (r) => r.abort()); await page.route('**/api/deals', (r) => r.abort());
+  await page.goto(B + '/saved', { waitUntil: 'domcontentloaded' }); await page.waitForSelector('#savedBody .offnote', { timeout: 15000 }).catch(() => {});
+  check('offline: /saved lists the kept saved deals, labelled 離線顯示，上次更新', (await page.textContent('#savedBody .offnote').catch(() => '')).includes('離線顯示，上次更新') && !!(await page.$(`#savedBody .item[data-id="${FULL}"]`)));
+  await shot(page, 'qa2-saved-offline');
+  await page.click(`#savedBody .item[data-id="${FULL}"] .pick`); await page.waitForSelector('#detailBody .offnote', { timeout: 15000 }).catch(() => {});
+  const det = await page.textContent('#detailBody');
+  check('offline: a saved deal opens with its terms and address, marked offline, no 使用優惠', det.includes(BY_ID.get(FULL).address || '仁愛路') && !!(await page.$('#detailBody .prose')) && det.includes('離線顯示') && (await rect(page, '#detailUse')).display === 'none');
+  await shot(page, 'qa2-detail-offline');
+  await page.unroute('**/api/me'); await page.unroute('**/api/deals/**'); await page.unroute('**/api/deals');
+  // Another account signs in on this browser: A's copy is gone.
+  await page.goto(B + `/auth/dev-login?email=qa2-b-${STUDENT}&next=/saved`, { waitUntil: 'networkidle' }); await settle(page, 600);
+  c = await cache();
+  check('offline copy: another account signing in replaces it (no deals of the first)', !c || (c.email !== A && !c.deals[FULL]), JSON.stringify(c && c.email));
+  // Back to A, then sign out: wiped.
+  await page.goto(B + `/auth/dev-login?email=${A}&next=/deal/${FULL}`, { waitUntil: 'networkidle' }); await page.waitForSelector('#detail .prose'); await settle(page, 600);
+  check('offline copy: opening a saved deal refreshes it', !!(await cache())?.deals?.[FULL]);
+  const code = (await page.evaluate((id) => fetch(`/api/deals/${id}/redeem`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}' }).then((r) => r.json()), FULL)).code;
+  await page.goto(B + '/me', { waitUntil: 'networkidle' }); await page.click('#meBody [data-signout]'); await settle(page, 700);
+  check('offline copy: wiped on sign-out', (await page.evaluate(() => localStorage.getItem('cp_saved_cache'))) === null);
+  allErrors.push(...page._errors.filter((e) => !/Failed to load resource|net::ERR_/.test(e)));
+  await ctx.close();
+
+  // /m/<key> on an iPhone: the ID check before confirming, the Safari note, and what was confirmed.
+  const IPHONE = { ...MOBILE, userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1' };
+  const shopI = await newPage(IPHONE, 'shop');
+  const sp = shopI.page;
+  await sp.goto(B + SHOP, { waitUntil: 'networkidle' }); await sp.waitForSelector('#shopCode');
+  check('shop (iOS Safari): keep this page in Safari, or type the code', (await sp.textContent('#shopBody')).includes('請用 Safari 開啟並保留此頁') && !!(await sp.$('#shopBody .confirmcard .idcheck')));
+  await sp.fill('#shopCode', code); await sp.click('#shopForm [type="submit"]'); await sp.waitForSelector('#shopResult .result.ok');
+  const res = await sp.textContent('#shopResult');
+  check('shop: a typed code shows the deal, who it is for and the masked account', res.includes('台北福華大飯店') && res.includes('限臺大') && res.includes('q***@') && res.includes('學校信箱'), res.replace(/\s+/g, ' ').slice(0, 160));
+  await shopI.ctx.close();
+  const standalone = await newPage(IPHONE, 'shop');
+  await standalone.page.addInitScript(() => Object.defineProperty(navigator, 'standalone', { get: () => true }));
+  await standalone.page.goto(B + SHOP, { waitUntil: 'networkidle' }); await standalone.page.waitForSelector('#shopCode');
+  check('shop (iOS home screen): scanning opens Safari, so type the code', (await standalone.page.textContent('#shopBody')).includes('用相機掃描 QR 會跳到 Safari'));
+  await standalone.ctx.close();
 }
 
 // The shop/scan checks provoke 403/404/409/410 answers on purpose; Chromium logs every non-2xx

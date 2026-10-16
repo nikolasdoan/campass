@@ -3,11 +3,11 @@
    a pushed full-screen page on a phone) · /merchants (商家合作) · /m/:key (a shop's private
    confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
    Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=9";
-import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases } from "./js/i18n.js?v=9";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=9";
-import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=9";
-import { qrSVG } from "./js/qr.js?v=9";
+import { icon } from "./js/icons.js?v=10";
+import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases } from "./js/i18n.js?v=10";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=10";
+import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=10";
+import { qrSVG } from "./js/qr.js?v=10";
 
 /* ---------- constants ---------- */
 
@@ -316,16 +316,19 @@ function syncSavedCache() {
   if (!c) return;
   c.order = state.favOrder.slice();
   for (const id of Object.keys(c.deals)) if (!state.favs.has(id)) delete c.deals[id];
+  // Saved deals already open in full on this page (opened before the account had loaded).
+  for (const [id, d] of state.detail) if (!d.locked && !d.offline && state.favs.has(id)) c.deals[id] = stripHay(d.deal);
   c.at = Date.now();
   writeSavedCache();
 }
+
+const stripHay = ({ _hay, ...plain }) => plain;
 
 /** Keep a saved deal's full detail (opened, or just saved). The search index is not stored. */
 function keepSaved(deal) {
   const c = cacheFor(state.user?.email);
   if (!c || !deal?.id || !state.favs.has(deal.id)) return;
-  const { _hay, ...plain } = deal;
-  c.deals[deal.id] = plain;
+  c.deals[deal.id] = stripHay(deal);
   c.at = Date.now();
   writeSavedCache();
 }
@@ -341,9 +344,10 @@ async function fetchForSaved(id) {
 
 /** 「離線顯示，上次更新 10/16 08:05」 (Taipei time). */
 const TPE_STAMP = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Taipei", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
-function offlineNoteHTML(at) {
+function offlineNoteHTML(at, { retry = false } = {}) {
   const p = Object.fromEntries(TPE_STAMP.formatToParts(at || Date.now()).map((x) => [x.type, x.value]));
-  return `<div class="note offnote" role="note">${icon("wifi-off")}<span>${esc(t("offline.copy", { d: `${p.month}/${p.day} ${p.hour}:${p.minute}` }))}</span></div>`;
+  const again = retry ? ` <button class="linkbtn" type="button" data-retry-me>${esc(t("retry"))}</button>` : "";
+  return `<div class="note offnote" role="note">${icon("wifi-off")}<span>${esc(t("offline.copy", { d: `${p.month}/${p.day} ${p.hour}:${p.minute}` }))}${again}</span></div>`;
 }
 
 let meSeq = 0;
@@ -781,6 +785,7 @@ function openPicker(kind, anchor) {
     html: `<div class="dlg-head pick-head"><h2 id="pickTitle">${esc(title)}</h2><button class="iconbtn dlg-x" type="button" data-close aria-label="${esc(t("close"))}">${icon("x")}</button></div>
       <ul class="opts" role="radiogroup" aria-labelledby="pickTitle">${opts}</ul>`,
   });
+  dlg.dataset.kind = kind;
   const radios = [...dlg.querySelectorAll(".opt")];
   (radios.find((b) => b.tabIndex === 0) || radios[0])?.focus();
   dlg.addEventListener("keydown", (e) => {
@@ -851,7 +856,7 @@ function renderSaved() {
     return;
   }
   const deals = state.favOrder.map((id) => state.byId.get(id) || cachedDeal(id)).filter(Boolean);
-  const note = offline ? offlineNoteHTML(savedCache.at) : "";
+  const note = offline ? offlineNoteHTML(savedCache.at, { retry: true }) : "";
   if (!deals.length) {
     body.innerHTML = note + emptyHTML({
       ic: "star",
@@ -1396,6 +1401,9 @@ function applyInert() {
   const cover = els.detail.classList.contains("open") && isPhone();
   els.main.inert = cover;
   els.appbar.inert = cover;
+  // While it is the whole page (phone), the detail is the main landmark (<main> is inert then).
+  if (cover) els.detail.setAttribute("role", "main");
+  else els.detail.removeAttribute("role");
   document.body.classList.toggle("has-overlay", cover || dialogOpen());
 }
 
@@ -1861,10 +1869,47 @@ const shopHome = () => {
 const minibrand = () => {
   const home = shopHome();
   // The accessible name starts with the visible wordmark (WCAG 2.5.3); where it goes follows.
-  return `<a class="minibrand" href="${esc(home || "/")}" data-nav>${MARK}<span class="wordmark">campuspass</span><span class="sr-only"> ${esc(
+  return `<a class="minibrand" href="${esc(home || "/")}" data-nav>${MARK}<span class="wordmark">campuspass</span><span class="wordmark-zh i18n-zh">校園優惠</span><span class="sr-only"> ${esc(
     home ? t("scan.shopPage") : t("home.short")
   )}</span></a>`;
 };
+
+/* An iPhone keeps a home-screen web app's cookies apart from Safari's, and its camera opens a
+   scanned QR in Safari: a shop paired from the home-screen app is not paired in Safari. */
+const IS_IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const isStandalone = () => document.documentElement.classList.contains("is-standalone");
+
+/** Who a deal is for, in a cashier's words: 「限臺大學生、教職員」 · "NTU students, staff only". */
+function cashierFor(x) {
+  const en = getLang() === "en";
+  const who = ELIG.filter((k) => x.eligibility?.[k]).map((k) => (en ? t(`elig.${k}`).toLowerCase() : t(`elig.${k}`)));
+  const codes = Array.isArray(x.schools) ? x.schools : [];
+  let schools = codes.slice(0, 3).map((c) => schoolName(c)).join(en ? ", " : "、");
+  if (codes.length > 3) schools = t("cashier.schoolsMore", { list: schools, n: codes.length, more: codes.length - 3 });
+  const people = who.join(t("cashier.whoSep"));
+  if (!people && !schools) return "";
+  return t("cashier.only", { who: [schools, people].filter(Boolean).join(en ? " " : "") });
+}
+
+/** The prominent step before confirming: Google sign-in does not prove enrolment. */
+const idCheckHTML = () =>
+  `<div class="idcheck" role="note">${icon("id-card")}<div><b>${esc(t("cashier.idCheck"))}</b><span>${esc(t("cashier.idCheckBody"))}</span></div></div>`;
+
+/** What the cashier checks: the deal and its badge, who it is for, the student's masked Google
+ *  account (tagged when it is a school address). `deal: false` when the page heading names it. */
+function cashierHTML(x, { deal = true } = {}) {
+  if (!x) return "";
+  const forText = cashierFor(x);
+  const a = x.account || {};
+  const acct = a.masked ? `<span translate="no">${esc(a.masked)}</span>${a.school_domain ? ` <span class="mailtag">${esc(t("cashier.schoolMail"))}</span>` : ""}` : "";
+  const rows = [
+    deal && x.deal ? `<dt>${esc(t("cashier.deal"))}</dt><dd><b${ZH}>${esc(x.deal)}</b>${x.highlight ? ` ${badgeHTML(x.highlight)}` : ""}</dd>` : "",
+    !deal && x.highlight ? `<dt>${esc(t("cashier.deal"))}</dt><dd>${badgeHTML(x.highlight)}</dd>` : "",
+    forText ? `<dt>${esc(t("cashier.for"))}</dt><dd>${esc(forText)}</dd>` : "",
+    acct ? `<dt>${esc(t("cashier.account"))}</dt><dd>${acct}</dd>` : "",
+  ].join("");
+  return rows ? `<dl class="facts cashfacts">${rows}</dl>` : "";
+}
 const loadingCard = () => `<section class="card"><div class="dskel"><i class="w30"></i><i class="w60 tall"></i><i></i><i class="w80"></i></div></section>`;
 
 async function loadShop(key) {
@@ -1894,9 +1939,9 @@ function shopResultHTML() {
   if (!res) return "";
   if (res.ok)
     return `<div class="result ok">${icon("circle-check")}<div><b>${esc(t("shop.ok"))}</b><span>${esc(
-      [res.deal, TPE_HM.format(res.at), t("scan.codeLine", { code: groupCode(res.code) })].filter(Boolean).join(" · ")
-    )}</span></div></div>`;
-  return `<div class="result err">${icon("circle-alert")}<div><b>${esc(t(res.key))}</b>${res.deal ? `<span>${esc(res.deal)}</span>` : ""}</div></div>`;
+      [TPE_HM.format(res.at), t("scan.codeLine", { code: groupCode(res.code) })].join(" · ")
+    )}</span></div></div>${cashierHTML(res.info)}`;
+  return `<div class="result err">${icon("circle-alert")}<div><b>${esc(t(res.key))}</b>${res.deal ? `<span${ZH}>${esc(res.deal)}</span>` : ""}</div></div>`;
 }
 
 function renderShop() {
@@ -1921,13 +1966,13 @@ function renderShop() {
   const d = shop.data;
   const deals = (Array.isArray(d.deals) ? d.deals : [])
     .map(
-      (x) => `<li><b>${esc(x.name)}</b>${x.subtitle ? `<span>${esc(x.subtitle)}</span>` : ""}${x.highlight ? `<span class="badge">${esc(x.highlight)}</span>` : ""}</li>`
+      (x) => `<li><b${ZH}>${esc(x.name)}</b>${x.subtitle ? `<span${ZH}>${esc(x.subtitle)}</span>` : ""}${badgeHTML(x.highlight)}</li>`
     )
     .join("");
   b.innerHTML = `${minibrand()}
     <header class="minihead">
       <p class="eyebrow">${icon("store")}<span>${esc(t("shop.eyebrow"))}</span></p>
-      <h1 class="pagetitle" id="shopTitle">${esc(d.label)}</h1>
+      <h1 class="pagetitle" id="shopTitle"${ZH}>${esc(d.label)}</h1>
       <p class="shopcount" id="shopCount">${shopCountHTML()}</p>
     </header>
     <section class="card confirmcard" aria-labelledby="shopCodeLbl">
@@ -1940,11 +1985,14 @@ function renderShop() {
         </div>
         <p class="fieldhint" id="shopCodeHint">${esc(t("shop.codeHint"))}</p>
       </form>
+      ${idCheckHTML()}
+      ${IS_IOS && isStandalone() ? `<div class="note">${icon("smartphone")}<span>${esc(t("shop.iosStandalone"))}</span></div>` : ""}
       <div id="shopResult" role="status" aria-live="polite">${shopResultHTML()}</div>
     </section>
     ${deals ? `<section class="card"><h2>${esc(t("shop.deals"))}</h2><ul class="shopdeals">${deals}</ul></section>` : ""}
     <section class="card"><h2>${esc(t("shop.howTitle"))}</h2>
       <div class="howrow">${icon("scan-line")}<p>${esc(t("shop.how"))}</p></div>
+      ${IS_IOS && !isStandalone() ? `<div class="howrow">${icon("smartphone")}<p>${esc(t("shop.iosSafari"))}</p></div>` : ""}
       <p class="fine paired">${icon("shield-check")}<span>${esc([t("shop.paired"), t("shop.private")].join(getLang() === "en" ? " " : ""))}</span></p>
     </section>`;
   const form = b.querySelector("#shopForm");
@@ -1986,7 +2034,7 @@ async function submitShop(form) {
   btn.disabled = false;
   btn.textContent = t("shop.confirm");
   if (r.ok) {
-    shop.result = { ok: true, deal: r.data?.deal || "", code, at: Date.now() };
+    shop.result = { ok: true, deal: r.data?.deal || "", code, at: Date.now(), info: r.data };
     shop.data.confirmed_30d = (shop.data.confirmed_30d || 0) + 1;
     els.shopBody.querySelector("#shopCount").innerHTML = shopCountHTML();
     shop.code = "";
@@ -2049,6 +2097,8 @@ function renderScan() {
     // Anyone may scan a pass QR. Explain what it is; never show anything about the student.
     b.innerHTML = `${minibrand()}<section class="card scancard">
       ${scanStateHTML("qr-code", t("scan.passTitle"), t("scan.notMerchant"))}
+      <p class="scanbig" translate="no">${esc(groupCode(scan.code))}</p>
+      <p class="scanhint scanhint-shop">${esc(t("scan.enterCode"))}</p>
       <p class="scanhint">${esc(t("scan.notMerchantHint"))}</p>
       <div class="scanactions"><a class="btn btn-outline" href="/merchants" data-nav>${icon("store")}${esc(t("scan.forMerchants"))}</a>
         <a class="btn btn-ghost" href="/" data-nav>${icon("compass")}${esc(t("scan.explore"))}</a></div></section>`;
@@ -2064,17 +2114,17 @@ function renderScan() {
     })}</section>`;
     return;
   }
-  const shopLine = d.shop ? `<p class="eyebrow">${icon("store")}<span>${esc(d.shop)}</span></p>` : "";
+  const shopLine = d.shop ? `<p class="eyebrow">${icon("store")}<span${ZH}>${esc(d.shop)}</span></p>` : "";
   const codeLine = `<p class="scancode" translate="no">${esc(t("scan.codeLine", { code: groupCode(scan.code) }))}</p>`;
   let inner;
   if (s === "ok")
-    inner = `<div class="scanstate"><span class="bigic">${icon("ticket")}</span><h1 class="pagetitle" id="scanTitle" tabindex="-1">${esc(d.deal || "")}</h1></div>
-      ${codeLine}<p class="scanhint">${esc(t("scan.checkHint"))}</p>
+    inner = `<div class="scanstate"><span class="bigic">${icon("ticket")}</span><h1 class="pagetitle" id="scanTitle" tabindex="-1"${ZH}>${esc(d.deal || "")}</h1></div>
+      ${codeLine}${cashierHTML(d, { deal: false })}${idCheckHTML()}<p class="scanhint">${esc(t("scan.checkHint"))}</p>
       <button class="btn btn-cta btn-block" type="button" data-scan-confirm>${icon("check")}<span>${esc(t("scan.confirm"))}</span></button>`;
   else if (s === "done")
     inner = `<div class="scanstate ok" role="status"><span class="okmark big">${icon("check")}</span><h1 class="pagetitle" id="scanTitle" tabindex="-1">${esc(
       t("scan.done")
-    )}</h1><p><b>${esc(d.deal || "")}</b></p><p class="num">${esc(t("scan.doneAt", { t: TPE_HM.format(scan.at) }))}</p></div>${codeLine}`;
+    )}</h1><p class="num">${esc(t("scan.doneAt", { t: TPE_HM.format(scan.at) }))}</p></div>${codeLine}${cashierHTML(d)}`;
   else if (s === "already_confirmed") inner = scanStateHTML("circle-check", t("scan.already"), t("scan.alreadyBody"), "muted") + codeLine;
   else if (s === "expired_code") inner = scanStateHTML("clock", t("scan.expired"), t("scan.expiredBody"), "muted") + codeLine;
   else inner = scanStateHTML("search-x", t("scan.invalid"), t("scan.invalidBody"), "muted") + codeLine;
@@ -2091,7 +2141,7 @@ async function confirmScan(btn) {
   if (r.ok) {
     scan.status = "done";
     scan.at = Date.now();
-    scan.data = { ...scan.data, deal: r.data?.deal || scan.data?.deal };
+    scan.data = { ...scan.data, ...(r.data || {}), shop: scan.data?.shop };
   } else if (PASS_ERRORS.includes(r.data?.error) && r.status !== 429) {
     scan.status = r.data.error;
   } else {
@@ -2276,13 +2326,19 @@ function showView(name) {
   const minimal = MINIMAL.has(name);
   document.documentElement.classList.toggle("chrome-min", minimal);
   setNoIndex(minimal);
+  // A child page marks its parent tab (商家合作 is reached from 我的): "true", not "page".
+  const parent = { merchants: "me" }[name];
   for (const a of document.querySelectorAll("[data-tab]")) {
     if (a.dataset.tab === name) a.setAttribute("aria-current", "page");
+    else if (a.dataset.tab === parent) a.setAttribute("aria-current", "true");
     else a.removeAttribute("aria-current");
   }
-  const barTitle = { saved: "saved.title", me: "me.title", merchants: "merchants.title", notfound: "notfound.title" }[name];
+  // Not-found's own heading names the page: the app bar doesn't repeat it.
+  const barTitle = { saved: "saved.title", me: "me.title", merchants: "merchants.title" }[name];
   els.appbarTitle.textContent = barTitle ? t(barTitle) : "";
   els.appbarBack.hidden = name !== "merchants";
+  // On /me the app-bar avatar would link to the page it is on (and duplicate the 我的 tab).
+  els.appbarActions.hidden = name === "me";
   if (name === "saved") renderSaved();
   if (name === "me") renderMe();
   if (name === "merchants") renderMerchants();
@@ -2292,7 +2348,19 @@ function showView(name) {
   if (changed) {
     scrollTo(0, scrollPos[name] || 0);
     onScroll();
+    // Tabs keep focus on the tab: say which page loaded (not on the first page of the visit).
+    if (announceViews) announce(viewTitle(name));
   }
+  announceViews = true;
+}
+
+let announceViews = false;
+
+/** The page's name as its heading says it, for the route announcement. */
+function viewTitle(name) {
+  if (name === "shop") return shop.data?.label || t("shop.title");
+  if (name === "scan") return scanTitle();
+  return t({ explore: "explore.title", saved: "saved.title", me: "me.title", merchants: "merchants.title", notfound: "notfound.title" }[name] || "explore.title");
 }
 
 function renderNotFound() {
@@ -2437,6 +2505,26 @@ function changeLang(v) {
 }
 
 /* ---------- events ---------- */
+
+/** Crossing 820px: a desktop popover (account menu, region or school picker) placed next to its
+ *  anchor would turn into a clipped half-sheet. Pickers re-open as the other form; the account
+ *  menu's avatar lives in the rail, gone on a phone, so it just closes. */
+function onBreakpoint() {
+  applyInert();
+  if (state.route.name === "deal") renderDetailHead();
+  const dlg = document.querySelector("dialog.dlg[open]");
+  if (!dlg || dlg.classList.contains("closing")) return;
+  const wasPop = dlg.classList.contains("dlg-pop");
+  if (dlg.classList.contains("picker")) {
+    const kind = dlg.dataset.kind;
+    closeDialog({ instant: true, restoreFocus: false });
+    const anchor = els.filterRow.querySelector(`[data-pick="${kind}"]`);
+    if (anchor) openPicker(kind, anchor);
+  } else if (wasPop) {
+    closeDialog({ instant: true });
+  }
+  updatePillMask();
+}
 
 function onClick(e) {
   if (e.defaultPrevented || e.button !== 0) return;
@@ -2678,10 +2766,8 @@ function init() {
   });
   els.cats.addEventListener("scroll", updatePillMask, { passive: true });
   addEventListener("resize", debounce(updatePillMask, 100));
-  matchMedia("(max-width: 820px)").addEventListener("change", () => {
-    applyInert();
-    if (state.route.name === "deal") renderDetailHead();
-  });
+  matchMedia("(max-width: 820px)").addEventListener("change", onBreakpoint);
+  for (const b of els.catWrap.querySelectorAll(".pillarrow")) b.addEventListener("click", () => scrollPills(b.classList.contains("l") ? -1 : 1));
   // Keep body.has-overlay (read by /pwa.js's install card) in step with any open dialog.
   new MutationObserver(applyInert).observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
   addEventListener("cp:deals-updated", () => loadDeals({ quiet: true }));
