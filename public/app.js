@@ -3,11 +3,11 @@
    a pushed full-screen page on a phone) · /merchants (商家合作) · /m/:key (a shop's private
    confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
    Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=14";
-import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=14";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=14";
-import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=14";
-import { qrSVG } from "./js/qr.js?v=14";
+import { icon } from "./js/icons.js?v=15";
+import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=15";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=15";
+import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=15";
+import { qrSVG } from "./js/qr.js?v=15";
 
 /* ---------- constants ---------- */
 
@@ -740,6 +740,7 @@ function renderExplore() {
   if (shown.length) fillList(shown);
   else {
     cancelAnimationFrame(fillRaf);
+    els.list.style.minHeight = "";
     els.list.innerHTML = "";
     const li = document.createElement("li");
     li.innerHTML = emptyHTML({
@@ -763,7 +764,10 @@ const merchantsLinkHTML = () => `${esc(t("foot.merchants"))} <a href="/merchants
 
 /* With every school selected the list is ~1,100 rows. The first screenful goes in at once;
    the rest follows in chunks on the next frames, so a tap on a filter paints immediately.
-   A newer render cancels the chunks still pending. */
+   A newer render cancels the chunks still pending. Rendering the same list again (sign-in
+   switching the school default, a data refresh, the language) keeps the reader's place: the
+   list's height is held until the chunks are in (otherwise the page shrinks to 40 rows for a
+   frame and the browser clamps the scroll), and the row at the top of the screen is pinned. */
 const FIRST_ROWS = 40;
 const CHUNK_ROWS = 250;
 let fillRaf = 0;
@@ -771,16 +775,63 @@ let fill = null; // the rows still to append: { deals, i }
 
 function fillList(deals) {
   cancelAnimationFrame(fillRaf);
+  cancelAnimationFrame(pinRaf);
+  const same = !!fill && fill.deals.length === deals.length && fill.deals.every((d, i) => d.id === deals[i].id);
+  const anchor = same && !pin && scrollY > 0 ? topRow() : null;
+  const held = deals.length > FIRST_ROWS && scrollY > 0 ? els.list.offsetHeight : 0;
+  els.list.style.minHeight = held ? `${held}px` : "";
   els.list.replaceChildren(...deals.slice(0, FIRST_ROWS).map(rowEl));
   fill = { deals, i: FIRST_ROWS };
+  const done = () => {
+    els.list.style.minHeight = "";
+    if (pin) holdPin(6);
+    else if (anchor) pinRow(anchor.id, anchor.top, true);
+  };
   const more = () => {
     if (fill.i >= deals.length) return;
     els.list.append(...deals.slice(fill.i, fill.i + CHUNK_ROWS).map(rowEl));
     fill.i += CHUNK_ROWS;
     markSelected();
     if (fill.i < deals.length) fillRaf = requestAnimationFrame(more);
+    else done();
   };
   if (deals.length > FIRST_ROWS) fillRaf = requestAnimationFrame(more);
+  else done();
+}
+
+/** The first row below the sticky toolbar, and where it is on screen. */
+function topRow() {
+  const below = $("toolbar").getBoundingClientRect().bottom;
+  const li = [...els.list.querySelectorAll(".item")].find((r) => r.getBoundingClientRect().bottom > below + 8);
+  return li ? { id: li.dataset.id, top: li.getBoundingClientRect().top } : null;
+}
+
+/* A row pinned to a place on screen. Rows above it are content-visibility placeholders whose
+   real heights land over the next frames, so it is measured again a few frames running and the
+   scroll corrected. A pin from a re-render lets go as soon as the reader scrolls. */
+let pin = null; // { id, top, soft, y }
+let pinRaf = 0;
+
+function pinRow(id, top, soft = false) {
+  cancelAnimationFrame(pinRaf);
+  pin = { id, top, soft, y: scrollY };
+  holdPin(6);
+}
+
+function holdPin(n) {
+  const p = pin;
+  if (!p) return;
+  const li = state.base === "explore" && els.list.querySelector(`.item[data-id="${CSS.escape(p.id)}"]`);
+  if (!li || (p.soft && Math.abs(scrollY - p.y) > 1)) {
+    pin = null;
+    return;
+  }
+  const d = li.getBoundingClientRect().top - p.top;
+  if (Math.abs(d) > 1) scrollTo(0, scrollY + d);
+  p.y = scrollY;
+  scrollPos.explore = scrollY;
+  if (n > 0 && Math.abs(d) > 1) pinRaf = requestAnimationFrame(() => (pinRaf = requestAnimationFrame(() => holdPin(n - 1))));
+  else pin = null;
 }
 
 /** Append every row still pending now (to scroll to one far down the list). */
@@ -791,6 +842,7 @@ function flushList() {
     fill.i = fill.deals.length;
     markSelected();
   }
+  els.list.style.minHeight = "";
 }
 
 /* ---------- back from Google: the same filters and the same place in the list ----------
@@ -848,18 +900,8 @@ function restorePlace() {
     flushList();
     li = els.list.querySelector(`.item[data-id="${CSS.escape(p.anchor)}"]`);
   }
-  if (li) {
-    // Rows above it are content-visibility placeholders until painted: their real heights land
-    // over the next frames and shift the row. Measure again, a few frames running, and correct.
-    const fix = (n) => {
-      if (!li.isConnected || state.base !== "explore") return;
-      const d = li.getBoundingClientRect().top - p.top;
-      if (Math.abs(d) > 1) scrollTo(0, scrollY + d);
-      if (n > 0 && Math.abs(d) > 1) requestAnimationFrame(() => requestAnimationFrame(() => fix(n - 1)));
-      scrollPos.explore = scrollY;
-    };
-    fix(6);
-  } else if (p.y) scrollTo(0, p.y);
+  if (li) pinRow(p.anchor, p.top);
+  else if (p.y) scrollTo(0, p.y);
   scrollPos.explore = scrollY;
 }
 

@@ -193,8 +193,10 @@ const allErrors = [];
   check('auth: report modal opens with textarea', await page.isVisible('dialog[open] textarea'));
   await page.fill('dialog[open] textarea', 'UI test report — please ignore');
   await shot(page, 'phone-report');
-  await page.click('dialog[open] [type="submit"]'); await settle(page, 700);
-  check('auth: report submits and closes', !(await page.$('dialog[open]')));
+  await page.click('dialog[open] [type="submit"]');
+  // The POST and the closing animation take longer on a loaded CI runner: wait for the close.
+  const reportClosed = await page.waitForSelector('dialog[open]', { state: 'detached', timeout: 5000 }).then(() => true, () => false);
+  check('auth: report submits and closes', reportClosed && (await page.textContent('#toast')).includes('感謝回報'), await page.textContent('#toast'));
   await page.goto(B + `/deal/${EXPIRED}`, { waitUntil: 'networkidle' }); await page.waitForSelector('#detail .prose');
   await page.click('#dhead [data-star]'); await settle(page, 600);
   await page.click('#tabbar [data-tab="saved"]'); await settle(page);
@@ -1017,6 +1019,17 @@ const liveText = (page) => page.evaluate(() => document.getElementById('live')?.
   await page.waitForSelector('#list .item'); await settle(page, 1200);
   const after = await page.evaluate((id) => document.querySelector(`#list .item[data-id="${id}"]`)?.getBoundingClientRect().top, target);
   check('sign-in: a deep-scrolled row comes back within a few px', Math.abs(after - before) <= 8, `${before} → ${after}`);
+  // The same list rendered again far down (a data refresh; sign-in switching the school default
+  // does the same): the row at the top of the screen stays put. It used to jump: the page shrank
+  // to 40 rows for a frame, and fresh rows lost their painted heights.
+  await page.mouse.wheel(0, 3000); await settle(page, 600);
+  const top1 = await page.evaluate(() => { const below = document.getElementById('toolbar').getBoundingClientRect().bottom; const li = [...document.querySelectorAll('#list .item')].find((r) => r.getBoundingClientRect().bottom > below + 8); return { id: li.dataset.id, top: li.getBoundingClientRect().top, y: scrollY }; });
+  await page.evaluate(() => dispatchEvent(new Event('cp:deals-updated'))); await settle(page, 1200);
+  const top2 = await page.evaluate((id) => document.querySelector(`#list .item[data-id="${id}"]`)?.getBoundingClientRect().top, top1.id);
+  check('a data refresh far down the list keeps the row in place', Math.abs(top2 - top1.top) <= 4, `${JSON.stringify(top1)} → ${top2}`);
+  await page.click('[data-cat="food"]'); await settle(page, 900);
+  check('a category tap after that still goes to the top', (await page.evaluate(() => scrollY)) === 0);
+  await page.click('[data-cat="all"]'); await settle(page, 300);
   await page.evaluate((id) => fetch('/api/favorites/' + id, { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: '{}' }), target);
   await ctx.close();
 }
