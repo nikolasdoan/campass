@@ -298,13 +298,18 @@ const isOfflinePage = (page) => page.evaluate(() => /離線/.test(document.title
 {
   const ctx = await newContext(ANDROID);
   const page = await ctx.newPage();
-  await page.goto(B + '/', { waitUntil: 'load' });
-  const cardText = () => page.evaluate(() => { document.getElementById('cpInstall')?.remove(); return window.__cpShowInstall('android').innerText; });
-  await page.evaluate(() => localStorage.removeItem('cp_saved_cache'));
-  const plain = await cardText();
+  // Let the app finish its account check first: signed out, it wipes cp_saved_cache, and doing that
+  // between our write and our read made this flaky. Then write + read in one evaluate (no gap).
+  await page.goto(B + '/', { waitUntil: 'networkidle' });
+  const cardText = (cache) => page.evaluate((cache) => {
+    if (cache) localStorage.setItem('cp_saved_cache', JSON.stringify(cache));
+    else localStorage.removeItem('cp_saved_cache');
+    document.getElementById('cpInstall')?.remove();
+    return window.__cpShowInstall('android').innerText;
+  }, cache);
+  const plain = await cardText(null);
   check('install card: no offline promise without a local copy of saved deals', !/離線|offline/i.test(plain), plain.replace(/\s+/g, ' '));
-  await page.evaluate(() => localStorage.setItem('cp_saved_cache', JSON.stringify({ email: 'x@example.com', deals: {} })));
-  const off = await cardText();
+  const off = await cardText({ email: 'x@example.com', deals: {} });
   check('install card: with cp_saved_cache, it says loaded and saved deals work offline', /離線也能看已載入的優惠與收藏/.test(off), off.replace(/\s+/g, ' '));
   await ctx.close();
 }
