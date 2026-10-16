@@ -175,7 +175,8 @@ check("invalid shop key 404", (await anon.json("/api/merchant/not-a-key")).statu
 const seen = (await shop.json(`/api/merchant/pass/${pass.code}`)).body;
 check("paired phone sees the pass", seen?.status === "ok");
 check("cashier sees the deal's terms", typeof seen?.offer === "string" && seen.offer.length > 0);
-check("cashier sees the deal, eligibility and the masked school account", seen?.deal && seen?.eligibility && /^.\*\*\*@ntu\.edu\.tw$/.test(seen?.account?.masked || "") && seen.account.school_domain === true, JSON.stringify(seen?.account));
+check("cashier sees the deal, eligibility and the masked account", seen?.deal && seen?.eligibility && /^.\*\*\*@ntu\.edu\.tw$/.test(seen?.account?.masked || ""), JSON.stringify(seen?.account));
+check("a dev-login account is flagged as a test login, never as a school mailbox", seen?.account?.test === true && seen.account.school_domain === false, JSON.stringify(seen?.account));
 const fw = pass.code.replace(/[A-Z0-9]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) + 0xfee0));
 check("paired phone, full-width code (zhuyin IME)", (await shop.json(`/api/merchant/pass/${encodeURIComponent(fw)}`)).body?.status === "ok");
 check("paired phone, lowercase code", (await shop.json(`/api/merchant/pass/${pass.code.toLowerCase()}`)).body?.status === "ok");
@@ -253,9 +254,18 @@ const mockUp = await fetch("http://localhost:9876/auth").then((r) => r.ok).catch
 if (!mockUp) {
   check("mock Google running on :9876 (node tests/mock-google.mjs)", false);
 } else {
+  const usersBefore = (await anon.json("/admin/stats", { headers: ADMIN })).body.users.total;
+  await devLogin(`devcount-${Date.now()}@ntu.edu.tw`);
+  check("dev-login accounts don't count as users", (await anon.json("/admin/stats", { headers: ADMIN })).body.users.total === usersBefore);
   const ok = await oauth(`oauth-${Date.now()}@ntu.edu.tw`);
   check("Google sign-in returns to `next`", new URL(ok.location, B).pathname === "/saved", ok.location || ok.error);
   check("Google sign-in creates a session", !!(await ok.b.json("/api/me")).body?.user);
+  {
+    // A real (Google) account on a school domain shows as a school mailbox to the cashier.
+    const gp = (await ok.b.json(`/api/deals/${full.id}/redeem`, { method: "POST" })).body;
+    const gs = (await shop.json(`/api/merchant/pass/${gp.code}`)).body;
+    check("a Google account on .edu.tw shows as a school mailbox", gs?.account?.school_domain === true && gs.account.test === false, JSON.stringify(gs?.account));
+  }
   check("callback replay rejected", ((await browser().req(ok.cb)).headers.get("location") || "").includes("login_error"));
   const denied = await oauth("deny@example.com", { next: `/deal/${full.id}` });
   check("cancel -> access_denied, back on the page it started from", (denied.location || "").startsWith(`/deal/${full.id}?login_error=access_denied`), denied.location);
