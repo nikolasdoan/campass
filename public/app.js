@@ -187,7 +187,9 @@ async function api(method, url, body) {
     try {
       data = await res.json();
     } catch {}
-    setOnline(true);
+    // An answer is not proof of a connection: offline, the service worker answers /api/deals
+    // from its cache. Back online only when the browser says so and the network answers.
+    if (!online) confirmOnline(url, res);
     // The server's clock (Date header), so the pass countdown survives a wrong phone clock.
     return { ok: res.ok, status: res.status, data, date: res.headers.get("Date"), at: Date.now() };
   } catch {
@@ -217,6 +219,24 @@ function setOnline(on) {
   document.documentElement.classList.toggle("is-offline", !on);
   toast(t(on ? "toast.online" : "toast.offline"), { ms: 3500 });
   if (on) recover();
+}
+
+let probing = false;
+
+/** Called after an answer while we think we're offline. /api/me is never cached by the service
+ *  worker, so its answer proves the network; anything else is checked with one such request. */
+async function confirmOnline(url, res) {
+  if (!navigator.onLine || probing) return;
+  if (/^\/api\/me\b/.test(url) && res.status) return setOnline(true);
+  probing = true;
+  try {
+    const r = await fetch("/api/me", { cache: "no-store", credentials: "same-origin", headers: { Accept: "application/json" } });
+    if (r.status && navigator.onLine) setOnline(true);
+  } catch {
+    /* still offline */
+  } finally {
+    probing = false;
+  }
 }
 
 function recover() {
@@ -249,7 +269,10 @@ async function loadDeals({ quiet = false } = {}) {
   restorePlace();
   renderSaved();
   if (state.route.name === "me") renderMe();
-  if (state.route.name === "deal" && !state.detail.has(state.route.id) && state.detailMissing !== state.route.id) renderDetail(state.route.id);
+  // The list arrived before the deal: the deal's own request (in flight) will render it. A second
+  // request would record a second view and throw away the focus the first render asked for.
+  const id = state.route.id;
+  if (state.route.name === "deal" && !state.detail.has(id) && state.detailMissing !== id && state.detailLoading !== id) renderDetail(id);
 }
 
 /** Only the name and email, never the session: enough to keep showing "signed in" offline. */
@@ -333,21 +356,33 @@ function keepSaved(deal) {
   writeSavedCache();
 }
 
-/** Just saved from a list row: fetch the full deal once, so it reads offline too. */
-async function fetchForSaved(id) {
-  const open = state.detail.get(id);
-  if (open && !open.locked && !open.offline) return keepSaved(open.deal);
+/** Every saved deal in full, in one request that records no views (also those saved on
+ *  another device): on sign-in and app start, and after a star is synced. */
+let savedSyncSeq = 0;
+async function syncSavedDetails() {
   const email = state.user?.email;
-  const r = await api("GET", `/api/deals/${encodeURIComponent(id)}`);
-  if (r.ok && r.data?.deal && !r.data.locked && state.user?.email === email) keepSaved(r.data.deal);
+  if (!email || !navigator.onLine) return;
+  const seq = ++savedSyncSeq;
+  const r = await api("GET", "/api/favorites/details");
+  if (seq !== savedSyncSeq || state.user?.email !== email || !r.ok || !Array.isArray(r.data?.deals)) return;
+  const c = cacheFor(email);
+  const deals = r.data.deals.filter((d) => d && typeof d.id === "string");
+  c.deals = Object.fromEntries(deals.map((d) => [d.id, stripHay(d)]));
+  // The server's order (newest first), except stars still on their way.
+  c.order = favSync.size ? state.favOrder.slice() : deals.map((d) => d.id);
+  c.at = Date.now();
+  writeSavedCache();
 }
+const syncSavedSoon = debounce(syncSavedDetails, 800);
 
 /** 「離線顯示，上次更新 10/16 08:05」 (Taipei time). */
 const TPE_STAMP = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Taipei", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
 function offlineNoteHTML(at, { retry = false } = {}) {
   const p = Object.fromEntries(TPE_STAMP.formatToParts(at || Date.now()).map((x) => [x.type, x.value]));
   const again = retry ? ` <button class="linkbtn" type="button" data-retry-me>${esc(t("retry"))}</button>` : "";
-  return `<div class="note offnote" role="note">${icon("wifi-off")}<span>${esc(t("offline.copy", { d: `${p.month}/${p.day} ${p.hour}:${p.minute}` }))}${again}</span></div>`;
+  const off = !navigator.onLine;
+  const msg = t(off ? "offline.copy" : "offline.stale", { d: `${p.month}/${p.day} ${p.hour}:${p.minute}` });
+  return `<div class="note offnote" role="note">${icon(off ? "wifi-off" : "circle-alert")}<span>${esc(msg)}${again}</span></div>`;
 }
 
 let meSeq = 0;
@@ -369,8 +404,11 @@ async function loadMe() {
     state.favOrder = order;
     state.favs = new Set(order);
     state.meStatus = "ready";
-    if (state.user) syncSavedCache();
-    else wipeSavedCache(); // signed out (here or in another tab): the copy goes with the account
+    if (state.user) {
+      syncSavedCache();
+      // On app start and sign-in (or another account): the full saved deals, for offline.
+      if (!refresh || before !== state.user.email) syncSavedDetails();
+    } else wipeSavedCache(); // signed out (here or in another tab): the copy goes with the account
   } else {
     // Offline or a server error is not "signed out": keep the user we knew (this page's, else
     // the cached copy) and say what happened instead of asking them to sign in again.
@@ -736,8 +774,18 @@ function restorePlace() {
     flushList();
     li = els.list.querySelector(`.item[data-id="${CSS.escape(p.anchor)}"]`);
   }
-  if (li) scrollTo(0, scrollY + li.getBoundingClientRect().top - p.top);
-  else if (p.y) scrollTo(0, p.y);
+  if (li) {
+    // Rows above it are content-visibility placeholders until painted: their real heights land
+    // over the next frames and shift the row. Measure again, a few frames running, and correct.
+    const fix = (n) => {
+      if (!li.isConnected || state.base !== "explore") return;
+      const d = li.getBoundingClientRect().top - p.top;
+      if (Math.abs(d) > 1) scrollTo(0, scrollY + d);
+      if (n > 0 && Math.abs(d) > 1) requestAnimationFrame(() => requestAnimationFrame(() => fix(n - 1)));
+      scrollPos.explore = scrollY;
+    };
+    fix(6);
+  } else if (p.y) scrollTo(0, p.y);
   scrollPos.explore = scrollY;
 }
 
@@ -903,8 +951,9 @@ function meErrorHTML(kind) {
   const offline = !navigator.onLine;
   return emptyHTML({
     ic: offline ? "wifi-off" : "circle-alert",
-    title: kind === "saved" ? t("saved.offlineTitle") : t("me.loadFailed"),
-    body: kind === "saved" ? t("saved.offlineBody") : t(offline ? "err.offline" : "empty.loadFailedHint"),
+    // Online, the server failed: say so (not "offline").
+    title: kind === "saved" ? t(offline ? "saved.offlineTitle" : "saved.loadFailed") : t("me.loadFailed"),
+    body: kind === "saved" && offline ? t("saved.offlineBody") : t(offline ? "err.offline" : "empty.loadFailedHint"),
     action: `<button class="btn btn-outline btn-sm" type="button" data-retry-me>${esc(t("retry"))}</button>`,
   });
 }
@@ -1152,7 +1201,7 @@ async function syncFav(id, want) {
   if (!r || r.ok) {
     if (r) toast(t(f.server ? "toast.saved" : "toast.unsaved"));
     syncSavedCache();
-    if (f.server) fetchForSaved(id);
+    syncSavedSoon();
     return;
   }
   setFav(id, f.server); // back to what the server has
@@ -1167,11 +1216,15 @@ function renderDetailHead() {
   const d = state.detail.get(id)?.deal || state.byId.get(id);
   const phone = isPhone();
   const on = state.favs.has(id);
+  // Re-rendered (account loaded, language, resize) while a header button had focus: keep it there.
+  const a = document.activeElement;
+  const had = els.dhead.contains(a) ? ["[data-close-detail]", "[data-share]", "[data-star]"].find((sel) => a.matches(sel)) : null;
   els.dhead.innerHTML = `
     <button class="iconbtn" type="button" data-close-detail aria-label="${esc(t(phone ? "detail.back" : "detail.close"))}">${icon("chevron-left", "back-ic")}${icon("x", "close-ic")}</button>
     <p class="dhead-title" aria-hidden="true"${ZH}>${esc(d?.name || "")}</p>
     ${d ? `<button class="iconbtn" type="button" data-share aria-label="${esc(t("detail.share"))}">${icon("share")}</button>
     <button class="iconbtn${on ? " saved" : ""}" type="button" data-star="${esc(id)}" aria-pressed="${on}" aria-label="${esc(t(on ? "row.unsave" : "row.save"))}">${icon("star")}</button>` : ""}`;
+  if (had) (els.dhead.querySelector(had) || els.dhead.querySelector("[data-close-detail]")).focus({ preventScroll: true });
   renderUseBar();
 }
 
@@ -1339,9 +1392,11 @@ async function renderDetail(id, { focus = false } = {}) {
   if (focus) focusDetail();
   if (cached) return;
 
+  state.detailLoading = id;
   const r = await api("GET", `/api/deals/${encodeURIComponent(id)}`);
+  if (state.detailLoading === id) state.detailLoading = null;
   if (seq !== state.detailSeq || state.route.id !== id) return;
-  const again = focus && els.detailBody.contains(document.activeElement);
+  const again = !focus && (els.detail.contains(document.activeElement) || document.activeElement === document.body);
   if (r.ok && r.data?.deal) {
     const deal = prepare([r.data.deal])[0];
     state.detail.set(id, { deal, locked: !!r.data.locked });
@@ -1522,7 +1577,8 @@ const utcMs = (s) => Date.parse(`${String(s).replace(" ", "T")}Z`);
 /** T97C5B → "T97 C5B": easier to read out and to type (3+3, as six-character codes usually are). */
 const groupCode = (c) => `${c.slice(0, 3)} ${c.slice(3)}`;
 // Full-width letters from zhuyin IMEs (ＡＢＣ) are ABC, as on the server.
-const normCode = (v) => String(v).normalize("NFKC").toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 6);
+const codeChars = (v) => String(v).normalize("NFKC").toUpperCase().replace(/[^A-Z0-9]/g, "");
+const normCode = (v) => codeChars(v).slice(0, 6);
 const nowMs = () => Date.now() + (pass?.skew || 0);
 
 /** s***@ntu.edu.tw: enough for the cashier to see a school address, nothing more. */
@@ -1534,6 +1590,9 @@ function maskEmail(email) {
 const askedList = () => (storage.get(ASKED_KEY) || "").split(",").filter(Boolean);
 const wasAsked = (code) => askedList().includes(code);
 const markAsked = (code) => storage.set(ASKED_KEY, [code, ...askedList().filter((c) => c !== code)].slice(0, 30).join(","));
+// The server hands back a pass that was never answered when it is opened again within its window:
+// that is a new attempt, so it may be asked about again when it closes.
+const unmarkAsked = (code) => storage.set(ASKED_KEY, askedList().filter((c) => c !== code).join(",") || null);
 
 async function openPass(btn) {
   const id = state.route.id;
@@ -1552,6 +1611,7 @@ async function openPass(btn) {
 
   const p = { dealId: id, deal: c.deal };
   setPassData(p, r);
+  unmarkAsked(p.code);
   pass = p;
   // A history entry of its own, so Back (and Android's back gesture) closes the pass.
   history.pushState({ ...(history.state || {}), pass: p.code }, "", location.pathname + location.search);
@@ -1776,6 +1836,7 @@ async function renewPass(btn) {
     return toast(r.status === 410 ? t("use.expired") : errText(r, "use.failed"), { error: true });
   }
   setPassData(p, r);
+  unmarkAsked(p.code);
   history.replaceState({ ...(history.state || {}), pass: p.code }, "");
   drawPass();
   startPassTimers();
@@ -1895,6 +1956,24 @@ function cashierFor(x) {
 const idCheckHTML = () =>
   `<div class="idcheck" role="note">${icon("id-card")}<div><b>${esc(t("cashier.idCheck"))}</b><span>${esc(t("cashier.idCheckBody"))}</span></div></div>`;
 
+let offerSeq = 0;
+
+/** Show 展開 only where the clamp actually cut the terms (after the page is laid out). */
+function fitOffers(root) {
+  for (const b of root.querySelectorAll("[data-expand]")) {
+    const p = root.querySelector(`#${CSS.escape(b.dataset.expand)}`);
+    b.hidden = !p || (!p.classList.contains("open") && p.scrollHeight <= p.clientHeight + 1);
+  }
+}
+
+function toggleOffer(b) {
+  const p = document.getElementById(b.dataset.expand);
+  if (!p) return;
+  const open = p.classList.toggle("open");
+  b.setAttribute("aria-expanded", String(open));
+  b.textContent = t(open ? "less" : "more");
+}
+
 /** What the cashier checks: the deal and its badge, who it is for, the student's masked Google
  *  account (tagged when it is a school address). `deal: false` when the page heading names it. */
 function cashierHTML(x, { deal = true } = {}) {
@@ -1905,6 +1984,10 @@ function cashierHTML(x, { deal = true } = {}) {
   const rows = [
     deal && x.deal ? `<dt>${esc(t("cashier.deal"))}</dt><dd><b${ZH}>${esc(x.deal)}</b>${x.highlight ? ` ${badgeHTML(x.highlight)}` : ""}</dd>` : "",
     !deal && x.highlight ? `<dt>${esc(t("cashier.deal"))}</dt><dd>${badgeHTML(x.highlight)}</dd>` : "",
+    // The terms new staff need at the counter; long ones fold to three lines (展開).
+    x.offer
+      ? `<dt>${esc(t("cashier.terms"))}</dt><dd class="cashterms"><p class="cashoffer" id="cashOffer${++offerSeq}"${ZH}>${esc(x.offer)}</p><button class="linkbtn" type="button" data-expand="cashOffer${offerSeq}" aria-controls="cashOffer${offerSeq}" aria-expanded="false" hidden>${esc(t("more"))}</button></dd>`
+      : "",
     forText ? `<dt>${esc(t("cashier.for"))}</dt><dd>${esc(forText)}</dd>` : "",
     acct ? `<dt>${esc(t("cashier.account"))}</dt><dd>${acct}</dd>` : "",
   ].join("");
@@ -2001,14 +2084,20 @@ function renderShop() {
     if (e?.isComposing) return; // mid-IME: tidy once the composition ends
     // Auto-uppercase, full-width to half-width, drop spaces and dashes (a code pasted as
     // 「T97C - 5B」 still works). No maxlength: it would cut a paste before it is tidied.
+    const long = codeChars(input.value).length > 6;
     const v = normCode(input.value);
     if (v !== input.value) input.value = v;
     shop.code = v;
-    if (shop.result && !shop.result.ok) {
+    if (long) {
+      // A paste with a 7th character: say what was kept rather than dropping it silently.
+      shop.result = { ok: false, key: "shop.codeLong" };
+      b.querySelector("#shopResult").innerHTML = shopResultHTML();
+    } else if (shop.result && !shop.result.ok) {
       shop.result = null;
       b.querySelector("#shopResult").innerHTML = "";
     }
   };
+  fitOffers(b);
   input.addEventListener("input", tidy);
   input.addEventListener("compositionend", () => tidy());
   form.addEventListener("submit", (e) => {
@@ -2021,7 +2110,10 @@ async function submitShop(form) {
   const input = form.querySelector("#shopCode");
   const btn = form.querySelector('[type="submit"]');
   const code = normCode(input.value);
-  const show = () => (els.shopBody.querySelector("#shopResult").innerHTML = shopResultHTML());
+  const show = () => {
+    els.shopBody.querySelector("#shopResult").innerHTML = shopResultHTML();
+    fitOffers(els.shopBody);
+  };
   if (code.length !== 6) {
     shop.result = { ok: false, key: "shop.codeShort" };
     show();
@@ -2132,6 +2224,7 @@ function renderScan() {
   const home = shopHome();
   const back = home && s !== "ok" ? `<div class="scanactions"><a class="btn btn-outline" href="${esc(home)}" data-nav>${icon("store")}${esc(t("scan.shopPage"))}</a></div>` : "";
   b.innerHTML = `${minibrand()}<section class="card scancard">${shopLine}${inner}${back}</section>`;
+  fitOffers(b);
 }
 
 async function confirmScan(btn) {
@@ -2573,6 +2666,7 @@ function onClick(e) {
   if (t0.closest("[data-outcome]")) return answerOutcome(t0.closest("[data-outcome]"));
   if (t0.closest("[data-pass-renew]")) return renewPass(t0.closest("[data-pass-renew]"));
   if (t0.closest("[data-scan-confirm]")) return confirmScan(t0.closest("[data-scan-confirm]"));
+  if (t0.closest("[data-expand]")) return toggleOffer(t0.closest("[data-expand]"));
   if (t0.closest("[data-retry-shop]")) return loadShop(state.route.key);
   if (t0.closest("[data-retry-scan]")) return loadScan(state.route.code);
   if (t0.closest("[data-lead-again]")) {
