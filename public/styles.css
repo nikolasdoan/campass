@@ -45,7 +45,16 @@
  --stroke:1.75; --stroke-rail:1.6; --stroke-nav:1.8; --stroke-sm:2;
  /* The toast recipe (DS .toast), shared with /pwa.js's update toast (.cp-update reads these). */
  --toast-pad:6px 12px; --toast-fs:12px; --toast-shadow:none;
- --toast-bg:color-mix(in srgb,var(--ink) 88%,transparent); }
+ --toast-bg:color-mix(in srgb,var(--ink) 88%,transparent);
+ /* School cards (CampusPass 校園卡): one fixed palette in both themes, like a physical card. Each
+    tone is a dark → lighter gradient behind white text: white clears 5.1:1 on the lighter stop and
+    the 88% white secondary text 4.7:1 (AA). Never a school's own colours or logo. */
+ --card-violet-a:#4A2A9E; --card-violet-b:#7040D6; --card-teal-a:#03525A; --card-teal-b:#086E73;
+ --card-blue-a:#163A8F; --card-blue-b:#2A5BC9; --card-rose-a:#8A1D45; --card-rose-b:#B42F61;
+ --card-amber-a:#6E3A08; --card-amber-b:#9A5512; --card-green-a:#11502D; --card-green-b:#196B3D;
+ --card-slate-a:#283445; --card-slate-b:#4A576B; --card-expired-a:#4A4A50; --card-expired-b:#68686E;
+ --card-ink:#FFFFFF; --card-ink-2:rgb(255 255 255 / .88); --card-wash:rgb(0 0 0 / .2); --card-edge:rgb(255 255 255 / .32);
+ --card-shadow:0 1px 2px rgba(0,0,0,.08),0 10px 24px -8px rgba(0,0,0,.28); }
 @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ color-scheme:dark;
  --page:#17171B; --surface:#202026; --map-ground:#1B1B20; --ink:#FAFAFA; --ink-2:#C7C7CC; --muted:#A1A1A6;
  --line:#35353D; --chip:#2A2A31; --ring:#5A5A5F; --dot:#A978FF; --accent-fill:#A978FF; --on-accent:#0A0A0A;
@@ -453,6 +462,127 @@ details.info .prose{ padding-bottom:12px; font-size:14px; color:var(--ink-2); }
 .srclist{ display:grid; gap:2px; margin:0; padding:0; list-style:none; font-size:14px; }
 .srclist li{ display:flex; justify-content:space-between; gap:12px; padding:6px 0; }
 .srclist li span:last-child{ color:var(--muted); white-space:nowrap; font-variant-numeric:tabular-nums; }
+/* /me sources: the reader's school(s) first, the rest folded away. */
+.card .fine.srchint{ margin:-6px 0 4px; }
+.srcschool{ margin:12px 0 2px; font-size:var(--fs-small); font-weight:600; color:var(--ink); }
+.srcother{ margin-top:12px; border-top:1px solid var(--line); }
+.srcother > summary{ display:flex; align-items:center; gap:6px; min-height:44px; cursor:pointer; list-style:none; font-size:var(--fs-ui); font-weight:500; color:var(--ink-2); }
+.srcother > summary::-webkit-details-marker{ display:none; }
+.srcother > summary .ic{ width:16px; height:16px; color:var(--muted); transition:transform var(--dur-ui) var(--ease-standard); }
+.srcother[open] > summary .ic{ transform:rotate(180deg); }
+.srcother .srclist{ color:var(--ink-2); }
+
+/* ---------- school cards (/me 「我的身分」): wallet-style cards ---------- */
+.idsec{ display:grid; gap:12px; }
+.idsec-head h2{ margin:0 4px 2px; font-size:11px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); }
+.idsec-head p{ margin:0 4px; font-size:var(--fs-small); color:var(--ink-2); }
+.idcards{ display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr)); gap:12px; margin:0; padding:0; list-style:none; }
+.idcard{ --a:var(--card-violet-a); --b:var(--card-violet-b);
+  position:relative; isolation:isolate; overflow:hidden; display:grid; align-content:start; gap:2px; min-height:200px; padding:14px 16px 16px 18px;
+  border-radius:16px; color:var(--card-ink); background:linear-gradient(135deg,var(--a) 0%,var(--b) 100%);
+  box-shadow:var(--card-shadow),inset 0 1px 0 rgb(255 255 255 / .16); }
+.tone-violet{ --a:var(--card-violet-a); --b:var(--card-violet-b); }
+.tone-teal{ --a:var(--card-teal-a); --b:var(--card-teal-b); }
+.tone-blue{ --a:var(--card-blue-a); --b:var(--card-blue-b); }
+.tone-rose{ --a:var(--card-rose-a); --b:var(--card-rose-b); }
+.tone-amber{ --a:var(--card-amber-a); --b:var(--card-amber-b); }
+.tone-green{ --a:var(--card-green-a); --b:var(--card-green-b); }
+.tone-slate{ --a:var(--card-slate-a); --b:var(--card-slate-b); }
+.tone-expired{ --a:var(--card-expired-a); --b:var(--card-expired-b); }
+/* The CampusPass mark as a large, faint watermark (our mark, never a school's). */
+.idc-wm{ position:absolute; z-index:-1; right:-44px; top:-38px; width:200px; height:168px; color:#fff; opacity:.08; pointer-events:none; }
+.idc-top{ display:flex; align-items:center; gap:8px; min-height:32px; margin-right:-8px; }
+.idc-brand{ display:flex; align-items:center; gap:6px; flex:1; min-width:0; font-size:var(--fs-caption); font-weight:600; letter-spacing:.02em; color:var(--card-ink-2); white-space:nowrap; }
+.idc-brand svg{ width:18px; height:15px; flex:none; color:var(--card-ink); }
+.idc-x{ display:grid; place-items:center; flex:none; width:40px; height:40px; margin:-6px 0; padding:0; border:0; border-radius:50%; background:none; color:var(--card-ink-2);
+  transition:background-color var(--dur-tap) var(--ease-standard); }
+.idc-x:hover{ background:var(--card-wash); color:var(--card-ink); }
+.idc-x .ic{ width:18px; height:18px; stroke-width:var(--stroke-sm); }
+.idcard :focus-visible{ outline:2px solid var(--card-ink); outline-offset:2px; }
+.idc-school{ display:grid; margin:8px 0 0; line-height:1.2; }
+.idc-short{ font-size:var(--fs-h3); font-weight:600; letter-spacing:-0.02em; white-space:nowrap; }
+.idc-full{ margin-top:2px; font-size:var(--fs-small); font-weight:500; color:var(--card-ink-2); }
+.idc-mail{ margin:2px 0 0; overflow:hidden; font-size:var(--fs-meta); color:var(--card-ink-2); text-overflow:ellipsis; white-space:nowrap; }
+.idc-status{ display:inline-flex; align-items:center; gap:6px; justify-self:start; max-width:100%; margin:10px 0 0; padding:3px 10px 3px 7px; border-radius:999px;
+  background:var(--card-wash); font-size:var(--fs-caption); line-height:18px; white-space:nowrap; }
+.idc-status > span{ overflow:hidden; text-overflow:ellipsis; color:var(--card-ink-2); }
+.idc-status b{ font-weight:600; }
+.idc-status .ic{ width:15px; height:15px; stroke-width:var(--stroke-sm); }
+.idc-status.is-test{ padding-left:4px; }
+.idc-status .idc-tag{ flex:none; padding:0 7px; border-radius:999px; background:#FFFFFF; color:#8A1D45; font-weight:700; }
+.idc-fields{ display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-top:auto; padding-top:12px; }
+.idc-field{ display:grid; gap:2px; min-width:0; }
+.idc-field.end{ justify-items:end; text-align:right; }
+.idc-lbl{ font-size:10.5px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--card-ink-2); white-space:nowrap; }
+.idc-field b{ font-size:var(--fs-ui); font-weight:600; white-space:nowrap; }
+.idc-sel{ position:relative; display:inline-flex; align-items:center; justify-self:start; }
+.idc-sel select{ appearance:none; -webkit-appearance:none; height:34px; padding:0 30px 0 12px; border:1px solid var(--card-edge); border-radius:999px;
+  background:var(--card-wash); color:var(--card-ink); font-size:var(--fs-ui); font-weight:600; cursor:pointer; }
+.idc-sel select:hover{ background:rgb(0 0 0 / .3); }
+.idc-sel select:focus-visible{ outline:2px solid var(--card-ink); outline-offset:2px; }
+.idc-sel select option{ color:#1D1D1F; background:#FFFFFF; }
+.idc-sel .ic{ position:absolute; right:10px; width:14px; height:14px; stroke-width:var(--stroke-sm); pointer-events:none; }
+.idc-renew{ display:flex; justify-content:flex-end; margin-top:10px; }
+.idc-btn{ background:#FFFFFF; color:#1D1D1F; font-weight:600; }
+.idc-btn:hover:not(:disabled){ background:#F2F2F4; }
+.idc-btn .ic{ width:15px; height:15px; }
+.idcard.is-expired .idc-short,.idcard.is-expired .idc-full{ opacity:.92; }
+@keyframes cardIn{ from{ opacity:0; transform:translateY(12px) scale(.97); } }
+.idcard.is-new{ animation:cardIn var(--dur-panel) var(--ease-decel) both; }
+/* 「+ 新增學校身分」: an empty card slot. */
+.idc-add{ display:flex; align-items:center; justify-content:center; gap:8px; width:100%; min-height:56px; padding:0 16px;
+  border:1.5px dashed var(--ring); border-radius:16px; background:transparent; color:var(--dot-ink); font-size:var(--fs-ui); font-weight:600; white-space:nowrap;
+  transition:background-color var(--dur-tap) var(--ease-standard),border-color var(--dur-tap) var(--ease-standard); }
+.idc-add:hover{ background:var(--tile-tint); border-color:var(--dot); }
+.idc-add:active{ transform:scale(.99); }
+.idc-add .ic{ width:18px; height:18px; stroke-width:var(--stroke-sm); }
+.idc-empty{ display:grid; justify-items:center; gap:6px; padding:28px 20px 24px; border:1.5px dashed var(--ring); border-radius:16px; text-align:center; }
+.idc-empty .eic{ display:grid; place-items:center; width:44px; height:44px; margin-bottom:4px; border-radius:12px; background:var(--tile-tint); color:var(--dot); }
+.idc-empty b{ font-size:var(--fs-ui); font-weight:600; }
+.idc-empty p{ max-width:340px; margin:0; font-size:var(--fs-small); color:var(--ink-2); }
+.idc-empty .btn{ margin-top:10px; }
+/* 臺大 · 政大 under the account's name (/me, the account menu). */
+.idchips{ display:flex; flex-wrap:wrap; gap:4px; margin:6px 0 0; padding:0; list-style:none; }
+.schip{ display:inline-flex; align-items:center; gap:5px; height:22px; padding:0 9px 0 7px; border-radius:999px; background:var(--chip); color:var(--ink-2);
+  font-size:var(--fs-caption); font-weight:600; white-space:nowrap; }
+.schip i{ width:8px; height:8px; border-radius:50%; background:linear-gradient(135deg,var(--a),var(--b)); }
+.acct .me .idchips{ margin-top:4px; }
+
+/* 新增學校身分 sheet */
+.methods{ display:grid; gap:8px; }
+.method{ display:flex; align-items:center; gap:12px; width:100%; min-height:60px; padding:10px 12px; border:1px solid var(--line); border-radius:12px;
+  background:var(--surface); color:var(--ink); text-align:left; text-decoration:none; font-size:var(--fs-ui);
+  transition:background-color var(--dur-tap) var(--ease-standard),border-color var(--dur-tap) var(--ease-standard); }
+a.method:hover{ background:var(--chip); border-color:var(--outline-border); }
+a.method:active{ transform:scale(.99); }
+.method.is-off{ cursor:default; color:var(--muted); background:transparent; }
+.method.is-off .mtile{ opacity:.6; }
+.mtile{ display:grid; place-items:center; flex:none; width:40px; height:40px; border-radius:10px; background:var(--chip); color:var(--ink-2); }
+.mtile .ic{ width:19px; height:19px; }
+.mtile svg:not(.ic){ width:20px; height:20px; }
+.mtile.g{ background:#FFFFFF; box-shadow:inset 0 0 0 1px var(--line); }
+.mtxt{ display:grid; flex:1; min-width:0; line-height:1.35; }
+.mtxt b{ font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.mtxt small{ font-size:var(--fs-caption); color:var(--muted); }
+.method.is-off .mtxt b{ color:var(--ink-2); }
+.method .go{ width:18px; height:18px; color:var(--muted); }
+.method .soon{ flex:none; padding:2px 8px; border-radius:999px; background:var(--chip); color:var(--ink-2); font-size:var(--fs-caption); font-weight:600; white-space:nowrap; }
+.devlink{ margin-top:16px; padding:12px; border:1px dashed color-mix(in srgb,var(--warn) 45%,var(--line)); border-radius:12px; }
+.devlink .fieldlbl{ display:flex; align-items:center; gap:6px; color:var(--warn-ink); }
+.devlink .fieldlbl .ic{ width:15px; height:15px; stroke-width:var(--stroke-sm); }
+.devrow{ display:flex; gap:8px; }
+.devrow .field{ flex:1; min-width:0; }
+.devrow .btn{ flex:none; min-height:44px; }
+
+/* Cashier screens: the student's verified school cards. */
+.cashfacts dd.vlines{ display:grid; gap:6px; }
+.vline{ display:flex; align-items:flex-start; gap:6px; }
+.vline > .ic{ width:18px; height:18px; margin-top:1px; color:var(--seal-ink); stroke-width:var(--stroke-sm); }
+.vline b{ font-weight:600; color:var(--seal-ink); }
+.vline small{ display:block; font-size:var(--fs-caption); color:var(--muted); }
+.vline.is-test > .ic{ color:var(--muted); }
+.vline.is-test .vtxt{ color:var(--ink-2); }
+
 .disclaimer{ padding:12px 14px; border-radius:8px; background:var(--chip); font-size:13px; line-height:1.6; color:var(--ink-2); }
 .mefoot{ padding:4px 4px 0; font-size:12px; color:var(--muted); text-align:center; }
 
@@ -1009,6 +1139,8 @@ html.is-standalone .appbar,html.is-standalone .tabbar,html.is-standalone .rail{ 
   .dlg-card,.toast{ border:1px solid CanvasText; }
   .badge,.chip,.mini{ border:1px solid CanvasText; }
   .cattile,.lockcard .lic,.bigic,.pic,.empty .eic,.note,.idcheck,.cashfacts,.mailtag,.disclaimer,.pass-ask{ border:1px solid CanvasText; }
+  .idcard{ border:2px solid CanvasText; }
+  .idc-status,.idc-tag,.idc-sel select,.schip{ border:1px solid CanvasText; }
   /* Eligible and not-eligible chips: solid for yes, dashed GrayText (and struck through) for no. */
   .elig .e{ border:1px solid CanvasText; }
   .elig .e.no{ border:1px dashed GrayText; color:GrayText; }

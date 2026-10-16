@@ -3,11 +3,11 @@
    a pushed full-screen page on a phone) · /merchants (商家合作) · /m/:key (a shop's private
    confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
    Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=12";
-import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases } from "./js/i18n.js?v=12";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=12";
-import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=12";
-import { qrSVG } from "./js/qr.js?v=12";
+import { icon } from "./js/icons.js?v=13";
+import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=13";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=13";
+import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=13";
+import { qrSVG } from "./js/qr.js?v=13";
 
 /* ---------- constants ---------- */
 
@@ -51,13 +51,23 @@ const SOON_DAYS = 30;
 // Today in Taipei. Not a constant: an installed app can stay open past midnight
 // (refreshed on visibilitychange and at Taipei midnight, see watchToday()).
 let today = todayTW();
-const ME_KEY = "cp_me"; // the last signed-in name and email, so offline isn't shown as signed out
+const ME_KEY = "cp_me"; // the last signed-in name, email and card schools, so offline isn't shown as signed out
 const RETURN_KEY = "cp_return"; // Explore filters and scroll, kept across the Google round trip
 const DRAFT_KEY = "cp_report_draft"; // a report interrupted by an expired session
 
 const GOOGLE_G =
   '<svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>';
 const MARK = '<svg aria-hidden="true" focusable="false"><use href="#cp-mark"/></svg>';
+// School cards ("CampusPass 校園卡"): the role is self-declared, the school is verified.
+const ROLES = ["student", "staff", "alumni"];
+// Each school's card colour, from a fixed palette of tokens (--card-<tone>-a/-b in styles.css):
+// never a school's own branding. Unknown codes fall back to slate.
+const CARD_TONE = {
+  NTU: "violet", NCCU: "teal", NTNU: "blue", NTUST: "rose", NTHU: "amber", NYCU: "green", NCKU: "slate",
+  NCU: "blue", NCHU: "green", TMU: "rose", TCU: "teal", KSU: "amber", CMU: "violet",
+};
+const toneOf = (school) => CARD_TONE[school] || "slate";
+const NO_FEATURES = { google: false, dev_login: false, email_code: false };
 
 /* ---------- state ---------- */
 
@@ -69,7 +79,11 @@ const state = {
   favs: new Set(),
   favOrder: [], // newest first, as /api/me returns them
   meStatus: "loading", // loading | ready | error (network or server failure; user may be the cached one)
-  filters: { q: "", cat: "all", region: "all", school: storage.get(SCHOOL_KEY) || DEFAULT_SCHOOL, students: true },
+  identities: null, // the account's school cards (null: not loaded yet; [] signed out or none)
+  features: { ...NO_FEATURES }, // which ways to verify this deployment offers (/api/me)
+  newCard: "", // the school just added (?identity_added=), drawn with an entrance on /me
+  // No school chosen: the reader's own cards (as last cached, until /api/me answers), else NTU.
+  filters: { q: "", cat: "all", region: "all", school: storage.get(SCHOOL_KEY) || (cachedMe()?.schools?.length ? "mine" : DEFAULT_SCHOOL), students: true },
   route: { name: "explore", id: null },
   base: "explore", // the list view under an open detail
   detail: new Map(), // id → { deal, locked }
@@ -277,15 +291,71 @@ async function loadDeals({ quiet = false } = {}) {
 
 /** Only the name and email, never the session: enough to keep showing "signed in" offline. */
 function cacheMe(user) {
-  storage.set(ME_KEY, user ? JSON.stringify({ email: String(user.email || ""), name: String(user.name || "") }) : null);
+  storage.set(ME_KEY, user ? JSON.stringify({ email: String(user.email || ""), name: String(user.name || ""), schools: mySchools() }) : null);
 }
 function cachedMe() {
   try {
     const u = JSON.parse(storage.get(ME_KEY) || "null");
-    return u && typeof u.email === "string" && u.email ? { email: u.email, name: typeof u.name === "string" ? u.name : "" } : null;
+    if (!u || typeof u.email !== "string" || !u.email) return null;
+    const schools = Array.isArray(u.schools) ? u.schools.filter((x) => typeof x === "string" && /^[A-Z]{2,8}$/.test(x)) : [];
+    return { email: u.email, name: typeof u.name === "string" ? u.name : "", schools };
   } catch {
     return null;
   }
+}
+
+/* ---------- school cards ---------- */
+
+/** The cards: active ones first, oldest first (the first school added leads, as on the profile). */
+function myCards() {
+  return (state.identities || [])
+    .slice()
+    .sort((a, b) => Number(!!b.active) - Number(!!a.active) || String(a.verified_at).localeCompare(String(b.verified_at)) || a.id - b.id);
+}
+
+/** The schools of the active cards (Explore's 「我的學校」). Before /api/me has answered (or while it
+ *  can't), the ones cached with the account. Memoised on the identities array: matches() asks per deal. */
+let mineMemo = { src: undefined, list: [] };
+function mySchools() {
+  const src = state.identities;
+  if (mineMemo.src === src) return mineMemo.list;
+  const list = src ? [...new Set(myCards().filter((c) => c.active).map((c) => c.school))] : cachedMe()?.schools || [];
+  mineMemo = { src, list };
+  return list;
+}
+
+const mineNames = () => mySchools().map((s) => schoolName(s)).join(getLang() === "en" ? ", " : "、");
+/** With no school chosen: the reader's own schools when they hold a card, else NTU. */
+const defaultSchool = () => (mySchools().length ? "mine" : DEFAULT_SCHOOL);
+
+/** Is deal `d` for this school filter value (a code, "mine" or "all")? */
+function inSchool(d, school) {
+  if (school === "all") return true;
+  if (school === "mine") {
+    const mine = mySchools();
+    return d.schools.some((s) => mine.includes(s));
+  }
+  return d.schools.includes(school);
+}
+
+/** The school filter's name: 全部學校 · 我的學校（臺大、政大）· 臺大 (long: the full name). */
+function schoolLabel(v, long = false) {
+  if (v === "all") return t("filter.schoolAll");
+  if (v === "mine") return long ? t("filter.mineList", { list: mineNames() }) : t("filter.mine");
+  return schoolName(v, long);
+}
+
+/* The cards changed (loaded, added, removed, signed out): Explore follows when no school was chosen
+   (cp_school unset), and 「我的學校」 without any active card falls back to NTU. */
+let schoolKey = "";
+function syncSchoolDefault() {
+  const f = state.filters;
+  if (!storage.get(SCHOOL_KEY)) f.school = defaultSchool();
+  else if (f.school === "mine" && !mySchools().length) f.school = DEFAULT_SCHOOL;
+  const key = `${f.school}|${mySchools().join(",")}`;
+  if (key === schoolKey) return;
+  schoolKey = key;
+  if (state.dealsStatus === "ready") renderExplore();
 }
 
 /* ---------- saved deals, readable offline ----------
@@ -397,6 +467,8 @@ async function loadMe() {
   if (r.ok && r.data) {
     meLoadedAt = Date.now();
     state.user = r.data.user || null;
+    state.identities = state.user && Array.isArray(r.data.identities) ? r.data.identities.filter((c) => c && typeof c.school === "string") : [];
+    state.features = { ...NO_FEATURES, ...(r.data.features || {}) };
     cacheMe(state.user);
     let order = Array.isArray(r.data.favorites) ? r.data.favorites.slice() : [];
     // A star still on its way to the server wins over the list read before it arrived.
@@ -423,6 +495,7 @@ async function loadMe() {
   // Signed in or out in another tab since the last check: details cached for the other state go.
   const switched = refresh && state.meStatus === "ready" && before !== (state.user?.email || null);
   if (switched) state.detail.clear();
+  syncSchoolDefault();
   renderAccountChrome();
   syncStars();
   renderSaved();
@@ -472,7 +545,7 @@ function matches(d, terms, skip = "") {
   if (f.students && !d.eligibility.student) return false;
   if (skip !== "cat" && f.cat !== "all" && d.category !== f.cat) return false;
   if (skip !== "region" && f.region !== "all" && !d.regions.includes(f.region)) return false;
-  if (skip !== "school" && f.school !== "all" && !d.schools.includes(f.school)) return false;
+  if (skip !== "school" && !inSchool(d, f.school)) return false;
   for (const term of terms) if (!d._hay.includes(term)) return false;
   return true;
 }
@@ -489,10 +562,11 @@ function facetCounts(facet, keyOf) {
   return { all, counts };
 }
 
-/** The school is the reader's context (remembered), not a filter: Reset keeps it. */
+/** The school is the reader's context (remembered): only one other than their default (their own
+ *  schools, else NTU) counts as a filter, and Reset returns to that default. */
 const filtersActive = () => {
   const f = state.filters;
-  return f.q.trim() !== "" || f.cat !== "all" || f.region !== "all" || !f.students;
+  return f.q.trim() !== "" || f.cat !== "all" || f.region !== "all" || !f.students || f.school !== defaultSchool();
 };
 
 /* ---------- rows ---------- */
@@ -651,10 +725,10 @@ function renderExplore() {
   }
   const sch = els.filterRow.querySelector('[data-pick="school"]');
   if (sch) {
-    sch.querySelector("[data-label]").textContent = f.school === "all" ? t("filter.school") : schoolName(f.school);
+    sch.querySelector("[data-label]").textContent = f.school === "all" ? t("filter.school") : schoolLabel(f.school);
     sch.classList.toggle("on", f.school !== "all");
-    sch.setAttribute("aria-label", `${t("filter.school")}${t("labelSep")}${f.school === "all" ? t("filter.schoolAll") : schoolName(f.school)}`);
-    sch.title = f.school === "all" ? "" : schoolName(f.school, true);
+    sch.setAttribute("aria-label", `${t("filter.school")}${t("labelSep")}${schoolLabel(f.school, f.school === "mine")}`);
+    sch.title = f.school === "all" ? "" : schoolLabel(f.school, true);
   }
   const reset = els.filterRow.querySelector("[data-reset]");
   if (reset) reset.hidden = !filtersActive();
@@ -808,21 +882,26 @@ function openPicker(kind, anchor) {
     : [...new Set(state.deals.flatMap((d) => d.schools))]
         .filter((v) => v === cur || schoolName(v, true) !== v)
         .sort((a, b) => schoolName(a, true).localeCompare(schoolName(b, true), getLang() === "en" ? "en" : "zh-Hant"));
+  // 「我的學校」 (the union of the reader's active cards) leads the school list when they hold one.
+  const mine = !isRegion && mySchools().length > 0;
+  const terms = queryTerms();
+  const mineN = mine ? state.deals.filter((d) => inSchool(d, "mine") && matches(d, terms, "school")).length : 0;
   // A school shows its short name (the one on the filter pill) with the full name below it, so a
   // long English name never pushes the count off a phone screen.
   const label = (v) => {
     if (v === "all") return `<span>${esc(t(isRegion ? "filter.regionAll" : "filter.schoolAll"))}</span>`;
+    if (v === "mine") return `<span class="optlbl">${esc(schoolLabel("mine", true))}</span>`;
     if (isRegion) return `<span>${esc(t(`region.${v}`))}</span>`;
     const short = schoolName(v);
     const full = schoolName(v, true);
     return `<span class="optlbl">${esc(short)}${full !== short ? `<small>${esc(full)}</small>` : ""}</span>`;
   };
-  const opts = ["all", ...values]
+  const opts = [...(mine ? ["mine"] : []), "all", ...values]
     .map(
       (v) =>
         `<li role="none"><button class="opt" type="button" role="radio" data-value="${esc(v)}" aria-checked="${v === cur}" tabindex="${v === cur ? 0 : -1}">${icon(
           "check"
-        )}${label(v)}<span class="n">${v === "all" ? all : counts.get(v) || 0}</span></button></li>`
+        )}${label(v)}<span class="n">${v === "all" ? all : v === "mine" ? mineN : counts.get(v) || 0}</span></button></li>`
     )
     .join("");
   const title = t(isRegion ? "filter.region" : "filter.school");
@@ -852,16 +931,21 @@ function openPicker(kind, anchor) {
     if (isRegion) f.region = b.dataset.value;
     else {
       f.school = b.dataset.value;
-      storage.set(SCHOOL_KEY, f.school === DEFAULT_SCHOOL ? null : f.school);
+      // Remembered only when it isn't the reader's default (so a card added later still leads).
+      storage.set(SCHOOL_KEY, f.school === defaultSchool() ? null : f.school);
+      schoolKey = `${f.school}|${mySchools().join(",")}`;
     }
     closeDialog();
     renderExplore();
   });
 }
 
-/** Clears the search and the filters; the chosen school stays (it is the reader's own context). */
+/** Clears the search and the filters, and the school goes back to the reader's default
+ *  (their own schools when they hold a card, else NTU). */
 function resetFilters() {
-  Object.assign(state.filters, { q: "", cat: "all", region: "all", students: true });
+  Object.assign(state.filters, { q: "", cat: "all", region: "all", students: true, school: defaultSchool() });
+  storage.set(SCHOOL_KEY, null);
+  schoolKey = `${state.filters.school}|${mySchools().join(",")}`;
   els.q.value = "";
   els.qclear.hidden = true;
   renderExplore();
@@ -984,6 +1068,108 @@ function installAvailable() {
   }
 }
 
+/** 臺大 · 政大: the active cards' schools under the account's name. */
+function cardChipsHTML() {
+  const mine = mySchools();
+  if (!mine.length) return "";
+  return `<ul class="idchips" aria-label="${esc(t("id.list"))}">${mine
+    .map((sc) => `<li class="schip"><i class="tone-${toneOf(sc)}" aria-hidden="true"></i>${esc(schoolName(sc))}</li>`)
+    .join("")}</ul>`;
+}
+
+/** A UTC "YYYY-MM-DD HH:MM:SS" as the Taipei date, 2026/10/16. */
+const TPE_DAY = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Taipei" });
+function tpeDay(s) {
+  const ms = Date.parse(`${String(s || "").replace(" ", "T")}Z`);
+  return Number.isFinite(ms) ? fmtDate(TPE_DAY.format(ms)) : "";
+}
+
+/** One wallet-style card: the school (short and full name), the verified email, how and when it was
+ *  verified, the self-declared role (a picker) and the expiry. Expired: greyed, with 重新驗證. */
+function cardHTML(c, fresh) {
+  const sc = schoolName(c.school);
+  const full = schoolName(c.school, true);
+  const nameId = `idc${c.id}`;
+  const method = ["google", "dev", "email_code"].includes(c.method) ? c.method : "google";
+  const when = tpeDay(c.verified_at);
+  let status;
+  if (!c.active) status = `<p class="idc-status is-expired">${icon("clock")}<b>${esc(t("id.expired"))}</b></p>`;
+  else if (method === "dev")
+    status = `<p class="idc-status is-test"><span class="idc-tag">${esc(t("id.testTag"))}</span><span>${esc(
+      [t("id.method.dev"), t("id.unverified"), when].filter(Boolean).join(" · ")
+    )}</span></p>`;
+  else
+    status = `<p class="idc-status">${icon("badge-check")}<b>${esc(t("id.verified"))}</b><span>${esc(
+      [t(`id.method.${method}`), when].filter(Boolean).join(" · ")
+    )}</span></p>`;
+  const role = ROLES.includes(c.role) ? c.role : "student";
+  const roleSel = `<span class="idc-sel"><select data-role-id="${esc(c.id)}" aria-label="${esc(`${sc} ${t("id.roleLabel")}`)}">${ROLES.map(
+    (r) => `<option value="${r}"${r === role ? " selected" : ""}>${esc(t(`id.role.${r}`))}</option>`
+  ).join("")}</select>${icon("chevron-down")}</span>`;
+  return `<li class="idcard tone-${c.active ? toneOf(c.school) : "expired"}${c.active ? "" : " is-expired"}${fresh === c.school ? " is-new" : ""}" aria-labelledby="${nameId}">
+    <svg class="idc-wm" aria-hidden="true" focusable="false"><use href="#cp-mark"/></svg>
+    <div class="idc-top"><span class="idc-brand">${MARK}<span>${esc(t("id.brand"))}</span></span>
+      <button class="idc-x" type="button" data-remove-card="${esc(c.id)}" aria-label="${esc(t("id.remove", { school: sc }))}">${icon("x")}</button></div>
+    <h3 class="idc-school" id="${nameId}"><span class="idc-short">${esc(sc)}</span>${full !== sc ? `<span class="idc-full">${esc(full)}</span>` : ""}</h3>
+    <p class="idc-mail" translate="no">${esc(c.email || "")}</p>
+    ${status}
+    <div class="idc-fields">
+      <div class="idc-field"><span class="idc-lbl" aria-hidden="true">${esc(t("id.roleLbl"))}</span>${roleSel}</div>
+      <div class="idc-field end"><span class="idc-lbl">${esc(t("id.validUntil"))}</span><b class="num">${esc(tpeDay(c.expires_at))}</b></div>
+    </div>
+    ${c.active ? "" : `<div class="idc-renew"><button class="btn btn-sm idc-btn" type="button" data-reverify="${esc(c.id)}">${icon("refresh-cw")}${esc(t("id.reverify"))}</button></div>`}
+  </li>`;
+}
+
+/** /me 「我的身分」: the cards, or why to add one, and 「+ 新增學校身分」. */
+function cardsHTML(fresh = "") {
+  const cards = myCards();
+  const add = `<button class="idc-add" type="button" data-add-card aria-haspopup="dialog">${icon("plus")}<span>${esc(t("id.add"))}</span></button>`;
+  const body = cards.length
+    ? `<ul class="idcards" aria-labelledby="idTitle">${cards.map((c) => cardHTML(c, fresh)).join("")}</ul>${add}`
+    : `<div class="idc-empty"><span class="eic">${icon("id-card")}</span><b>${esc(t("id.emptyTitle"))}</b><p>${esc(t("id.emptyBody"))}</p>
+        <button class="btn btn-primary btn-sm" type="button" data-add-card aria-haspopup="dialog">${icon("plus")}${esc(t("id.add"))}</button></div>`;
+  return `<section class="idsec" aria-labelledby="idTitle"><div class="idsec-head"><h2 id="idTitle" tabindex="-1">${esc(t("id.title"))}</h2>
+    <p>${esc(t("id.lede"))}</p></div>${body}</section>`;
+}
+
+/** The schools whose sources /me lists first: 「我的學校」, else the chosen (or default) school. */
+function contextSchools() {
+  const f = state.filters;
+  if (f.school === "mine") return mySchools();
+  if (f.school === "all") return defaultSchool() === "mine" ? mySchools() : [DEFAULT_SCHOOL];
+  return [f.school];
+}
+
+/** 「目前收錄的資料來源」 for the reader's school(s), grouped by school; every other school's
+ *  sources folded under 「其他學校的來源」. Never one mixed list. */
+function sourcesHTML() {
+  if (!state.deals.length) return "";
+  const per = new Map(); // school → Map(source → deals)
+  for (const d of state.deals) {
+    for (const sc of d.schools) {
+      if (!per.has(sc)) per.set(sc, new Map());
+      const m = per.get(sc);
+      m.set(d.source_org, (m.get(d.source_org) || 0) + 1);
+    }
+  }
+  const ctx = contextSchools().filter((sc) => per.has(sc));
+  const shown = new Set(ctx.flatMap((sc) => [...per.get(sc).keys()]));
+  const group = (sc, skip) => {
+    const rows = [...per.get(sc)].filter(([org]) => !skip?.has(org)).sort((a, b) => b[1] - a[1]);
+    if (!rows.length) return "";
+    return `<h3 class="srcschool">${esc(schoolName(sc, true))}</h3><ul class="srclist">${rows
+      .map(([org, n]) => `<li><span${ZH}>${esc(org)}</span><span>${esc(t("count", { n }))}</span></li>`)
+      .join("")}</ul>`;
+  };
+  const byName = (a, b) => schoolName(a, true).localeCompare(schoolName(b, true), getLang() === "en" ? "en" : "zh-Hant");
+  const main = ctx.map((sc) => group(sc)).join("");
+  const others = [...per.keys()].filter((sc) => !ctx.includes(sc)).sort(byName).map((sc) => group(sc, shown)).join("");
+  return `<h2 class="srclist-head">${esc(t("me.sources"))}</h2><p class="fine srchint">${esc(t("me.sourcesHint"))}</p>${main}${
+    others ? `<details class="srcother"><summary>${esc(t("me.sourcesOther"))}${icon("chevron-down")}</summary>${others}</details>` : ""
+  }`;
+}
+
 function renderMe() {
   const u = state.user;
   const stale = state.meStatus === "error";
@@ -991,7 +1177,7 @@ function renderMe() {
   if (state.meStatus === "loading") account = `<section class="card"><div class="dskel"><i class="w40"></i><i class="w70"></i></div></section>`;
   else if (u)
     account = `<section class="card" aria-label="${esc(t("account.settings"))}"><div class="profile">${avatarHTML(u, "lg")}
-      <div class="who"><b>${esc(u.name || u.email)}</b><span>${esc(u.email)}</span></div>
+      <div class="who"><b>${esc(u.name || u.email)}</b><span>${esc(u.email)}</span>${cardChipsHTML()}</div>
       <button class="btn btn-outline btn-sm" type="button" data-signout>${icon("log-out")}${esc(t("me.signout"))}</button></div>
       ${stale ? `<p class="fine">${esc(t(navigator.onLine ? "me.loadFailed" : "me.offlineNote"))} <button class="linkbtn" type="button" data-retry-me>${esc(t("retry"))}</button></p>` : ""}</section>`;
   else if (stale) account = `<section class="card">${meErrorHTML("me")}</section>`;
@@ -1007,14 +1193,12 @@ function renderMe() {
       ${ios ? "" : `<button class="btn btn-primary btn-sm" type="button" data-install>${esc(t("me.installBtn"))}</button>`}</div></section>`;
   }
 
-  const sources = new Map();
-  for (const d of state.deals) sources.set(d.source_org, (sources.get(d.source_org) || 0) + 1);
-  const srcList = [...sources]
-    .sort((a, b) => b[1] - a[1])
-    .map(([org, n]) => `<li><span${ZH}>${esc(org)}</span><span>${esc(t("count", { n }))}</span></li>`)
-    .join("");
+  // A school card just added (?identity_added=) slides in once.
+  const fresh = state.newCard;
+  state.newCard = "";
+  const cards = u && state.identities && !stale ? cardsHTML(fresh) : "";
 
-  els.meBody.innerHTML = `${account}
+  els.meBody.innerHTML = `${account}${cards}
     <section class="card"><h2>${esc(t("me.settings"))}</h2>
       <div class="setrow"><span>${esc(t("me.language"))}</span>${langSeg()}</div>
       <div class="setrow"><span>${esc(t("me.theme"))}</span>${themeSeg()}</div>
@@ -1026,7 +1210,7 @@ function renderMe() {
     <section class="card"><h2>${esc(t("me.about"))}</h2>
       <p>${esc(t("me.aboutBody"))}</p>
       <p class="disclaimer">${esc(t("disclaimer"))}</p>
-      ${srcList ? `<h2 class="srclist-head">${esc(t("me.sources"))}</h2><ul class="srclist">${srcList}</ul>` : ""}
+      ${sourcesHTML()}
       <p class="fine contactline">${esc(t("me.contact"))}</p>
     </section>
     <section class="card"><h2>${esc(t("me.privacy"))}</h2><p>${esc(t("privacy.note"))}</p>
@@ -1060,7 +1244,7 @@ function openAccountMenu(anchor) {
     label: t("account.menu"),
     anchor,
     placement: "right",
-    html: `<div class="me">${avatarHTML(u)}<div class="who"><b>${esc(u.name || u.email)}</b><small>${esc(u.email)}</small></div></div>
+    html: `<div class="me">${avatarHTML(u)}<div class="who"><b>${esc(u.name || u.email)}</b><small>${esc(u.email)}</small>${cardChipsHTML()}</div></div>
       <div class="lbl">${esc(t("me.language"))}</div>${langSeg()}
       <div class="lbl">${esc(t("me.theme"))}</div>${themeSeg()}
       <div class="sep"></div>
@@ -1107,7 +1291,9 @@ async function signOut() {
 function becomeSignedOut() {
   state.user = null;
   state.meStatus = "ready";
+  state.identities = [];
   cacheMe(null);
+  syncSchoolDefault();
   wipeSavedCache();
   state.favs = new Set();
   state.favOrder = [];
@@ -1149,6 +1335,126 @@ function confirmDeleteAccount() {
     btn.textContent = t("del.confirm");
     toast(errText(r, "toast.deleteFailed"), { error: true });
   });
+}
+
+/* ---------- school cards: add, re-verify, remove, role ---------- */
+
+/** 「新增學校身分」: the ways to verify a school. Google (when this deployment has it), the school
+ *  email code (not yet), and on a dev server only the test path (a dev login, never a verified claim). */
+function openAddCard({ email = "" } = {}) {
+  if (!state.user) return openSignin();
+  const ft = state.features;
+  const google = ft.google
+    ? `<a class="method" href="/auth/google/start?link=1&amp;next=%2Fme" data-link-google><span class="mtile g">${GOOGLE_G}</span><span class="mtxt"><b>${esc(
+        t("add.google")
+      )}</b><small>${esc(t("add.googleHint"))}</small></span>${icon("chevron-right", "go")}</a>`
+    : `<div class="method is-off" aria-disabled="true"><span class="mtile g">${GOOGLE_G}</span><span class="mtxt"><b>${esc(t("add.google"))}</b><small>${esc(
+        t("add.googleOff")
+      )}</small></span></div>`;
+  const code = `<button class="method is-off" type="button" disabled><span class="mtile">${icon("mail")}</span><span class="mtxt"><b>${esc(
+    t("add.emailCode")
+  )}</b><small>${esc(t("add.emailCodeHint"))}</small></span><span class="soon">${esc(t("add.soon"))}</span></button>`;
+  // A plain GET form (no script, so nothing for the CSP to refuse): /auth/dev-login?email=…&link=1&next=/me
+  const dev = ft.dev_login
+    ? `<form class="devlink" action="/auth/dev-login" method="get">
+        <input type="hidden" name="link" value="1"><input type="hidden" name="next" value="/me">
+        <label class="fieldlbl" for="devEmail">${icon("flask-conical")}<span>${esc(t("add.devLabel"))}</span></label>
+        <div class="devrow"><input class="field" id="devEmail" name="email" type="email" required autocomplete="off" autocapitalize="off" spellcheck="false"
+          inputmode="email" placeholder="${esc(t("add.devPh"))}" value="${esc(email)}">
+        <button class="btn btn-outline" type="submit">${esc(t("add.devSubmit"))}</button></div></form>`
+    : "";
+  const list = schoolCodes().map((c) => schoolName(c)).join(getLang() === "en" ? ", " : "、");
+  openDialog({
+    cls: "addcard",
+    labelledBy: "addTitle",
+    html: `<div class="dlg-head"><h2 id="addTitle">${esc(t("add.title"))}</h2><button class="iconbtn dlg-x" type="button" data-close aria-label="${esc(t("close"))}">${icon("x")}</button></div>
+      <p class="dlg-body">${esc(t("add.body"))}</p>
+      <div class="methods">${google}${code}</div>
+      ${dev}
+      <p class="dlg-fine">${esc(t("add.schools", { list }))}${esc(t("add.fine"))}</p>`,
+  });
+}
+
+/** 移除: confirm, then DELETE. Explore's default follows (a removed school stops leading it). */
+function confirmRemoveCard(id) {
+  const c = state.identities?.find((x) => String(x.id) === String(id));
+  if (!c) return;
+  const sc = schoolName(c.school);
+  const dlg = openDialog({
+    cls: "confirm",
+    labelledBy: "rmTitle",
+    html: `<div class="dlg-head"><h2 id="rmTitle">${esc(t("id.removeTitle", { school: sc }))}</h2><button class="iconbtn dlg-x" type="button" data-close aria-label="${esc(t("close"))}">${icon("x")}</button></div>
+      <p class="dlg-body">${esc(t("id.removeBody", { school: sc }))}</p>
+      <div class="dlg-actions"><button class="btn btn-ghost" type="button" data-close autofocus>${esc(t("cancel"))}</button>
+      <button class="btn btn-outline btn-danger" type="button" data-remove-confirm>${esc(t("id.removeConfirm"))}</button></div>`,
+  });
+  const btn = dlg.querySelector("[data-remove-confirm]");
+  btn.addEventListener("click", async () => {
+    btn.disabled = true;
+    btn.textContent = t("id.removing");
+    const r = await api("DELETE", `/api/identities/${encodeURIComponent(c.id)}`);
+    if (r.ok || r.status === 404) {
+      // 404: already gone (another tab): the same result.
+      closeDialog({ instant: true, restoreFocus: false });
+      state.identities = (state.identities || []).filter((x) => x.id !== c.id);
+      cardsChanged();
+      toast(t("toast.idRemoved", { school: sc }));
+      (els.meBody.querySelector(".idc-add") || els.meBody.querySelector("[data-add-card]") || $("idTitle"))?.focus({ preventScroll: true });
+      return;
+    }
+    if (r.status === 401) {
+      closeDialog({ instant: true, restoreFocus: false });
+      return dropSession();
+    }
+    btn.disabled = false;
+    btn.textContent = t("id.removeConfirm");
+    toast(errText(r, "toast.idRemoveFailed"), { error: true });
+  });
+}
+
+/** The self-declared role: saved as soon as it's picked; back to what it was if that fails. */
+async function changeRole(sel) {
+  const c = state.identities?.find((x) => String(x.id) === sel.dataset.roleId);
+  if (!c || !ROLES.includes(sel.value) || sel.value === c.role) return;
+  const prev = c.role;
+  const role = sel.value;
+  c.role = role;
+  sel.setAttribute("aria-busy", "true");
+  const r = await api("PATCH", `/api/identities/${encodeURIComponent(c.id)}`, { role });
+  sel.removeAttribute("aria-busy");
+  if (r.ok) return toast(t("toast.idRoleSaved"));
+  c.role = prev;
+  if (sel.isConnected) sel.value = prev;
+  if (r.status === 401) return dropSession();
+  toast(errText(r, "toast.idRoleFailed"), { error: true });
+}
+
+/** After a card is added or removed here: the cache, Explore's default, the chips. */
+function cardsChanged() {
+  cacheMe(state.user);
+  syncSchoolDefault();
+  if (state.route.name === "me") renderMe();
+}
+
+/** Back from adding a card: ?identity_added=NCCU or ?identity_error=<reason> → a toast, and the
+ *  parameter leaves the address bar. */
+function identityToast() {
+  const params = new URLSearchParams(location.search);
+  const added = params.get("identity_added");
+  const err = params.get("identity_error");
+  if (added === null && err === null) return;
+  params.delete("identity_added");
+  params.delete("identity_error");
+  const qs = params.toString();
+  history.replaceState(history.state, "", location.pathname + (qs ? `?${qs}` : "") + location.hash);
+  if (added) {
+    state.newCard = added;
+    toast(t("toast.idAdded", { school: schoolName(added) }), { ms: 3500 });
+    return;
+  }
+  const key = `idErr.${err}`;
+  const msg = t(key);
+  toast(msg === key ? t("idErr.generic") : msg, { error: true, ms: 4500 });
 }
 
 /* ---------- favourites (optimistic) ---------- */
@@ -1983,6 +2289,20 @@ function cashierHTML(x, { deal = true } = {}) {
   const a = x.account || {};
   const tag = a.test ? ` <span class="mailtag testtag">${esc(t("cashier.testLogin"))}</span>` : a.school_domain ? ` <span class="mailtag">${esc(t("cashier.schoolMail"))}</span>` : "";
   const acct = a.masked ? `<span translate="no">${esc(a.masked)}</span>${tag}` : "";
+  // The student's active school cards this deal is for. A test (dev) login is never a verified claim.
+  const cards = (Array.isArray(x.verified) ? x.verified : [])
+    .filter((v) => v && typeof v.school === "string")
+    .map((v) => {
+      const sc = schoolName(v.school);
+      const role = ROLES.includes(v.role) ? `<small>${esc(t("cashier.cardRole", { role: t(`id.role.${v.role}`) }))}</small>` : "";
+      if (v.method === "dev")
+        return `<span class="vline is-test">${icon("id-card")}<span><span class="vtxt">${esc(t("cashier.cardTest", { school: sc }))}</span> <span class="mailtag testtag">${esc(
+          t("id.testTag")
+        )}</span>${role}</span></span>`;
+      const how = v.method === "email_code" ? t("id.method.email_code") : "Google";
+      return `<span class="vline">${icon("badge-check")}<span><b class="vtxt">${esc(t("cashier.cardVerified", { school: sc, method: how }))}</b>${role}</span></span>`;
+    })
+    .join("");
   const rows = [
     deal && x.deal ? `<dt>${esc(t("cashier.deal"))}</dt><dd><b${ZH}>${esc(x.deal)}</b>${x.highlight ? ` ${badgeHTML(x.highlight)}` : ""}</dd>` : "",
     !deal && x.highlight ? `<dt>${esc(t("cashier.deal"))}</dt><dd>${badgeHTML(x.highlight)}</dd>` : "",
@@ -1991,6 +2311,7 @@ function cashierHTML(x, { deal = true } = {}) {
       ? `<dt>${esc(t("cashier.terms"))}</dt><dd class="cashterms"><p class="cashoffer" id="cashOffer${++offerSeq}"${ZH}>${esc(x.offer)}</p><button class="linkbtn" type="button" data-expand="cashOffer${offerSeq}" aria-controls="cashOffer${offerSeq}" aria-expanded="false" hidden>${esc(t("more"))}</button></dd>`
       : "",
     forText ? `<dt>${esc(t("cashier.for"))}</dt><dd>${esc(forText)}</dd>` : "",
+    cards ? `<dt>${esc(t("cashier.card"))}</dt><dd class="vlines">${cards}</dd>` : "",
     acct ? `<dt>${esc(t("cashier.account"))}</dt><dd>${acct}</dd>` : "",
   ].join("");
   return rows ? `<dl class="facts cashfacts">${rows}</dl>` : "";
@@ -2657,6 +2978,21 @@ function onClick(e) {
     return loadMe();
   }
   if (t0.closest("[data-delete-account]")) return confirmDeleteAccount();
+  if (t0.closest("[data-add-card]")) return openAddCard();
+  const rm = t0.closest("[data-remove-card]");
+  if (rm) return confirmRemoveCard(rm.dataset.removeCard);
+  const again = t0.closest("[data-reverify]");
+  if (again) {
+    const c = state.identities?.find((x) => String(x.id) === again.dataset.reverify);
+    return openAddCard({ email: c?.email || "" });
+  }
+  if (t0.closest("[data-link-google]")) {
+    if (!navigator.onLine) {
+      e.preventDefault();
+      toast(t("err.offlineLogin"), { error: true });
+    }
+    return; // a full-page round trip to Google; back on /me with ?identity_added=
+  }
 
   if (t0.closest("[data-signin]")) return openSignin();
   if (t0.closest("#railAvatar")) return openAccountMenu($("railAvatar"));
@@ -2844,6 +3180,7 @@ function init() {
   els.qclear.innerHTML = icon("x");
   document.addEventListener("click", onClick);
   document.addEventListener("keydown", onKey);
+  document.addEventListener("change", (e) => e.target.matches?.("select[data-role-id]") && changeRole(e.target));
   addEventListener("popstate", route);
   addEventListener("scroll", onScroll, { passive: true });
   els.detailBody.addEventListener("scroll", onDetailScroll, { passive: true });
@@ -2884,6 +3221,7 @@ function init() {
   renderAccountChrome();
   route();
   loadDeals();
+  identityToast();
   const me = loadMe();
   loginErrorToast(me);
   if (!online) toast(t("toast.offline"), { ms: 3500 });

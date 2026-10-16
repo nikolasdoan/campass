@@ -421,6 +421,7 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   check('scan: paired phone sees shop + deal + 確認使用', (await sp.textContent('#scanBody')).includes('台北福華') && (await sp.textContent('#scanBody')).includes('台北福華大飯店') && (await sp.textContent('[data-scan-confirm]')).includes('確認使用'));
   const scanText = await sp.textContent('#scanBody');
   check('scan: cashier sees who the deal is for, the masked account (a dev login is flagged 測試登入, not 學校信箱) and 請核對學生證', scanText.includes('限臺大學生') && scanText.includes('r***@ntu.edu.tw') && scanText.includes('測試登入') && !scanText.includes('學校信箱') && scanText.includes('請核對學生證後再確認') && !scanText.includes(STUDENT), scanText.replace(/\s+/g, ' ').slice(0, 160));
+  check('scan: a dev-login school card is shown as 測試, never as verified (請核對學生證 stays)', scanText.includes('臺大身分（測試登入，未經驗證）') && !scanText.includes('已驗證 臺大') && (await sp.$$('#scanBody .vline.is-test .testtag')).length === 1 && scanText.includes('請核對學生證後再確認'));
   const terms = BY_ID.get(FULL).offer.slice(0, 12);
   check('scan: cashier sees the deal terms (優惠條件)', (await sp.textContent('#scanBody .cashfacts')).includes('優惠條件') && (await sp.textContent('#scanBody .cashoffer')).includes(terms));
   check('scan: the ID check comes before 確認使用', await sp.evaluate(() => !!(document.querySelector('.idcheck').compareDocumentPosition(document.querySelector('[data-scan-confirm]')) & Node.DOCUMENT_POSITION_FOLLOWING)));
@@ -840,10 +841,11 @@ const liveText = (page) => page.evaluate(() => document.getElementById('live')?.
   await page.click('[data-pick="school"]'); await settle(page, 400);
   check('school picker: short name with the full name under it, every count shown', await page.evaluate(() => [...document.querySelectorAll('dialog[open] .opt')].every((b) => { const n = b.querySelector('.n').getBoundingClientRect(); return n.right <= innerWidth && n.width > 0; }) && !!document.querySelector('dialog[open] .optlbl small')));
   await page.click('dialog[open] [data-value="NCCU"]'); await settle(page, 400);
-  check('reset: a chosen school alone is not a filter (no Reset link)', await page.$eval('#filterRow [data-reset]', (b) => b.hidden));
+  check('school: a chosen school is remembered (cp_school)', (await page.textContent('[data-pick="school"] [data-label]')) === '政大' && (await page.evaluate(() => localStorage.getItem('cp_school'))) === 'NCCU');
+  check('reset: a school other than the default offers Reset', !(await page.$eval('#filterRow [data-reset]', (b) => b.hidden)));
   await page.fill('#q', 'zzzz'); await settle(page, 250);
   await page.click('#list [data-reset]'); await settle(page, 250);
-  check('reset: keeps the chosen school, clears the search', (await page.textContent('[data-pick="school"] [data-label]')) === '政大' && (await page.inputValue('#q')) === '' && (await page.evaluate(() => localStorage.getItem('cp_school'))) === 'NCCU');
+  check('reset: back to the default school (signed out: NTU), cp_school forgotten, search cleared', (await page.textContent('[data-pick="school"] [data-label]')) === '臺大' && (await page.inputValue('#q')) === '' && (await page.evaluate(() => localStorage.getItem('cp_school'))) === null && (await itemCount(page)) === EXPECT.student);
   await page.click('[data-pick="school"]'); await settle(page, 400);
   await page.click('dialog[open] [data-value="NTU"]'); await settle(page, 400);
   // Route changes are announced; a child page marks its parent tab; 404 doesn't repeat its title.
@@ -1026,6 +1028,216 @@ const liveText = (page) => page.evaluate(() => document.getElementById('live')?.
   check('deep link: the deal is fetched once (one view)', gets === 1, `${gets}`);
   check('deep link: focus is on the deal heading, not <body>', await page.evaluate(() => document.activeElement?.id === 'detailName'));
   await ctx.close();
+}
+
+/* ================= School cards (CampusPass 校園卡) ================= */
+// Explore counts for a set of schools: student-eligible, not expired, any of the schools.
+const countFor = (schools) => DATA.filter((x) => x.eligibility.student && isActive(x) && x.schools.some((sc) => schools.includes(sc))).length;
+const sourcesFor = (sc) => new Set(DATA.filter((x) => x.schools.includes(sc)).map((x) => x.source_org));
+const CARD_USER = 'x@ntu.edu.tw';
+const meJSON = (page) => apiGet(page, '/api/me').then((r) => r.data);
+const delCard = (page, id) => page.evaluate((i) => fetch('/api/identities/' + i, { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: '{}' }), id);
+{
+  const { ctx, page } = await newPage(MOBILE, 'cards');
+  await page.goto(B + `/auth/dev-login?email=${CARD_USER}&next=/me`, { waitUntil: 'networkidle' });
+  // A clean start: only the NTU card that this sign-in creates, as a student, no school chosen.
+  for (const c of (await meJSON(page)).identities) {
+    if (c.school !== 'NTU') await delCard(page, c.id);
+    else if (c.role !== 'student') await page.evaluate((i) => fetch('/api/identities/' + i, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ role: 'student' }) }), c.id);
+  }
+  await page.evaluate(() => localStorage.removeItem('cp_school'));
+  await page.reload({ waitUntil: 'networkidle' }); await page.waitForSelector('.idcard');
+  const cardTexts = () => page.$$eval('#meBody .idcards > li.idcard', (l) => l.map((x) => x.textContent.replace(/\s+/g, ' ')));
+  let cards = await cardTexts();
+  check('cards: signing in with a school email shows that school\'s card (臺大, full name, email, role, expiry)', cards.length === 1 && cards[0].includes('臺大') && cards[0].includes('國立臺灣大學') && cards[0].includes(CARD_USER) && cards[0].includes('學生') && cards[0].includes('有效至'), cards.join(' | '));
+  check('cards: a dev login is tagged 測試, not claimed as verified', cards[0].includes('測試登入') && !cards[0].includes('已驗證'));
+  check('cards: a list of cards, each named by its school heading', await page.evaluate(() => { const ul = document.querySelector('#meBody ul.idcards'); const li = ul?.querySelector('li.idcard'); return !!ul && !!li && document.getElementById(li.getAttribute('aria-labelledby'))?.tagName === 'H3'; }));
+  check('cards: the remove button and the role picker are labelled', (await page.getAttribute('.idcard [data-remove-card]', 'aria-label')) === '移除臺大校園卡' && (await page.getAttribute('.idcard select[data-role-id]', 'aria-label')).includes('身分（自填）'));
+  check('cards: chip row under the name (臺大)', (await page.$$eval('#meBody .profile .idchips li', (l) => l.map((x) => x.textContent))).join() === '臺大');
+  check('cards: never a school\'s branding (CampusPass 校園卡, no school logo images)', (await page.textContent('.idcard .idc-brand')).includes('CampusPass 校園卡') && !(await page.$('.idcard img')));
+  check('cards: no horizontal scroll at 390', await noHScroll(page));
+
+  // Explore with one card: 我的學校 is the default.
+  await page.click('#tabbar [data-tab="explore"]'); await page.waitForSelector('#list .item'); await settle(page, 300);
+  check('explore: with a card and no school chosen, the default is 我的學校', (await page.textContent('[data-pick="school"] [data-label]')) === '我的學校' && (await itemCount(page)) === countFor(['NTU']), `${await itemCount(page)}`);
+
+  // Add NCCU through the test path in the add sheet.
+  await page.click('#tabbar [data-tab="me"]'); await settle(page, 300);
+  await page.click('#meBody .idc-add'); await settle(page, 450);
+  const sheet = await page.textContent('dialog[open]');
+  check('add sheet: Google (enabled), school-email code (disabled, 即將推出), test path labelled 測試用（未經 Google 驗證）',
+    (await page.getAttribute('dialog[open] a.method[data-link-google]', 'href')) === '/auth/google/start?link=1&next=%2Fme'
+    && (await page.$eval('dialog[open] button.method', (b) => b.disabled && b.textContent.includes('以學校信箱收驗證碼') && b.textContent.includes('即將推出')))
+    && sheet.includes('測試用（未經 Google 驗證）') && !!(await page.$('dialog[open] form.devlink input[name="email"][type="email"]')));
+  check('add sheet: a bottom sheet on a phone, focus inside it', await page.evaluate(() => { const d = document.querySelector('dialog[open]'); const r = d.getBoundingClientRect(); return Math.abs(r.bottom - innerHeight) < 2 && d.contains(document.activeElement); }));
+  await shot(page, 'cards-add-sheet');
+  await page.fill('#devEmail', 'x@nccu.edu.tw');
+  await Promise.all([page.waitForURL((u) => u.pathname === '/me' && !u.search.includes('identity_added'), { timeout: 10000 }).catch(() => {}), page.click('dialog[open] form.devlink [type="submit"]')]);
+  await page.waitForSelector('.idcard >> nth=1'); await settle(page, 500);
+  cards = await cardTexts();
+  check('add: back on /me with two cards, a toast, and the parameter stripped', cards.length === 2 && cards.some((c) => c.includes('政大')) && (await page.textContent('#toast')).includes('已新增政大校園卡') && new URL(page.url()).search === '', `${cards.length} ${page.url()}`);
+  check('add: chips 臺大 · 政大', (await page.$$eval('#meBody .profile .idchips li', (l) => l.map((x) => x.textContent))).join() === '臺大,政大');
+  await shot(page, 'cards-phone-light');
+
+  // Sources on /me: grouped by the reader's schools, everything else folded away.
+  const groups = await page.$$eval('#meBody .srcschool', (l) => l.filter((h) => !h.closest('details')).map((h) => h.textContent));
+  const shownSrc = await page.$$eval('#meBody .srclist', (l) => l.filter((u) => !u.closest('details')).flatMap((u) => [...u.querySelectorAll('li > span:first-child')].map((x) => x.textContent)));
+  const mineSrc = new Set([...sourcesFor('NTU'), ...sourcesFor('NCCU')]);
+  check('sources: grouped under the reader\'s schools (國立臺灣大學, 國立政治大學), only their sources', groups.join() === '國立臺灣大學,國立政治大學' && shownSrc.length > 0 && shownSrc.every((x) => mineSrc.has(x)), `${groups} / ${shownSrc.length}`);
+  const other = await page.$eval('#meBody details.srcother', (d) => ({ open: d.open, sum: d.querySelector('summary').textContent, n: d.querySelectorAll('.srclist li').length, leak: [...d.querySelectorAll('.srclist li > span:first-child')].map((x) => x.textContent) }));
+  check('sources: other schools\' sources collapsed under 其他學校的來源 (closed), none repeated', !other.open && other.sum.includes('其他學校的來源') && other.n > 0 && other.leak.every((x) => !mineSrc.has(x)), JSON.stringify(other).slice(0, 120));
+
+  // Explore: 我的學校 = the union of both cards.
+  await page.click('#tabbar [data-tab="explore"]'); await page.waitForSelector('#list .item'); await settle(page, 300);
+  const union = countFor(['NTU', 'NCCU']);
+  await scrollBottom(page); await page.evaluate(() => scrollTo(0, 0));
+  check('explore: 我的學校 covers both cards (count = union)', (await itemCount(page)) === union && (await page.textContent('#fcount')).includes(String(union)), `${await itemCount(page)} vs ${union}`);
+  check('explore: no Reset for the default school', await page.$eval('#filterRow [data-reset]', (b) => b.hidden));
+  await page.click('[data-pick="school"]'); await settle(page, 450);
+  const firstOpt = await page.$eval('dialog[open] .opt', (b) => ({ v: b.dataset.value, t: b.textContent, checked: b.getAttribute('aria-checked') }));
+  check('picker: 我的學校（臺大、政大） first, chosen, with the union count', firstOpt.v === 'mine' && firstOpt.t.includes('我的學校（臺大、政大）') && firstOpt.t.includes(String(union)) && firstOpt.checked === 'true', JSON.stringify(firstOpt));
+  await shot(page, 'cards-explore-picker');
+  await page.click('dialog[open] [data-value="NCCU"]'); await settle(page, 400);
+  check('explore: choosing one school still works and is remembered', (await page.textContent('[data-pick="school"] [data-label]')) === '政大' && (await page.evaluate(() => localStorage.getItem('cp_school'))) === 'NCCU' && (await itemCount(page)) === countFor(['NCCU']));
+  await page.reload({ waitUntil: 'networkidle' }); await page.waitForSelector('#list .item'); await settle(page, 400);
+  check('explore: the chosen school survives a reload', (await page.textContent('[data-pick="school"] [data-label]')) === '政大');
+  await page.click('#filterRow [data-reset]'); await settle(page, 300);
+  check('reset: back to 我的學校 (the reader\'s default)', (await page.textContent('[data-pick="school"] [data-label]')) === '我的學校' && (await page.evaluate(() => localStorage.getItem('cp_school'))) === null);
+  await shot(page, 'cards-explore-mine');
+
+  // Role change → PATCH.
+  await page.click('#tabbar [data-tab="me"]'); await settle(page, 300);
+  const nccu = (await meJSON(page)).identities.find((c) => c.school === 'NCCU');
+  await page.focus(`select[data-role-id="${nccu.id}"]`);
+  await page.selectOption(`select[data-role-id="${nccu.id}"]`, 'alumni'); await settle(page, 700);
+  check('role: picking 校友 saves it (PATCH), focus stays on the picker', (await meJSON(page)).identities.find((c) => c.id === nccu.id)?.role === 'alumni' && (await page.evaluate(() => document.activeElement?.matches('select[data-role-id]'))) && (await page.textContent('#toast')).includes('已更新身分'));
+
+  // Dark mode screenshot of the two cards.
+  await page.emulateMedia({ colorScheme: 'dark' }); await settle(page, 250);
+  await shot(page, 'cards-phone-dark');
+  await page.emulateMedia({ colorScheme: 'light' });
+
+  // Remove the NCCU card: confirm dialog (focus trapped), DELETE, Explore follows.
+  await page.click(`[data-remove-card="${nccu.id}"]`); await settle(page, 400);
+  check('remove: a confirm dialog names the card', (await page.textContent('dialog[open] h2')) === '移除政大校園卡？');
+  const trap = [];
+  for (let i = 0; i < 4; i++) { await page.keyboard.press('Tab'); trap.push(await page.evaluate(() => !!document.activeElement.closest('dialog[open]'))); }
+  check('remove: focus is trapped in the dialog', trap.every(Boolean));
+  await page.click('dialog[open] [data-remove-confirm]'); await settle(page, 700);
+  cards = await cardTexts();
+  check('remove: the card is gone (here and on the server), focus lands on 新增學校身分', cards.length === 1 && cards[0].includes('臺大') && !(await meJSON(page)).identities.some((c) => c.school === 'NCCU') && (await page.evaluate(() => document.activeElement?.classList.contains('idc-add'))));
+  await page.click('#tabbar [data-tab="explore"]'); await page.waitForSelector('#list .item'); await settle(page, 300);
+  check('remove: Explore\'s 我的學校 follows (NTU only)', (await itemCount(page)) === countFor(['NTU']));
+
+  // identity_error → toast, parameter stripped.
+  await page.goto(B + '/me?identity_error=unknown_school', { waitUntil: 'networkidle' }); await settle(page, 400);
+  check('identity_error: toast 這個信箱不屬於目前支援的學校, parameter stripped', (await page.textContent('#toast')).includes('這個信箱不屬於目前支援的學校') && new URL(page.url()).search === '');
+  await page.goto(B + '/me?identity_error=whatever', { waitUntil: 'networkidle' }); await settle(page, 400);
+  check('identity_error: an unknown reason gets the generic message', (await page.textContent('#toast')).includes('無法新增學校身分'));
+
+  // The Google link path through the mock: start?link=1 → account picker → back on /me with identity_added.
+  await page.click('#meBody .idc-add'); await settle(page, 400);
+  await Promise.all([page.waitForURL(/localhost:9876/, { timeout: 10000 }), page.click('dialog[open] a.method[data-link-google]')]);
+  await page.fill('input[name="login_hint"]', 'x@nccu.edu.tw');
+  await Promise.all([page.waitForURL((u) => u.host === 'localhost:8787' && u.pathname === '/me', { timeout: 15000 }), page.click('#continue')]);
+  await page.waitForSelector('.idcard >> nth=1'); await settle(page, 500);
+  const g = (await meJSON(page)).identities.find((c) => c.school === 'NCCU');
+  const gText = (await cardTexts()).find((c) => c.includes('政大')) || '';
+  check('google link: the mock round trip adds a Google-verified card (✓ 已驗證 · Google 驗證), same account', g?.method === 'google' && gText.includes('已驗證') && gText.includes('Google 驗證') && (await meJSON(page)).user.email === CARD_USER && (await page.textContent('#toast')).includes('已新增政大校園卡'), gText);
+  await page.setViewportSize({ width: 360, height: 780 }); await settle(page, 200);
+  check('cards: no horizontal scroll at 360', await noHScroll(page));
+  const wrapped = await page.evaluate(() => [...document.querySelectorAll('.idc-status, .idc-lbl, .idc-short, .idc-add span, .idc-sel select, .schip')].filter((e) => e.getClientRects().length > 1 || e.scrollWidth > e.clientWidth + 1).map((e) => e.textContent));
+  check('cards: labels and pills never wrap or clip at 360', wrapped.length === 0, wrapped.join(' | '));
+  await page.setViewportSize({ width: 390, height: 844 });
+  await delCard(page, g.id);
+
+  // An expired card (stubbed /api/me): greyed, 已過期，請重新驗證, 重新驗證 opens the add flow; not in 我的學校.
+  const real = await meJSON(page);
+  const ntu = real.identities.find((c) => c.school === 'NTU');
+  await page.route('**/api/me', (r) => r.request().method() === 'GET'
+    ? r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ ...real, identities: [ntu, { id: 999999, school: 'NCCU', role: 'student', email: 'x@nccu.edu.tw', method: 'google', verified_at: '2025-01-02 03:04:05', expires_at: '2026-01-02 03:04:05', active: false }] }) })
+    : r.continue());
+  await page.goto(B + '/me', { waitUntil: 'networkidle' }); await page.waitForSelector('.idcard.is-expired'); await settle(page, 300);
+  const exp = await page.$eval('.idcard.is-expired', (li) => li.textContent.replace(/\s+/g, ' '));
+  check('expired: greyed card says 已過期，請重新驗證 with a 重新驗證 button and its expiry', exp.includes('已過期，請重新驗證') && exp.includes('2026/01/02') && !!(await page.$('.idcard.is-expired [data-reverify]')) && (await page.$eval('.idcard.is-expired', (li) => li.classList.contains('tone-expired'))), exp);
+  check('expired: the chip row lists only active cards', (await page.$$eval('#meBody .profile .idchips li', (l) => l.map((x) => x.textContent))).join() === '臺大');
+  await page.evaluate(() => document.querySelector('.idcard.is-expired').scrollIntoView({ block: 'center' })); await settle(page, 200);
+  await shot(page, 'cards-expired');
+  await page.click('.idcard.is-expired [data-reverify]'); await settle(page, 400);
+  check('expired: 重新驗證 opens the add sheet (test email prefilled)', (await page.isVisible('dialog[open] a.method[data-link-google]')) && (await page.inputValue('#devEmail')) === 'x@nccu.edu.tw');
+  await page.keyboard.press('Escape'); await settle(page, 300);
+  await page.click('#tabbar [data-tab="explore"]'); await page.waitForSelector('#list .item'); await settle(page, 300);
+  await page.click('[data-pick="school"]'); await settle(page, 400);
+  check('expired: 我的學校 counts active cards only (臺大)', (await page.$eval('dialog[open] .opt', (b) => b.textContent)).includes('我的學校（臺大）'));
+  await page.keyboard.press('Escape'); await settle(page, 200);
+
+  // Features off: no Google, no test path.
+  await page.unroute('**/api/me');
+  await page.route('**/api/me', (r) => r.request().method() === 'GET'
+    ? r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ ...real, identities: [], features: { google: false, dev_login: false, email_code: false } }) })
+    : r.continue());
+  await page.goto(B + '/me', { waitUntil: 'networkidle' }); await page.waitForSelector('#meBody .idc-empty'); await settle(page, 300);
+  check('empty: no cards explains why to add one', (await page.textContent('#meBody .idc-empty')).includes('探索會預設顯示你學校的優惠'));
+  await shot(page, 'cards-empty');
+  await page.click('#meBody .idc-empty [data-add-card]'); await settle(page, 400);
+  check('add sheet: without Google it says 「Google 登入尚未開放」 and offers no test path', (await page.textContent('dialog[open]')).includes('Google 登入尚未開放') && !(await page.$('dialog[open] a[data-link-google]')) && !(await page.$('dialog[open] form.devlink')));
+  await page.keyboard.press('Escape'); await settle(page, 200);
+  await page.click('#tabbar [data-tab="explore"]'); await page.waitForSelector('#list .item'); await settle(page, 300);
+  check('explore: no active cards → NTU as before', (await page.textContent('[data-pick="school"] [data-label]')) === '臺大' && (await itemCount(page)) === EXPECT.student);
+  await page.unroute('**/api/me');
+
+  // English: no Chinese in the card chrome.
+  await page.evaluate(() => localStorage.setItem('cp_lang', 'en'));
+  await page.goto(B + '/me', { waitUntil: 'networkidle' }); await page.waitForSelector('.idcard'); await settle(page, 300);
+  const enCard = await page.$eval('.idcard', (li) => [...li.querySelectorAll('.idc-brand, .idc-status, .idc-lbl, select, .idc-short')].map((e) => e.textContent).join(' '));
+  check('en: card chrome in English (CampusPass card, Role · self-declared, Valid until, NTU)', enCard.includes('CampusPass card') && enCard.includes('Role · self-declared') && enCard.includes('Valid until') && enCard.includes('NTU') && !/[一-鿿]/.test(enCard), enCard);
+  await page.evaluate(() => localStorage.removeItem('cp_lang'));
+  allErrors.push(...page._errors.filter((e) => !/status of 404/.test(e)));
+  await ctx.close();
+}
+
+// Desktop: the cards side by side.
+{
+  const { ctx, page } = await newPage(DESKTOP, 'cards-desk');
+  await page.goto(B + `/auth/dev-login?email=desk-${CARD_USER}&next=/me`, { waitUntil: 'networkidle' });
+  await page.goto(B + `/auth/dev-login?email=desk-x@nccu.edu.tw&link=1&next=/me`, { waitUntil: 'networkidle' });
+  await page.waitForSelector('.idcard >> nth=1'); await settle(page, 500);
+  const r = await page.$$eval('.idcard', (l) => l.map((x) => x.getBoundingClientRect().top));
+  check('desktop: two cards side by side', r.length === 2 && Math.abs(r[0] - r[1]) < 1);
+  await shot(page, 'cards-desktop');
+  await page.emulateMedia({ colorScheme: 'dark' }); await settle(page, 200);
+  await shot(page, 'cards-desktop-dark');
+  for (const c of (await meJSON(page)).identities) if (c.school === 'NCCU') await delCard(page, c.id);
+  allErrors.push(...page._errors);
+  await ctx.close();
+}
+
+// Cashier: a Google-verified card shows 已驗證 臺大身分（Google）; the ID check stays.
+{
+  const stu = await newPage(MOBILE, 'cards-pass');
+  const sp = stu.page;
+  const email = `gcard-${Date.now()}@ntu.edu.tw`;
+  await Promise.all([sp.waitForURL(/localhost:9876/, { timeout: 10000 }), sp.goto(B + `/auth/google/start?next=${encodeURIComponent('/deal/' + FULL)}`)]);
+  await sp.fill('input[name="login_hint"]', email);
+  await Promise.all([sp.waitForURL((u) => u.host === 'localhost:8787' && u.pathname === `/deal/${FULL}`, { timeout: 15000 }), sp.click('#continue')]);
+  await sp.waitForSelector('#detail .prose'); await settle(sp, 300);
+  await sp.click('[data-redeem]'); await sp.waitForSelector('dialog.pass .pass-qr svg');
+  const code = await passCode(sp);
+  const shopP = await newPage(MOBILE, 'shop');
+  await shopP.page.goto(B + SHOP, { waitUntil: 'networkidle' }); await shopP.page.waitForSelector('#shopTitle');
+  await shopP.page.goto(B + `/r/${code}`, { waitUntil: 'networkidle' }); await shopP.page.waitForSelector('[data-scan-confirm]');
+  const txt = (await shopP.page.textContent('#scanBody')).replace(/\s+/g, ' ');
+  check('cashier /r: 已驗證 臺大身分（Google） with the self-declared role, and 請核對學生證 still shown', txt.includes('已驗證 臺大身分（Google）') && txt.includes('自填身分：學生') && txt.includes('請核對學生證後再確認') && !(await shopP.page.$('#scanBody .vline.is-test')), txt.slice(0, 200));
+  await shopP.page.evaluate(() => document.querySelector('.vlines').scrollIntoView({ block: 'center' })); await settle(shopP.page, 200);
+  await shot(shopP.page, 'cards-cashier-verified');
+  await shopP.page.goto(B + SHOP, { waitUntil: 'networkidle' }); await shopP.page.waitForSelector('#shopCode');
+  await shopP.page.fill('#shopCode', code); await shopP.page.press('#shopCode', 'Enter');
+  await shopP.page.waitForSelector('#shopResult .result.ok');
+  check('cashier /m: the confirmed result shows the verified card too', (await shopP.page.textContent('#shopResult')).includes('已驗證 臺大身分（Google）'));
+  await shot(shopP.page, 'cards-shop-result');
+  allErrors.push(...sp._errors);
+  await shopP.ctx.close();
+  await stu.ctx.close();
 }
 
 // The shop/scan checks provoke 403/404/409/410 answers on purpose; Chromium logs every non-2xx
