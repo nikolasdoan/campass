@@ -6,8 +6,8 @@ Owner: campass-2 (Cloudflare: deploys, production D1, Worker secrets). See [coor
 
 | | |
 |---|---|
-| URL | https://campuspass.niko-tecx.workers.dev |
-| Worker | `campuspass` (workers.dev, no custom route yet) |
+| URL | **https://pass.tecxmate.com** (Workers Custom Domain, zone `tecxmate.com`); https://campuspass.niko-tecx.workers.dev also works |
+| Worker | `campuspass` (custom domain `pass.tecxmate.com` + workers.dev) |
 | D1 | `campuspass`, id `e2fd1b29-9117-44ef-9995-ac74f03e15b9`, region ENAM |
 | Vars | `GOOGLE_CLIENT_ID` (public, in `wrangler.jsonc`) |
 | Secrets | `ADMIN_TOKEN` (set), `GOOGLE_CLIENT_SECRET` (pending) |
@@ -43,9 +43,11 @@ Retry before debugging.
 
 ## Google sign-in
 
-1. Google Cloud → Credentials → OAuth client (Web application):
-   - Authorized JavaScript origin: `https://campuspass.niko-tecx.workers.dev`
-   - Authorized redirect URI: `https://campuspass.niko-tecx.workers.dev/auth/google/callback`
+1. Google Cloud → Credentials → OAuth client (Web application), one entry per host users will sign in on:
+   - Authorized JavaScript origins: `https://pass.tecxmate.com` (main), `https://campuspass.niko-tecx.workers.dev`
+   - Authorized redirect URIs: `https://pass.tecxmate.com/auth/google/callback`,
+     `https://campuspass.niko-tecx.workers.dev/auth/google/callback`
+   The Worker builds the redirect URI from the host the request came in on.
 2. Put the client id in `wrangler.jsonc` → `vars.GOOGLE_CLIENT_ID` (commit it; it is public).
 3. Set the secret without echoing it:
    `printf %s "$GOOGLE_CLIENT_SECRET" | npx wrangler secret put GOOGLE_CLIENT_SECRET`
@@ -153,6 +155,22 @@ curl -X POST -H "Content-Type: application/json" -d '{"cron":"17 19 * * *"}' \
 `RL_CONFIRM` (30/min per IP, shop pass confirmations). Missing bindings mean no limit. `namespace_id` is
 shared across the whole Cloudflare account, so the ids are distinctive (`20261001`, `20261002`) and must not be
 reused by other Workers. A burst of local test runs within one minute can hit these limits (429); wait a minute.
+
+## Custom domain
+
+`wrangler.jsonc` → `"routes": [{ "pattern": "pass.tecxmate.com", "custom_domain": true }]`, `workers_dev: true`.
+On 2026-10-16 the first `wrangler deploy` with the route failed with API error 10013 (HTTP 500 on
+`…/workers/scripts/campuspass/domains/records`); attaching it directly worked and later deploys are clean:
+
+```bash
+curl -X PUT -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -H "Content-Type: application/json" \
+  "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/domains" \
+  -d '{"hostname":"pass.tecxmate.com","zone_id":"<tecxmate.com zone id>","service":"campuspass","environment":"production"}'
+```
+
+The `tecxmate.com` zone has Cloudflare Web Analytics with automatic injection. On browser page loads it inserts
+`static.cloudflareinsights.com/beacon.min.js` plus an inline loader, which the CampusPass CSP blocks (console
+errors, no functional impact). `curl` does not receive the injected script, so only a real-browser check shows it.
 
 ## Rollback
 

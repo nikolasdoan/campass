@@ -8,7 +8,7 @@ a pass at the counter that partner shops can confirm with a QR scan.
 > CampusPass is an independent index, not an official website of any school. Deals are subject to the
 > merchant and the original publisher.
 
-Live: <https://campuspass.niko-tecx.workers.dev> · Business review: [docs/business-review.md](docs/business-review.md)
+Live: <https://pass.tecxmate.com> · Business review: [docs/business-review.md](docs/business-review.md)
 
 ## Stack
 
@@ -59,9 +59,9 @@ the phone), then scans a student's pass QR with the phone camera and taps 確認
    `CampusPass`; support email; scopes `openid`, `email`, `profile` (non-sensitive, no review). Click
    **Publish app** — while in *Testing*, only listed test users can sign in.
 3. **Credentials → Create credentials → OAuth client ID**, type **Web application**:
-   - Authorized JavaScript origins: `http://localhost:8787`, `https://campuspass.niko-tecx.workers.dev`
+   - Authorized JavaScript origins: `http://localhost:8787`, `https://pass.tecxmate.com`
    - Authorized redirect URIs: `http://localhost:8787/auth/google/callback`,
-     `https://campuspass.niko-tecx.workers.dev/auth/google/callback`
+     `https://pass.tecxmate.com/auth/google/callback`
 4. The **Client ID** goes in `wrangler.jsonc` (`vars.GOOGLE_CLIENT_ID`); the **Client secret** goes in a
    Cloudflare secret. Never commit the secret.
 
@@ -74,7 +74,7 @@ npm run db:seed:remote                                 # replaces the deals tabl
 printf %s "$GOOGLE_CLIENT_SECRET" | npx wrangler secret put GOOGLE_CLIENT_SECRET
 npx wrangler secret put ADMIN_TOKEN
 npm run deploy
-BASE=https://campuspass.niko-tecx.workers.dev ADMIN_TOKEN=... node tests/prod-smoke.mjs
+BASE=https://pass.tecxmate.com ADMIN_TOKEN=... node tests/prod-smoke.mjs
 ```
 
 Everything fits in the Workers and D1 free tiers.
