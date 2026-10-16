@@ -11,9 +11,10 @@ Owner: campass-2 (Cloudflare: deploys, production D1, Worker secrets). See [coor
 | D1 | `campuspass`, id `e2fd1b29-9117-44ef-9995-ac74f03e15b9`, region ENAM |
 | Vars | `GOOGLE_CLIENT_ID` (public, in `wrangler.jsonc`) |
 | Secrets | `ADMIN_TOKEN` (set), `GOOGLE_CLIENT_SECRET` (pending) |
+| ⚠ TEMPORARY | `DEV_LOGIN=true` set 2026-10-16 ~03:55 UTC at the founder's request so they can test without Google. Remove with `npx wrangler secret delete DEV_LOGIN` when testing ends or Google creds arrive. While set: `/auth/dev-login?email=…` signs anyone in as a separate `dev:` account (real Google accounts are not reachable), and the http→https redirect on Worker paths is off. Delete test accounts on /me before re-enabling stats-based decisions. |
 | First deploy | 2026-10-15, integration commit `d37e097`, 605 deals seeded |
-| Current deploy | 2026-10-16 02:17 UTC, integration commit `8d1f33c`, version `edda4f4a`; custom domain pass.tecxmate.com; Worker paths redirect http→https (308); migrations 0001–0004; 1117 deals |
-| Previous deploy | 2026-10-16 01:18 UTC, `9a2415d`, version `eab29c0a` (rollback target; `b49dfc1d` = same code + custom domain) |
+| Current deploy | 2026-10-16 04:13 UTC, integration commit `8ee118a`, version `4d547ed2` (gated by a local full-suite run: CI run 58 was cancelled by a newer push); DEV_LOGIN-safe https redirect, dev accounts excluded from stats and labelled 測試登入 for cashiers |
+| Previous deploy | 2026-10-16 02:17 UTC, `8d1f33c`, version `edda4f4a` (rollback target) |
 | Test shop link | label `campass-2 smoke` (deal 58a27e58ee), created 2026-10-16 for the deploy check; counts in shop stats |
 
 Only touch the `campuspass` Worker and D1. The account also holds other projects (bizmap, fishpond,

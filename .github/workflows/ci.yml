@@ -11,7 +11,9 @@ permissions:
 
 concurrency:
   group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  # Every integration-branch commit gets a full run (deploys are gated on a named commit's own run);
+  # other branches cancel superseded runs.
+  cancel-in-progress: ${{ github.ref != 'refs/heads/claude/jolly-maxwell-e43rxf' }}
 
 jobs:
   test:
@@ -54,6 +56,7 @@ jobs:
           GOOGLE_CLIENT_ID=mock-client-id
           GOOGLE_CLIENT_SECRET=ci
           GOOGLE_MOCK_URL=http://localhost:9876
+          ALLOW_HTTP=true
           EOF
           npx wrangler d1 migrations apply campuspass --local
           npx wrangler d1 execute campuspass --local --file seed/deals.sql
