@@ -1,7 +1,7 @@
 {
   "name": "CampusPass 校園優惠",
   "short_name": "CampusPass",
-  "description": "把學校、校友會與企業給學生和教職員的優惠整理在一起：住宿、餐飲、交通、軟體，一頁查得到，收藏常用的。",
+  "description": "整理學校、學院、系所與學生組織公告的特約優惠：美食、住宿、交通、購物與生活服務，一頁查得到，收藏常用的。",
   "id": "/",
   "start_url": "/?source=pwa",
   "scope": "/",
