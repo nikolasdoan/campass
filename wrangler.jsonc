@@ -2,6 +2,10 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "campuspass",
   "main": "src/index.ts",
+  // Public host: pass.tecxmate.com (Workers Custom Domain; Cloudflare creates the DNS record and certificate).
+  // workers_dev stays on so https://campuspass.niko-tecx.workers.dev keeps working.
+  "routes": [{ "pattern": "pass.tecxmate.com", "custom_domain": true }],
+  "workers_dev": true,
   "compatibility_date": "2026-09-01",
   "assets": {
     "directory": "./public",
