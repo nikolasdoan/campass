@@ -79,7 +79,7 @@ cache-busting query (`?x=1`) when checking new fields.
 ## Smoke checks
 
 ```bash
-U=https://campuspass.niko-tecx.workers.dev
+U=https://pass.tecxmate.com   # also run against https://campuspass.niko-tecx.workers.dev
 curl -s $U/api/deals | python3 -c 'import json,sys;print(len(json.load(sys.stdin)["deals"]))'   # ~605
 for p in / /deal/<id> /manifest.webmanifest /sw.js; do curl -s -o /dev/null -w "$p %{http_code} %{content_type}\n" $U$p; done
 #   / and /deal/<id>: 200 text/html (SPA fallback); manifest: application/manifest+json; sw.js: 200
@@ -93,7 +93,7 @@ Results of the first deploy (2026-10-15): all pass, except `/auth/google/start` 
 
 ## How the founder tests on a phone
 
-Live URL: https://campuspass.niko-tecx.workers.dev. You need two phones: one is the **student**, the other the
+Live URL: https://pass.tecxmate.com. You need two phones: one is the **student**, the other the
 **shop's counter phone**.
 
 **0. Until Google sign-in is configured** (`GOOGLE_CLIENT_ID` + `GOOGLE_CLIENT_SECRET`, see "Google sign-in"),
@@ -168,9 +168,18 @@ curl -X PUT -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -H "Content-Type: a
   -d '{"hostname":"pass.tecxmate.com","zone_id":"<tecxmate.com zone id>","service":"campuspass","environment":"production"}'
 ```
 
+**HTTPS:** on 2026-10-16 `http://pass.tecxmate.com` (and `http://…workers.dev`) served the app over plain HTTP
+with no redirect: the zone's "Always Use HTTPS" is off. Over HTTP the HSTS header is ignored, the service worker
+cannot register and cookies lose `Secure`. Fix in the dashboard (token has no zone-settings access): SSL/TLS →
+Edge Certificates → Always Use HTTPS (whole zone), or Rules → Redirect Rules → "Redirect from HTTP to HTTPS"
+limited to hostname `pass.tecxmate.com`. `prod-smoke` checks the redirect.
+
 The `tecxmate.com` zone has Cloudflare Web Analytics with automatic injection. On browser page loads it inserts
 `static.cloudflareinsights.com/beacon.min.js` plus an inline loader, which the CampusPass CSP blocks (console
 errors, no functional impact). `curl` does not receive the injected script, so only a real-browser check shows it.
+Decision (founder, 2026-10-16): exclude `pass.tecxmate.com` in Web Analytics → tecxmate.com site → Rules (Exclude,
+host `pass.tecxmate.com`, path `*`); the token is read-only there. Rocket Loader / minify / email obfuscation inject
+nothing (checked in a browser).
 
 ## Rollback
 

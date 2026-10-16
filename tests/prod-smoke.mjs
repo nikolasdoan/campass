@@ -1,11 +1,11 @@
 // Read-only production smoke test. No dependencies, no writes to production.
 //
-//   BASE=https://campuspass.niko-tecx.workers.dev ADMIN_TOKEN=... node tests/prod-smoke.mjs
+//   BASE=https://pass.tecxmate.com ADMIN_TOKEN=... node tests/prod-smoke.mjs
 //
 // Prints PASS / WARN / FAIL lines and a summary; exits 1 if anything FAILs.
 // ADMIN_TOKEN is optional: without it the authorised /admin/stats check is a WARN.
 
-const BASE = (process.env.BASE || "https://campuspass.niko-tecx.workers.dev").replace(/\/+$/, "");
+const BASE = (process.env.BASE || "https://pass.tecxmate.com").replace(/\/+$/, "");
 const ADMIN_TOKEN = process.env.ADMIN_TOKEN || "";
 const MIN_DEALS = Number(process.env.MIN_DEALS || 1000);
 const LOCKED_KEYS = ["offer", "info", "phone", "links", "address"];
@@ -118,6 +118,13 @@ await step("GET /admin.html", async () => {
   const res = await fetch(BASE + "/admin.html"); // follows the /admin.html -> /admin redirect
   const html = res.ok ? await res.text() : "";
   check("GET /admin.html 200 HTML, noindex", res.status === 200 && /name="robots" content="noindex/.test(html), `${res.status}`);
+});
+
+await step("http -> https", async () => {
+  if (!BASE.startsWith("https://")) return report("WARN", "http -> https redirect", "BASE is not https, skipped");
+  const res = await fetch(BASE.replace(/^https:/, "http:") + "/", { redirect: "manual" });
+  const loc = res.headers.get("location") || "";
+  check("http:// redirects to https://", [301, 302, 307, 308].includes(res.status) && loc.startsWith("https://"), `${res.status} ${loc}`);
 });
 
 await step("GET /auth/dev-login", async () => {
