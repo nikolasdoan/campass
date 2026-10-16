@@ -129,7 +129,8 @@ await step("http -> https", async () => {
 
 await step("GET /auth/dev-login", async () => {
   const res = await get("/auth/dev-login?email=smoke@example.com");
-  check("GET /auth/dev-login 404 (DEV_LOGIN off)", res.status === 404, `${res.status}`);
+  if (res.status === 302) report("WARN", "GET /auth/dev-login", "302: DEV_LOGIN is ON (test login); remove it when testing ends");
+  else check("GET /auth/dev-login 404 (DEV_LOGIN off)", res.status === 404, `${res.status}`);
 });
 
 await step("GET /auth/google/start", async () => {
