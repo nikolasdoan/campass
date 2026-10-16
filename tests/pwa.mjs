@@ -201,6 +201,104 @@ const isOfflinePage = (page) => page.evaluate(() => /離線/.test(document.title
   await ctx.close();
 }
 
+/* ================= 5. One stack: install card, update toast and the app toast never overlap ================= */
+// Order, bottom up: tab bar / 使用優惠 bar → install card → update toast → app toast (#toast, js/ui.js).
+// pwa.js publishes --float-floor on <html>; the app toast sits on it. Checked at phone and desktop size,
+// on Explore and on a deal with the 使用優惠 bar. PWA_SHOTS=<dir> saves a screenshot of each.
+{
+  const SHOTS = process.env.PWA_SHOTS || '';
+  if (SHOTS) (await import('node:fs')).mkdirSync(SHOTS, { recursive: true });
+  const boxes = (page) => page.evaluate(() => {
+    const r = (el) => { if (!el) return null; const cs = getComputedStyle(el); if (cs.display === 'none' || cs.visibility === 'hidden' || Number(cs.opacity) === 0) return null; const b = el.getBoundingClientRect(); return b.width && b.height ? { top: b.top, bottom: b.bottom, left: b.left, right: b.right } : null; };
+    return { card: r(document.getElementById('cpInstall')), update: r(document.querySelector('.cp-update')), toast: r(document.getElementById('toast')),
+      tabbar: r(document.getElementById('tabbar')), usebar: r(document.getElementById('detailUse')),
+      floor: getComputedStyle(document.documentElement).getPropertyValue('--float-floor').trim(), H: innerHeight, W: innerWidth };
+  });
+  const overlap = (a, b) => !!(a && b) && a.top < b.bottom - 0.5 && b.top < a.bottom - 0.5 && a.left < b.right - 0.5 && b.left < a.right - 0.5;
+  const fmt = (b) => b ? `${Math.round(b.top)}-${Math.round(b.bottom)}` : '-';
+  // The app's own toast, through the app's own module (the same instance app.js imported).
+  const appToast = (page, msg) => page.evaluate(async (m) => {
+    const u = performance.getEntriesByType('resource').map((e) => e.name).find((n) => /\/js\/ui\.js(\?|$)/.test(n));
+    const ui = await import(u);
+    ui.toast(m, { ms: 20000 });
+  }, msg);
+  const settle = async (page) => { await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)))); await sleep(450); };
+
+  for (const [label, opts] of [['390', ANDROID], ['1280', { viewport: { width: 1280, height: 800 } }]]) {
+    const ctx = await newContext(opts);
+    const page = await ctx.newPage();
+    const errors = [];
+    page.on('pageerror', (e) => errors.push(e.message));
+    await page.goto(`${B}/auth/dev-login?email=${encodeURIComponent('pwa-stack@example.com')}&next=/`, { waitUntil: 'load' });
+    await until(() => page.evaluate(() => !!navigator.serviceWorker.controller), 10000);
+    await until(() => page.$$eval('#list .item', (l) => l.length), 8000);
+    await page.evaluate(() => navigator.serviceWorker.register('/sw.js?pwastack=' + Date.now(), { scope: '/' }));
+    const up = await until(() => page.$('.cp-update:not([data-state])'), 10000);
+    check(`stack ${label}: update toast is up (precondition)`, !!up);
+    await page.evaluate(() => window.__cpShowInstall('android'));
+    await appToast(page, '已收藏');
+    await settle(page);
+
+    for (const where of ['explore', 'deal']) {
+      if (where === 'deal') {
+        await page.evaluate((id) => { history.pushState(null, '', '/deal/' + id); dispatchEvent(new PopStateEvent('popstate')); }, FULL);
+        await until(() => page.evaluate(() => !!document.querySelector('#detail.open')), 6000);
+        if (label === '390') await until(() => rect(page, '#detailUse'), 6000);
+        await appToast(page, '已複製連結');
+        await settle(page);
+      }
+      const b = await boxes(page);
+      if (SHOTS) await page.screenshot({ path: `${SHOTS}/stack-${label}-${where}.png` });
+      const tag = `stack ${label} ${where}:`;
+      const info = `bar ${fmt(b.tabbar)} use ${fmt(b.usebar)} card ${fmt(b.card)} update ${fmt(b.update)} toast ${fmt(b.toast)} floor=${b.floor}`;
+      // On a phone the open detail covers the page, and the card steps out of its way (its restraint rule).
+      const stepsAside = label === '390' && where === 'deal';
+      if (stepsAside) {
+        check(`${tag} the install card steps aside for the open detail; update toast and app toast are up`, !b.card && b.update && b.toast && b.usebar, info);
+        check(`${tag} the floor follows: app toast right above the update toast`, b.update && b.toast && b.toast.bottom <= b.update.top + 0.5 && b.update.top - b.toast.bottom < 16, info);
+      } else check(`${tag} card, update toast and app toast are all on screen`, b.card && b.update && b.toast, info);
+      const pairs = [['card', 'update'], ['card', 'toast'], ['update', 'toast']].filter(([x, y]) => overlap(b[x], b[y]));
+      check(`${tag} no two of card / update toast / app toast overlap`, !pairs.length, pairs.map((p) => p.join('×')).join(' ') || info);
+      const covers = ['card', 'update', 'toast'].flatMap((k) => ['tabbar', 'usebar'].filter((bar) => overlap(b[k], b[bar])).map((bar) => `${k}×${bar}`));
+      check(`${tag} none covers the tab bar or the 使用優惠 bar`, !covers.length, covers.join(' ') || info);
+      if (!stepsAside) check(`${tag} order bottom-up: card → update toast → app toast`, b.card && b.update && b.toast && b.card.top >= b.update.bottom - 0.5 && b.update.top >= b.toast.bottom - 0.5, info);
+      check(`${tag} all inside the viewport`, (stepsAside ? ['update', 'toast'] : ['card', 'update', 'toast']).every((k) => b[k] && b[k].top >= 0 && b[k].bottom <= b.H && b[k].left >= 0 && b[k].right <= b.W), info);
+      if (label === '1280') {
+        const mid = (r) => (r.left + r.right) / 2;
+        check(`${tag} update toast and app toast share one centre line`, b.update && b.toast && Math.abs(mid(b.update) - mid(b.toast)) < 1.5, b.update && b.toast ? `${mid(b.update)} vs ${mid(b.toast)}` : '');
+      }
+    }
+
+    // Back on Explore, the card returns; dismissed, the floor drops to the update toast and the app toast follows.
+    await page.evaluate(() => { history.pushState(null, '', '/'); dispatchEvent(new PopStateEvent('popstate')); });
+    await until(() => page.evaluate(() => !document.querySelector('#detail.open')), 6000);
+    await settle(page);
+    await page.click('#cpInstall .install-x');
+    await sleep(600);
+    await settle(page);
+    const d = await boxes(page);
+    check(`stack ${label}: after the card closes, the app toast sits right above the update toast`, !d.card && d.update && d.toast && d.toast.bottom <= d.update.top + 0.5 && d.update.top - d.toast.bottom < 16,
+      `update ${fmt(d.update)} toast ${fmt(d.toast)} floor=${d.floor}`);
+    check(`stack ${label}: no page errors`, !errors.length, errors.join(' | '));
+    await ctx.close();
+  }
+}
+
+/* ================= 6. The install card promises offline only what the app keeps offline ================= */
+{
+  const ctx = await newContext(ANDROID);
+  const page = await ctx.newPage();
+  await page.goto(B + '/', { waitUntil: 'load' });
+  const cardText = () => page.evaluate(() => { document.getElementById('cpInstall')?.remove(); return window.__cpShowInstall('android').innerText; });
+  await page.evaluate(() => localStorage.removeItem('cp_saved_cache'));
+  const plain = await cardText();
+  check('install card: no offline promise without a local copy of saved deals', !/離線|offline/i.test(plain), plain.replace(/\s+/g, ' '));
+  await page.evaluate(() => localStorage.setItem('cp_saved_cache', JSON.stringify({ email: 'x@example.com', deals: {} })));
+  const off = await cardText();
+  check('install card: with cp_saved_cache, it says loaded and saved deals work offline', /離線也能看已載入的優惠與收藏/.test(off), off.replace(/\s+/g, ' '));
+  await ctx.close();
+}
+
 await browser.close();
 const failed = results.filter((r) => !r.ok);
 console.log(`\n${results.length - failed.length}/${results.length} passed${failed.length ? `, ${failed.length} failed:\n  - ${failed.map((f) => f.name).join('\n  - ')}` : ''}`);

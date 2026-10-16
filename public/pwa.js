@@ -65,7 +65,8 @@
     '@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .install,:root:not([data-theme="light"]) .cp-update{' + TOKENS_DARK + '}}' +
     ':root[data-theme="dark"] .install,:root[data-theme="dark"] .cp-update{' + TOKENS_DARK + '}' +
 
-    '.install{position:fixed;z-index:70;left:12px;right:12px;bottom:var(--_bottom);max-width:480px;margin:0 auto;' +
+    /* Centred on the content (right of the desktop rail), the same axis as the app's #toast. */
+    '.install{position:fixed;z-index:70;left:calc(12px + var(--rail-w,0px));right:12px;bottom:var(--_bottom);max-width:480px;margin:0 auto;' +
       'box-sizing:border-box;display:flex;gap:12px;align-items:flex-start;padding:14px 40px 14px 14px;' +
       'background:var(--_surface);color:var(--_ink);border:1px solid var(--_line);border-radius:14px;' +
       'box-shadow:0 12px 38px rgb(0 0 0/.22);' +
@@ -90,15 +91,25 @@
     'body.has-overlay .install,html:has(dialog[open],[role=dialog][open],.sheet.open,[data-sheet-open]) .install' +
       '{opacity:0;transform:translateY(14px);pointer-events:none}' +
 
-    '.cp-update{position:fixed;z-index:80;left:50%;bottom:var(--_bottom);transform:translateX(-50%);max-width:calc(100vw - 32px);' +
-      'min-height:40px;padding:0 16px;border:0;border-radius:999px;cursor:pointer;white-space:nowrap;' +
-      'font-size:13px;font-weight:500;background:color-mix(in srgb,var(--_ink) 88%,transparent);color:var(--_surface);' +
-      'box-shadow:0 8px 24px rgb(0 0 0/.18);' +
+    /* The app toast's recipe (styles.css .toast), read from --toast-* when styles.css defines them,
+       so the two pills look alike. A taller invisible hit area keeps it a comfortable tap. */
+    '.cp-update{position:fixed;z-index:80;left:calc(50% + var(--rail-w,0px) / 2);bottom:var(--_bottom);transform:translateX(-50%);' +
+      'max-width:calc(100vw - 32px);margin:0;padding:var(--toast-pad,7px 14px);border:0;border-radius:999px;cursor:pointer;white-space:nowrap;' +
+      'font:inherit;font-size:var(--toast-fs,12.5px);font-weight:500;line-height:1.4;' +
+      'background:var(--toast-bg,color-mix(in srgb,var(--_ink) 88%,transparent));color:var(--_surface);' +
+      'box-shadow:var(--toast-shadow,0 4px 16px rgba(0,0,0,.18));' +
       'transition:transform var(--_dur) var(--_ease),opacity var(--_dur) var(--_ease)}' +
+    '.cp-update::before{content:"";position:absolute;left:0;right:0;top:-8px;bottom:-8px}' +
     '.cp-update[data-state="enter"]{opacity:0;transform:translate(-50%,10px)}' +
     '.cp-update:active{transform:translateX(-50%) scale(.97)}' +
 
-    '@media (prefers-reduced-motion:reduce){.install,.cp-update,.install-btn{transition:none}}';
+    '@media (prefers-reduced-motion:reduce){.install,.cp-update,.install-btn{transition:none}}' +
+    '@media (prefers-reduced-transparency:reduce){.cp-update{background:var(--_ink)}}' +
+    '@media (forced-colors:active){.cp-update,.install{border:1px solid CanvasText}}' +
+
+    /* The stacking contract's safety net (see layout()): while pwa.js has something up, the app
+       toast sits above it, even if styles.css does not read --float-floor yet. */
+    ':root[data-cp-float] #toast{bottom:var(--float-floor) !important}';
 
   function injectStyle() {
     if (document.getElementById('cp-pwa-style')) return;
@@ -125,12 +136,20 @@
   }
 
   /* ── Placement ──────────────────────────────────────────────────────────────────────
-     The card and the toast float above everything fixed at the bottom of the screen: the
-     tab bar (--nav-h) and any action bar (the detail's 使用優惠 bar on a phone, .usebar or
-     [data-usebar] elsewhere). The bar's top edge is measured, so a bar of any height works.
-     With both up, the toast stacks above the card; neither ever covers the other. */
+     One stack of floating UI, bottom of the screen up:
+       1. fixed bars: the tab bar (--nav-h) and any action bar (the detail's 使用優惠 bar on a
+          phone, .usebar or [data-usebar] elsewhere). Its top edge is measured, so any height works.
+       2. the install card (#cpInstall)        12px above the highest bar
+       3. the update toast (.cp-update)          8px above the card
+       4. the app's toast (#toast, js/ui.js)     8px above whatever is up here
+     The persistent pieces stay put and the short-lived app toast is the one that moves: while
+     2 or 3 is up, <html> carries --float-floor (px from the viewport bottom, the top of the stack
+     + 8px) and data-cp-float, and styles.css sits .toast on max(its own bottom, --float-floor).
+     The injected rule above does the same for #toast, so the stack holds before it does.
+     A 'cp:float' event on window ({ floor }) reports every change. Nothing covers a bar. */
   var BARS = '.usebar,[data-usebar],#detailUse,.duse';
   var GAP = 12;
+  var STACK = 8;
   var probe = null;
   function navPx() {
     if (!probe || !probe.isConnected) {
@@ -156,22 +175,52 @@
     var bars = document.querySelectorAll(BARS);
     for (var i = 0; i < bars.length; i++) {
       var r = shown(bars[i]);
-      // Only a bar on screen, in the lower part of it (on a desktop the bar is a strip at the top).
+      // Only a bar pinned to the screen (not one in the flow of a desktop panel, which scrolls),
+      // on screen, in the lower part of it (on a desktop the bar may be a strip at the top).
       if (!r || r.top < H * 0.4 || r.top >= H || r.right <= 0 || r.left >= W) continue;
+      var pos = getComputedStyle(bars[i]).position;
+      if (pos === 'static' || pos === 'relative') continue;
       floor = Math.max(floor, H - r.top);
     }
     return floor;
   }
-  var cardShown = function (card) {
-    return card && card.dataset.state !== 'leave' && !busy() && !root.classList.contains('chrome-min') && shown(card);
+  /* Up = where it will be once its entrance ends (the entrance itself starts at opacity 0, so
+     visibility is judged by state, not by what is painted this frame). */
+  var cardUp = function (card) {
+    return !!card && card.isConnected && card.dataset.state !== 'leave' && !busy() &&
+      !root.classList.contains('chrome-min') && card.offsetHeight > 0;
   };
+  var toastUp = function (t) {
+    return !!t && t.isConnected && t.dataset.state !== 'leave' && t.offsetHeight > 0;
+  };
+  var lastFloor = -1;
+  function publish(floor, what) {
+    if (floor) {
+      root.style.setProperty('--float-floor', floor + 'px');
+      root.setAttribute('data-cp-float', what.join(' '));
+    } else {
+      root.style.removeProperty('--float-floor');
+      root.removeAttribute('data-cp-float');
+    }
+    if (floor !== lastFloor) {
+      lastFloor = floor;
+      window.dispatchEvent(new CustomEvent('cp:float', { detail: { floor: floor } }));
+    }
+  }
   function layout() {
     var card = document.getElementById('cpInstall');
     var toast = document.querySelector('.cp-update');
-    if (!card && !toast) return;
-    var bottom = floorPx() + GAP;
-    if (card) card.style.bottom = bottom + 'px';
-    if (toast) toast.style.bottom = (cardShown(card) ? bottom + card.offsetHeight + 8 : bottom) + 'px';
+    if (!card && !toast) { if (lastFloor > 0) publish(0, []); return; }
+    var y = floorPx() + GAP, top = 0, what = [];
+    if (card) {
+      card.style.bottom = y + 'px';
+      if (cardUp(card)) { y += card.offsetHeight + STACK; top = y; what.push('card'); }
+    }
+    if (toast) {
+      toast.style.bottom = y + 'px';
+      if (toastUp(toast)) { y += toast.offsetHeight + STACK; top = y; what.push('update'); }
+    }
+    publish(Math.round(top), what);
   }
   var queued = false;
   function relayout() {
@@ -355,7 +404,7 @@
     ready: function () { return swReady || Promise.resolve(null); },
   };
 
-  var SVG_SHARE = '<svg class="install-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
+  var SVG_SHARE = '<svg class="install-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" ' +
     'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v13"/><path d="m16 6-4-4-4 4"/>' +
     '<path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/></svg>';
   var SVG_X = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" ' +
@@ -409,12 +458,17 @@
     card.appendChild(close);
 
     var words = function () {
-      title.textContent = say('把 CampusPass 加到主畫面', 'Add CampusPass to your Home Screen');
+      title.textContent = say('把 CampusPass 加入主畫面', 'Add CampusPass to your home screen');
       if (platform === 'ios') {
-        text.innerHTML = say('點選分享 ' + SVG_SHARE + ' → 加入主畫面', 'Tap Share ' + SVG_SHARE + ' → Add to Home Screen');
+        text.innerHTML = say('點選「分享」' + SVG_SHARE + '，再選「加入主畫面」', 'Tap Share' + SVG_SHARE + ', then “Add to Home Screen”');
         primary.textContent = say('知道了', 'Got it');
       } else {
-        text.textContent = say('從主畫面一點就開，離線也看得到優惠。', 'Opens from your Home Screen, even offline.');
+        /* Only what the app keeps true offline. The deal list is always there (sw.js); the saved
+           deals' full terms are only once the app keeps its own copy of them (cp_saved_cache,
+           app.js), so the offline promise waits for that copy to exist. */
+        text.textContent = read('cp_saved_cache')
+          ? say('從主畫面一點就開，離線也能看已載入的優惠與收藏。', 'Opens from your home screen. Loaded and saved deals stay readable offline.')
+          : say('從主畫面一點就開，像 App 一樣全螢幕使用。', 'Opens from your home screen, full screen like an app.');
         primary.textContent = say('安裝', 'Install');
       }
       close.setAttribute('aria-label', say('關閉，不再顯示', 'Dismiss, don’t ask again'));
