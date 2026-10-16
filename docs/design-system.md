@@ -35,6 +35,11 @@ Dark mode: the same block twice, identical — under
 `--page:#17171B; --surface:#202026; --map-ground:#1B1B20; --ink:#FAFAFA; --ink-2:#C7C7CC; --muted:#A1A1A6;
 --line:#35353D; --chip:#2A2A31; --ring:#5A5A5F; --dot:#A978FF; --accent-fill:#A978FF; --on-accent:#0A0A0A;
 --warn:#FF3B30; --seal:#5EC0C0; --seal-ink:#5EC0C0; --seal-wash:#2A3A3F; --shadow:0 1px 2px rgba(0,0,0,.5),0 8px 24px rgba(0,0,0,.55)`.
+**CampusPass type and stroke tokens (QA round 2).** Sizes: `--fs-caption 12`, `--fs-meta 12.5`, `--fs-small 13`,
+`--fs-ui 14`, `--fs-body 15`, `--fs-title 17`, `--fs-h4 20`, `--fs-h3 24`, `--fs-h2 28` (px). Icon strokes:
+`--stroke 1.75`, `--stroke-rail 1.6`, `--stroke-nav 1.8`, `--stroke-sm 2`; icons keep their stroke when active.
+`@media (forced-colors:active)` keeps every selected state visible with `Highlight`/outlines.
+
 **CampusPass additions (contrast, QA round 1).** Measured with axe; all text now clears WCAG AA in
 both themes:
 
@@ -55,7 +60,7 @@ Fonts (CampusPass self-hosts glyph subsets in public/fonts/ instead): one Google
 (wordmark only); the UI uses the system `--sans` stack (no web font for Chinese UI text).
 
 Type: H1 32/1.2 600 -0.02em · H2 28 · H3 24/1.3 · H4 20 · H5 18/1.4 · body 15/1.5 -0.01em · small 13 · caption 12 ·
-eyebrow 11/600/.14em uppercase. Dense app chrome: list name 15/600, meta 12.5 muted. Inputs ≥16px on phones
+eyebrow / section label 11/600/.06em uppercase (as bizmap uses; the spec's .14em is for marketing pages). Dense app chrome: list name 15/600, meta 12.5 muted. Inputs ≥16px on phones
 (no iOS zoom). Numbers `font-variant-numeric:tabular-nums`.
 
 Spacing 4/8/12/16/24/32/48 · radii 6/8/12/16, pills 999px · tap targets ≥44px.
@@ -93,7 +98,7 @@ Motion: animate only `transform`/`opacity`; every transition uses the duration/e
   avatar/account at the bottom. Content to the right.
 - **Phone (≤820px)**: rail hidden. Top bar (safe-area aware) + content + **bottom tab bar**:
   fixed, `background:var(--surface)`, `padding-bottom:env(safe-area-inset-bottom)`, grid of equal columns, 52px tall,
-  icon 21px over 11px label, colour `--ink-2`, `[aria-current=page]{color:var(--dot);font-weight:600}`, a 28px
+  icon 21px over 11px label, colour `--ink-2`, `[aria-current=page]{color:var(--dot-ink);font-weight:600}` (no tile behind the active tab — as bizmap), a 28px
   surface-colour fade above it instead of a border.
 - Content widths: lists 760px, prose 680px.
 
