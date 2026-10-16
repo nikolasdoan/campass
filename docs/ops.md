@@ -12,7 +12,9 @@ Owner: campass-2 (Cloudflare: deploys, production D1, Worker secrets). See [coor
 | Vars | `GOOGLE_CLIENT_ID` (public, in `wrangler.jsonc`) |
 | Secrets | `ADMIN_TOKEN` (set), `GOOGLE_CLIENT_SECRET` (pending) |
 | First deploy | 2026-10-15, integration commit `d37e097`, 605 deals seeded |
-| Current deploy | 2026-10-15 19:55 UTC, integration commit `d92a1ef`, version `ee3a6e82`; migrations 0001–0003; 1117 deals; ratelimits + cron |
+| Current deploy | 2026-10-16 01:18 UTC, integration commit `9a2415d`, version `eab29c0a`; migrations 0001–0004; 1117 deals (908 with `area`); ratelimits + cron |
+| Previous deploy | 2026-10-15 19:55 UTC, `d92a1ef`, version `ee3a6e82` (rollback target) |
+| Test shop link | label `campass-2 smoke` (deal 58a27e58ee), created 2026-10-16 for the deploy check; counts in shop stats |
 
 Only touch the `campuspass` Worker and D1. The account also holds other projects (bizmap, fishpond,
 garage_catalog); never run commands against them.
@@ -68,7 +70,9 @@ npm run deploy
 
 Then run the smoke checks below and report URL + version id + results to campass-1. Run them again if a
 check fails in the first seconds after a deploy: edges can briefly serve the previous build (on 2026-10-15
-`/admin.html` returned the old SPA shell for a few seconds).
+`/admin.html` returned the old SPA shell for a few seconds). `/api/deals` is sent with `Cache-Control: public,
+max-age=300`, so after a re-seed a client or proxy can show the previous list for up to 5 minutes; add a
+cache-busting query (`?x=1`) when checking new fields.
 
 ## Smoke checks
 
