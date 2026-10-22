@@ -213,7 +213,7 @@ curl -H "Authorization: Bearer $ADMIN_TOKEN" $U/admin/users.csv
   never print or commit them.
 - Rotate `ADMIN_TOKEN` the same way; the old one stops working on the next request.
 
-## Handover to a new account (prepared 2026-10-22, not yet triggered)
+## Handover to a new account (triggered 2026-10-22 by the founder)
 
 The founder may move both agent sessions to another Claude account. When they say so, the outgoing
 campass-2 updates this section with the live state and hands over. Nothing below contains a secret.
@@ -233,12 +233,54 @@ GitHub: the new account must have access to `nikolasdoan/campass` (Claude GitHub
 (`e2fd1b29-…`), custom domain `pass.tecxmate.com`, Worker secrets (`ADMIN_TOKEN`, later `GOOGLE_CLIENT_SECRET`),
 the Cron Trigger, rate-limit bindings, the GitHub repo and its CI. Sessions only hold working copies.
 
-**State to hand over** (outgoing campass-2 fills this in at handover time):
-- Live commit and Cloudflare version (see the Production table above), rollback target.
-- Integration branch head, any named-but-undeployed commit, CI status.
-- Open founder items (Google OAuth client, Web Analytics exclusion, …).
-- Open coordination items with campass-1.
-- Temporary production switches currently on (e.g. `DEV_LOGIN`) — must be none, or listed with an end time.
+**State at handover (2026-10-22 ~16:45 UTC, written by the outgoing campass-2):**
+
+| | |
+|---|---|
+| Production | `https://pass.tecxmate.com` (+ `campuspass.niko-tecx.workers.dev`), integration commit `e3dc6c3`, Cloudflare version `0ea4e426`, `?v=15` |
+| Rollback target | version `57a26b06` (`61cc779`); `npx wrangler rollback 57a26b06-d138-4c24-8c18-af6b0c424e6a` |
+| D1 | migrations 0001–0005 applied; 1117 deals; 0 users; 1 active shop link (label "campass-2 smoke", deal 58a27e58ee, its URL is not recorded anywhere, create a new link in /admin.html when you need one); 0 merchant leads |
+| Worker secrets | `ADMIN_TOKEN` only. `DEV_LOGIN` is OFF (deleted). `GOOGLE_CLIENT_SECRET` not set yet |
+| Vars | `GOOGLE_CLIENT_ID` = "" (Google sign-in shows 「Google 登入即將開放」) |
+| Zone | Always Use HTTPS ON (http → 301 https on pass.tecxmate.com). workers.dev http is not redirected (outside the zone) |
+| prod-smoke | pass.tecxmate.com: 29 PASS / 1 WARN (Google pending) / 0 FAIL |
+| Integration head | `c59493a` (docs only after `e3dc6c3`); CI green on `e3dc6c3` (run 72) |
+| Ops branch | `claude/youthful-hopper-3gqd9h`, all ops work pushed; campass-1 merges it |
+| Temporary prod switches | none |
+| Scheduled routines (CampusPass) | none. The account's other routines (bizmap strategy, security sweep) are unrelated, leave them |
+
+**Open items for the new campass-2:**
+1. **Google sign-in (founder, in progress):** a new Google Cloud project "CampusPass" (not bizmap), consent screen
+   External + published, Web client with origin `https://pass.tecxmate.com` and redirect URI
+   `https://pass.tecxmate.com/auth/google/callback`. When the founder sends the Client ID: put it in
+   `wrangler.jsonc` → `vars.GOOGLE_CLIENT_ID` on the ops branch (on top of the commit campass-1 names), have the
+   founder set the secret (`npx wrangler secret put GOOGLE_CLIENT_SECRET`, or an env var you pipe in via stdin),
+   tell campass-1, gate on CI, deploy, then test end to end with the founder: real Google sign-in, an
+   `@ntu.edu.tw` school card, open a pass, scan it with a paired shop phone, then delete the test account so the
+   dashboard starts clean.
+2. **Combined demo deploy:** campass-1 is running a demo QA round (findings: EN discount badges, sign-in button on
+   shop pages, Back-to-Explore scroll position). Deploy the commit it names together with item 1. The founder's
+   demo is later this week.
+3. **Web Analytics exclusion (founder):** Cloudflare → Web Analytics → tecxmate.com site → Manage site → Advanced
+   options → Add rule: Exclude, host `pass.tecxmate.com`, path `*`. The API token is read-only for this. Until
+   then every page logs 2 CSP console errors (no user impact).
+4. Known flaky-test rule (see "Flaky UI tests"): re-run failed jobs once and run the suite locally on the exact
+   commit; deploy only if both are green.
+
+**Kick-off message for the new ops session** (the founder pastes this into the new campass-2 session; fill in the
+new campass-1 session id):
+
+> You are campass-2, ops lead and worker for CampusPass (repo nikolasdoan/campass). campass-1 (session
+> `<new campass-1 id>`) leads product, code and data and merges all work; you own everything on Cloudflare
+> (deploys, production D1, Worker secrets) and CI (.github/**). Start from the integration branch
+> `claude/jolly-maxwell-e43rxf` and commit on your own designated branch. Read README.md, docs/coordination.md,
+> docs/ops.md (especially "Handover to a new account") and docs/handover-lead.md. Then: `npx wrangler whoami`,
+> `npx wrangler deployments list`, run `BASE=https://pass.tecxmate.com node tests/prod-smoke.mjs` (ADMIN_TOKEN
+> from env if set), and send campass-1 "campass-2 online, session <id>, branch <name>" with the smoke result.
+> Rules: deploy only integration commits campass-1 names, after their CI is green; apply migrations before the
+> code that needs them; never print or commit secrets; never set DEV_LOGIN in production unless the founder asks;
+> touch only the campuspass Worker and D1 on the Cloudflare account. Then continue with the open items in
+> docs/ops.md.
 
 **First steps for the new campass-2:** read README.md, docs/coordination.md, this file; `npx wrangler whoami`;
 `npx wrangler deployments list`; `BASE=https://pass.tecxmate.com node tests/prod-smoke.mjs`; message the new
