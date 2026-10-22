@@ -7,13 +7,14 @@ cannot message each other, so **GitHub is the only channel**: issues in, pull re
 
 ## The loop
 
-1. Pick the oldest open issue labelled **`worker`** that has no `in-progress` label and no linked open PR.
-2. Claim it: comment "Claimed by worker, branch `<your branch>`" and add the label `in-progress`.
+1. Pick the oldest open issue labelled **`worker`** that nobody has claimed (no "Claimed by" comment, no linked
+   open PR).
+2. Claim it: comment "Claimed by worker, branch `<your branch>`".
 3. Work on your own branch (`claude/...`, started from the integration branch `claude/jolly-maxwell-e43rxf`).
    Commit small and push often, so the work survives if your session runs out of quota.
 4. Open a pull request into `claude/jolly-maxwell-e43rxf` titled like the issue, body `Closes #<n>`, with
    counts, caveats and what you could not do. CI runs on the PR automatically.
-5. Comment on the issue with the PR link and remove `in-progress`. Then take the next issue.
+5. Comment on the issue with the PR link. Then take the next issue.
 6. If you get stuck or a source is unreachable, comment on the issue with exactly what you tried and stop; do not
    guess.
 
