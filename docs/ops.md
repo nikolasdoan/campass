@@ -212,3 +212,34 @@ curl -H "Authorization: Bearer $ADMIN_TOKEN" $U/admin/users.csv
 - Pipe secrets via stdin (`printf %s "$X" | npx wrangler secret put X`); never pass them as arguments,
   never print or commit them.
 - Rotate `ADMIN_TOKEN` the same way; the old one stops working on the next request.
+
+## Handover to a new account (prepared 2026-10-22, not yet triggered)
+
+The founder may move both agent sessions to another Claude account. When they say so, the outgoing
+campass-2 updates this section with the live state and hands over. Nothing below contains a secret.
+
+**What the new ops session (campass-2) needs in its environment** (set by the founder in the new account's
+environment settings, never in the repo or in chat):
+
+| Variable | Why | Where it comes from |
+|---|---|---|
+| `CLOUDFLARE_API_TOKEN` | wrangler deploys, D1, secrets | same token as now, or a new one with Workers Scripts, D1, Workers Routes / custom domains, Account Settings (read) on the account that owns `campuspass` |
+| `CLOUDFLARE_ACCOUNT_ID` | wrangler | `5bccf7f33e94ebd21850088b89f48c58` (not secret) |
+| `ADMIN_TOKEN` (optional) | prod-smoke and `/admin/*` checks | the founder's saved copy; the Worker secret itself stays as it is |
+
+GitHub: the new account must have access to `nikolasdoan/campass` (Claude GitHub app / connected GitHub).
+
+**What stays where it is** (nothing to migrate): the Cloudflare Worker `campuspass`, D1 `campuspass`
+(`e2fd1b29-…`), custom domain `pass.tecxmate.com`, Worker secrets (`ADMIN_TOKEN`, later `GOOGLE_CLIENT_SECRET`),
+the Cron Trigger, rate-limit bindings, the GitHub repo and its CI. Sessions only hold working copies.
+
+**State to hand over** (outgoing campass-2 fills this in at handover time):
+- Live commit and Cloudflare version (see the Production table above), rollback target.
+- Integration branch head, any named-but-undeployed commit, CI status.
+- Open founder items (Google OAuth client, Web Analytics exclusion, …).
+- Open coordination items with campass-1.
+- Temporary production switches currently on (e.g. `DEV_LOGIN`) — must be none, or listed with an end time.
+
+**First steps for the new campass-2:** read README.md, docs/coordination.md, this file; `npx wrangler whoami`;
+`npx wrangler deployments list`; `BASE=https://pass.tecxmate.com node tests/prod-smoke.mjs`; message the new
+campass-1 with its session id and the smoke result.
