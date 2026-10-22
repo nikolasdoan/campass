@@ -10,9 +10,10 @@ permissions:
   contents: read
 
 concurrency:
-  group: ci-${{ github.ref }}
-  # Every integration-branch commit gets a full run (deploys are gated on a named commit's own run);
-  # other branches cancel superseded runs.
+  # Integration-branch commits each get their own group, so no run there is ever cancelled or dropped from the
+  # queue (deploys are gated on a named commit's own run). Other branches share one group per ref and cancel
+  # superseded runs.
+  group: ci-${{ github.ref }}-${{ github.ref == 'refs/heads/claude/jolly-maxwell-e43rxf' && github.sha || 'latest' }}
   cancel-in-progress: ${{ github.ref != 'refs/heads/claude/jolly-maxwell-e43rxf' }}
 
 jobs:
