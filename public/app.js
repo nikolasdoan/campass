@@ -3,11 +3,11 @@
    a pushed full-screen page on a phone) · /merchants (商家合作) · /m/:key (a shop's private
    confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
    Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=17";
-import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=17";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=17";
-import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=17";
-import { qrSVG } from "./js/qr.js?v=17";
+import { icon } from "./js/icons.js?v=18";
+import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=18";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=18";
+import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=18";
+import { qrSVG } from "./js/qr.js?v=18";
 
 /* ---------- constants ---------- */
 
@@ -91,7 +91,7 @@ const ROLES = ["student", "staff", "alumni"];
 // never a school's own branding. Unknown codes fall back to slate.
 const CARD_TONE = {
   NTU: "violet", NCCU: "teal", NTNU: "blue", NTUST: "rose", NTHU: "amber", NYCU: "green", NCKU: "slate",
-  NCU: "blue", NCHU: "green", TMU: "rose", TCU: "teal", KSU: "amber", CMU: "violet",
+  NCU: "blue", NCHU: "green", TMU: "rose", TCU: "teal", KSU: "amber", CMU: "violet", CCU: "slate", NSYSU: "teal",
 };
 const toneOf = (school) => CARD_TONE[school] || "slate";
 const NO_FEATURES = { google: false, dev_login: false, email_code: false };

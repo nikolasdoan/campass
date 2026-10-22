@@ -247,6 +247,14 @@ check("session gone after logout", (await stu.json("/api/me")).body?.user === nu
   const bad = await idu.req(`/auth/dev-login?email=x@gmail.com&link=1&next=/me`);
   check("a non-school domain is refused", new URL(bad.headers.get("location"), B).searchParams.get("identity_error") === "unknown_school");
   check("ntnu.edu.tw is not mistaken for ntu.edu.tw", new URL((await idu.req(`/auth/dev-login?email=z@ntnu.edu.tw&link=1&next=/me`)).headers.get("location"), B).searchParams.get("identity_added") === "NTNU");
+  {
+    // A separate account, so the cards below don't change the counts checked next.
+    const sc = browser();
+    await sc.req(`/auth/dev-login?email=${encodeURIComponent(`ccu-${Date.now()}@ntu.edu.tw`)}&next=/`);
+    const added = async (email) => new URL((await sc.req(`/auth/dev-login?email=${encodeURIComponent(email)}&link=1&next=/me`)).headers.get("location"), B).searchParams.get("identity_added");
+    check("nccu.edu.tw is not mistaken for ccu.edu.tw", (await added("y@nccu.edu.tw")) === "NCCU");
+    check("CCU and NSYSU student addresses get their cards", (await added("s@alum.ccu.edu.tw")) === "CCU" && (await added("s@student.nsysu.edu.tw")) === "NSYSU");
+  }
   const n1 = (await idu.json("/api/me")).body.identities.length;
   await idu.req(`/auth/dev-login?email=z@ntnu.edu.tw&link=1&next=/me`);
   check("re-verifying the same email updates the card (no duplicate)", (await idu.json("/api/me")).body.identities.length === n1);
