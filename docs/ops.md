@@ -13,8 +13,8 @@ Owner: campass-2 (Cloudflare: deploys, production D1, Worker secrets). See [coor
 | Secrets | `ADMIN_TOKEN` (set), `GOOGLE_CLIENT_SECRET` (pending) |
 | Test login | `DEV_LOGIN` was on in production 2026-10-16 ~03:55–05:00 UTC for founder testing; **removed**, `/auth/dev-login` → 404. Both `dev:` test accounts (incl. one created by prod-smoke) deleted 2026-10-16 07:10 UTC with their sessions, views and passes; production has 0 users. |
 | First deploy | 2026-10-15, integration commit `d37e097`, 605 deals seeded |
-| Current deploy | 2026-10-16 06:57 UTC, integration commit `61cc779`, version `57a26b06`; sign-in without Google creds returns to the page with 「Google 登入即將開放」 (no 500); DEV_LOGIN off |
-| Previous deploy | 2026-10-16 04:48 UTC, `627fb07`, version `251862c5` (rollback target) |
+| Current deploy | 2026-10-22 16:30 UTC, integration commit `e3dc6c3`, version `0ea4e426` (?v=15, scroll-position fix); Google sign-in still pending |
+| Previous deploy | 2026-10-16 06:57 UTC, `61cc779`, version `57a26b06` (rollback target) |
 | Test shop link | label `campass-2 smoke` (deal 58a27e58ee), created 2026-10-16 for the deploy check; counts in shop stats |
 
 Only touch the `campuspass` Worker and D1. The account also holds other projects (bizmap, fishpond,
