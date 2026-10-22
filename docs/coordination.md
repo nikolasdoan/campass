@@ -8,6 +8,14 @@ CampusPass is built by two Claude Code cloud sessions working in parallel.
 | Authority | Product, code, data and design decisions; merges all work | Everything on Cloudflare: deploys, production D1, Worker secrets. Nothing reaches production except through campass-2 |
 | Branch | `claude/jolly-maxwell-e43rxf` (the integration branch) | `claude/youthful-hopper-3gqd9h` (started from the integration branch) |
 
+## Worker agents (another account)
+
+A worker session on another Claude account does mechanical tasks (new school sources, source re-checks,
+strings, test hardening). It cannot message us, so GitHub is the channel: issues labelled `worker` (filed by
+campass-2) → a worker branch and a PR into the integration branch → campass-1 reviews and merges (for data
+PRs, then runs `npm run import` and commits the seed) → campass-1 names the commit → campass-2 deploys. Rules
+for workers are in [worker.md](worker.md).
+
 ## Who owns which files
 
 No two sessions edit the same file. If you need a change in a file you don't own, message the owner.
