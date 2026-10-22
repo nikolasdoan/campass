@@ -106,3 +106,7 @@ All 66 distinct source URLs in `ntu-research.json` were re-fetched on 2026-10-15
 - **Regions:** No empty regions.
 - **Duplicates:** The file was compared with the 財務處 deals and across sources (學生會, 生活便利通 and 臺師大 PDF), by name and school. The only overlaps are different branches: SUBWAY/全家 at NTU (二活, dorms) against the NTNU campus stores, and CoCo都可 against CoCo壹番屋, which are different brands. Nothing was dropped.
 - **Validation:** The JSON loads and all required fields are present. The importer ran cleanly, and the generated files were restored.
+
+## Re-check 2026-10-22
+
+Re-checked by the worker (data/sources/recheck-2026-10.md). The 19 records past their end date were confirmed not renewed (17 臺大系統學生會 Google Sites entries, 2 from the 臺師大 PDF on triangle.ntu.edu.tw) and were removed.

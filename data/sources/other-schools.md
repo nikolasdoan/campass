@@ -176,3 +176,7 @@ All badges are now 8 characters or fewer.
 ## Update 2026-10-15 (campass-2)
 
 NCU, NCKU, CMU and KSU were extracted by campass-2 into their own files (`ncu.json`, `ncku.json`, `cmu.json`, `ksu.json`, each with a `.md` report). The CMU row above (≈24 posts) is stale: the index has 9 pages / 209 posts, 197 kept.
+
+## Re-check 2026-10-22
+
+Re-checked by the worker (data/sources/recheck-2026-10.md). Removed 辛麻辣鍋物餐廳 (NTHU; offer ended 113-06-12, not renewed). End dates updated from the pages: 棋建壂 (NCCU) → 2027-10-29; 喜瑞飯店 (NYCU) → 2026-12-31; 救國團新竹團委會 (NYCU) → 2027-12-31; 菁英 → 精英汽車駕駛人訓練班 (NYCU, renamed) → 2027-12-31. Nine NCHU records moved to the next `?page=` after new cards were added at the top; their `source_url`s were updated. Not yet extracted: NCHU a253 彩碗 ColorBowl and 48 NYCU sheet rows that now have terms.

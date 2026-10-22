@@ -3,11 +3,11 @@
    a pushed full-screen page on a phone) · /merchants (商家合作) · /m/:key (a shop's private
    confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
    Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=16";
-import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=16";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=16";
-import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=16";
-import { qrSVG } from "./js/qr.js?v=16";
+import { icon } from "./js/icons.js?v=17";
+import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=17";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=17";
+import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=17";
+import { qrSVG } from "./js/qr.js?v=17";
 
 /* ---------- constants ---------- */
 
@@ -49,6 +49,7 @@ const BADGE_EN = {
   保費折扣: "Insurance discount", 免費體驗: "Free trial", 免車馬費: "No travel fee", 買大送大: "Buy a large, get a large",
   半票優惠: "Half-price ticket", 免運費: "Free shipping", 免費入館閱覽: "Free library entry", 免費終身信箱: "Free lifetime email",
   雙倍點數: "Double points",
+  滿額贈: "Gift over a spend", 免費升級: "Free upgrade",
 };
 const pctOff = (n) => 100 - (n.length === 1 ? +n * 10 : +n); // 「9」→10, 「95」→5, 「88」→12
 function badgeEn(text) {
@@ -57,7 +58,7 @@ function badgeEn(text) {
   let m = s.match(/^(.*?)(\d{1,2})折(起)?$/); // 9折, 85折起, 第二杯85折, 旅平險77折
   if (m) {
     const off = `${pctOff(m[2])}%${m[3] ? "+" : ""} off`;
-    const what = { "": "", 第二杯: "2nd cup ", 紀念品: "Souvenirs ", 限定月: "Select months: ", 手續費: "Fees ", 旅平險: "Travel insurance " }[m[1]];
+    const what = { "": "", 團體: "Groups ", 第二杯: "2nd cup ", 紀念品: "Souvenirs ", 限定月: "Select months: ", 手續費: "Fees ", 旅平險: "Travel insurance " }[m[1]];
     return what === undefined ? null : what + off;
   }
   if ((m = s.match(/^(每人)?折\$([\d,]+)(起)?$/))) return `NT$${(+m[2].replace(/,/g, "")).toLocaleString("en-US")}${m[3] ? "+" : ""} off${m[1] ? " each" : ""}`;

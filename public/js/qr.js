@@ -3,7 +3,7 @@
    script that defines a global `qrcode`, so it is loaded only when a pass first opens.
    The SVG is always black on white, whatever the theme: a camera must read it in dark mode. */
 
-const SRC = "/vendor/qrcode.js?v=16";
+const SRC = "/vendor/qrcode.js?v=17";
 let loading = null;
 
 function load() {
