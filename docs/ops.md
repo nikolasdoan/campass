@@ -13,8 +13,8 @@ Owner: campass-2 (Cloudflare: deploys, production D1, Worker secrets). See [coor
 | Secrets | `ADMIN_TOKEN` (set), `GOOGLE_CLIENT_SECRET` (pending) |
 | Test login | `DEV_LOGIN` was on in production 2026-10-16 ~03:55–05:00 UTC for founder testing; **removed**, `/auth/dev-login` → 404. Both `dev:` test accounts (incl. one created by prod-smoke) deleted 2026-10-16 07:10 UTC with their sessions, views and passes; production has 0 users. |
 | First deploy | 2026-10-15, integration commit `d37e097`, 605 deals seeded |
-| Current deploy | 2026-10-22 16:30 UTC, integration commit `e3dc6c3`, version `0ea4e426` (?v=15, scroll-position fix); Google sign-in still pending |
-| Previous deploy | 2026-10-16 06:57 UTC, `61cc779`, version `57a26b06` (rollback target) |
+| Current deploy | 2026-10-22 17:06 UTC, integration commit `769cb27` (code = `423a83a`), version `637e0188` (?v=16, demo QA fixes: EN badges, shop pages without sign-in, 14 area fixes via `db:seed:remote`, 1117 deals); Google sign-in still pending |
+| Previous deploy | 2026-10-22 16:30 UTC, `e3dc6c3`, version `0ea4e426` (rollback target; data rollback not needed, the seed only corrected areas) |
 | Test shop link | label `campass-2 smoke` (deal 58a27e58ee), created 2026-10-16 for the deploy check; counts in shop stats |
 
 Only touch the `campuspass` Worker and D1. The account also holds other projects (bizmap, fishpond,
@@ -180,7 +180,13 @@ The `tecxmate.com` zone has Cloudflare Web Analytics with automatic injection. O
 errors, no functional impact). `curl` does not receive the injected script, so only a real-browser check shows it.
 Decision (founder, 2026-10-16): exclude `pass.tecxmate.com` in Web Analytics → tecxmate.com site → Rules (Exclude,
 host `pass.tecxmate.com`, path `*`); the token is read-only there. Rocket Loader / minify / email obfuscation inject
-nothing (checked in a browser).
+nothing (checked in a browser). Status 2026-10-22 17:10 UTC: the beacon is no longer injected (exclusion in place).
+
+The zone also injects Cloudflare **JavaScript Detections** (bot management): an inline loader for
+`/cdn-cgi/challenge-platform/scripts/jsd/main.js` at the end of `<body>`. Its text changes per request, so a CSP hash
+cannot allow it; the CSP blocks it (one console error per page, no user impact). workers.dev is outside the zone and
+clean. To silence it the founder turns JavaScript Detections off for the zone (Security → Bots → Configure →
+JavaScript Detections; Bot Fight Mode, if on, forces it on). The API token cannot read or change bot settings.
 
 ## Flaky UI tests
 
@@ -262,8 +268,8 @@ the Cron Trigger, rate-limit bindings, the GitHub repo and its CI. Sessions only
    shop pages, Back-to-Explore scroll position). Deploy the commit it names together with item 1. The founder's
    demo is later this week.
 3. **Web Analytics exclusion (founder):** Cloudflare → Web Analytics → tecxmate.com site → Manage site → Advanced
-   options → Add rule: Exclude, host `pass.tecxmate.com`, path `*`. The API token is read-only for this. Until
-   then every page logs 2 CSP console errors (no user impact).
+   options → Add rule: Exclude, host `pass.tecxmate.com`, path `*`. Done (2026-10-22: no beacon injected). One CSP
+   console error per page remains from JavaScript Detections; see "Custom domain" (founder setting, no user impact).
 4. Known flaky-test rule (see "Flaky UI tests"): re-run failed jobs once and run the suite locally on the exact
    commit; deploy only if both are green.
 
