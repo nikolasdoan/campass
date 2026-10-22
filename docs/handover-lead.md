@@ -61,10 +61,9 @@ Stop servers with `pkill -f "[w]rangler dev"`. The bracket stops pkill from kill
 
 ## Open items (2026-10-22)
 
-- **Demo QA round** (in progress): four parallel testers (phone, desktop, shop flows, i18n/a11y) plus
-  campass-2's production sweep. Found so far: discount badges stay Chinese in English mode (9折 → "10% off"); a
-  sign-in button on the shop pages /m and /r; Back to Explore from another tab loses the list position. When the
-  round lands, name the commit for the combined deploy with the Google credentials.
+- **Demo QA round** (2026-10-22): done. What was fixed and what is still open, ranked, is in
+  [qa-2026-10-22.md](qa-2026-10-22.md). Start from its "Open" list. The data fix there needs
+  `npm run db:seed:remote` on production (campass-2).
 - **Founder actions**: Google OAuth client (in progress), Web Analytics exclusion for pass.tecxmate.com.
 - **Not started, founder decisions**: an exclusive-deal pilot near 公館 (docs/business-review.md); a lawyer's
   read of the privacy and terms drafts; an email provider for verifying school cards by code.
