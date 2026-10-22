@@ -176,15 +176,20 @@ def links_from(*texts):
     return out
 
 
-AREA_RE = re.compile(r"([\u4e00-\u9fff]{2}[市縣])\s*([\u4e00-\u9fff]{1,3}?[區鎮鄉市])?")
+CITIES = "臺北|新北|桃園|臺中|臺南|高雄|基隆|新竹|嘉義|苗栗|彰化|南投|雲林|屏東|宜蘭|花蓮|臺東|澎湖|金門|連江"
+# A real city or county, then a district: 前鎮區 (not 前鎮), 竹北市. Not 茶門市 (全台貢茶門市) or 西區市.
+AREA_RE = re.compile(rf"((?:{CITIES})[市縣])\s*([\u4e00-\u9fff]{{1,3}}?區|[\u4e00-\u9fff]{{1,2}}[鎮鄉市])?")
 
 
 def area_of(address):
     """City + district from an address, e.g. 臺北市大安區 (public; the full address stays private)."""
-    m = AREA_RE.search(address or "")
+    m = AREA_RE.search((address or "").replace("台", "臺"))
     if not m:
         return ""
-    return (m.group(1) + (m.group(2) or "")).replace("台", "臺")
+    city, district = m.group(1), m.group(2) or ""
+    if district == city:  # 台北市台北市松仁路: the city twice (花蓮縣花蓮市 is a real town)
+        district = ""
+    return city + district
 
 
 def deal_id(key):
