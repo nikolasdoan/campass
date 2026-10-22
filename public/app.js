@@ -3,11 +3,11 @@
    a pushed full-screen page on a phone) · /merchants (商家合作) · /m/:key (a shop's private
    confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
    Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=15";
-import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=15";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=15";
-import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=15";
-import { qrSVG } from "./js/qr.js?v=15";
+import { icon } from "./js/icons.js?v=16";
+import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=16";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=16";
+import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=16";
+import { qrSVG } from "./js/qr.js?v=16";
 
 /* ---------- constants ---------- */
 
@@ -40,6 +40,32 @@ const ZH = ' lang="zh-Hant-TW"';
 const zh = (s) => `<span${ZH}>${esc(s)}</span>`;
 // The generic badges have an English name; any other badge is deal content.
 const GENERIC_BADGE = { "專屬優惠價": "badge.partnerRate", "特約優惠": "badge.partnerDeal" };
+/* A deal's badge in English. 「9折」 is 90% of the price (10% off), 「95折」 5% off; 「起」 means
+   "from", so 「9折起」 is 10% off or more. Badges with no rule here stay as written (Chinese). */
+const BADGE_EN = {
+  消費贈品: "Free gift", 贈品: "Free gift", 包套贈品: "Package gift", 掛號費優惠: "Lower registration fee",
+  免服務費: "No service fee", 專案優惠: "Special offer", 企業會員: "Corporate rate", 優惠價: "Special price",
+  會員價: "Member price", 教育優惠: "Education discount", 教育方案優惠: "Education plan", 專屬房價: "Partner room rate",
+  保費折扣: "Insurance discount", 免費體驗: "Free trial", 免車馬費: "No travel fee", 買大送大: "Buy a large, get a large",
+  半票優惠: "Half-price ticket", 免運費: "Free shipping", 免費入館閱覽: "Free library entry", 免費終身信箱: "Free lifetime email",
+  雙倍點數: "Double points",
+};
+const pctOff = (n) => 100 - (n.length === 1 ? +n * 10 : +n); // 「9」→10, 「95」→5, 「88」→12
+function badgeEn(text) {
+  const s = String(text).replace(/\s+/g, "");
+  if (BADGE_EN[s]) return BADGE_EN[s];
+  let m = s.match(/^(.*?)(\d{1,2})折(起)?$/); // 9折, 85折起, 第二杯85折, 旅平險77折
+  if (m) {
+    const off = `${pctOff(m[2])}%${m[3] ? "+" : ""} off`;
+    const what = { "": "", 第二杯: "2nd cup ", 紀念品: "Souvenirs ", 限定月: "Select months: ", 手續費: "Fees ", 旅平險: "Travel insurance " }[m[1]];
+    return what === undefined ? null : what + off;
+  }
+  if ((m = s.match(/^(每人)?折\$([\d,]+)(起)?$/))) return `NT$${(+m[2].replace(/,/g, "")).toLocaleString("en-US")}${m[3] ? "+" : ""} off${m[1] ? " each" : ""}`;
+  if ((m = s.match(/^買(一|\d+)送(一|\d+)$/))) return `Buy ${m[1] === "一" ? 1 : m[1]}, get ${m[2] === "一" ? 1 : m[2]} free`;
+  if ((m = s.match(/^(\d+)%回饋$/))) return `${m[1]}% cashback`;
+  if ((m = s.match(/^額外(\d+)%折扣$/))) return `Extra ${m[1]}% off`;
+  return null;
+}
 const ELIG = ["student", "staff", "alumni", "family"];
 const THEME_KEY = "cp_theme";
 const PENDING_FAV = "cp_pending_fav";
@@ -146,22 +172,32 @@ const catLabel = (c) => t(`cat.${c}`);
 
 /** 美食 · 臺北市大安區 · 臺大財務管理處: the area when known (more useful than 北部), else the regions. */
 function metaHTML(d) {
-  const where = d.area ? zh(d.area) : esc(regionsLabel(d.regions));
-  return [esc(catLabel(d.category)), where, d.source_org ? zh(d.source_org) : ""].filter(Boolean).join(" · ");
+  return [esc(catLabel(d.category)), areaHTML(d), d.source_org ? zh(d.source_org) : ""].filter(Boolean).join(" · ");
 }
 
-/** The deal's badge: the generic ones in the UI language, anything else as written (Chinese). */
+/** Where the deal is: 臺北市大安區 in Chinese, the city ("Taipei") in English, else the regions. */
+function areaHTML(d) {
+  if (!d.area) return esc(regionsLabel(d.regions));
+  if (getLang() !== "en") return zh(d.area);
+  const a = norm(d.area);
+  const city = CITY_EN.find(([c]) => a.startsWith(c));
+  return city ? esc(city[1].replace(/\b\w/g, (c) => c.toUpperCase())) : esc(regionsLabel(d.regions));
+}
+
+/** The deal's badge in the UI language: 9折 → "10% off" in English (badgeEn); one with no English
+ *  rule stays as written, marked Chinese. */
 function badgeHTML(text) {
   if (!text) return "";
   const key = GENERIC_BADGE[text];
-  return key && getLang() === "en" ? `<span class="badge">${esc(t(key))}</span>` : `<span class="badge"${ZH}>${esc(text)}</span>`;
+  const en = getLang() === "en" && (key ? t(key) : badgeEn(text));
+  return en ? `<span class="badge">${esc(en)}</span>` : `<span class="badge"${ZH}>${esc(text)}</span>`;
 }
 
 /** What search looks in: the deal's own text, plus the names of its category, regions, schools
  *  and city in both languages, so "hotel", "Tainan", "NTU" or 大安 all find it. */
 function searchHay(d) {
   const area = norm(d.area || "");
-  const parts = [d.name, d.subtitle, d.highlight, d.source_org, d.area, ...tBoth(`cat.${d.category}`), ...(CAT_WORDS[d.category] || [])];
+  const parts = [d.name, d.subtitle, d.highlight, d.highlight && badgeEn(d.highlight), d.source_org, d.area, ...tBoth(`cat.${d.category}`), ...(CAT_WORDS[d.category] || [])];
   for (const r of d.regions) parts.push(...tBoth(`region.${r}`));
   for (const sc of d.schools) parts.push(...schoolAliases(sc));
   for (const [city, en] of CITY_EN) if (area.startsWith(city)) parts.push(en);
@@ -736,7 +772,8 @@ function renderExplore() {
   // List
   const shown = state.deals.filter((d) => matches(d, terms));
   const fc = $("fcount");
-  if (fc) fc.textContent = t("count", { n: shown.length });
+  // On a narrow phone only the number shows, so the pills before it never slide under it.
+  if (fc) fc.innerHTML = `<span class="fc-n" aria-hidden="true">${shown.length}</span><span class="fc-full">${esc(t("count", { n: shown.length }))}</span>`;
   if (shown.length) fillList(shown);
   else {
     cancelAnimationFrame(fillRaf);
@@ -1163,7 +1200,7 @@ function cardHTML(c, fresh) {
   </li>`;
 }
 
-/** /me 「我的身分」: the cards, or why to add one, and 「+ 新增學校身分」. */
+/** /me 「我的校園卡」: the cards, or why to add one, and 「+ 新增校園卡」. */
 function cardsHTML(fresh = "") {
   const cards = myCards();
   const add = `<button class="idc-add" type="button" data-add-card aria-haspopup="dialog">${icon("plus")}<span>${esc(t("id.add"))}</span></button>`;
@@ -1381,7 +1418,7 @@ function confirmDeleteAccount() {
 
 /* ---------- school cards: add, re-verify, remove, role ---------- */
 
-/** 「新增學校身分」: the ways to verify a school. Google (when this deployment has it), the school
+/** 「新增校園卡」: the ways to verify a school. Google (when this deployment has it), the school
  *  email code (not yet), and on a dev server only the test path (a dev login, never a verified claim). */
 function openAddCard({ email = "" } = {}) {
   if (!state.user) return openSignin();
@@ -1413,7 +1450,7 @@ function openAddCard({ email = "" } = {}) {
       <p class="dlg-body">${esc(t("add.body"))}</p>
       <div class="methods">${google}${code}</div>
       ${dev}
-      <p class="dlg-fine">${esc(t("add.schools", { list }))}${esc(t("add.fine"))}</p>`,
+      <p class="dlg-fine">${esc(t("add.schools", { list }))}${getLang() === "en" ? " " : ""}${esc(t("add.fine"))}</p>`,
   });
 }
 
@@ -1604,7 +1641,7 @@ function eligHTML(d) {
   return `<div class="elig">${ELIG.map((k) =>
     d.eligibility[k]
       ? `<span class="e">${icon("check")}${esc(t(`elig.${k}`))}</span>`
-      : `<span class="e no"><span class="sr-only">${esc(getLang() === "en" ? "Not for" : "不適用")} </span>${esc(t(`elig.${k}`))}</span>`
+      : `<span class="e no"><span class="sr-only">${esc(t("elig.notFor"))} </span>${esc(t(`elig.${k}`))}</span>`
   ).join("")}</div>`;
 }
 
@@ -1689,7 +1726,7 @@ function detailHTML(d, { locked, loading, error, offlineAt }) {
       : "";
   return `
     <div class="dhero">
-      <div class="eyebrow">${icon(CAT_ICON[d.category] || "ticket")}<span>${[esc(catLabel(d.category)), d.area ? zh(d.area) : esc(regionsLabel(d.regions))].filter(Boolean).join(" · ")}</span></div>
+      <div class="eyebrow">${icon(CAT_ICON[d.category] || "ticket")}<span>${[esc(catLabel(d.category)), areaHTML(d)].filter(Boolean).join(" · ")}</span></div>
       <h2 class="dname" id="detailName" tabindex="-1"${ZH}>${esc(d.name)}</h2>
       ${d.subtitle ? `<p class="dsub"${ZH}>${esc(d.subtitle)}</p>` : ""}
       <div class="badges">${badgeHTML(d.highlight)}${expiryChip(d)}</div>
@@ -1699,7 +1736,7 @@ function detailHTML(d, { locked, loading, error, offlineAt }) {
     <section class="dsec"><h3>${esc(t("detail.eligibility"))}</h3>${eligHTML(d)}</section>
     <section class="dsec"><dl class="facts">
       <dt>${esc(t("detail.validity"))}</dt><dd>${esc(expiryLong(d))}</dd>
-      ${d.area ? `<dt>${esc(t("detail.area"))}</dt><dd${ZH}>${esc(d.area)}</dd>` : ""}
+      ${d.area ? `<dt>${esc(t("detail.area"))}</dt><dd>${areaHTML(d)}</dd>` : ""}
       ${d.regions.length ? `<dt>${esc(t("detail.regions"))}</dt><dd>${esc(regionsLabel(d.regions))}</dd>` : ""}
       ${schools ? `<dt>${esc(t("detail.schools"))}</dt><dd>${esc(schools)}</dd>` : ""}
     </dl></section>
@@ -2030,9 +2067,10 @@ function drawPass() {
   p.dlg.classList.toggle("is-confirmed", !!p.confirmedAt);
   p.dlg.classList.toggle("is-expired", p.expired && !p.confirmedAt);
   p.dlg.querySelector("#passCode").textContent = groupCode(p.code);
-  // Once the shop has confirmed, the "show this to the cashier" footer is done with.
-  p.dlg.querySelector("#passId").hidden = !!p.confirmedAt;
+  // Once the shop has confirmed, or the pass has expired, the "show this to the cashier" footer is done with.
+  p.dlg.querySelector("#passId").hidden = !!p.confirmedAt || p.expired;
   p.dlg.querySelector("#passInstr").textContent = t(p.confirmedAt ? "pass.doneInstr" : "pass.instr");
+  p.dlg.querySelector("#passInstr").hidden = !p.confirmedAt && p.expired;
   if (p.confirmedAt) {
     stage.innerHTML = `<div class="pass-done" role="status"><span class="okmark">${icon("check")}</span><b>${esc(t("pass.confirmed"))}</b>
       <span class="when num">${esc(t("pass.confirmedAt", { t: TPE_HM.format(p.confirmedAt) }))}</span></div>`;
@@ -2350,7 +2388,7 @@ function cashierHTML(x, { deal = true } = {}) {
     !deal && x.highlight ? `<dt>${esc(t("cashier.deal"))}</dt><dd>${badgeHTML(x.highlight)}</dd>` : "",
     // The terms new staff need at the counter; long ones fold to three lines (展開).
     x.offer
-      ? `<dt>${esc(t("cashier.terms"))}</dt><dd class="cashterms"><p class="cashoffer" id="cashOffer${++offerSeq}"${ZH}>${esc(x.offer)}</p><button class="linkbtn" type="button" data-expand="cashOffer${offerSeq}" aria-controls="cashOffer${offerSeq}" aria-expanded="false" hidden>${esc(t("more"))}</button></dd>`
+      ? `<dt>${esc(t("cashier.terms"))}</dt><dd class="cashterms"><p class="cashoffer" id="cashOffer${++offerSeq}"${ZH}>${esc(x.offer.replace(/\n\s*\n+/g, "\n").trim())}</p><button class="linkbtn" type="button" data-expand="cashOffer${offerSeq}" aria-controls="cashOffer${offerSeq}" aria-expanded="false" hidden>${esc(t("more"))}</button></dd>`
       : "",
     forText ? `<dt>${esc(t("cashier.for"))}</dt><dd>${esc(forText)}</dd>` : "",
     cards ? `<dt>${esc(t("cashier.card"))}</dt><dd class="vlines">${cards}</dd>` : "",
@@ -2439,8 +2477,7 @@ function renderShop() {
     </section>
     ${deals ? `<section class="card"><h2>${esc(t("shop.deals"))}</h2><ul class="shopdeals">${deals}</ul></section>` : ""}
     <section class="card"><h2>${esc(t("shop.howTitle"))}</h2>
-      <div class="howrow">${icon("scan-line")}<p>${esc(t("shop.how"))}</p></div>
-      ${IS_IOS && !isStandalone() ? `<div class="howrow">${icon("smartphone")}<p>${esc(t("shop.iosSafari"))}</p></div>` : ""}
+      <div class="howrow">${icon("scan-line")}<p>${esc(t(!IS_IOS ? "shop.how" : isStandalone() ? "shop.howTyped" : "shop.iosSafari"))}</p></div>
       <p class="fine paired">${icon("shield-check")}<span>${esc([t("shop.paired"), t("shop.private")].join(getLang() === "en" ? " " : ""))}</span></p>
     </section>`;
   const form = b.querySelector("#shopForm");
@@ -2479,6 +2516,11 @@ async function submitShop(form) {
     els.shopBody.querySelector("#shopResult").innerHTML = shopResultHTML();
     fitOffers(els.shopBody);
   };
+  // An empty box right after a success (a second tap of 確認使用): keep 「已確認使用」 on screen.
+  if (!code && shop.result?.ok) {
+    input.focus();
+    return;
+  }
   if (code.length !== 6) {
     shop.result = { ok: false, key: "shop.codeShort" };
     show();
@@ -2609,6 +2651,7 @@ async function confirmScan(btn) {
   }
   renderScan();
   setTitle();
+  scrollTo(0, 0); // the result is at the top: a cashier who scrolled down to 確認 would not see it
   els.scanBody.querySelector("#scanTitle")?.focus({ preventScroll: true });
 }
 
@@ -3157,7 +3200,9 @@ function onScroll() {
 
 function onDetailScroll() {
   const name = els.detailBody.querySelector("#detailName");
-  const past = name ? els.detailBody.scrollTop > name.offsetTop + name.offsetHeight - 12 : els.detailBody.scrollTop > 40;
+  // The name's top inside the scrolling body (offsetTop counts from #detail, header included).
+  const top = name ? name.getBoundingClientRect().top - els.detailBody.getBoundingClientRect().top + els.detailBody.scrollTop : 0;
+  const past = name ? els.detailBody.scrollTop > top + name.offsetHeight - 12 : els.detailBody.scrollTop > 40;
   els.detail.classList.toggle("scrolled", past);
 }
 

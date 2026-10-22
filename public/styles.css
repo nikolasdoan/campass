@@ -219,7 +219,7 @@ html.is-scrolled .toolbar{ border-bottom-color:var(--line); }
   border-radius:999px; background:var(--surface); color:var(--ink); font-size:13px; line-height:1; white-space:nowrap;
   transition:background-color var(--dur-tap) var(--ease-standard), color var(--dur-tap) var(--ease-standard),
     border-color var(--dur-tap) var(--ease-standard), transform var(--dur-tap) var(--ease-standard); }
-.pill:hover{ border-color:var(--ring); }
+@media (hover:hover){ .pill:hover{ border-color:var(--ring); } } /* touch: no hover left stuck after a tap */
 .pill:active{ transform:scale(.97); }
 .pill .n{ font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums; }
 .pill[aria-pressed="true"]{ background:var(--accent-fill); border-color:transparent; color:var(--on-accent); font-weight:600; }
@@ -248,8 +248,14 @@ html.is-scrolled .toolbar{ border-bottom-color:var(--line); }
 /* The count stays readable when the row overflows (a long school name, Reset, English): it pins to
    the row's right edge and the pills scroll under it, behind a short surface fade. */
 .fcount{ position:sticky; right:0; z-index:1; flex:none; margin-left:auto; padding-left:20px; font-size:var(--fs-meta); color:var(--muted); white-space:nowrap; font-variant-numeric:tabular-nums;
-  background:linear-gradient(90deg,color-mix(in srgb,var(--surface) 0%,transparent),var(--surface) 16px); }
+  background:linear-gradient(90deg,color-mix(in srgb,var(--surface) 0%,transparent),var(--surface) 16px);
+  box-shadow:16px 0 0 var(--surface); } /* also covers the row's right padding, so nothing peeks out past the count */
 .fcount:empty{ display:none; }
+.fc-n{ display:none; }
+@media (max-width:429px){
+  .fc-n{ display:inline; }
+  .fc-full{ position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+}
 .linkbtn{ position:relative; flex:none; padding:4px 2px; border:0; background:none; color:var(--dot-ink); font-size:12.5px; font-weight:500; white-space:nowrap; }
 .linkbtn:hover{ text-decoration:underline; }
 
@@ -260,7 +266,7 @@ html.is-scrolled .toolbar{ border-bottom-color:var(--line); }
   /* With every school selected the list is ~1,100 rows: rows off screen skip layout and paint
      (sizes are remembered once a row has been seen, so the scrollbar settles). */
   content-visibility:auto; contain-intrinsic-size:auto 100px; } /* rows measure 92px (one-line name) or 113px (two) */
-.item:hover{ background:color-mix(in srgb,var(--chip) 70%,transparent); }
+@media (hover:hover){ .item:hover{ background:color-mix(in srgb,var(--chip) 70%,transparent); } }
 .item.sel{ background:var(--chip); box-shadow:inset 3px 0 0 var(--dot); }
 .pick{ display:grid; grid-template-columns:40px minmax(0,1fr); gap:12px; min-width:0; padding:12px 0 13px 16px; color:inherit; text-decoration:none; }
 .pick:focus-visible{ outline-offset:-2px; border-radius:8px; }
@@ -276,7 +282,7 @@ html.is-scrolled .toolbar{ border-bottom-color:var(--line); }
 .star{ position:relative; display:grid; place-items:center; width:44px; height:44px; margin:10px 6px 0 0; padding:0; border:0; border-radius:50%;
   background:none; color:var(--muted); transition:color var(--dur-ui) var(--ease-standard), background-color var(--dur-tap) var(--ease-standard); }
 .star .ic{ width:20px; height:20px; }
-.star:hover{ color:var(--seal); background:var(--chip); }
+@media (hover:hover){ .star:hover{ color:var(--seal); background:var(--chip); } }
 .star[aria-pressed="true"]{ color:var(--seal); }
 .star[aria-pressed="true"] .ic{ fill:currentColor; }
 .star.pop .ic{ animation:savePop var(--dur-panel) var(--ease-standard); }
@@ -330,15 +336,15 @@ html.is-scrolled .toolbar{ border-bottom-color:var(--line); }
 .btn-primary{ background:var(--accent-fill); color:var(--on-accent); }
 .btn-primary:hover:not(:disabled){ background:color-mix(in srgb,var(--accent-fill) 88%,var(--shade)); }
 .btn-outline{ background:var(--surface); border-color:var(--outline-border); }
-.btn-outline:hover:not(:disabled){ background:var(--chip); }
+@media (hover:hover){ .btn-outline:hover:not(:disabled){ background:var(--chip); } }
 .btn-ghost{ background:transparent; }
-.btn-ghost:hover:not(:disabled){ background:var(--chip); }
+@media (hover:hover){ .btn-ghost:hover:not(:disabled){ background:var(--chip); } }
 .btn-sm{ min-height:34px; padding:8px 12px; font-size:13px; }
 .btn-block{ width:100%; }
 .btn-danger{ color:var(--warn-ink); }
 .iconbtn{ position:relative; display:grid; place-items:center; width:40px; height:40px; padding:0; border:0; border-radius:50%; background:none; color:var(--ink);
   transition:background-color var(--dur-tap) var(--ease-standard), transform var(--dur-tap) var(--ease-standard); }
-.iconbtn:hover{ background:var(--chip); }
+@media (hover:hover){ .iconbtn:hover{ background:var(--chip); } }
 .iconbtn:active{ transform:scale(.94); }
 .iconbtn .ic{ width:21px; height:21px; }
 .iconbtn::before{ content:""; position:absolute; inset:-2px; }
@@ -387,7 +393,7 @@ html.is-scrolled .toolbar{ border-bottom-color:var(--line); }
 .prose a{ color:var(--dot-ink); text-underline-offset:2px; }
 .rows{ display:grid; margin:0 -12px; }
 .row{ display:flex; align-items:center; gap:12px; min-height:48px; padding:8px 12px; border-radius:10px; color:var(--ink); text-decoration:none; }
-a.row:hover{ background:var(--chip); }
+@media (hover:hover){ a.row:hover{ background:var(--chip); } }
 .row > .ic{ width:19px; height:19px; color:var(--dot); }
 .row .rtxt{ display:grid; flex:1; min-width:0; }
 .row .rtxt b{ font-size:var(--fs-body); font-weight:500; overflow-wrap:anywhere; }
@@ -472,7 +478,7 @@ details.info .prose{ padding-bottom:12px; font-size:14px; color:var(--ink-2); }
 .srcother[open] > summary .ic{ transform:rotate(180deg); }
 .srcother .srclist{ color:var(--ink-2); }
 
-/* ---------- school cards (/me 「我的身分」): wallet-style cards ---------- */
+/* ---------- school cards (/me 「我的校園卡」): wallet-style cards ---------- */
 .idsec{ display:grid; gap:12px; }
 .idsec-head h2{ margin:0 4px 2px; font-size:11px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); }
 .idsec-head p{ margin:0 4px; font-size:var(--fs-small); color:var(--ink-2); }
@@ -496,7 +502,7 @@ details.info .prose{ padding-bottom:12px; font-size:14px; color:var(--ink-2); }
 .idc-brand svg{ width:18px; height:15px; flex:none; color:var(--card-ink); }
 .idc-x{ display:grid; place-items:center; flex:none; width:40px; height:40px; margin:-6px 0; padding:0; border:0; border-radius:50%; background:none; color:var(--card-ink-2);
   transition:background-color var(--dur-tap) var(--ease-standard); }
-.idc-x:hover{ background:var(--card-wash); color:var(--card-ink); }
+@media (hover:hover){ .idc-x:hover{ background:var(--card-wash); color:var(--card-ink); } }
 .idc-x .ic{ width:18px; height:18px; stroke-width:var(--stroke-sm); }
 .idcard :focus-visible{ outline:2px solid var(--card-ink); outline-offset:2px; }
 .idc-school{ display:grid; margin:8px 0 0; line-height:1.2; }
@@ -520,6 +526,7 @@ details.info .prose{ padding-bottom:12px; font-size:14px; color:var(--ink-2); }
   background:var(--card-wash); color:var(--card-ink); font-size:var(--fs-ui); font-weight:600; cursor:pointer; }
 .idc-sel select:hover{ background:rgb(0 0 0 / .3); }
 .idc-sel select:focus-visible{ outline:2px solid var(--card-ink); outline-offset:2px; }
+@media (pointer:coarse){ .idc-sel select{ height:40px; } } /* a finger-sized target on phones */
 .idc-sel select option{ color:#1D1D1F; background:#FFFFFF; }
 .idc-sel .ic{ position:absolute; right:10px; width:14px; height:14px; stroke-width:var(--stroke-sm); pointer-events:none; }
 .idc-renew{ display:flex; justify-content:flex-end; margin-top:10px; }
@@ -529,11 +536,11 @@ details.info .prose{ padding-bottom:12px; font-size:14px; color:var(--ink-2); }
 .idcard.is-expired .idc-short,.idcard.is-expired .idc-full{ opacity:.92; }
 @keyframes cardIn{ from{ opacity:0; transform:translateY(12px) scale(.97); } }
 .idcard.is-new{ animation:cardIn var(--dur-panel) var(--ease-decel) both; }
-/* 「+ 新增學校身分」: an empty card slot. */
+/* 「+ 新增校園卡」: an empty card slot. */
 .idc-add{ display:flex; align-items:center; justify-content:center; gap:8px; width:100%; min-height:56px; padding:0 16px;
   border:1.5px dashed var(--ring); border-radius:16px; background:transparent; color:var(--dot-ink); font-size:var(--fs-ui); font-weight:600; white-space:nowrap;
   transition:background-color var(--dur-tap) var(--ease-standard),border-color var(--dur-tap) var(--ease-standard); }
-.idc-add:hover{ background:var(--tile-tint); border-color:var(--dot); }
+@media (hover:hover){ .idc-add:hover{ background:var(--tile-tint); border-color:var(--dot); } }
 .idc-add:active{ transform:scale(.99); }
 .idc-add .ic{ width:18px; height:18px; stroke-width:var(--stroke-sm); }
 .idc-empty{ display:grid; justify-items:center; gap:6px; padding:28px 20px 24px; border:1.5px dashed var(--ring); border-radius:16px; text-align:center; }
@@ -548,12 +555,12 @@ details.info .prose{ padding-bottom:12px; font-size:14px; color:var(--ink-2); }
 .schip i{ width:8px; height:8px; border-radius:50%; background:linear-gradient(135deg,var(--a),var(--b)); }
 .acct .me .idchips{ margin-top:4px; }
 
-/* 新增學校身分 sheet */
+/* 新增校園卡 sheet */
 .methods{ display:grid; gap:8px; }
 .method{ display:flex; align-items:center; gap:12px; width:100%; min-height:60px; padding:10px 12px; border:1px solid var(--line); border-radius:12px;
   background:var(--surface); color:var(--ink); text-align:left; text-decoration:none; font-size:var(--fs-ui);
   transition:background-color var(--dur-tap) var(--ease-standard),border-color var(--dur-tap) var(--ease-standard); }
-a.method:hover{ background:var(--chip); border-color:var(--outline-border); }
+@media (hover:hover){ a.method:hover{ background:var(--chip); border-color:var(--outline-border); } }
 a.method:active{ transform:scale(.99); }
 .method.is-off{ cursor:default; color:var(--muted); background:transparent; }
 .method.is-off .mtile{ opacity:.6; }
@@ -626,7 +633,7 @@ textarea.field:focus{ outline:none; border-color:var(--dot); box-shadow:0 0 0 3p
 .opts{ display:grid; grid-template-columns:minmax(0,1fr); gap:2px; margin:0; padding:0; list-style:none; }
 .opts > li{ min-width:0; }
 .opt{ display:flex; align-items:center; gap:10px; width:100%; min-height:44px; padding:0 12px; border:0; border-radius:8px; background:none; text-align:left; font-size:var(--fs-body); color:var(--ink); }
-.opt:hover{ background:var(--chip); }
+@media (hover:hover){ .opt:hover{ background:var(--chip); } }
 .opt .n{ margin-left:auto; font-size:12.5px; color:var(--muted); font-variant-numeric:tabular-nums; }
 .opt .ic{ width:17px; height:17px; color:var(--dot); visibility:hidden; }
 /* A long name (English school names run to 50 characters) wraps rather than pushing the count off
@@ -791,7 +798,7 @@ input.codefield{ height:56px; padding:0 8px; font:600 28px var(--mono); letter-s
 .cashoffer.open{ display:block; -webkit-line-clamp:unset; line-clamp:none; overflow:visible; }
 .cashterms .linkbtn{ margin-top:4px; }
 .mailtag{ display:inline-flex; align-items:center; padding:1px 8px; border-radius:999px; background:var(--seal-wash); color:var(--seal-ink);
-  font-size:var(--fs-caption); font-weight:600; line-height:18px; white-space:nowrap; }
+  font-size:var(--fs-caption); font-weight:600; line-height:18px; white-space:nowrap; max-width:100%; overflow:hidden; text-overflow:ellipsis; }
 .mailtag.testtag{ background:color-mix(in srgb,var(--warn) 11%,transparent); color:var(--warn-ink); }
 .idcheck{ display:flex; gap:10px; align-items:flex-start; width:100%; margin:14px 0; padding:12px 14px; border-radius:12px; background:var(--tile-tint);
   color:var(--ink); text-align:left; }
@@ -839,7 +846,7 @@ fieldset.radios legend{ padding:0; }
    install card and update toast, then this. While pwa.js has something up it sets --float-floor
    on <html> (px from the viewport bottom to clear); every rule that places .toast takes the max. */
 .toast{ position:fixed; inset:auto auto max(calc(var(--nav-h) + 20px),var(--float-floor,0px)) 50%; margin:0; padding:var(--toast-pad); border:0; border-radius:999px;
-  max-width:min(calc(100vw - 32px),420px); background:var(--toast-bg); color:var(--surface); font-size:var(--toast-fs); font-weight:500; line-height:1.4;
+  width:max-content; max-width:min(calc(100vw - 32px),420px); background:var(--toast-bg); color:var(--surface); font-size:var(--toast-fs); font-weight:500; line-height:1.4;
   text-align:center; text-wrap:balance; box-shadow:var(--toast-shadow); transform:translate(-50%,8px); opacity:0; pointer-events:none; overflow:visible;
   transition:opacity var(--dur-ui) var(--ease-standard), transform var(--dur-ui) var(--ease-standard); }
 .toast:not(:popover-open):not(.show){ display:none; }
@@ -899,7 +906,7 @@ fieldset.radios legend{ padding:0; }
   .appbar-title{ flex:1; min-width:0; margin:0; font-size:var(--fs-title); font-weight:600; letter-spacing:-0.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   body[data-route="explore"] .appbar-title{ display:none; }
   body:not([data-route="explore"]) .brand{ display:none; }
-  body[data-route="explore"] .brand{ flex:1; }
+  body[data-route="explore"] .brand,body[data-route="notfound"] .brand{ display:flex; flex:1; } /* 404: the brand leads home */
   .appbar-actions{ display:flex; align-items:center; gap:4px; flex:none; }
   html.is-scrolled body:not([data-route="explore"]) .appbar{ border-bottom-color:var(--line); }
   .appbar .avatarbtn{ width:44px; height:44px; }
@@ -1059,11 +1066,11 @@ fieldset.radios legend{ padding:0; }
 /* Small phones: tighter rows. */
 @media (max-width:379px){
   .pick{ grid-template-columns:36px minmax(0,1fr); gap:10px; }
-  /* 「System」 + icon needs 63px in a 61px segment at 360 (EN): tighter segments. */
+  /* 「System」 + icon doesn't fit a segment at 360 (EN): the words alone. */
   .setrow{ gap:8px; }
   .seg{ gap:2px; }
-  .seg button{ gap:3px; padding:0 3px; }
-  .seg button .ic{ width:14px; height:14px; }
+  .seg button{ padding:0 4px; }
+  .seg button .ic{ display:none; }
   .cattile{ width:36px; height:36px; }
   .wordmark-zh{ display:none; }
 }

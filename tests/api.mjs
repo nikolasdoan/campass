@@ -206,6 +206,12 @@ check("honeypot lead accepted silently", (await anon.json("/api/merchant-leads",
 const after = (await anon.json("/admin/stats", { headers: ADMIN })).body;
 check("only the real leads were stored", after.merchants.leads === before.merchants.leads + 2, `${before.merchants.leads} -> ${after.merchants.leads}`);
 check("stats has the go/no-go gate", after.gate?.students_using_twice?.target === 30 && after.gate?.shops_would_pay?.target === 5);
+{
+  // The top tables leave test (dev-login) accounts out, like the tier counts: never more passes than the total.
+  const top = after.top_redeemed_30d.reduce((sum, r) => sum + r.passes, 0);
+  const topConfirmed = after.top_redeemed_30d.reduce((sum, r) => sum + (r.confirmed || 0), 0);
+  check("top deals count no test-login passes", top <= after.usage_30d.passes_opened && topConfirmed <= after.usage_30d.merchant_confirmed, `top ${top}/${topConfirmed} vs ${after.usage_30d.passes_opened}/${after.usage_30d.merchant_confirmed}`);
+}
 await anon.json("/api/merchant-leads", { method: "POST", json: { shop_name: "=HYPERLINK(\"http://x\")", email: "f@example.com" } });
 {
   const spammer = browser();

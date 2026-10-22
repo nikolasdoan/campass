@@ -842,12 +842,12 @@ app.get("/admin/stats", async (c) => {
            FROM merchant_leads WHERE interest IN ('featured_paid','exclusive_deal')`),
       db.prepare(
         `SELECT d.name, COUNT(*) AS views FROM deal_views v JOIN deals d ON d.id = v.deal_id
-          WHERE v.created_at > datetime('now','-30 days') GROUP BY v.deal_id ORDER BY views DESC LIMIT 10`
+          WHERE v.created_at > datetime('now','-30 days') AND ${REAL} GROUP BY v.deal_id ORDER BY views DESC LIMIT 10`
       ).all(),
       db.prepare(
         `SELECT d.name, COUNT(*) AS passes, SUM(r.outcome = 'used') AS self_reported, SUM(r.confirmed_at IS NOT NULL) AS confirmed
            FROM redemptions r JOIN deals d ON d.id = r.deal_id
-          WHERE r.created_at > datetime('now','-30 days') GROUP BY r.deal_id ORDER BY passes DESC LIMIT 10`
+          WHERE r.created_at > datetime('now','-30 days') AND ${REAL} GROUP BY r.deal_id ORDER BY passes DESC LIMIT 10`
       ).all(),
     ]);
   return c.json({

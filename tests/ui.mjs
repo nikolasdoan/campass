@@ -144,7 +144,7 @@ const allErrors = [];
   await shot(page, 'phone-saved-signedout');
   await page.click('#tabbar [data-tab="explore"]'); await settle(page);
   await page.click('#list .item .star'); await settle(page);
-  check('phone: star while signed out opens sign-in sheet', await page.isVisible('dialog[open] .gbtn') && (await page.textContent('dialog[open]')).includes('我們只會記錄你的 Email'));
+  check('phone: star while signed out opens sign-in sheet', await page.isVisible('dialog[open] .gbtn') && (await page.textContent('dialog[open]')).includes('我們會記錄你的 Email'));
   await shot(page, 'phone-signin-sheet');
   await page.keyboard.press('Escape'); await settle(page);
   check('phone: Esc closes dialog', !(await page.$('dialog[open]')));
@@ -423,7 +423,7 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   check('scan: paired phone sees shop + deal + 確認使用', (await sp.textContent('#scanBody')).includes('台北福華') && (await sp.textContent('#scanBody')).includes('台北福華大飯店') && (await sp.textContent('[data-scan-confirm]')).includes('確認使用'));
   const scanText = await sp.textContent('#scanBody');
   check('scan: cashier sees who the deal is for, the masked account (a dev login is flagged 測試登入, not 學校信箱) and 請核對學生證', scanText.includes('限臺大學生') && scanText.includes('r***@ntu.edu.tw') && scanText.includes('測試登入') && !scanText.includes('學校信箱') && scanText.includes('請核對學生證後再確認') && !scanText.includes(STUDENT), scanText.replace(/\s+/g, ' ').slice(0, 160));
-  check('scan: a dev-login school card is shown as 測試, never as verified (請核對學生證 stays)', scanText.includes('臺大身分（測試登入，未經驗證）') && !scanText.includes('已驗證 臺大') && (await sp.$$('#scanBody .vline.is-test .testtag')).length === 1 && scanText.includes('請核對學生證後再確認'));
+  check('scan: a dev-login school card is shown as 測試, never as verified (請核對學生證 stays)', scanText.includes('臺大校園卡（未經驗證）') && !scanText.includes('已驗證 臺大') && (await sp.$$('#scanBody .vline.is-test .testtag')).length === 1 && scanText.includes('請核對學生證後再確認'));
   const terms = BY_ID.get(FULL).offer.slice(0, 12);
   check('scan: cashier sees the deal terms (優惠條件)', (await sp.textContent('#scanBody .cashfacts')).includes('優惠條件') && (await sp.textContent('#scanBody .cashoffer')).includes(terms));
   check('scan: the ID check comes before 確認使用', await sp.evaluate(() => !!(document.querySelector('.idcheck').compareDocumentPosition(document.querySelector('[data-scan-confirm]')) & Node.DOCUMENT_POSITION_FOLLOWING)));
@@ -948,11 +948,13 @@ const liveText = (page) => page.evaluate(() => document.getElementById('live')?.
   await sp.fill('#shopCode', code); await sp.click('#shopForm [type="submit"]'); await sp.waitForSelector('#shopResult .result.ok');
   const res = await sp.textContent('#shopResult');
   check('shop: a typed code shows the deal, its terms, who it is for and the masked account', res.includes('台北福華大飯店') && res.includes(BY_ID.get(FULL).offer.slice(0, 12)) && res.includes('限臺大') && res.includes('q***@') && res.includes('測試登入'), res.replace(/\s+/g, ' ').slice(0, 160));
+  await sp.click('#shopForm [type="submit"]'); await settle(sp, 300);
+  check('shop: a second tap of 確認使用 (empty box) keeps 已確認使用 on screen', !!(await sp.$('#shopResult .result.ok')) && !(await sp.$('#shopResult .result:not(.ok)')));
   await shopI.ctx.close();
   const standalone = await newPage(IPHONE, 'shop');
   await standalone.page.addInitScript(() => Object.defineProperty(navigator, 'standalone', { get: () => true }));
   await standalone.page.goto(B + SHOP, { waitUntil: 'networkidle' }); await standalone.page.waitForSelector('#shopCode');
-  check('shop (iOS home screen): scanning opens Safari, so type the code', (await standalone.page.textContent('#shopBody')).includes('用相機掃描 QR 會跳到 Safari'));
+  check('shop (iOS home screen): scanning opens Safari, so type the code (and nothing says scanning confirms)', (await standalone.page.textContent('#shopBody')).includes('用相機掃描 QR 會跳到 Safari') && !(await standalone.page.textContent('#shopBody')).includes('用手機相機掃描即可確認'));
   await standalone.ctx.close();
 }
 
@@ -1141,7 +1143,7 @@ const delCard = (page, id) => page.evaluate((i) => fetch('/api/identities/' + i,
   check('remove: focus is trapped in the dialog', trap.every(Boolean));
   await page.click('dialog[open] [data-remove-confirm]'); await settle(page, 700);
   cards = await cardTexts();
-  check('remove: the card is gone (here and on the server), focus lands on 新增學校身分', cards.length === 1 && cards[0].includes('臺大') && !(await meJSON(page)).identities.some((c) => c.school === 'NCCU') && (await page.evaluate(() => document.activeElement?.classList.contains('idc-add'))));
+  check('remove: the card is gone (here and on the server), focus lands on 新增校園卡', cards.length === 1 && cards[0].includes('臺大') && !(await meJSON(page)).identities.some((c) => c.school === 'NCCU') && (await page.evaluate(() => document.activeElement?.classList.contains('idc-add'))));
   await page.click('#tabbar [data-tab="explore"]'); await page.waitForSelector('#list .item'); await settle(page, 300);
   check('remove: Explore\'s 我的學校 follows (NTU only)', (await itemCount(page)) === countFor(['NTU']));
 
@@ -1149,7 +1151,7 @@ const delCard = (page, id) => page.evaluate((i) => fetch('/api/identities/' + i,
   await page.goto(B + '/me?identity_error=unknown_school', { waitUntil: 'networkidle' }); await settle(page, 400);
   check('identity_error: toast 這個信箱不屬於目前支援的學校, parameter stripped', (await page.textContent('#toast')).includes('這個信箱不屬於目前支援的學校') && new URL(page.url()).search === '');
   await page.goto(B + '/me?identity_error=whatever', { waitUntil: 'networkidle' }); await settle(page, 400);
-  check('identity_error: an unknown reason gets the generic message', (await page.textContent('#toast')).includes('無法新增學校身分'));
+  check('identity_error: an unknown reason gets the generic message', (await page.textContent('#toast')).includes('無法新增校園卡'));
 
   // The Google link path through the mock: start?link=1 → account picker → back on /me with identity_added.
   await page.click('#meBody .idc-add'); await settle(page, 400);
@@ -1228,7 +1230,7 @@ const delCard = (page, id) => page.evaluate((i) => fetch('/api/identities/' + i,
   await ctx.close();
 }
 
-// Cashier: a Google-verified card shows 已驗證 臺大身分（Google）; the ID check stays.
+// Cashier: a Google-verified card shows 已驗證 臺大校園卡（Google）; the ID check stays.
 {
   const stu = await newPage(MOBILE, 'cards-pass');
   const sp = stu.page;
@@ -1243,17 +1245,49 @@ const delCard = (page, id) => page.evaluate((i) => fetch('/api/identities/' + i,
   await shopP.page.goto(B + SHOP, { waitUntil: 'networkidle' }); await shopP.page.waitForSelector('#shopTitle');
   await shopP.page.goto(B + `/r/${code}`, { waitUntil: 'networkidle' }); await shopP.page.waitForSelector('[data-scan-confirm]');
   const txt = (await shopP.page.textContent('#scanBody')).replace(/\s+/g, ' ');
-  check('cashier /r: 已驗證 臺大身分（Google） with the self-declared role, and 請核對學生證 still shown', txt.includes('已驗證 臺大身分（Google）') && txt.includes('自填身分：學生') && txt.includes('請核對學生證後再確認') && !(await shopP.page.$('#scanBody .vline.is-test')), txt.slice(0, 200));
+  check('cashier /r: 已驗證 臺大校園卡（Google） with the self-declared role, and 請核對學生證 still shown', txt.includes('已驗證 臺大校園卡（Google）') && txt.includes('自填身分：學生') && txt.includes('請核對學生證後再確認') && !(await shopP.page.$('#scanBody .vline.is-test')), txt.slice(0, 200));
   await shopP.page.evaluate(() => document.querySelector('.vlines').scrollIntoView({ block: 'center' })); await settle(shopP.page, 200);
   await shot(shopP.page, 'cards-cashier-verified');
   await shopP.page.goto(B + SHOP, { waitUntil: 'networkidle' }); await shopP.page.waitForSelector('#shopCode');
   await shopP.page.fill('#shopCode', code); await shopP.page.press('#shopCode', 'Enter');
   await shopP.page.waitForSelector('#shopResult .result.ok');
-  check('cashier /m: the confirmed result shows the verified card too', (await shopP.page.textContent('#shopResult')).includes('已驗證 臺大身分（Google）'));
+  check('cashier /m: the confirmed result shows the verified card too', (await shopP.page.textContent('#shopResult')).includes('已驗證 臺大校園卡（Google）'));
   await shot(shopP.page, 'cards-shop-result');
   allErrors.push(...sp._errors);
   await shopP.ctx.close();
   await stu.ctx.close();
+}
+
+// Demo QA round (2026-10-22): English badges and city names, one-line toasts, a filter row that
+// fits, an expired pass that no longer says "show this".
+{
+  const { ctx, page } = await newPage(MOBILE, 'qa3');
+  await page.addInitScript(() => localStorage.setItem('cp_lang', 'en'));
+  await page.goto(B + `/auth/dev-login?email=qa3-${STUDENT}&next=/`, { waitUntil: 'networkidle' }); await page.waitForSelector('#list .item');
+  const badges = await page.$$eval('#list .item .badge', (b) => b.map((x) => x.textContent));
+  check('en: discount badges in English (9折 → 10% off), none left in Chinese', badges.includes('10% off') && !badges.some((x) => /[一-鿿]/.test(x)), [...new Set(badges)].slice(0, 12).join(' | '));
+  const metas = await page.$$eval('#list .item .meta', (m) => m.map((x) => x.textContent));
+  check('en: the area is the city in English (Taipei), not 臺北市大安區', metas.some((x) => x.includes('Taipei')) && !metas.some((x) => /臺北市|台北市/.test(x)), metas.slice(0, 3).join(' | '));
+  const fr = await page.evaluate(() => {
+    const c = document.querySelector('#fcount'); const last = [...document.querySelector('.filterrow').children].filter((e) => e !== c && e.offsetParent).pop();
+    const n = c.querySelector('.fc-n'); return { overlap: last.getBoundingClientRect().right - c.getBoundingClientRect().left, count: getComputedStyle(n).display !== 'none' ? n.textContent : c.textContent, fullHidden: c.querySelector('.fc-full').getBoundingClientRect().width <= 1 };
+  });
+  check('phone, en, signed in: the filter row fits (count shows the number only)', fr.overlap <= 0 && /^\d+$/.test(fr.count) && fr.fullHidden, JSON.stringify(fr));
+  await page.goto(B + '/?login_error=expired_x', { waitUntil: 'networkidle' }); await settle(page, 500);
+  const lines = await page.$eval('#toast', (el) => { const cs = getComputedStyle(el); return Math.round((el.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom)) / parseFloat(cs.lineHeight)); });
+  check('phone, en: a short toast stays on one line', lines === 1, `${lines} lines: ${await page.textContent('#toast')}`);
+  await ctx.close();
+}
+{
+  const { ctx, page } = await newPage(MOBILE, 'qa3-pass');
+  await page.clock.install();
+  await page.goto(B + `/auth/dev-login?email=qa3p-${STUDENT}&next=${encodeURIComponent('/deal/' + FULL)}`, { waitUntil: 'networkidle' });
+  await page.waitForSelector('[data-redeem]'); await page.click('[data-redeem]'); await page.waitForSelector('dialog.pass .pass-qr svg');
+  const before = await page.isVisible('#passId');
+  await page.clock.fastForward('16:00'); await settle(page, 600);
+  const after = await page.evaluate(() => ({ exp: document.querySelector('dialog.pass')?.classList.contains('is-expired'), id: !document.querySelector('#passId').hidden, instr: !document.querySelector('#passInstr').hidden }));
+  check('pass: once expired, no "show your student ID / show the cashier" footer', before && after.exp && !after.id && !after.instr, JSON.stringify(after));
+  await ctx.close();
 }
 
 // The shop/scan checks provoke 403/404/409/410 answers on purpose; Chromium logs every non-2xx
