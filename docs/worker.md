@@ -13,7 +13,8 @@ cannot message each other, so **GitHub is the only channel**: issues in, pull re
 3. Work on your own branch (`claude/...`, started from the integration branch `claude/jolly-maxwell-e43rxf`).
    Commit small and push often, so the work survives if your session runs out of quota.
 4. Open a pull request into `claude/jolly-maxwell-e43rxf` titled like the issue, body `Closes #<n>`, with
-   counts, caveats and what you could not do. CI runs on the PR automatically.
+   counts, caveats and what you could not do. CI runs on the PR automatically: it regenerates the seed from
+   your source file and runs all test suites on it. A red run is yours to look at.
 5. Comment on the issue with the PR link. Then take the next issue.
 6. If you get stuck or a source is unreachable, comment on the issue with exactly what you tried and stop; do not
    guess.
