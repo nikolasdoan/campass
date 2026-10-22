@@ -13,8 +13,8 @@ Owner: campass-2 (Cloudflare: deploys, production D1, Worker secrets). See [coor
 | Secrets | `ADMIN_TOKEN` (set), `GOOGLE_CLIENT_SECRET` (pending) |
 | Test login | `DEV_LOGIN` was on in production 2026-10-16 ~03:55–05:00 UTC for founder testing; **removed**, `/auth/dev-login` → 404. Both `dev:` test accounts (incl. one created by prod-smoke) deleted 2026-10-16 07:10 UTC with their sessions, views and passes; production has 0 users. |
 | First deploy | 2026-10-15, integration commit `d37e097`, 605 deals seeded |
-| Current deploy | 2026-10-22 17:06 UTC, integration commit `769cb27` (code = `423a83a`), version `637e0188` (?v=16, demo QA fixes: EN badges, shop pages without sign-in, 14 area fixes via `db:seed:remote`, 1117 deals); Google sign-in still pending |
-| Previous deploy | 2026-10-22 16:30 UTC, `e3dc6c3`, version `0ea4e426` (rollback target; data rollback not needed, the seed only corrected areas) |
+| Current deploy | 2026-10-22 18:03 UTC, integration commit `494e5c2`, version `2a0faaba` (?v=17: NTNU import +59, 20 expired removed, worker re-check fixes; `db:seed:remote` → 1156 deals); Google sign-in still pending |
+| Previous deploy | 2026-10-22 17:06 UTC, `769cb27`, version `637e0188` (rollback target; rolling back code does not roll back data: re-run `db:seed:remote` from `769cb27` for the 1117-deal set) |
 | Test shop link | label `campass-2 smoke` (deal 58a27e58ee), created 2026-10-16 for the deploy check; counts in shop stats |
 
 Only touch the `campuspass` Worker and D1. The account also holds other projects (bizmap, fishpond,
