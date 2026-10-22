@@ -62,8 +62,10 @@ Stop servers with `pkill -f "[w]rangler dev"`. The bracket stops pkill from kill
 ## Open items (2026-10-22)
 
 - **Demo QA round** (2026-10-22): done. What was fixed and what is still open, ranked, is in
-  [qa-2026-10-22.md](qa-2026-10-22.md). Start from its "Open" list. The data fix there needs
-  `npm run db:seed:remote` on production (campass-2).
-- **Founder actions**: Google OAuth client (in progress), Web Analytics exclusion for pass.tecxmate.com.
+  [qa-2026-10-22.md](qa-2026-10-22.md). Start from its "Open" list. Live since 2026-10-22 (769cb27, ?v=16),
+  with the data reseeded.
+- **Founder actions**: Google OAuth client (in progress). Turn off Cloudflare JavaScript Detections for
+  tecxmate.com (Security → Bots): the zone injects an inline script that our CSP blocks (1 console error per
+  page, no user impact). Web Analytics exclusion: done.
 - **Not started, founder decisions**: an exclusive-deal pilot near 公館 (docs/business-review.md); a lawyer's
   read of the privacy and terms drafts; an email provider for verifying school cards by code.
