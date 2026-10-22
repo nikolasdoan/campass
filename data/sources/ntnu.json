@@ -1,0 +1,2065 @@
+[
+  {
+    "name": "Ulove羽樂 歐陸創意料理",
+    "subtitle": "台北市松山區",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市南京東路四段162號",
+    "phone": "02 2578 2656",
+    "highlight": "9折",
+    "offer": "餐飲享9折優惠",
+    "info": "電話：02 2578 2656\n地址：台北市南京東路四段162號\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "http://www.ulovebistro.com/"
+      },
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/pg/ulovebistro/about/?ref=page_internal"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=52&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "長榮航空 BizFam 企業優惠",
+    "subtitle": "國立臺灣師範大學企業綁定",
+    "category": "transport",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "3% OFF",
+    "offer": "以企業名稱「國立臺灣師範大學」綁定 BizFam（掃描頁面 QR Code 或使用專屬綁定連結）後享：\n1. BizFam 會員尊享福利：出發至各航點，皆可享有 BizFam 精選特約商家之各項會員尊享。\n2. 機位候補優先權：機位候補時，可享有與同等級無限萬哩遊會員卡較優先之候補順位。\n3. BizFam企業購票平台購票優惠：票價較官網優惠 3% OFF，且可同步累積個人哩程及BizFam開票金額。",
+    "info": "使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "BizFam 專屬綁定連結",
+        "url": "https://bizfam.evaair.com/BZES/join-us/corporate-identifier?identifier=9497MELS27"
+      },
+      {
+        "label": "綁定QR Code EDM (PDF)",
+        "url": "https://alumni.ntnu.edu.tw/Welfare/FileDownLoad2?modelid=14&&itemid=55"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用；已移除過期項目「官網購票折扣碼最高92折（限2026/9月底前綁定，10月底前開票，2027/3月底前出發）」：綁定期限已過",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=55&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "中華航空",
+    "subtitle": "企業帳號 TW039341",
+    "category": "transport",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "3% OFF",
+    "offer": "訂位購票時輸入師大企業帳號【TW039341】，即享3%OFF優惠！！\n【一趟飛行雙重回饋】同時累計企業會員點數與個人會員里程\n中華航空另有專屬學生的特惠票：在校學生加入華夏會員並完成學生身分驗證後，前往中華航空學生優待機票專區並輸入企業會員帳號 TW039341，訂位即享學生專屬購票優惠（附件說明）。",
+    "info": "使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "華航官網",
+        "url": "https://www.china-airlines.com/tw/zh"
+      },
+      {
+        "label": "學生票優惠 eDM (PDF)",
+        "url": "https://alumni.ntnu.edu.tw/Welfare/FileDownLoad2?modelid=14&&itemid=56"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用；學生特惠票依附件「中華航空學生專屬特惠票」限在校學生",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=56&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "台灣高鐵 (企業客戶)",
+    "subtitle": "本校統一編號 03735202",
+    "category": "transport",
+    "regions": [
+      "north",
+      "central",
+      "south"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "團體9折",
+    "offer": "購票時提供(輸入)本校統一編號：03735202\n企業搭乘回饋方案：半年累計旅費超過60萬元，即可依回饋率獲得5折乘車票兌換券（回饋歸本校）。\n購票總人數達11人(含)以上之本校團體(例：師長國內出差)，全票身分者享有標準車廂對號座全額票價指定車次9折優惠；優待身分者（敬老、愛心、孩童）一律適用原優待折扣。\n企業團體方案諮詢服務：如有團體(11人以上)乘車、員工旅遊、春酒尾牙或大團包車之需求，可優先獲得包車協助與安排。",
+    "info": "使用對象：教職員工（本校團體、公務）",
+    "links": [
+      {
+        "label": "台灣高鐵官網",
+        "url": "http://www.thsrc.com.tw/index.html"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "企業客戶方案：回饋金歸本校，團體9折以「本校團體(例：師長國內出差)」為例，歸類為教職員適用",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=57&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "7-11",
+    "subtitle": "臺師大公館校區門市",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市文山區汀州路四段88號",
+    "phone": "02 8663 5162",
+    "highlight": "9折",
+    "offer": "享9折優惠",
+    "info": "電話：02 8663 5162\n地址：台北市文山區汀州路四段88號\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/711open"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用；總務處「委外餐廳提供優惠意願調查一覽表」(1120323更新)列此門市優惠至114/06/30，校友中心頁未列期限，使用前請確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=386&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "台灣大哥大 (企業客戶)",
+    "subtitle": "師大專屬優惠",
+    "category": "services",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "",
+    "phone": "0989-897-063",
+    "highlight": "專案優惠",
+    "offer": "台灣大哥大－師大專屬優惠服務（企業專案）\n本校統編：03735202\n業務窗口：0989-897-063 陳羿函先生\n※企業窗口諮詢請加入LINE@帳號:@poo9614e",
+    "info": "電話：0989-897-063\n使用對象：師大教職員工、退休人員、員工之二等親內",
+    "links": [
+      {
+        "label": "師大專屬優惠服務",
+        "url": "https://twm5g.co/MGLp"
+      },
+      {
+        "label": "服務據點查詢",
+        "url": "https://www.taiwanmobile.com/mobile/storelbs/lbs.html"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "優惠對象：師大教職員工、退休人員、員工之二等親內（不含學生、校友）",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": true
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=388&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "Have A Nice Day好處餐廳",
+    "subtitle": "台北市大安區",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區羅斯福路3段283巷14弄30號",
+    "phone": "02 2363 8958",
+    "highlight": "9折",
+    "offer": "用餐消費9折優惠\n消費滿1000送「兌換券」\n壽星當月，4人同行，免費贈送開胃小菜\n以上各項優惠僅擇一，不可合併使用",
+    "info": "電話：02 2363 8958\n地址：台北市大安區羅斯福路3段283巷14弄30號\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/pg/haveanicething/about/?ref=page_internal"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=395&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "達美樂",
+    "subtitle": "台大店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區辛亥路一段56號",
+    "phone": "02-23692366",
+    "highlight": "買大送大",
+    "offer": "外送買大送大再送1.25L可樂一瓶、外帶兩顆小披薩399元再送一瓶可樂",
+    "info": "電話：02-23692366\n地址：台北市大安區辛亥路一段56號\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "門市資料",
+        "url": "https://www.dominos.com.tw/storec_83000.htm"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=401&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "哲思企業（行李箱）",
+    "subtitle": "Commodore 戰車系列",
+    "category": "shopping",
+    "regions": [
+      "south"
+    ],
+    "address": "嘉義市西區重慶路165號1樓",
+    "phone": "0905-070-093 (羅小姐)",
+    "highlight": "5折",
+    "offer": "全品項定價5折優惠。每年享乙次為期一個月、全品項定價39折優惠專案。\n合理使用下，提供「零配件永久免費保固」服務。",
+    "info": "電話：0905-070-093 (羅小姐)\n地址：嘉義市西區重慶路165號1樓\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://sites.google.com/view/jsluggage/關於哲思"
+      },
+      {
+        "label": "產品型錄 (PDF)",
+        "url": "https://alumni.ntnu.edu.tw/Welfare/FileDownLoad2?modelid=14&&itemid=406"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用；39折為每年一次、為期一個月之專案，頁面未載明日期",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=406&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "台北福華大飯店",
+    "subtitle": "台北",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2326-7558",
+    "highlight": "專屬優惠價",
+    "offer": "只要出示證件，即享有以下優惠內容(訂房優惠合約代號：97282)：\n優惠房價（NTD/每晚/每間，單人/雙人）：標準單床房 4,000+10%/4,500+10%；高級單床房、高級雙床房 4,300+10%/4,800+10%；豪華單床房 4,600+10%/5,100+10%（定價9,500~10,500+10%）。\n除雙床房房價含兩客早餐外，其他房型為單人報價含一客早餐。\n2026年加價日期：自行車展(3月24日至3月27日)、電腦展(6月1日至6月4日)房價另加NTD500+10%。\n2026年除外日期(不適用合約價格)：6月12日至6月17日及12月30日至12月31日。\n訂房專線：02-2326-7558；電郵：reservation-tp@howard-hotels.com.tw\n以上合約價不得與其他促銷案合併使用。以上合約價格適用於2026年1月1日至12月29日。",
+    "info": "電話：02-2326-7558\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [],
+    "expires_on": "2026-12-29",
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用；合約房價表在頁面上為圖片，已轉錄重點，請以頁面圖片為準；頁面未載明地址",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=408&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "中國東方航空",
+    "subtitle": "台灣始發 促銷代碼 26NTNUMU",
+    "category": "transport",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "96折",
+    "offer": "適用購票期間：自2026年5月1日起至2026年12月31日止。\n適用旅行期間：2026年5月6日 - 2026年7月16日；2026年8月16日 - 2026年10月4日；2026年10月19日 - 2026年12月31日\n台灣始發（限台灣官網購票），直航大陸（直達航班）、中轉至大陸內陸航點、歐洲、美國/加拿大、紐澳（中轉航班）之指定艙等（商務艙 I/Q、超級經濟艙 P、經濟艙 T/V/S/R/N/L 等，依航線而定）享96折，促銷代碼（26NTNUMU）。\n※註：以上航點實際情況須依照本網站訂位系統實際可提供之艙位顯示為準，無可售機位時，恕不提供此優惠折扣。",
+    "info": "使用對象：學生本人、教職員工或校友",
+    "links": [
+      {
+        "label": "購票去",
+        "url": "https://www.ceair.com/hk/twd/home"
+      },
+      {
+        "label": "優惠詳細說明",
+        "url": "https://www.ceair.com/global/hk_TWD/twcollageactive/TBSFuniversity/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "※註：此優惠僅適用於簽署合作之學校學生本人、教職員工或校友身份方可適用；期限為購票期間迄日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=431&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "意得輯 Editage編修",
+    "subtitle": "英文編修、學術翻譯",
+    "category": "services",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "",
+    "phone": "02 2657 0306",
+    "highlight": "95折",
+    "offer": "輸入折價券代碼「TWEDIT5」\n英文編修95折、學術翻譯(繁中翻英文)95折",
+    "info": "電話：02 2657 0306\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.editage.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用；線上服務；信箱 submitjobs@editage.com",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=435&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "風華御髮植髮診所",
+    "subtitle": "台北",
+    "category": "health",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市羅斯福路二段33號4樓",
+    "phone": "02 2393 8891",
+    "highlight": "8折",
+    "offer": "健髮課程單次體驗價688(原價6500)\n洗剪染及全系列服務8折優惠(不含植髮手術)",
+    "info": "電話：02 2393 8891\n地址：台北市羅斯福路二段33號4樓\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.ihairtransplantclinic.com/taipei/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=438&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "W Infinity Hair salon",
+    "subtitle": "古亭店",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區羅斯福路二段83之2號2樓",
+    "phone": "02 2369 9775",
+    "highlight": "85折",
+    "offer": "洗/剪/護/染/燙/頭皮養護，85折優惠",
+    "info": "電話：02 2369 9775\n地址：台北市大安區羅斯福路二段83之2號2樓\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/WInfinityHairSalon/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=439&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "科研市集 SciKet",
+    "subtitle": "勢得科研 線上平台",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "桃園市龜山區文興路146號9F-1",
+    "phone": "03-327-2356",
+    "highlight": "滿額贈",
+    "offer": "訂購單筆訂單滿3000元即贈300元折價券",
+    "info": "電話：03-327-2356\n地址：桃園市龜山區文興路146號9F-1\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.sciket.com/about"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用；線上平台，依官網全台訂購歸類為全區",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=441&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "希臘左巴 Greek GO！",
+    "subtitle": "永康店、台大店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "永康店 台北市大安區麗水街7巷1號；台大店 台北市大安區羅斯福路三段283巷7弄16號",
+    "phone": "永康店 02 2321 2129；台大店 02 2363 3925",
+    "highlight": "9折",
+    "offer": "來店用餐享有9折優惠 (請於結帳前出示識別證)",
+    "info": "電話：永康店 02 2321 2129；台大店 02 2363 3925\n地址：永康店 台北市大安區麗水街7巷1號；台大店 台北市大安區羅斯福路三段283巷7弄16號\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/greekgo3/about/?ref=page_internal"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=448&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "于記杏仁",
+    "subtitle": "雙北、桃園、新竹分店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "雙北、桃園、新竹皆有分店",
+    "phone": "0800 288 758",
+    "highlight": "95折",
+    "offer": "1. 憑證消費即享95折優惠(不得與店櫃現有優惠併行)\n2. 同品項餐點買十送一\n3. 符合外送規範亦享有以上優惠",
+    "info": "電話：0800 288 758\n地址：雙北、桃園、新竹皆有分店\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://yustofu.com.tw/"
+      },
+      {
+        "label": "分店",
+        "url": "https://yustofu.com.tw/location"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=452&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "大鵬灣食堂",
+    "subtitle": "台北市中正區",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市和平東路一段141巷9號",
+    "phone": "02 2351 5568",
+    "highlight": "95折",
+    "offer": "餐食95折（不包含酒水飲料與服務費）",
+    "info": "電話：02 2351 5568\n地址：台北市和平東路一段141巷9號\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.otoro.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=516&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "TWO SHOTS",
+    "subtitle": "古亭店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區和平東路一段8號",
+    "phone": "02 2369 9698",
+    "highlight": "9折",
+    "offer": "９折優惠",
+    "info": "電話：02 2369 9698\n地址：台北市大安區和平東路一段8號\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/TWOSHOTSTW/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=518&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "黑熊好眠站",
+    "subtitle": "台北橋店",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "新北市三重區重新路2段1號8樓",
+    "phone": "02 8988 0000",
+    "highlight": "專屬優惠價",
+    "offer": "平日住宿優惠 650 元/人（膠囊床位共享住宿空間，非一般旅館房間）",
+    "info": "電話：02 8988 0000\n地址：新北市三重區重新路2段1號8樓\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "http://www.heybear-hotel.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=527&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "枂創意",
+    "subtitle": "視覺設計、生活陶藝、生活木工",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "新北市汐止區鄉友街25號",
+    "phone": "0972 852 710（蔡先生）",
+    "highlight": "8折",
+    "offer": "所有服務內容確認後，總金額8折優惠",
+    "info": "電話：0972 852 710（蔡先生）\n地址：新北市汐止區鄉友街25號\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://yuecreative.weebly.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=660&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "Maccanti義大利冰淇淋",
+    "subtitle": "桃園",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "桃園市桃園區大有路368號",
+    "phone": "03 325 3399",
+    "highlight": "9折",
+    "offer": "享9折優惠",
+    "info": "電話：03 325 3399\n地址：桃園市桃園區大有路368號\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/pg/maccanti1984/about/?ref=page_internal"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=671&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "捷尼皮件（行李箱）",
+    "subtitle": "Commodore 戰車行李箱",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "",
+    "phone": "0922-336604 （蕭小姐）",
+    "highlight": "5折",
+    "offer": "師大教職員、學生、校友、退休人士、師大悠遊認同卡卡友，出示相關證件，即可享優惠：\n1.全年度享有本公司「全系列產品」訂價之5折。\n2.每年有一次為期一個月之39折特惠專案活動。\n3.正常使用下，產品零配件皆提供「永久保固」之服務。\nLine：journeysuitcase",
+    "info": "電話：0922-336604 （蕭小姐）\n使用對象：教職員、學生、校友、退休人士、師大悠遊認同卡卡友",
+    "links": [
+      {
+        "label": "官網",
+        "url": "http://journeysuitcase.weebly.com/product.html"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面未載明地址（電話/Line/官網訂購），歸類為全區",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=681&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "雨都漫步",
+    "subtitle": "基隆小旅行",
+    "category": "entertainment",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "0968 607 676",
+    "highlight": "消費贈品",
+    "offer": "師大教職員、學生、校友、退休人士、師大悠遊認同卡卡友，出示相關證件，即可享優惠：\n凡購買雙人套票即贈送雨都漫步傘或漫步雙用背包一只\n凡購買單人套票即贈送指定漫遊離島小旅行7折優惠碼",
+    "info": "電話：0968 607 676\n使用對象：教職員、學生、校友、退休人士、師大悠遊認同卡卡友",
+    "links": [
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/keelungwalk"
+      },
+      {
+        "label": "小旅行",
+        "url": "https://keelung-for-a-walk.com/accupass"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面未載明地址；地區依基隆小旅行內容歸類為北部",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=717&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "佳麗果物",
+    "subtitle": "芸之香、吉之果",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "桃園市蘆竹區長興路三段131號",
+    "phone": "03 324 1686",
+    "highlight": "8折",
+    "offer": "全商品８折",
+    "info": "電話：03 324 1686\n地址：桃園市蘆竹區長興路三段131號\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.jalifruits.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=722&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "J&H Floral Design榮慧花藝設計",
+    "subtitle": "台北市大安區",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區復興南路二段27號5樓之12",
+    "phone": "02-2708-6860、0979-730-650",
+    "highlight": "9折",
+    "offer": "師大教職員、學生、校友、退休人士、師大悠遊認同卡卡友，出示相關證件，即可享優惠：\n所有服務內容確認後，總金額9折優惠\n校內系所社團花藝文創商品設計費7折優惠",
+    "info": "電話：02-2708-6860、0979-730-650\n地址：台北市大安區復興南路二段27號5樓之12\n使用對象：教職員、學生、校友、退休人士、師大悠遊認同卡卡友",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.jandhfloraldesign.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=730&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "手機急診室",
+    "subtitle": "站前、師大、東湖、萬華店",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "站前店 台北市中正區漢口街一段六號一樓；師大店 台北市大安區師大路109號一樓；東湖店 台北市內湖區東湖路35號一樓；萬華店 台北市萬華區西園路一段166號一樓",
+    "phone": "站前店 02-23826866；師大店 02-23681286；東湖店 02-26337789；萬華店 02-23066676",
+    "highlight": "折$200",
+    "offer": "校友優惠：手機維修依官網定價折扣200元一項（須出示校友證）\n服務時間：週一至週日 11:00-22:00",
+    "info": "電話：站前店 02-23826866；師大店 02-23681286；東湖店 02-26337789；萬華店 02-23066676\n地址：站前店 台北市中正區漢口街一段六號一樓；師大店 台北市大安區師大路109號一樓；東湖店 台北市內湖區東湖路35號一樓；萬華店 台北市萬華區西園路一段166號一樓\n使用對象：校友（須出示校友證）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "http://mashup.com.tw/cerphone/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=898&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "捷絲旅 Just Sleep",
+    "subtitle": "臺大尊賢館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區羅斯福路四段83號",
+    "phone": "02-77355000",
+    "highlight": "專屬優惠價",
+    "offer": "優惠房價（含早）：精緻客房(一大床) 1人3,000、2人3,300；豪華雙人房(二小床) 3,300；精緻家庭房(兩中床) 5,500（定價NT$9,000~13,000+10%）。\n適用期間為2026年1月2日起至2026年12月20日止。加價NT$1,000NET：每週六。\n不適用日期：2026/2/15-2/21、2/27-2/28、4/3-4/5、5/1-5/2、6/12-6/20、9/25-9/27、10/9-10/10、10/24-10/25、12月之週五及週六\n訂房方式：電洽訂房專線 02-77355000；Email rsvn@justsleephotels.com；業務聯絡人 02-77355008 #8381\n以上房價均已含稅及10%服務費。**透過網路訂房(官網或其他網路通路訂房)，入住即使出示相關證件亦無法更改為特約房價**",
+    "info": "電話：02-77355000\n地址：台北市大安區羅斯福路四段83號\n使用對象：教職員、學生、校友、退休人員",
+    "links": [
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/pg/JustSleepJS/about/?ref=page_internal"
+      }
+    ],
+    "expires_on": "2026-12-20",
+    "auto_renew": false,
+    "notes": "合約房價表在頁面上為圖片，已轉錄重點，請以頁面圖片為準；優惠期間：至2026年12月20日止",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=3086&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "捷絲旅 Just Sleep",
+    "subtitle": "宜蘭礁溪館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "宜蘭縣礁溪鄉德陽路24巷8號",
+    "phone": "02-77355000",
+    "highlight": "專屬優惠價",
+    "offer": "優惠期間：2026年01月02日 至 2026年12月31日止\n訂房方式：電洽訂房專線 02-77355000；Email rsvn@justsleephotels.com；官網訂房\n優惠價格查詢: https://reurl.cc/nlX891\n**官網訂房時請於備註欄填入公司名稱:國立臺灣師範大學，入住時需於現場出示校友證**",
+    "info": "電話：02-77355000\n地址：宜蘭縣礁溪鄉德陽路24巷8號\n使用對象：教職員、學生、校友、退休人員",
+    "links": [
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/pg/JustSleepJS/about/?ref=page_internal"
+      },
+      {
+        "label": "優惠價格查詢",
+        "url": "https://reurl.cc/nlX891"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "優惠對象列師大教職員、學生、校友、退休人員，但官網訂房說明寫「入住時需於現場出示校友證」",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=3086&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "礁溪晶泉丰旅",
+    "subtitle": "捷絲旅 Just Sleep 集團",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "宜蘭縣礁溪鄉溫泉路67號",
+    "phone": "02-77355000",
+    "highlight": "專屬優惠價",
+    "offer": "優惠期間：2026年01月02日 至 2026年12月31日止\n訂房方式：電洽訂房專線 02-77355000；Email rsvn@justsleephotels.com\n官網訂房及優惠價格查詢: https://reurl.cc/laXx1d\n**官網訂房時請於備註欄填入公司名稱:國立臺灣師範大學，入住時需於現場出示校友證**",
+    "info": "電話：02-77355000\n地址：宜蘭縣礁溪鄉溫泉路67號\n使用對象：教職員、學生、校友、退休人員",
+    "links": [
+      {
+        "label": "官網訂房及優惠價格查詢",
+        "url": "https://reurl.cc/laXx1d"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "優惠對象列師大教職員、學生、校友、退休人員，但官網訂房說明寫「入住時需於現場出示校友證」",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=3086&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "VAN東方現代流行鐵板燒",
+    "subtitle": "大安店、公館店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "大安店 台北市大安區仁愛路四段345巷4弄2號；公館店 台北市中正區羅斯褔路四段156號",
+    "phone": "大安店 02-87739557；公館店 02-23655899",
+    "highlight": "95折",
+    "offer": "享餐點費用95折，服務費與酒水不納入折扣範圍。\n（現行套餐金額為NT2380元/套，如遇售價有所調整，以調整後價格計算，以上包含單點餐點。)",
+    "info": "電話：大安店 02-87739557；公館店 02-23655899\n地址：大安店 台北市大安區仁愛路四段345巷4弄2號；公館店 台北市中正區羅斯褔路四段156號\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.van-cuisine.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=3296&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "清邁城泰式料理",
+    "subtitle": "台北市大安區",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "106台北市大安區愛國東路103號",
+    "phone": "02 2394 4959",
+    "highlight": "免服務費",
+    "offer": "優惠內容：免收服務費",
+    "info": "電話：02 2394 4959\n地址：106台北市大安區愛國東路103號\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=3297&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "良友精緻飯店",
+    "subtitle": "花蓮市",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "97043花蓮縣花蓮市福建街512號",
+    "phone": "+886 3 832 3355",
+    "highlight": "專屬優惠價",
+    "offer": "【優惠方案】平日/假日：標準單人房(一大床,1人,1客早) NT$1000/1200；標準雙人房(一大床,2人,2客早) NT$1200/1400；精緻雙人房(雙中床,2人) NT$1400/1600；精緻三人房(雙大床,3人) NT$1800/2100；豪華四人房(雙大床,4人) NT$2400/2800\n以上房價包含：次日早餐、免費WiFi、免費使用交誼廳及飲料無限暢飲、機場/火車站免費接送服務(需事先預約)\n1. 平日定義：週日晚上至周五晚上；連續假日、春節期間不適用。\n2. 假日定義：週六、國定假日當天及前夕，暑假七月、八月。\n3. 房價已包含5%營業稅及10%服務費。\n4. 此優惠價格當天不得與其他優惠並用。\n5. 平日住房需要三天前確認，假日需七日前確認，並支付30%訂金，平日住房則當日訂房保留至下午6點。\n7. 請於訂房時告知訂房人員為國立台灣師範大學校友，入住時請出示校友證",
+    "info": "電話：+886 3 832 3355\n地址：97043花蓮縣花蓮市福建街512號\n使用對象：校友（入住時請出示校友證）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.truefriend.com.tw/tw/index.html"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "合約房價表在頁面上為圖片，已轉錄重點，請以頁面圖片為準；頁面未載明優惠期限；電子郵件：truefriend.service@gmail.com",
+    "eligibility": {
+      "student": false,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=3300&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "JJK購物狂的異想世界",
+    "subtitle": "線上購物",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "85折",
+    "offer": "1. 全店商品提供原價85折優惠\n2. 凡下單額外贈送精美小禮\n3. 社團或系所加入加贈500元購物金",
+    "info": "使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.jjk2020.org/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用；購物網站，歸類為全區",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=3303&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "NOZOMI BAKERY 禾波制所",
+    "subtitle": "師大門市",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "106台北市大安區師大路92巷6號",
+    "phone": "02 2368 0880",
+    "highlight": "95折",
+    "offer": "持校友證、教職員工生證至禾波制所師大門市，以下項目享95折優惠！\n（一）20盒以上(含)會議餐盒\n（二）百元以上冷藏西點\n以上優惠不可重複使用。\n服務時間：7:30 - 21:00（週日休息）",
+    "info": "電話：02 2368 0880\n地址：106台北市大安區師大路92巷6號\n使用對象：校友、教職員工生",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.nozomibakery.com/about"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=3368&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "銀兔湯咖哩",
+    "subtitle": "創始旗艦店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市大安區師大路59巷10號",
+    "phone": "02-2366-0238",
+    "highlight": "9折",
+    "offer": "校友、教職員工生、退休人員，到店家消費出示相關證件，可享9折優惠！\n營業時間：上午11:30 - 下午3:00 、下午5:30 - 下午9:00",
+    "info": "電話：02-2366-0238\n地址：臺北市大安區師大路59巷10號\n使用對象：校友、教職員工生、退休人員",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=3374&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "金玉堂",
+    "subtitle": "林口忠孝店",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "244新北市林口區忠孝一路26號2樓",
+    "phone": "02 2608 9060",
+    "highlight": "73折起",
+    "offer": "享有購買店內商品73折起之優惠!(特價品除外)\n營業時間: 09:00–21:30",
+    "info": "電話：02 2608 9060\n地址：244新北市林口區忠孝一路26號2樓\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=3508&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "小木屋鬆餅",
+    "subtitle": "師大店、內湖西湖店、南港店、長庚林口店、大坪林店、永康店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "現場：出示證件 鬆餅+飲料 9折 ；優惠不併用\n外送：出示證件 30個鬆餅+飲料 全單9折 ；優惠套餐不適用",
+    "info": "使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.shinemood2006.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用；頁面只列分店名稱、未列地址；「永康店」所在縣市頁面未說明，地區依其餘分店歸類為北部",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=3537&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "R&R HOME",
+    "subtitle": "線上選品",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "95折",
+    "offer": "不限消費金額，官網輸入優惠碼RRstudent，即享全站95折優惠",
+    "info": "使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.rrhome.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用；官網優惠碼，歸類為全區",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=3543&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "溪頭福華渡假飯店",
+    "subtitle": "南投縣",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "專屬優惠價",
+    "offer": "溪頭福華渡假飯店2026年優惠：訂房時請主動提供本校名稱，入住時請出示本校教職員/學生/校友/退休人員之相關證件即可(每房1張)\n2026年客房合約價（平日：非暑假/旺季4~5月/暑假7~8月）：大學樓 高級單/雙人房 NT$3,800/4,700/5,000、高級三人房 5,000/5,900/6,200、高級四人房 6,200/7,100/7,400；鳳凰樓 雅致單/雙人房、雅致雙床房 5,300/6,200/6,500；漢光樓 豪華單/雙人房、豪華雙床房 5,600/6,500/6,800。\n【假日加價】週六$1,500、連續假日$2,000(每房每晚)；農曆春節期間2/15-2/20及跨年12/31不適用。以上優惠價格均已含稅及服務費，恕不與其它優惠專案併用。",
+    "info": "使用對象：教職員、學生、校友、退休人員",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "合約房價表在頁面上為圖片，已轉錄重點，請以頁面圖片為準；合約書標題為「2026年客房合約書」，未載明迄日，期限以2026-12-31計；合約書圖片內文寫「員工憑員工工作證」，與頁面文字「本校教職員/學生/校友/退休人員」不同，依頁面文字；頁面未載明地址",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=3577&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "能量先生",
+    "subtitle": "竹科店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "折$5",
+    "offer": "主動出示教職員/學生/校友/退休人員相關識別證件，現場購買及外送(達到門檻則免運)，每個便當單筆消費折抵5元",
+    "info": "使用對象：教職員、學生、校友、退休人員",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面未載明地址；地區依店名「竹科店」歸類為北部",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=3583&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "好野吧Drink SPORT",
+    "subtitle": "",
+    "category": "food",
+    "regions": [],
+    "address": "",
+    "phone": "",
+    "highlight": "8折",
+    "offer": "出示教職員/學生/校友/退休人員相關識別證件即可享全店8折",
+    "info": "使用對象：教職員、學生、校友、退休人員",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面未載明地址或地區，regions 留空待確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=3584&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "中華航空 台北-鳳凰城航線",
+    "subtitle": "專屬促銷代碼 NTNU35",
+    "category": "transport",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "76折起",
+    "offer": "領取促銷代碼網址，請輸入欄位 1. 員工信箱：限輸入學校信箱 2.專案代碼：NTNU35\n享台北 - 鳳凰城航線(含延伸行程) 限定折扣優惠：商務艙、豪華經濟艙最低 87 折起；經濟艙最低 76 折起！（附件eDM）\n購票網址（請務必於訂位購票時輸入促銷代碼）：https://www.china-airlines.com/tw/zh\n敬請注意以下使用規則：\n每位師生每月限領取一次促銷代碼。\n若領取後首次未完成訂票，該促銷代碼將暫時鎖定，約 15 分鐘後方可重新使用。\n本活動僅限使用學校信箱領取促銷代碼，以確保專屬權益。\n促銷代碼適用於 即日起至 2026 年 12 月 31 日前之開票行程。",
+    "info": "使用對象：師生（限學校信箱領取）",
+    "links": [
+      {
+        "label": "領取促銷代碼",
+        "url": "https://bookingportal.china-airlines.com/eRetailInterface/enterprisePromo.aspx?lang=zh-tw"
+      },
+      {
+        "label": "eDM (PDF)",
+        "url": "https://alumni.ntnu.edu.tw/Welfare/FileDownLoad2?modelid=14&&itemid=3871"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "限學校信箱領取代碼，「每位師生」歸類為學生、教職員（校友無學校信箱時不適用）",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=3871&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "新竹福華大飯店",
+    "subtitle": "新竹",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "專屬優惠價",
+    "offer": "訂房時請告知優惠合約代號：H1036，並攜帶相關證件。提供客房優惠價格自2026年1月1日起至2026年12月31止。\n優惠價（NET）：商務樓層 高級單床房 $2,800（1客早）、高級雙床房 $3,200（2客早）、豪華單床房 $3,200、豪華公寓單床房 $3,400、行政單床房 $3,600；商務家庭房 豪華雙床房 $4,600、豪華公寓雙床房 $5,000（4客早）；經典樓層 經典單床房 $2,200、經典雙床房(無窗) $2,600。\n同房加人住宿時，每人每日加收$400NET加含1客早餐。單/雙人房週六加價$500NET，家庭房型加價$1200NET；春節期間(2/16-2/20)及連續假期另有加價（詳見頁面圖片）。",
+    "info": "使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用；合約房價表在頁面上為圖片，已轉錄重點，請以頁面圖片為準；頁面未載明地址",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=4224&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "華安大飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [],
+    "address": "",
+    "phone": "",
+    "highlight": "專屬優惠價",
+    "offer": "訂房時請告知優惠合約代號：D0952，入住時攜帶相關證件。提供客房優惠價格自2026年1月1日起至2026年12月31止。\n平日合約價/假日合約價/連續假日合約價：商務雙人單床房 2,100/2,600/3,000；商務套房 2,300/3,000/3,400；高級雙人單床房、高級雙人雙床房 2,300/3,000/3,000；豪華套房 2,700/4,000/4,500；豪華雙床房 3,100/4,000/4,500；行政雙床房 4,100/5,300/5,700（含營業稅5%、服務費10%，依房型附贈中西自助式早餐）。\n加床每張NT$900(含早餐)，加人每位NT$600(含早餐)。以上合約價不適用農曆除夕至初四(2026/02/16-2026/02/20)期間。入住時需出示員工證或名片正本，一張證件最多可訂2房。",
+    "info": "使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用；合約房價表在頁面上為圖片，已轉錄重點，請以頁面圖片為準；頁面未載明地址或地區，regions 留空待確認；合約表寫「入住時需出示員工證或名片正本」",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=4225&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "高雄福華大飯店",
+    "subtitle": "高雄",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "",
+    "phone": "(07)230-7799",
+    "highlight": "專屬優惠價",
+    "offer": "訂房優惠合約代號：97282，入住時攜帶相關證件。提供客房優惠價格自2026年1月1日起至2026年12月31止。\n合約價：豪華單床房 NT$2800+10%（贈一客早餐）、豪華雙床房 NT$3600+10%（贈二客早餐）、尊爵豪華單床房 NT$3200+10%、尊爵豪華雙床房 NT$4200+10%、尊爵豪華主管房 NT$3600+10%、尊爵行政單床房 NT$3600+10%、尊爵行政雙床房 NT$4600+10%、尊爵豪華套房 NT$4850+10%。\n每逢週六每房加價NT$600+10%，每逢國定假日每房加價NT$1100+10%。合約房價於農曆春節(2/14-2/22)、跨年期間(12/31)及大型活動期間不適用。\n訂房組專線(07)230-7799；Email:rsvn-ks@howard-hotels.com.tw",
+    "info": "電話：(07)230-7799\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用；合約房價表在頁面上為圖片，已轉錄重點，請以頁面圖片為準；頁面未載明地址",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=4230&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "空服員的手作甜點",
+    "subtitle": "忠孝店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "10690臺北市大安區光武里敦化南路一段190巷11號",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "忠孝店限定優惠：主動出示教職員 / 學生 / 校友 / 退休人員相關證件即可享全品項 9 折優惠！",
+    "info": "地址：10690臺北市大安區光武里敦化南路一段190巷11號\n使用對象：教職員、學生、校友、退休人員",
+    "links": [
+      {
+        "label": "官方網址",
+        "url": "https://www.crewsdessert.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=4321&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "Papa Rice",
+    "subtitle": "臺北市大安區",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市大安區麗水街4號",
+    "phone": "",
+    "highlight": "免服務費",
+    "offer": "凡出示教職員 / 學生 / 校友 / 退休人員相關證件，滿基本消費即可免 10% 服務費\n生日禮和商業午餐可與特約優惠同時使用",
+    "info": "地址：臺北市大安區麗水街4號\n使用對象：教職員、學生、校友、退休人員",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=4322&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "神威影印店",
+    "subtitle": "師大店",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "106臺北市大安區古莊里師大路68巷2-1號",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "1.黑白影印滿 100 元即可打 9 折\n2.彩色影印原價一面 5 元 ，優惠一面 4 元\n＊主動出示教職員/學生/校友/退休人員相關證件",
+    "info": "地址：106臺北市大安區古莊里師大路68巷2-1號\n使用對象：教職員、學生、校友、退休人員",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=4345&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "樂田麵包屋",
+    "subtitle": "古亭門市",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市大安區和平東路一段73號",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "全品項享 9 折優惠\n＊不含線上預訂自取、外送、宅配、早餐三明治、晚安優惠品及外購品\n＊本優惠不得與其他優惠活動併用\n＊主動出示教職員／學生／校友／退休人員相關證件\n＊樂田麵包屋保有活動內容調整及最終解釋之權利",
+    "info": "地址：臺北市大安區和平東路一段73號\n使用對象：教職員、學生、校友、退休人員",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=4354&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "經典數位印刷",
+    "subtitle": "臺師大店",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區古莊里師大路68巷2號",
+    "phone": "",
+    "highlight": "85折起",
+    "offer": "1. 數位印刷及大圖輸出等品項，享 85折 至 9折 之優惠\n2. 倘遇大型印件或大宗印刷需求，將另行提供更具彈性之專案特惠價\n＊主動出示教職員/學生/校友/退休人員相關證件",
+    "info": "地址：台北市大安區古莊里師大路68巷2號\n使用對象：教職員、學生、校友、退休人員",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=4427&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "大安視覺眼鏡",
+    "subtitle": "台北市大安區",
+    "category": "health",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區仁愛路四段48巷9號1樓",
+    "phone": "(02) 2784-5001",
+    "highlight": "免費升級",
+    "offer": "1.【配鏡免費升級】凡至門市辦理配鏡，享免費升級「濾藍光鏡片」服務。\n2.【加購半價優惠】凡於門市配鏡，即享精緻選品太陽眼鏡「半價（5折）」加購優惠。\n識別方式：消費結帳時，請主動出示校友證、員工識別證、學生證或名片等相關證明文件。\n優惠期間：民國 115 年 8 月 1 日 至 116 年 7 月 31 日止\n建議前往門市前先進行線上預約",
+    "info": "電話：(02) 2784-5001\n地址：台北市大安區仁愛路四段48巷9號1樓\n使用對象：本校校友、教職員、學生、退休人員及其隨行眷屬",
+    "links": [
+      {
+        "label": "線上預約 / LINE 諮詢",
+        "url": "https://vibeaico.com/shop/daaneyewear"
+      }
+    ],
+    "expires_on": "2027-07-31",
+    "auto_renew": false,
+    "notes": "",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": true
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=4479&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "瀚寓酒店 Hanns House",
+    "subtitle": "台北市信義區",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市信義區基隆路一段 157 號（鄰近捷運市政府站）",
+    "phone": "+886 2 8758 3777",
+    "highlight": "專屬優惠價",
+    "offer": "優惠價有效期間：即日起至 2026 年 12 月 31 日止\n合約價（含1早/含2早）：尊榮客房、行政客房 $6,000/$6,400 Net；景觀豪華客房 $6,500/$6,900 Net；景觀尊榮客房 $6,900/$7,300 Net；菁英套房(一大床) $7,400/$7,800 Net；菁英套房(二中床) $7,800 Net（含2早）；瀚寓套房 $28,000 Net（含1~2客早餐）。\n優惠房價不適用期間：農曆春節 Feb 14–21, 2026；自行車展 Mar 25–28；COMPUTEX Jun 02–05；SEMICON Sep 02–04, 2026。國際展期及特殊假日每房每晚加價 NT$800；元旦 (2026/1/1–1/3) 及跨年期間 (2026/12/29–12/31) 不適用。\n注意事項：本優惠價格不得與其他優惠專案並用，僅適用於直接與本酒店訂房。訂房信箱：reservation.tpe@hannshouse.com",
+    "info": "電話：+886 2 8758 3777\n地址：台北市信義區基隆路一段 157 號（鄰近捷運市政府站）\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.hannshouse.com/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=4514&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "瀚寓夏天 Hanns Summer",
+    "subtitle": "台北市中正區",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市中正區富水里汀州路三段62號",
+    "phone": "+886 2 7755 7747",
+    "highlight": "專屬優惠價",
+    "offer": "優惠價有效期間：簽約日起至 2026 年 12 月 31 日止\n合約價（Net）：閣樓單人(一大床) NT$2,300；閣樓雙人(二小床，僅4間) NT$2,700；標準三人房(上下舖/無電視) NT$2,500；標準雙人(一大床) NT$2,700；豪華雙人(一大床) NT$2,900；悠悠雙房(一大床) NT$3,100；家庭房(上下舖) NT$3,200。\n優惠房價不適用期間（2026）：農曆春節 Feb 14–21；228 Feb 27–28；清明 Apr 3–5；勞動節 May 1–2；端午 Jun 19–20；中秋 Sep 25–27；國慶 Oct 9–10；光復節 Oct 24–25；行憲紀念日 Dec 25–27。特殊假日每房每晚加價 NT$600；元旦 (2026/1/1–1/2) 及跨年期間 (2026/12/29–12/31) 不適用。\n注意事項：本優惠價格不得與其他優惠專案並用，僅適用於直接與本酒店訂房。訂房信箱：info-tpe@hannssummer.com、HSTPE-FO@hannssummer.com",
+    "info": "電話：+886 2 7755 7747\n地址：臺北市中正區富水里汀州路三段62號\n使用對象：校友、學生、教職員（依頁面通則）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.hannssummer.com/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；依校友中心「特約優惠」頁通則「只要持師大校友證、及師大相關證件就可享有下列優惠與福利」歸類為校友、學生、教職員適用",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學校友中心",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=4515&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "K5時尚趣",
+    "subtitle": "臺師大公館校區 學七舍1樓",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大公館校區 學七舍1樓",
+    "phone": "",
+    "highlight": "特約優惠",
+    "offer": "表定商品優惠價格\n商品類型：香滷飯麵、滷味、火鍋、湯麵、飲品\n營業時間：週一~週六 11:00~21:00\n優惠時間：即日起~116/06/30",
+    "info": "地址：臺師大公館校區 學七舍1樓\n使用對象：校友、學生、教職員",
+    "links": [
+      {
+        "label": "總務處優惠一覽表 (PDF)",
+        "url": "https://drive.google.com/file/d/1v0mCuj6_qPcV5JXNDrFV90iAyi3BxjCH/view?usp=drive_link"
+      }
+    ],
+    "expires_on": "2027-06-30",
+    "auto_renew": false,
+    "notes": "出自校友中心「國立臺灣師範大學優惠訊息」頁連結之總務處「總務處轄下委外餐廳提供優惠意願調查一覽表(三校)」PDF（1120323更新）；憑證適用對象 PDF 未寫明；依校友中心頁通則歸類為校友、學生、教職員適用；優惠內容僅寫「表定商品優惠價格」",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學總務處",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=2466&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "SMILE早餐吧",
+    "subtitle": "臺師大公館校區 學七舍1樓",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大公館校區 學七舍1樓",
+    "phone": "",
+    "highlight": "特約優惠",
+    "offer": "表定商品優惠價格\n商品類型：漢堡、飲料、鐡板麵類\n營業時間：06:00~13:30\n優惠時間：即日起~116/06/30",
+    "info": "地址：臺師大公館校區 學七舍1樓\n使用對象：校友、學生、教職員",
+    "links": [
+      {
+        "label": "總務處優惠一覽表 (PDF)",
+        "url": "https://drive.google.com/file/d/1v0mCuj6_qPcV5JXNDrFV90iAyi3BxjCH/view?usp=drive_link"
+      }
+    ],
+    "expires_on": "2027-06-30",
+    "auto_renew": false,
+    "notes": "出自校友中心「國立臺灣師範大學優惠訊息」頁連結之總務處「總務處轄下委外餐廳提供優惠意願調查一覽表(三校)」PDF（1120323更新）；憑證適用對象 PDF 未寫明；依校友中心頁通則歸類為校友、學生、教職員適用；優惠內容僅寫「表定商品優惠價格」",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學總務處",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=2466&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "覓食堂(西餐)",
+    "subtitle": "臺師大公館校區 學七舍1樓",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大公館校區 學七舍1樓",
+    "phone": "",
+    "highlight": "特約優惠",
+    "offer": "表定商品優惠價格\n商品類型：義大利麵、蛋包飯、單點小食、飲料\n營業時間：週一~週五 10:00~18:30\n優惠時間：即日起~116/06/30",
+    "info": "地址：臺師大公館校區 學七舍1樓\n使用對象：校友、學生、教職員",
+    "links": [
+      {
+        "label": "總務處優惠一覽表 (PDF)",
+        "url": "https://drive.google.com/file/d/1v0mCuj6_qPcV5JXNDrFV90iAyi3BxjCH/view?usp=drive_link"
+      }
+    ],
+    "expires_on": "2027-06-30",
+    "auto_renew": false,
+    "notes": "出自校友中心「國立臺灣師範大學優惠訊息」頁連結之總務處「總務處轄下委外餐廳提供優惠意願調查一覽表(三校)」PDF（1120323更新）；憑證適用對象 PDF 未寫明；依校友中心頁通則歸類為校友、學生、教職員適用；優惠內容僅寫「表定商品優惠價格」",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學總務處",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=2466&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "氹仔燒臘",
+    "subtitle": "臺師大公館校區 學七舍1樓",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大公館校區 學七舍1樓",
+    "phone": "",
+    "highlight": "特約優惠",
+    "offer": "表定商品優惠價格\n商品類型：飲料、零食、熟食、日用品、燒臘飯\n營業時間：週一~週六 10:00~18:30\n優惠時間：即日起~116/06/30",
+    "info": "地址：臺師大公館校區 學七舍1樓\n使用對象：校友、學生、教職員",
+    "links": [
+      {
+        "label": "總務處優惠一覽表 (PDF)",
+        "url": "https://drive.google.com/file/d/1v0mCuj6_qPcV5JXNDrFV90iAyi3BxjCH/view?usp=drive_link"
+      }
+    ],
+    "expires_on": "2027-06-30",
+    "auto_renew": false,
+    "notes": "出自校友中心「國立臺灣師範大學優惠訊息」頁連結之總務處「總務處轄下委外餐廳提供優惠意願調查一覽表(三校)」PDF（1120323更新）；憑證適用對象 PDF 未寫明；依校友中心頁通則歸類為校友、學生、教職員適用；優惠內容僅寫「表定商品優惠價格」",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學總務處",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=2466&mid=16",
+    "retrieved_on": "2026-10-22"
+  },
+  {
+    "name": "紅番茄自助美食餐廳",
+    "subtitle": "臺師大公館校區 學二舍1樓",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "臺師大公館校區 學二舍1樓",
+    "phone": "02-8663-5881",
+    "highlight": "特約優惠",
+    "offer": "表定商品優惠價格\n商品類型：自助餐\n營業時間：11:00-14:00、17:00-19:00\n優惠時間：即日起~116/06/30",
+    "info": "電話：02-8663-5881\n地址：臺師大公館校區 學二舍1樓\n使用對象：校友、學生、教職員",
+    "links": [
+      {
+        "label": "總務處優惠一覽表 (PDF)",
+        "url": "https://drive.google.com/file/d/1v0mCuj6_qPcV5JXNDrFV90iAyi3BxjCH/view?usp=drive_link"
+      }
+    ],
+    "expires_on": "2027-06-30",
+    "auto_renew": false,
+    "notes": "出自校友中心「國立臺灣師範大學優惠訊息」頁連結之總務處「總務處轄下委外餐廳提供優惠意願調查一覽表(三校)」PDF（1120323更新）；憑證適用對象 PDF 未寫明；依校友中心頁通則歸類為校友、學生、教職員適用；優惠內容僅寫「表定商品優惠價格」",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "NTNU"
+    ],
+    "source_level": "school",
+    "source_org": "國立臺灣師範大學總務處",
+    "source_url": "https://alumni.ntnu.edu.tw/Welfare/MessageView?itemid=2466&mid=16",
+    "retrieved_on": "2026-10-22"
+  }
+]
