@@ -1,0 +1,952 @@
+[
+  {
+    "name": "耐斯王子大飯店",
+    "subtitle": "餐廳團體餐券",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "嘉義市忠孝路600號",
+    "phone": "",
+    "highlight": "團購優惠",
+    "offer": "餐廳團體餐劵團購優惠",
+    "info": "地址：嘉義市忠孝路600號\n使用對象：未載明（本校特約）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象與期間；歸類為教職員工適用；同名住宿優惠另列一筆",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "法羅米手感麵包",
+    "subtitle": "嘉義縣大林鎮",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "嘉義縣大林鎮平林里新興街151號",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "憑識別證享麵包類9折（限教職員工）",
+    "info": "地址：嘉義縣大林鎮平林里新興街151號\n使用對象：限教職員工",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "原合約期間已過，一覽表註明「1060524自動展延」；一覽表標示期間：1060524自動展延",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "埔里四季蒸宴",
+    "subtitle": "南投縣埔里鎮",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "南投縣埔里鎮桃南路43號",
+    "phone": "07-2621158",
+    "highlight": "消費贈品",
+    "offer": "憑本校教職員工生識別證用餐每桌贈送飲料2瓶或其他用餐優惠",
+    "info": "電話：07-2621158\n地址：南投縣埔里鎮桃南路43號\n使用對象：教職員工生",
+    "links": [],
+    "expires_on": "2026-12-30",
+    "auto_renew": false,
+    "notes": "電話依一覽表照錄（07區碼）；一覽表標示期間：1150101-1151230",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "大頭雞薑片茶油雞",
+    "subtitle": "嘉義市",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "嘉義市台林街187號",
+    "phone": "",
+    "highlight": "消費贈品",
+    "offer": "憑本校教職員工生識別證到場消費，滿額300元贈送一份手工蝦味先，滿600元贈送二份，以此類推。",
+    "info": "地址：嘉義市台林街187號\n使用對象：教職員工生",
+    "links": [],
+    "expires_on": "2026-11-15",
+    "auto_renew": false,
+    "notes": "一覽表標示期間：1131115-1151115",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "初八拉麵",
+    "subtitle": "民雄店、嘉義市安樂街店",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "嘉義縣民雄鄉建國路二段488-1號；嘉義市安樂街188號",
+    "phone": "05-2260198；05-2166808",
+    "highlight": "95折",
+    "offer": "憑本校教職員生識別證用餐可享95折優惠。\n三人同行點購三份主食，免單一份日式酥炸魷魚。",
+    "info": "電話：05-2260198；05-2166808\n地址：嘉義縣民雄鄉建國路二段488-1號；嘉義市安樂街188號\n使用對象：教職員生",
+    "links": [],
+    "expires_on": "2026-11-07",
+    "auto_renew": false,
+    "notes": "一覽表標示期間：1131107-1151107",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "民雄阿潘肉包",
+    "subtitle": "嘉義縣民雄鄉",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "嘉義縣民雄鄉建國路一段45號",
+    "phone": "05-2265007",
+    "highlight": "95折",
+    "offer": "憑本校教職員工生識別證、退休人員證、中正之友卡、校友卡購買店內商品可享95折優惠，若商品本身已有優惠折扣且優於95折，則不適用。",
+    "info": "電話：05-2265007\n地址：嘉義縣民雄鄉建國路一段45號\n使用對象：教職員工生、退休人員、中正之友卡、校友卡",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "一覽表商店名稱：民雄阿潘肉包股份有限公司；一覽表標示期間：1150101-1151231",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "打貓廚房、打貓咖啡",
+    "subtitle": "啟坤科技股份有限公司",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "打貓咖啡：嘉義市東區共和路191巷3號；打貓廚房：嘉義縣民雄鄉建國路二段42號",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "憑本校教職員工生識別證、退休人員證、中正之友卡及校友卡消費享9折優惠（不疊加）。",
+    "info": "地址：打貓咖啡：嘉義市東區共和路191巷3號；打貓廚房：嘉義縣民雄鄉建國路二段42號\n使用對象：教職員工生、退休人員、中正之友卡、校友卡",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "一覽表標示期間：1150316-1151231",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "foodpanda 企業帳號",
+    "subtitle": "富胖達股份有限公司",
+    "category": "food",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "",
+    "phone": "02-77500288#60718",
+    "highlight": "企業帳號",
+    "offer": "填寫表單升級為企業帳號享有專屬優惠、優先派單及活動配餐等服務\nhttps://forms.gle/sZnMFQDggoFXjtDJ7",
+    "info": "電話：02-77500288#60718\n使用對象：未載明（企業帳號）",
+    "links": [
+      {
+        "label": "申請表單",
+        "url": "https://forms.gle/sZnMFQDggoFXjtDJ7"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "原期間已過，一覽表註明「自動展延」；企業帳號方案，歸類為教職員工適用；外送平台，歸類為全區；一覽表標示期間：1121116-1131231自動展延",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "義大天悅飯店",
+    "subtitle": "高雄市",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市",
+    "phone": "",
+    "highlight": "專屬優惠價",
+    "offer": "憑識別證事先訂房可享優惠，持退休人員證適用",
+    "info": "地址：高雄市\n使用對象：教職員工（憑識別證）",
+    "links": [],
+    "expires_on": "2026-12-29",
+    "auto_renew": false,
+    "notes": "條款只寫「憑識別證」，未寫明適用對象；依工作規則歸類為教職員工適用，學生、校友未列入；聯絡人：黃業務主任；一覽表標示期間：1141222-1151229",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "義大皇家飯店",
+    "subtitle": "高雄市大樹區",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市大樹區學城路一段153號",
+    "phone": "07-6568166＃51210",
+    "highlight": "專屬優惠價",
+    "offer": "憑識別證事先訂房可享優惠，持退休人員證適用",
+    "info": "電話：07-6568166＃51210\n地址：高雄市大樹區學城路一段153號\n使用對象：教職員工（憑識別證）",
+    "links": [],
+    "expires_on": "2026-12-29",
+    "auto_renew": false,
+    "notes": "條款只寫「憑識別證」，未寫明適用對象；依工作規則歸類為教職員工適用，學生、校友未列入；聯絡人：林副協理；一覽表標示期間：1150114-1151229",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "耐斯王子大飯店",
+    "subtitle": "住宿",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "嘉義市忠孝路600號",
+    "phone": "05-3109898＃6638",
+    "highlight": "專屬優惠價",
+    "offer": "憑識別證事先訂房可享優惠",
+    "info": "電話：05-3109898＃6638\n地址：嘉義市忠孝路600號\n使用對象：教職員工（憑識別證）",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款只寫「憑識別證」，未寫明適用對象；依工作規則歸類為教職員工適用，學生、校友未列入；聯絡人：許副理；一覽表標示期間：1150101-1151231",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "葛瑪蘭溫泉飯店",
+    "subtitle": "宜蘭縣礁溪鄉",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "宜蘭縣礁溪鄉溫泉路40號",
+    "phone": "03-9876967",
+    "highlight": "專屬優惠價",
+    "offer": "憑識別證事先訂房可享優惠",
+    "info": "電話：03-9876967\n地址：宜蘭縣礁溪鄉溫泉路40號\n使用對象：教職員工（憑識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "條款只寫「憑識別證」，未寫明適用對象；依工作規則歸類為教職員工適用，學生、校友未列入；原期間已過，一覽表註明「自動展延」；一覽表標示期間：1090420-1100419自動展延",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "新悅花園酒店",
+    "subtitle": "嘉義市東區",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "嘉義市東區保順路69號",
+    "phone": "05-2778666",
+    "highlight": "專屬優惠價",
+    "offer": "憑識別證事先訂房可享優惠（持退休人員證可適用【員工及眷屬住宿優惠價】；【員工出差 住宿】則不適用）",
+    "info": "電話：05-2778666\n地址：嘉義市東區保順路69號\n使用對象：教職員工（憑識別證）",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款只寫「憑識別證」，未寫明適用對象；依工作規則歸類為教職員工適用，學生、校友未列入；聯絡人：黃經理；一覽表標示期間：1150101-1151231",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "台北旅店集團",
+    "subtitle": "喜瑞、丹迪、新驛旅店",
+    "category": "lodging",
+    "regions": [
+      "north",
+      "central"
+    ],
+    "address": "台北市中山區復興北路338號",
+    "phone": "886-2-2515-8777",
+    "highlight": "9折",
+    "offer": "住房輸入統編享9折優惠(喜瑞飯店、丹迪旅店天津店、大安森林公園店、天母店、新驛旅店台北車站一館、二館、三館、西門店、復興北路店、台中車站店)",
+    "info": "電話：886-2-2515-8777\n地址：台北市中山區復興北路338號\n使用對象：未載明（輸入統編）",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款只寫「住房輸入統編」，未寫明適用對象；歸類為教職員工適用；含台中車站店，地區列北部、中部；一覽表標示期間：1141027-1151231",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "知本金聯世紀酒店",
+    "subtitle": "台東縣卑南鄉",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "台東縣卑南鄉龍泉路30號",
+    "phone": "07-2621158",
+    "highlight": "專屬優惠價",
+    "offer": "憑識別證事先訂房可享優惠",
+    "info": "電話：07-2621158\n地址：台東縣卑南鄉龍泉路30號\n使用對象：教職員工（憑識別證）",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款只寫「憑識別證」，未寫明適用對象；依工作規則歸類為教職員工適用，學生、校友未列入；聯絡人：李先生；一覽表標示期間：1150101-1151231",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "蜜月世紀大飯店",
+    "subtitle": "桃園市桃園區",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "桃園市桃園區三民路三段 55 號",
+    "phone": "07-2621158",
+    "highlight": "專屬優惠價",
+    "offer": "憑識別證事先訂房可享優惠",
+    "info": "電話：07-2621158\n地址：桃園市桃園區三民路三段 55 號\n使用對象：教職員工（憑識別證）",
+    "links": [],
+    "expires_on": "2026-12-30",
+    "auto_renew": false,
+    "notes": "條款只寫「憑識別證」，未寫明適用對象；依工作規則歸類為教職員工適用，學生、校友未列入；聯絡人：李先生；一覽表標示期間：1150101-1151230",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "嘉義富野度假酒店",
+    "subtitle": "嘉義縣民雄鄉",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "嘉義縣民雄鄉三興村升學一街19號",
+    "phone": "05-2721688",
+    "highlight": "專屬優惠價",
+    "offer": "憑識別證事先訂房可享優惠",
+    "info": "電話：05-2721688\n地址：嘉義縣民雄鄉三興村升學一街19號\n使用對象：教職員工（憑識別證）",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款只寫「憑識別證」，未寫明適用對象；依工作規則歸類為教職員工適用，學生、校友未列入；一覽表標示期間：1150101-1151231",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "蘭桂坊花園酒店",
+    "subtitle": "嘉義市西區",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "嘉義市西區延平街250號",
+    "phone": "05-2288228",
+    "highlight": "專屬優惠價",
+    "offer": "憑識別證事先訂房可享優惠",
+    "info": "電話：05-2288228\n地址：嘉義市西區延平街250號\n使用對象：教職員工（憑識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "條款只寫「憑識別證」，未寫明適用對象；依工作規則歸類為教職員工適用，學生、校友未列入；聯絡人：黃先生；一覽表標示期間：1130606-自動展延",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "村却國際溫泉酒店",
+    "subtitle": "宜蘭縣羅東鎮",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "宜蘭縣羅東鎮站東路190號",
+    "phone": "06-3026836#16",
+    "highlight": "專屬優惠價",
+    "offer": "憑本校識別證正本及統編入住可享優惠",
+    "info": "電話：06-3026836#16\n地址：宜蘭縣羅東鎮站東路190號\n使用對象：教職員工（憑識別證）",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款只寫「憑識別證」，未寫明適用對象；依工作規則歸類為教職員工適用，學生、校友未列入；聯絡人：業務副理謝小姐；一覽表標示期間：1140101-1151231",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "台南桂田酒店",
+    "subtitle": "台南市永康區",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市永康區永安一街99號",
+    "phone": "06-702-1789 轉 6",
+    "highlight": "9折",
+    "offer": "憑識別證或名片訂房可享優惠價\n憑教職員工生識別證或名片用餐可享九折另加原價一成服務費之優惠",
+    "info": "電話：06-702-1789 轉 6\n地址：台南市永康區永安一街99號\n使用對象：訂房：識別證或名片；用餐：教職員工生",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "學生僅適用用餐九折（「教職員工生識別證」）；訂房只寫「識別證或名片」；一覽表標示期間：1150305-1151231",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "墾丁福華渡假飯店",
+    "subtitle": "屏東縣恆春鎮",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "屏東縣恆春鎮墾丁路2號",
+    "phone": "05-8862323",
+    "highlight": "專屬優惠價",
+    "offer": "本校教職員工憑識別證事先訂房可享優惠",
+    "info": "電話：05-8862323\n地址：屏東縣恆春鎮墾丁路2號\n使用對象：本校教職員工",
+    "links": [],
+    "expires_on": "2027-12-31",
+    "auto_renew": false,
+    "notes": "聯絡人：古小姐；一覽表標示期間：1150101-1151231、1160101-1161231",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "薰衣草森林",
+    "subtitle": "薰衣草森林股份有限公司",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04-22581109#8005",
+    "highlight": "特約優惠",
+    "offer": "憑本校識別證可享訂房、餐飲、DIY、入園等優惠",
+    "info": "電話：04-22581109#8005\n使用對象：教職員工（憑識別證）",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款只寫「憑識別證」，未寫明適用對象；依工作規則歸類為教職員工適用，學生、校友未列入；一覽表列兩次，內容相同，合併為一筆；未載明地址；地區依04區碼歸類為中部；聯絡人：黃小姐；一覽表標示期間：1141205-1151231",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "比雅久電動車業 嘉電營業所",
+    "subtitle": "PGO",
+    "category": "transport",
+    "regions": [
+      "south"
+    ],
+    "address": "嘉義市中山路258號",
+    "phone": "05-2166138",
+    "highlight": "特約優惠",
+    "offer": "保養、購車及配件優惠",
+    "info": "電話：05-2166138\n地址：嘉義市中山路258號\n使用對象：未載明",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "條款未寫明適用對象；歸類為教職員工適用；原期間已過，一覽表註明「自動展延」；一覽表標示期間：1090623-1100622自動展延",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "嘉義市私立林肯幼兒園",
+    "subtitle": "嘉義市東區",
+    "category": "education",
+    "regions": [
+      "south"
+    ],
+    "address": "嘉義市東區維新路19號2樓",
+    "phone": "05-2741111",
+    "highlight": "8折",
+    "offer": "憑本校識別證可享以下優惠：\n贈送林肯書杯一個、制服一件及課後才藝費用八折",
+    "info": "電話：05-2741111\n地址：嘉義市東區維新路19號2樓\n使用對象：教職員工（憑識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "條款只寫「憑識別證」，未寫明適用對象；依工作規則歸類為教職員工適用，學生、校友未列入；原期間已過，一覽表註明「自動展延」；一覽表標示期間：1120401-1140331自動展延",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "嘉義市私立林肯文理短期補習班",
+    "subtitle": "嘉義市東區",
+    "category": "education",
+    "regions": [
+      "south"
+    ],
+    "address": "嘉義市東區維新路19號2樓",
+    "phone": "05-2741111",
+    "highlight": "5折",
+    "offer": "憑本校識別證可享以下優惠：\nESL美語課程註冊費打五折",
+    "info": "電話：05-2741111\n地址：嘉義市東區維新路19號2樓\n使用對象：教職員工（憑識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "條款只寫「憑識別證」，未寫明適用對象；依工作規則歸類為教職員工適用，學生、校友未列入；原期間已過，一覽表註明「自動展延」；一覽表標示期間：1120401-1140331自動展延",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "六書堂數位學習 WUWOW",
+    "subtitle": "WUWOW成人線上英文、WUWOW JUNIOR",
+    "category": "education",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "臺中市南屯區公益路二段971號",
+    "phone": "04-2323-6666分機601",
+    "highlight": "85折",
+    "offer": "購買乙方品牌【WUWOW成人線上英文】、【WUWOWJUNIOR兒童線上英文】之課程方案，於出示甲方核發之有效識別證明或其他經雙方同意之證明文件後，得享乙方雙品牌課程方案大專院校專屬85折優惠",
+    "info": "電話：04-2323-6666分機601\n地址：臺中市南屯區公益路二段971號\n使用對象：未載明（甲方核發之有效識別證明）",
+    "links": [],
+    "expires_on": "2027-03-31",
+    "auto_renew": true,
+    "notes": "條款只寫「甲方核發之有效識別證明」；歸類為教職員工適用；線上課程，歸類為全區；聯絡人：黃先生；一覽表標示期間：1150401-1160331自動展延",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "航典國際旅行社",
+    "subtitle": "嘉義",
+    "category": "services",
+    "regions": [
+      "south"
+    ],
+    "address": "600嘉義市西區興業西路300號一樓",
+    "phone": "05-2841866",
+    "highlight": "折$1000",
+    "offer": "憑本校識別證透過網路報名可以網路價格再享以下優惠折扣：國外團體旅遊享價格優惠1000元/人、國外團體自由行享價格優惠500元/人",
+    "info": "電話：05-2841866\n地址：600嘉義市西區興業西路300號一樓\n使用對象：教職員工（憑識別證）",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": true,
+    "notes": "條款只寫「憑識別證」，未寫明適用對象；依工作規則歸類為教職員工適用，學生、校友未列入；聯絡人：邱小姐；一覽表標示期間：1141119-1151231自動展延",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "義大遊樂世界",
+    "subtitle": "高雄市",
+    "category": "entertainment",
+    "regions": [
+      "south"
+    ],
+    "address": "",
+    "phone": "07-6568168",
+    "highlight": "7折起",
+    "offer": "全票七折優惠起\n特約代碼：06313774、ccueda",
+    "info": "電話：07-6568168\n使用對象：未載明（特約代碼）",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；歸類為教職員工適用；一覽表標示期間：1121116-1151231",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "阿瘦皮鞋 線上購物網",
+    "subtitle": "阿瘦實業股份有限公司",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "",
+    "phone": "0925-189868",
+    "highlight": "特約優惠",
+    "offer": "線上購物網優惠\nhttps://groupbuyforms.tw/cvkn9",
+    "info": "電話：0925-189868\n使用對象：未載明",
+    "links": [
+      {
+        "label": "線上購物網",
+        "url": "https://groupbuyforms.tw/cvkn9"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "條款未寫明適用對象與折數；歸類為教職員工適用；原期間已過，一覽表註明「自動展延」；線上購物，歸類為全區；一覽表標示期間：1091005-1101004自動展延",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "徐氏父女皮件工作室",
+    "subtitle": "台北市大安區",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區羅斯福路3段283巷14弄14-1號",
+    "phone": "02-2362-0321",
+    "highlight": "95折",
+    "offer": "憑本校教職員工生識別證、校友卡及中正之友卡消費可享單件95折及燙金服務半價優惠",
+    "info": "電話：02-2362-0321\n地址：台北市大安區羅斯福路3段283巷14弄14-1號\n使用對象：教職員工生、校友卡、中正之友卡",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "原期間已過，一覽表註明「自動展延」；一覽表標示期間：1130410-1140410自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  },
+  {
+    "name": "捷比童裝行",
+    "subtitle": "嘉義市西區",
+    "category": "shopping",
+    "regions": [
+      "south"
+    ],
+    "address": "嘉義市西區西榮里民族路552號1樓",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "憑本校教職員工生識別證、校友卡、中正之友卡、退休人員證等消費可享全館正價商品9折優惠",
+    "info": "地址：嘉義市西區西榮里民族路552號1樓\n使用對象：教職員工生、校友卡、中正之友卡、退休人員",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "一覽表標示期間：1150401-1151231",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CCU"
+    ],
+    "source_level": "school",
+    "source_org": "國立中正大學 校友園地",
+    "source_url": "https://docs.google.com/spreadsheets/d/1DvpRN2eQIZDv5pg8qKQtI5cn7SEP_Vhwd9S5RICSlJA/edit",
+    "retrieved_on": "2026-10-23"
+  }
+]
