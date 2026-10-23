@@ -1717,3 +1717,49 @@ Eligibility nuance worth storing: THSR and TRA cover only ROC college-level stud
 - **Last-updated signal**: end dates run to 116/12/31 and 116/9/23, so the list is current.
 - **Students eligible?**: **Some.** The 義美 post says 「優惠對象包含本校教職員工及在學學生，憑教職員工識別證、學生證即可享有專屬優惠」. The 饗賓 post says 「憑教職員工識別證」, which means staff only.
 - **Extraction difficulty**: 3 (clean titles and dates, but each post has to be opened and the terms are in PDFs)
+
+## Round 2 (2026-10-23), partial
+
+**Retry of the unreachable schools by a second route (WebFetch, which runs outside this container's proxy).** I retried 25 URLs that had failed through the proxy.
+
+**Still unreachable (23 of 25):**
+- **503 on both routes:** 22 URLs:
+  - alumni.ntou
+  - api.dhsa.ndhu (東華 student-union card stores)
+  - w3.tnua
+  - alumni.niu
+  - personnel.nfu
+  - nqu 特約商店
+  - tcpa
+  - sa.csu (正修 學務處 shop_vip)
+  - asia
+  - knu
+  - feu (old 遠東 list)
+  - career.cust
+  - alumni.ocu
+  - ydu
+  - hwh
+  - cufa
+  - sa.ctbc (中信金融 學務處 「學校特約商店名單」)
+  - mkc
+  - oga.jente
+  - b009.mhchcm
+  - smc
+- **高醫:** personnel.kmu redirects to an error page, and alumni.kmu returns 403.
+
+These servers appear to refuse non-Taiwan or cloud traffic. **Re-check them from a network inside Taiwan.**
+
+**Loaded but no list (2):**
+- olife.ntou.edu.tw is a dining-news feed. It has single promotions, such as a 路易莎 「海洋大學特餐」 offer for 教職員 dated 2026-05-18, but no store list.
+- dweb.cjcu.edu.tw/benefits is a 「查無此網站」 page.
+
+**Not finished in this session.** These two round-2 tasks were started, but their results were not in when the session ended:
+1. **School gaps:**
+   - A full survey of the 10 under-searched schools: 敏實, 台北海洋, 南亞, 樹人, 育英, 德育, 黎明, 文藻, 嘉義大學, 臺南大學.
+   - One more targeted search for each of the 21 "nothing found" schools.
+   - Exact counts for the lists that were only lower bounds: 南臺 (all 8 categories), 明新, 臺藝大, 高雄大學, 彰師大, 長庚, 中山醫, 中原.
+2. **Brand perks, round 2:**
+   - Verify the round-1 "unverified leads" (故宮, 兩廳院, 衛武營, Adobe, Autodesk, 中華電信, 台灣大哥大, YouTube Premium, 國光客運, cinemas, banks, airlines, food chains).
+   - Add the missing categories: 客運, MRT/TPASS student fares, scooter and bike sharing, bookstores, more software and hardware, streaming, gyms, theme parks, youth travel and banks.
+
+**These are good candidates for new worker issues.**
