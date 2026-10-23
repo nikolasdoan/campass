@@ -540,6 +540,393 @@ The record shape is: a nationwide deal with `regions` set to all four, a `source
 
 Eligibility nuance worth storing: THSR and TRA cover only ROC college-level students (no 空中大學). KKBOX also takes senior-high students up to age 25. Spotify requires age 18 or older. Most museum discounts also accept other groups (children, seniors), so the record should note that the discount is not exclusive to students.
 
+## Brand-direct student perks, round 2 (2026-10-23)
+
+This round verified 47 more perks on official pages, so the two rounds together total **83**: 82 live and 1 expired. I checked two of the new entries against the saved pages:
+- 台北101 觀景台: 「學生/樂齡方案/愛心票/軍警消專案 NT$300」, against NT$600 for adults.
+- 中華電信 4G學生方案: from $288/月. The page says 「本活動期間自即日起至115/09/30止」 and is still live, so the record needs a review date rather than an expiry.
+
+Research date: 2026-10-23. This round adds to `wide/out/brands.md` (round 1, 36 perks) and does not repeat those perks.
+
+**Method.** Every verified perk below comes from an official page fetched with `curl -sS -L --max-time 30`. TLS was always verified, the proxy was left in place, and nothing was downgraded to http. Raw pages are in `(session scratchpad)/wide/r2/brands/raw/`, under the id shown in each block (`<id>.html`). The fetch log is `raw/status.tsv`, with columns id, URL, HTTP status, final URL and bytes. The scripts are in `r2/brands/bin/`. Quoted terms are copied from the fetched page. Search snippets were used only to find URLs; none is cited as a fact. I used about 21 WebSearch calls.
+
+**What blocked the rest.** Many sites returned 403 (Cloudflare/Akamai), reset the connection, or failed at the proxy with `CONNECT 502`. I did not try to get around any of these. On some sites the student price loads with JavaScript, so it is not in the HTML; those are marked "partial".
+
+**Count.** 47 new perks are fully verified (official page, student condition and price all on the page). 2 more are partial: the page shows a student perk but not its price. Several negative findings (no student fare or plan exists on the official page) are in the last section.
+
+---
+
+### Summary table
+
+Scope means one of: online/global; nationwide; or a named venue and its county.
+
+| # | Company / perk | Category | Scope | Who qualifies (short) | Price / discount (short) | Validity / end date | HTTP |
+|---|---|---|---|---|---|---|---|
+| R1 | 中華電信 4G學生方案 | services | nationwide | Students (primary school and up) or graduates of MOE-registered schools; school staff | NT$288 / 388 / 588 / 688 per month, 30-month contract | Page says "至115/09/30止" (2026-09-30, already past) but the page is still live and links a 2026 Q4 PDF | 200 |
+| R2 | Samsung 星學力教育商店 | shopping | online, TW store | Register with a ".edu.com" mailbox (page wording) | "教育優惠 最低 7 折"; e.g. Buds4 7折, Watch 8折, Tab 9折 | Per-item promos; one listed promo runs 2026/10/7 to 2026/12/31 | 200 |
+| R3 | YouTube Premium / Music Premium 學生方案 | entertainment | online, Taiwan listed | Higher-education students verified by SheerID | Discounted rate (amount not on page) | Up to 4 years in a row, re-verify yearly | 200 |
+| R4 | Wolfram Mathematica 學生版 | education | online | Full- or part-time students, K-12 up to doctoral degree | Student-plan pricing (amount loads with JS) | Yearly / semester / monthly / 4-year plans | 200 |
+| R5 | Perplexity Pro for Students | education | online | Students | US$10 per month | none stated | 200 |
+| R6 | Sketch for Education | education | online | Students and educators (application form) | Free for 1 year | 1 year | 200 |
+| R7 | Framer for students | education | online | Students (apply for the discount) | Framer free, plus 1,000 AI credits per month | none stated | 200 |
+| R8 | Codecademy Pro Student | education | online | Eligible students | "over 35% off the regular price" | none stated | 200 |
+| R9 | Xmind Education | education | online | Students and staff at accredited institutions, K-12 included | 30% off any plan | none stated | 200 |
+| R10 | Overleaf Student plan | education | online | Students enrolled at a degree-granting institution | US$8.25/month billed yearly (US$98/yr), or US$13/month | none stated | 200 |
+| R11 | Craft 教育版 | education | online | Sign up with a school email | Premium features free | none stated | 200 |
+| R12 | 救國團 青年活動中心 (lodging) | lodging | nationwide (centers in many counties) | "持有在學證明文件之學生" are one of the 7 groups allowed to stay | Allowed to stay; 劍潭 club-training package NT$1,399 per person and up | Package to 2026-12-31 | 200 |
+| R13 | 劍湖山世界 學生票 | entertainment | 雲林縣 | Junior high and up, with student ID | NT$999 list, NT$699 promo (vs NT$1,199) | 2026-09-19 to 2026-12-27 | 200 |
+| R14 | 九族文化村 學生票 | entertainment | 南投縣 | Junior high, senior high and college students with proof | NT$980 (vs NT$1,100), includes the 日月潭 ropeway | none stated | 200 |
+| R15 | 遠雄海洋公園 優待票 | entertainment | 花蓮縣 | Students of any age with their own student ID (also ages 13-18) | NT$890 (vs NT$990) | none stated | 200 |
+| R16 | 國立故宮博物院 南部院區 | entertainment | 嘉義縣 | "本國學生（持「教育部立案學校有效學生證」者）" | Free (vs NT$150) | none stated | 200 |
+| R17 | 國立歷史博物館 | entertainment | 臺北市 | Students with a valid student ID or admission notice | NT$40 (vs NT$80) | none stated | 200 |
+| R18 | 國立海洋科技博物館 | entertainment | 基隆市 | "6歲以上學童及學生" | e.g. 主題館 NT$140 (vs NT$200) | page dated 115/09/07 | 200 |
+| R19 | 蘭陽博物館 | entertainment | 宜蘭縣 | ROC students aged 6+ (senior high and up show ID); Yilan-registered students free | 學生票 NT$50 permanent exhibit (vs NT$100) | none stated | 200 |
+| R20 | 新北市立十三行博物館 | entertainment | 新北市 | "國內各級學校之學生" | Free (vs NT$80) | none stated | 200 |
+| R21 | 新北市立黃金博物館 | entertainment | 新北市 | "就讀國內各級學校之在學學生" | Free (vs NT$80) | none stated | 200 |
+| R22 | 新北市立淡水古蹟博物館 | entertainment | 新北市 | "就讀國內各級學校之在學學生" | Free (vs NT$80, covers 3 sites) | none stated | 200 |
+| R23 | 新北市立鶯歌陶瓷博物館 | entertainment | 新北市 | "就讀國內各級學校之在校學生" | Free (vs NT$80) | page updated 2026-07-15 | 200 |
+| R24 | 新北市立坪林茶業博物館 | entertainment | 新北市 | "就讀國內各級學校之在學學生" | Free (vs NT$80) | none stated | 200 |
+| R25 | 台北101 觀景台 | entertainment | 臺北市 | Students (with ROC ID documents; bought at the 1F counter) | NT$300 (vs NT$600) | none stated | 200 |
+| R26 | 臺北自來水園區 | entertainment | 臺北市 | "學生 (不含社區大學)" | Half price: NT$40 in Jul-Aug, NT$25 otherwise | Seasonal fee table | 200 |
+| R27 | 野柳地質公園 | entertainment | 新北市 | Students with a Taiwan student ID; ISIC holders | NT$60 (vs NT$120) | none stated | 200 |
+| R28 | 臺南市公有古蹟 (赤崁樓, 安平古堡 and others) | entertainment | 臺南市 | Students from other counties half price; Tainan students free | NT$35 (vs NT$70) / free | Municipal fee rule | 200 |
+| R29 | 朱銘美術館 | entertainment | 新北市 | Students | NT$320 (vs NT$350) | none stated | 200 |
+| R30 | 武陵農場 | entertainment | 臺中市 | Students (open-university and evening-division students excluded) | NT$130 (vs NT$160) | none stated | 200 |
+| R31 | 福壽山農場 | entertainment | 臺中市 | Students (junior high, senior high, university) | NT$120 (vs NT$150) | none stated | 200 |
+| R32 | 綠世界生態農場 | entertainment | 新竹縣 | Junior and senior high students with ID | NT$400 (vs NT$480) | none stated | 200 |
+| R33 | 泰雅渡假村 | entertainment | 南投縣 | Junior high, senior high and college students with ID | 學生票 NT$250 (vs NT$300) | none stated | 200 |
+| R34 | 中華郵政 郵政博物館 | entertainment | 臺北市 | Students with ID or admission notice | NT$15 (vs NT$30) | page updated 115/05/29 | 200 |
+| R35 | 太平山國家森林遊樂區 | entertainment | 宜蘭縣 | 學生（憑學生證） | NT$100 (vs NT$150 weekday / NT$200 holiday) | none stated | 200 |
+| R36 | 滿月圓國家森林遊樂區 | entertainment | 新北市 | 學生（憑學生證） | NT$50 (vs NT$80 / 100) | none stated | 200 |
+| R37 | 內洞國家森林遊樂區 | entertainment | 新北市 | 學生（憑學生證） | NT$40 (vs NT$65 / 80) | none stated | 200 |
+| R38 | 東眼山國家森林遊樂區 | entertainment | 桃園市 | 學生（憑學生證） | NT$50 (vs NT$80 / 100) | none stated | 200 |
+| R39 | 大雪山國家森林遊樂區 | entertainment | 臺中市 | 學生(憑學生證) | NT$100 (vs NT$200 holiday) | none stated | 200 |
+| R40 | 奧萬大國家森林遊樂區 | entertainment | 南投縣 | Students with ID | NT$100 (vs NT$200 holiday) | none stated | 200 |
+| R41 | 阿里山國家森林遊樂區 | entertainment | 嘉義縣 | ROC students with ID NT$100; foreign students with ID NT$150 | NT$100 (vs NT$300) | none stated | 200 |
+| R42 | 藤枝國家森林遊樂區 | entertainment | 高雄市 | 學生(憑學生證) | NT$60 (vs NT$120) | none stated | 200 |
+| R43 | 墾丁國家森林遊樂區 | entertainment | 屏東縣 | 學生(憑學生證) | NT$75 (vs NT$150 holiday) | none stated | 200 |
+| R44 | 雙流國家森林遊樂區 | entertainment | 屏東縣 | 學生(憑學生證) | NT$50 (vs NT$100 holiday) | none stated | 200 |
+| R45 | 知本國家森林遊樂區 | entertainment | 臺東縣 | 學生(憑學生證) | NT$50 (vs NT$80 / 100) | none stated | 200 |
+| R46 | 池南國家森林遊樂區 | entertainment | 花蓮縣 | 學生(憑學生證) | NT$25 (vs NT$40 / 50) | none stated | 200 |
+| R47 | 富源國家森林遊樂區 | entertainment | 花蓮縣 | 學生(限本人持學生證) | NT$50 (vs NT$150) | Park closed for typhoon on 2026-10-22 | 200 |
+| P1 | 六福村 學生票 (partial) | entertainment | 新竹縣 | Students must show ID | Price loads with JS; not in HTML | none stated | 200 |
+| P2 | ASUS 教育優惠方案 (partial) | shopping | online, TW store | Students, teachers and school staff | Not on page; program page returned 403 | none stated | 200 / 403 |
+
+---
+
+### Services (telecom)
+
+#### R1. 中華電信: 4G學生方案 (青春無敵學生方案)
+- **URL:** https://www.cht.com.tw/home/campaign/forstu/ (HTTP 200; raw `cht2`)
+- **Who qualifies:** "「4G學生方案」適用對象:限教育部/局立案之國內公私立國小(含)以上學校學生或畢業生，及教育部立案之公私立各級學校教職員工（含正職、 約聘、 約僱人員）持指定證件辦理至中華電信營業窗口或特約服務中心辦理。" "未滿18歲欲申請本專案者，須檢附法定代理人雙證件及同意之文件。"
+- **Price (single-number plans):** "$ 588 /月 租期30個月 搭配 4G學生 上網量 無限瀏覽 網內前5分鐘免費+40分鐘 網外40分鐘 市話60分鐘"; "$ 288 /月 租期30個月 搭配 4G學生 上網量 4GB/月 網內前3分鐘免費+30分鐘 網外30分鐘 市話40分鐘". Plans bundled with a device: NT$388 (5GB) and NT$688 (無限瀏覽). All include "享「漫遊上網方案9折優惠」".
+- **Penalty:** ending the contract early means repaying the subsidy in cash, pro rata.
+- **Validity:** "本活動期間自即日起至115/09/30止，活動及各項優惠截止時間依網站公告為準。" That date has passed, but the page is still live and links "115年第四季行動優惠促銷方案「學生優惠方案」完整資訊" (PDF; the fetch was reset). **Set a near review date.**
+- **Scope:** nationwide.
+- **Note:** 亞太電信 is no longer separate. https://www.aptg.com.tw/ redirected to https://www.fetnet.net/content/cbu/tw/index.html (raw `gt0`), whose homepage links the 遠傳 student plan that round 1 already has (#33).
+
+### Shopping (hardware)
+
+#### R2. Samsung 台灣: 星學力教育商店
+- **URL:** https://www.samsung.com/tw/offer/edu-online-offer/ (HTTP 200; raw `sams1`). Linked from the homepage as "教育優惠商店".
+- **Terms:** "教育優惠 最低 7 折", "使用 .edu.com 信箱即可註冊 領取優惠序號" (that is the page's own wording; read it as a school email). Examples: "Galaxy Buds4 | Buds4 Pro 【教育優惠】7 折 / NT$3,633 起"; "Galaxy Watch Ultra2 | Watch9 享教育優惠 8 折"; "Galaxy Tab S10 FE 128GB Wi-Fi 9 折再享獨家折扣".
+- **Dated promo on the page:** the FollowMe 32" screen 30-day trial, "【活動期間】 2026/10/7 12:00 - 2026/12/31", code TRYM7. The Tab S11 trial ran "2026/01/30 12:00 - 2026/10/31".
+- **Validity:** the store has no end date; individual promos have their own dates.
+- **Scope:** online, TW store.
+
+### Entertainment (streaming)
+
+#### R3. YouTube Premium / YouTube Music Premium: 學生方案
+- **URL:** https://support.google.com/youtube/answer/9158808?hl=zh-Hant (HTTP 200; raw `yt4`)
+- **Who qualifies:** "目前以學生的身分就讀於高等教育機構，且位於我們提供 YouTube 學生方案的地區。高等教育機構必須通過 SheerID 的驗證". The region list on the page includes "台灣".
+- **Terms:** "學生可訂閱 YouTube Music Premium 或 YouTube Premium 方案，以折扣費率享有與一般會員相同的權益。" "即可享有效期最多連續 4 年的學生方案，不過每年都必須重新驗證學生身分。"
+- **Proof:** SheerID. If that fails, upload documents; outside the US the answer can take "最多 48 小時".
+- **Price:** not on the page. https://www.youtube.com/premium/student loads its content with JS.
+- **Scope:** online.
+
+### Education (software, online)
+
+#### R4. Wolfram: Mathematica 學生版
+- **URL:** https://www.wolfram.com/mathematica/pricing/students/ (HTTP 200, served in Simplified Chinese; raw `wolf1`)
+- **Who qualifies:** "Mathematica 学生版适用于非全日制或全日制中小学生，以及在认可的教育机构 或批准的家庭教学地点攻读副学士、学士、硕士、博士或同等学位的学生。" "需要提供入学证明。"
+- **Proof:** "提供来自您机构的公共网页或网络目录的 URL… 或传真附上或发送注明日期的学生证、 注册收据、课程表、学校账单…"
+- **Plans:** "学生计划 所有课程一整年均可使用", "预付四年许可证", "学期计划 当前课程的 6 个月许可证", "按月计划". The prices load with JS and are not in the HTML.
+- **Scope:** online. **Validity:** subscriptions renew automatically.
+
+#### R5. Perplexity: Pro for Students
+- **URL:** https://www.perplexity.ai/students (HTTP 200; raw `ppl0`)
+- **Terms:** the static HTML holds only the title "Get Perplexity Pro for Students for $10/mo". The help article I tried returned 404, so eligibility and proof are **not confirmed**.
+- **Scope:** online. **Validity:** none stated.
+
+#### R6. Sketch for Education
+- **URL:** https://www.sketch.com/education/ (HTTP 200; raw `sketch1`)
+- **Terms:** "Get Sketch for free as a student or educator. Provide your details and get one year of access to our design platform." "we need a few details as proof of eligibility … Once we've verified you, you'll have free access for a year!"
+- **Note:** Sketch is a Mac app. **Scope:** online. **Validity:** 1 year.
+
+#### R7. Framer for students
+- **URL:** https://www.framer.com/education/ redirected to https://www.framer.com/education/students/ (HTTP 200; raw `framer1`)
+- **Terms:** "Students get Framer for free. Host your portfolio or personal site worth $120 per year. Get full access to Framer's Design Canvas, CMS and more. Get 1000 free AI credits per month to use with Agents… Apply for the discount".
+- **Scope:** online. **Validity:** none stated.
+
+#### R8. Codecademy: Pro Student
+- **URL:** https://www.codecademy.com/student-center (HTTP 200; raw `codecad1`)
+- **Terms:** "With Codecademy Pro Student, eligible students get complete access to our interactive curriculum for over 35% off the regular price".
+- **Scope:** online. **Validity:** none stated.
+
+#### R9. Xmind Education
+- **URL:** https://xmind.com/education (HTTP 200; raw `xmind1`)
+- **Terms:** "All verified education users get 30% off any plan." "Students, educators, and academic staff at accredited institutions (universities, colleges, and K–12 schools) are eligible."
+- **Proof:** "A dated student or faculty ID card / Registration receipt for current semester / Official copy of student's class schedule…"
+- **Scope:** online. **Validity:** none stated.
+
+#### R10. Overleaf: Student plan
+- **URL:** https://www.overleaf.com/user/subscription/plans (HTTP 200; raw `overleaf`)
+- **Terms:** "Available to students currently enrolled at a degree-granting institution." The plan card reads "Student $8.25 /month $98/year $13 /month More space to write, revise, and collaborate. Includes: 10 collaborators per project". I read this as US$98 per year billed yearly, or US$13 billed monthly.
+- **Scope:** online. **Validity:** none stated.
+
+#### R11. Craft: 教育版
+- **URL:** https://www.craft.do/education redirected to https://www.craft.do/zh-TW/education (HTTP 200; raw `craft`)
+- **Terms:** "Craft 教育版 使用學校信箱註冊即可取得進階功能"; "使用學校信箱註冊即可使用所有功能".
+- **Scope:** online. **Validity:** none stated.
+
+#### Checked again, not a perk
+- **Cursor** (https://cursor.com/zh-Hant/students, HTTP 200): "任何人都可以免費開始使用 Cursor。若想升級使用權限，請留意我們從今年秋季起在校園與線上活動推出的優惠。" There is still no standing student discount, which confirms round 1.
+- **Squarespace** (https://www.squarespace.com/students, HTTP 200): "We're offering students 50% off * your first full year". Verification is through Student Beans, which round 1 found does not list Taiwan. **Likely not usable from Taiwan.**
+- **Claude** (claude.com/solutions/education, HTTP 200): an offer for institutions, with no individual student price.
+- **Houdini Apprentice** (sidefx.com/buy, HTTP 200): non-commercial licences "for students, hobbyists…". Not student-only.
+
+### Lodging
+
+#### R12. 救國團 青年活動中心 (Youth Activity Centers)
+- **URLs:** https://www.cyh.org.tw/?p=10424 (HTTP 200; raw `cyh3`) and https://www.cyh.org.tw/ (HTTP 200; raw `cyh2`)
+- **Who may stay:** "依據發展觀光條例第七十條之二規定， 救國團所轄青年活動中心係非以營利為目的且供特定對象住宿之場所。特定對象包含下列七類：… 3. 持有在學證明文件之學生。 4. 年齡未滿四十歲之社會青年。 5. 第三款學生或第四款社會青年，隨同之師長及親屬， 其人數以不超過四人為原則。…"
+- **Student package on the homepage:** "【劍潭】2026一宿三餐大專社團研訓專案 … ◎專案日期：~2026.12.31 ◎專案優惠： 一宿三餐研訓專案，每人只要$1399元起". This is for college clubs (groups). "【復興】大專青年專案 … 凡30人以上~ 一泊三食+會場每人$1800元起".
+- **Scope:** centers in many counties (劍潭, 復興, 日月潭, 溪頭, 阿里山 and others). **Validity:** packages run to 2026-12-31.
+
+### Entertainment (theme parks, farms, attractions)
+
+#### R13. 劍湖山世界 (Janfusun Fancyworld), 雲林縣
+- **URL:** https://www.janfusun.com.tw/html/page/index.php?unid=2&cid=5&cid2=99&unid=2 (HTTP 200; raw `jhs3`)
+- **Terms:** "常態票價 適用期間：2026.09.19(六)起至12.27(日)適用。 … 全票 NT$ 1,199 NT$ 699 18歲以上成人 學生票 NT$ 999 NT$ 699 國中(含)以上學生憑學生證購買". The second column is the 優惠 price, which in this period is the same as the adult promo price.
+- **Validity:** **2026-12-27**.
+
+#### R14. 九族文化村, 南投縣
+- **URLs:** https://www.nine.com.tw/page/about/index.aspx?kind=234&lang=TW (HTTP 200; raw `ft1`) and https://www.ropeway.com.tw/page/about/index.aspx?kind=34 (HTTP 200; raw `ropeway1`)
+- **Terms:** "成人票 適用於一般成人 $ 1100 學生票 國中以上學生、高中、大專院校學生憑證購票 $ 980". The ropeway page adds: "所有票價皆贈送日月潭纜車當日搭乘，但纜車保養日除外".
+- **Validity:** none stated.
+
+#### R15. 遠雄海洋公園 (Farglory Ocean Park), 花蓮縣
+- **URL:** https://www.farglory-oceanpark.com.tw/tickets (HTTP 200; raw `farg1`)
+- **Terms:** "全票 NT $990 19歲(含)以上~65歲以下之成年人。 優待票 NT $890 13歲(含)以上~18歲(含)以下之青少年。 學生身份不限年齡需主動出示有效之個人學生證。"
+- **Validity:** none stated.
+
+#### R30. 武陵農場, 臺中市 (和平)
+- **URL:** https://www.wuling-farm.com.tw/tw/stay/ticket.php (HTTP 200; raw `wuling1`)
+- **Terms:** "全票 NT$160 一般個人 一般優待票 NT$130 公教(現職)、原住民 團體(30人以上)、學生、僑胞卡". "學生票優惠的對象不包含就讀空中大學、空中行專、空中商專、社區大學與大專院校附設進修部者。" "優待對象限攜帶各項證明文件之本人享有。" The ticket is charged jointly with the 武陵國家森林遊樂區.
+- **Validity:** none stated.
+
+#### R31. 福壽山農場, 臺中市 (梨山)
+- **URL:** https://www.fushoushan.com.tw/Outer/Tickets (HTTP 200; raw `fushou1`)
+- **Terms:** "全票 每人NT$150元 一般民眾。 優待票 每人NT$120元 公教人員(現職)、原住民族、學生(國中、高中、大學)、團體(20人以上)…"
+- **Validity:** none stated.
+
+#### R32. 綠世界生態農場, 新竹縣 (北埔)
+- **URL:** https://www.green-world.com.tw/ticket.php (HTTP 200; raw `greenw1`)
+- **Terms:** "全票 NT$480 優惠票 NT$400 1 國高中學生（憑學生證） 2 年齡 65歲以上（憑證件） 3 教師（憑證件）…". For groups of 30 or more: "團體優惠票 NT$370 1 國高中學生（憑學生證）".
+- **Note:** this covers junior and senior high students only, not college. **Validity:** none stated.
+
+#### R33. 泰雅渡假村, 南投縣 (仁愛)
+- **URL:** https://www.atayal.com.tw/zh-tw/ticket.php (HTTP 200; raw `atayal1`)
+- **Terms:** "一日遊票券 全票 團體票 半票 學生票 幼童票 敬老票 $300 $250 $250 $250 $200 $150 備註 1. 半票：學生、軍警（須附證明） 2. 學生票：適用國中、高中、大專生（須憑證購票…"
+- **Validity:** none stated.
+
+#### R25. 台北101 觀景台, 臺北市
+- **URL:** https://www.taipei-101.com.tw/tw/observatory/ticket (HTTP 200; raw `t1013`)
+- **Terms:** "一般票 參觀樓層 89F, 88F … 成人 NT$600 學生/樂齡方案/愛心票/軍警消專案 NT$300". "除了全票可線上購買外，優待票、敬老票、兒童等都需至辦公大樓 1 樓觀景台售票處購買。 欲購買優惠票，購票與進場時均需出示中華民國有效之身分證明文件".
+- **Validity:** none stated.
+
+#### R27. 野柳地質公園, 新北市 (萬里)
+- **URL:** https://www.ylgeopark.org.tw/VisitInformationView/TicketPrice (HTTP 200; raw `yeliu1`)
+- **Terms:** "全票 120 一般遊客 … 優待票 (持證優待) 60 學生（以具有臺灣正式學籍之學生證者為認定標準）。 … 持有國際學生證者（ISIC）". Student groups: "學生團體票 48 30人以上學生團體".
+- **Validity:** none stated.
+
+#### P1. 六福村主題遊樂園, 新竹縣 (partial)
+- **URL:** https://www.leofoovillage.com.tw/Infos/Tickets/ (HTTP 200; raw `lfv2`)
+- **Terms:** "購買學生票及博愛票(年滿60歲以上，或孕婦、身障朋友)須出示相關證件。" "各項促銷優惠活動恕無法合併使用。"
+- **Gap:** the ticket prices load with JS and are not in the HTML. The fonticket shop page (raw `lff1`) also had no price text. **The price is unverified.**
+
+### Entertainment (museums and cultural sites)
+
+#### R16. 國立故宮博物院 南部院區 (NPM Southern Branch), 嘉義縣 (太保)
+- **URL:** https://south.npm.gov.tw/Visit/Ticket.htm (HTTP 200; raw `npms1`)
+- **Terms:** "參觀券 150元 一般觀眾（不分國籍）。 … 免費 0元 憑證明文件至售票處兌換免費參觀券。 … 本國學生。（持「教育部立案學校有效學生證」者）。" Also "年齡未滿18歲者（不分國籍）" are free.
+- **Validity:** none stated for students. Other free-entry lines end on 115/12/31.
+- **Note:** the main 故宮 site (npm.gov.tw) still returns 403, so the Taipei (北部院區) ticket terms remain **unverified**.
+
+#### R17. 國立歷史博物館, 臺北市
+- **URL:** https://www.nmh.gov.tw/cp.aspx?n=7146 (HTTP 200; raw `nmh2`)
+- **Terms:** "全票新臺幣八十元 一般觀眾。 優待票新臺幣四十元 六歲以上未滿十二歲兒童、學生(持有效學生證或入學通知)、六十五歲以上長者(假日)、十人以上團體。"
+
+#### R18. 國立海洋科技博物館, 基隆市
+- **URL:** https://www.nmmst.gov.tw/chhtml/content/216 (HTTP 200; raw `nmmst2`; "發佈日期：115/09/07")
+- **Terms:** the fee table lists, in order, 主題館 / 極地探險特展 / 8K海洋劇場 / 潮境智能海洋館 / 典藏館 / 區域探索廳. "成人 200元 300元 150元 300元 60元 60元 … 6歲以上學童及學生 140元 240元 100元 250元 30元 30元".
+
+#### R19. 宜蘭縣立蘭陽博物館, 宜蘭縣 (頭城)
+- **URL:** https://www.lym.gov.tw/ch/audience-service/visit/lym/ (HTTP 200; raw `lym2`)
+- **Terms:** columns are 常設展 / 特展 / 兒童考古探索廳 / 全館. "一般觀眾 100 50 50 200", "學生票 50 50 50 150 6歲以上之本國籍學生（高中以上驗票請出示學生證）", "宜蘭學生票 50 0 0 50 非設籍本縣而在本縣就讀之學生（憑證）". Free: "設籍本縣之學生（須出示身分證件與學生證件）".
+
+#### R20–R24. 新北市立 museums: free for all students at domestic schools
+Each page lists the full ticket at NT$80 and the same free-entry clause for students:
+- **R20 十三行博物館:** https://www.sshm.ntpc.gov.tw/xmdoc/cont?xsmsid=0G244537677948124632 (HTTP 200; raw `sshm2`). "全票 免費 80元 … （4）國內各級學校之學生".
+- **R21 黃金博物館 (金瓜石):** https://www.gep.ntpc.gov.tw/xmdoc/cont?xsmsid=0G246368552167800609 (HTTP 200; raw `gep2`). "入園門票 新臺幣80元/人 … （4）就讀國內各級學校之在學學生".
+- **R22 淡水古蹟博物館:** https://www.tshs.ntpc.gov.tw/xmdoc/cont?xsmsid=0G245643868344101231 (HTTP 200; raw `tshs2`). "單一票價：全票 80 元 參觀範圍：憑當日票根可進入 淡水紅毛城 、 前清淡水關稅務司官邸（小白宮） 、 滬尾礮臺 … （ 4 ）就讀國內各級學校之在學學生". "免票入場者，須出示相關實體證明文件".
+- **R23 鶯歌陶瓷博物館:** https://www.ceramics.ntpc.gov.tw/xmdoc/cont?xsmsid=0L196418676818644838&sid=0L196423054308732923 (HTTP 200; raw `ceram2`; "更新日期：2026-07-15"). "門票80元 … 四、就讀國內各級學校之在校學生。"
+- **R24 坪林茶業博物館:** https://www.tea.ntpc.gov.tw/xmdoc/cont?xsmsid=0G266540184006780639 (HTTP 200; raw `tea2`). "全票：80元 免票對象： … （4）就讀國內各級學校之在學學生".
+- **Scope:** all five are in 新北市 (north). **Validity:** none stated.
+
+#### R26. 臺北自來水園區 (Taipei Water Park), 臺北市
+- **URL:** https://waterpark.water.gov.taipei/cp.aspx?n=83AB9156FF18845C (HTTP 200; raw `watermus1`)
+- **Terms:** "夏季期間 7/1至8/31 80 40 非夏季期間 9/1至隔年6/30 50 25 1.優待票：符合下列條件之一者，須持證明文件： … (2)學生 (不含社區大學)。"
+
+#### R28. 臺南市公有古蹟 (赤崁樓, 安平古堡, 安平樹屋, 億載金城), 臺南市
+- **URL:** https://historic.tainan.gov.tw/index.php?option=module&lang=cht&task=pageinfo&id=64&index=5 (HTTP 200; raw `twhist1`), the city's "臺南市公有古蹟參觀及停車場收費標準"
+- **Terms:** "一、全票新臺幣七十元：一般參觀者。 二、半票新臺幣三十五元： （一）外縣市在學生。" Free entry (第四條): "四、持有志願服務榮譽卡之志工及本市在學學生。" Foreign students (第五條): "半票新臺幣三十五元：在學學生。"
+
+#### R29. 朱銘美術館 (Juming Museum), 新北市 (金山)
+- **URL:** https://www.juming.org.tw/mainssl/modules/MySpace/index.php?sn=ec&pg=ZC143727 (HTTP 200; raw `juming2`)
+- **Terms:** "全票 一般民眾 NT$350 優待票 學生、65歲以上長者 NT$320". The museum is closed 2026/12/21 to 12/25 for a new exhibition.
+
+#### R34. 中華郵政 郵政博物館, 臺北市
+- **URL:** https://museum.post.gov.tw/post/Postal_Museum/museum/index.jsp?ID=1780029519775 (HTTP 200; raw `postm2`; "最後更新日期：115/05/29")
+- **Terms:** "全 票 30 元 一般參觀民眾 優待票 15 元 1. 學生（持學生證或入學通知）。"
+
+### Entertainment (國家森林遊樂區, run by 農業部林業及自然保育署)
+
+All pages are on recreation.forest.gov.tw (`/Forest/RA?typ_id=<id>`), HTTP 200, raw `fr<id>`. Each lists students with a student ID under 半票 or 優待票. Several parks were closed on 2026-10-22/23 for typhoon 薔琵; check the park news before listing.
+
+| # | Park (county) | typ_id | Exact student line | Student price | Full price |
+|---|---|---|---|---|---|
+| R35 | 太平山 (宜蘭) | 0100001 | "半票(平日) 票價(元) 100 說明 … 2.學生（憑學生證）、7-12歲兒童。" | NT$100 | NT$150 weekday / NT$200 holiday |
+| R36 | 滿月圓 (新北) | 0200001 | "半票 票價(元) 50 說明 … 2.學生（憑學生證）、兒童（7歲至12歲）。" | NT$50 | NT$80 / 100 |
+| R37 | 內洞 (新北) | 0200002 | "半票 票價(元) 40 … 2.學生（憑學生證）" | NT$40 | NT$65 / 80 |
+| R38 | 東眼山 (桃園) | 0200003 | "半票 票價(元) 50 … 2.學生（憑學生證）" | NT$50 | NT$80 / 100 |
+| R39 | 大雪山 (臺中) | 0300003 | "半票 票價(元) 100 … 二、學生(憑學生證)" | NT$100 | NT$200 holiday |
+| R40 | 奧萬大 (南投) | 0400001 | "半票 票價(元) 100 說明 1.軍、警、學生均憑證、兒童(7~12歲)。" | NT$100 | NT$200 holiday (page says the full ticket is currently charged at half price because parts are closed) |
+| R41 | 阿里山 (嘉義) | 0500001 | "半票 票價(元) 150 說明 1.外國籍人士持學生證之學生… 2.符合下列資格之本國籍民眾優惠100元： … （2）學生(憑學生證)" | NT$100 (ROC), NT$150 (foreign) | NT$300 |
+| R42 | 藤枝 (高雄) | 0600001 | "半票 票價(元) 60 … 二、學生(憑學生證)" | NT$60 | NT$120 |
+| R43 | 墾丁森林 (屏東) | 0600002 | "半票 票價(元) 75 … 二、學生(憑學生證)、7-12歲兒童半票優惠。" | NT$75 | NT$150 holiday |
+| R44 | 雙流 (屏東) | 0600003 | "半票 票價(元) 50 … 二、學生(憑學生證)、7-12歲兒童，持有證明者。" | NT$50 | NT$100 holiday |
+| R45 | 知本 (臺東) | 0700001 | "半票 票價(元) 50 說明 軍警、學生(憑學生證)、兒童(7歲至12歲)、臺東縣民" | NT$50 | NT$80 / 100 |
+| R46 | 池南 (花蓮) | 0800002 | "半票(平日) 票價(元) 25 … 二、103年4月1日起，兒童(7-12歲)半票入園，學生(憑學生證)。" | NT$25 | NT$40 / 50 |
+| R47 | 富源 (花蓮) | 0800001 | "優待票 票價(元) 50 說明 … ◆ 學生(限本人持學生證)" | NT$50 | NT$150 |
+
+觀霧 (typ_id 0200004) charges no entry fee ("免收門票"), so there is no student perk. 向陽 and 八仙山 pages showed no fee table.
+
+### Shopping (partial)
+
+#### P2. ASUS 教育優惠方案 (partial)
+- **URL:** https://www.asus.com/tw/store/education/ (HTTP 200; raw `asus0`). The only text is "學生/教師/教職人員，立即加入享華碩教育優惠方案！". It links https://special-offers.asus.com/tw/, which returned **403** (raw `asus1`). **The discount and proof are unverified.**
+
+---
+
+### Negative findings (official page fetched, no student perk on it)
+
+These are useful for CampusPass, so the app does not list perks that do not exist.
+
+| Brand | Official page (HTTP) | Finding |
+|---|---|---|
+| 義大遊樂世界 | edathemepark.com.tw/Info (200) | No student ticket. 青少年票 NT$880 is age-based (13–18, shown with 健保卡). Students fall under the adult annual pass ("成人票全年護照 $3800 13歲以上成人、學生適用"). |
+| 高雄市壽山動物園 | zoo.kcg.gov.tw/zh-tw/tour-information/ (200) | Half price is age-based ("六歲以上未滿十八歲"), not student-based. |
+| 袖珍博物館 | mmot.com.tw (200) | Concession is age-based (13–18). |
+| 統聯客運 | ubus.com.tw/Booking/FareInquiry/ (200) | The fare table has no student fare (same as round 1). |
+| 和欣客運 | ebus.com.tw/RideInfo/TicketPrices (200) | Fares load from a form; no student fare in the page. |
+| 高雄捷運 | krtc.com.tw/Ticket/ticket_item pages (200) | Ticket types are single journey, social-welfare, bicycle, group, 24/48h, MeN Go and TPASS. There is no individual student fare; the only student item is "捷運達人優惠(學生團體)" for groups. |
+| 台中捷運 | tmrt.com.tw/metro-life/ticket-types (200) | Discounted cards are only 敬老愛心卡 / 愛陪卡 / 台中市兒童卡 (child, linked to the primary-school digital student card). No student fare. |
+| 臺北捷運 | metro.taipei 票價 and 車票種類 pages (200) | No student fare found on either page. |
+| 桃園捷運 | tymetro.com.tw ticket page (200) | No "學生" on the page. |
+| YouBike | youbike.com.tw/region/main/rate/ (200) | No student rate. |
+| iRent, GoShare, WeMo | homepages (200) | No student plan shown. The content is app-only or JS. |
+| World Gym, 健身工廠 | homepages (200) | No student pricing shown. |
+| 金石堂 | kingstone.com.tw (200) | No student discount. "學生" appears only in book titles. |
+| 誠品線上 | eslite.com (200) | JS shell; no content. |
+| LINE MUSIC, friDay影音, Disney+, Apple One | homepages (200) | No student plan in the fetched HTML. |
+| Netflix | help.netflix.com/zh-tw/node/24926 (200) | The plans page (it asks you to pick a country) mentions no student plan. |
+| Steinberg education, SketchUp for students | (200 shell / "Page Not Found") | Nothing usable. |
+| 林本源園邸, 嘉義市立美術館 | (200) | No student price in the HTML (林本源 only announces "115年6月1日起恢復票價80元"). |
+
+---
+
+### Round-1 leads: status
+
+| Round-1 lead | Status now | Evidence |
+|---|---|---|
+| 國立故宮博物院 student ticket | **Partly verified**: 南部院區 (R16) gives 本國學生 free entry. The Taipei main site is still 403. | `npms1` 200; `npm0`/`npm1`/`npm3`/`npmxh` 403 |
+| 國家兩廳院 (NTCH) | **Still unverified**: npac-ntch.org is a JS shell; /ticketing returned 404; opentix.life (200) has no student text | `ntch0`, `ntch2`, `opentix1` |
+| 衛武營 | **Still unverified**: 403 | `wwy0` |
+| 威秀影城 | **Still unverified**: 403 (curl, and WebFetch also 403) | `vs0` |
+| 國賓影城 | **Still unverified**: 200, but only group 優待券 pages; no student ticket | `amb0` |
+| 美麗華影城 | Unchanged from round 1 (concession does not name students) | — |
+| 秀泰影城 | **Still unverified**: 403 | `sh0`, `sh1` |
+| 新光影城 | **Still unverified**: connection reset (3 tries) | `skc0`/`skc1`/`skc2` |
+| in89 影城 | **Still unverified**: homepage is a JS cinema picker | `in890` |
+| 國光客運 | **Still unverified**: connection reset (4 tries) | `kb0`–`kb3`, `kbyh` |
+| 統聯客運 | **Dead (no perk)**: no student fare | `ub0`, `ub1` |
+| 高雄捷運 student card | **Dead (no individual perk)**: see negative findings | `krtc3`–`krtc8`, `krtcx1`–`krtcx7` |
+| 中華電信 學生方案 | **Verified** (R1), with a stale end date on the page | `cht2` |
+| 台灣大哥大 學生方案 | **Still unverified**: homepage is a JS shell; no student link | `tm0` |
+| 亞太電信 | **Dead as a separate brand**: aptg.com.tw now redirects to fetnet.net | `gt0` |
+| YouTube Premium 學生方案 | **Verified** (R3); price not on page | `yt4` |
+| Adobe Creative Cloud | **Still unverified**: 403 | `adobe0` |
+| Autodesk education | **Still unverified**: 403 (en and tw) | `adsk0`, `autocad` |
+| Canva, Tableau | **Still unverified**: 403 | `canva0`, `tab0`, `tab2` |
+| Samsung education store | **Verified** (R2) | `sams1` |
+| ASUS 教育優惠 | **Partial** (P2) | `asus0`, `asus1` |
+| Dell student discount | **Dead (nothing on page)**: redirects to homepage or a general deals page | `dell0`, `dell1`, `dell2` |
+| Microsoft 365 student pricing / Microsoft Store education | **Still unverified**: zh-tw store education URL 404; another redirected to en-us sale | `ms0`, `ms3` |
+| Banks (student accounts / cards) | **Still unverified**: no official bank page reached; searches returned only comparison blogs | — |
+| Food chains | **Still unverified**: not attempted further; no official URLs found | — |
+| Airlines | **Still unverified**: 華航 and 長榮 403; 星宇 (200) and 台灣虎航 (200, JS) show no student fare. A search pointed to a 華航 student-baggage offer that closed 2026/03/31 (third-party source only, so not verified) | `ci1`, `eva1`, `sx1`, `tw1` |
+| 救國團 青年活動中心 | **Verified** (R12) | `cyh2`, `cyh3` |
+| YH 青年旅舍卡 | Unchanged: not student-specific | — |
+| 國立海洋科技博物館 | **Verified** (R18) | `nmmst2` |
+| 國立歷史博物館 | **Verified** (R17) | `nmh2` |
+| 國立傳統藝術中心 | **Still unverified**: ncfta.gov.tw links to px-sunmake.org.tw, and no ticket page was found in its HTML | `ncfta2`, `pxsh` |
+| 新竹市立動物園 | **Still unverified**: CONNECT 502 | `hzooh` |
+| 台北101觀景台 | **Verified** (R25) | `t1013` |
+| 阿里山林業鐵路 | **Dead (no student fare)**: the railway half-fare list covers seniors and disabled only. The 阿里山 森林遊樂區 entry does have a student fare (R41). | `afr2` |
+| 森林遊樂區 | **Verified**: 13 parks (R35–R47) | `fr*` |
+| Cursor for students | **Dead (confirmed)** | `cursor1` |
+| AWS Educate | Unchanged: not student-specific | — |
+
+#### New round-2 categories I could not verify
+- **捷運/公車 student fares and TPASS 學生:** tpass.motc.gov.tw failed with CONNECT 502 (3 tries). Taipei PTO site search for 學生票 gave no hit. MeN Go (men-go.tw, 200) has no student text in the HTML. **No student-specific TPASS was verified.**
+- **客運 阿羅哈 / 葛瑪蘭:** connection reset / 403.
+- **Theme parks 麗寶 / 小人國:** connection reset / CONNECT 502 on every try.
+- **Software MATLAB, ChatGPT/OpenAI, Grammarly, Duolingo:** MathWorks 403; chatgpt.com/students 403; Grammarly /edu/students redirected to a sign-in page; Duolingo (200) is a JS shell with no student plan.
+- **Hardware HP, Acer, MSI, Logitech, Microsoft Store:** HP 403; Acer HTTP/2 stream error; MSI 403; Logitech (200) has no education offer; Microsoft Store 404.
+- **Bookstores 博客來:** 403.
+- **Gyms Anytime Fitness:** connection reset.
+- **Banks, food chains, airlines:** see the round-1 table.
+- **交通部觀光署 / 青年旅遊:** taiwan.net.tw (200) is a portal splash page. youthtravel.tw (200, 教育部青年發展署 壯遊體驗學習網) lists 青年壯遊點 activities, but no student price or eligibility rule was captured, so it is not listed.
+
+---
+
+### Fit with the CampusPass record shape
+- **Online or nationwide** (`regions` all four): R1–R11 and R12 (multi-county lodging; check the centre).
+- **Explicit `expires_on`:** R13 劍湖山 **2026-12-27**. R12 劍潭 package **2026-12-31**. R2 has per-promo dates only. R1's page date (2026-09-30) has passed while the page stays live, so set a review date rather than an expiry.
+- **Venue-bound** (set `regions` to the venue's region):
+  - North: R17, R18, R19, R20–R24, R25, R26, R27, R29, R34, R35–R38.
+  - Central: R14, R30, R31, R33, R39, R40, R13.
+  - South: R16, R28, R41, R42, R43, R44.
+  - East: R15, R45, R46, R47.
+  - R32 is 新竹 (north).
+- **Eligibility nuances worth storing:**
+  - Junior and senior high only: R32 (no college).
+  - College excluded for some divisions: R30 excludes 空中大學 and 進修部.
+  - Local-student rules: R19 is free for Yilan-registered students. R28 is free for students at Tainan schools and half price for students from other counties.
+  - ROC-only: R16 covers 本國學生 only. R41 charges NT$100 for ROC students and NT$150 for foreign students.
+- **Not exclusive to students:** most venue discounts also cover children, seniors, military and police. Mark the discount as non-exclusive.
+
 ## Per-school details (URLs fetched, HTTP status, quotes)
 
 ### 1. 國立臺灣海洋大學 — ntou.edu.tw
@@ -1758,7 +2145,7 @@ These servers appear to refuse non-Taiwan or cloud traffic. **Re-check them from
    - A full survey of the 10 under-searched schools: 敏實, 台北海洋, 南亞, 樹人, 育英, 德育, 黎明, 文藻, 嘉義大學, 臺南大學.
    - One more targeted search for each of the 21 "nothing found" schools.
    - Exact counts for the lists that were only lower bounds: 南臺 (all 8 categories), 明新, 臺藝大, 高雄大學, 彰師大, 長庚, 中山醫, 中原.
-2. **Brand perks, round 2:**
+2. **Brand perks, round 2 (done; see the section above):**
    - Verify the round-1 "unverified leads" (故宮, 兩廳院, 衛武營, Adobe, Autodesk, 中華電信, 台灣大哥大, YouTube Premium, 國光客運, cinemas, banks, airlines, food chains).
    - Add the missing categories: 客運, MRT/TPASS student fares, scooter and bike sharing, bookstores, more software and hardware, streaming, gyms, theme parks, youth travel and banks.
 
