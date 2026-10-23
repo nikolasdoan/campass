@@ -180,3 +180,71 @@ NCU, NCKU, CMU and KSU were extracted by campass-2 into their own files (`ncu.js
 ## Re-check 2026-10-22
 
 Re-checked by the worker (data/sources/recheck-2026-10.md). Removed 辛麻辣鍋物餐廳 (NTHU; offer ended 113-06-12, not renewed). End dates updated from the pages: 棋建壂 (NCCU) → 2027-10-29; 喜瑞飯店 (NYCU) → 2026-12-31; 救國團新竹團委會 (NYCU) → 2027-12-31; 菁英 → 精英汽車駕駛人訓練班 (NYCU, renamed) → 2027-12-31. Nine NCHU records moved to the next `?page=` after new cards were added at the top; their `source_url`s were updated. Not yet extracted: NCHU a253 彩碗 ColorBowl and 48 NYCU sheet rows that now have terms.
+
+## NYCU backfill 2026-10-23 (worker, issue #9)
+
+On 2026-10-23 I re-fetched the 陽明交大 人事室 特約商店明細表, Google Sheet `1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok`:
+- `export?format=xlsx` (200, 8 tabs)
+- all 8 per-tab CSVs (all 200). Besides the 7 gids already in use, this includes the 婚紗美容護膚 tab, `gid=1958552846`, which I found on the sheet's `htmlview` page.
+
+**53 rows** have a non-empty 項目 cell and no existing NYCU record (48 current, 4 dated in the past, 1 洽談中). They were checked against campass-1's rules: import only rows with real terms; skip code-only, 「電洽」-only and past-sub-promotion-only rows. **4 were added**; the existing 49 NYCU records are unchanged. NYCU now has 53 records.
+
+**Added (4).** All carry the 明細表註 note.
+
+| Record | Tab (gid) | 適用對象 → eligibility | 備註 → expiry | Terms (quoted) |
+|---|---|---|---|---|
+| 墾丁福華渡假大飯店 / 屏東縣恆春鎮 | 旅宿 (0) | 教職員工 → staff | 2027-12-31 | 「每張員工證限優惠2間客房 / 麗香苑用餐免收一成服務費，限優惠4位」 |
+| 耐斯王子大飯店 / 嘉義市東區 | 旅宿 (0) | 教職員工、學生 → staff, student | 2026-12-31 | 「特惠代號：NPH2201578 / 單人優惠平日精緻客房$3,200/房 / 雙人優惠平日精緻客房$3,500/房 / 旺日加價$550(間) / 假日加價$1,100(間)」 |
+| 中華航空 / 企業會員 TW012780 | 觀光旅遊 (1315964838) | 教職員工、學生、校友 → all three | null. 備註 holds the 新竹營業所 hours, not a date. | 「*中華航空企業會員編碼：TW012780，即可同時累積學校及您個人飛行里程數(需同為中華航空會員)。」 |
+| 樂活全齡綜合診所 / 台南市仁德區 | 醫療健康保健 (151916140) | 教職員工 → staff | 每年自動續約 → null, `auto_renew` | 「出示識別證及健保IC卡看診，享有免掛號費優待」 |
+
+**Skipped (49).** The 項目 text is quoted:
+
+- **Code, contract number or contact only, no stated benefit (20):**
+  - 台中裕元花園酒店 「合約號碼：87557573」
+  - 新竹福華大飯店 「合約代號：2K790」
+  - 168inn 愛時租旅館 (two branch phone numbers only)
+  - 新竹安捷國際酒店 「限定使用校方信箱預約+專案代碼：AJHCCG訂房」
+  - 太子文旅(成大館) 「合約代碼：：87557573」
+  - 台中港酒店 「訂房代號：87557573」
+  - 承億文旅 「訂房代號：87557574」
+  - 將捷金鬱金香酒店 「促銷代碼:87557573 / 入住用餐:需出示員工識別證及身分證明文件」
+  - 捷絲旅/晶泉丰旅 「專案代碼：corpsm03 / 臺大館、礁溪館、西門館、礁溪晶泉丰旅」
+  - 台糖長榮酒店 「契約代碼：SI00039」
+  - 悠活渡假村/牡丹灣民宿 「合約編號：M260017」
+  - 新北新莊凱悅嘉軒酒店 「合約代碼(CR#1004591)進行預訂」
+  - 水木商旅 「合約代碼: 87557573」
+  - 徠歸仁飯店 「合約代碼: 87557574 / 適用:商務住房、餐飲」
+  - 星宇航空 「透過指定合作旅行社訂位 / 並輸入企業會員編號：JXTW0551」
+  - 菜霸子 「推薦碼：NYCUVK」
+  - 英倫牙醫體系 「契約代碼：A293」
+  - 東森得易購 「企業代碼：87557573」
+  - 我愛禪 「詳情請至台南三井OUTLET 3F Häagen-Dazs」
+  - 快客 「或專線詢問 06-3033599」
+- **「電洽」 only (3):** 圓山大飯店, 五鮮級國際餐飲集團, and H2O 水京棧 (「合約編號：C008755 / 電洽」).
+- **Procedure or notice, no benefit (10):**
+  - 逗點旅店 「房價屬浮動價格，並以現場報價為最終標準」
+  - 高雄鮪魚家族飯店 「…為特殊報價，需事先訂房。」
+  - 名人堂花園大飯店 「訂房時請出示相關識別證或校方之邀請函。」
+  - 天閣酒店 (booking-service notice)
+  - 雲雀集團 「雲雀集團優惠適用於"古拉爵"」 (no benefit stated)
+  - 格哆莉奶酪優禮 (opening hours only)
+  - 夏哲森幼兒園 「得享企業會員專屬優惠」 (unspecified)
+  - FUN輕鬆指壓工作坊 「若價錢調整,特約價也會跟著變動(請電洽詢問詳情)」
+  - 百漾企業社 (product names only)
+  - 心園心理治療所 「諮商費2200/次 / 專職人員/4次 / 教職員工/2次」: a price and session counts, but no stated discount.
+- **Only a past or dated sub-promotion (11):**
+  - 台南大飯店: code plus 「1130前免10%服務費｜台南大飯店《駿勢飛羊》尾牙春酒」. This is a 尾牙 promotion, and the year isn't stated.
+  - 高雄漢來大飯店 「商務客戶:平日$8800(贈兩客早餐)至6/30止」
+  - 娜路灣大酒店 「購買日:8/1~8/14 入住日:9/1~12/30」
+  - 長榮航空 「五月好康報 -企業會員專屬購票上線」
+  - 132官舍 「即日起至8/31前完成訂購」
+  - 全民大劇團: the two shows' 85折/8折 are for 「竹北演藝廳｜4/10（五）19:30」.
+  - Homebox好博家 「10/21~10/26買3000送300折價券」, ending 3 days after the check.
+  - 綕馥企業社 「活動日期:115年10月05 至 115年11月30日」 (bedding 「優惠」, no rate)
+  - MITSUI OUTLET PARK 台南 (員購 2026/11/6–11/15)
+  - 品得網絡數位, 二四高球 (預購/提領日 in July). The 二四高球 phone cell shows 「9.61E+08」.
+- **備註 date passed (4):** Ten 旅宿 & 13Villa 2026-07-01, 帕莎蒂娜國際餐飲 2026-06-30, 新竹.適采牙醫診所 2026-08-30, 愛菲斯居家美學 2026-06-30.
+- **洽談中 (1):** 晶華國際酒店集團｜三燔北投晶泉丰旅 / 大直泰市場海鮮餐廳 / 泉源閣.
+
+The issue's 「48 current rows」 are the 53 above minus the 4 past-date rows and the 洽談中 row.

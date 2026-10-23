@@ -13404,6 +13404,129 @@
   "retrieved_on": "2026-10-15"
  },
  {
+  "name": "墾丁福華渡假大飯店",
+  "subtitle": "屏東縣恆春鎮",
+  "category": "lodging",
+  "regions": [
+   "south"
+  ],
+  "address": "屏東縣恆春鎮墾丁路 2 號",
+  "phone": "08-886-2323",
+  "highlight": "免服務費",
+  "offer": "每張員工證限優惠2間客房\n麗香苑用餐免收一成服務費，限優惠4位",
+  "info": "電話：08-886-2323\n地址：屏東縣恆春鎮墾丁路 2 號\n適用對象：教職員工",
+  "links": [],
+  "expires_on": "2027-12-31",
+  "auto_renew": false,
+  "notes": "明細表註：校友及學生依各商家意願提供，請先行確認",
+  "eligibility": {
+   "student": false,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "NYCU"
+  ],
+  "source_level": "school",
+  "source_org": "陽明交通大學人事室",
+  "source_url": "https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=0",
+  "retrieved_on": "2026-10-23"
+ },
+ {
+  "name": "耐斯王子大飯店",
+  "subtitle": "嘉義市東區",
+  "category": "lodging",
+  "regions": [
+   "south"
+  ],
+  "address": "嘉義市東區忠孝路600號",
+  "phone": "05-2771999 / 翁郁博 05-3109898 #6639",
+  "highlight": "專屬優惠價",
+  "offer": "特惠代號：NPH2201578\n單人優惠平日精緻客房$3,200/房\n雙人優惠平日精緻客房$3,500/房\n旺日加價$550(間)\n假日加價$1,100(間)",
+  "info": "電話：05-2771999 / 翁郁博 05-3109898 #6639\n地址：嘉義市東區忠孝路600號\n適用對象：教職員工、學生",
+  "links": [],
+  "expires_on": "2026-12-31",
+  "auto_renew": false,
+  "notes": "明細表註：校友及學生依各商家意願提供，請先行確認",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "NYCU"
+  ],
+  "source_level": "school",
+  "source_org": "陽明交通大學人事室",
+  "source_url": "https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=0",
+  "retrieved_on": "2026-10-23"
+ },
+ {
+  "name": "中華航空",
+  "subtitle": "企業會員 TW012780",
+  "category": "transport",
+  "regions": [
+   "north",
+   "central",
+   "south",
+   "east"
+  ],
+  "address": "新竹市科學園區工業東二路1號4樓406室",
+  "phone": "03-668-7676 #16 賴柏宇",
+  "highlight": "企業會員",
+  "offer": "*中華航空企業會員編碼：TW012780，即可同時累積學校及您個人飛行里程數(需同為中華航空會員)。",
+  "info": "電話：03-668-7676 #16 賴柏宇\n地址：新竹市科學園區工業東二路1號4樓406室\n適用對象：教職員工、學生、校友",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": false,
+  "notes": "明細表註：校友及學生依各商家意願提供，請先行確認；備註欄為新竹營業所營業時間（星期一 ~ 星期五 08:30 ~ 12:30 / 13:30 ~ 17:30），未載明期限；航空企業會員，歸類為全區",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": true,
+   "family": false
+  },
+  "schools": [
+   "NYCU"
+  ],
+  "source_level": "school",
+  "source_org": "陽明交通大學人事室",
+  "source_url": "https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=1315964838",
+  "retrieved_on": "2026-10-23"
+ },
+ {
+  "name": "樂活全齡綜合診所",
+  "subtitle": "台南市仁德區",
+  "category": "health",
+  "regions": [
+   "south"
+  ],
+  "address": "台南市仁德區中正路二段1225號",
+  "phone": "06-2791515",
+  "highlight": "免掛號費",
+  "offer": "出示識別證及健保IC卡看診，享有免掛號費優待",
+  "info": "電話：06-2791515\n地址：台南市仁德區中正路二段1225號\n適用對象：教職員工",
+  "links": [],
+  "expires_on": null,
+  "auto_renew": true,
+  "notes": "明細表註：校友及學生依各商家意願提供，請先行確認；備註：每年自動續約",
+  "eligibility": {
+   "student": false,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "NYCU"
+  ],
+  "source_level": "school",
+  "source_org": "陽明交通大學人事室",
+  "source_url": "https://docs.google.com/spreadsheets/d/1h1jEMiH6LPjdO3I_mWMUxBF0v9SOgx6aOuP2UdVI4ok/export?format=csv&gid=151916140",
+  "retrieved_on": "2026-10-23"
+ },
+ {
   "name": "張瑋烤肉蛋吐司富國店",
   "subtitle": "花蓮",
   "category": "food",
