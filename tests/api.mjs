@@ -363,6 +363,7 @@ if (!mockUp) {
     ["search", "me@example.com", 1], // email: dropped
     ["search", "0912345678", 1], // phone: dropped
     ["open", "not-a-deal-id", 1], // bad id: dropped
+    ["open", "0123456789", 1], // well-formed but no such deal: dropped
     ["filter", "cat:<script>", 1], // bad filter: dropped
     ["teleport", "x", 1], // unknown kind: dropped
   ]);
@@ -395,6 +396,19 @@ if (!mockUp) {
   check("units: cached publicly for a day", u.headers.get("cache-control") === "public, max-age=86400", u.headers.get("cache-control"));
   const none = await anon.json("/api/schools/XYZ/units");
   check("units: unknown school 404", none.status === 404 && none.body?.error === "not_found", `status ${none.status}`);
+}
+
+// ---------- 商圈 (/api/districts) ----------
+{
+  const r = await anon.req("/api/districts");
+  const body = await r.json().catch(() => null);
+  const list = body?.districts || [];
+  check("districts: list is non-empty", r.status === 200 && list.length > 50, `status ${r.status}, ${list.length}`);
+  check("districts: cacheable for a day", (r.headers.get("cache-control") || "").includes("max-age=86400"), r.headers.get("cache-control"));
+  const gg = list.find((d) => d.name === "臺大公館商圈");
+  const [lat, lng] = gg?.centre || [];
+  check("districts: 臺大公館商圈 centred near 公館", gg && Math.abs(lat - 25.014) < 0.01 && Math.abs(lng - 121.534) < 0.01, JSON.stringify(gg?.centre));
+  check("districts: each has id, city, polygon", list.every((d) => d.id && d.city && Array.isArray(d.polygon) && d.polygon.length >= 3 && d.radius_m > 0));
 }
 
 const passed = results.filter(Boolean).length;
