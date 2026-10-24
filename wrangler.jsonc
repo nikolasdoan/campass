@@ -32,7 +32,41 @@
   ],
   // Daily cleanup at 03:17 Asia/Taipei (19:17 UTC): expired sessions, data past retention
   "triggers": { "crons": ["17 19 * * *"] },
-  "observability": { "enabled": true }
+  "observability": { "enabled": true },
   // Secrets (set with `npx wrangler secret put <NAME>`, or .dev.vars locally):
   //   GOOGLE_CLIENT_SECRET, ADMIN_TOKEN
+
+  // Private preview (founder decision 2026-10-24: new work goes here first; pass.tecxmate.com only on
+  // the founder's word). Separate Worker and database, workers.dev only, every request behind the
+  // PREVIEW_PASSWORD secret (`npx wrangler secret put PREVIEW_PASSWORD --env preview`).
+  // Deploy: npm run deploy:preview. See docs/ops.md "Private preview".
+  "env": {
+    "preview": {
+      "name": "campuspass-preview",
+      "workers_dev": true,
+      "routes": [],
+      "assets": {
+        "directory": "./public",
+        "binding": "ASSETS",
+        "not_found_handling": "single-page-application",
+        "run_worker_first": true
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "campuspass-preview",
+          "database_id": "c818a1a5-24cf-45be-903f-1cbfc2b4bb02",
+          "migrations_dir": "migrations"
+        }
+      ],
+      "vars": {
+        "GOOGLE_CLIENT_ID": ""
+      },
+      "ratelimits": [
+        { "name": "RL_FORMS", "namespace_id": "20261003", "simple": { "limit": 10, "period": 60 } },
+        { "name": "RL_CONFIRM", "namespace_id": "20261004", "simple": { "limit": 30, "period": 60 } }
+      ],
+      "triggers": { "crons": ["17 19 * * *"] }
+    }
+  }
 }
