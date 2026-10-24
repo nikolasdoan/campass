@@ -62,8 +62,11 @@ Stop servers with `pkill -f "[w]rangler dev"`. The bracket stops pkill from kill
 ## Open items (2026-10-22)
 
 - **Demo QA round** (2026-10-22): done. What was fixed and what is still open, ranked, is in
-  [qa-2026-10-22.md](qa-2026-10-22.md). Start from its "Open" list. Live since 2026-10-22 (769cb27, ?v=16),
-  with the data reseeded.
+  [qa-2026-10-22.md](qa-2026-10-22.md). Start from its "Open" list.
+- **Live (2026-10-24):** 29510a2, ?v=19, 1,325 deals from 15 schools (CCU, NSYSU, NDHU added by the worker).
+- **Worker loop** (docs/worker.md): campass-2 files `worker` issues; review the PRs, merge, run the import, add any
+  new school code (SCHOOL_DOMAINS, i18n SCHOOLS, CARD_TONE) and give every new badge text an English rule.
+  Evidence is a MANIFEST only (images in the founder's private storage).
 - **Founder actions**: Google OAuth client (in progress). Turn off Cloudflare JavaScript Detections for
   tecxmate.com (Security → Bots): the zone injects an inline script that our CSP blocks (1 console error per
   page, no user impact). Web Analytics exclusion: done.
