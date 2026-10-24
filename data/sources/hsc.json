@@ -1,0 +1,366 @@
+[
+  {
+    "name": "福利購",
+    "subtitle": "和達健生技事業-哈根達斯冰淇淋特殊通路代理商",
+    "category": "food",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "企業限定折扣價",
+    "offer": "哈根達斯企業限定專案折扣價",
+    "info": "福利購line@官網id:@929yiobz ■",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；學校特約廠商一覽表，依頁面歸為學生及教職員工；期限：無期限；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "HSC"
+    ],
+    "source_level": "school",
+    "source_org": "新生醫護管理專科學校",
+    "source_url": "https://www.hsc.edu.tw/p/404-1000-35585.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "會來尖石溫泉渡假村",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "新竹縣尖石鄉嘉樂村3鄰177-1號",
+    "phone": "(03)5841000",
+    "highlight": "泡湯85折",
+    "offer": "『泡湯85折』及『用餐9折』之優惠。",
+    "info": "新竹縣尖石鄉嘉樂村3鄰177-1 號。 （03）5841000",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；學校特約廠商一覽表，依頁面歸為學生及教職員工；期限：無期限；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "HSC"
+    ],
+    "source_level": "school",
+    "source_org": "新生醫護管理專科學校",
+    "source_url": "https://www.hsc.edu.tw/p/404-1000-35585.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "韓味煮藝竹北店",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "新竹縣竹北市莊敬南路5號",
+    "phone": "(03)5509140",
+    "highlight": "95折",
+    "offer": "1.吃到飽及套餐刷卡『95折』。2.現金『9折』。",
+    "info": "新竹縣竹北市莊敬南路5號。 （03）5509140",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；學校特約廠商一覽表，依頁面歸為學生及教職員工；期限：無期限；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "HSC"
+    ],
+    "source_level": "school",
+    "source_org": "新生醫護管理專科學校",
+    "source_url": "https://www.hsc.edu.tw/p/404-1000-35585.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "韓味煮藝桃園店",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "桃園縣桃園市民生路55巷12號2樓",
+    "phone": "(03)3395569",
+    "highlight": "95折",
+    "offer": "1.吃到飽及套餐刷卡『95折』。2.現金『9折』。",
+    "info": "桃園縣桃園市民生路55巷12 號2樓。 （03）3395569",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；學校特約廠商一覽表，依頁面歸為學生及教職員工；期限：無期限；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "HSC"
+    ],
+    "source_level": "school",
+    "source_org": "新生醫護管理專科學校",
+    "source_url": "https://www.hsc.edu.tw/p/404-1000-35585.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "醇品咖啡素食坊",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "新北市三峽區中正路二段421號",
+    "phone": "(02)26714988",
+    "highlight": "95折",
+    "offer": "持學生證或員工識別證『95折』。",
+    "info": "新北市三峽區中正路二段421號 (02)26714988",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款：「持學生證或員工識別證」；期限：無期限；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "HSC"
+    ],
+    "source_level": "school",
+    "source_org": "新生醫護管理專科學校",
+    "source_url": "https://www.hsc.edu.tw/p/404-1000-35585.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "當代牙科醫療體系",
+    "subtitle": "",
+    "category": "health",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "(03)4948311",
+    "highlight": "減免掛號費100元",
+    "offer": "1.就診減免掛號費一百元整。2.牙科自費診療，享有95折優惠。3.詢問植牙或矯正可優免術前常規檢查費用300元整。",
+    "info": "中壢當代牙醫診所、當代明新牙醫診所、當代楊新牙醫診所、當代興國牙醫診所、當代青埔牙醫診所(03)4948311分機252",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；學校特約廠商一覽表，依頁面歸為學生及教職員工；期限：無期限；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "HSC"
+    ],
+    "source_level": "school",
+    "source_org": "新生醫護管理專科學校",
+    "source_url": "https://www.hsc.edu.tw/p/404-1000-35585.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "鑫聚成醫療聯盟",
+    "subtitle": "",
+    "category": "health",
+    "regions": [
+      "north",
+      "central"
+    ],
+    "address": "",
+    "phone": "03-4367671",
+    "highlight": "免收部分負擔",
+    "offer": "1.免收部分負擔費用2.提供定期免費口腔健診與洗牙。3.自費項目提供折扣優惠或材料升級。",
+    "info": "1. 新隆豐牙醫診所 (1) 地址: 桃園市中壢區龍東路２３號 (2)電話: 03-4367671 2. 華國牙醫診所 (1) 地址: 桃園市中壢區環中東路175號 (2) 電話:03-4353188 3. 全美牙醫診所 (1) 地址: 苗栗縣竹南鎮博愛街44號 (2) 電話:037-469098 4. 真善美牙醫診所 (1) 地址: 苗栗縣苗栗市建功街7-6號 (2) 電話:037-372399",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；學校特約廠商一覽表，依頁面歸為學生及教職員工；期限：無期限；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "HSC"
+    ],
+    "source_level": "school",
+    "source_org": "新生醫護管理專科學校",
+    "source_url": "https://www.hsc.edu.tw/p/404-1000-35585.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "明漾眼鏡",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "桃園市龍潭區中正路100號",
+    "phone": "(03)4706677",
+    "highlight": "學生6折",
+    "offer": "一般鏡架(特價品除外)、一般鏡片(訂製片除外)、免費維修鎖螺絲及清洗或換鼻墊。學生:6折、老師:5折。",
+    "info": "桃園市龍潭區中正路100號 (03)4706677",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款：「學生:6折、老師:5折」；期限：無期限；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "HSC"
+    ],
+    "source_level": "school",
+    "source_org": "新生醫護管理專科學校",
+    "source_url": "https://www.hsc.edu.tw/p/404-1000-35585.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "美的適藥股份有限公司",
+    "subtitle": "",
+    "category": "health",
+    "regions": [
+      "north"
+    ],
+    "address": "中壢市環北路540號",
+    "phone": "(03)4614133",
+    "highlight": "金鑽會員價",
+    "offer": "至各分店購買商品，一律金鑽會員價優惠(特價商品恕不再打折)。",
+    "info": "中壢市環北路540號 (03)4614133",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；學校特約廠商一覽表，依頁面歸為學生及教職員工；原文「特價商品怒不再打折」應為「恕不再打折」，已更正錯字；期限：無期限；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "HSC"
+    ],
+    "source_level": "school",
+    "source_org": "新生醫護管理專科學校",
+    "source_url": "https://www.hsc.edu.tw/p/404-1000-35585.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "十八寶羊肉爐呷到飽",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "桃園市桃園區中正路337號",
+    "phone": "",
+    "highlight": "送汽水",
+    "offer": "1.每人送汽水一瓶2.不加服務費",
+    "info": "桃園市桃園區中正路337號",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；學校特約廠商一覽表，依頁面歸為學生及教職員工；期限：無期限；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "HSC"
+    ],
+    "source_level": "school",
+    "source_org": "新生醫護管理專科學校",
+    "source_url": "https://www.hsc.edu.tw/p/404-1000-35585.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "小豪包膜屋",
+    "subtitle": "",
+    "category": "services",
+    "regions": [
+      "north"
+    ],
+    "address": "桃園市桃園區博愛路64號",
+    "phone": "",
+    "highlight": "85折",
+    "offer": "1.視同VIP會員85折優惠。2.生日當月可享8折優惠。3.手機鏡頭貼免費貼、更換。",
+    "info": "桃園市桃園區博愛路64號",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；學校特約廠商一覽表，依頁面歸為學生及教職員工；期限：無期限；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "HSC"
+    ],
+    "source_level": "school",
+    "source_org": "新生醫護管理專科學校",
+    "source_url": "https://www.hsc.edu.tw/p/404-1000-35585.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "西堤龍潭店",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "桃園市龍潭區中正路398號",
+    "phone": "",
+    "highlight": "特約優惠",
+    "offer": "詳見店內特優訊息",
+    "info": "桃園市龍潭區中正路398號",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "條款未寫明適用對象；學校特約廠商一覽表，依頁面歸為學生及教職員工；頁面只寫「詳見店內特優訊息」，優惠內容未列出；期限：無期限；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "HSC"
+    ],
+    "source_level": "school",
+    "source_org": "新生醫護管理專科學校",
+    "source_url": "https://www.hsc.edu.tw/p/404-1000-35585.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  }
+]

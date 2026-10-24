@@ -1,0 +1,392 @@
+[
+  {
+    "name": "原道日式燒肉有限公司",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "屏東市自由路512號",
+    "phone": "08-7325757",
+    "highlight": "現金95折",
+    "offer": "A: 持員工證件享現金95折(不適用春節,母親節,中秋節等連假期間)\nB: 團體聚餐優惠價(上選燒肉吃到飽原價659元) 30位以上→611元/人(92折)；60位以上→599元/人(9折)\nC: 平日70人以上可洽包場，可提供150吋投影布幕設備、無線麥克風、音響設備。\nD: 特約停車場：原道對面的(綠活)停車場\n★各項優惠活動不得同時併用，如遇調漲價格時補差額即可！",
+    "info": "電話：08-7325757\n地址：屏東市自由路512號\n特約期間：114/2/1~115/12/31\n備註：請主動出示教職員證或學生證",
+    "links": [
+      {
+        "label": "優惠圖片",
+        "url": "https://a06.tajen.edu.tw/var/file/6/1006/img/428326577.jpg"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "優惠內容欄是一張圖片（已轉錄）；圖片寫「致【大仁科技大學】全體同仁」「持員工證件享現金95折」，比備註「出示教職員證或學生證」窄，歸為教職員工；特約期間 114/2/1~115/12/31；請主動出示教職員證或學生證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "TAJEN"
+    ],
+    "source_level": "school",
+    "source_org": "大仁科技大學 總務處",
+    "source_url": "https://a06.tajen.edu.tw/p/404-1006-94061.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "紅館餐廳",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "屏東縣長治鄉瑞光一路812號",
+    "phone": "08-7217116",
+    "highlight": "飲料暢飲",
+    "offer": "(一)飲料暢飲。\n(二)菜色升級升等。",
+    "info": "電話：08-7217116\n地址：屏東縣長治鄉瑞光一路812號\n特約期間：110/12/15~永久\n備註：請主動出示教職員證或學生證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約期間「110/12/15~永久」；請主動出示教職員證或學生證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "TAJEN"
+    ],
+    "source_level": "school",
+    "source_org": "大仁科技大學 總務處",
+    "source_url": "https://a06.tajen.edu.tw/p/404-1006-94061.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "濟世中醫診所",
+    "subtitle": "屏東分院",
+    "category": "health",
+    "regions": [
+      "south"
+    ],
+    "address": "屏東市自由路379號",
+    "phone": "08-7350616",
+    "highlight": "掛號費50元",
+    "offer": "(一)優惠掛號費50元。\n(二)購買自費商品享9折優惠。",
+    "info": "電話：08-7350616\n地址：屏東市自由路379號\n特約期間：111/1/19~永久\n備註：請主動出示教職員證或學生證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約期間「111/1/19~永久」；請主動出示教職員證或學生證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "TAJEN"
+    ],
+    "source_level": "school",
+    "source_org": "大仁科技大學 總務處",
+    "source_url": "https://a06.tajen.edu.tw/p/404-1006-94061.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "林連風診所",
+    "subtitle": "",
+    "category": "health",
+    "regions": [
+      "south"
+    ],
+    "address": "屏東市民權路46號",
+    "phone": "08-7336168",
+    "highlight": "掛號費50元",
+    "offer": "優惠掛號費50元。",
+    "info": "電話：08-7336168\n地址：屏東市民權路46號\n特約期間：111/1/20~115/12/31\n備註：請主動出示教職員證或學生證",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "特約期間 111/1/20~115/12/31；請主動出示教職員證或學生證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "TAJEN"
+    ],
+    "source_level": "school",
+    "source_org": "大仁科技大學 總務處",
+    "source_url": "https://a06.tajen.edu.tw/p/404-1006-94061.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "曾競峰診所",
+    "subtitle": "",
+    "category": "health",
+    "regions": [
+      "south"
+    ],
+    "address": "屏東市廣東路1020號",
+    "phone": "08-7324355",
+    "highlight": "掛號費全免",
+    "offer": "掛號費全免。",
+    "info": "電話：08-7324355\n地址：屏東市廣東路1020號\n特約期間：115/9/9~117/12/31\n備註：請主動出示教職員證或學生證",
+    "links": [],
+    "expires_on": "2028-12-31",
+    "auto_renew": false,
+    "notes": "特約期間 115/9/9~117/12/31；請主動出示教職員證或學生證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "TAJEN"
+    ],
+    "source_level": "school",
+    "source_org": "大仁科技大學 總務處",
+    "source_url": "https://a06.tajen.edu.tw/p/404-1006-94061.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "阿貴車業",
+    "subtitle": "",
+    "category": "services",
+    "regions": [
+      "south"
+    ],
+    "address": "屏東縣鹽埔鄉新二村維新路20-5號",
+    "phone": "08-7368468",
+    "highlight": "機油加5送1",
+    "offer": "(一)加五次機油送一次(價位同前五次的價位，限定油品)。\n(二)免費道路救援(屏東地區)。\n(三)不定期推出其他優惠活動，將公告於FB粉絲專頁。",
+    "info": "電話：08-7368468\n地址：屏東縣鹽埔鄉新二村維新路20-5號\n特約期間：111/2/17~永久\n備註：請主動出示教職員證或學生證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約期間「111/2/17~永久」；請主動出示教職員證或學生證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "TAJEN"
+    ],
+    "source_level": "school",
+    "source_org": "大仁科技大學 總務處",
+    "source_url": "https://a06.tajen.edu.tw/p/404-1006-94061.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "御林機車行",
+    "subtitle": "",
+    "category": "services",
+    "regions": [
+      "south"
+    ],
+    "address": "屏東縣鹽埔鄉新二村彭厝路57-1號",
+    "phone": "0962-076882",
+    "highlight": "機油10送3",
+    "offer": "(一)機油10送3，齒輪油5送1。\n(二)大保養享九折優惠。\n(三)當日壽星贈送精美小禮物。",
+    "info": "電話：0962-076882\n地址：屏東縣鹽埔鄉新二村彭厝路57-1號\n特約期間：111/2/17~116/12/31\n備註：請主動出示教職員證或學生證",
+    "links": [],
+    "expires_on": "2027-12-31",
+    "auto_renew": false,
+    "notes": "特約期間 111/2/17~116/12/31；請主動出示教職員證或學生證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "TAJEN"
+    ],
+    "source_level": "school",
+    "source_org": "大仁科技大學 總務處",
+    "source_url": "https://a06.tajen.edu.tw/p/404-1006-94061.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "好食宅 私房料理",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "屏東市民學路5巷6號",
+    "phone": "08-7235156",
+    "highlight": "現金9折",
+    "offer": "持卡本人到店消費享現金九折優惠(不適用春節、母親節、中秋節等連假期間)。",
+    "info": "電話：08-7235156\n地址：屏東市民學路5巷6號\n特約期間：111/4/20~永久\n備註：請主動出示教職員證或學生證",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特約期間「111/4/20~永久」；請主動出示教職員證或學生證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "TAJEN"
+    ],
+    "source_level": "school",
+    "source_org": "大仁科技大學 總務處",
+    "source_url": "https://a06.tajen.edu.tw/p/404-1006-94061.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "朵法婭生活美學",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "新北市中和區板南路663號14樓",
+    "phone": "02-27780037",
+    "highlight": "85折",
+    "offer": "優惠對象：教職員工、校友、學生\n於朵法婭生活美學官網：https://www.darphia.com/\n使用優惠代碼：SVIP2401\n※全館85折，不與館內其他優惠共用",
+    "info": "電話：02-27780037\n地址：新北市中和區板南路663號14樓\n特約期間：115/1/1~116/1/1\n備註：優惠代碼:SVIP2401",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.darphia.com/"
+      }
+    ],
+    "expires_on": "2027-01-01",
+    "auto_renew": false,
+    "notes": "特約期間 115/1/1~116/1/1；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "TAJEN"
+    ],
+    "source_level": "school",
+    "source_org": "大仁科技大學 總務處",
+    "source_url": "https://a06.tajen.edu.tw/p/404-1006-94061.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "娜路彎大酒店股份有限公司",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "",
+    "phone": "07-390-0066",
+    "highlight": "客房4,050元起",
+    "offer": "優惠對象:教職員工生、校友\n優惠房價如附件（優惠內容）\n優惠飯店：娜路彎大酒店、娜路彎銀河酒店、娜路彎會館、娜路彎花園酒店\n附件第1頁（娜路彎大酒店 台東）優惠合約價：豪華客房 平日4,050／旺日4,650／假日5,550／旺假日6,550；豪華四人房 平日5,250／旺日5,850／假日6,750／旺假日7,750（含早餐）。農曆春節期間售價請另洽業務處，此合約價恕不適用。",
+    "info": "電話：07-390-0066\n地址：高雄市三民區九如一路502號13樓B3\n特約期間：115/1/1~115/12/31\n備註：請主動出示教職員證或學生證",
+    "links": [
+      {
+        "label": "優惠房價附件",
+        "url": "https://a06.tajen.edu.tw/var/file/6/1006/img/SKM_C36825103014571.pdf"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "附件為掃描檔（4頁）；只轉錄第1頁娜路彎大酒店房價，其他館房價見附件；電話地址欄為中南區業務處（高雄）；飯店在台東；特約期間 115/1/1~115/12/31；請主動出示教職員證或學生證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "TAJEN"
+    ],
+    "source_level": "school",
+    "source_org": "大仁科技大學 總務處",
+    "source_url": "https://a06.tajen.edu.tw/p/404-1006-94061.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "APHROES美妝生活館",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "台中市潭子區潭興路一段264號",
+    "phone": "",
+    "highlight": "會員禮100點",
+    "offer": "官網:https://aphroes.commerbiz.com/home\n優惠對象:教職員工生、校友\n一、會員註冊禮$100點\n二、會員推禮\n$100點\n三、會員生日禮$100點",
+    "info": "地址：台中市潭子區潭興路一段264號\n特約期間：114/4/15~116/4/15",
+    "links": [
+      {
+        "label": "官方LINE",
+        "url": "https://lin.ee/tWITru0"
+      },
+      {
+        "label": "官網",
+        "url": "https://aphroes.commerbiz.com/home/"
+      }
+    ],
+    "expires_on": "2027-04-15",
+    "auto_renew": false,
+    "notes": "特約期間 114/4/15~116/4/15；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "TAJEN"
+    ],
+    "source_level": "school",
+    "source_org": "大仁科技大學 總務處",
+    "source_url": "https://a06.tajen.edu.tw/p/404-1006-94061.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "航典國際旅行社有限公司",
+    "subtitle": "",
+    "category": "entertainment",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市新興區民權一路251號2F-1",
+    "phone": "07-2233388",
+    "highlight": "團費折1,000元",
+    "offer": "一、國外團體旅遊享價格優惠新台幣1000元/人。\n二、國外團體自由行(航空公司或FIT自由行冷外)享價格優惠新台幣500元/人。\n三、員工旅遊、企業獎勵旅遊、勞工教育會議、商務會議考察，專責專案優惠辦理。\n*備註：促銷及特惠團體…等，不適用上述優惠範圍。",
+    "info": "電話：07-2233388\n地址：高雄市新興區民權一路251號2F-1\n特約期間：114/10/23~115/12/31\n備註：請主動出示教職員證或學生證",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "特約期間 114/10/23~115/12/31；請主動出示教職員證或學生證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "TAJEN"
+    ],
+    "source_level": "school",
+    "source_org": "大仁科技大學 總務處",
+    "source_url": "https://a06.tajen.edu.tw/p/404-1006-94061.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  }
+]
