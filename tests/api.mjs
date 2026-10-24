@@ -349,14 +349,15 @@ if (!mockUp) {
   const dealId = list.body.deals[0].id;
   const term = `拉麵 ${RUN}`;
   const zero = `zz${RUN}none`;
-  const rare = `yy${RUN}once`;
+  const rare = `rare ${RUN}`;
   const post = (e, opts = {}) => ev.req("/api/events", { method: "POST", json: { e }, ...opts });
   const r = await post([
     ["search", `  ${term.toUpperCase()}  `, 2],
     ["search", term, 1],
     ["search_zero", zero, 3],
-    ["search", rare, 1], // used once: never shown
+    ["search", rare, 2], // below the dashboard's minimum of 3
     ["filter", "cat:food", 1],
+    ["filter", "students:off", 1],
     ["open", dealId, 50], // capped
     ["search", "b09902123", 1], // student id: dropped
     ["search", "me@example.com", 1], // email: dropped
@@ -373,12 +374,27 @@ if (!mockUp) {
   const find = (rows, k) => rows.find((x) => x.key === k)?.n;
   check("events: search normalised and summed", find(a.top_searches, term.toLowerCase()) === 3, JSON.stringify(a.top_searches.slice(0, 3)));
   check("events: no-result search listed", find(a.searches_no_results, zero) === 3);
-  check("events: a search used fewer than 3 times is not shown", find(a.top_searches, rare) === undefined);
-  check("events: filter counted", (find(a.filters, "cat:food") || 0) >= 1);
+  check("events: filter counted", (find(a.filters, "cat:food") || 0) >= 1 && (find(a.filters, "students:off") || 0) >= 1);
+  check("events: a search made fewer than 3 times is not shown", find(a.top_searches, rare) === undefined);
   const opened = a.top_opened.find((x) => x.name === list.body.deals[0].name);
   check("events: deal open counted by name, capped per page", opened && opened.opens >= 20, JSON.stringify(opened));
   const keys = JSON.stringify(a);
   check("events: personal-looking searches dropped", !/b09902123|example\.com|0912345678|not-a-deal|script|teleport/.test(keys));
+}
+
+// ---------- school units (/api/schools/:code/units) ----------
+{
+  const u = await anon.req("/api/schools/NTU/units");
+  const body = await u.json();
+  const colleges = body.college || [];
+  const depts = colleges.flatMap((c) => c.depts || []);
+  check("units: NTU has 17 colleges", u.status === 200 && body.school === "NTU" && colleges.length === 17, `${colleges.length}`);
+  check("units: NTU has 158 departments", depts.length === 158, `${depts.length}`);
+  check("units: 9020 is under eecs", !!colleges.find((c) => c.code === "eecs")?.depts.some((d) => d.code === "9020" && d.zh === "資訊工程學系"));
+  check("units: codes unique across colleges and departments", new Set([...colleges, ...depts].map((x) => x.code)).size === 17 + 158);
+  check("units: cached publicly for a day", u.headers.get("cache-control") === "public, max-age=86400", u.headers.get("cache-control"));
+  const none = await anon.json("/api/schools/XYZ/units");
+  check("units: unknown school 404", none.status === 404 && none.body?.error === "not_found", `status ${none.status}`);
 }
 
 const passed = results.filter(Boolean).length;

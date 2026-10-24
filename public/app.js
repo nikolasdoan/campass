@@ -3,12 +3,12 @@
    a pushed full-screen page on a phone) · /merchants (商家合作) · /m/:key (a shop's private
    confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
    Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=21";
-import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=21";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=21";
-import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=21";
-import { qrSVG } from "./js/qr.js?v=21";
-import { trackOpen, noteSearch, noteFilters } from "./js/track.js?v=21";
+import { icon } from "./js/icons.js?v=22";
+import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=22";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=22";
+import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=22";
+import { qrSVG } from "./js/qr.js?v=22";
+import { trackOpen, noteSearch, noteFilters } from "./js/track.js?v=22";
 
 /* ---------- constants ---------- */
 
