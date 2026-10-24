@@ -3,11 +3,11 @@
    a pushed full-screen page on a phone) · /merchants (商家合作) · /m/:key (a shop's private
    confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
    Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=19";
-import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=19";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=19";
-import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=19";
-import { qrSVG } from "./js/qr.js?v=19";
+import { icon } from "./js/icons.js?v=20";
+import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=20";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=20";
+import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=20";
+import { qrSVG } from "./js/qr.js?v=20";
 
 /* ---------- constants ---------- */
 
@@ -40,36 +40,82 @@ const ZH = ' lang="zh-Hant-TW"';
 const zh = (s) => `<span${ZH}>${esc(s)}</span>`;
 // The generic badges have an English name; any other badge is deal content.
 const GENERIC_BADGE = { "專屬優惠價": "badge.partnerRate", "特約優惠": "badge.partnerDeal" };
-/* A deal's badge in English. 「9折」 is 90% of the price (10% off), 「95折」 5% off; 「起」 means
-   "from", so 「9折起」 is 10% off or more. Badges with no rule here stay as written (Chinese). */
+/* A deal's badge in English. 「9折」 is 90% of the price (10% off), 「95折」 5% off; 「起」 means "from", so
+   「9折起」 is 10% off or more. Badges with no rule here get a plain label by kind (badgeKindEn). */
 const BADGE_EN = {
   消費贈品: "Free gift", 贈品: "Free gift", 包套贈品: "Package gift", 掛號費優惠: "Lower registration fee",
   免服務費: "No service fee", 專案優惠: "Special offer", 企業會員: "Corporate rate", 優惠價: "Special price",
   會員價: "Member price", 教育優惠: "Education discount", 教育方案優惠: "Education plan", 專屬房價: "Partner room rate",
   保費折扣: "Insurance discount", 免費體驗: "Free trial", 免車馬費: "No travel fee", 買大送大: "Buy a large, get a large",
   半票優惠: "Half-price ticket", 免運費: "Free shipping", 免費入館閱覽: "Free library entry", 免費終身信箱: "Free lifetime email",
-  雙倍點數: "Double points",
-  滿額贈: "Gift over a spend", 免費升級: "Free upgrade",
+  雙倍點數: "Double points", 滿額贈: "Gift over a spend", 免費升級: "Free upgrade",
   團購優惠: "Group-buy discount", 企業帳號: "Corporate account", 免掛號費: "No registration fee",
+  免開瓶費: "No corkage fee", 組合優惠價: "Combo price", 專櫃折扣: "Counter discount", 高粱特價: "Kaoliang special price",
+  入會禮三選一: "Welcome gift (1 of 3)", 特定店家優惠: "Selected shops", 攤商折扣: "Stall discount", 會籍優惠: "Membership discount",
+  免外送費: "No delivery fee", 療程優惠: "Treatment discount", 每月福利四選一: "Monthly perk (1 of 4)", 企業專屬優惠碼: "Corporate promo code",
+  團購價: "Group-buy price", 團購優惠價: "Group-buy price", 免費加麵: "Free extra noodles", 企業限定折扣價: "Corporate price",
+  免收部分負擔: "No copayment", 金鑽會員價: "Diamond member price", 免費加飯加麵: "Free extra rice or noodles", 免費加料: "Free toppings",
+  主餐加飯不加價: "Free extra rice", "加量20%": "20% bigger portion", 集點兌換: "Points rewards", 愛玉升級: "Free aiyu upgrade",
+  電信優惠專案: "Mobile plan offer", 入學贈餐具: "Free tableware", 免費升級套餐: "Free set upgrade", 特約價: "Partner price",
+  專屬活動網頁: "Members' offer page", 企業會員優惠: "Corporate member rate", 免檢測費: "No inspection fee", 維修優惠價: "Repair discount",
+  免付掛號費用: "No registration fee", 掛號費全免: "No registration fee", 飲料暢飲: "Free-flow drinks", 會員禮100點: "100 welcome points",
+  "企業會員額外3%": "Corporate: extra 3%",
+};
+// 「課程9折」: what the rate applies to.
+const BADGE_WHAT = {
+  "": "", 團體: "Groups ", 團訂: "Group orders ", 掛號費: "Registration fee ", 第二杯: "2nd cup ", 紀念品: "Souvenirs ",
+  限定月: "Select months: ", 手續費: "Fees ", 旅平險: "Travel insurance ", 課程: "Courses ", 配鏡: "Glasses ", 眼鏡: "Glasses ",
+  內用: "Dine-in ", 零件: "Parts ", 住宿: "Stays ", 餐廳: "Restaurant ", 平日: "Weekdays ", 泡湯: "Hot springs ", 學生: "Students ",
+  歡唱: "Karaoke ", 保養: "Servicing ", 排餐: "Steaks ", 註冊費: "Registration ", 機票: "Flights ", 學費: "Tuition ", 現金: "Cash ",
+  包車: "Charter ",
+};
+// 「招待梅酒」「贈薯條」: the free item.
+const FREE_EN = {
+  梅酒: "plum wine", 牛培根: "beef bacon", 主廚私房菜: "chef's dish", 丸拼盤: "meatball platter", 時令雙鮮: "seasonal seafood",
+  薯條: "fries", 甜點: "dessert", 汽水: "soda", 茶一壺: "pot of tea", 海6拼: "seafood platter", 肉品海鮮: "meat and seafood",
+  雪花豬: "pork", 薄切鴨胸: "duck breast", 手捲或飲品: "hand roll or drink", 肉品: "meat", 飲料: "drink", 黑輪: "oden",
 };
 const pctOff = (n) => 100 - (n.length === 1 ? +n * 10 : +n); // 「9」→10, 「95」→5, 「88」→12
+const ntd = (x) => `NT$${(+String(x).replace(/,/g, "")).toLocaleString("en-US")}`;
+const zhNum = (x) => (x === "一" ? 1 : x === "三" ? 3 : x === "百" ? 100 : x);
 function badgeEn(text) {
-  const s = String(text).replace(/\s+/g, "");
+  // 九折 ≡ 9折, 九五折 ≡ 95折
+  const s = String(text).replace(/\s+/g, "").replace(/([〇零一二兩三四五六七八九]{1,2})折/g, (_, n) => `${[...n].map((c) => ZH_DIGIT[c]).join("")}折`);
   if (BADGE_EN[s]) return BADGE_EN[s];
-  let m = s.match(/^(.*?)(\d{1,2})折(起)?$/); // 9折, 85折起, 第二杯85折, 旅平險77折
+  let m = s.match(/^(\d{1,2})[-~～](\d{1,2})折$/); // 85-95折, 5~8折
+  if (m) return `${pctOff(m[2])}–${pctOff(m[1])}% off`;
+  if ((m = s.match(/^(\d{1,2})折再(\d{1,2})折$/))) return `${pctOff(m[1])}% off, then ${pctOff(m[2])}% more`;
+  m = s.match(/^(.*?)(\d{1,2})折(起)?$/); // 9折, 85折起, 第二杯85折, 旅平險77折
   if (m) {
-    const off = `${pctOff(m[2])}%${m[3] ? "+" : ""} off`;
-    const what = { "": "", 團體: "Groups ", 掛號費: "Registration fee ", 第二杯: "2nd cup ", 紀念品: "Souvenirs ", 限定月: "Select months: ", 手續費: "Fees ", 旅平險: "Travel insurance " }[m[1]];
-    return what === undefined ? null : what + off;
+    const what = BADGE_WHAT[m[1]];
+    return what === undefined ? null : `${what}${pctOff(m[2])}%${m[3] ? "+" : ""} off`;
   }
-  if ((m = s.match(/^(每人)?折\$([\d,]+)(起)?$/))) return `NT$${(+m[2].replace(/,/g, "")).toLocaleString("en-US")}${m[3] ? "+" : ""} off${m[1] ? " each" : ""}`;
-  if ((m = s.match(/^滿額折\$([\d,]+)$/))) return `NT$${(+m[1].replace(/,/g, "")).toLocaleString("en-US")} off over a spend`;
-  if ((m = s.match(/^優惠價\$([\d,]+)$/))) return `Special price NT$${(+m[1].replace(/,/g, "")).toLocaleString("en-US")}`;
-  if ((m = s.match(/^買(一|\d+)送(一|\d+)$/))) return `Buy ${m[1] === "一" ? 1 : m[1]}, get ${m[2] === "一" ? 1 : m[2]} free`;
+  if ((m = s.match(/^(每人|每份|主餐|票券|洗車|團費)?(?:折抵|折價|折|優惠)\$?([\d,]+)元?(起)?$/))) {
+    const pre = { 主餐: "Mains: ", 票券: "Tickets: ", 洗車: "Car wash: ", 團費: "Tours: " }[m[1]] || "";
+    const post = { 每人: " each", 每份: " per item" }[m[1]] || "";
+    return `${pre}${ntd(m[2])}${m[3] ? "+" : ""} off${post}`;
+  }
+  if ((m = s.match(/^滿額?(百|[\d,]+)?折\$?([\d,]+)元?$/))) return m[1] ? `${ntd(m[2])} off over ${ntd(zhNum(m[1]))}` : `${ntd(m[2])} off over a spend`;
+  if ((m = s.match(/^滿(百|[\d,]+)送(.+)$/))) return `Free ${FREE_EN[m[2]] || "gift"} over ${ntd(zhNum(m[1]))}`;
+  if ((m = s.match(/^(?:減免)?掛號費(?:減免)?([\d,]+)元$/))) return `${ntd(m[1])} off registration`;
+  if ((m = s.match(/^優惠價\$([\d,]+)$/))) return `Special price ${ntd(m[1])}`;
+  if ((m = s.match(/^團費([\d.]+)%折扣$/))) return `Tours ${m[1]}% off`;
+  if ((m = s.match(/^購物金([\d,]+)元$/))) return `${ntd(m[1])} shopping credit`;
+  if ((m = s.match(/^包台([\d,]+)元\/人$/))) return `${ntd(m[1])} per person`;
+  if ((m = s.match(/^全日票\$?([\d,]+)元?$/))) return `Day ticket ${ntd(m[1])}`;
+  if ((m = s.match(/^客房\$?([\d,]+)元?起$/))) return `Rooms from ${ntd(m[1])}`;
+  if ((m = s.match(/^來回船票([\d,]+)元$/))) return `Return ferry ${ntd(m[1])}`;
+  if ((m = s.match(/^兩人同行([\d,]+)元$/))) return `${ntd(m[1])} for two`;
+  if ((m = s.match(/^買(一|三|\d+)送(一|\d+)$/))) return `Buy ${zhNum(m[1])}, get ${zhNum(m[2])} free`;
+  if ((m = s.match(/^買(\d+)小時送(\d+)小時$/))) return `Buy ${m[1]} hours, get ${m[2]} free`;
+  if ((m = s.match(/^機油加?(\d+)送(\d+)$/))) return `Oil: ${m[1]} + ${m[2]} free`;
+  if ((m = s.match(/^(?:招待|贈|送)(.+)$/)) && FREE_EN[m[1]]) return `Free ${FREE_EN[m[1]]}`;
   if ((m = s.match(/^(\d+)%回饋$/))) return `${m[1]}% cashback`;
   if ((m = s.match(/^額外(\d+)%折扣$/))) return `Extra ${m[1]}% off`;
   return null;
 }
+/** A plain English label by kind, for a badge with no rule, so English mode never shows a Chinese badge. */
+const badgeKindEn = (text) => (/招待|贈|送|免費|^免/.test(text) ? "Free extra" : /折|減|優惠|價|惠/.test(text) ? "Discount" : "Special offer");
 const ELIG = ["student", "staff", "alumni", "family"];
 const THEME_KEY = "cp_theme";
 const PENDING_FAV = "cp_pending_fav";
@@ -95,6 +141,7 @@ const ROLES = ["student", "staff", "alumni"];
 const CARD_TONE = {
   NTU: "violet", NCCU: "teal", NTNU: "blue", NTUST: "rose", NTHU: "amber", NYCU: "green", NCKU: "slate",
   NCU: "blue", NCHU: "green", TMU: "rose", TCU: "teal", KSU: "amber", CMU: "violet", CCU: "slate", NSYSU: "teal", NDHU: "green",
+  CSMU: "rose", NKUHT: "amber", CTUST: "blue", STUST: "violet", HSC: "teal", TAJEN: "slate",
 };
 const toneOf = (school) => CARD_TONE[school] || "slate";
 const NO_FEATURES = { google: false, dev_login: false, email_code: false };
@@ -193,7 +240,7 @@ function areaHTML(d) {
 function badgeHTML(text) {
   if (!text) return "";
   const key = GENERIC_BADGE[text];
-  const en = getLang() === "en" && (key ? t(key) : badgeEn(text));
+  const en = getLang() === "en" && (key ? t(key) : /[\u3400-\u9fff]/.test(text) ? badgeEn(text) || badgeKindEn(text) : null);
   return en ? `<span class="badge">${esc(en)}</span>` : `<span class="badge"${ZH}>${esc(text)}</span>`;
 }
 

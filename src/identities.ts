@@ -21,6 +21,12 @@ export const SCHOOL_DOMAINS: Record<string, string[]> = {
   CCU: ["ccu.edu.tw"], // students: alum.ccu.edu.tw; never nccu.edu.tw (dot boundary)
   NSYSU: ["nsysu.edu.tw"],
   NDHU: ["ndhu.edu.tw"], // students: gms.ndhu.edu.tw
+  CSMU: ["csmu.edu.tw"],
+  NKUHT: ["nkuht.edu.tw"],
+  CTUST: ["ctust.edu.tw"],
+  STUST: ["stust.edu.tw"],
+  HSC: ["hsc.edu.tw"],
+  TAJEN: ["tajen.edu.tw"],
 };
 
 export function schoolForDomain(domain: string): string | null {

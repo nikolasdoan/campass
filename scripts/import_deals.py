@@ -176,6 +176,10 @@ def links_from(*texts):
     return out
 
 
+# Records whose terms were never transcribed (notes say 「未轉錄」) are held back from the site. Set to False to list
+# them anyway (as 特約優惠 / 專屬優惠價 with "see the contract").
+HOLD_UNTRANSCRIBED = True
+
 CITIES = "臺北|新北|桃園|臺中|臺南|高雄|基隆|新竹|嘉義|苗栗|彰化|南投|雲林|屏東|宜蘭|花蓮|臺東|澎湖|金門|連江"
 # A real city or county, then a district: 前鎮區 (not 前鎮), 竹北市. Not 茶門市 (全台貢茶門市) or 西區市.
 AREA_RE = re.compile(rf"((?:{CITIES})[市縣])\s*([\u4e00-\u9fff]{{1,3}}?區|[\u4e00-\u9fff]{{1,2}}[鎮鄉市])?")
@@ -282,10 +286,16 @@ def main(path):
         }
         deals[extra["name"]] = d
 
+    held = {}
     for src in sorted((ROOT / "data/sources").glob("*.json")):
         for rec in json.loads(src.read_text()):
             if not rec.get("source_url") or rec.get("category") not in CATEGORIES:
                 print(f"skip {src.name}: {rec.get('name')} (missing source_url or bad category)")
+                continue
+            # The terms exist only in a scan or attachment nobody has transcribed (the worker notes 「未轉錄」):
+            # nothing concrete to show a student, so the record stays in its source file but is not listed.
+            if HOLD_UNTRANSCRIBED and "未轉錄" in (rec.get("notes") or ""):
+                held[src.name] = held.get(src.name, 0) + 1
                 continue
             key = f"{rec.get('source_org', '')}|{rec['name']}|{rec.get('subtitle', '')}"
             if key in deals:
@@ -317,6 +327,8 @@ def main(path):
                 "sort_order": order,
             }
 
+    if held:
+        print("held, terms not transcribed: " + ", ".join(f"{k} {v}" for k, v in sorted(held.items())))
     result = sorted(deals.values(), key=lambda d: d["sort_order"])
     for d in result:
         d["area"] = area_of(d.get("address", ""))
