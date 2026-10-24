@@ -200,6 +200,24 @@ function render(s) {
     { key: "self_reported", label: "自述 Self", num: true },
     { key: "confirmed", label: "確認 Shop", num: true },
   ]));
+
+  const a = s.anonymous_30d || {};
+  $("topSearches").replaceChildren(table(a.top_searches || [], [
+    { key: "key", label: "搜尋 Search" },
+    { key: "n", label: "次數 Times", num: true },
+  ]));
+  $("zeroSearches").replaceChildren(table(a.searches_no_results || [], [
+    { key: "key", label: "搜尋 Search" },
+    { key: "n", label: "次數 Times", num: true },
+  ]));
+  $("topOpened").replaceChildren(table(a.top_opened || [], [
+    { key: "name", label: "優惠 Deal" },
+    { key: "opens", label: "開啟 Opens", num: true },
+  ]));
+  $("filtersUsed").replaceChildren(table(a.filters || [], [
+    { key: "key", label: "篩選 Filter" },
+    { key: "n", label: "次數 Times", num: true },
+  ]));
 }
 
 // ---------- CSV exports ----------

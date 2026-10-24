@@ -3,11 +3,12 @@
    a pushed full-screen page on a phone) · /merchants (商家合作) · /m/:key (a shop's private
    confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
    Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=20";
-import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=20";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=20";
-import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=20";
-import { qrSVG } from "./js/qr.js?v=20";
+import { icon } from "./js/icons.js?v=21";
+import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=21";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=21";
+import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=21";
+import { qrSVG } from "./js/qr.js?v=21";
+import { trackOpen, noteSearch, noteFilters } from "./js/track.js?v=21";
 
 /* ---------- constants ---------- */
 
@@ -822,6 +823,8 @@ function renderExplore() {
 
   // List
   const shown = state.deals.filter((d) => matches(d, terms));
+  noteSearch(f.q, shown.length);
+  noteFilters(f);
   const fc = $("fcount");
   // On a narrow phone only the number shows, so the pills before it never slide under it.
   if (fc) fc.innerHTML = `<span class="fc-n" aria-hidden="true">${shown.length}</span><span class="fc-full">${esc(t("count", { n: shown.length }))}</span>`;
@@ -2966,7 +2969,10 @@ function route() {
     showView(state.base);
     const opening = !els.detail.classList.contains("open") || prev.id !== r.id;
     setDetailOpen(true);
-    if (opening) renderDetail(r.id, { focus: prev.name !== "deal" || prev.id !== r.id });
+    if (opening) {
+      trackOpen(r.id);
+      renderDetail(r.id, { focus: prev.name !== "deal" || prev.id !== r.id });
+    }
     setTitle();
   } else {
     const wasDetail = els.detail.classList.contains("open");

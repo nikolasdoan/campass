@@ -342,6 +342,42 @@ if (!mockUp) {
   check("protocol-relative redirect blocked", new URL(evil2.location, B).origin === new URL(B).origin, evil2.location);
 }
 
+
+// ---------- anonymous usage counts (/api/events) ----------
+{
+  const ev = browser();
+  const dealId = list.body.deals[0].id;
+  const term = `拉麵 ${RUN}`;
+  const zero = `zz${RUN}none`;
+  const post = (e, opts = {}) => ev.req("/api/events", { method: "POST", json: { e }, ...opts });
+  const r = await post([
+    ["search", `  ${term.toUpperCase()}  `, 2],
+    ["search", term, 1],
+    ["search_zero", zero, 1],
+    ["filter", "cat:food", 1],
+    ["open", dealId, 50], // capped
+    ["search", "b09902123", 1], // student id: dropped
+    ["search", "me@example.com", 1], // email: dropped
+    ["search", "0912345678", 1], // phone: dropped
+    ["open", "not-a-deal-id", 1], // bad id: dropped
+    ["filter", "cat:<script>", 1], // bad filter: dropped
+    ["teleport", "x", 1], // unknown kind: dropped
+  ]);
+  check("events: accepted (204)", r.status === 204, `status ${r.status}`);
+  check("events: cross-origin refused", (await post([["search", term, 1]], { origin: "https://evil.example" })).status === 403);
+  check("events: no Origin refused", (await post([["search", term, 1]], { origin: false })).status === 403);
+  check("events: malformed body is 400", (await ev.req("/api/events", { method: "POST", json: { nope: 1 } })).status === 400);
+  const a = (await anon.json("/admin/stats", { headers: ADMIN })).body.anonymous_30d;
+  const find = (rows, k) => rows.find((x) => x.key === k)?.n;
+  check("events: search normalised and summed", find(a.top_searches, term.toLowerCase()) === 3, JSON.stringify(a.top_searches.slice(0, 3)));
+  check("events: no-result search listed", find(a.searches_no_results, zero) === 1);
+  check("events: filter counted", (find(a.filters, "cat:food") || 0) >= 1);
+  const opened = a.top_opened.find((x) => x.name === list.body.deals[0].name);
+  check("events: deal open counted by name, capped per page", opened && opened.opens >= 20, JSON.stringify(opened));
+  const keys = JSON.stringify(a);
+  check("events: personal-looking searches dropped", !/b09902123|example\.com|0912345678|not-a-deal|script|teleport/.test(keys));
+}
+
 const passed = results.filter(Boolean).length;
 console.log(`\n${passed}/${results.length} passed`);
 process.exit(passed === results.length ? 0 : 1);

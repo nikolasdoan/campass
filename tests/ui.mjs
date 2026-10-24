@@ -1290,6 +1290,35 @@ const delCard = (page, id) => page.evaluate((i) => fetch('/api/identities/' + i,
   await ctx.close();
 }
 
+// Anonymous usage counts: a settled search, a search with no results, a filter and a deal opened are
+// batched and sent to /api/events when the page is hidden; text typed on the way is not counted.
+{
+  const { ctx, page } = await newPage(MOBILE, 'track');
+  const none = `zq${Date.now().toString(36)}`;
+  await page.goto(B + '/'); await page.waitForSelector('#list .item');
+  await page.fill('#q', '福'); await settle(page, 300);
+  await page.fill('#q', '福華'); await settle(page, 1700);
+  await page.fill('#q', none); await settle(page, 1700);
+  await page.fill('#q', ''); await settle(page, 200);
+  await page.click('[data-cat="food"]'); await settle(page, 200);
+  const id = await page.$eval('#list .item', (e) => e.dataset.id);
+  await page.click(`#list .item[data-id="${id}"] .pick`); await settle(page, 400);
+  const sent = page.waitForRequest((r) => r.url().endsWith('/api/events') && r.method() === 'POST', { timeout: 5000 }).catch(() => null);
+  await page.evaluate(() => {
+    Object.defineProperty(document, 'visibilityState', { value: 'hidden', configurable: true });
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  const req = await sent;
+  const ev = req ? JSON.parse(req.postData()).e : [];
+  const has = (k, key) => ev.some(([a, b]) => a === k && b === key);
+  check('track: settled search, no-result search, filter and open sent on hide',
+    has('search', '福華') && has('search_zero', none) && has('filter', 'cat:food') && has('open', id) && !has('search', '福'),
+    JSON.stringify(ev));
+  const res = req ? await req.response() : null;
+  check('track: /api/events accepts the batch', res?.status() === 204, `status ${res?.status()}`);
+  await ctx.close();
+}
+
 // The shop/scan checks provoke 403/404/409/410 answers on purpose; Chromium logs every non-2xx
 // fetch as a console error. Only those, and only on those pages, are expected.
 const EXPECTED_HTTP = /^(shop|scan-anon|w360-redeem): Failed to load resource: the server responded with a status of (403|404|409|410)\b/;

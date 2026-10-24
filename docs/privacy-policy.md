@@ -62,6 +62,11 @@ CampusPass（「本服務」）是一個整理各校與學生組織已公開之�
 | 優惠通行證（pass） | 您開啟店內出示用的通行證時產生：一組 6 碼代碼、優惠、建立時間；若您回答「優惠是否成功使用」，記錄您的回答（已使用／被拒絕／未使用）與時間；若商家輸入或掃描代碼確認，記錄確認時間與確認的商家連結 |
 | 錯誤回報 | 您回報優惠有誤時填寫的文字（最多 1,000 字）與時間 |
 
+**(b2) 匿名使用統計**（所有訪客，含未登入）：每天各搜尋字詞、沒有結果的搜尋、使用的篩選（類別、地區、學校）
+與被開啟的優惠的「次數總和」。不記錄帳號、IP 位址或 Cookie，無法得知是誰做了什麼；看似個人資料的搜尋字詞
+（電子郵件、網址、電話或證號、學號）不會被保存。瀏覽器設定「不要追蹤」（Do Not Track）或 Global Privacy
+Control 時不傳送。
+
 **(c) 商家合作表單**（任何人皆可填寫，主要為商家）：店名、聯絡人姓名、電子郵件、電話、地區、願意提供的優惠、
 合作意願、預算、留言；若填寫時已登入，另記錄帳號編號。
 
@@ -91,6 +96,7 @@ Observability），會處理您的 IP 位址、瀏覽器資訊與請求紀錄。
 | 登入工作階段 | 30 天後失效，並於每日自動清理時刪除 |
 | 帳號資料、收藏 | 至您要求刪除帳號為止；連續 [3] 年未登入者刪除 |
 | 使用日、優惠瀏覽紀錄 | 2 年後刪除（每日自動清理） |
+| 匿名使用統計（每日總數） | 400 天後刪除（每日自動清理） |
 | 優惠通行證紀錄 | 2 年後刪除（每日自動清理） |
 | 錯誤回報 | 處理完畢後 1 年 |
 | 商家合作表單 | 至商家撤回或要求刪除為止 |
@@ -187,6 +193,12 @@ you open (a 6-character code, the deal, the time; your answer to "did the discou
 not used — and when; and, if a shop types or scans the code, when it confirmed and which shop link confirmed it);
 and the text of any "this deal is wrong" report (up to 1,000 characters) and its time.
 
+**(b2) Anonymous usage counts** (every visitor, signed in or not): daily totals of each search term, searches that
+found nothing, filters used (category, region, school) and deals opened. No account, IP address or cookie is
+recorded, so a count never says who did what; search text that looks personal (emails, links, phone or ID numbers,
+student IDs) is not kept. Nothing is sent when the browser asks not to be tracked (Do Not Track or Global Privacy
+Control).
+
 **(c) Shop partnership form** (open to anyone, meant for shops): shop name, contact name, email, phone, area,
 the discount offered, type of interest, budget, message, and your account number if you were signed in.
 
@@ -213,7 +225,7 @@ The Service's own database does not store IP addresses.
 
 **Retention [PROPOSAL]**: sessions expire after 30 days and are deleted by the daily cleanup; the account and saved deals are kept
 until you ask for deletion, or deleted after [3] years without sign-in; active days, deal views and pass records are
-deleted after 2 years by the daily cleanup; reports 1 year after they are
+deleted after 2 years by the daily cleanup; anonymous daily usage counts after 400 days; reports 1 year after they are
 handled; shop partnership leads until the shop withdraws or asks for deletion; Cloudflare technical logs per
 Cloudflare's settings, typically a few days **[TO CONFIRM]**.
 
