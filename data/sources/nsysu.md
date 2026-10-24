@@ -85,3 +85,7 @@ The 「人事室特約內容」 link (https://ope.nsysu.edu.tw/p/412-1011-19408.
 - **Read from scans.** Periods and eligibility for 16 of the 17 records were read from scanned contracts. Wordvice is the exception; its terms are on the page. Each clause is quoted in `notes` so it can be checked against the PDF.
 - **Staff-only hotels.** Most hotel contracts are corporate 商務 agreements for staff. Their pages quote the general 「校友證/學生證」 rule, but the contracts don't extend to those groups, so they are marked staff-only.
 - **Missing rate tables.** Room-rate tables (H2O, 碧港良居, 劍湖山, 南科贊美) are linked, not transcribed.
+
+## Evidence
+
+The 25 contract pages I read from scans (periods and eligibility clauses) are saved in `data/evidence/nsysu/`, rendered at 70 dpi, with `MANIFEST.md` giving each image's source URL, the source PDF's sha256 and the record it decided.
