@@ -2,6 +2,7 @@ import { Hono } from "hono";
 import { getCookie, setCookie, deleteCookie } from "hono/cookie";
 import { googleAuthUrl, exchangeCode, newPkce, type GoogleEndpoints } from "./google";
 import { addIdentity, listIdentities, ROLES } from "./identities";
+import { recordEvents, eventStats } from "./events";
 
 export interface Env {
   DB: D1Database;
@@ -481,52 +482,12 @@ async function limited(limiter: RateLimit | undefined, c: any, bucket: string): 
   return !success;
 }
 
-// ---------- anonymous usage counts ----------
-//
-// The app batches what readers search for, which searches find nothing, and which filters and deals
-// they open (public/js/track.js), and sends it here when the page is hidden. Only daily totals are
-// stored (event_counts): no user id, IP or cookie, so a count never says who. Search text that could
-// identify someone is dropped.
-const EVENT_KINDS = new Set(["search", "search_zero", "filter", "open"]);
-const EVENT_MAX_N = 20; // one page can't add more than this to any count
-
-/** The stored key for an event, or null to drop it. */
-export function eventKey(kind: string, key: unknown): string | null {
-  if (typeof key !== "string") return null;
-  if (kind === "open") return /^[0-9a-f]{10}$/.test(key) ? key : null;
-  if (kind === "filter") return /^(cat|region|school):[A-Za-z_]{1,20}$/.test(key) ? key : null;
-  const q = key.normalize("NFKC").toLowerCase().replace(/\s+/g, " ").trim().slice(0, 40);
-  // Never keep what could identify someone: emails, links, phone or ID numbers, student IDs (b09902123).
-  if (q.length < 2 || /@|https?:|www\.|\d{6,}|\b[a-z]\d{7,}\b/.test(q)) return null;
-  return q;
-}
+// ---------- anonymous usage counts (src/events.ts) ----------
 
 app.post("/api/events", async (c) => {
   if (await limited(c.env.RL_EVENTS, c, "events")) return c.json({ error: "rate_limited" }, 429);
-  const body = await c.req.json().catch(() => null);
-  const list: unknown[] | null = Array.isArray(body?.e) ? body.e.slice(0, 50) : null;
-  if (!list) return c.json({ error: "bad_request" }, 400);
-  const rows = new Map<string, [string, string, number]>();
-  for (const item of list) {
-    if (!Array.isArray(item) || !EVENT_KINDS.has(item[0])) continue;
-    const key = eventKey(item[0], item[1]);
-    if (!key) continue;
-    const id = `${item[0]}\t${key}`;
-    const n = Math.min(Math.max(Math.trunc(Number(item[2]) || 1), 1), EVENT_MAX_N);
-    rows.set(id, [item[0], key, Math.min((rows.get(id)?.[2] ?? 0) + n, EVENT_MAX_N)]);
-  }
-  if (rows.size) {
-    const day = taipeiDay();
-    await c.env.DB.batch(
-      [...rows.values()].map(([kind, key, n]) =>
-        c.env.DB.prepare(
-          `INSERT INTO event_counts (day, kind, key, n) VALUES (?, ?, ?, ?)
-           ON CONFLICT (day, kind, key) DO UPDATE SET n = n + excluded.n`
-        ).bind(day, kind, key, n)
-      )
-    );
-  }
-  return c.body(null, 204);
+  const ok = await recordEvents(c.env.DB, await c.req.json().catch(() => null), taipeiDay());
+  return ok ? c.body(null, 204) : c.json({ error: "bad_request" }, 400);
 });
 
 // ---------- redemption evidence ----------
@@ -901,19 +862,8 @@ app.get("/admin/stats", async (c) => {
           WHERE r.created_at > datetime('now','-30 days') AND ${REAL} GROUP BY r.deal_id ORDER BY passes DESC LIMIT 10`
       ).all(),
     ]);
-  // Anonymous counts from everyone, signed in or not (event_counts), last 30 days.
-  const counted = (kind: string, limit = 20) =>
-    db.prepare(`SELECT key, SUM(n) AS n FROM event_counts WHERE kind = ? AND day >= ? GROUP BY key ORDER BY n DESC, key LIMIT ?`)
-      .bind(kind, d30, limit).all();
-  const [searches, zeroSearches, filters, opened] = await Promise.all([
-    counted("search"),
-    counted("search_zero"),
-    counted("filter", 40),
-    db.prepare(
-      `SELECT d.name, SUM(e.n) AS opens FROM event_counts e JOIN deals d ON d.id = e.key
-        WHERE e.kind = 'open' AND e.day >= ? GROUP BY e.key ORDER BY opens DESC LIMIT 20`
-    ).bind(d30).all(),
-  ]);
+  // Anonymous counts from everyone, signed in or not (src/events.ts), last 30 days.
+  const anonymous = await eventStats(db, d30);
   return c.json({
     // The go/no-go gate from docs/business-review.md, over the last 30 days.
     gate: {
@@ -925,12 +875,7 @@ app.get("/admin/stats", async (c) => {
     merchants: { leads: leads, would_pay: payLeads },
     top_viewed_30d: topViewed.results,
     top_redeemed_30d: topRedeemed.results,
-    anonymous_30d: {
-      top_searches: searches.results,
-      searches_no_results: zeroSearches.results,
-      filters: filters.results,
-      top_opened: opened.results,
-    },
+    anonymous_30d: anonymous,
   });
 });
 

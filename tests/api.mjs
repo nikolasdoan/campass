@@ -349,12 +349,15 @@ if (!mockUp) {
   const dealId = list.body.deals[0].id;
   const term = `拉麵 ${RUN}`;
   const zero = `zz${RUN}none`;
+  const rare = `rare ${RUN}`;
   const post = (e, opts = {}) => ev.req("/api/events", { method: "POST", json: { e }, ...opts });
   const r = await post([
     ["search", `  ${term.toUpperCase()}  `, 2],
     ["search", term, 1],
-    ["search_zero", zero, 1],
+    ["search_zero", zero, 3],
+    ["search", rare, 2], // below the dashboard's minimum of 3
     ["filter", "cat:food", 1],
+    ["filter", "students:off", 1],
     ["open", dealId, 50], // capped
     ["search", "b09902123", 1], // student id: dropped
     ["search", "me@example.com", 1], // email: dropped
@@ -370,8 +373,9 @@ if (!mockUp) {
   const a = (await anon.json("/admin/stats", { headers: ADMIN })).body.anonymous_30d;
   const find = (rows, k) => rows.find((x) => x.key === k)?.n;
   check("events: search normalised and summed", find(a.top_searches, term.toLowerCase()) === 3, JSON.stringify(a.top_searches.slice(0, 3)));
-  check("events: no-result search listed", find(a.searches_no_results, zero) === 1);
-  check("events: filter counted", (find(a.filters, "cat:food") || 0) >= 1);
+  check("events: no-result search listed", find(a.searches_no_results, zero) === 3);
+  check("events: filter counted", (find(a.filters, "cat:food") || 0) >= 1 && (find(a.filters, "students:off") || 0) >= 1);
+  check("events: a search made fewer than 3 times is not shown", find(a.top_searches, rare) === undefined);
   const opened = a.top_opened.find((x) => x.name === list.body.deals[0].name);
   check("events: deal open counted by name, capped per page", opened && opened.opens >= 20, JSON.stringify(opened));
   const keys = JSON.stringify(a);
