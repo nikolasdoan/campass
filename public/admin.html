@@ -19,8 +19,8 @@
   } catch (e) {}
 })();
 </script>
-<link rel="stylesheet" href="/admin.css?v=2">
-<script type="module" src="/admin.js?v=2"></script>
+<link rel="stylesheet" href="/admin.css?v=3">
+<script type="module" src="/admin.js?v=3"></script>
 </head>
 <body>
 <header class="top">
@@ -96,6 +96,40 @@
         <div><h3>最多開啟 <span class="en">Most opened</span></h3><div id="topOpened"></div></div>
         <div><h3>篩選使用 <span class="en">Filters used</span></h3><div id="filtersUsed"></div></div>
       </div>
+    </section>
+
+    <section class="card" id="leads" aria-labelledby="leadsTitle">
+      <h2 id="leadsTitle">合作店家名單 <span class="en">Partner leads</span></h2>
+      <p class="muted small leads-source" id="leadsSource"></p>
+      <p class="notice">首次聯繫請提供退出選項；標記「勿聯繫」者不得再聯繫。<span class="en">First contact must offer an opt-out; never contact a lead marked do-not-contact.</span></p>
+      <form class="filters" id="leadsFilters" autocomplete="off" role="search" aria-label="篩選店家 Filter leads">
+        <label class="field">
+          <span class="lbl">校區 <span class="en">Campus</span></span>
+          <select id="leadCampus"></select>
+        </label>
+        <label class="field">
+          <span class="lbl">類別 <span class="en">Category</span></span>
+          <select id="leadCategory"></select>
+        </label>
+        <label class="field">
+          <span class="lbl">狀態 <span class="en">Status</span></span>
+          <select id="leadStatus"></select>
+        </label>
+        <label class="field">
+          <span class="lbl">搜尋 <span class="en">Search</span></span>
+          <input id="leadQ" type="search" maxlength="40" placeholder="店名、地址 Name, address">
+        </label>
+      </form>
+      <h3>各區家數 <span class="en">Counts by area</span></h3>
+      <div id="leadsSummary"></div>
+      <h3 id="leadsListTitle">店家 <span class="en">Leads</span></h3>
+      <p class="leads-total" id="leadsTotal" aria-live="polite"></p>
+      <div id="leadsTable"></div>
+      <div class="btnrow leads-actions">
+        <button class="btn btn-secondary" type="button" id="leadsMore" hidden>載入更多 <span class="en">Load more</span></button>
+        <button class="btn btn-outline" type="button" id="leadsCsv">匯出目前篩選 <span class="en">Export filtered CSV</span></button>
+      </div>
+      <p class="msg" id="leadsMsg" role="status"></p>
     </section>
 
     <section class="card" aria-labelledby="exportTitle">

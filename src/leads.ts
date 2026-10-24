@@ -14,6 +14,10 @@ const SELECT = `SELECT l.ban, l.campus, l.category, l.name, l.address, l.industr
   l.source_date
   FROM partner_leads l LEFT JOIN partner_lead_status s ON s.ban = l.ban`;
 
+// Do-not-contact rows sort after the rest of their campus (and category, in the CSV), so a list read
+// top-down for calls reaches every lead worth calling first.
+const DNC_LAST = "COALESCE(s.status, 'new') = 'do_not_contact'";
+
 function where(q: LeadQuery): { sql: string; args: unknown[] } {
   const parts: string[] = [];
   const args: unknown[] = [];
@@ -30,7 +34,7 @@ export async function listLeads(db: D1Database, q: LeadQuery) {
   const limit = Math.min(Math.max(q.limit ?? 50, 1), 200);
   const offset = Math.max(q.offset ?? 0, 0);
   const [rows, total, named, counted, date] = await Promise.all([
-    db.prepare(`${SELECT}${w.sql} ORDER BY l.campus, l.distance_m IS NULL, l.distance_m, l.name LIMIT ? OFFSET ?`)
+    db.prepare(`${SELECT}${w.sql} ORDER BY l.campus, ${DNC_LAST}, l.distance_m IS NULL, l.distance_m, l.name LIMIT ? OFFSET ?`)
       .bind(...w.args, limit, offset).all(),
     db.prepare(`SELECT COUNT(*) AS n FROM partner_leads l LEFT JOIN partner_lead_status s ON s.ban = l.ban${w.sql}`)
       .bind(...w.args).first<{ n: number }>(),
@@ -50,7 +54,7 @@ export async function listLeads(db: D1Database, q: LeadQuery) {
 /** Every lead matching the filters, for the CSV export (do-not-contact rows included, so the list stays honest). */
 export async function exportLeads(db: D1Database, q: LeadQuery) {
   const w = where(q);
-  const { results } = await db.prepare(`${SELECT}${w.sql} ORDER BY l.campus, l.category, l.distance_m`).bind(...w.args).all();
+  const { results } = await db.prepare(`${SELECT}${w.sql} ORDER BY l.campus, l.category, ${DNC_LAST}, l.distance_m`).bind(...w.args).all();
   return results;
 }
 

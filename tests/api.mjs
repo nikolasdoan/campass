@@ -425,6 +425,10 @@ if (!mockUp) {
   const set = await anon.json("/admin/leads/00000001", { method: "PATCH", headers: ADMIN, json: { status: "do_not_contact", note: "asked us not to" } });
   check("leads: status saved", set.status === 200);
   const dnc = await anon.json("/admin/leads?status=do_not_contact", { headers: ADMIN });
+  const ntuOrder = (await anon.json("/admin/leads?campus=NTU", { headers: ADMIN })).body.leads.map((l) => l.ban).join();
+  check("leads: do-not-contact sorts last, though nearer", ntuOrder === "00000002,00000001", ntuOrder);
+  const ntuCsv = await (await anon.req("/admin/leads.csv?campus=NTU&category=food", { headers: ADMIN })).text();
+  check("leads: CSV keeps do-not-contact rows", ntuCsv.includes("00000001,") && ntuCsv.includes("do_not_contact"), ntuCsv.slice(0, 120));
   check("leads: filter by status, note kept", dnc.body.leads.some((l) => l.ban === "00000001" && l.note === "asked us not to"), JSON.stringify(dnc.body?.leads));
   check("leads: unknown status refused", (await anon.json("/admin/leads/00000001", { method: "PATCH", headers: ADMIN, json: { status: "spam" } })).status === 400);
   check("leads: unknown lead is 404", (await anon.json("/admin/leads/99999999", { method: "PATCH", headers: ADMIN, json: { status: "new" } })).status === 404);
