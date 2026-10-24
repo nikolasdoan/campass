@@ -48,6 +48,11 @@ nationwide = all four; outlying islands = []), `address`, `phone`, `highlight` (
 ({student, staff, alumni, family} from the text), `schools` (["<CODE>"]), `source_level` (school | student_org),
 `source_org`, `source_url`, `retrieved_on` (today, YYYY-MM-DD).
 
+Optional `units`, NTU only: when the source says a deal is for one college or department (a 系學會 deal for
+資工系 members), list NTU's codes from `data/schools/ntu-units.json`, college codes (`"eecs"`) or four-character
+department codes (`"9020"`), e.g. `"units": ["9020"]`. Leave it out when the deal is for the whole school. The
+importer skips a record with an unknown code, so copy codes from the file; never guess one.
+
 Skip deals whose end date has passed; strip expired sub-promotions; deduplicate. Each `.json` comes with a `.md`
 in the style of `data/sources/ncu.md`: URLs fetched, format, counts (listed / kept / expired / other skips with
 reasons), last-updated signal, field mapping and judgement calls, caveats.

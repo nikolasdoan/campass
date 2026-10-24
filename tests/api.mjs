@@ -378,6 +378,21 @@ if (!mockUp) {
   check("events: personal-looking searches dropped", !/b09902123|example\.com|0912345678|not-a-deal|script|teleport/.test(keys));
 }
 
+// ---------- school units (/api/schools/:code/units) ----------
+{
+  const u = await anon.req("/api/schools/NTU/units");
+  const body = await u.json();
+  const colleges = body.college || [];
+  const depts = colleges.flatMap((c) => c.depts || []);
+  check("units: NTU has 17 colleges", u.status === 200 && body.school === "NTU" && colleges.length === 17, `${colleges.length}`);
+  check("units: NTU has 158 departments", depts.length === 158, `${depts.length}`);
+  check("units: 9020 is under eecs", !!colleges.find((c) => c.code === "eecs")?.depts.some((d) => d.code === "9020" && d.zh === "資訊工程學系"));
+  check("units: codes unique across colleges and departments", new Set([...colleges, ...depts].map((x) => x.code)).size === 17 + 158);
+  check("units: cached publicly for a day", u.headers.get("cache-control") === "public, max-age=86400", u.headers.get("cache-control"));
+  const none = await anon.json("/api/schools/XYZ/units");
+  check("units: unknown school 404", none.status === 404 && none.body?.error === "not_found", `status ${none.status}`);
+}
+
 const passed = results.filter(Boolean).length;
 console.log(`\n${passed}/${results.length} passed`);
 process.exit(passed === results.length ? 0 : 1);
