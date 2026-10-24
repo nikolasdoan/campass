@@ -1,0 +1,2919 @@
+[
+  {
+    "name": "Uccello咖啡店",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "校內   正心樓一樓門口",
+    "phone": "",
+    "highlight": "買三送一",
+    "offer": "1.持識別證全品項買三送一\n2.持識別證全品項折5元\n※優惠不併用",
+    "info": "地點：校內   正心樓一樓門口\n適用對象（表格勾選）：教職員、學生、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "Bee Coffee",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "附設醫院核醫二樓檢驗科旁空橋",
+    "phone": "04-24735998",
+    "highlight": "9折",
+    "offer": "飲品每杯折5元、消費滿150元以上享9折(元以下四捨五入)之優惠，惟特價商品除外。",
+    "info": "電話：04-24735998\n地點：附設醫院核醫二樓檢驗科旁空橋\n適用對象（表格勾選）：教職員、學生、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "Gulu's House咕嚕好吃法式風味廚坊",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市西區精明路48號",
+    "phone": "04-23271393",
+    "highlight": "免開瓶費",
+    "offer": "自帶紅酒免開瓶費以及免收10%服務費。",
+    "info": "電話：04-23271393\n地點：台中市西區精明路48號\n適用對象（表格勾選）：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "和食望月",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "中市西區美村路一段188巷18號",
+    "phone": "04-23013537",
+    "highlight": "招待梅酒",
+    "offer": "凡持識別證即招待梅酒一人一杯。",
+    "info": "電話：04-23013537\n地點：中市西區美村路一段188巷18號\n適用對象（表格勾選）：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "i83厚切牛排",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市南區復興北路372號",
+    "phone": "04-22659078",
+    "highlight": "折抵10元",
+    "offer": "1.來店消費，主餐類皆可折抵10元(自助吧及炸物不可折抵)。\n2.當月壽星四人同行(一位壽星+三位非當月壽星)，出示有記載生日之有效證件，拍照打卡並上傳臉書，壽星即可免費享用厚切牛排、豬排、雞排任選其一。\n※優惠不得重複使用",
+    "info": "電話：04-22659078\n地點：台中市南區復興北路372號\n適用對象（表格勾選）：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "元手壽司",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04-22581978",
+    "highlight": "95折",
+    "offer": "800元以上套餐，可享95折優惠價\n※不得與其他優惠同時使用，價格依實際現場為主",
+    "info": "朝富店電話：04-22581978\n公益店電話：04-23267528\n漢口店電話：04-22381787\n成功店電話：03-6682785X\n適用對象（表格勾選）：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "匠屋燒肉",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "西屯區朝富二街20號",
+    "phone": "04-22524758",
+    "highlight": "95折",
+    "offer": "提供95折優惠。\n※不得與其他優惠或優惠券併用",
+    "info": "朝馬館電話：04-22524758\n地點：西屯區朝富二街20號\n明義店電話：  04-23287703\n地點：西區明義街74號\n適用對象（表格勾選）：教職員、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "信福美食天地便當",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "南區工學一街195號",
+    "phone": "0905-009290",
+    "highlight": "每份折5元",
+    "offer": "每份餐點折扣5元。\n※低收入戶及清寒的學生，出示證明，餐點半價。",
+    "info": "電話：0905-009290\n地點：南區工學一街195號\n適用對象（表格勾選）：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "蔡記食品",
+    "subtitle": "彌月油飯、滴雞精",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市南區大慶街一段259-15號(樹義公園旁)",
+    "phone": "04-22606869",
+    "highlight": "95折",
+    "offer": "1.訂購5000元以上，免費贈送寶寶專屬的滿月謝卡讓親友能共同分享您的喜悅。(須於5天前訂購，並提供寶寶照片方能製作)\n2.原台中市訂購5000元以上，免費為您專車配送，外縣市運費另計\n3.油飯禮盒訂購即享95折優惠、訂購滿25盒享93折優惠、訂購滿50盒享9折優惠、訂購滿75盒享87折優惠、訂購滿100盒享85折優惠",
+    "info": "電話：04-22606869\n地點：台中市南區大慶街一段259-15號(樹義公園旁)\n適用對象（表格勾選）：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "7AM鮮蔬果昔綠拿鐵",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "九折",
+    "offer": "菜單全系列九折優惠\n※外送不適用",
+    "info": "文心店：南屯區文心路一段185號\n崇德店：北屯區崇德路二段141號1樓\n適用對象（表格勾選）：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "青花驕麻辣鍋",
+    "subtitle": "台中公益店",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市南屯區公益路二段722號",
+    "phone": "04-22553970",
+    "highlight": "招待牛培根",
+    "offer": "1.憑識別證來店消費套餐，招待「牛培根」乙份。\n2.當月壽星出示證件，招待葡萄柚果汁乙罐/桌。\n※每桌每次消費限兌換一份，不得與其他優惠活動併用，不適用單點、外帶/送及使用禮券支付；贈品以現場實物為準，送完以等值品替換，10%服務費另計。\n※憑證即可享受優惠，不限持證者之身分。",
+    "info": "電話：04-22553970\n地點：台中市南屯區公益路二段722號\n適用對象（表格勾選）：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "表格標示至2026-12-31止；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "原燒",
+    "subtitle": "台中公益店",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市南屯區公益路二段702號",
+    "phone": "04-22556885",
+    "highlight": "贈主廚私房菜",
+    "offer": "憑識別證至店裡消費套餐，贈送「主廚私房菜」乙份。\n※每桌每次消費限兌換一份，不得與其他優惠活動併用，不適用單點、外帶/送及使用禮券支付；贈品以現場實物為準，送完以等值品替換，10%服務費另計。\n※憑證即可享受優惠，不限持證者之身分。",
+    "info": "電話：04-22556885\n地點：台中市南屯區公益路二段702號\n適用對象（表格勾選）：教職員、學生、校友",
+    "links": [],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "表格標示至2026-12-31止；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "福華大飯店",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市西屯區安和路129號",
+    "phone": "04-2463-2323",
+    "highlight": "9折",
+    "offer": "1.消費當天累積滿$3000即贈$300餐飲抵用券；累積滿$6000即贈$600餐飲抵用券，以此類推(不跨天累計，另以上消費不適用於喜宴、特殊專案或特殊價格之菜單以及酒水消費。餐飲抵用券為下次抵用、有效期限至2025/12/30止)\n2.場租可享9折優惠，不適用於特殊專案或特殊價格之活動。會議設備可享9折優惠，工程人員技術費用及紅布條製作費用除外。\n3.免費提供接待桌、桌椅佈置、指示牌、麥克風、白板、白板筆、講台、礦泉水、會議用紙(A4)及鉛筆\n4.消費累計滿$150,000可享回饋台中福華大飯店壹仟元餐飲抵用券乙張,此回饋每季計算一次,不足數留作下季繼續累計,為不跨年累計\n※詳細優惠請至人事室檔案櫃參閱合約內容。",
+    "info": "電話：04-2463-2323\n地點：台中市西屯區安和路129號\n適用對象（表格勾選）：教職員、學生、校友",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "涮乃葉日式涮涮鍋",
+    "subtitle": "台中大遠百店",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市西屯區臺灣大道三段251號10樓",
+    "phone": "04-22547131",
+    "highlight": "95折",
+    "offer": "憑識別證到店用餐，享有原價95折優惠。\n※各項商品價格及內容、菜單變更或服務費調整，依現場為準。\n※國定假日及周休二日、酒類不適用。",
+    "info": "電話：04-22547131\n地點：台中市西屯區臺灣大道三段251號10樓\n適用對象（表格勾選）：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "施美有限公司 (施巴)",
+    "subtitle": "婦.嬰.童.衛生/生活用品",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "",
+    "phone": "0983031012",
+    "highlight": "組合優惠價",
+    "offer": "憑識別證透過訂購窗口訂購享下列優惠：\n1.泡泡露1000ml、嬰幼兒洗髮750ml，任4瓶$2,400\n2. 1000ml(潔膚露、油性洗髮、溫和洗髮)、卸妝乳400ml，任3瓶$1,900\n3.抗乾敏浴露1000ml、運動沐浴乳(花香、麝香)，任3瓶$2,050\n4.濃縮牙膏50ml、漱口水25ml、潔舌膏、潔舌棒，任12個$2,400\n5.護潔露400ml*3，$1500\n6.痘淨潔面慕斯150ml*4，$1,240\n7.痘淨面皰凝膠10ml*5，$1,040",
+    "info": "訂購窗口：蘇資琳\n電話：0983031012\nLine ID：seba0983031012\nEmail：0983031012@sebamed.com.tw\n適用對象（表格勾選）：教職員、學生、校友",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "桂田酒店 台南館",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "south"
+    ],
+    "address": "南市永康區鹽興里永安一街99號",
+    "phone": "06-2438999",
+    "highlight": "9折",
+    "offer": "憑識別證用至下列餐廳享9折優惠(10%服務費以原價另計)：\n1.阿力海百匯自助餐廳\n2.桂田本家日式庭園餐廳\n3.桂田本家鐵板燒    4.     好也粵式中餐廳\n5.BAR16桂田書坊(不含BAR16烘焙坊)\n※本優惠不適用宴會廳、會議、桌席、廂房或喜宴等、酒精類、飲料類、國定假日或連續假日期間(具體日期依餐廳公告為主)，且不得與其他優惠方案併用。",
+    "info": "電話： 06-2438999\n地點：南市永康區鹽興里永安一街99號\n適用對象：未標示（頁面注意事項：使用各項優惠時請務必出示本校相關識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格的適用對象欄空白；依頁面「出示本校相關識別證」視為教職員與學生（校友證不是識別證），使用前請電洽店家確認；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "金典綠園道商場",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市西區健行路1049號",
+    "phone": "04-23198000#8105",
+    "highlight": "專櫃折扣",
+    "offer": "HERLS：憑識別證正價商品可享8折優惠,特價品除外。 04-2323-6628\nPURE LIFE：憑識別證結帳可享88折再送香氛體驗禮(8折以下商品除外) 0423232163\n西堤：憑識別證招待香檳(每人一杯)與炸物一份。04-2323-6256\n新一壽司丼：憑識別證內用9折優惠。04-37004855\nUSTUNU 我挺你健康鞋：憑識別證鞋品定價72折優惠。0982-366-610",
+    "info": "電話：04-23198000#8105\n地點：台中市西區健行路1049號\n適用對象（表格勾選）：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "微醺光廊餐酒館",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市西屯區文心路二段558-1號",
+    "phone": "0974-520999",
+    "highlight": "折價300元",
+    "offer": "憑識別證享單桌費折價300元(須達低消500/人)",
+    "info": "電話：0974-520999\n地點：台中市西屯區文心路二段558-1號\n適用對象（表格勾選）：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "沐內設計股份有限公司",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "新北市五股區中興路一段8號",
+    "phone": "02-89769328",
+    "highlight": "8折",
+    "offer": "憑識別證享下列優惠：\n1.至總公司五股門市購買全系列商愛品8折\n2.官網訂購結帳時輸入折購碼(csmu2024)，享8折優惠 (特價品與新品除外",
+    "info": "電話：02-89769328\n地點：新北市五股區中興路一段8號\n適用對象（表格勾選）：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "香蕉葉有限公司",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市南屯區文心南七路138號",
+    "phone": "04-24739328",
+    "highlight": "9折",
+    "offer": "憑識別證享下列優惠：\n1.內用：消費總額(含服務費)打9折\n2.外帶：整筆訂單消費滿$600贈炒食蔬一份(最多2份)\n3. 外送：滿10份餐點即可外送，需前一天訂餐。品項含4份主餐即贈炒食蔬1份\n※   外送時段：午餐11:00~11:30；晚餐17:30~18:0\n※ 贈送之餐點品項依店家現場為準。",
+    "info": "電話：04-24739328\n地點：台中市南屯區文心南七路138號\n適用對象（表格勾選）：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "劉家酸白菜火鍋",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市南區建國北路一段141號",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "憑識別證至台中大慶店享內用消費金額9折優惠。",
+    "info": "地點：台中市南區建國北路一段141號\n適用對象（表格勾選）：教職員、學生、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "醉酒香陳窖",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [],
+    "address": "金門縣金寧鄉桃園路368號",
+    "phone": "0900-609368",
+    "highlight": "高粱特價",
+    "offer": "憑識別證享下列優惠：\n1. 600ml紅標：$4,700/打\n2. 600ml白標：$4,650/打\n3. 750ml紅標：$6,450/打\n4.戰酒系列：滿萬免運\n※請加入官方LINE(@KM99)並出示證明。",
+    "info": "電話：0900-609368\n地點：金門縣金寧鄉桃園路368號\n適用對象（表格勾選）：教職員、學生、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "徐氏父女皮件工作室",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區羅斯福路三段283 巷14弄14-1號",
+    "phone": "02-23620321",
+    "highlight": "95折",
+    "offer": "憑識別證至實體門市消費享單件95折及燙金服務半價優惠。",
+    "info": "電話：02-23620321\n地點：台北市大安區羅斯福路三段283 巷14弄14-1號\n適用對象（表格勾選）：教職員、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "吃七碗滿月油飯",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市東區建成路334-1號",
+    "phone": "04-22111815",
+    "highlight": "95折",
+    "offer": "憑識別證至台中總店享下列優惠：\n1. 來店消費95折。\n2. 訂購及購買油飯類產品、節慶禮盒、伴手禮、院校賀禮 滿$6,00享9折滿12,000享88折。",
+    "info": "電話：04-22111815\n地點：台中市東區建成路334-1號\n適用對象（表格勾選）：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "愛菲斯居家美學股份有限公司",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "台北市林森北路500號5樓",
+    "phone": "02-25230027#9",
+    "highlight": "85折",
+    "offer": "1. 至愛菲斯居家美學官網消費，輸入折扣碼，即享全館85折優惠。\n2. 預約愛菲斯實體店試躺床墊、枕頭，想專屬睡眠評測，助眠調理20分鐘\n※特約優惠不得與館內其他優惠共用。\n※折扣碼及實體店預約方式請至人事室檔案櫃參閱合約內容",
+    "info": "電話：02-25230027#9\n地點：台北市林森北路500號5樓\n適用對象（表格勾選）：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "麻葉餐飲食品有限公司",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市北屯區崇德路3段197號",
+    "phone": "04-24221100",
+    "highlight": "入會禮三選一",
+    "offer": "1. 到《一頭牛日式燒肉·清酒》公益店用餐，享人會禮好禮三選一,生日禮以及每月熟客禮之優惠。\n2. 到《八豆食府精緻鍋物》崇德店用餐，可享人會禮好禮三選一,生日禮以及每月熟客禮之優惠。",
+    "info": "電話：04-24221100\n地點：台中市北屯區崇德路3段197號\n適用對象：未標示（頁面注意事項：使用各項優惠時請務必出示本校相關識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格的適用對象欄空白；依頁面「出示本校相關識別證」視為教職員與學生（校友證不是識別證），使用前請電洽店家確認；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "朵法婭生活美學有限公司",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "新北市中和區板南路663號14樓",
+    "phone": "02-2778-0037#14",
+    "highlight": "85折",
+    "offer": "一、中山醫大校友及教職員工生到店消費時,可憑校友證或教職員工生識別證,即享有相關特價優惠。\n二、提供予中山醫大之消費優惠內容如下: 優惠對象:教職員工、校友、學生 於朵法亞生活美學官網:https://www.darphia.com/ 使用優惠代碼:SVIP2401\n※全館85折,不與館內其他優惠共用",
+    "info": "電話：02-2778-0037#14\n地點：新北市中和區板南路663號14樓\nE-mail: cokelingo11@gmail.com\n適用對象依優惠內容：「中山醫大校友及教職員工生」",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.darphia.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象依優惠內容：「中山醫大校友及教職員工生」；表格的適用對象欄空白；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "蕃茄村-南區大慶店",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "中市南區大慶街一段130巷15號",
+    "phone": "04-22633536",
+    "highlight": "95折",
+    "offer": "憑中山醫大及其附屬機構之識別證(學校教職員證、學生證;附設醫院員工證), 至乙方消費,享有單筆消費95折優惠(不可與其他優惠惠活動,外送不適用)",
+    "info": "電話：04-22633536\n地點：中市南區大慶街一段130巷15號\nlaigaga2015@gmail.com\n適用對象依優惠內容：「學校教職員證、學生證;附設醫院員工證」（含附醫員工）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象依優惠內容：「學校教職員證、學生證;附設醫院員工證」（含附醫員工）；表格的適用對象欄空白；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "豐晨貿易股份有限公司",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "台中市西屯區大容東街 90號9樓之2",
+    "phone": "04-23107270#71",
+    "highlight": "折抵100元",
+    "offer": "中山醫大及其附屬機構之同仁,至豐晨貿易網路商店(https://www.s3.com.tw/ 消費,享有以下優惠內容: 1、滿1,000元折抵 100元 (折扣碼 SPCS4005)。",
+    "info": "電話： 04-23107270#71\n地點：台中市西屯區大容東街 90號9樓之2\nE-mail: enoch@s3.com.tw\n適用對象依優惠內容：「中山醫大及其附屬機構之同仁」（含附屬機構同仁）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.s3.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象依優惠內容：「中山醫大及其附屬機構之同仁」（含附屬機構同仁）；表格的適用對象欄空白；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "岩漿火鍋",
+    "subtitle": "公益店",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市南屯區公益路二段889號",
+    "phone": "(04)23830868",
+    "highlight": "招待丸拼盤",
+    "offer": "招待綜合丸拼盤一份及烏梅汁一壺    (不得與其他優惠並用)",
+    "info": "電話：(04)23830868\n地點：台中市南屯區公益路二段889號\n適用對象：未標示（頁面注意事項：使用各項優惠時請務必出示本校相關識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格的適用對象欄空白；依頁面「出示本校相關識別證」視為教職員與學生（校友證不是識別證），使用前請電洽店家確認；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "LALAport台中",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市東區進德路600號",
+    "phone": "04-22156991",
+    "highlight": "特定店家優惠",
+    "offer": "憑識別證至特定店家消費享優惠，特定店家請至人事室網頁/福利消息查看。\n※不適用例假日、國定假日及補班日。",
+    "info": "電話：04-22156991\n地點：台中市東區進德路600號\n適用對象（表格勾選）：教職員、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "特定店家名單在人事室網頁/福利消息，本頁未列出；表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "妮娜巧克力夢想城堡",
+    "subtitle": "",
+    "category": "entertainment",
+    "regions": [
+      "central"
+    ],
+    "address": "南投縣埔里鎮桃米路32號",
+    "phone": "049-2919528",
+    "highlight": "88折",
+    "offer": "1. 憑識別證購買入門票享88折優惠，當天一起購票之同行者(無證)亦可同享。\n2. 入園後不再重享其他的優惠措施。",
+    "info": "電話：049-2919528\n地點：南投縣埔里鎮桃米路32號\n適用對象（表格勾選）：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "同行者（無證）亦可同享；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "尚億股份有限公司",
+    "subtitle": "建國北黃昏市場",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市南區建國北路(鄰近學校)",
+    "phone": "0927335633",
+    "highlight": "攤商折扣",
+    "offer": "建國北黃昏市場特約商店\n攤號      商店名稱及販售品項                   優惠折扣方式\n1        陳記九龍茶                        單品折5元\n5        烘焙古早味蛋糕                                          單品折5元\n8        有利脆皮烤豬                                                 單品折10元\n9        貴州辣子雞                                                           麵類折10元,菜類罐頭9折\n19       古早味綠豆饌                                                買10送1\n22       綠格子高山蔬菜                                       滿200元95折\n23       豆類製品                                   9折\n25       可麗露                                       9折\n35~36    丸清鮮魚水產                                         滿200元9折\n38~39    素場裏麵素食現炒          單項折5元\n40        現切水果 果汁 甘草巴樂            原價85折或買5送1(擇一優惠)\n43       豬氏會社脆皮烤豬                 一盒折20元\n46~47    耀初貝果                                                         每個貝果折5元\n50       甘蔗雞                                                                         半隻折20元,4分之1隻折10元\n53       蔥肉餡餅                           買10送1\n55       阿助師炒饭                               單品折10元\n57       小8地瓜球                         優惠套餐大份地瓜球+小甘梅薯條100元\n60       鵝樂鵝肉                                  9折\n61       第一鲜蛋铺                             95折\n62       好呷本味香菇                                              滿100元送1點集滿10點送商品\n63       女装                                          95折\n65       日籽米谷蒸食研製                             飯35元,滿150元送小菜\n67       蔬菜水果                                                             滿200元送商品\n76       蛤味鮮蛤蜊專賣                                    滿佰95折\n80       油飯 湯品 鹹豬肉                 95折\n81       相約養生甜品小舖               10杯送1杯\n82       一度讚油雞                                                  各式小菜   憑證消費贈送10元小菜\n85       雞蛋仔                                                                   買5送1\n86       甘蔗雞                                    購買2盤4分之1隻或半隻折10元\n87       豪鼎蒸湯品                           9折\n88       土豪鮮雞 鴨 鵝                     折個位數或拾位數\n89       豚部屋鮮豬肉                                           折尾數\n91       富東91生菜沙拉水果          9折\n103~113  王記健康餐盒                               便當一律優惠90元\n105      大塊炸雞                               110元8隻雞翅\n107      滷好命卤味                                                 消費滿110元折10元\n109      自然派鮮果汁                                       單品折5元\n110      起司馬鈴薯                                               單品折5元\n111      69越式創意料理                 95折\n123~128  施家班蔬菜水果大賣場        滿佰折5元\n129      2326炸雞                                                         滿佰送一份雞脖子\n135      鐵屋壽司                                                         滿200元送味增場\n136      阿里山紅茶星烘培坊                 紅茶折5元\n麵包滿200元送1支牛奶棒",
+    "info": "電話：0927335633\n地點：台中市南區建國北路(鄰近學校)\nE-mail: lisr63@yahoo.com.tw\n適用對象：未標示（頁面注意事項：使用各項優惠時請務必出示本校相關識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格的適用對象欄空白；依頁面「出示本校相關識別證」視為教職員與學生（校友證不是識別證），使用前請電洽店家確認；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "膳馨民間創作料理 / 馨苑小料理",
+    "subtitle": "創始店、市政店、西區店、北屯店",
+    "category": "food",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市西區存中街21號",
+    "phone": "04-2372-1650",
+    "highlight": "95折",
+    "offer": "憑本人識別證方可享有優惠...\n一般特約：(年消費0-20萬元)餐廳消費95折，當月壽星憑證壽桃一份，提前訂包廂可享開胃小菜，加上客服支援。\n尊榮特約：(年消費滿20萬元)餐廳消費9折，當月壽星憑證壽桃一份，提前訂包廂可享開胃小菜，加上客服支援，更有電商平台季度優惠。\n皇室特約：(年消費滿60萬元)餐廳消費85折，當月壽星憑證壽桃一份，提前訂包廂可享開胃小菜，加上客服支援，更有電商平台季度優惠。額外再贈新款商品預購權。",
+    "info": "1.電話：04-2372-1650\n地點：台中市西區存中街21號\n2.電話：04-2251-8712\n地點：台中市西屯區市政路480號7樓\n3.電話：04-2302-9989\n地點：台中市西區民生北路106號\n4.電話：04-2233-2238\n地點：中市北屯區文昌東11街14巷1號\n適用對象：未標示（頁面注意事項：使用各項優惠時請務必出示本校相關識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "表格的適用對象欄空白；依頁面「出示本校相關識別證」視為教職員與學生（校友證不是識別證），使用前請電洽店家確認；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "長春運動中心",
+    "subtitle": "",
+    "category": "health",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市南區合作街46號",
+    "phone": "04-22220661",
+    "highlight": "課程9折",
+    "offer": "1.團體課程報名優惠(個人9折/學校團體6人85折)\n有氧、飛輪、舞蹈、瑜珈、TRX、兒童、游泳、桌球、羽球、籃球、壁球\n2.團體專班\n單次入場借票卡折扣(有氧、舞蹈、瑜珈、TRX)\n(1)TRX專班(10人滿班)：10,000/月(4堂課)\n(2)有氧、舞蹈、瑜珈專班(25人滿班)：10,000/月(4堂課)\n(3)泳池單次入場與月季票卡9折\n3. 臨租球場優惠\n(1) 桌球室、綜合球場、壁球室、羽球場離峰時段臨租9折。\n(2) 離峰時段：平日-06:00~18:00、假日-06:00~12:00",
+    "info": "電話：04-22220661\n地點：台中市南區合作街46號\n適用對象：未標示（頁面注意事項：使用各項優惠時請務必出示本校相關識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "此區塊表格沒有適用對象欄；依頁面「出示本校相關識別證」視為教職員與學生（校友證不是識別證），使用前請電洽店家確認；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "艾索克精準運動科學",
+    "subtitle": "",
+    "category": "health",
+    "regions": [
+      "central"
+    ],
+    "address": "中市南屯區永春東七路839號2樓",
+    "phone": "0983-956255",
+    "highlight": "會籍優惠",
+    "offer": "憑識別證享下列優惠：\n1. VIP年會籍$22,000並加贈2堂高壓氧課程\n2.健康探索之旅$990(每人限購一次)\n3.兩人以上購買年會籍，每人加贈營養師諮詢1次筋膜復能Level 1一堂\n4. 高壓氧艙眼罩加購價$1,150",
+    "info": "電話：0983-956255\n地點：中市南屯區永春東七路839號2樓\n適用對象：未標示（頁面注意事項：使用各項優惠時請務必出示本校相關識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "此區塊表格沒有適用對象欄；依頁面「出示本校相關識別證」視為教職員與學生（校友證不是識別證），使用前請電洽店家確認；表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "台灣大哥大",
+    "subtitle": "",
+    "category": "services",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "台中市南屯區五權西路二段236號5樓之一",
+    "phone": "(04)36018888#48369",
+    "highlight": "電信優惠專案",
+    "offer": "提供行動電信服務優惠專案。方案內容請參考DM與專案同意書。",
+    "info": "電話：(04)36018888#48369\n公司地點：台中市南屯區五權西路二段236號5樓之一\n適用對象：未標示（頁面注意事項：使用各項優惠時請務必出示本校相關識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "此區塊表格沒有適用對象欄；依頁面「出示本校相關識別證」視為教職員與學生（校友證不是識別證），使用前請電洽店家確認；頁面只寫「方案內容請參考DM與專案同意書」，DM未附在頁面上，資費內容未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "創宇數位科技",
+    "subtitle": "3C維修買賣",
+    "category": "services",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "桃園市中壢區中山東路二段546號",
+    "phone": "03-4562277",
+    "highlight": "97折",
+    "offer": "至全國各門市消費，可享帳單金額之97折惠",
+    "info": "電話：03-4562277\n地點：桃園市中壢區中山東路二段546號\n適用對象：未標示（頁面注意事項：使用各項優惠時請務必出示本校相關識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "此區塊表格沒有適用對象欄；依頁面「出示本校相關識別證」視為教職員與學生（校友證不是識別證），使用前請電洽店家確認；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "保衛站企業社",
+    "subtitle": "3C維修買賣",
+    "category": "services",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市中西區北門路一段75號",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "憑識別證享下列優惠：\n1.周邊配件9折\n2.各式維修項目/貼膜服務9折(最高折抵上限1,000元)\n3.保衛貼折抵200元\n購買新機/二手機送購物金500元",
+    "info": "Email：kenkuo0130@tainanguardstation.com\n地點：台南市中西區北門路一段75號\n適用對象：未標示（頁面注意事項：使用各項優惠時請務必出示本校相關識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "此區塊表格沒有適用對象欄；依頁面「出示本校相關識別證」視為教職員與學生（校友證不是識別證），使用前請電洽店家確認；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "永勁旅遊",
+    "subtitle": "",
+    "category": "entertainment",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "台北市中山區民權東路二段26號9F-1",
+    "phone": "02-2562-1000",
+    "highlight": "團費折500元起",
+    "offer": "享有官網上的會員價基礎下，並另外提供如下的優惠內容\n國外團體行程費用級距                    優惠內容\n團費99999元以下                   物超所值，恕無法提供優惠\n團費100000元〜149999元          500元/人\n團費150000元〜199999元          1000元/人\n團費200000元以上                        1500元/人\n※    於特惠促銷活動(旅展、促銷、自由行及其他各類促銷價)期間，不能使用。",
+    "info": "電話：02-2562-1000  ;  04-2320-0199\n地點：台北市中山區民權東路二段26號9F-1\nservice@jingtour.com.tw\n適用對象：未標示（頁面注意事項：使用各項優惠時請務必出示本校相關識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "此區塊表格沒有適用對象欄；依頁面「出示本校相關識別證」視為教職員與學生（校友證不是識別證），使用前請電洽店家確認；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "義大遊樂世界",
+    "subtitle": "義大世界購物廣場",
+    "category": "entertainment",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市大樹區學城路一段10號",
+    "phone": "07-6568080",
+    "highlight": "全日票$630",
+    "offer": "全日票 $630      13歲以上~一般成人/身高150cm以上\n學童票 $540      6歲~12歲/身高115~150cm兒童\n優待票 $450     ★3歲~未滿6歲/身高90~115cm兒童\n午後票 $540      午後13:30後入園\n星光票   $270      週六限定(夜間營運)，16:30後入園\n親子套票 $1,250     全票*1+學童票*1(3歲~12歲)\n享有義大世界購物廣場專櫃特約、團購價等等折購優惠與  園區精美贈品\n※不得與其他優惠併用\n★身心障礙及其必要陪伴者(限1名)、60歲以上、孕婦(須出示相關證件)",
+    "info": "電話：07-6568080\n地點：高雄市大樹區學城路一段10號\n適用對象：未標示（頁面注意事項：使用各項優惠時請務必出示本校相關識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "此區塊表格沒有適用對象欄；依頁面「出示本校相關識別證」視為教職員與學生（校友證不是識別證），使用前請電洽店家確認；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "富胖達",
+    "subtitle": "外送平台",
+    "category": "food",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "台北市信義區忠孝東路四段555號14樓",
+    "phone": "02-77500288#60720",
+    "highlight": "免外送費",
+    "offer": "1.每月精選店家滿499元(不含平台費、小費或外送費)即可免外送費。\n2.加入本公司line帳號 可享~\nA.訂單優先處理\nB滿額客製配餐\nC專人服務(訂單確認、追蹤與客服)\n3.每個月所提供的優惠活動、折扣碼與抽獎",
+    "info": "電話：02-77500288#60720\n地點：台北市信義區忠孝東路四段555號14樓\nwayne.huang@foodpanda.tw\n適用對象：未標示（頁面注意事項：使用各項優惠時請務必出示本校相關識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "此區塊表格沒有適用對象欄；依頁面「出示本校相關識別證」視為教職員與學生（校友證不是識別證），使用前請電洽店家確認；表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "菜霸子生鮮電商平台",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "",
+    "phone": "0800-000253",
+    "highlight": "95折",
+    "offer": "至菜霸子官網消費使用推薦碼(CSMUVK)註冊購物，享有買菜金$1,000及結帳95折優惠；新註冊會員另享有購物金$100。",
+    "info": "電話：0800-000253\n適用對象：未標示（頁面注意事項：使用各項優惠時請務必出示本校相關識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "此區塊表格沒有適用對象欄；依頁面「出示本校相關識別證」視為教職員與學生（校友證不是識別證），使用前請電洽店家確認；表格標示「(永久)」；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "家康診所",
+    "subtitle": "",
+    "category": "health",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市南屯區文心南六路297號",
+    "phone": "04-24710818",
+    "highlight": "優惠100元",
+    "offer": "一、提供中山醫大所屬成員,來院就醫掛號費優惠100元。\n二、依健保局規定收取之部分負擔、診斷書、就醫明細等費用,恕無折扣。",
+    "info": "電話：04-24710818\n地址：台中市南屯區文心南六路297號\n適用對象：未標示（頁面注意事項：使用各項優惠時請務必出示本校相關識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "此區塊表格沒有適用對象欄；依頁面「出示本校相關識別證」視為教職員與學生（校友證不是識別證），使用前請電洽店家確認；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "昭安泌尿科诊所",
+    "subtitle": "",
+    "category": "health",
+    "regions": [
+      "central"
+    ],
+    "address": "403台中市西區博館二街98號",
+    "phone": "04-23212520",
+    "highlight": "療程優惠",
+    "offer": "1、HPV九價疫苗施打優惠\n2、結紮手術優惠\n3、磁波儀療程優惠\n4、低能量震波療程優惠\n5、40歲以上男性更年期與攝護腺癌篩檢\n6、性傳染病篩檢套餐優惠",
+    "info": "電話：04-23212520\n住址：403台中市西區博館二街98號\nmorningurologyclinic@gmail.com\n適用對象：未標示（頁面注意事項：使用各項優惠時請務必出示本校相關識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "此區塊表格沒有適用對象欄；依頁面「出示本校相關識別證」視為教職員與學生（校友證不是識別證），使用前請電洽店家確認；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "台中市私立南區哈佛幼兒園",
+    "subtitle": "",
+    "category": "education",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市南區德吉街121號",
+    "phone": "04-2261-4655",
+    "highlight": "優惠200元",
+    "offer": "憑識別證可享新生入園優惠：\n1.幼幼班、小班月費每月優惠200元。\n2.中班優惠代辦費1060元(書包、餐具、圍兜、手帕、姓名貼)。",
+    "info": "電話：04-2261-4655\n地點：台中市南區德吉街121號\n適用對象：未標示（頁面注意事項：使用各項優惠時請務必出示本校相關識別證）",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "此區塊表格沒有適用對象欄；依頁面「出示本校相關識別證」視為教職員與學生（校友證不是識別證），使用前請電洽店家確認；適用於員工或學生的子女入園；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "台中大億老爺行旅",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04-2376 6732",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：04-2376 6732\n電郵：tc.rsvn.s@tc.hotelroyal.com.tw\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "MINI HOTEL",
+    "subtitle": "台中火車站館",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04-2225 9966#193",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：04-2225 9966#193\n電郵：rsvn@minihotels.com.tw\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "裕元花園酒店",
+    "subtitle": "台中",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04-2461 5666",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：04-2461 5666\n電郵：windsorrsvn@windsortaiwan.com\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "台中福華大飯店",
+    "subtitle": "璞園",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04-2463 2323",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：04-2463 2323\n適用對象：教職員、學生、校友",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "成旅晶贊",
+    "subtitle": "台中民權館",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04-2223 2233",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：04-2223 2233\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "麗寶樂園渡假區",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04-2558 6108",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：04-2558 6108\n適用對象：教職員、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "台中鳳凰酒店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04-3702 8555",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：04-3702 8555\n電郵：reservations@hotelphoenix.com.tw\n適用對象：教職員、學生",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "全國大飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04-2326 2288",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：04-2326 2288\n適用對象：教職員、學生、校友",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "旅居文旅",
+    "subtitle": "文心館",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04 2291 8000",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：04 2291 8000\n電郵：taichung@hubhotel.com.tw\n適用對象：教職員、學生",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "台中豐邑MOXY酒店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04-3600 7000",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：04-3600 7000\n適用對象：教職員、學生、校友",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "享得道Hotel",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04-2708 2208",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：04-2708 2208\n適用對象：教職員",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "文華道會館",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04-3602 8088",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：04-3602 8088\n適用對象：教職員",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "星享道酒店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04-270 62208",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：04-270 62208\n適用對象：教職員",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "台中商旅",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04-2255 6688",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：04-2255 6688\n電郵：service@hungsmansion.com\n適用對象：教職員、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "天閣酒店集團",
+    "subtitle": "台中館",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04-2323 0000",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：04-2323 0000\n電郵：rsvn.xy@tango-hotels.com\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "兄弟大飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2712 3456",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：02-2712 3456\n電郵：reservation@brotherhotel.com.tw\n適用對象：教職員、學生、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "台北福華大飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2700 2323",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：02-2700 2323\n適用對象：教職員、學生、校友",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "台北旅店集團",
+    "subtitle": "旗下10家旅店",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2585 1222",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：02-2585 1222\n電郵：service@taipeiinn.com.tw (旗下10家旅店)\n適用對象：教職員、學生",
+    "links": [
+      {
+        "label": "分店列表",
+        "url": "https://www.taipeiinn.com.tw/index.aspx"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "成旅晶贊",
+    "subtitle": "台北蘆洲館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2285 5799",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：02-2285 5799\n適用對象：學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": false,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "晶贊都會旅店",
+    "subtitle": "永和館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2920 6789",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：02-2920 6789\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "大板根森林溫泉酒店",
+    "subtitle": "三峽",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "04-2302 8313",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：04-2302 8313\n適用對象：教職員、學生、校友",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "旅居文旅",
+    "subtitle": "板橋車站館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2956 5888",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話： 02-2956 5888\n適用對象：教職員、學生",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "旅居文旅",
+    "subtitle": "松山機場館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2502 5000",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：02-2502 5000\n適用對象：教職員、學生",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "旅居文旅",
+    "subtitle": "台北西門館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2388 0050",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：02-2388 0050\n適用對象：教職員、學生",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "天閣酒店集團",
+    "subtitle": "台北信義館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2528 8000",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：02-2528 8000\n電郵：rsvn.xy@tango-hotels.com\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "天閣酒店集團",
+    "subtitle": "台北復興館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-8712 8000",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：02-8712 8000\n電郵：rsvn.xy@tango-hotels.com\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "天閣酒店集團",
+    "subtitle": "台北南西館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2567 9999",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：02-2567 9999\n電郵：rsvn.xy@tango-hotels.com\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "天閣酒店集團",
+    "subtitle": "台北林森館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2531 9999",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：02-2531 9999\n電郵：rsvn.xy@tango-hotels.com\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "天閣酒店集團",
+    "subtitle": "台北長安館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2531 7777",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：02-2531 7777\n電郵：rsvn.xy@tango-hotels.com\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "天閣酒店集團",
+    "subtitle": "台北劍潭館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2886 2999",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：02-2886 2999\n電郵：rsvn.xy@tango-hotels.com\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "天閣酒店集團",
+    "subtitle": "台北士林館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2886 6888",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：02-2886 6888\n電郵：rsvn.xy@tango-hotels.com\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "天閣酒店集團",
+    "subtitle": "天雲旅棧 台北基河館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2885 6666",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：02-2885 6666\n電郵：rsvn.xy@tango-hotels.com\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "天閣酒店集團",
+    "subtitle": "天雲旅棧 台北中山館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2521 6666",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：02-2521 6666\n電郵：rsvn.xy@tango-hotels.com\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "天閣酒店集團",
+    "subtitle": "台北開封館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2381 1111",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：02-2381 1111\n電郵：rsvn.xy@tango-hotels.com\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "矽谷溫泉會館",
+    "subtitle": "新店區",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "02-2218 0101",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：02-2218 0101\n適用對象：教職員、學生、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "新竹福華大飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "03-5282323",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：03-5282323\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "旅居文旅",
+    "subtitle": "中壢館",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "03-462 2345",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：03-462 2345\n電郵：hubhotel.service@gmail.com\n適用對象：教職員、學生",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "棒棒積木飯店",
+    "subtitle": "嘉義太保市",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "",
+    "phone": "05-362 3223",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：05-362 3223\n電郵：fbcs@brickhotel.com.tw\n適用對象：教職員、學生、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "桂田酒店",
+    "subtitle": "台南館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "",
+    "phone": "06-2438 999",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：06-2438 999\n適用對象：教職員、學生、校友",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "高雄福華大飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "",
+    "phone": "07-2362 323",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：07-2362 323\n適用對象：教職員、學生、校友",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "旅居文旅",
+    "subtitle": "高雄亞灣館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "",
+    "phone": "07-269 2626",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：07-269 2626\n適用對象：教職員、學生",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "旗津道沙灘酒店",
+    "subtitle": "高雄",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "",
+    "phone": "07-5721 818",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：07-5721 818\n適用對象：教職員",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "成旅晶贊",
+    "subtitle": "花蓮假期館",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "",
+    "phone": "03-8360 099",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：03-8360 099\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "龍潭湖居民宿",
+    "subtitle": "宜蘭礁溪",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "",
+    "phone": "0937-790039",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：0937-790039\n適用對象：教職員、學生、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "浯島文旅",
+    "subtitle": "金門",
+    "category": "lodging",
+    "regions": [],
+    "address": "",
+    "phone": "08-8219 194",
+    "highlight": "特約價",
+    "offer": "本校特約住宿；訂房時出示本校識別證享特約價，房價請洽飯店（合約未公開於本頁）",
+    "info": "電話：08-8219 194\n電郵：wdhotel@homi.cc\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "中興旅遊租車聯盟",
+    "subtitle": "台中",
+    "category": "transport",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04-2285 0299",
+    "highlight": "特約價",
+    "offer": "本校特約租車；憑本校識別證享特約價，優惠內容請洽店家（合約未公開於本頁）",
+    "info": "電話：04-2285 0299\n適用對象：教職員、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；表格標示「(永久)」；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "崴暘汽車租賃",
+    "subtitle": "台中",
+    "category": "transport",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "0932-689328",
+    "highlight": "特約價",
+    "offer": "本校特約租車；憑本校識別證享特約價，優惠內容請洽店家（合約未公開於本頁）",
+    "info": "電話：0932-689328\n電郵：f1420012002@gmail.com\n適用對象：教職員、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；表格標示「(永久)」；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "和泰租車/派車",
+    "subtitle": "yoxi車隊派遣平台",
+    "category": "transport",
+    "regions": [
+      "central"
+    ],
+    "address": "",
+    "phone": "04-23380599",
+    "highlight": "特約價",
+    "offer": "本校特約租車；憑本校識別證享特約價，優惠內容請洽店家（合約未公開於本頁）",
+    "info": "電話：04-23380599\n適用對象：教職員",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "二毛旅行社",
+    "subtitle": "金門",
+    "category": "services",
+    "regions": [],
+    "address": "",
+    "phone": "08-2316 808",
+    "highlight": "特約價",
+    "offer": "本校特約旅遊代辦；憑本校識別證享特約價，優惠內容請洽店家（合約未公開於本頁）",
+    "info": "電話：08-2316 808\n電郵：gene781128@gmail.com\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；表格標示「(永久)」；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "永成小客車租賃行",
+    "subtitle": "金門",
+    "category": "transport",
+    "regions": [],
+    "address": "",
+    "phone": "0928-304018",
+    "highlight": "特約價",
+    "offer": "本校特約租車；憑本校識別證享特約價，優惠內容請洽店家（合約未公開於本頁）",
+    "info": "電話：0928-304018\n電郵：gene781128@gmail.com\n適用對象：教職員、學生、校友、附醫",
+    "links": [],
+    "expires_on": null,
+    "auto_renew": false,
+    "notes": "適用對象含附醫；表格標示「(永久)」；頁面只列出店家與適用對象，沒有列出優惠內容；合約在人事室檔案櫃（需登入校務資訊系統），未轉錄；頁面注意事項：使用各項優惠時請務必出示本校相關識別證；使用優惠前請電洽店家確認",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": true,
+      "family": false
+    },
+    "schools": [
+      "CSMU"
+    ],
+    "source_level": "school",
+    "source_org": "中山醫學大學 人力資源室",
+    "source_url": "https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php",
+    "retrieved_on": "2026-10-24"
+  }
+]
