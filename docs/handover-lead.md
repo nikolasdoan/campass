@@ -64,8 +64,9 @@ Stop servers with `pkill -f "[w]rangler dev"`. The bracket stops pkill from kill
 - **Demo QA round** (2026-10-22): done. What was fixed and what is still open, ranked, is in
   [qa-2026-10-22.md](qa-2026-10-22.md). Start from its "Open" list.
 - **Live (2026-10-24):** 88239f7, ?v=20, 1,563 deals from 21 schools. Records whose terms were never transcribed
-  (notes 「未轉錄」, 164 so far) are held back by `HOLD_UNTRANSCRIBED` in scripts/import_deals.py, pending the
-  founder's confirmation; transcription could be worker tasks (STUST Drive files, NKUHT contracts, NDHU rate scans).
+  (notes 「未轉錄」, 164 so far) are held back by `HOLD_UNTRANSCRIBED` in scripts/import_deals.py (founder confirmed,
+  2026-10-24). Transcription is with the worker: #28 STUST (73), #29 NDHU hotels (17) + CTUST 水舞. CSMU (51) and
+  NKUHT (22) stay held: their contracts aren't public.
 - **Worker loop** (docs/worker.md): campass-2 files `worker` issues; review the PRs, merge, run the import, add any
   new school code (SCHOOL_DOMAINS, i18n SCHOOLS, CARD_TONE) and give every new badge text an English rule.
   Evidence is a MANIFEST only (images in the founder's private storage).
