@@ -62,9 +62,9 @@ export function noteSearch(q, n) {
 
 let lastFilters = null;
 
-/** The list was drawn with these filters; counts each category, region or school the reader picks. */
+/** The list was drawn with these filters; counts each category, region, school or 學生適用 change the reader makes. */
 export function noteFilters(f) {
-  const now = { cat: f.cat, region: f.region, school: f.school };
+  const now = { cat: f.cat, region: f.region, school: f.school, students: f.students ? "on" : "off" };
   if (lastFilters) {
     for (const k of Object.keys(now)) if (now[k] !== lastFilters[k] && now[k] !== "all") add("filter", `${k}:${now[k]}`);
   }
