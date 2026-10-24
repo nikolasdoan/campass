@@ -1,0 +1,2438 @@
+# Coverage survey: every Taiwanese university and college, plus nationwide company perks (2026-10-23)
+
+> **This is a report only; it contains no deal records.** It answers one question: what official partner-discount lists exist that CampusPass hasn't covered yet?
+>
+> - **School list:** the 教育部 directory, open data `https://stats.moe.gov.tw/files/opendata/u1_new.json` (fetched 2026-10-23). Its latest school year, 115, has **139 institutions**.
+> - **Already covered:** 21 schools are already extracted or surveyed (NTU, NTNU, NTUST, NCU, NCKU, NCHU, NCCU, NTHU, NYCU, NSYSU, CCU, NTPU, Taipei Tech, TMU, FJU, TKU, SCU, PCCU, KSU, CMU, TCU; see the other files in `data/sources/`).
+> - **This survey:** covers the other **118**, plus nationwide student perks that brands offer directly.
+>
+> **Method:**
+> - Four research agents each took about 30 schools, and a fifth took brand perks. They worked to the rules in `docs/worker.md`: only pages actually fetched with curl, no TLS bypass, no http downgrade, and downloaded content treated as untrusted.
+> - I re-fetched the headline claims myself on 2026-10-23, and they matched:
+>   - 東華: 200; about 135 table rows; 「學生證」 appears 124 times
+>   - 屏科大 WP API: `X-WP-Total: 77`
+>   - 中臺 人事室 table: about 50 rows
+>   - 新生醫護, 中山醫, 高餐 學生會: all 200
+>   - 臺鐵 大學生優惠: 「自乘車日115年8月17日起至116年8月16日止」, 5折/7折/8折
+> - Counts marked `~` or `≥` are approximate, or lower bounds where a list is paginated or loaded by JS.
+>
+> **Limits:**
+> - The shared WebSearch budget ran out partway through each agent's run. About 10 small schools got only one search and were then crawled from their unit homepages.
+> - **Not verifiable:** about 20 schools could not be reached at all — TLS errors, connection resets or 403s through this environment's proxy. Nothing is reported for them from search snippets. They should be retried from another network.
+
+## Coverage at a glance
+
+| | Schools |
+|---|---|
+| In the 教育部 directory (115) | 139 |
+| Already in CampusPass (extracted or surveyed) | 21 |
+| Surveyed here | 118 |
+| … official list found and fetched | about 60 (some staff-only, alumni-only or stale) |
+| … not verifiable (TLS, reset, 403/503) | about 20, for example 海大, 北藝大, 宜大, 虎科, 高醫 (403), 長榮, 戲曲學院, 正修, 開南, 亞洲, 僑光, 中信, 華夏, 崇右, 仁德, 馬偕護專, 聖母 |
+| … nothing official found | about 35 |
+
+**Brand-direct perks:** 83 were confirmed on official pages over two rounds (36 + 47, plus 2 partial). The breakdown:
+- **2 have ended:** Google AI Pro for students (applications closed 2025-12-09) and 中華電信 4G學生方案 (the page still says 「至115/09/30止」).
+- **1 is temporarily closed:** 富源 森林遊樂區, after the typhoon on 2026-10-22.
+- **5 state an end date that hasn't passed yet:** 臺鐵 大學生優惠 to 2027-08-16, 救國團 to 2026-12-31, Samsung's current promotion to 2026-12-31, 劍湖山 to 2026-12-27, and 史前館's free Wednesdays to 2026-12-31.
+- **75 give no end date.** Their pages were live on 2026-10-23, but nothing says how long the offers last.
+
+Many more perks remain unverified leads; see the brand sections.
+
+## Best next extractions (value = listings × student eligibility × ease)
+
+| Rank | School | Source (verified URL) | Publisher | Listings | Students | Difficulty |
+|---|---|---|---|---|---|---|
+| 1 | 國立東華大學 | https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw | 總務處事務組 | ~125–135 | Yes, 「出示教職員證或學生證」 | 1 (HTML table) |
+| 2 | 中山醫學大學 | https://personnel.csmu.edu.tw/p/403-1012-387.php?Lang=zh-tw (+ linked tables) | 人力資源室 | ~90 | Per-row 教職員/學生/校友 columns | 1–2 |
+| 3 | 南臺科技大學 | Google Site `sites.google.com/stust.edu.tw/appointed-store` | 校友中心 | ~82 counted in 3 of 8 categories (likely 120+) | Many 「學生/教職員/校友」 | 2 |
+| 4 | 國立屏東科技大學 | https://npustalumni.npust.edu.tw/easycard/special-store/ (WP API `/wp-json/wp/v2/firm-list`, 77) | 校友服務中心 | 77 | Mainly 校友證; some 教職員生 | 2 |
+| 5 | 國立高雄餐旅大學 | https://sta.nkuht.edu.tw/store.htm | 學生會 (student_org) | ~52 | Yes, 「憑學生證及教師識別證」 | 2 |
+| 6 | 中臺科技大學 | https://personnel.ctust.edu.tw/p/412-1026-1671.php | 人事室 | ~38 | Yes, 「本校教職員、學生、校友」 | 2 |
+| 7 | 中原大學 | 校友證-特約商家 page (see details) | 校友服務 | 99 | ~20 also take 學生證 | 3 |
+| 8 | 東海大學 | thupr.thu.edu.tw/play.php | 校友 / 公共事務 | ~43 | Several take 學生證 | 2 |
+| 9 | 台鋼科技大學 | https://ord.tsust.edu.tw/var/file/10/1010/img/242/605095100.pdf (115.01.16) | 研發處 | ~55 | Per-row 優惠對象, many students | 3 |
+| 10 | 新生醫護管理專科學校 | https://www.hsc.edu.tw/p/404-1000-35585.php?Lang=zh-tw | school | 13 | Yes | 1 |
+| 11 | 大仁科技大學 | 總務處 HTML table (see details) | 總務處 | ~12 | Yes, terms to 117/12/31 | 1 |
+| 12 | 國立臺東大學 | 人事室 XLSX (115.09.17) | 人事室 | ~29 | Mixed | 2 |
+
+**Also large:**
+- 國立高雄科技大學 (~150, mostly staff)
+- 國立臺灣體育運動大學 (~130 names, but the terms are in a Google Sheet that needs sign-in)
+- 台南應用科技大學 (~250 rows in a 2024 PDF, mostly expired; current data moved into an app)
+- 實踐大學 (~112, few for students)
+- 靜宜大學 (116, staff only)
+- 國立屏東大學 (97 from the 學生會, but the PDF is from 2021)
+
+**Mostly staff-only:** 高雄大學 (≥98), 元智 (81), 弘光 (87; xlsx dated 2026-07-20, ~12 rows for students), 雲科大 (~50) and 體育大學 (~45).
+
+## Summary table: all 118 schools surveyed
+
+Columns as reported by the survey agents. "not verifiable" means every fetch failed; nothing was taken from search snippets.
+
+| School | Best source | Publisher (level) | Format | Listings | Last updated | Students? | Difficulty |
+|---|---|---|---|---|---|---|---|
+| 國立臺灣海洋大學 | alumni.ntou.edu.tw (unreachable) | 校友服務中心 (school) | HTML (per search) | not verifiable | n/a | n/a | n/a |
+| 國立高雄師範大學 | sso.nknu.edu.tw 員工福利資訊 | 人事室 (school) | HTML index → per-store contract PDFs | ~31 | contracts to 1160131; Sept 2026 PDF | Yes, the contract template says 服務證(或學生證) | 4 |
+| 國立彰化師範大學 | alumni.ncue.edu.tw 校友特約商店 | 校友服務中心 (school) | HTML (4 category pages) | 3 in 美食 (others not counted) | 2026-09-02 | No, 校友證 | 2 |
+| 國立嘉義大學 | website.ncyu.edu.tw 員工生活服務 | 人事室 (school) | news-post list (mixed topics) | 18 pages × 10 posts, mixed | 2026/05/15 | Not stated | 5 |
+| 國立高雄大學 | personnel.nuk.edu.tw 高大特約商店 | 人事室 (school) | HTML per-store pages + PDF | ≥98 | 2026 (lodging updated 1150831) | No, 憑教職員證 | 3 |
+| 國立東華大學 | ga.ndhu.edu.tw 校外特約商店 | 總務處事務組 (school) | HTML table + contract PDFs | ~125 | end dates to 117年 | Yes, 出示教職員證或學生證 | 1 |
+| 國立暨南國際大學 | b003.ncnu.edu.tw 特約商店公告名單 | 人事室 (school) | DOCX | 15 | docx modified 2024-04-17 | Mostly 本校服務證; one entry for 學生 | 3 |
+| 國立雲林科技大學 | aex.yuntech.edu.tw 特約商店 | 人事室 (school) | HTML names + per-store contract PDFs | ~50 | contracts to 1171231 | No, 出示員工證 | 4 |
+| 國立屏東科技大學 | npustalumni.npust.edu.tw 校友證優惠列表 | 校友服務中心 (school) | WordPress HTML (+REST JSON) | 77 | latest post 2025-01-02 | Mostly 校友證; some 教職員生 | 2 |
+| 國立臺北藝術大學 | w3.tnua.edu.tw | n/a | n/a | not verifiable (TLS error) | n/a | n/a | n/a |
+| 國立臺灣藝術大學 | alu.ntua.edu.tw/Home/Store 商家優惠 | 校友聯絡中心 (school) | HTML cards (JS paging) | ≥17 | not shown | Mixed: 校友證 / 學生證 | 2 |
+| 國立臺東大學 | psn.nttu.edu.tw 特約商店一覽表 | 人事室 (school) | XLSX (7 sheets) | ~29 | 115.09.17 | Mixed: 職員證 / 學生證 | 2 |
+| 國立宜蘭大學 | alumni.niu.edu.tw (unreachable) | 校友服務中心 | n/a | not verifiable | n/a | n/a | n/a |
+| 國立聯合大學 | personnel.nuu.edu.tw 115年度特約商店 | 人事室 (school) | PDF table | 36 | 2026-09-09 | Mostly 教職員; a few name 學生 | 3 |
+| 國立虎尾科技大學 | personnel.nfu.edu.tw (unreachable) | 人事室 | n/a | not verifiable | n/a | n/a | n/a |
+| 國立臺南藝術大學 | secretariat.tnnua.edu.tw 特約商店 | 秘書室 (school) | HTML lists + contract PDFs | ~30 | dates to 2027 | Mixed: 教職員工生 / 教職員工 | 3 |
+| 國立臺南大學 | personnel.nutn.edu.tw 特約廠商 | 人事室 (school) | HTML table | 18 | 2026/10/12 | Not stated | 4 |
+| 國立臺北教育大學 | nothing found | n/a | n/a | n/a | n/a | n/a | n/a |
+| 國立臺中教育大學 | person.ntcu.edu.tw 特約商店名單 | 人事室 (school) | PDF (67 pp, contracts) | 12 | 115.8.12 | Mostly staff | 4 |
+| 國立澎湖科技大學 | ee.npu.edu.tw 特約商店 | 電機系 (department) | news posts | 5 | 2026-10-02 | Yes, 學生證 | 3 |
+| 國立勤益科技大學 | nothing found | n/a | n/a | n/a | n/a | n/a | n/a |
+| 國立體育大學 | person.ntsu.edu.tw 人事好康網專區 | 人事室 (school) | HTML names → PDFs/images | ~45 | not shown | No, 僅供同仁 | 4 |
+| 國立臺北護理健康大學 | nothing found | n/a | n/a | n/a | n/a | n/a | n/a |
+| 國立高雄餐旅大學 | sta.nkuht.edu.tw/store.htm | 學生會 (student_org) | HTML cards, 7 pages | ~52 | 115/01/18 | Yes, 憑學生證及教師識別證 | 2 |
+| 國立金門大學 | ecasc.nqu.edu.tw 校友證特約商店 | 就業輔導暨校友服務中心 (school) | HTML table | ~20 | end dates to 119年 | Mixed (some 在學學生) | 2 |
+| 國立臺灣體育運動大學 | sites.google.com/gm.ntus.edu.tw/alumnicard | 學務處校友暨就業服務組 (school) | Google Site names + Google Sheet (login-gated) | ~130 | 2026/05/06 | Partly: 校友證、教職員證或學生證(部分特約限定對象) | 4 |
+| 國立臺中科技大學 | secretary.nutc.edu.tw PDF | 秘書室 (school) | PDF table | ~20 | PDF 2025-05-26 | Yes, 學生、教職員、校友 | 3 |
+| 國立臺北商業大學 | nothing found | n/a | n/a | n/a | n/a | n/a | n/a |
+| 國立屏東大學 | pers.nptu.edu.tw 特約廠商一覽表.pdf | 人事室, list negotiated by 學生會 (school) | PDF | 97 | PDF 2021-05-11 (110學年) | Students (憑卡) | 3 |
+| 國立高雄科技大學 | personnel.nkust.edu.tw 特約商店 | 人事室 (school) | HTML list + PDFs | ~150 | dates to 1161231 | Mostly staff; 44 marked 校友適用; some 學生會簽約 適用教職員工生 | 3 |
+| 國立臺灣戲曲學院 | none (TLS fail) | n/a | n/a | n/a | n/a | n/a | not verifiable |
+| 國立臺南護理專科學校 | nothing found | n/a | n/a | 0 | n/a | n/a | n/a |
+| 國立臺東專科學校 | personnel.ntc.edu.tw 特約商店 | 人事室 (school) | HTML index of scanned-contract PDFs | 6 | contracts 115/1/1–115/12/31 | No (員工 服務證); 學生自治會 page says 「持續籌備中」 | 4 |
+| 東海大學 | thupr.thu.edu.tw/play.php | 公共事務暨校友服務處 (school) | HTML | ~43 | contract end dates up to 2027/3/27 | Partly (學生證、職員證、校友證 on several) | 2 |
+| 中原大學 | alumni.cycu.edu.tw 校友證-特約商家 | 校友服務暨資源發展處 (school) | HTML (name list + modal detail) | 99 | expiry dates seen up to 115年12月 | Partly (校友證 mainly; some 學生證) | 3 |
+| 逢甲大學 | ga.fcu.edu.tw/ctrtst/ | 總務處 (school) | HTML page; no list in fetched HTML | 0 visible | n/a | Yes in policy (教職員工服務證或學生證) | 5 |
+| 靜宜大學 | psn.pu.edu.tw 特約商店 | 人事室 (school) | HTML directory linking to contracts | 116 | n/a | No (本校教職員證) | 3 |
+| 長庚大學 | cgu.edu.tw/cgubenefit 特約廠商清單 | 教職員工福利委員會 (school) | HTML | ~30 | 114年11月9日更新 | Mostly staff; a few 職員證、學生證（含校友證） | 2 |
+| 元智大學 | web2.yzu.edu.tw/profit-2024 特約商店 | 福利委員會 (school) | HTML | 81 | end dates up to 116.12.31 | Mostly staff; a few student rates | 2 |
+| 中華大學 | personnel.chu.edu.tw 特約商店優惠資訊 PDF | 人事室/福委會 (school) | PDF (17 pp, partly images) | 15 | PDF 2025-07-31 | Partly (員工識別證或學生證 on some) | 3 |
+| 大葉大學 | bulletin.dyu.edu.tw 福委會特約商店 PDF | 福委會 (school) | PDF | ~34 | 更新日期 104/12/08 (stale) | Partly (教職員、學生) | 3 (stale) |
+| 華梵大學 | nothing found | n/a | n/a | 0 | n/a | n/a | n/a |
+| 義守大學 | sa1.isu.edu.tw 集團-學生優惠 (single perk) | 學務處 (school) | HTML | 1 (group hospitals) | n/a | Yes (學生證) | 5 (no merchant list) |
+| 世新大學 | po.web.shu.edu.tw 福利/特約商店 | 人事室 (school) | HTML | ~28 | 特約期 to 115/116年12月 | Mostly staff; medical entries 教職員工生 | 2 |
+| 銘傳大學 | nothing current | n/a | n/a | 0 | n/a | n/a | n/a |
+| 實踐大學 | welfare.usc.edu.tw 特約商店一覽表 | 教職員工福利互助委員會 (school) | HTML tables (4 categories) | ~112 | end dates to 119/12/31 | Mostly staff (先出示教職員證); ~9 rows include 學生 | 2 |
+| 朝陽科技大學 | hr.cyut.edu.tw 特約商店 / 優惠廠商相關訊息 | 人資處 (school) | HTML posts | 12 | n/a | Staff (專任教職員工) | 4 |
+| 高雄醫學大學 | personnel.kmu.edu.tw 本校特約商店一覽表 | 人力資源室 (school) | 403 Access Denied | n/a | n/a | n/a | not verifiable |
+| 南華大學 | welfare2.nhu.edu.tw 特約商店 | 福利互助委員會 (school) | HTML (2 visible) + images | 2 visible | 優惠效期 2021-12-31 (stale) | Yes (教職員工證或學生證) | 4 (stale) |
+| 真理大學 | alumni.au.edu.tw 特約商店總攬 | 校友與公共關係組 (school) | HTML posts | 11 | n/a | Mostly staff; 高鐵 全校教職員工生 | 3 |
+| 大同大學 | nothing found | n/a | n/a | 0 | n/a | n/a | n/a |
+| 南臺科技大學 | sites.google.com/stust.edu.tw/appointed-store | 校友中心 (school) | Google Sites (8 categories) | 82 in 3 of 8 categories (est. 120+) | 截止日期 mostly 永久有效 | Yes (優惠對象：學生/教職員/校友/之友 on ~35 of 82) | 2 |
+| 嘉南藥理大學 | nothing found | n/a | n/a | 0 | n/a | n/a | n/a |
+| 樹德科技大學 | nothing found (202 empty bodies) | n/a | n/a | 0 | n/a | n/a | n/a |
+| 中山醫學大學 | personnel.csmu.edu.tw 特約商店 (飲食&育樂 / 住宿&租車) | 人力資源室 (school) | HTML tables with eligibility columns | ~90 | 資料更新 2026/12/30 & 2025/12/30; index 2026-10-20 | Yes (columns 教職員/學生/校友/附醫) | 1–2 |
+| 龍華科技大學 | nothing (only single-vendor 駕訓班 posts) | 校友服務中心 | HTML posts | n/a | n/a | n/a | n/a |
+| 輔英科技大學 | fyasc.fy.edu.tw 校友卡特約廠商 | 職發與校友中心 (school) | HTML | 21 | n/a | No (校友卡; 教職員工 員工證) | 3 |
+| 明新科技大學 | admin.must.edu.tw 特約資訊 | 總務處事務組 (school) | HTML (9 categories) | 22 in 4 of 9 categories (est. 30–45) | end dates up to 115年12月31日 | Partly (學生攜帶學生證 on several) | 2 |
+| 長榮大學 | www TLS fail; dweb health page (clinics only) | 衛生保健組 (school) | HTML | clinics only | 114/1/1–115/12/31 | Yes (學生證) for clinics | not verifiable (merchant list) |
+| 弘光科技大學 | ewc.hk.edu.tw 特約商店清單 xlsx | 員工福利委員會 (school) | XLSX + HTML posts | 87 | xlsx modified 2026-07-20 (「115.07.20更新」) | Mostly staff; some 學生證 | 2 |
+| 健行科技大學 | none on own site (only listed as a member of the 桃園區大專院校福利聯盟, per VNU's page) | – | – | – | – | – | – |
+| 正修科技大學 | sa.csu.edu.tw/shop_vip.php (search lead; unreachable) | 學務處/學生會? (unverified) | HTML? | ? | ? | not verifiable | – |
+| 萬能科技大學 | administration.vnu.edu.tw/oga/2407 + 8-school XLS/ODS | 總務處 (school) | XLS/ODS | not parsed (8-school alliance file) | file saved 2016-11-22; page footer 2026-10-07 | "讓本校全體師生一起享受優惠" (出示識別證) | 4 |
+| 玄奘大學 | 人事室 福利天地 › 特約店家資訊 (DOCX) | 人事室 (school) | DOCX table | ~24 | page 2025-12-16; terms to 116.12.31 | No: "攜帶教職員識別證" | 2 |
+| 建國科技大學 | 在學學生 page links "學校特約商店" (link dead, 404) | 總務處? (school) | – | 0 reachable | link file from 2019 | – | – |
+| 明志科技大學 | cfw.mcut.edu.tw 明志科大特約廠商 | 教職員工福利委員會 (school) | HTML | 3 | terms to 115/12/31 | No: "憑職員證" | 2 |
+| 台鋼科技大學 | ord.tsust.edu.tw 特約商店列表 PDF | 研究發展處 (school) | PDF (11 pp) | ~55 | 製表日期 115.01.16 (2026-01-16) | Partly: 優惠對象 column (教職員/學生/校友) | 3 |
+| 大仁科技大學 | a06.tajen.edu.tw 學校特約商店 | 總務處 (school) | HTML table | ~12 | latest terms start 115/9/9; ends to 117/12/31 | Yes: "請主動出示教職員證或學生證" | 1 |
+| 聖約翰科技大學 | pr.sju.edu.tw 校友專屬優惠方案 | 校友總會 (alumni assoc.) | HTML index + per-deal pages | ~35 | Last-Modified 2026-03-16 | No: 校友 only | 3 |
+| 嶺東科技大學 | www.ltu.edu.tw 特約績優商店 (食/醫/住/行/其他) | main site, unit not stated (school) | HTML, one page per store | ~18 in 食 alone | sample posted 2019-05-28, term ended 108/12/31 | Sample says "優惠限教職員工使用" | 3 |
+| 中國科技大學 | 總務處 校園資訊 › 學生會特約商店 (Google Doc) | 學生會 via 總務處 page (student_org) | Google Doc table | ~11 | no date | Yes: "全校師生憑本校證件…" | 2 |
+| 中臺科技大學 | personnel.ctust.edu.tw 特約商店 | 人力資源處/人事 (school) | HTML table | ~38 | terms to 115/12/31 | Yes: "優惠身份：本校教職員、學生、校友" | 2 |
+| 亞洲大學 | nothing found | – | – | – | – | – | TLS not verifiable |
+| 開南大學 | general.knu.edu.tw notice (search lead; unreachable) | 總務處 (unverified) | – | ? | ? | not verifiable | – |
+| 佛光大學 | nothing found | – | – | – | – | – | – |
+| 台南應用科技大學 | secret.tut.edu.tw 特約廠商 PDF + 特約活動訊息 posts; renewals now in app | 秘書室 公共事務暨校友服務組 (school) | PDF (49 pp) + HTML posts + app | ~250 rows in the PDF | PDF 2024-05-03 (terms to 114/12/31); 2026 notice dated 2026-04-21 | Yes: per-row columns 教職員工證/學生證/校友學思卡 | 3 (PDF) / 5 (app) |
+| 中信科技大學 | alumni.ctbctech.edu.tw "特約商店" (contract template only) | 校友發展中心 (school) | PDF template | 0 | 2026-01-08 template | Template says "教職員、學生和校友" | – |
+| 元培醫事科技大學 | nothing found | – | – | – | – | – | – |
+| 景文科技大學 | nothing found | – | – | – | – | – | – |
+| 中華醫事科技大學 | secretary.hwai.edu.tw 特別商店 (特約商店一覽表) | 主任秘書室 (school) | HTML table | ~17 | no date on page | Partly: "出示證件"; some rows "華醫學生及職員" | 2 |
+| 東南科技大學 | nothing found | – | – | – | – | – | – |
+| 德明財經科技大學 | nothing found | – | – | – | – | – | – |
+| 南開科技大學 | nothing found | – | – | – | – | – | – |
+| 中華科技大學 | nothing found (career.cust.edu.tw 503) | – | – | – | – | – | – |
+| 僑光科技大學 | alumni.ocu.edu.tw 新增特約商店 posts (search lead; TLS fail) | 校友會 (unverified) | – | ? | ? | not verifiable | – |
+| 育達科技大學 | nothing found (site unreachable) | – | – | – | – | – | – |
+| 美和科技大學 | gad.meiho.edu.tw 特約商店 (5 categories) | 總務處 (school) | HTML, one page per store | ~31 | no page dates; one sample term 109–110 | Mostly: "(適用教職員工證、學生證、校友證)" | 3 |
+| 吳鳳科技大學 | 人事室 "2025教職員生福利" XLSX | 人事室 (school) | XLSX (6 sheets) | ~25 | posted 2026-05-19 (公告期限 to 2026-12-31) | Mixed: some rows "教職員證、學生證", 2 sheets 教職員-only | 2 |
+| 修平科技大學 | 學生自治會 特約列表 (Google Sheet) + 特約地圖 | 學生自治會 (student_org) | Google Sheet + Google My Map | ~27 | latest news 2024-10-08 | Yes: "出示學生證即可享有優惠" | 2 |
+| 長庚科技大學 | cguaa.cgust.edu.tw 特約廠商 | 校友會 (alumni assoc.) | HTML, one post per store (2 pages) | ~11–20 | latest post: contract from 115/3/15 | Mostly alumni ("出示校友會會員卡"); latest post adds "學校師生憑教職員證/學生證" | 3 |
+| 臺北城市科技大學 | per.tpcu.edu.tw (telecom notices only) | 人事室 (school) | HTML notices | 0 real partner list | notice says 115.07.31止 (expired) | No (staff and family) | n/a |
+| 敏實科技大學 | nothing found | – | – | 0 | – | – | n/a |
+| 醒吾科技大學 | b002.hwu.edu.tw 校友特約商店 | 學務處 校友服務中心 (school) | HTML (AJAX) | 0 (empty placeholder) | – | Not stated (aimed at alumni) | n/a |
+| 文藻外語大學 | nothing found | – | – | 0 | – | – | n/a |
+| 華夏科技大學 | not verifiable (connection reset) | – | – | ? | – | – | – |
+| 致理科技大學 | welfare.chihlee.edu.tw 特約廠商 | 福利委員會 (school) | HTML list plus PDF attachments | about 5 on page 1 of "共 2 頁" | not seen | No (staff welfare committee) | 3 |
+| 康寧大學 | ga.ukn.edu.tw notice (one bedding vendor) | 總務處 (school) | HTML notice | 1 | 2026 (from the title) | Probably dorm students; not verified | 4 |
+| 宏國德霖科技大學 | alumnus.hdut.edu.tw 校友優惠方案 | 校友會 (school) | "Under construction" image | 0 | site shows 2026-07-30 | – | n/a |
+| 崇右影藝科技大學 | not verifiable (connection reset) | – | – | ? | – | – | – |
+| 台北海洋科技大學 | nothing found | – | – | 0 | – | – | n/a |
+| 亞東科技大學 | nothing found | – | – | 0 | – | – | n/a |
+| 馬偕醫學大學 | nothing found | – | – | 0 | – | – | n/a |
+| 中信金融管理學院 | sa.ctbc.edu.tw 特約商店 (lead) | 學務處 (school) | ? | ? | ? | Snippet says 學生證 (unverified) | not verifiable (TLS) |
+| 南亞技術學院 | nothing found | – | – | 0 | – | – | n/a |
+| 黎明技術學院 | nothing found (only 國旅卡 and 公教 forwards) | – | – | 0 | – | – | n/a |
+| 德育護理健康學院 | nothing found (contract template only) | – | – | 0 | – | – | n/a |
+| 法鼓文理學院 | nothing found | – | – | 0 | – | – | n/a |
+| 馬偕醫護管理專科學校 | not verifiable (timeout) | – | – | ? | – | – | – |
+| 仁德醫護管理專科學校 | oga.jente.edu.tw 特約廠商 (lead) | 總務處 (school) | ? | ? | snippet: 112 contracts | Snippet says 員工識別證 (unverified) | not verifiable (reset) |
+| 樹人醫護管理專科學校 | nothing found | – | – | 0 | – | – | n/a |
+| 慈惠醫護管理專科學校 | nothing found | – | – | 0 | – | – | n/a |
+| 耕莘健康管理專科學校 | orphaned legacy 人事室 福利快訊 page | 人事室 (school) | static HTML | 1 page seen | not dated (legacy) | No (員工識別證) | 4 |
+| 敏惠醫護管理專科學校 | b009.mhchcm.edu.tw 特約商店 (lead) | 學務處 (school) | ? | ? | snippet: 107年 | Snippet says 教職員工或學生證 (unverified) | not verifiable (reset) |
+| 育英醫護管理專科學校 | nothing found | – | – | 0 | – | – | n/a |
+| 聖母醫護管理專科學校 | not verifiable (TLS) | – | – | ? | – | – | – |
+| 新生醫護管理專科學校 | www.hsc.edu.tw 特約廠商一覽表 | school main site (unit not named) | HTML table | 13 | one expiry 112.12.31; the rest 無期限 | **Yes**: 學生證 | 1 |
+| 崇仁醫護管理專科學校 | cjc.edu.tw 人事室 特約商店 | 人事室 (school) | HTML index plus scanned-image PDFs | 18 (2 pages) | PDFs dated 2023 to 2024; site footer 2026/10/22 | Not stated in the index | 4 |
+| 臺北市立大學 | sec.utaipei.edu.tw 特約服務商店 | 秘書室 (school) | HTML posts plus PDF contracts | ≥19 currently shown | end dates up to 116/12/31 | **Some**: 教職員工及在學學生 (義美); others staff-only | 3 |
+
+## Brand-direct student perks (nationwide)
+
+Research date: 2026-10-23. Every perk in the "Verified" sections comes from an official page fetched with `curl -sS -L --max-time 30`. Raw HTML is saved under `(session scratchpad)/wide/brands/raw/` and the fetch log (id, URL, HTTP status, final URL, bytes) is in `raw/status.tsv`. Quoted terms are copied from the fetched page. I did not use search snippets as facts.
+
+Notes on method:
+- The WebSearch budget ran out partway through. After that I only reached official sites whose URLs I already had or could find by following links from their homepages. Banks, food chains, airlines, lodging and the big cinemas stay mostly in "unverified leads".
+- Some pages blocked the fetch (Cloudflare or Akamai 403) or the connection was reset. I did not try to work around any of these. They are listed as leads.
+- Pages whose content loads with JavaScript (YouTube, KKBOX's main site, NTCH, the UNiDAYS offer list) gave little or no text. I report only what the static HTML says.
+
+### Summary table
+
+| # | Company / perk | Category | Scope | Who qualifies (short) | Price / discount (short) | Validity / end date | HTTP |
+|---|---|---|---|---|---|---|---|
+| 1 | 台灣高鐵 大學生優惠 | transport | Taiwan | ROC college/university students (excludes open university) | 50% / 75% / 88% of full fare on designated trains | None stated; THSR may change or end it | 200 |
+| 2 | 臺鐵 大學生優惠措施 | transport | Taiwan | ROC college/university students | 50% / 70% / 80% of full fare, reserved trains, 50 km or more | Travel dates 2026-08-17 to 2027-08-16 | 200 |
+| 3 | Apple 教育商店 (education pricing) | shopping | Global, TW store | Current and incoming college students, plus staff | Education pricing (amounts load with JS) | None stated | 200 |
+| 4 | Lenovo 教育商店 | shopping | Global, TW store | Verified students and educators | Extra discount all year; NT$3,300 off NT$46,700 welcome code; up to 50% off selected items | Year-end and 11.11 promos; no date given | 200 |
+| 5 | GitHub Student Developer Pack | education | Global | Enrolled in a degree or diploma program, age 13 or older | Free partner offers | None stated | 200 |
+| 6 | GitHub Copilot Student | education | Global | Verified GitHub Education students | Free Copilot features | None stated | 200 |
+| 7 | JetBrains Student Pack | education | Global | Full-time students, or vocational program of 1 year or more | Free | None stated | 200 |
+| 8 | Notion Education Plan | education | Global | Students with a school email (WHED-listed school) | Free | Re-verify yearly | 200 |
+| 9 | Figma for Education | education | Global | Verified students and educators | Free | None stated | 200 |
+| 10 | Microsoft Office 365 A1 | education | Global | Students with an eligible school email | Free | While enrolled | 200 |
+| 11 | Microsoft 365 進階版 for students | education | Global, TW page | College students with a school email | 12 months free | "限時優惠期間內" (limited time), no date | 200 |
+| 12 | Azure for Students | education | Global | Students with a school email | Free, no credit card; renew yearly | Yearly renewal | 200 |
+| 13 | Unity Student | education | Global | Degree-program students; secondary students aged 16 or older | Free Unity Pro and bundled assets | None stated | 200 |
+| 14 | Ableton Live EDU | education | Global | Full-time students aged 18 or older (and others, see block) | 50% off Live | None stated | 200 |
+| 15 | Miro Education (Student) | education | Global | Students (application required) | Free plan, 10 members, 2 years | 2 years | 200 |
+| 16 | Spotify Premium Student | entertainment | Global, TW price | Students at accredited higher-ed schools, age 18 or older | 1 month free, then NT$88/month | Up to 4 years | 200 |
+| 17 | Apple Music 學生方案 | entertainment | Global, TW price | Verified college students | NT$90/month or NT$900/year, plus Apple TV | "優惠限時提供", no date | 200 |
+| 18 | KKBOX 學生方案 | entertainment | Taiwan | MOE-recognised college or senior-high students, age 25 or under | NT$480 for 180 days / NT$960 for 360 days | None stated | 200 |
+| 19 | 國立自然科學博物館 (Taichung) | entertainment | Taiwan (central) | Students aged 12 or older | Exhibits NT$90 (vs NT$120) | None stated | 200 |
+| 20 | 國立臺灣博物館 (Taipei) | entertainment | Taiwan (north) | Students | Half price NT$15 (vs NT$30); 4-venue pass NT$65 | None stated | 200 |
+| 21 | 臺北市立美術館 | entertainment | Taiwan (north) | Students aged 12 or older | NT$15 (vs NT$30) | None stated | 200 |
+| 22 | 臺北市立天文科學教育館 | entertainment | Taiwan (north) | Domestic students or ISIC holders | Exhibits NT$20 (vs 40); dome theater NT$50 (vs 100) | Fee table revised 2022-07-13 | 200 |
+| 23 | 臺北市立動物園 | entertainment | Taiwan (north) | Students with a valid student ID or ISIC | NT$50 (vs NT$100) | None stated | 200 |
+| 24 | 國立海洋生物博物館 (Pingtung) | entertainment | Taiwan (south) | University students and above with a valid ID | NT$250 (vs NT$450) | None stated | 200 |
+| 25 | 國立臺灣歷史博物館 (Tainan) | entertainment | Taiwan (south) | Students | NT$50 (vs NT$100) | None stated | 200 |
+| 26 | 國立臺灣科學教育館 (Taipei) | entertainment | Taiwan (north) | Students with proof | NT$90 (vs NT$120), 2026 rates | Fees revised from 2026-01-01 | 200 |
+| 27 | 國立臺灣史前文化博物館 (Taitung) | entertainment | Taiwan (east) | Students at MOE-registered schools | NT$60 (vs NT$100); free on Wednesdays | Wednesday free: 2026-01-01 to 2026-12-31 | 200 |
+| 28 | 國立科學工藝博物館 (Kaohsiung) | entertainment | Taiwan (south) | Individuals with a student ID | NT$90 (vs NT$120) | None stated | 200 |
+| 29 | 台北當代藝術館 MOCA | entertainment | Taiwan (north) | Students from junior high up | NT$50 (vs NT$100) | None stated | 200 |
+| 30 | 臺北市立兒童新樂園 | entertainment | Taiwan (north) | Students with a valid student ID | Entry NT$15 (vs NT$30) | None stated | 200 |
+| 31 | 臺中國家歌劇院 中臺灣超級學生方案 | entertainment | Taiwan (central only) | Students in central counties who are U23 members | Low-price seats (amount not stated) | None stated | 200 |
+| 32 | 奇美博物館 (Tainan) | entertainment | Taiwan (south) | Students at Tainan schools free; ages 7-22 discounted | Free / NT$150 (vs NT$200) | None stated | 200 |
+| 33 | 遠傳電信 學生限定方案 | services | Taiwan | Students (proof not stated on page) | NT$288/month or NT$588/month plans | None stated | 200 |
+| 34 | ISIC 國際學生證 (issued in TW by 中華民國國際青年旅舍協會) | services | Global card, TW issuer | Students aged 12 or older | NT$400 per card; valid 1 year | 1 year from issue | 200 |
+| 35 | UNiDAYS Taiwan | services | Global, TW region | Students | Free sign-up; brand offers load with JS | None stated | 200 |
+| 36 | Google AI Pro 學生方案 (Taiwan) | education | Taiwan | ROC college students aged 18 or older | 1 year free | **Expired**: apply-by date was 2025-12-09 | 200 |
+
+That is 36 perks checked on official pages (35 live, 1 expired), below the target of 40. The gap is in the categories listed under "unverified leads".
+
+---
+
+### Transport
+
+#### 1. 台灣高鐵 (THSR): 大學生優惠
+- **Category:** transport. **Scope:** Taiwan-specific.
+- **URL:** https://www.thsrc.com.tw/ArticleContent/530e869c-479d-441a-a4b4-61a8166827e9 (HTTP 200)
+- **Discount:** "中華民國大專院校在學學生可享高鐵指定車次標準車廂對號座全額票價 5 折、75 折或 88 折優惠。"
+- **Who qualifies:** "中華民國大專院校包含大專、專科、軍警學校、宗教院校，但不包含空中大學、空中學院及大專院校附設之進修補習班。學制包含二專、五專、二技、四技、大學、碩士、博士。部別包含日間部、夜間部、進修部（需為上述學制）、在職專班（需為上述學制）。"
+- **Proof:** "乘車時應攜帶本人實體學生證正本以備查驗，未持本人實體學生證正本者應照章補票，本公司並得加收票價差額之 50% 違約金。學生證必須蓋有當學期註冊章方為有效，若無當學期註冊章、註冊章模糊無法辨識或免蓋註冊章之學生證，須合併出示當學期「在學證明」正本作為輔助證明。前述「在學證明」得為紙本或事先下載之電子版格式。"
+- **Other terms:** "本專案不得與其他優惠（如優待票、團體票、兌換券及早鳥優惠等促銷方案）合併使用。" The proof of enrolment counts until 3/31 for semester 1 and until 10/31 for semester 2.
+- **Validity:** no end date given. "台灣高鐵公司保有調整或終止本專案之權利。"
+- **Regions:** THSR runs Nangang to Zuoying only, so north, central and south, not east.
+
+#### 2. 臺鐵 (Taiwan Railway Corp.): 大學生優惠措施
+- **Category:** transport. **Scope:** Taiwan-specific.
+- **URL:** https://www.railway.gov.tw/tra-tip-web/tip/tip00C/tipC21/view?proCode=8ae4cac29f6728ef019f6a9b514f0ceb&subCode=8ae4cac29f6728ef019f6a9e06f70cf0&lang=zh_TW (HTTP 200; page says "最後更新時間：2026/09/30")
+- **Who qualifies:** "凡具中華民國大專院校在學學生身分者，得於本公司指定車次購買 對號列車 車票，並依本措施享有差別折扣優惠。適用學校包含經教育主管機關核准設立之大學、專科學校、技術學院、軍警院校及宗教院校等(含教育實習學生)；不適用社區大學、空中大學、空中學院及各校附設進修補習班學生。適用學制包含二專、五專、二技、四技、大學、碩士班及博士班；日間部、夜間部、進修部及在職專班學生均得適用。"
+- **Discount:** "凡具適用資格者，可享指定對號車次全票票價5折、7折或8折優惠。本優惠依各車次及乘車日所屬星期提供不同折扣，同一車次於不同星期可能適用不同折扣，售完為止。" Applies only to "乘車區間里程50公里以上之對號列車車票".
+- **Proof:** "旅客乘車時應攜帶本人有效學生證正本（或其他足資證明在學身分之文件）". If the student ID is missing, a government photo ID plus one of: 在學證明, 錄取／入學通知, 入學證明, 註冊單據, 繳費證明, 就學貸款證明文件, 實習學生證. Items 2 to 6 are accepted only in summer (6/19–10/31) and winter (1/10–3/31).
+- **Penalty:** "以原價補票，並加收百分之五十票款".
+- **Excluded:** "團體票、騰雲座艙、自由座、無座票及鐵公路聯運票(含加價聯運票)不適用".
+- **Validity:** "本優惠措施實施期間，自乘車日115年8月17日起至116年8月16日止。" So **expires_on 2027-08-16**.
+
+### Shopping (hardware education stores)
+
+#### 3. Apple: 教育商店 (education pricing)
+- **Category:** shopping. **Scope:** global program, TW store.
+- **URL:** https://www.apple.com/tw-edu/store (HTTP 200)
+- **Who qualifies:** "① 適用於在校及新入學大專院校學生以及各年級的教職員工。 請參閱 條款 ，了解更多相關資訊。"
+- **Price:** product prices load with JavaScript and are not in the HTML I fetched.
+- **Validity:** none stated.
+
+#### 4. Lenovo: 教育商店 (student benefits)
+- **Category:** shopping. **Scope:** global program, TW store.
+- **URL:** https://www.lenovo.com/tw/zh/education/ redirected to https://www.lenovo.com/tw/zh/lenovo-edu/student/benefits/ (HTTP 200)
+- **Terms:** "加入全球超過一百萬名已驗證的學生及教育工作者行列", "所有產品均可全年額外折扣。", "註冊成功後，優惠碼將透過電子郵件發送。 顧客使用所提供的優惠碼，消費滿 NT$46,700 即可享 NT$3,300 迎新優惠。", "限時優惠！ 於 Lenovo 教育商店購買指定平板電腦、螢幕及配件產品，最高可享 50% 折扣。"
+- **Proof:** verification is required, but the page does not name the method.
+- **Validity:** the 11.11 and year-end promos have no dates. The all-year extra discount has no end date.
+
+### Education (software and AI)
+
+#### 5. GitHub Student Developer Pack
+- **Category:** education. **Scope:** global.
+- **URLs:** https://education.github.com/pack (HTTP 200) and https://docs.github.com/en/education/about-github-education/github-education-for-students/apply-to-github-education-as-a-student (HTTP 200)
+- **Who qualifies:** "You qualify for GitHub Education if you: Are enrolled in a degree- or diploma-granting program, such as a high school, college, university, or homeschool. Provide documents that prove your current student status. … Own a GitHub personal account. Are at least 13 years old."
+- **Proof:** "A picture of your school ID with current enrollment date / Your class schedule / Your transcript / An affiliation or enrollment verification letter". Some schools also require an academic email.
+- **Sample partner offers on the pack page:** "Free access to 25+ Microsoft Azure cloud services plus $100 in Azure credit. For students aged 18+."; Namecheap "1 year domain name registration on the .me TLD." and "1 SSL certificate free for 1 year."
+- **Validity:** none stated for the pack. Individual partner offers have their own terms.
+
+#### 6. GitHub Copilot Student
+- **Category:** education. **Scope:** global.
+- **URL:** https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students (HTTP 200)
+- **Terms:** "Get free access to Copilot's premium features as a verified student." "Verified students on GitHub Education get free access to Copilot's features." "To become a verified student, see Apply to GitHub Education as a student."
+- **Validity:** none stated.
+
+#### 7. JetBrains: Student Pack
+- **Category:** education. **Scope:** global.
+- **URLs:** https://www.jetbrains.com/community/education/ redirected to https://www.jetbrains.com/academy/student-pack/ (HTTP 200; page title "Free JetBrains Student Pack"), and https://www.jetbrains.com/legal/docs/toolbox/license_educational/ (HTTP 200)
+- **Who qualifies (from the agreement, "Version 4.2, effective as of May 01, 2024"):** "“student” is an individual who studies full-time at a recognized educational institution (university, college, high school) or is enrolled full-time or part-time in a vocational educational program that lasts no less than 1 year, and upon request from JetBrains is able to provide proof of their ac[ademic status]…"
+- **Price:** free (page title). The rest of the landing page loads with JavaScript.
+- **Validity:** none stated.
+
+#### 8. Notion: Education Plan
+- **Category:** education. **Scope:** global.
+- **URL:** https://www.notion.com/help/notion-for-education (HTTP 200)
+- **Terms:** "The Education Plan for individual students and teachers: a free plan for a one-member workspace. It’s available for students or teachers signed in with their education institution's email per the WHED." "Individual students and teachers at accredited colleges and universities can upgrade to the Education Plan for free at any time."
+- **Proof:** the school email must be the account's main email. "To stay on the plan, verify your student status once a year with your school email." "Each school email can claim the student offer just once, for one workspace."
+- **Validity:** ongoing, with yearly re-verification.
+
+#### 9. Figma for Education
+- **Category:** education. **Scope:** global.
+- **URL:** https://www.figma.com/education/ (HTTP 200)
+- **Terms:** "Figma’s design tools, free for education". "Verified students and educators get free access to Figma." "Eligible education users get full access to Figma’s AI toolkit, including Figma Make…"
+- **Validity:** none stated.
+
+#### 10. Microsoft: Office 365 A1 (教育版)
+- **Category:** education. **Scope:** global, TW page.
+- **URL:** https://www.microsoft.com/zh-tw/education/products/office (HTTP 200)
+- **Terms:** "擁有符合資格教育機構電子郵件地址的教育工作者和學生可以 免費取得 Office 365 A1 。" The page says the plan lasts as long as you work at or are enrolled in an eligible institution.
+- **Validity:** while enrolled.
+
+#### 11. Microsoft: Microsoft 365 進階版, free for college students
+- **Category:** education. **Scope:** global offer on the TW page.
+- **URL:** same page as #10 (HTTP 200), section "大專院校生專屬優惠"
+- **Terms:** "學生免費：AI 與生產力訂閱服務的終極方案 / 限時優惠期間內，使用您的大專院校電子郵件，即可免費取得 12 個月 Microsoft 365 進階版。 2". Footnote [2] reads only "適用相關條款".
+- **Validity:** "限時優惠期間內" (limited time). No end date on the page. The dedicated page https://www.microsoft.com/zh-tw/microsoft-365/college-student-pricing returned a "Your request has been blocked" body, so I could not read the full terms.
+
+#### 12. Microsoft: Azure for Students
+- **Category:** education. **Scope:** global.
+- **URL:** https://azure.microsoft.com/en-us/free/students/ (HTTP 200)
+- **Terms:** "Build in the cloud with Azure for Students for free". "Use your school email to sign up and renew yearly while you’re a student." "No credit card required". The GitHub pack listing adds "$100 in Azure credit. For students aged 18+."
+- **Validity:** renews yearly.
+
+#### 13. Unity Student
+- **Category:** education. **Scope:** global.
+- **URL:** https://unity.com/products/unity-student redirected to https://unity.com/cn/products/unity-student (HTTP 200; machine-translated Simplified Chinese page)
+- **Terms:** "通过免费的 Unity Student 计划，您将获得：最新版本的 Unity Pro 编辑器 / 免费的 Odin Inspector 和 Validator 教育许可证 / Premium Synty 资源包 / 访问 Unity Cloud 生态系统"
+- **Who qualifies:** "大专院校学生 正规学位授予机构的学生。" For secondary students: "资格要求：年满 16 岁、就读于官方认可的教育机构…"
+- **Validity:** none stated.
+
+#### 14. Ableton: Live for students
+- **Category:** education. **Scope:** global.
+- **URL:** https://www.ableton.com/en/shop/education/ (HTTP 200)
+- **Discount:** "Students and teachers: save 50% on Live … you can save 50% on a new Ableton Live Intro, Standard or Suite license."
+- **Who qualifies:** "a student who is 18 or over and enrolled in full-time education, up to advanced degree programs."; "a parent or guardian buying on behalf of a student who is under 18."; "a student in a part-time program that consists of 20 or more hours of study per week, or one that runs for 12 months or more."
+- **Proof:** "upload a copy of your student or teacher ID."
+- **Validity:** the licence stays valid after graduation. The offer has no end date.
+
+#### 15. Miro: Education (Student plan)
+- **Category:** education. **Scope:** global.
+- **URL:** https://miro.com/education/ redirected to https://miro.com/education-whiteboard/ (HTTP 200)
+- **Terms:** "If you're a student, an educator, or a school, you can apply for a Miro account." Student plan: "Free … 10 team members / 2 years / Unlimited boards / 1 workspace, unlimited projects …"
+- **Validity:** 2 years per the plan card.
+
+#### 36. Google: AI Pro student offer (Taiwan), EXPIRED
+- **Category:** education. **Scope:** Taiwan.
+- **URL:** https://blog.google/intl/zh-tw/products/explore-get-answers/ai-pro-student-offer/ (HTTP 200)
+- **Terms:** "本方案的適用對象為台灣境內年滿 18 歲、持有有效學生證的大專院校學生；申請期間為即日起至 2025 年 12 月 9 日止，有效期為開通後的 12 個月。"
+- **Status:** the application window closed on 2025-12-09. The current global page https://gemini.google/students/ (HTTP 200, as served to this fetcher) says: "The free Google AI Pro student offer is available to eligible U.S. college students ages 18+." **Do not list.**
+
+### Entertainment
+
+#### 16. Spotify: Premium Student
+- **Category:** entertainment. **Scope:** global program, TW pricing.
+- **URL:** https://www.spotify.com/tw/student/ (HTTP 200)
+- **Price:** "學生可免費使用 Premium 1 個月 … 之後每月只要 $88。可隨時取消。"
+- **Who qualifies:** "只要是在獲認證的大專院校註冊就讀，同時年滿 18 歲，就符合資格。你可以享受 Premium Student 最多四年。"
+- **Proof:** "我們透過第三方服務 SheerID 來確認你是否註冊在學。"
+- **Validity:** up to 4 years. Re-verify every 12 months. After graduation the plan becomes Individual at "月費 $168".
+
+#### 17. Apple Music: 學生方案 (includes Apple TV)
+- **Category:** entertainment. **Scope:** global program, TW pricing.
+- **URL:** https://www.apple.com/tw-edu/store (HTTP 200), footnote ②
+- **Terms:** "僅適用於新訂戶。訂閱方案將根據所選方案自動續訂，每月 NT$90 或每年 NT$900，直到取消為止。僅限大專院校學生與教育工作者。須通過驗證。…優惠限時提供；優惠可能隨時終止。" "免費收看 Apple TV 的學生優惠將於用戶不再符合資格，或不再續訂 Apple Music 學生方案後終止。"
+- **Validity:** "優惠限時提供", no date given.
+
+#### 18. KKBOX: 學生方案
+- **Category:** entertainment. **Scope:** Taiwan-specific.
+- **URL:** https://ssl.kkbox.com/tw/billing/index.php (HTTP 200; linked from https://www.kkbox.com/tw/tc/)
+- **Price:** "學生優惠 / 每月平均只要 80 元 / 支援無損音質 … 聽半年 買 90 天驗證後再送 90 天 $480 /單次 180 天 / 聽整年 買 180 天驗證後再送 180 天 $960 /單次 360 天"
+- **Who qualifies:** "只要你是教育部承認之大專院校及高中職在學學生（ 查詢網址 ），且年齡為 25 歲（含）以下者，都可以申請學生方案". Documents are required, but the page does not list them.
+- **Validity:** none stated.
+
+#### 19. 國立自然科學博物館 (National Museum of Natural Science, Taichung)
+- **URL:** https://www.nmns.edu.tw/ch/visit/ticket/ (HTTP 200; "2026/09/24 更新")
+- **Terms:** "12 歲以上學生 … 展示場 NT $90 | 太空劇場 NT $100 | 必可飛劇場 NT $70 | 植物園溫室 NT $20 | 科學中心 NT $20". General public pays "展示場 NT $120". "享優惠票價請憑證購買".
+- **Scope:** Taiwan, venue in Taichung (central). **Validity:** none stated.
+
+#### 20. 國立臺灣博物館 (National Taiwan Museum, Taipei)
+- **URL:** https://www.ntm.gov.tw/cp.aspx?n=5444 (HTTP 200)
+- **Terms:** "全票：每張 30元｜半票：每張 15元 / 四館聯票 全票：130元 ｜半票：65元". "＊半票優待：學生、6至12歲兒童…". "持優待或免費票券，請備妥有效證件，方得享有優惠。"
+- **Scope:** Taipei (north). **Validity:** none stated.
+
+#### 21. 臺北市立美術館 (Taipei Fine Arts Museum)
+- **URL:** https://www.tfam.museum/Common/editor.aspx?id=230&ddlLang=zh-tw (HTTP 200)
+- **Terms:** "普通票:30 (一般民眾。)". "優待票:15 (六歲以上未滿十二歲之兒童、十二歲以上學生（不含社區大學或學分班等短期進修）、持教育或文化機構義（志）工證者。)"
+- **Scope:** Taipei (north). **Validity:** none stated.
+
+#### 22. 臺北市立天文科學教育館 (Taipei Astronomical Museum)
+- **URL:** https://tam.gov.taipei/cp.aspx?n=4193F69A8290441E (HTTP 200)
+- **Terms ("收費基準表 （111年7月13日修訂）"):** exhibit "普通票 40", "優待票 20 … 二、國內各級學校或持有國際學生證之在校學生。". Theater "普通票 100", "優待票 50 … 二、國內各級學校或持有國際學生證之在校學生。"
+- **Scope:** Taipei (north). **Validity:** none stated.
+
+#### 23. 臺北市立動物園 (Taipei Zoo)
+- **URLs:** https://www.zoo.gov.taipei/cp.aspx?n=763493FD7ECCAA11 (HTTP 200) for prices, and https://www.zoo.gov.taipei/cp.aspx?n=763493FD7ECCAA11&s=F3BC09EC36168CB6 (HTTP 200) for ticket types
+- **Price:** "普通 臺北市民 優待 團體 / 100 60 50 70".
+- **Who qualifies:** "在校學生出示有效期間學生證或ISIC國際學生證（不含社區大學、語言中心或學分班等短期進修）". Students are exempt from the nationality or residence limit that applies to other discount groups.
+- **Proof:** "凡符合優惠條件者，請於入場時主動出示有效證件，未攜帶者恕不享有優惠！"
+- **Scope:** Taipei (north). **Validity:** none stated.
+
+#### 24. 國立海洋生物博物館 (NMMBA, Pingtung)
+- **URL:** https://www.nmmba.gov.tw/cp.aspx?n=A6476B49BA86BBD5 (HTTP 200)
+- **Terms:** "全票 450 元 一般民眾。" "優待票 250 元 a. 6歲(含)以上之學童(身高達115公分以上)、大學(含)以上持有效學生證者、… b. 應屆畢業生請持當年度准考證或當年度入學通知並連同身分證件購買優待票；空中大學請持學生證及該年度之選課卡購買優待票". "未攜帶者一律依全票計。(票價若有更動，以現場公告為準)"
+- **Scope:** Pingtung (south). **Validity:** none stated.
+
+#### 25. 國立臺灣歷史博物館 (NMTH, Tainan)
+- **URL:** https://www.nmth.gov.tw/cp.aspx?n=4089 (HTTP 200)
+- **Terms:** "全票 NT$100 一般觀眾 / 優待票 NT$50 學生、6歲以上未滿12歲兒童、…"
+- **Scope:** Tainan (south). **Validity:** none stated.
+
+#### 26. 國立臺灣科學教育館 (NTSEC, Taipei)
+- **URL:** https://www.ntsec.gov.tw/article/detail.aspx?a=23 (HTTP 200)
+- **Terms:** "本館各類票券自115年1月1日起調整收費標準". "常設展門票（3-6樓） 全票 ：120元 / 優待票 ：90元 / ✨ 優待票適用對象及說明： 學生憑證: 90元/人".
+- **Scope:** Taipei (north). **Validity:** the 2026 fee schedule; no end date.
+
+#### 27. 國立臺灣史前文化博物館 (NMP, Taitung)
+- **URL:** https://www.nmp.gov.tw/cp.aspx?n=1973 (HTTP 200)
+- **Terms:** "全票 NT$ 100 一般民眾 … 優待票 NT$ 60 … 2.持教育部立案學校有效學生證者". "● 教師及學生優惠 ：每週三憑相關證件，可免費參觀。（優惠期間 115/01/01~115/12/31）"
+- **Scope:** Taitung (east). **Validity:** the Wednesday free entry ends **2026-12-31**. The standing NT$60 student ticket has no end date.
+
+#### 28. 國立科學工藝博物館 (NSTM, Kaohsiung)
+- **URL:** https://www.nstm.gov.tw/Reference/VisitorInformation/Price.htm (HTTP 200)
+- **Terms:** "全票(一般觀眾) 120 元 / 優待票 1. 持有學生證個人。 2. 20人以上一般團體。 90 元". "凡購優待票及符合免費條件者，敬請出示有關證件，未攜帶者一律以原票價計。"
+- **Scope:** Kaohsiung (south). **Validity:** none stated.
+
+#### 29. 台北當代藝術館 (MOCA Taipei)
+- **URL:** https://www.mocataipei.org.tw/tw/Visit/時間與票價 (HTTP 200)
+- **Terms:** "一般票 一般民眾 NT$ 100 / 優待票 持下列有效證件者 NT$ 50 … 國中以上在校學生證"
+- **Scope:** Taipei (north). **Validity:** none stated.
+
+#### 30. 臺北市立兒童新樂園 (Taipei Children's Amusement Park)
+- **URL:** https://www.tcap.taipei/cp.aspx?n=EE083F2DED91AB99 (HTTP 200)
+- **Terms:** "門票（入園後，設施額外付費） 全票 30元 … 優待票 （購票時，應主動出示身分證明文件） 15元 … 持有效學生證之在學學生(外國在學學生須持有效期之國際數位學生證) 。"
+- **Scope:** Taipei (north). **Validity:** none stated.
+
+#### 31. 臺中國家歌劇院 (NTT): 中臺灣超級學生方案
+- **URL:** https://www.npac-ntt.org/membership/service (HTTP 200)
+- **Terms:** "中臺灣超級學生方案：歌劇院主辦節目開放大劇院20個座位、中劇院10個座位，供學生以低價購票觀賞". "凡設籍於苗栗、彰化、臺中、南投、雲林縣市或在前述縣市之教育部立案公私立各級學校，具U23會員身份者即可購買。每場限購1張。入場須出示學生證，未出示證件者請於現場補足全價差額，並加收100元補票手續費。" U23 membership: "申辦資格： 23歲(含)以下民眾。"
+- **Price:** "低價" only. The page gives no amount.
+- **Scope:** central Taiwan only, not nationwide. **Validity:** none stated.
+
+#### 32. 奇美博物館 (Chimei Museum, Tainan)
+- **URL:** https://www.chimeimuseum.org/visit (HTTP 200)
+- **Terms:** "全票 NT$200 一般民眾 / 優惠票 NT$150 7-22 歲 * 限持附有照片及出生日期之有效證件". Free entry: "於臺南市就讀之學生 * 限持政府立案之臺南學校有效學生證者；不適用於空中大學、在職進修、社區大學、學習/語言中心"
+- **Note:** the discount nationwide is age-based (7–22), not student-based. The student perk (free entry) covers Tainan schools only.
+- **Scope:** Tainan (south). **Validity:** none stated.
+
+### Services
+
+#### 33. 遠傳電信 (FET): 學生限定方案
+- **Category:** services. **Scope:** Taiwan-specific.
+- **URL:** https://fetnet.tw/e16ElQ0SEM redirected to https://www.fetnet.net/estore/exclusive/neweighteen/index.html (HTTP 200)
+- **Terms:** "學生方案吃到飽 單門號 288 起". "學生限定方案 月付 $288 … 上網：4GB 網內：每月送 30分鐘 網外：每月送 30分鐘 市話：每月送 40分鐘". "月付 $588 學生限定方案 上網：4G吃到飽不限速 網內：每月送 40分鐘 網外：每月送 40分鐘 市話：每月送 60分鐘".
+- **Gaps:** the page states no eligibility rule, proof or contract length for the student plans. The page also shows promos ending 2026-10-31, but those belong to other plans.
+- **Validity:** none stated for the student plans.
+
+#### 34. ISIC 國際學生證 (issued in Taiwan by 社團法人中華民國國際青年旅舍協會)
+- **Category:** services (verification card). **Scope:** global card, Taiwan issuer.
+- **URLs:** https://www.yh.org.tw/page/about/index.aspx?kind=10 (HTTP 200), with https://www.isic.org/ (HTTP 200) for the global programme
+- **Who qualifies:** "年滿 12 歲（含）之中華民國教育部公佈認可學校在校學生（以辦卡當日為基準日）。" Also non-MOE schools and students heading abroad. "「在校學生」係指 全年上課時間達 12 周及每周達 15 小時以上". "每 年 9月1日 起需以 新學年上學期 在學證明辦理。"
+- **Price:** "ISIC國際學生證卡證費 新台幣400元" (from 2024/06/05). Mail handling costs extra.
+- **Proof:** "含有註冊章或貼紙 的學生證影本(雙面)", or 在學證明 / 繳費證明 and similar.
+- **Validity:** "效期為發卡日起一年有效". The Taipei Zoo (#23), the Taipei Astronomical Museum (#22) and the Children's Amusement Park (#30, for foreign students) all name ISIC as accepted proof. isic.org: "thousands of discounts worldwide".
+- **Note:** https://www.isic.tw/ failed through the proxy (CONNECT 502).
+
+#### 35. UNiDAYS: Taiwan region
+- **Category:** services (verification platform). **Scope:** global, with a TW region.
+- **URL:** https://www.myunidays.com/TW/zh-TW (HTTP 200)
+- **Terms:** page title "UNiDAYS - 為學生提供快速、免費、獨家的折扣". The footer shows region "台灣". The brand offers load with JavaScript, so I could not see which brands are live in Taiwan.
+- **Validity:** n/a.
+- Student Beans (https://www.studentbeans.com/, HTTP 200): the country picker shows no Taiwan. Treat it as not available.
+
+---
+
+### Unverified leads (official page not fetched, blocked, or terms missing)
+
+| Lead | What blocked it | Where to look |
+|---|---|---|
+| 國立故宮博物院 student ticket | npm.gov.tw returned 403 (Cloudflare "Attention Required") on both the zh and en pages | npm.gov.tw ticket page |
+| 國家兩廳院 (NTCH) student discounts | npac-ntch.org loads with JS; HTML has no content | NTCH / OPENTIX ticket rules |
+| 衛武營 student discounts | npac-weiwuying.org returned 403 | Weiwuying ticketing |
+| 威秀影城 student/優待票 | vscinemas.com.tw returned 403 | VieShow price page |
+| 國賓影城 | pages fetched (HTTP 200) but no student or price terms found | ambassador.com.tw cinema pages |
+| 美麗華影城 優待票 | https://www.miramarcinemas.tw/Home/dazhiprice (HTTP 200) lists "優待 Concession Ticket" (e.g. 標準2D NT$320 vs 全票 NT$350) and "請出示每一位購買優待票者之有效證件", **but does not say students qualify** | ask Miramar |
+| 秀泰影城, 新光影城 | showtimes.com.tw returned 403; skcinemas.com connection reset | |
+| 國光客運 student fares | kingbus.com.tw connection reset (3 tries) | |
+| 統聯客運 | ubus.com.tw fare pages (HTTP 200) show no student fare; I found none | |
+| 高雄捷運 student card | krtc.com.tw connection reset | |
+| 中華電信 學生方案 | official student URLs I tried returned 404; homepage has no student link | cht.com.tw |
+| 台灣大哥大 學生方案 | taiwanmobile.com pages returned 404 or reset | |
+| YouTube Premium 學生方案 (TW) | youtube.com/premium/student is JS-only; the support URL returned 404 | |
+| Adobe Creative Cloud student pricing | adobe.com and helpx.adobe.com returned 403 | |
+| Autodesk education (free for students) | autodesk.com returned 403 | |
+| Canva, Tableau for Students | 403 | |
+| Samsung education store TW | the URLs I guessed returned 404 | |
+| ASUS 教育優惠方案 | asus.com/tw/store/education (HTTP 200) shows only "學生/教師/教職人員，立即加入享華碩教育優惠方案！"; the program page special-offers.asus.com/tw returned 403 | |
+| Dell student discount TW | the URL redirected to the homepage; no terms | |
+| Microsoft 365 student pricing page | returned a "request has been blocked" body | |
+| Banks (student accounts or cards) | no official bank page reached. Search results were third-party blogs (e.g. the rule for full-time students: up to 3 card issuers and NT$20,000 limit each). That is a regulatory rule, not a perk | each bank's site |
+| Food chains (王品 brands, 海底撈, 品田牧場 student-ID promos) | third-party news only, mostly old or seasonal | brand sites |
+| Airlines student fares | no official page reached; the search budget ran out | |
+| 救國團 青年活動中心 lodging | cyh.org.tw connection reset; the search budget ran out | |
+| YH 青年旅舍卡 | https://www.yh.org.tw/page/about/index.aspx?kind=9 (HTTP 200): NT$600 per year card, **not student-specific** | |
+| 國立海洋科技博物館, 國立歷史博物館, 國立傳統藝術中心, 新竹市立動物園, 台北101觀景台, 阿里山林業鐵路, 森林遊樂區 | connection reset, 502, 522 or 400 | |
+| Cursor for students | cursor.com/students (HTTP 200) says only that offers come via campus events, with no standing student discount. Not a perk | |
+| AWS Educate | aws.amazon.com (HTTP 200): "AWS Educate 對任何個人開放", so not student-specific | |
+
+---
+
+### Fit with CampusPass's record shape
+
+The record shape is: a nationwide deal with `regions` set to all four, a `source_url`, `eligibility.student: true`, and an `expires_on`.
+
+**Fit fully** (nationwide, official URL, student-only, and an explicit end date):
+- **臺鐵 大學生優惠** (#2): `expires_on: 2027-08-16`.
+
+**Fit except `expires_on`** (nationwide or online, so all four regions, with `student: true`, but the page gives no end date; you would need a null `expires_on` or a review date):
+- Online or national: Spotify Premium Student (#16), Apple Music Student (#17), KKBOX (#18), Apple Edu (#3), Lenovo Edu (#4), GitHub Pack (#5), Copilot Student (#6), JetBrains (#7), Notion (#8), Figma (#9), Office 365 A1 (#10), Azure for Students (#12), Unity Student (#13), Ableton (#14), Miro (#15), ISIC card (#34), FET student plans (#33, eligibility proof unconfirmed).
+- Microsoft 365 進階版 12 months free (#11) is labelled limited time with no date. Set a short review date.
+- Apple Music's page also says "優惠可能隨時終止".
+
+**Do not fit "all four regions"** (venue-bound; set `regions` to the venue's region):
+- North: NTM (#20), TFAM (#21), TAM (#22), Taipei Zoo (#23), NTSEC (#26), MOCA (#29), Children's Amusement Park (#30).
+- Central: NMNS (#19). NTT super-student (#31) is also limited by school county.
+- South: NMMBA (#24), NMTH (#25), NSTM (#28), Chimei (#32, the student perk is Tainan schools only).
+- East: NMP (#27). Its Wednesday free entry has `expires_on: 2026-12-31`.
+- **THSR (#1)** covers north, central and south, not east, and has no end date.
+
+**Exclude:** Google AI Pro TW (#36, expired 2025-12-09), Cursor and AWS Educate (not student perks), and the YH card (not student-specific).
+
+Eligibility nuance worth storing: THSR and TRA cover only ROC college-level students (no 空中大學). KKBOX also takes senior-high students up to age 25. Spotify requires age 18 or older. Most museum discounts also accept other groups (children, seniors), so the record should note that the discount is not exclusive to students.
+
+## School gaps, round 2 (2026-10-23)
+
+**Exact counts now replace these round-1 estimates.** They supersede the ranking table above:
+- **南臺:** 119 listings, 65 name 學生. Lodging is almost all staff-only.
+- **中山醫:** 96 rows, 64 mark 學生.
+- **高雄大學:** 116 stores, 24 name 學生證.
+- **中原:** 98 stores, 10 name 學生.
+- **明新:** 51 listings, only 3 include students. Round 1's 9 student mentions counted a menu link.
+- **臺藝大:** 16 listings, 3 include students.
+- **長庚:** about 56 福委會 vendors (about 5 include students), plus a 學生會 「學生特約」 list of 13, all for students.
+- **彰師:** 5 listings, all 校友證.
+- **嘉義:** 29 特約 signings, none stating whether students are eligible.
+
+**One new list.** 元培's homepage is a video splash page, so round 1 missed it. Its 人事室 「特約廠商」 section is at https://personnel.ypu.edu.tw/p/412-1006-12.php (I re-fetched it: 200): 84 vendors, 4 of them for students. No other "nothing found" school turned out to have a list on a second, targeted pass.
+
+Fetch date for every URL: 2026-10-23. Fetched with `curl -sS -L --max-time 30 --retry 3 --retry-all-errors`. Raw files: `wide/r2/gap/raw`, fetch log `wide/r2/gap/log.tsv`, scripts `wide/r2/gap/bin`. Counts come from parsing the fetched HTML. Search snippets are used only as leads.
+
+### Summary
+
+Status key: **new** = a list found that round 1 missed; **count completed** = the round-1 lower bound replaced by an exact count; **unchanged** = still nothing (or same as round 1). About 53 WebSearches were used.
+
+| School | Status | Best source | Publisher (level) | Format | Listings | Last updated | Students? | Difficulty |
+|---|---|---|---|---|---|---|---|---|
+| 南臺科技大學 | count completed | sites.google.com/stust.edu.tw/appointed-store (8 categories) | 校友中心 (school) | Google Sites HTML | **119** (was ≥82) | ends to 116/12/31; mostly 永久有效 | **65 of 119** (優惠對象 includes 學生) | 2 |
+| 中山醫學大學 | count completed | personnel.csmu.edu.tw 406-1012-70698 / 70684 | 人力資源室 (school) | HTML tables with eligibility columns | **96** | 資料更新 2026/12/30 & 2025/12/30 | **64 of 96** marked 學生; 12 unmarked | 1 |
+| 國立高雄大學 | count completed | personnel.nuk.edu.tw 高大特約商店 (6 categories) | 人事室 (school) | HTML list → detail pages (+PDF) | **116** (was ≥98) | 1150831 additions | **24 of 116** (學生證 named) | 3 |
+| 中原大學 | count completed | alumni.cycu.edu.tw 校友證-特約商家 | 校友服務暨資源發展處 (school) | HTML cards + modals | **98** | 有效期限 to 115/12/31 | **10 of 98** mention 學生; rest 校友證 | 3 |
+| 元培醫事科技大學 | **new** | personnel.ypu.edu.tw/p/412-1006-12.php 特約廠商 | 人事室 (school) | HTML list (17 pages) → detail pages | **84** | none shown | 4 of 84; mostly 出示識別證 (staff) | 3 |
+| 長庚大學 | count completed | cgu.edu.tw/cgubenefit nodeId=10905 + 10900–10903; 學生會 cgusga 17419–17421 | 福委會 (school) + 學生會 (student_org) | HTML | school **~56 unique** (28 一覽表 + 53 category entries, overlapping); 學生會 **13** | 114/11/9 update; 學生會 2026.02.27 | school ~5; 學生會 13 of 13 | 2 / 3 |
+| 明新科技大學 | count completed | admin.must.edu.tw 特約資訊 (9 categories) | 總務處事務組 (school) | HTML labelled fields | **51** (was ~22) | contracts to 116/4/29 | **3 of 51** explicit (round 1's 9 included menu text) | 2 |
+| 國立嘉義大學 | count completed | website.ncyu.edu.tw/personnel Subject nodeId=44238 | 人事室 (school) | news posts + PDFs | 174 posts, **29 特約 signings** | 2026/04/08 | not stated | 5 |
+| 國立臺灣藝術大學 | count completed | alu.ntua.edu.tw/Home/Store | 校友聯絡中心 (school) | HTML (client-side paging) | **16** (was ≥17) | not shown | 3 of 16 | 2 |
+| 國立彰化師範大學 | count completed | alumni.ncue.edu.tw 校友特約商店 (4 categories) | 校友服務中心 (school) | HTML | **5** | 2026-09-02 | 0 of 5 (校友證) | 2 |
+| 國立臺北教育大學 | new (minor) | alumnusntue.ntue.edu.tw 申辦校友證 | 校友中心 (school) | HTML | 4 校友證 perks (1 vendor) | n/a | No | 2 |
+| 國立臺南大學 | unchanged | (round 1) personnel.nutn 特約廠商; osa.nutn 生輔組 lead not verifiable (TLS) | 人事室 (school) | HTML table | 18 | 2026/10/12 | not stated | 4 |
+| 敏實科技大學 | unchanged | nothing found | n/a | n/a | n/a | n/a | n/a | n/a |
+| 台北海洋科技大學 | unchanged | nothing found | n/a | n/a | n/a | n/a | n/a | n/a |
+| 南亞技術學院 | unchanged | nothing found | n/a | n/a | n/a | n/a | n/a | n/a |
+| 樹人醫護管理專科學校 | unchanged | nothing found (JS site, no sitemap) | n/a | n/a | n/a | n/a | n/a | n/a |
+| 育英醫護管理專科學校 | unchanged | nothing found | n/a | n/a | n/a | n/a | n/a | n/a |
+| 德育護理健康學院 | unchanged | nothing found (contract templates only) | 校友會 | n/a | n/a | n/a | n/a | n/a |
+| 黎明技術學院 | unchanged | nothing found; alumni site unreachable | n/a | n/a | n/a | n/a | n/a | n/a |
+| 文藻外語大學 | unchanged | nothing found (JS site) | n/a | n/a | n/a | n/a | n/a | n/a |
+| 國立勤益科技大學 | unchanged | nothing found (學生會 lead host gone; oga/osa reset) | n/a | n/a | n/a | n/a | n/a | n/a |
+| 國立臺北護理健康大學 | unchanged | nothing found | n/a | n/a | n/a | n/a | n/a | n/a |
+| 國立臺北商業大學 | unchanged | nothing found | n/a | n/a | n/a | n/a | n/a | n/a |
+| 健行科技大學 | unchanged | nothing found (old 學務處 特約卡 page 404) | n/a | n/a | n/a | n/a | n/a | n/a |
+| 佛光大學, 景文, 東南, 德明, 南開, 華梵, 銘傳, 大同, 嘉南, 樹德, 龍華, 法鼓, 慈惠, 亞東, 馬偕醫學 | unchanged | nothing found | n/a | n/a | n/a | n/a | n/a | n/a |
+
+---
+
+# Part B: exact counts
+
+### 南臺科技大學 — stust.edu.tw (count completed)
+- **URLs fetched**: https://sites.google.com/stust.edu.tw/appointed-store/首頁 → 200, plus all 8 category pages …/食, 衣, 住, 行, 育, 樂, 醫, 其他 → 200 each.
+- **Best list**: https://sites.google.com/stust.edu.tw/appointed-store/ 特約商店 Google Site. Publisher: 校友中心 (school).
+- **Format**: Google Sites HTML (static, no paging). Every entry has a labelled 「優惠對象：」 field.
+- **Exact listings**: **119**. By category (count of 優惠對象 fields): 食 38, 衣 10, 住 30, 行 3, 育 3, 樂 14, 醫 12, 其他 9.
+- **Student-eligible**: **65 of 119**, meaning the 優惠對象 field includes 學生 (e.g. 「學生 / 教職員 / 校友 / 之友」, 「學生 / 教職員」). By category: 食 27, 衣 9, 住 1, 行 1, 育 3, 樂 7, 醫 9, 其他 8. The remaining 54 are mostly 「教職員」 only. Lodging (住) is almost all staff-only: 29 of 30.
+- **Last-updated signal**: 截止日期 values are mostly 「永久有效」 or 115年12月31日止. The latest seen is 116年12月31日.
+- **Difficulty**: 2.
+
+### 明新科技大學 — must.edu.tw (count completed)
+- **URLs fetched**: https://admin.must.edu.tw/view/list.aspx?UnitID=96&id=2803 → 200, plus all 9 category pages content.aspx?UnitID=96&id={3769,3762,3765,3767,3763,3766,3764,3770,3768}&tp=content → 200 each.
+- **Best list**: 總務處事務組 「特約資訊」 (school).
+- **Format**: HTML. One page per category with labelled fields: ■地址 ■電話 ■合約期限 ■優惠內容.
+- **Exact listings**: **51** (count of ■優惠內容 / ■合約期限 blocks): 休閒娛樂 3, 其他類別 7, 教育文化 3, 百貨購物 7, 美容美髮 2, 行車運輸 10, 醫療護理 6, 食品餐飲 3, 飯店住宿 10.
+- **Student-eligible**: **3 of 51** state it explicitly: Apple 「憑教職員證、學生證享教育價」 (其他); a clinic 「凡出示學生證…免收掛號費」 (醫療); 「學生攜帶學生證，即享相同優惠」 (食品餐飲). The rest say 「憑員工識別證」 / 「憑教職員證」 or 「憑證」. **Correction to round 1**: its "9 student mentions in 22 entries" included the menu links 「學生停車申請專區」. Those are site navigation, not offers.
+- **Last-updated signal**: contract terms run to 116年4月29日. Several say 永久.
+- **Difficulty**: 2.
+
+### 國立臺灣藝術大學 — ntua.edu.tw (count completed)
+- **URLs fetched**: https://alu.ntua.edu.tw/Home/Store → 200.
+- **Finding**: the 「下一頁」 pager is client-side only (`<ul id="items" data-page-size="9">`). All items are in the one HTML response, so this is the complete list.
+- **Exact listings**: **16** (16 unique StoreDetail IDs). Round 1's "≥17" was an overcount. By tab: 校內 (A) 10, 住旅 (B) 1, 美食 (C) 2, 購物 (D) 1, 醫療 (E) 0, 生活 (F) 2.
+- **Student-eligible**: **3 of 16**: 一號花園洋食館 (「憑校友證、學生證、教師證…9折」), 創宇通訊 (「學校教職員、學生及校友…97折」), 悠躍運動空間（安平館）(「憑有效員工識別證、學生證」). 10 entries are on-campus 校友證 perks (venue rental, library, parking, 7-11 and MOS on campus).
+- **Difficulty**: 2.
+
+### 國立高雄大學 — nuk.edu.tw (count completed)
+- **URLs fetched**: https://personnel.nuk.edu.tw/p/412-1013-2021.php → 200. Category list pages 412-1013-{2508,2509,2510,2511,2512,2513}-{1,2}.php → 200. All **116** store detail pages (405-1013-*,c25xx.php) → 200 each (116/116).
+- **Best list**: 人事室 「高大特約商店」 (school).
+- **Exact listings**: **116**: 美味的店 29, 優質住宿 39 (2 pages), 便捷交通 8, 其它優惠 37 (2 pages), 幼兒托育 3, 特約醫院 0 (the page only says 「特約醫院：請按我連結到學務處」).
+- **Student-eligible**: **24 of 116** detail pages name 學生證 or 學生. By category: 美味的店 7, 優質住宿 6, 便捷交通 2, 其它優惠 9. Typical wording: 「憑教職員證、校友證、學生證可享優惠如附件」, 「憑教職員證/學生證可享優惠如附件」. The rest are staff-only (「憑教職員證」).
+- **Last-updated signal**: 「【1150831新增皇家酒店優惠】」, 「(1150716新增優惠方案)」.
+- **Difficulty**: 3. Terms are often 「如附件」 (a PDF).
+
+### 國立彰化師範大學 — ncue.edu.tw (count completed)
+- **URLs fetched**: https://alumni.ncue.edu.tw/p/412-1017-4559.php → 200. Categories 412-1017-4561-1 (美食), 4562-1 (休閒娛樂), 4563-1 (醫療保健), 4564-1 (住宿) → 200. 5 detail pages (405-1017-34395, 34697, 34698, 34696, 34394) → 200.
+- **Exact listings**: **5**: 美食 3 (藝鍋物-和美店, Miss小姐食藝空間, 養鍋石頭涮涮鍋-和美店), 休閒娛樂 1 (MiART 空間), 住宿 1 (凱登汽車旅館), 醫療保健 0 (「洽談中 敬請期待」).
+- **Student-eligible**: **0 of 5**. The detail pages name no 學生, and the index says 「請主動出示校友證」.
+- **Last-updated signal**: posts dated 2026-09-02 and 2026-07-17. 合約期限 run to 116.12.31.
+- **Difficulty**: 2 (small list, clean fields). The 學生會 Google Maps 特約商家地圖 (from round 1) was not fetched; it is not statically parseable.
+
+### 長庚大學 — cgu.edu.tw (count completed)
+- **URLs fetched**: https://www.cgu.edu.tw/cgubenefit/Contents/?nodeId=10905 (特約廠商清單) → 200. Categories nodeId=10900 (住行), 10901 (食衣), 10902 (育樂), 10903 (其他) → 200. https://www.cgu.edu.tw/cgubenefit/Subject?nodeId=7823 → 200. 學生會 https://www.cgu.edu.tw/cgusga/Subject?nodeId=17419 (餐飲類), 17420 (玩樂類), 17421 (生活類) → 200.
+- **School list (教職員工福利委員會)**:
+  - The 「一般優惠廠商一覽表」 (nodeId=10905, 「114年11月9日更新」) has **28** numbered vendors.
+  - The 4 category pages have **53** entries (住行 12, 食衣 16, 育樂 12, 其他 13; 52 unique names). Each has labelled 聯絡方式 / 合約期限 / 廠商地址 / 優惠訊息 / 廠商網址.
+  - 24 of the 28 一覽表 vendors also appear on the category pages. **About 56 unique vendors** in total.
+  - **Student-eligible**: about **5**: 創宇數位, 棋勝汽車, 旅市旅行社 (「持職員證、學生證（含校友證）」 in the 一覽表; the category versions drop the wording); a 醫美 clinic (「果酸換膚憑學生證6折」); 超讚麵館 (refers to 「教職員工、學生及校友等識別證」). Everything else is 「職員證或眷屬證」 / 「員工識別證」.
+  - Contract terms run to 118年12月31日.
+- **Student-org list (學生會 學生特約)**: **13** entries, all for students: 餐飲類 9 (「共 9 筆資料」), 玩樂類 2, 生活類 2. Posts are dated 2025–2026 (newest 2026.02.27, 一日一酒館).
+- **Difficulty**: 2 (school), 3 (學生會 posts).
+
+### 中山醫學大學 — csmu.edu.tw (count completed)
+- **URLs fetched**: https://personnel.csmu.edu.tw/p/403-1012-387.php?Lang=zh-tw → 200 (one page, totalPage:1). https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php (飲食&育樂) → 200. https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php (住宿&租車) → 200. https://personnel.csmu.edu.tw/p/406-1012-41595,r387.php (★113年度特約商店一覽表, old; 5 file attachments) → 200.
+- **Exact listings**: **96** numbered rows.
+  - 飲食&育樂 page: 46 rows: 飲食&購物 34, 運動健身 2, 手機&網路 3, 旅遊 2, 外送 2, 醫療 2, 幼兒園 1.
+  - 住宿&租車 page: 50 rows: 住宿 45 (台中區 15, 大台北 20, 桃竹苗 2, 南部 5, 東部 2, 離島 1) and 租車/旅遊 5.
+- **Student-eligible**: **64 of 96** mark 學生 in the eligibility column: 23 of 34 food/shopping rows (√ in the 學生 column) and 41 of 50 lodging/rental rows (「教職員、學生、校友、附醫」). 12 rows (運動健身, 手機, 旅遊, 外送, 醫療, 幼兒園) have **no eligibility columns** and fall under the general 「出示本校相關識別證」. The rest are staff/hospital-only.
+- **Last-updated signal**: 「資料更新：2026/12/30」 (food page, as published) and 「2025/12/30」 (lodging page).
+- **Difficulty**: 1.
+
+### 中原大學 — cycu.edu.tw (count completed)
+- **URLs fetched**: https://alumni.cycu.edu.tw/校友證-特約商家/ → 200 (1.1 MB, the real list; no maintenance page this time).
+- **Exact listings**: **98** unique stores (196 `profile-card_header` blocks, one card plus one modal per store). Round 1 said 99.
+- **Student-eligible**: **10 of 98** mention 學生 or 學生證 in their terms: 六福村, 漢城韓式料理, 漫果子桌遊&7號鬆餅屋, 歐亞諾烘焙坊, 和運租車, 群鴻網訊企業, 千葉火鍋, 翰林茶館, 府城管事業(虱目魚主題館), and 台南桂田酒店 (ambiguous: 「員工識別證及名片(學生證)」). The other 88 are 校友證 only.
+- **Last-updated signal**: 有效期限 values to 115年12月31日.
+- **Difficulty**: 3.
+
+---
+
+# Part A: re-searched schools
+
+### A1. Under-searched schools
+
+### 敏實科技大學 — mitust.edu.tw (unchanged)
+- **URLs fetched**: https://www.mitust.edu.tw/ → 200. https://ga.mitust.edu.tw/ → 200 (with a connection reset on the first try). https://personnel.mitust.edu.tw/ → 200. https://general.mitust.edu.tw/ (綜合行政處) → 200. https://osa.mitust.edu.tw/ → 200.
+- **Searched**: WebSearch on mitust.edu.tw for 「特約商店 優惠」 found only two job-fair company profiles (osa.mitust.edu.tw/var/file/…pdf) that list 特約商店 as an *employer* benefit.
+- **Best list**: **nothing found**. None of the five unit homepages has a 特約, 優惠, 福利, 合作廠商 or 校友 link.
+
+### 台北海洋科技大學 — tumt.edu.tw (unchanged)
+- **URLs fetched**: https://www.tumt.edu.tw/app/home.php → 200. https://safr.tumt.edu.tw/ → 200. https://safr.tumt.edu.tw/p/403-1022-1593.php (學生會) → 200. https://safr.tumt.edu.tw/p/412-1022-4052.php → 200. None has a 特約 or 優惠 link.
+- **Searched**: 「特約商店 優惠」 on tumt.edu.tw found job posts (家樂福, 歐華酒店, 三浦工業) and a 2018 國民旅遊卡 notice.
+- **Best list**: **nothing found**.
+
+### 南亞技術學院 — nanya.edu.tw (unchanged)
+- **URLs fetched**: https://www.nanya.edu.tw/home.aspx → 200. https://www.nanya.edu.tw/alumni.aspx → 200. https://web.nanya.edu.tw/sect/sect02.asp (校友會) → 200. 4 alumni news items → 200. No 特約 or 優惠 links.
+- **Searched**: 「特約商店 優惠」 on nanya.edu.tw found job-form PDFs and the 2014 實習美妝店 news item (one store giving 師生 about 9折).
+- **Best list**: **nothing found**.
+
+### 樹人醫護管理專科學校 — szmc.edu.tw (unchanged)
+- **URLs fetched**: https://www.szmc.edu.tw/sitemap.xml → 200, but it redirects to the homepage, so there is no sitemap. https://www.szmc.edu.tw/robots.txt → same redirect. The homepage links include only a 校友 news item and no unit links in static HTML.
+- **Searched**: 「特約商店 優惠」 on szmc.edu.tw found unrelated PDFs (a skills contest, a study-abroad report, a hospital volunteer flyer).
+- **Best list**: **nothing found**. The unit sites are JS-rendered.
+
+### 育英醫護管理專科學校 — yuhing.edu.tw (unchanged)
+- **URLs fetched**: https://www.yuhing.edu.tw/ischool/publish_page/0/ → 200. publish_page/5 (學務處), /6 (總務處), /7 (人事室) → 200. No keyword links.
+- **Searched**: 「特約商店」 on yuhing.edu.tw → no results. (An earlier 「特約商店 優惠」 attempt hit the session limit.)
+- **Best list**: **nothing found**.
+
+### 德育護理健康學院 — dyhu.edu.tw (unchanged)
+- **URLs fetched**: https://www.dyhu.edu.tw/ → 200. https://rd.dyhu.edu.tw/p/16-1023-41849.php (校友會特約商店合約) → 200. https://dsa.dyhu.edu.tw/, https://ga.dyhu.edu.tw/, https://per.dyhu.edu.tw/ → 200.
+- **Searched**: 「特約商店 優惠」 on dyhu.edu.tw → the only hit is the same 校友會特約商店合約 page.
+- **Best list**: **nothing found**. That page offers only blank contract templates (特約廠商合約書.doc/.pdf, 特約商店合約書.odt). No signed-store list is published.
+
+### 黎明技術學院 — lit.edu.tw (unchanged)
+- **URLs fetched**: https://www.lit.edu.tw → 200. https://alumni.lit.edu.tw/ → 000, twice (connection failure, not verifiable). https://www.lit.edu.tw/general/ → 200. https://www.lit.edu.tw/personnel/ → 200 (it links only 「115年10月教育部所屬機關同仁…員眷親友專屬優惠方案」, a 公教 forward). 3 總務處 announcements → 200.
+- **Searched**: 「特約商店 優惠」 on lit.edu.tw found only the 國民旅遊卡福利網 forward (/general/58391/), a job post and a 庇護工場 PDF.
+- **Best list**: **nothing found**. The alumni site is not verifiable.
+
+### 文藻外語大學 — wzu.edu.tw (unchanged)
+- **URLs fetched**: https://www.wzu.edu.tw/sitemap.xml → 200, but it redirects to the 8.5 KB homepage shell. The only host in it is b002.wzu.edu.tw (login and assets).
+- **Searched**: 「特約商店 學生證 優惠」 on wzu.edu.tw found 推廣部 brochures (a 95折 tuition discount for 「特約公司」 employees, which is the reverse direction), a 寶成 job-fair PDF and 進修部 notices.
+- **Best list**: **nothing found**. The site is JS-rendered with unit-code subdomains (a001, c007, d009 …) and no discoverable index.
+
+### 國立嘉義大學 — ncyu.edu.tw (count completed)
+- **URLs fetched**: https://website.ncyu.edu.tw/personnel/Subject?nodeId=44238 and &page=2 … &page=18 → 200 each, all 18 pages. (The site's own SwitchPage?…&page=N links return a 「系統錯誤」 page to curl; `?nodeId=44238&page=N` works.) https://www.ncyu.edu.tw/ncyu/ → 200. https://website.ncyu.edu.tw/alumni/ → 200. https://website.ncyu.edu.tw/alumni/Contents?nodeId=54668 (申辦校友卡) → 200, with no partner list (application procedure only). https://alumni.ncyu.edu.tw/index.html → 200. https://alumniweb.ncyu.edu.tw/ → 200.
+- **Searched**: 「特約商店 學生證 優惠」 on ncyu.edu.tw found only IC-card FAQ, special-ed and cafeteria survey pages.
+- **Best list**: 人事室 「員工生活服務(特約商店、福利措施)」 (school). It is a news-post stream: **174 posts in total, 29 with 「簽訂特約…」 titles** (27 特約商店, 1 特約醫院, plus re-posts). Dated 特約 posts by year: 2026 5, 2025 2, 2024 10, 2013 1. The newest is 2026/04/08 「本校與打貓廚房簽訂特約商店」. Recent signings include 柯達大飯店, 威比寢飾, 蜀都麻辣串串火鍋, 新悅花園酒店, 聚鍋垂楊店, 梁社漢, 和牛涮, foodpanda. Most are announced as PDF attachments.
+- **Students eligible?**: not stated in any titles or pages fetched. This is a staff-welfare (人事室) channel.
+- **Difficulty**: 5 (posts plus PDFs, no table).
+
+### 國立臺南大學 — nutn.edu.tw (unchanged)
+- **URLs fetched**: https://web.nutn.edu.tw/ → 200. https://web.nutn.edu.tw/alumni.html → 200 (no 特約, 優惠 or 校友證 terms). https://epaper.nutn.edu.tw/newsreport/catalog/5 → 200. https://osa.nutn.edu.tw/index.php?group=sa2&id=509&… (生活輔導組, a search lead for 「特約商店 學生證」) → **curl 60 TLS error ("unable to get local issuer certificate"), not verifiable**.
+- **Best list**: unchanged from round 1: the 人事室 特約廠商 table (18 rows, students not stated). Possible student-facing lead: the 生活輔導組 page above (not verifiable).
+
+### A2. Round-1 "nothing found" schools: one more targeted pass
+Each school got at least one new domain-restricted search 「特約廠商」 (or 「特約商店」), and most also got 「特約商店 學生證 優惠」 / 「學生會 特約商店 學生證 優惠」. Round 1 had already run 「特約商店 優惠」 for most of them. Unit subdomains were crawled where noted.
+
+### 元培醫事科技大學 — ypu.edu.tw (**new**)
+- **URLs fetched**:
+  - https://personnel.ypu.edu.tw/p/405-1006-64804,c12.php (7.美日牙醫診所, a search lead) → 200.
+  - https://personnel.ypu.edu.tw/p/412-1006-12.php (特約廠商) → 200 (totalPage:17). Pages 412-1006-12-1 … -17.php → 200 each, with some transient resets retried. Subcategory pages c18 (餐飲食品), c19 (飯店/住宿), c1362 (休閒), c3420 (近期優惠訊息) → 200.
+  - All **84** detail pages 405-1006-*,c12.php → 200 each (84/84).
+- **Best list**: https://personnel.ypu.edu.tw/p/412-1006-12.php 「特約廠商」. Publisher: 人事室 (school). Subcategories in the menu: 近期優惠訊息, 飯店/住宿, 餐飲食品, 烘焙坊, 休閒, 中西醫診所, 保險, 汽車維修, 美髮, 眼鏡產品/維修, 其他, WOW網路商城.
+- **Format**: HTML RPage list (5 per page via JS paging, 17 pages) leading to one page per vendor. Some are named with a number prefix (e.g. 「7.美日牙醫診所」, 「8.元培健康診所」).
+- **Exact listings**: **84** vendor pages (including 4 幼兒園 and a 東南旅行社 how-to post).
+- **Students eligible?**: mostly staff. The common wording is 「出示識別證」 (18) and 「憑教職員…」 (11). **4 of 84** name students: 美日牙醫診所 (「服務對象教職員工、學生、志工團、家長會」), 元培健康診所 (「元培醫大學生100元」), 塔木德連鎖飯店集團-原德館 (「請出示學生證、員工識別證」), 上品苑鐵板燒餐坊 (「請出示學生證或識別證」).
+- **Last-updated signal**: no dates in the fetched text.
+- **Difficulty**: 3. Round 1 missed this because www.ypu.edu.tw is a video splash page.
+
+### 國立臺北教育大學 — ntue.edu.tw (new, minor)
+- **URLs fetched**: https://alumnusntue.ntue.edu.tw/p/412-1020-1578.php (申辦校友證, a search lead) → 200. Crawl of https://dsanew.ntue.edu.tw/ (學務處) and https://general.ntue.edu.tw/ (總務處) plus 6 sub-pages → 200, with no 特約 links.
+- **Searches**: 「特約廠商」 (procurement and library 「特約實習學校」 only); 「學生會 特約商店 學生證 優惠」 (student-ID FAQs, 高鐵 student fares, the 校友證 page).
+- **Best list**: 校友證 perks on 申辦校友證 (school alumni office). It is **4 items**, all on campus: library access, 「返校停車優惠，每小時20元」, 「泳健館優惠，憑校友證入館游泳75元」 and 「Artco De Cafe 典藏咖啡館-北教大店…出示校友證可打九折」. Only the cafe is a vendor.
+- **Students eligible?**: No (校友證). **No student partner list found.**
+- **Difficulty**: 2 (tiny).
+
+### 國立勤益科技大學 — ncut.edu.tw (unchanged)
+- **URLs fetched**: https://www.ncut.edu.tw/ → 200 (the only unit link is 校友 /p/412-1000-406.html, already checked). https://oga.ncut.edu.tw/ and https://osa.ncut.edu.tw/ → 000 (connection reset, 3 tries, not verifiable). http://osa.web2.ncut.edu.tw/files/14-1003-35445,r1113-1.php (search lead 「學生會行政中心」) → DNS failure (host gone).
+- **Searches**: 「特約廠商」 (procurement and 產學 only); 「學生會 特約商店 學生證 優惠」 → the 學生會行政中心 lead (the snippet says 學生會 handles 特約商店) and a 班級幹部研習 PDF on 特約醫療院所.
+- **Best list**: **nothing found**. The 學生會 runs 特約商店 per the search snippet only, and the page is unreachable.
+
+### 國立臺北護理健康大學 — ntunhs.edu.tw (unchanged)
+- **URLs fetched**: https://general-ga.ntunhs.edu.tw/, https://ga.ntunhs.edu.tw/, https://osa.ntunhs.edu.tw/ and 4 學務處 pages → 200, with no 特約 or 優惠 links.
+- **Searches**: 「特約廠商」 (IT procurement, 庇護工場 lists); 「學生會 特約商店 學生證 優惠」. One snippet says the library cafe gives 「本校教師、學生、職員…9折」; I did not fetch it (single on-campus vendor).
+- **Best list**: **nothing found**.
+
+### 國立臺北商業大學 — ntub.edu.tw (unchanged)
+- **URLs fetched**: https://gen.ntub.edu.tw/p/412-1009-3909.php (桃園校區北商生活) → 200. It mentions only 「校區特約醫院」.
+- **Searches**: 「特約廠商」 (job and procurement pages); 「學生會 特約商店 學生證 優惠」 (幹部座談 PDF, registration).
+- **Best list**: **nothing found**.
+
+### 健行科技大學 — uch.edu.tw (unchanged)
+- **URLs fetched**: https://budget.sa.uch.edu.tw/sao/new/life2-1.html and http://budget.sa.uch.edu.tw/sao/new/life2-1.html (the search lead's own URL is http) → **404** both.
+- **Searches**: 「特約廠商」 (job-fair PDFs); 「學生會 特約商店 學生證 優惠」 → the old 學務處 新生入學資訊網 「特約卡」 store list (per the snippet, about 2014), which is now 404.
+- **Best list**: **nothing found** (the old 學務處 list is gone).
+
+### 佛光大學 — fgu.edu.tw (unchanged)
+- **Searches**: 「特約廠商」 (tenders, insurance forms); 「學生會 特約商店 學生證 優惠」 (學務處 自治組織 list, registration FAQ).
+- **Best list**: **nothing found**.
+
+### 景文科技大學 — just.edu.tw (unchanged)
+- **Searches**: 「特約廠商」 (育成中心, 會計 FAQ, 資安); 「學生會 特約商店 學生證 優惠」 → no results.
+- **Best list**: **nothing found**.
+
+### 東南科技大學 — tnu.edu.tw (unchanged)
+- **URLs fetched**: https://alu.tnu.edu.tw/ (校友會), /zh_tw/AlumniServices, /zh_tw/Alumni_Report, /zh_tw/Alumni_Report/Alumni_0001, /zh_tw/Alumni_Report/aluDirectory → 200. https://sa.tnu.edu.tw/ → 200. http://rd.tnu.edu.tw/zh_tw/page4 → 200. None has a 特約 link.
+- **Searches**: 「特約廠商」 (僑胞卡 forward, alumni job page); 「特約商店 學生證 優惠」 (金門 志願服務榮譽卡 forward only).
+- **Best list**: **nothing found**.
+
+### 德明財經科技大學 — takming.edu.tw (unchanged)
+- **Searches**: 「特約廠商」 (job posts); 「特約商店 學生證 優惠」 (library rules, registration).
+- **Best list**: **nothing found**.
+
+### 南開科技大學 — nkut.edu.tw (unchanged)
+- **Searches**: 「特約廠商」 (策略聯盟 and 產學 partner lists, which are not discounts); 「特約商店 學生證 優惠」 (教務處 FAQ).
+- **Best list**: **nothing found**.
+
+### 華梵大學 — hfu.edu.tw (unchanged)
+- **Searches**: 「特約廠商」 (solar tender, insurance); 「特約商店 學生證 優惠」 → 新生手冊 PDFs. The snippet describes on-campus 9折 (萊爾富 「一律9折」). Not fetched; this is on-campus only.
+- **Best list**: **nothing found**.
+
+### 銘傳大學 — mcu.edu.tw (unchanged)
+- **Searches**: 「特約廠商」 → the 醫工系學會 「贊助商家」 page (club.mcu.edu.tw/bme/zh-hant/node/26; round 1 already found headings only); 「特約商店 學生證 優惠」 (digital student card, ISIC).
+- **Best list**: **nothing current found**.
+
+### 大同大學 — ttu.edu.tw (unchanged)
+- **Searches**: 「特約廠商」 (procurement); 「特約商店 學生證 優惠」 (old 遠傳 campus plan, cc.ttu.edu.tw).
+- **Best list**: **nothing found**.
+
+### 嘉南藥理大學 — cnu.edu.tw (unchanged)
+- **Searches**: 「特約廠商」 (藥粧 alliance news, job fair); 「特約商店 學生證 優惠」 → no results.
+- **Best list**: **nothing found**.
+
+### 樹德科技大學 — stu.edu.tw (unchanged)
+- **Searches**: 「特約廠商 優惠」 (job fair, 契約廠商專區, 優先採購); 「特約商店 學生證」 (student-card pages).
+- **Best list**: **nothing found**. Round 1 also noted that www and gad return 202 with an empty body.
+
+### 龍華科技大學 — lhu.edu.tw (unchanged)
+- **Searches**: 「特約廠商」 (出納, software); 「特約商店 學生證 優惠」 → 註冊組 ISIC page. It says students should check ISIC's own site or app for discounts, so the school relies on ISIC instead of its own list.
+- **Best list**: **nothing found**.
+
+### 法鼓文理學院 — dila.edu.tw (unchanged)
+- **Searches**: 「特約商店」 → no results; 「優惠 學生證 特約」 → 校友證要點 PDF (推廣教育 tuition discount only) and a Gemini student offer.
+- **Best list**: **nothing found**.
+
+### 慈惠醫護管理專科學校 — tzuhui.edu.tw (unchanged)
+- **Searches**: 「特約商店」 → no results; 「特約廠商 優惠 學生證」 → 註冊組 page only.
+- **Best list**: **nothing found**.
+
+### 亞東科技大學 — aeust.edu.tw (unchanged)
+- **Searches**: 「特約商店」 (an EE intern forum); 「特約廠商 優惠 學生證」 (parking PDF, job posts).
+- **Best list**: **nothing found**.
+
+### 馬偕醫學大學 — mmu.edu.tw / mmc.edu.tw (unchanged)
+- **Searches**: 「特約商店」 on mmu.edu.tw → no results; 「特約廠商 優惠」 on mmu.edu.tw and mmc.edu.tw (留學 brochure, safety site, admissions PDF).
+- **Best list**: **nothing found**.
+
+## Brand-direct student perks, round 2 (2026-10-23)
+
+This round verified 47 more perks on official pages, plus 2 partial ones (六福村 and ASUS, which show a student perk but no price). The two rounds together total **83**. Of those, **2 have ended**: Google AI Pro (round 1) and 中華電信 4G學生方案, whose stated period 「至115/09/30止」 has passed even though the page is still up. **1 is temporarily closed**: 富源, after the typhoon. Only 5 state an end date that hasn't passed yet; the other 75 give no end date. I checked two of the new entries against the saved pages:
+- 台北101 觀景台: 「學生/樂齡方案/愛心票/軍警消專案 NT$300」, against NT$600 for adults.
+- 中華電信 4G學生方案: from $288/月. The page says 「本活動期間自即日起至115/09/30止」 and is still live, so the record needs a review date rather than an expiry.
+
+Research date: 2026-10-23. This round adds to `wide/out/brands.md` (round 1, 36 perks) and does not repeat those perks.
+
+**Method.** Every verified perk below comes from an official page fetched with `curl -sS -L --max-time 30`. TLS was always verified, the proxy was left in place, and nothing was downgraded to http. Raw pages are in `(session scratchpad)/wide/r2/brands/raw/`, under the id shown in each block (`<id>.html`). The fetch log is `raw/status.tsv`, with columns id, URL, HTTP status, final URL and bytes. The scripts are in `r2/brands/bin/`. Quoted terms are copied from the fetched page. Search snippets were used only to find URLs; none is cited as a fact. I used about 21 WebSearch calls.
+
+**What blocked the rest.** Many sites returned 403 (Cloudflare/Akamai), reset the connection, or failed at the proxy with `CONNECT 502`. I did not try to get around any of these. On some sites the student price loads with JavaScript, so it is not in the HTML; those are marked "partial".
+
+**Count.** 47 new perks are fully verified (official page, student condition and price all on the page). 2 more are partial: the page shows a student perk but not its price. Several negative findings (no student fare or plan exists on the official page) are in the last section.
+
+---
+
+### Summary table
+
+Scope means one of: online/global; nationwide; or a named venue and its county.
+
+| # | Company / perk | Category | Scope | Who qualifies (short) | Price / discount (short) | Validity / end date | HTTP |
+|---|---|---|---|---|---|---|---|
+| R1 | 中華電信 4G學生方案 | services | nationwide | Students (primary school and up) or graduates of MOE-registered schools; school staff | NT$288 / 388 / 588 / 688 per month, 30-month contract | Page says "至115/09/30止" (2026-09-30, already past) but the page is still live and links a 2026 Q4 PDF | 200 |
+| R2 | Samsung 星學力教育商店 | shopping | online, TW store | Register with a ".edu.com" mailbox (page wording) | "教育優惠 最低 7 折"; e.g. Buds4 7折, Watch 8折, Tab 9折 | Per-item promos; one listed promo runs 2026/10/7 to 2026/12/31 | 200 |
+| R3 | YouTube Premium / Music Premium 學生方案 | entertainment | online, Taiwan listed | Higher-education students verified by SheerID | Discounted rate (amount not on page) | Up to 4 years in a row, re-verify yearly | 200 |
+| R4 | Wolfram Mathematica 學生版 | education | online | Full- or part-time students, K-12 up to doctoral degree | Student-plan pricing (amount loads with JS) | Yearly / semester / monthly / 4-year plans | 200 |
+| R5 | Perplexity Pro for Students | education | online | Students | US$10 per month | none stated | 200 |
+| R6 | Sketch for Education | education | online | Students and educators (application form) | Free for 1 year | 1 year | 200 |
+| R7 | Framer for students | education | online | Students (apply for the discount) | Framer free, plus 1,000 AI credits per month | none stated | 200 |
+| R8 | Codecademy Pro Student | education | online | Eligible students | "over 35% off the regular price" | none stated | 200 |
+| R9 | Xmind Education | education | online | Students and staff at accredited institutions, K-12 included | 30% off any plan | none stated | 200 |
+| R10 | Overleaf Student plan | education | online | Students enrolled at a degree-granting institution | US$8.25/month billed yearly (US$98/yr), or US$13/month | none stated | 200 |
+| R11 | Craft 教育版 | education | online | Sign up with a school email | Premium features free | none stated | 200 |
+| R12 | 救國團 青年活動中心 (lodging) | lodging | nationwide (centers in many counties) | "持有在學證明文件之學生" are one of the 7 groups allowed to stay | Allowed to stay; 劍潭 club-training package NT$1,399 per person and up | Package to 2026-12-31 | 200 |
+| R13 | 劍湖山世界 學生票 | entertainment | 雲林縣 | Junior high and up, with student ID | NT$999 list, NT$699 promo (vs NT$1,199) | 2026-09-19 to 2026-12-27 | 200 |
+| R14 | 九族文化村 學生票 | entertainment | 南投縣 | Junior high, senior high and college students with proof | NT$980 (vs NT$1,100), includes the 日月潭 ropeway | none stated | 200 |
+| R15 | 遠雄海洋公園 優待票 | entertainment | 花蓮縣 | Students of any age with their own student ID (also ages 13-18) | NT$890 (vs NT$990) | none stated | 200 |
+| R16 | 國立故宮博物院 南部院區 | entertainment | 嘉義縣 | "本國學生（持「教育部立案學校有效學生證」者）" | Free (vs NT$150) | none stated | 200 |
+| R17 | 國立歷史博物館 | entertainment | 臺北市 | Students with a valid student ID or admission notice | NT$40 (vs NT$80) | none stated | 200 |
+| R18 | 國立海洋科技博物館 | entertainment | 基隆市 | "6歲以上學童及學生" | e.g. 主題館 NT$140 (vs NT$200) | page dated 115/09/07 | 200 |
+| R19 | 蘭陽博物館 | entertainment | 宜蘭縣 | ROC students aged 6+ (senior high and up show ID); Yilan-registered students free | 學生票 NT$50 permanent exhibit (vs NT$100) | none stated | 200 |
+| R20 | 新北市立十三行博物館 | entertainment | 新北市 | "國內各級學校之學生" | Free (vs NT$80) | none stated | 200 |
+| R21 | 新北市立黃金博物館 | entertainment | 新北市 | "就讀國內各級學校之在學學生" | Free (vs NT$80) | none stated | 200 |
+| R22 | 新北市立淡水古蹟博物館 | entertainment | 新北市 | "就讀國內各級學校之在學學生" | Free (vs NT$80, covers 3 sites) | none stated | 200 |
+| R23 | 新北市立鶯歌陶瓷博物館 | entertainment | 新北市 | "就讀國內各級學校之在校學生" | Free (vs NT$80) | page updated 2026-07-15 | 200 |
+| R24 | 新北市立坪林茶業博物館 | entertainment | 新北市 | "就讀國內各級學校之在學學生" | Free (vs NT$80) | none stated | 200 |
+| R25 | 台北101 觀景台 | entertainment | 臺北市 | Students (with ROC ID documents; bought at the 1F counter) | NT$300 (vs NT$600) | none stated | 200 |
+| R26 | 臺北自來水園區 | entertainment | 臺北市 | "學生 (不含社區大學)" | Half price: NT$40 in Jul-Aug, NT$25 otherwise | Seasonal fee table | 200 |
+| R27 | 野柳地質公園 | entertainment | 新北市 | Students with a Taiwan student ID; ISIC holders | NT$60 (vs NT$120) | none stated | 200 |
+| R28 | 臺南市公有古蹟 (赤崁樓, 安平古堡 and others) | entertainment | 臺南市 | Students from other counties half price; Tainan students free | NT$35 (vs NT$70) / free | Municipal fee rule | 200 |
+| R29 | 朱銘美術館 | entertainment | 新北市 | Students | NT$320 (vs NT$350) | none stated | 200 |
+| R30 | 武陵農場 | entertainment | 臺中市 | Students (open-university and evening-division students excluded) | NT$130 (vs NT$160) | none stated | 200 |
+| R31 | 福壽山農場 | entertainment | 臺中市 | Students (junior high, senior high, university) | NT$120 (vs NT$150) | none stated | 200 |
+| R32 | 綠世界生態農場 | entertainment | 新竹縣 | Junior and senior high students with ID | NT$400 (vs NT$480) | none stated | 200 |
+| R33 | 泰雅渡假村 | entertainment | 南投縣 | Junior high, senior high and college students with ID | 學生票 NT$250 (vs NT$300) | none stated | 200 |
+| R34 | 中華郵政 郵政博物館 | entertainment | 臺北市 | Students with ID or admission notice | NT$15 (vs NT$30) | page updated 115/05/29 | 200 |
+| R35 | 太平山國家森林遊樂區 | entertainment | 宜蘭縣 | 學生（憑學生證） | NT$100 (vs NT$150 weekday / NT$200 holiday) | none stated | 200 |
+| R36 | 滿月圓國家森林遊樂區 | entertainment | 新北市 | 學生（憑學生證） | NT$50 (vs NT$80 / 100) | none stated | 200 |
+| R37 | 內洞國家森林遊樂區 | entertainment | 新北市 | 學生（憑學生證） | NT$40 (vs NT$65 / 80) | none stated | 200 |
+| R38 | 東眼山國家森林遊樂區 | entertainment | 桃園市 | 學生（憑學生證） | NT$50 (vs NT$80 / 100) | none stated | 200 |
+| R39 | 大雪山國家森林遊樂區 | entertainment | 臺中市 | 學生(憑學生證) | NT$100 (vs NT$200 holiday) | none stated | 200 |
+| R40 | 奧萬大國家森林遊樂區 | entertainment | 南投縣 | Students with ID | NT$100 (vs NT$200 holiday) | none stated | 200 |
+| R41 | 阿里山國家森林遊樂區 | entertainment | 嘉義縣 | ROC students with ID NT$100; foreign students with ID NT$150 | NT$100 (vs NT$300) | none stated | 200 |
+| R42 | 藤枝國家森林遊樂區 | entertainment | 高雄市 | 學生(憑學生證) | NT$60 (vs NT$120) | none stated | 200 |
+| R43 | 墾丁國家森林遊樂區 | entertainment | 屏東縣 | 學生(憑學生證) | NT$75 (vs NT$150 holiday) | none stated | 200 |
+| R44 | 雙流國家森林遊樂區 | entertainment | 屏東縣 | 學生(憑學生證) | NT$50 (vs NT$100 holiday) | none stated | 200 |
+| R45 | 知本國家森林遊樂區 | entertainment | 臺東縣 | 學生(憑學生證) | NT$50 (vs NT$80 / 100) | none stated | 200 |
+| R46 | 池南國家森林遊樂區 | entertainment | 花蓮縣 | 學生(憑學生證) | NT$25 (vs NT$40 / 50) | none stated | 200 |
+| R47 | 富源國家森林遊樂區 | entertainment | 花蓮縣 | 學生(限本人持學生證) | NT$50 (vs NT$150) | Park closed for typhoon on 2026-10-22 | 200 |
+| P1 | 六福村 學生票 (partial) | entertainment | 新竹縣 | Students must show ID | Price loads with JS; not in HTML | none stated | 200 |
+| P2 | ASUS 教育優惠方案 (partial) | shopping | online, TW store | Students, teachers and school staff | Not on page; program page returned 403 | none stated | 200 / 403 |
+
+---
+
+### Services (telecom)
+
+#### R1. 中華電信: 4G學生方案 (青春無敵學生方案)
+- **URL:** https://www.cht.com.tw/home/campaign/forstu/ (HTTP 200; raw `cht2`)
+- **Who qualifies:** "「4G學生方案」適用對象:限教育部/局立案之國內公私立國小(含)以上學校學生或畢業生，及教育部立案之公私立各級學校教職員工（含正職、 約聘、 約僱人員）持指定證件辦理至中華電信營業窗口或特約服務中心辦理。" "未滿18歲欲申請本專案者，須檢附法定代理人雙證件及同意之文件。"
+- **Price (single-number plans):** "$ 588 /月 租期30個月 搭配 4G學生 上網量 無限瀏覽 網內前5分鐘免費+40分鐘 網外40分鐘 市話60分鐘"; "$ 288 /月 租期30個月 搭配 4G學生 上網量 4GB/月 網內前3分鐘免費+30分鐘 網外30分鐘 市話40分鐘". Plans bundled with a device: NT$388 (5GB) and NT$688 (無限瀏覽). All include "享「漫遊上網方案9折優惠」".
+- **Penalty:** ending the contract early means repaying the subsidy in cash, pro rata.
+- **Validity:** "本活動期間自即日起至115/09/30止，活動及各項優惠截止時間依網站公告為準。" That date has passed, but the page is still live and links "115年第四季行動優惠促銷方案「學生優惠方案」完整資訊" (PDF; the fetch was reset). **Set a near review date.**
+- **Scope:** nationwide.
+- **Note:** 亞太電信 is no longer separate. https://www.aptg.com.tw/ redirected to https://www.fetnet.net/content/cbu/tw/index.html (raw `gt0`), whose homepage links the 遠傳 student plan that round 1 already has (#33).
+
+### Shopping (hardware)
+
+#### R2. Samsung 台灣: 星學力教育商店
+- **URL:** https://www.samsung.com/tw/offer/edu-online-offer/ (HTTP 200; raw `sams1`). Linked from the homepage as "教育優惠商店".
+- **Terms:** "教育優惠 最低 7 折", "使用 .edu.com 信箱即可註冊 領取優惠序號" (that is the page's own wording; read it as a school email). Examples: "Galaxy Buds4 | Buds4 Pro 【教育優惠】7 折 / NT$3,633 起"; "Galaxy Watch Ultra2 | Watch9 享教育優惠 8 折"; "Galaxy Tab S10 FE 128GB Wi-Fi 9 折再享獨家折扣".
+- **Dated promo on the page:** the FollowMe 32" screen 30-day trial, "【活動期間】 2026/10/7 12:00 - 2026/12/31", code TRYM7. The Tab S11 trial ran "2026/01/30 12:00 - 2026/10/31".
+- **Validity:** the store has no end date; individual promos have their own dates.
+- **Scope:** online, TW store.
+
+### Entertainment (streaming)
+
+#### R3. YouTube Premium / YouTube Music Premium: 學生方案
+- **URL:** https://support.google.com/youtube/answer/9158808?hl=zh-Hant (HTTP 200; raw `yt4`)
+- **Who qualifies:** "目前以學生的身分就讀於高等教育機構，且位於我們提供 YouTube 學生方案的地區。高等教育機構必須通過 SheerID 的驗證". The region list on the page includes "台灣".
+- **Terms:** "學生可訂閱 YouTube Music Premium 或 YouTube Premium 方案，以折扣費率享有與一般會員相同的權益。" "即可享有效期最多連續 4 年的學生方案，不過每年都必須重新驗證學生身分。"
+- **Proof:** SheerID. If that fails, upload documents; outside the US the answer can take "最多 48 小時".
+- **Price:** not on the page. https://www.youtube.com/premium/student loads its content with JS.
+- **Scope:** online.
+
+### Education (software, online)
+
+#### R4. Wolfram: Mathematica 學生版
+- **URL:** https://www.wolfram.com/mathematica/pricing/students/ (HTTP 200, served in Simplified Chinese; raw `wolf1`)
+- **Who qualifies:** "Mathematica 学生版适用于非全日制或全日制中小学生，以及在认可的教育机构 或批准的家庭教学地点攻读副学士、学士、硕士、博士或同等学位的学生。" "需要提供入学证明。"
+- **Proof:** "提供来自您机构的公共网页或网络目录的 URL… 或传真附上或发送注明日期的学生证、 注册收据、课程表、学校账单…"
+- **Plans:** "学生计划 所有课程一整年均可使用", "预付四年许可证", "学期计划 当前课程的 6 个月许可证", "按月计划". The prices load with JS and are not in the HTML.
+- **Scope:** online. **Validity:** subscriptions renew automatically.
+
+#### R5. Perplexity: Pro for Students
+- **URL:** https://www.perplexity.ai/students (HTTP 200; raw `ppl0`)
+- **Terms:** the static HTML holds only the title "Get Perplexity Pro for Students for $10/mo". The help article I tried returned 404, so eligibility and proof are **not confirmed**.
+- **Scope:** online. **Validity:** none stated.
+
+#### R6. Sketch for Education
+- **URL:** https://www.sketch.com/education/ (HTTP 200; raw `sketch1`)
+- **Terms:** "Get Sketch for free as a student or educator. Provide your details and get one year of access to our design platform." "we need a few details as proof of eligibility … Once we've verified you, you'll have free access for a year!"
+- **Note:** Sketch is a Mac app. **Scope:** online. **Validity:** 1 year.
+
+#### R7. Framer for students
+- **URL:** https://www.framer.com/education/ redirected to https://www.framer.com/education/students/ (HTTP 200; raw `framer1`)
+- **Terms:** "Students get Framer for free. Host your portfolio or personal site worth $120 per year. Get full access to Framer's Design Canvas, CMS and more. Get 1000 free AI credits per month to use with Agents… Apply for the discount".
+- **Scope:** online. **Validity:** none stated.
+
+#### R8. Codecademy: Pro Student
+- **URL:** https://www.codecademy.com/student-center (HTTP 200; raw `codecad1`)
+- **Terms:** "With Codecademy Pro Student, eligible students get complete access to our interactive curriculum for over 35% off the regular price".
+- **Scope:** online. **Validity:** none stated.
+
+#### R9. Xmind Education
+- **URL:** https://xmind.com/education (HTTP 200; raw `xmind1`)
+- **Terms:** "All verified education users get 30% off any plan." "Students, educators, and academic staff at accredited institutions (universities, colleges, and K–12 schools) are eligible."
+- **Proof:** "A dated student or faculty ID card / Registration receipt for current semester / Official copy of student's class schedule…"
+- **Scope:** online. **Validity:** none stated.
+
+#### R10. Overleaf: Student plan
+- **URL:** https://www.overleaf.com/user/subscription/plans (HTTP 200; raw `overleaf`)
+- **Terms:** "Available to students currently enrolled at a degree-granting institution." The plan card reads "Student $8.25 /month $98/year $13 /month More space to write, revise, and collaborate. Includes: 10 collaborators per project". I read this as US$98 per year billed yearly, or US$13 billed monthly.
+- **Scope:** online. **Validity:** none stated.
+
+#### R11. Craft: 教育版
+- **URL:** https://www.craft.do/education redirected to https://www.craft.do/zh-TW/education (HTTP 200; raw `craft`)
+- **Terms:** "Craft 教育版 使用學校信箱註冊即可取得進階功能"; "使用學校信箱註冊即可使用所有功能".
+- **Scope:** online. **Validity:** none stated.
+
+#### Checked again, not a perk
+- **Cursor** (https://cursor.com/zh-Hant/students, HTTP 200): "任何人都可以免費開始使用 Cursor。若想升級使用權限，請留意我們從今年秋季起在校園與線上活動推出的優惠。" There is still no standing student discount, which confirms round 1.
+- **Squarespace** (https://www.squarespace.com/students, HTTP 200): "We're offering students 50% off * your first full year". Verification is through Student Beans, which round 1 found does not list Taiwan. **Likely not usable from Taiwan.**
+- **Claude** (claude.com/solutions/education, HTTP 200): an offer for institutions, with no individual student price.
+- **Houdini Apprentice** (sidefx.com/buy, HTTP 200): non-commercial licences "for students, hobbyists…". Not student-only.
+
+### Lodging
+
+#### R12. 救國團 青年活動中心 (Youth Activity Centers)
+- **URLs:** https://www.cyh.org.tw/?p=10424 (HTTP 200; raw `cyh3`) and https://www.cyh.org.tw/ (HTTP 200; raw `cyh2`)
+- **Who may stay:** "依據發展觀光條例第七十條之二規定， 救國團所轄青年活動中心係非以營利為目的且供特定對象住宿之場所。特定對象包含下列七類：… 3. 持有在學證明文件之學生。 4. 年齡未滿四十歲之社會青年。 5. 第三款學生或第四款社會青年，隨同之師長及親屬， 其人數以不超過四人為原則。…"
+- **Student package on the homepage:** "【劍潭】2026一宿三餐大專社團研訓專案 … ◎專案日期：~2026.12.31 ◎專案優惠： 一宿三餐研訓專案，每人只要$1399元起". This is for college clubs (groups). "【復興】大專青年專案 … 凡30人以上~ 一泊三食+會場每人$1800元起".
+- **Scope:** centers in many counties (劍潭, 復興, 日月潭, 溪頭, 阿里山 and others). **Validity:** packages run to 2026-12-31.
+
+### Entertainment (theme parks, farms, attractions)
+
+#### R13. 劍湖山世界 (Janfusun Fancyworld), 雲林縣
+- **URL:** https://www.janfusun.com.tw/html/page/index.php?unid=2&cid=5&cid2=99&unid=2 (HTTP 200; raw `jhs3`)
+- **Terms:** "常態票價 適用期間：2026.09.19(六)起至12.27(日)適用。 … 全票 NT$ 1,199 NT$ 699 18歲以上成人 學生票 NT$ 999 NT$ 699 國中(含)以上學生憑學生證購買". The second column is the 優惠 price, which in this period is the same as the adult promo price.
+- **Validity:** **2026-12-27**.
+
+#### R14. 九族文化村, 南投縣
+- **URLs:** https://www.nine.com.tw/page/about/index.aspx?kind=234&lang=TW (HTTP 200; raw `ft1`) and https://www.ropeway.com.tw/page/about/index.aspx?kind=34 (HTTP 200; raw `ropeway1`)
+- **Terms:** "成人票 適用於一般成人 $ 1100 學生票 國中以上學生、高中、大專院校學生憑證購票 $ 980". The ropeway page adds: "所有票價皆贈送日月潭纜車當日搭乘，但纜車保養日除外".
+- **Validity:** none stated.
+
+#### R15. 遠雄海洋公園 (Farglory Ocean Park), 花蓮縣
+- **URL:** https://www.farglory-oceanpark.com.tw/tickets (HTTP 200; raw `farg1`)
+- **Terms:** "全票 NT $990 19歲(含)以上~65歲以下之成年人。 優待票 NT $890 13歲(含)以上~18歲(含)以下之青少年。 學生身份不限年齡需主動出示有效之個人學生證。"
+- **Validity:** none stated.
+
+#### R30. 武陵農場, 臺中市 (和平)
+- **URL:** https://www.wuling-farm.com.tw/tw/stay/ticket.php (HTTP 200; raw `wuling1`)
+- **Terms:** "全票 NT$160 一般個人 一般優待票 NT$130 公教(現職)、原住民 團體(30人以上)、學生、僑胞卡". "學生票優惠的對象不包含就讀空中大學、空中行專、空中商專、社區大學與大專院校附設進修部者。" "優待對象限攜帶各項證明文件之本人享有。" The ticket is charged jointly with the 武陵國家森林遊樂區.
+- **Validity:** none stated.
+
+#### R31. 福壽山農場, 臺中市 (梨山)
+- **URL:** https://www.fushoushan.com.tw/Outer/Tickets (HTTP 200; raw `fushou1`)
+- **Terms:** "全票 每人NT$150元 一般民眾。 優待票 每人NT$120元 公教人員(現職)、原住民族、學生(國中、高中、大學)、團體(20人以上)…"
+- **Validity:** none stated.
+
+#### R32. 綠世界生態農場, 新竹縣 (北埔)
+- **URL:** https://www.green-world.com.tw/ticket.php (HTTP 200; raw `greenw1`)
+- **Terms:** "全票 NT$480 優惠票 NT$400 1 國高中學生（憑學生證） 2 年齡 65歲以上（憑證件） 3 教師（憑證件）…". For groups of 30 or more: "團體優惠票 NT$370 1 國高中學生（憑學生證）".
+- **Note:** this covers junior and senior high students only, not college. **Validity:** none stated.
+
+#### R33. 泰雅渡假村, 南投縣 (仁愛)
+- **URL:** https://www.atayal.com.tw/zh-tw/ticket.php (HTTP 200; raw `atayal1`)
+- **Terms:** "一日遊票券 全票 團體票 半票 學生票 幼童票 敬老票 $300 $250 $250 $250 $200 $150 備註 1. 半票：學生、軍警（須附證明） 2. 學生票：適用國中、高中、大專生（須憑證購票…"
+- **Validity:** none stated.
+
+#### R25. 台北101 觀景台, 臺北市
+- **URL:** https://www.taipei-101.com.tw/tw/observatory/ticket (HTTP 200; raw `t1013`)
+- **Terms:** "一般票 參觀樓層 89F, 88F … 成人 NT$600 學生/樂齡方案/愛心票/軍警消專案 NT$300". "除了全票可線上購買外，優待票、敬老票、兒童等都需至辦公大樓 1 樓觀景台售票處購買。 欲購買優惠票，購票與進場時均需出示中華民國有效之身分證明文件".
+- **Validity:** none stated.
+
+#### R27. 野柳地質公園, 新北市 (萬里)
+- **URL:** https://www.ylgeopark.org.tw/VisitInformationView/TicketPrice (HTTP 200; raw `yeliu1`)
+- **Terms:** "全票 120 一般遊客 … 優待票 (持證優待) 60 學生（以具有臺灣正式學籍之學生證者為認定標準）。 … 持有國際學生證者（ISIC）". Student groups: "學生團體票 48 30人以上學生團體".
+- **Validity:** none stated.
+
+#### P1. 六福村主題遊樂園, 新竹縣 (partial)
+- **URL:** https://www.leofoovillage.com.tw/Infos/Tickets/ (HTTP 200; raw `lfv2`)
+- **Terms:** "購買學生票及博愛票(年滿60歲以上，或孕婦、身障朋友)須出示相關證件。" "各項促銷優惠活動恕無法合併使用。"
+- **Gap:** the ticket prices load with JS and are not in the HTML. The fonticket shop page (raw `lff1`) also had no price text. **The price is unverified.**
+
+### Entertainment (museums and cultural sites)
+
+#### R16. 國立故宮博物院 南部院區 (NPM Southern Branch), 嘉義縣 (太保)
+- **URL:** https://south.npm.gov.tw/Visit/Ticket.htm (HTTP 200; raw `npms1`)
+- **Terms:** "參觀券 150元 一般觀眾（不分國籍）。 … 免費 0元 憑證明文件至售票處兌換免費參觀券。 … 本國學生。（持「教育部立案學校有效學生證」者）。" Also "年齡未滿18歲者（不分國籍）" are free.
+- **Validity:** none stated for students. Other free-entry lines end on 115/12/31.
+- **Note:** the main 故宮 site (npm.gov.tw) still returns 403, so the Taipei (北部院區) ticket terms remain **unverified**.
+
+#### R17. 國立歷史博物館, 臺北市
+- **URL:** https://www.nmh.gov.tw/cp.aspx?n=7146 (HTTP 200; raw `nmh2`)
+- **Terms:** "全票新臺幣八十元 一般觀眾。 優待票新臺幣四十元 六歲以上未滿十二歲兒童、學生(持有效學生證或入學通知)、六十五歲以上長者(假日)、十人以上團體。"
+
+#### R18. 國立海洋科技博物館, 基隆市
+- **URL:** https://www.nmmst.gov.tw/chhtml/content/216 (HTTP 200; raw `nmmst2`; "發佈日期：115/09/07")
+- **Terms:** the fee table lists, in order, 主題館 / 極地探險特展 / 8K海洋劇場 / 潮境智能海洋館 / 典藏館 / 區域探索廳. "成人 200元 300元 150元 300元 60元 60元 … 6歲以上學童及學生 140元 240元 100元 250元 30元 30元".
+
+#### R19. 宜蘭縣立蘭陽博物館, 宜蘭縣 (頭城)
+- **URL:** https://www.lym.gov.tw/ch/audience-service/visit/lym/ (HTTP 200; raw `lym2`)
+- **Terms:** columns are 常設展 / 特展 / 兒童考古探索廳 / 全館. "一般觀眾 100 50 50 200", "學生票 50 50 50 150 6歲以上之本國籍學生（高中以上驗票請出示學生證）", "宜蘭學生票 50 0 0 50 非設籍本縣而在本縣就讀之學生（憑證）". Free: "設籍本縣之學生（須出示身分證件與學生證件）".
+
+#### R20–R24. 新北市立 museums: free for all students at domestic schools
+Each page lists the full ticket at NT$80 and the same free-entry clause for students:
+- **R20 十三行博物館:** https://www.sshm.ntpc.gov.tw/xmdoc/cont?xsmsid=0G244537677948124632 (HTTP 200; raw `sshm2`). "全票 免費 80元 … （4）國內各級學校之學生".
+- **R21 黃金博物館 (金瓜石):** https://www.gep.ntpc.gov.tw/xmdoc/cont?xsmsid=0G246368552167800609 (HTTP 200; raw `gep2`). "入園門票 新臺幣80元/人 … （4）就讀國內各級學校之在學學生".
+- **R22 淡水古蹟博物館:** https://www.tshs.ntpc.gov.tw/xmdoc/cont?xsmsid=0G245643868344101231 (HTTP 200; raw `tshs2`). "單一票價：全票 80 元 參觀範圍：憑當日票根可進入 淡水紅毛城 、 前清淡水關稅務司官邸（小白宮） 、 滬尾礮臺 … （ 4 ）就讀國內各級學校之在學學生". "免票入場者，須出示相關實體證明文件".
+- **R23 鶯歌陶瓷博物館:** https://www.ceramics.ntpc.gov.tw/xmdoc/cont?xsmsid=0L196418676818644838&sid=0L196423054308732923 (HTTP 200; raw `ceram2`; "更新日期：2026-07-15"). "門票80元 … 四、就讀國內各級學校之在校學生。"
+- **R24 坪林茶業博物館:** https://www.tea.ntpc.gov.tw/xmdoc/cont?xsmsid=0G266540184006780639 (HTTP 200; raw `tea2`). "全票：80元 免票對象： … （4）就讀國內各級學校之在學學生".
+- **Scope:** all five are in 新北市 (north). **Validity:** none stated.
+
+#### R26. 臺北自來水園區 (Taipei Water Park), 臺北市
+- **URL:** https://waterpark.water.gov.taipei/cp.aspx?n=83AB9156FF18845C (HTTP 200; raw `watermus1`)
+- **Terms:** "夏季期間 7/1至8/31 80 40 非夏季期間 9/1至隔年6/30 50 25 1.優待票：符合下列條件之一者，須持證明文件： … (2)學生 (不含社區大學)。"
+
+#### R28. 臺南市公有古蹟 (赤崁樓, 安平古堡, 安平樹屋, 億載金城), 臺南市
+- **URL:** https://historic.tainan.gov.tw/index.php?option=module&lang=cht&task=pageinfo&id=64&index=5 (HTTP 200; raw `twhist1`), the city's "臺南市公有古蹟參觀及停車場收費標準"
+- **Terms:** "一、全票新臺幣七十元：一般參觀者。 二、半票新臺幣三十五元： （一）外縣市在學生。" Free entry (第四條): "四、持有志願服務榮譽卡之志工及本市在學學生。" Foreign students (第五條): "半票新臺幣三十五元：在學學生。"
+
+#### R29. 朱銘美術館 (Juming Museum), 新北市 (金山)
+- **URL:** https://www.juming.org.tw/mainssl/modules/MySpace/index.php?sn=ec&pg=ZC143727 (HTTP 200; raw `juming2`)
+- **Terms:** "全票 一般民眾 NT$350 優待票 學生、65歲以上長者 NT$320". The museum is closed 2026/12/21 to 12/25 for a new exhibition.
+
+#### R34. 中華郵政 郵政博物館, 臺北市
+- **URL:** https://museum.post.gov.tw/post/Postal_Museum/museum/index.jsp?ID=1780029519775 (HTTP 200; raw `postm2`; "最後更新日期：115/05/29")
+- **Terms:** "全 票 30 元 一般參觀民眾 優待票 15 元 1. 學生（持學生證或入學通知）。"
+
+### Entertainment (國家森林遊樂區, run by 農業部林業及自然保育署)
+
+All pages are on recreation.forest.gov.tw (`/Forest/RA?typ_id=<id>`), HTTP 200, raw `fr<id>`. Each lists students with a student ID under 半票 or 優待票. Several parks were closed on 2026-10-22/23 for typhoon 薔琵; check the park news before listing.
+
+| # | Park (county) | typ_id | Exact student line | Student price | Full price |
+|---|---|---|---|---|---|
+| R35 | 太平山 (宜蘭) | 0100001 | "半票(平日) 票價(元) 100 說明 … 2.學生（憑學生證）、7-12歲兒童。" | NT$100 | NT$150 weekday / NT$200 holiday |
+| R36 | 滿月圓 (新北) | 0200001 | "半票 票價(元) 50 說明 … 2.學生（憑學生證）、兒童（7歲至12歲）。" | NT$50 | NT$80 / 100 |
+| R37 | 內洞 (新北) | 0200002 | "半票 票價(元) 40 … 2.學生（憑學生證）" | NT$40 | NT$65 / 80 |
+| R38 | 東眼山 (桃園) | 0200003 | "半票 票價(元) 50 … 2.學生（憑學生證）" | NT$50 | NT$80 / 100 |
+| R39 | 大雪山 (臺中) | 0300003 | "半票 票價(元) 100 … 二、學生(憑學生證)" | NT$100 | NT$200 holiday |
+| R40 | 奧萬大 (南投) | 0400001 | "半票 票價(元) 100 說明 1.軍、警、學生均憑證、兒童(7~12歲)。" | NT$100 | NT$200 holiday (page says the full ticket is currently charged at half price because parts are closed) |
+| R41 | 阿里山 (嘉義) | 0500001 | "半票 票價(元) 150 說明 1.外國籍人士持學生證之學生… 2.符合下列資格之本國籍民眾優惠100元： … （2）學生(憑學生證)" | NT$100 (ROC), NT$150 (foreign) | NT$300 |
+| R42 | 藤枝 (高雄) | 0600001 | "半票 票價(元) 60 … 二、學生(憑學生證)" | NT$60 | NT$120 |
+| R43 | 墾丁森林 (屏東) | 0600002 | "半票 票價(元) 75 … 二、學生(憑學生證)、7-12歲兒童半票優惠。" | NT$75 | NT$150 holiday |
+| R44 | 雙流 (屏東) | 0600003 | "半票 票價(元) 50 … 二、學生(憑學生證)、7-12歲兒童，持有證明者。" | NT$50 | NT$100 holiday |
+| R45 | 知本 (臺東) | 0700001 | "半票 票價(元) 50 說明 軍警、學生(憑學生證)、兒童(7歲至12歲)、臺東縣民" | NT$50 | NT$80 / 100 |
+| R46 | 池南 (花蓮) | 0800002 | "半票(平日) 票價(元) 25 … 二、103年4月1日起，兒童(7-12歲)半票入園，學生(憑學生證)。" | NT$25 | NT$40 / 50 |
+| R47 | 富源 (花蓮) | 0800001 | "優待票 票價(元) 50 說明 … ◆ 學生(限本人持學生證)" | NT$50 | NT$150 |
+
+觀霧 (typ_id 0200004) charges no entry fee ("免收門票"), so there is no student perk. 向陽 and 八仙山 pages showed no fee table.
+
+### Shopping (partial)
+
+#### P2. ASUS 教育優惠方案 (partial)
+- **URL:** https://www.asus.com/tw/store/education/ (HTTP 200; raw `asus0`). The only text is "學生/教師/教職人員，立即加入享華碩教育優惠方案！". It links https://special-offers.asus.com/tw/, which returned **403** (raw `asus1`). **The discount and proof are unverified.**
+
+---
+
+### Negative findings (official page fetched, no student perk on it)
+
+These are useful for CampusPass, so the app does not list perks that do not exist.
+
+| Brand | Official page (HTTP) | Finding |
+|---|---|---|
+| 義大遊樂世界 | edathemepark.com.tw/Info (200) | No student ticket. 青少年票 NT$880 is age-based (13–18, shown with 健保卡). Students fall under the adult annual pass ("成人票全年護照 $3800 13歲以上成人、學生適用"). |
+| 高雄市壽山動物園 | zoo.kcg.gov.tw/zh-tw/tour-information/ (200) | Half price is age-based ("六歲以上未滿十八歲"), not student-based. |
+| 袖珍博物館 | mmot.com.tw (200) | Concession is age-based (13–18). |
+| 統聯客運 | ubus.com.tw/Booking/FareInquiry/ (200) | The fare table has no student fare (same as round 1). |
+| 和欣客運 | ebus.com.tw/RideInfo/TicketPrices (200) | Fares load from a form; no student fare in the page. |
+| 高雄捷運 | krtc.com.tw/Ticket/ticket_item pages (200) | Ticket types are single journey, social-welfare, bicycle, group, 24/48h, MeN Go and TPASS. There is no individual student fare; the only student item is "捷運達人優惠(學生團體)" for groups. |
+| 台中捷運 | tmrt.com.tw/metro-life/ticket-types (200) | Discounted cards are only 敬老愛心卡 / 愛陪卡 / 台中市兒童卡 (child, linked to the primary-school digital student card). No student fare. |
+| 臺北捷運 | metro.taipei 票價 and 車票種類 pages (200) | No student fare found on either page. |
+| 桃園捷運 | tymetro.com.tw ticket page (200) | No "學生" on the page. |
+| YouBike | youbike.com.tw/region/main/rate/ (200) | No student rate. |
+| iRent, GoShare, WeMo | homepages (200) | No student plan shown. The content is app-only or JS. |
+| World Gym, 健身工廠 | homepages (200) | No student pricing shown. |
+| 金石堂 | kingstone.com.tw (200) | No student discount. "學生" appears only in book titles. |
+| 誠品線上 | eslite.com (200) | JS shell; no content. |
+| LINE MUSIC, friDay影音, Disney+, Apple One | homepages (200) | No student plan in the fetched HTML. |
+| Netflix | help.netflix.com/zh-tw/node/24926 (200) | The plans page (it asks you to pick a country) mentions no student plan. |
+| Steinberg education, SketchUp for students | (200 shell / "Page Not Found") | Nothing usable. |
+| 林本源園邸, 嘉義市立美術館 | (200) | No student price in the HTML (林本源 only announces "115年6月1日起恢復票價80元"). |
+
+---
+
+### Round-1 leads: status
+
+| Round-1 lead | Status now | Evidence |
+|---|---|---|
+| 國立故宮博物院 student ticket | **Partly verified**: 南部院區 (R16) gives 本國學生 free entry. The Taipei main site is still 403. | `npms1` 200; `npm0`/`npm1`/`npm3`/`npmxh` 403 |
+| 國家兩廳院 (NTCH) | **Still unverified**: npac-ntch.org is a JS shell; /ticketing returned 404; opentix.life (200) has no student text | `ntch0`, `ntch2`, `opentix1` |
+| 衛武營 | **Still unverified**: 403 | `wwy0` |
+| 威秀影城 | **Still unverified**: 403 (curl, and WebFetch also 403) | `vs0` |
+| 國賓影城 | **Still unverified**: 200, but only group 優待券 pages; no student ticket | `amb0` |
+| 美麗華影城 | Unchanged from round 1 (concession does not name students) | — |
+| 秀泰影城 | **Still unverified**: 403 | `sh0`, `sh1` |
+| 新光影城 | **Still unverified**: connection reset (3 tries) | `skc0`/`skc1`/`skc2` |
+| in89 影城 | **Still unverified**: homepage is a JS cinema picker | `in890` |
+| 國光客運 | **Still unverified**: connection reset (4 tries) | `kb0`–`kb3`, `kbyh` |
+| 統聯客運 | **Dead (no perk)**: no student fare | `ub0`, `ub1` |
+| 高雄捷運 student card | **Dead (no individual perk)**: see negative findings | `krtc3`–`krtc8`, `krtcx1`–`krtcx7` |
+| 中華電信 學生方案 | **Verified** (R1), with a stale end date on the page | `cht2` |
+| 台灣大哥大 學生方案 | **Still unverified**: homepage is a JS shell; no student link | `tm0` |
+| 亞太電信 | **Dead as a separate brand**: aptg.com.tw now redirects to fetnet.net | `gt0` |
+| YouTube Premium 學生方案 | **Verified** (R3); price not on page | `yt4` |
+| Adobe Creative Cloud | **Still unverified**: 403 | `adobe0` |
+| Autodesk education | **Still unverified**: 403 (en and tw) | `adsk0`, `autocad` |
+| Canva, Tableau | **Still unverified**: 403 | `canva0`, `tab0`, `tab2` |
+| Samsung education store | **Verified** (R2) | `sams1` |
+| ASUS 教育優惠 | **Partial** (P2) | `asus0`, `asus1` |
+| Dell student discount | **Dead (nothing on page)**: redirects to homepage or a general deals page | `dell0`, `dell1`, `dell2` |
+| Microsoft 365 student pricing / Microsoft Store education | **Still unverified**: zh-tw store education URL 404; another redirected to en-us sale | `ms0`, `ms3` |
+| Banks (student accounts / cards) | **Still unverified**: no official bank page reached; searches returned only comparison blogs | — |
+| Food chains | **Still unverified**: not attempted further; no official URLs found | — |
+| Airlines | **Still unverified**: 華航 and 長榮 403; 星宇 (200) and 台灣虎航 (200, JS) show no student fare. A search pointed to a 華航 student-baggage offer that closed 2026/03/31 (third-party source only, so not verified) | `ci1`, `eva1`, `sx1`, `tw1` |
+| 救國團 青年活動中心 | **Verified** (R12) | `cyh2`, `cyh3` |
+| YH 青年旅舍卡 | Unchanged: not student-specific | — |
+| 國立海洋科技博物館 | **Verified** (R18) | `nmmst2` |
+| 國立歷史博物館 | **Verified** (R17) | `nmh2` |
+| 國立傳統藝術中心 | **Still unverified**: ncfta.gov.tw links to px-sunmake.org.tw, and no ticket page was found in its HTML | `ncfta2`, `pxsh` |
+| 新竹市立動物園 | **Still unverified**: CONNECT 502 | `hzooh` |
+| 台北101觀景台 | **Verified** (R25) | `t1013` |
+| 阿里山林業鐵路 | **Dead (no student fare)**: the railway half-fare list covers seniors and disabled only. The 阿里山 森林遊樂區 entry does have a student fare (R41). | `afr2` |
+| 森林遊樂區 | **Verified**: 13 parks (R35–R47) | `fr*` |
+| Cursor for students | **Dead (confirmed)** | `cursor1` |
+| AWS Educate | Unchanged: not student-specific | — |
+
+#### New round-2 categories I could not verify
+- **捷運/公車 student fares and TPASS 學生:** tpass.motc.gov.tw failed with CONNECT 502 (3 tries). Taipei PTO site search for 學生票 gave no hit. MeN Go (men-go.tw, 200) has no student text in the HTML. **No student-specific TPASS was verified.**
+- **客運 阿羅哈 / 葛瑪蘭:** connection reset / 403.
+- **Theme parks 麗寶 / 小人國:** connection reset / CONNECT 502 on every try.
+- **Software MATLAB, ChatGPT/OpenAI, Grammarly, Duolingo:** MathWorks 403; chatgpt.com/students 403; Grammarly /edu/students redirected to a sign-in page; Duolingo (200) is a JS shell with no student plan.
+- **Hardware HP, Acer, MSI, Logitech, Microsoft Store:** HP 403; Acer HTTP/2 stream error; MSI 403; Logitech (200) has no education offer; Microsoft Store 404.
+- **Bookstores 博客來:** 403.
+- **Gyms Anytime Fitness:** connection reset.
+- **Banks, food chains, airlines:** see the round-1 table.
+- **交通部觀光署 / 青年旅遊:** taiwan.net.tw (200) is a portal splash page. youthtravel.tw (200, 教育部青年發展署 壯遊體驗學習網) lists 青年壯遊點 activities, but no student price or eligibility rule was captured, so it is not listed.
+
+---
+
+### Fit with the CampusPass record shape
+- **Online or nationwide** (`regions` all four): R1–R11 and R12 (multi-county lodging; check the centre).
+- **Explicit `expires_on`:** R13 劍湖山 **2026-12-27**. R12 劍潭 package **2026-12-31**. R2 has per-promo dates only. R1's page date (2026-09-30) has passed while the page stays live, so set a review date rather than an expiry.
+- **Venue-bound** (set `regions` to the venue's region):
+  - North: R17, R18, R19, R20–R24, R25, R26, R27, R29, R34, R35–R38.
+  - Central: R14, R30, R31, R33, R39, R40, R13.
+  - South: R16, R28, R41, R42, R43, R44.
+  - East: R15, R45, R46, R47.
+  - R32 is 新竹 (north).
+- **Eligibility nuances worth storing:**
+  - Junior and senior high only: R32 (no college).
+  - College excluded for some divisions: R30 excludes 空中大學 and 進修部.
+  - Local-student rules: R19 is free for Yilan-registered students. R28 is free for students at Tainan schools and half price for students from other counties.
+  - ROC-only: R16 covers 本國學生 only. R41 charges NT$100 for ROC students and NT$150 for foreign students.
+- **Not exclusive to students:** most venue discounts also cover children, seniors, military and police. Mark the discount as non-exclusive.
+
+## Per-school details (URLs fetched, HTTP status, quotes)
+
+### 1. 國立臺灣海洋大學 — ntou.edu.tw
+- **URLs fetched**:
+  - http://www.ntou.edu.tw → 200 (redirected to https://www.ntou.edu.tw/). The links include 校友服務中心 https://alumni.ntou.edu.tw/.
+  - https://alumni.ntou.edu.tw/ → connection reset (curl 35, 4 tries).
+  - https://alumni.ntou.edu.tw/p/405-1101-93947,c11821.php → connection reset. A WebFetch retry got 503.
+  - https://alumni.ntou.edu.tw/p/406-1101-71581,r1034.php → connection reset.
+  - https://r084.ntou.edu.tw/index.php → connection reset.
+  - https://w3.alumni.ntou.edu.tw/w3/homeweb/catalog_detail.php?ifid=772&infoscatid=8 → connection reset.
+  - https://olife.ntou.edu.tw/?p=n&c=1 → 200. This is the campus dining news site, not a partner list.
+- **Best list**: not verifiable. Search leads point to per-store pages on the alumni-centre site (e.g. 【基隆】恆昌商旅, 【基隆】伯爵眼鏡行), but I could not fetch any of them.
+- **Format / listings / last updated / students**: not verifiable.
+- **Difficulty**: n/a. Retry later from another network.
+
+### 2. 國立高雄師範大學 — nknu.edu.tw
+- **URLs fetched**:
+  - http://www.nknu.edu.tw → 503 from the proxy; https://www.nknu.edu.tw/ → 200 (→ w3.nknu.edu.tw).
+  - https://sso.nknu.edu.tw/Services/Web/Default.aspx?webIdx=3&menuId=230 → 200 (人事室 員工福利資訊).
+  - 高師大特約商店合約 PDF (ajaxDownloadFileCourse.aspx link on that page) → 200.
+- **Best list**: https://sso.nknu.edu.tw/Services/Web/Default.aspx?webIdx=3&menuId=230, published by 人事室 (school).
+- **Format**: an HTML index of section headings (醫療院所, 托兒機構, 住宿, 生活服務, 其他優惠專區). Each store links to its own contract PDF.
+- **Approx. listings**: ~31 named contracts (9 住宿, ~21 生活服務, 1 托兒), plus the 健康99 clinic list and a 夢時代 counter list.
+- **Last-updated signal**: contract periods such as 1150201至1160131 and 1150501-1201231. Latest promo PDF: 1150801-1150930中秋節特約優惠.
+- **Students eligible?**: The template contract says 「甲方員工前往乙方購物消費，憑國立高雄師範大學(含附中)服務證(或學生證)，即可享…」, so yes for template contracts. The page itself is framed as staff welfare.
+- **Difficulty**: 4. The terms are only in the per-store PDFs.
+
+### 3. 國立彰化師範大學 — ncue.edu.tw
+- **URLs fetched**:
+  - https://www.ncue.edu.tw/ → 200.
+  - https://ncuesa.ncue.edu.tw/files/11-1037-3116.php → 404.
+  - https://ncuesa.ncue.edu.tw/ → 200. The 學生會 menu links a 「特約商家地圖」 Google Maps (https://maps.app.goo.gl/RSWv4LSaKZk4Znmw8), which I did not fetch.
+  - https://alumni.ncue.edu.tw/p/412-1017-1909.php → 200.
+  - https://alumni.ncue.edu.tw/p/412-1017-4559.php → 200 (校友特約商店).
+  - https://alumni.ncue.edu.tw/p/412-1017-4561.php → 200 (美食 category).
+- **Best list**: https://alumni.ncue.edu.tw/p/412-1017-4559.php, published by 校友服務中心 (school). It has 4 categories: 住宿, 餐飲美食, 休閒娛樂, 醫療保健.
+- **Format**: HTML lists, one detail page per store.
+- **Approx. listings**: 美食 has 3 (養鍋石頭涮涮鍋-和美店, Miss小姐食藝空間, 藝鍋物-和美店). I did not fetch the other three categories.
+- **Last-updated signal**: posts dated 2026-09-02 and 2026-07-17.
+- **Students eligible?**: 「使用特約商店優惠時，請主動出示校友證」. This is 校友證 only. The 學生會 Google Maps may be the student-facing list.
+- **Difficulty**: 2.
+
+### 4. 國立嘉義大學 — ncyu.edu.tw
+- **URLs fetched**:
+  - http://www.ncyu.edu.tw → 200 (a JS/meta redirect stub).
+  - https://website.ncyu.edu.tw/personnel/ → 200.
+  - https://www.ncyu.edu.tw/personnel/ → 200.
+  - https://website.ncyu.edu.tw/personnel/Node/Nodes?nodeId=38270 → 200 (員工協助方案專區).
+  - https://website.ncyu.edu.tw/personnel/Subject?nodeId=44238 → 200 (員工生活服務(特約商店、福利措施)).
+  - https://website.ncyu.edu.tw/personnel/Subject/Detail/223797?nodeId=44238 → 200 (本校與打貓廚房簽訂特約商店). The body text did not render; it is probably in an attachment or JS.
+- **Best list**: https://website.ncyu.edu.tw/personnel/Subject?nodeId=44238, published by 人事室 (school).
+- **Format**: a news-style post list that mixes 特約商店 signings with insurance and hotel promos. It has 18 pages (page=18).
+- **Approx. listings**: page 1 has 10 posts, 5 of them 「本校與…簽訂特約商店」. There is no consolidated table.
+- **Last-updated signal**: newest post 2026/05/15.
+- **Students eligible?**: not stated on what I fetched.
+- **Difficulty**: 5.
+
+### 5. 國立高雄大學 — nuk.edu.tw
+- **URLs fetched**:
+  - https://www.nuk.edu.tw/ → 200.
+  - https://personnel.nuk.edu.tw/p/405-1013-18831,c2508.php → 200.
+  - https://www2.nuk.edu.tw/person/storelist.htm → 200 (an old static list).
+  - https://personnel.nuk.edu.tw/p/412-1013-2021.php → 200 (高大特約商店 index).
+  - https://personnel.nuk.edu.tw/p/412-1013-2508.php → 200 (美味的店).
+  - https://personnel.nuk.edu.tw/p/412-1013-2509.php → 200 (優質住宿).
+  - https://personnel.nuk.edu.tw/p/412-1013-2512.php → 200 (其它優惠).
+  - https://personnel.nuk.edu.tw/p/412-1013-2510.php → 200 (便捷交通).
+- **Best list**: https://personnel.nuk.edu.tw/p/412-1013-2021.php, published by 人事室 (school). It has 6 categories: 美味的店, 優質住宿, 便捷交通, 特約醫院, 幼兒托育, 其它優惠.
+- **Format**: an HTML category list leading to one page per store (店名/電話/地址/優惠/網址). Some terms are only in a PDF attachment.
+- **Approx. listings**: ≥98. 美味的店 has 29, 優質住宿 has 30 per page over 2 pages, 其它優惠 has 2 pages, 便捷交通 has 8. I did not count 醫院 or 托育.
+- **Last-updated signal**: 「義大…【1150831新增皇家酒店優惠】」.
+- **Students eligible?**: 「憑教職員證可享優惠」 / 「憑教職員證一律 9 折」. Staff only.
+- **Difficulty**: 3.
+
+### 6. 國立東華大學 — ndhu.edu.tw
+- **URLs fetched**:
+  - https://www.ndhu.edu.tw/ → 200.
+  - https://ga.ndhu.edu.tw/p/412-1006-13996.php → 200 (校外特約商店).
+  - https://dhsa.ndhu.edu.tw/p/16-1110-188997.php → 200 (學生自治會 東華黑卡特約店家; a JS shell).
+  - https://api.dhsa.ndhu.edu.tw/card/store → TLS error (curl 60, certificate expired), so not verifiable.
+- **Best list**: https://ga.ndhu.edu.tw/p/412-1006-13996.php, published by 總務處事務組 (school).
+- **Format**: an HTML table (特約商店 / 優惠措施 / 電話及住址 / 合約期限 / 備註 / 特約契約) with contract PDFs.
+- **Approx. listings**: ~125 (127 「出示…」 eligibility cells).
+- **Last-updated signal**: end dates up to 117年7月1日. Most say 合約期限至 115 年12月31日 or 116年12月31日.
+- **Students eligible?**: 「出示教職員證或學生證」 appears 123 times. Yes.
+- **Secondary**: the 學生會 東華黑卡 list (student_org). Its data API has an expired certificate, so it is not verifiable.
+- **Difficulty**: 1.
+
+### 7. 國立暨南國際大學 — ncnu.edu.tw
+- **URLs fetched**:
+  - https://www.ncnu.edu.tw/ → 200.
+  - https://b003.ncnu.edu.tw/p/406-1007-600,r43.php → 200.
+  - https://b003.ncnu.edu.tw/var/file/7/1007/img/194/514237118.docx → 200.
+- **Best list**: the DOCX, published by 人事室 (school) under 「特約商店公告名單」.
+- **Format**: a DOCX table (序號/特約商店/類別/特約內容/聯絡方式).
+- **Approx. listings**: 15.
+- **Last-updated signal**: docx modified 2024-04-17. The latest period seen is 114年4月30日止, so the list is mostly expired.
+- **Students eligible?**: mostly 「憑證」 / 「出示本校服務證」. One entry says 「本校教職員工及學生享有優惠」.
+- **Difficulty**: 3.
+
+### 8. 國立雲林科技大學 — yuntech.edu.tw
+- **URLs fetched**:
+  - https://www.yuntech.edu.tw/ → 200.
+  - https://aex.yuntech.edu.tw/index.php?id=908&option=com_content&task=view → 200 (empty legacy page).
+  - https://aex.yuntech.edu.tw/index.php/en/all-list/item/394-2022-12-03-03-58-19 → 200.
+- **Best list**: the item/394 page, 「善用民間資源之福利服務措施(含員工特約商店/子女托育)」, published by 人事室 (school).
+- **Format**: HTML store names grouped 食/衣/住/行/育/樂/其他. Each links to a contract PDF whose filename carries the end date.
+- **Approx. listings**: ~50.
+- **Last-updated signal**: the page was created 2022-12-03. Contract filenames run to 1171231.
+- **Students eligible?**: 「消費時請出示 員工證」. Staff only.
+- **Difficulty**: 4.
+
+### 9. 國立屏東科技大學 — npust.edu.tw
+- **URLs fetched**:
+  - http://www.npust.edu.tw → 503; https://www.npust.edu.tw/ → 200 (→ wp.npust.edu.tw).
+  - https://sa.npust.edu.tw/files/90-1075-1.php → 404 (學生會 食, old link).
+  - https://sa.npust.edu.tw/files/90-1075-20.php → 404.
+  - https://npustalumni.npust.edu.tw/easycard/special-store/ → 200.
+  - https://npustalumni.npust.edu.tw/wp-json/wp/v2/firm-list?per_page=1 → 200 (X-WP-Total: 77).
+- **Best list**: https://npustalumni.npust.edu.tw/easycard/special-store/, published by 職涯發展處校友服務中心 (school).
+- **Format**: WordPress HTML cards (旅宿/生活/餐飲 × 北中南東). The same records are available as JSON from the WP REST endpoint `/wp-json/wp/v2/firm-list`.
+- **Approx. listings**: 77 (from X-WP-Total).
+- **Last-updated signal**: newest firm-list post 2025-01-02.
+- **Students eligible?**: this is a 校友證 benefit list. Some entries are flagged 「(僅限屏科大教職員生)」 or 「(限屏科大教職員)」.
+- **Difficulty**: 2. The data is structured JSON, but the eligibility is alumni-centric.
+
+### 10. 國立臺北藝術大學 — tnua.edu.tw
+- **URLs fetched**:
+  - http://www.tnua.edu.tw → 503 (proxy upstream timeout).
+  - https://www.tnua.edu.tw/ → redirected to https://w3.tnua.edu.tw/, then TLS error (curl 60: unable to get local issuer certificate).
+- **Best list**: **not verifiable**. Per the hard rules I did not bypass TLS. A search lead points to a w3.tnua.edu.tw page 「最新~各餐廳(含超商)營業資訊及優惠情形」, which covers on-campus vendors only. I did not fetch it.
+- **Difficulty**: n/a.
+
+### 11. 國立臺灣藝術大學 — ntua.edu.tw
+- **URLs fetched**:
+  - https://www.ntua.edu.tw/ → 200 (Nuxt SPA shell).
+  - https://alu.ntua.edu.tw/Home/Store → 200.
+- **Best list**: https://alu.ntua.edu.tw/Home/Store 「商家優惠」, published by 校友聯絡中心 (school).
+- **Format**: HTML cards (電話/地址/營業時間/營業項目/優惠內容), with a StoreDetail page per store. Pagination is JS (「下一頁」 href="#!").
+- **Approx. listings**: ≥17 on page 1 (16 unique StoreDetail IDs).
+- **Last-updated signal**: none shown.
+- **Students eligible?**: mixed. Examples: 「現場點餐憑校友證享9折」; 「憑校友證、學生證、教師證、學校工作證…9折」; 「學校教職員、學生及校友…97折」; 「憑有效員工識別證、學生證」.
+- **Difficulty**: 2.
+
+### 12. 國立臺東大學 — nttu.edu.tw
+- **URLs fetched**:
+  - https://www.nttu.edu.tw/ → 200.
+  - https://psn.nttu.edu.tw/p/412-1047-4886.php → 200.
+  - https://psn.nttu.edu.tw/p/405-1047-117596,c4886.php → 200.
+  - The xlsx download link on that post → 200.
+- **Best list**: 「國立臺東大學特約商店一覽表(115.09.17更新).xlsx」, published by 人事室 (school).
+- **Format**: an XLSX with 7 sheets (食/住/行/育/樂/其他/醫療), columns 商店名稱/電話/地址/優惠項目/合約期限/備註. Some entries also have contract PDFs.
+- **Approx. listings**: ~29 (食 ~12, 住 6, 行 2, 育 2, 樂 3, 其他 3, 醫療 1).
+- **Last-updated signal**: 115.09.17 (file modified 2026-09-17).
+- **Students eligible?**: mixed. Examples: 「出示職員證」; 「憑服務證/學生證即可享優惠」; 「在校學生溫泉票價優惠」.
+- **Difficulty**: 2.
+
+### 13. 國立宜蘭大學 — niu.edu.tw
+- **URLs fetched**:
+  - https://www.niu.edu.tw/ → 200. The link grep found only 畢業校友.
+  - https://www.alumni.niu.edu.tw/Service11.html → CONNECT tunnel failed (502).
+  - https://alumni.niu.edu.tw/Service11.html → reset, then 「Received HTTP/0.9」 errors.
+- **Best list**: **not verifiable**. The search snippet for the alumni page mentions 校友信用卡 特約商店 (宜蘭民宿、飯店…). That is a co-branded credit card, not a school ID list.
+- **Searched**: domain searches for 「特約商店 優惠」 and 「特約廠商 優惠 教職員」. These found only bank payroll offers (property-r.niu.edu.tw) and the 人事室 健檢 page.
+- **Difficulty**: n/a.
+
+### 14. 國立聯合大學 — nuu.edu.tw
+- **URLs fetched**:
+  - https://www.nuu.edu.tw/ → 200.
+  - https://personnel.nuu.edu.tw/p/405-1014-60238,c5796.php → 200.
+  - https://personnel.nuu.edu.tw/p/412-1014-1188.php → 200.
+  - https://personnel.nuu.edu.tw/p/405-1014-80811,c1188.php → 200 (115年度特約商店).
+  - 115年國立聯合大學特約商店.pdf → 200.
+- **Best list**: the 115年度特約商店 post and its PDF, published by 人事室 (school).
+- **Format**: a PDF table (序/商店名稱/地址/電話/優惠資訊), 5 pages.
+- **Approx. listings**: 36.
+- **Last-updated signal**: post 最後更新日期 2026-09-09; PDF dated 2026-07-28.
+- **Students eligible?**: the welfare page says 「凡出示教職員證，皆可享有不同折扣之優惠」. A few rows say otherwise, e.g. 「本校教職員工、學生、校友，憑「識別證」、「學生證」、「校友證」」. 「學生」 appears 5 times in the PDF.
+- **Difficulty**: 3.
+
+### 15. 國立虎尾科技大學 — nfu.edu.tw
+- **URLs fetched**:
+  - https://www.nfu.edu.tw/ → 200.
+  - https://personnel.nfu.edu.tw/files/11-1008-6944.php → connection reset ×2. A WebFetch retry got 503.
+  - https://alumni.nfu.edu.tw/index.php/zh/ → 200. No 特約/優惠 links.
+- **Best list**: **not verifiable**. A search lead says this 人事室 page is 「教育部暨所屬機關（構）學校特約商店一覽表」, which would be a ministry-wide list. I could not fetch it.
+- **Difficulty**: n/a.
+
+### 16. 國立臺南藝術大學 — tnnua.edu.tw
+- **URLs fetched**:
+  - https://www.tnnua.edu.tw/ → 200.
+  - https://secretariat.tnnua.edu.tw/p/412-1002-1105.php → 200 (特約商店 tabs, loaded by ajax).
+  - https://secretariat.tnnua.edu.tw/p/403-1002-938-1.php → 200 (餐飲).
+  - https://secretariat.tnnua.edu.tw/p/403-1002-939-1.php → 200 (飯店住宿).
+  - https://secretariat.tnnua.edu.tw/p/403-1002-940-1.php → 200 (交通旅遊).
+  - https://secretariat.tnnua.edu.tw/p/403-1002-944-1.php → 200 (其他).
+- **Best list**: https://secretariat.tnnua.edu.tw/p/412-1002-1105.php, published by 秘書室 (school).
+- **Format**: HTML numbered lists per category (name/address/phone/terms), each with a 【合約書】 PDF.
+- **Approx. listings**: ~30 (餐飲 6, 住宿 12, 交通 1, 其他 12).
+- **Last-updated signal**: dates up to 2027 in the text; one 「2026合約書」.
+- **Students eligible?**: mixed. Examples: 「教職員工生憑證9折(永久特約)」; 「※教職員工憑證95折優惠」; 「憑職員證或學生證即享優惠」.
+- **Difficulty**: 3.
+
+### 17. 國立臺南大學 — nutn.edu.tw
+- **URLs fetched**:
+  - https://web.nutn.edu.tw/ → 200.
+  - https://www.nutn.edu.tw/personnel/mode02.asp?m=20151223171151936&t=list → 200, but the body is a 404 「網頁不存在」 page.
+  - https://personnel.nutn.edu.tw/ → 200.
+  - https://personnel.nutn.edu.tw/mode02.asp?m=20151223171151936&t=list → 200 (特約廠商).
+- **Best list**: https://personnel.nutn.edu.tw/mode02.asp?m=20151223171151936&t=list, published by 人事室 (school).
+- **Format**: an HTML table (編號/特約廠商/優惠內容/優惠期間). The terms are very terse (e.g. 「住房優惠」 「各類優惠」).
+- **Approx. listings**: 18.
+- **Last-updated signal**: 「資料更新時間：2026/10/12」.
+- **Students eligible?**: not stated.
+- **Difficulty**: 4. The names are clean but the terms are thin.
+
+### 18. 國立臺北教育大學 — ntue.edu.tw
+- **URLs fetched**:
+  - https://www.ntue.edu.tw/ → 200.
+  - https://www.ntue.edu.tw/p/412-1000-2403.php (校友) → 200. No 特約/優惠/福利 links.
+- **Best list**: **nothing found**.
+- **Searched**: homepage and alumni link grep; domain searches for 「特約商店 優惠」, 「特約廠商 優惠 教職員」 and 「特約商店 人事室 校友 學生會」. These found only 衛保組 特約診所 (dsa.ntue.edu.tw/health/affair/138, not fetched) and bank payroll PDFs.
+
+### 19. 國立臺中教育大學 — ntcu.edu.tw
+- **URLs fetched**:
+  - http://www.ntcu.edu.tw → 503; https://www.ntcu.edu.tw/ → 200.
+  - https://person.ntcu.edu.tw/data/7/43 → 200.
+  - 特約廠商一覽表115.8.12.pdf (person.ntcu.edu.tw/storage/media/4reuukgeppFy39fpKOnJCZfHkkj3L7dP03xoej9Y.pdf) → 200.
+- **Best list**: 「特約廠商一覽表115.8.12.pdf」, published by 人事室 (school).
+- **Format**: a PDF (67 pages). It has a 12-row summary table (類別/公司/優惠內容/有效期限) with mostly 「詳附件」, then scanned or attached contracts.
+- **Approx. listings**: 12.
+- **Last-updated signal**: 「更新日期:115年8月12日」; periods run to 118年12月31日.
+- **Students eligible?**: mostly staff. The 救國團 attachment says 「教職員、學生參與本團終身學習中心研習課程優惠」.
+- **Difficulty**: 4.
+
+### 20. 國立澎湖科技大學 — npu.edu.tw
+- **URLs fetched**:
+  - https://www.npu.edu.tw/ → 200.
+  - https://www.npu.edu.tw/form/Public_List.aspx?Parser=20,12,87,,,,,,,,,3 (校友) → 200. No relevant links.
+  - https://ee.npu.edu.tw/latestevent/index?Parser=9,3,73 → 200.
+- **Best list**: https://ee.npu.edu.tw/latestevent/index?Parser=9,3,73, published by the 電機工程系 department office. This is department level, not school-wide.
+- **Format**: news posts, one per store.
+- **Approx. listings**: 5 (晨光蝸牛早午餐, 望安CAFÉ, 蓁品紅茶, 金日發炒飯專賣店, 弗洛伊德 音樂 餐酒).
+- **Last-updated signal**: newest post 2026-10-02.
+- **Students eligible?**: yes, per the search lead on the Mr.大雞 post: 「本系(科)學生出示學生證者…」. I did not fetch that individual post.
+- **School-level**: nothing found.
+- **Difficulty**: 3.
+
+### 21. 國立勤益科技大學 — ncut.edu.tw
+- **URLs fetched**:
+  - https://www.ncut.edu.tw/ → 200.
+  - https://www.ncut.edu.tw/p/412-1000-406.html (校友) → 200. No relevant links.
+- **Best list**: **nothing found**.
+- **Searched**: three domain searches (「特約商店 優惠」, 「特約廠商 優惠 教職員」, 「特約商店 校友 優惠 學生會」). The only hit was a 學生會 election PDF that pledges to 「擴大校園周邊特約商店版圖」.
+
+### 22. 國立體育大學 — ntsu.edu.tw
+- **URLs fetched**:
+  - http://www.ntsu.edu.tw → 503; https://www.ntsu.edu.tw/ → 200.
+  - https://person.ntsu.edu.tw/p/412-1006-79.php → 200 (人事好康網專區).
+- **Best list**: https://person.ntsu.edu.tw/p/412-1006-79.php 「福利與特約廠商專區」, published by 人事室 (school).
+- **Format**: HTML name links (住宿特約廠商專區, 福利專區, 托育) to PDFs or JPGs.
+- **Approx. listings**: ~45 (18 lodging, ~20 other, 7 childcare).
+- **Last-updated signal**: none on the page.
+- **Students eligible?**: 「以下特約廠商僅供同仁消費時參考」. Staff only.
+- **Difficulty**: 4.
+
+### 23. 國立臺北護理健康大學 — ntunhs.edu.tw
+- **URLs fetched**:
+  - http://www.ntunhs.edu.tw → 503; https://www.ntunhs.edu.tw/ → 200.
+  - https://www.ntunhs.edu.tw/p/412-1000-121.php (校友) → 200. No relevant links.
+- **Best list**: **nothing found**.
+- **Searched**: two domain searches. They found only 國旅卡 material and a one-off restaurant promo on property-ga.ntunhs.edu.tw.
+
+### 24. 國立高雄餐旅大學 — nkuht.edu.tw
+- **URLs fetched**:
+  - https://www.nkuht.edu.tw/p/403-1000-18.php → 200.
+  - https://psla.nkuht.edu.tw/p/404-1015-32269.php → 200 (人事室 list, 「(113.8.26更新)」; post dated 2024-04-19).
+  - https://psla.nkuht.edu.tw/var/file/15/1015/img/808/861886261.pdf → 200 (115年特約廠商一覽表, 10 pp, 2026-06-05).
+  - https://psla.nkuht.edu.tw/var/file/15/1015/img/212596080.pdf → 200 (an earlier 115年 version, 22 pp, 2026-01-29).
+  - https://sta.nkuht.edu.tw/store.htm → 200.
+  - https://sta.nkuht.edu.tw/store/all/7.htm → 200.
+- **Best list (students)**: https://sta.nkuht.edu.tw/store.htm, published by 學生會 (student_org).
+  - **Format**: HTML cards (category / 特約期間 / 電話 / 特約優惠 / link), 8 per page over 7 pages.
+  - **Approx. listings**: ~52 (8 × 6 + 4).
+  - **Last-updated signal**: 特約期間 115/01/18~116/01/18. Older pages show 「109年10月13日-迄今」.
+  - **Students eligible?**: 「憑學生證及教師識別證…可享有以下優惠」. Yes.
+  - **Difficulty**: 2.
+- **Also (school)**: the 人事室 115年 PDF (808/861886261.pdf) has 77 rows (序號/分類/優惠廠商/優惠內容/合約有效期限). Its wording is mostly 教職員工/識別證: 「教職員工」 appears ×24 and 「教職員工生」 ×2. Difficulty 3. Note that the HTML page still links the older Google Drive folder.
+
+### 25. 國立金門大學 — nqu.edu.tw
+- **URLs fetched**:
+  - https://www.nqu.edu.tw/app/home.php?Lang=zh-tw → 200.
+  - https://www.nqu.edu.tw/cht/index.php?code=list&flag=detail&ids=3312&article_id=66237 (金門大學特約商店, a search lead) → 403. Not verifiable.
+  - https://ecasc.nqu.edu.tw/ → 200.
+  - https://ecasc.nqu.edu.tw/p/404-1017-5738.php → 200.
+- **Best list**: https://ecasc.nqu.edu.tw/p/404-1017-5738.php 「國立金門大校友證特約商店優惠一覽表」, published by 就業輔導暨校友服務中心 (school).
+- **Format**: an HTML table (商家/優惠方案/優惠期限/備註).
+- **Approx. listings**: ~20 (21 `<tr>` including the header).
+- **Last-updated signal**: periods run to 119年12月31日. Several rows have expired (110年, 111年, 112年).
+- **Students eligible?**: mixed. Examples: 「教職員單件即享8折優惠；在學學生單件即享85折優惠；畢業校友單件即享9折」; 「本校教職員工生及畢業校友」.
+- **Difficulty**: 2.
+
+### 26. 國立臺灣體育運動大學 — ntus.edu.tw
+- **URLs fetched**:
+  - https://www.ntus.edu.tw/cht/index.php → 200.
+  - https://person.ntus.edu.tw/ → 200.
+  - https://student.ntus.edu.tw/index.php?code=list&ids=1586 → 200 (校友證專區, 最後更新日期 113-11-07).
+  - https://sites.google.com/gm.ntus.edu.tw/alumnicard/特約商店 → 200.
+  - https://docs.google.com/spreadsheets/d/1f5TSN5H8ujvnoFHAv-C6MoCfNZOc1IgspOeIjIQAGKk/export?format=csv → 401 (sign-in required).
+- **Best list**: the Google Site 「校友證 特約商店」, published by 學務處 校友暨就業服務組 (school).
+- **Format**: Google Site store names. The details are in the 「優惠內容 一覽表」 Google Sheet, which requires sign-in.
+- **Approx. listings**: ~130 (136 non-empty lines after 「特約商家」, minus a few headings).
+- **Last-updated signal**: 「特約更新日期：2026/05/06」.
+- **Students eligible?**: 「須主動出示校友證、教職員證或學生證(部分特約限定對象)」. The contract lets the store opt in to cover 教職員證 and 學生證.
+- **Difficulty**: 4. The names are public but the terms are gated.
+
+### 27. 國立臺中科技大學 — nutc.edu.tw
+- **URLs fetched**:
+  - http://www.nutc.edu.tw/bin/home.php → 503; https://www.nutc.edu.tw/bin/home.php → 200.
+  - https://www.nutc.edu.tw/files/14-1000-43257,r15-1.php (本校特約商店公告, a search lead) → 404.
+  - https://secretary.nutc.edu.tw/var/file/14/1014/img/153086979.pdf → 200.
+  - https://alumni.nutc.edu.tw → 200. No 特約 links on the homepage.
+- **Best list**: secretary.nutc.edu.tw/var/file/14/1014/img/153086979.pdf, published by 秘書室 (school). I could not confirm which page links to it, because the announcement URL is 404.
+- **Format**: a PDF table, 6 pages (編號/特約商家名稱/電話/網站/優惠對象/特約時間/自動續約/優惠內容/備註).
+- **Approx. listings**: ~20 (the 優惠對象 column lists 學生 21×; the row numbering is inconsistent in the text extraction).
+- **Last-updated signal**: PDF created 2025-05-26. The latest date seen is 2025.12.31; many rows are 自動續約.
+- **Students eligible?**: 優惠對象 values such as 「學生、教職員、校友」 and 「教職員、學生、校友」. Yes.
+- **Difficulty**: 3.
+
+### 28. 國立臺北商業大學 — ntub.edu.tw
+- **URLs fetched**:
+  - https://www.ntub.edu.tw/ → 200.
+  - https://po.ntub.edu.tw/ (人事室) → 200. It has only 特約托育 and 公務福利e化平台 links.
+  - https://www.ntub.edu.tw/p/412-1000-6563.php (校友) → 200. No relevant links.
+- **Best list**: **nothing found**. The only lead is 人事室 「教職員工子女特約托育服務合作機構」 (childcare, staff only).
+- **Searched**: two domain searches. They found only job-board pages and a 台灣大哥大 公教 promo.
+
+### 29. 國立屏東大學 — nptu.edu.tw
+- **URLs fetched**:
+  - https://www.nptu.edu.tw/ → 200.
+  - https://pers.nptu.edu.tw/p/406-1017-131460,r3119.php → 200.
+  - 特約廠商一覽表.pdf (pers.nptu.edu.tw downloadfile) → 200.
+  - https://nptuaa.nptu.edu.tw/p/412-1033-12053.php → 200 (校友總會).
+- **Best list**: the 人事室 「特約商店一覽」 PDF. The page says 「屏東大學特約商店為本校學生會洽談並爭取優惠之特約商家」, so 學生會 negotiated the list and 人事室 hosts it (school). The page also links the 學生會公關部 IG and a Google My Maps 特約商店地圖.
+- **Format**: a PDF table, 8 pages (商店名稱/優惠內容/住址/電話/優惠年限(學年)).
+- **Approx. listings**: 97.
+- **Last-updated signal**: PDF dated 2021-05-11 with 優惠年限 110 學年, so it is likely stale. The current list is probably on the IG.
+- **Students eligible?**: rows say 「憑卡…」, which refers to the 學生會 card. The page asks 教職員工 to use it too. The 校友總會 list (9 rows) covers 「校友會會員…教職員工生」.
+- **Difficulty**: 3.
+
+### 30. 國立高雄科技大學 — nkust.edu.tw
+- **URLs fetched**:
+  - https://www.nkust.edu.tw/ → 200.
+  - https://personnel.nkust.edu.tw/p/406-1019-55307,r351.php → 200 (特約商店).
+  - https://ascdc.nkust.edu.tw/ → 200.
+  - https://ascdc.nkust.edu.tw/p/412-1022-6565.php → 200 (校友 本校特約商店; category subpages).
+- **Best list**: https://personnel.nkust.edu.tw/p/406-1019-55307,r351.php, published by 人事室 (school).
+- **Format**: one long HTML page of numbered lists by category (企業會員, 住宿 by region, 餐飲, 生活…), with many PDF attachments.
+- **Approx. listings**: ~150 (157 numbered lines, some of which are sub-items).
+- **Last-updated signal**: periods such as 1150101-1151231 and 即日起至1161231.
+- **Students eligible?**: mostly staff (「入住時請出示教職員證」). 44 rows say 「(校友適用)」. Some rows say 「(學生會簽約) 適用教職員工生」.
+- **Also**: the alumni centre keeps separate per-store pages, such as 【科技】傑昇通信 (a search lead says 「優惠對象是本校教職員、學生與校友」; I did not fetch that post).
+- **Difficulty**: 3.
+
+### 1. 國立臺灣戲曲學院 — tcpa.edu.tw
+- **URLs fetched**:
+  - http://www.tcpa.edu.tw/ → redirected to https, **TLS fail (curl 60)**
+  - https://www.tcpa.edu.tw/ → **TLS fail**
+  - https://rb006.tcpa.edu.tw/var/file/9/1009/img/136/238666247.pdf (search lead: 國民旅遊卡 doc) → **TLS fail**
+- **Searches**: site:tcpa.edu.tw 「特約商店 優惠」 and 「人事室 特約商店」. Hits were only a 國民旅遊卡 PDF and HR job notices.
+- **Result**: **not verifiable**. The TLS chain did not verify, and no candidate list showed up in search.
+
+### 2. 國立臺南護理專科學校 — ntin.edu.tw
+- **URLs fetched**:
+  - http://www.ntin.edu.tw → 200 (https://www.ntin.edu.tw/?cat=2)
+  - https://rd.ntin.edu.tw/AlumniAssociation/AlumniAssociation.aspx?id=C1yATByPbz4= → 200 (no discount links)
+- **Searches**: 「特約商店 優惠」 and 「特約 優惠 教職員 學生證」. Hits were course-fee discounts (BLS/ACLS) and the staff 員工協助方案 PDF (snippet says the school 「與民間業者簽訂優惠措施」). I did not fetch the PDF, and the hits showed no list.
+- **Result**: **nothing found**.
+
+### 3. 國立臺東專科學校 — ntc.edu.tw
+- **URLs fetched**:
+  - https://www.ntc.edu.tw/ → 200
+  - https://personnel.ntc.edu.tw/ → 200
+  - https://personnel.ntc.edu.tw/p/404-1007-8411.php?Lang=zh-tw (特約商店) → 200
+  - one contract PDF from that page (來來牛排館/湯蒸火鍋) → 200
+  - https://std.ntc.edu.tw/p/412-1002-1015.php?Lang=zh-tw (學生自治會) → 200
+  - https://std.ntc.edu.tw/p/405-1002-3697,c1015.php?Lang=zh-tw (【學生自治會】特約商店) → 200
+  - https://b007.ntc.edu.tw/var/file/7/1007/img/328/370414845.pdf (114 員工協助方案) → 200
+- **Best list**: https://personnel.ntc.edu.tw/p/404-1007-8411.php?Lang=zh-tw. Publisher: 人事室. Level: school.
+- **Format**: HTML page that links to 6 PDF contract copies (2 childcare, 2026台北旅店集團, 捷絲旅台南虎山館, 來來牛排館/湯蒸火鍋).
+- **Approx. listings**: 6.
+- **Last-updated signal**: the sampled contract runs 民國115年1月1日–115年12月31日 (PDF created 2025-12-29).
+- **Students eligible?**: No. The contract says 「提供…供甲方之員工持卡人優惠使用」 and 「出示甲方識別證…國立臺東專科學校 服務證」. The student union's 特約商店 page reads only 「~目前持續籌備中~請大家耐心等候~」 (2024-10-14).
+- **Difficulty**: 4 (one PDF per vendor; scanned contracts).
+
+### 4. 東海大學 — thu.edu.tw
+- **URLs fetched**:
+  - https://www.thu.edu.tw/ → 400 (THU Error Page)
+  - https://www.thu.edu.tw/web/index.php → 400
+  - https://thupr.thu.edu.tw/play.php → 200
+  - https://staff.site.thu.edu.tw/ (職員會) → 200
+  - https://thotel.thu.edu.tw/東海校友會館特約商店/ → 200 (2020-02-20, image only)
+- **Best list**: https://thupr.thu.edu.tw/play.php (校友服務 › 特約商店). Publisher: 公共事務暨校友服務處. Level: school.
+- **Format**: HTML, grouped into 美食 / 住宿 / 交通 / 購物 / 育樂. Each entry has a 優惠內容 block.
+- **Approx. listings**: ~43 (44 優惠內容 blocks, one of them a LINE note).
+- **Last-updated signal**: 合約期限 values run from 2024/12/31 to 2027/3/27 (six end 2026/12/31). A Foodpanda code ended 2025/6/30.
+- **Students eligible?**: Partly. Several entries say 「有效證件：學生證、職員證、校友證」 and 「優惠對象：東海大學教職員工、在學學生及校友」. Others are 校友證 or staff only, e.g. 屋馬 「教職員證、校友證」.
+- **Secondary**: 東海大學職員會 (staff.site.thu.edu.tw) posts staff-only 福利訊息, with posts dated to 2026-10-01.
+- **Difficulty**: 2.
+
+### 5. 中原大學 — cycu.edu.tw
+- **URLs fetched**:
+  - http://www.cycu.edu.tw → 200 (https)
+  - https://alumni.cycu.edu.tw/校友證-特約商家/ → first attempt 200 after redirect to a Google Sites "暫時無法提供服務" maintenance page
+  - https://alumni.cycu.edu.tw/ → 200
+  - https://alumni.cycu.edu.tw/校友證-特約商家/ (retry) → 200 with the real list
+- **Best list**: https://alumni.cycu.edu.tw/%e6%a0%a1%e5%8f%8b%e8%ad%89-%e7%89%b9%e7%b4%84%e5%95%86%e5%ae%b6/. Publisher: 校友服務暨資源發展處. Level: school.
+- **Format**: HTML. A list of store names, each with a modal ("X") holding the full terms in the same HTML.
+- **Approx. listings**: 99 store names.
+- **Last-updated signal**: expiry dates such as 「有效期限:即日起~115年12月29日止」; latest seen is 115年12月.
+- **Students eligible?**: Partly. It is primarily a 校友證 programme (「中原大學校友至乙方消費時，出示校友證」). About 20 mentions of 學生證, e.g. 六福村 「持學生證或教職員識別證(校友證)」.
+- **Note**: the site sometimes fails into a maintenance page.
+- **Difficulty**: 3 (terms are free text in modals).
+
+### 6. 逢甲大學 — fcu.edu.tw
+- **URLs fetched**:
+  - http://www.fcu.edu.tw → 200
+  - https://ga.fcu.edu.tw/ctrtst/ → 200
+  - https://purchasing.fcu.edu.tw/wSite/ct?ctNode=13036&… (old 採購保管組 site) → proxy 502 (unreachable)
+- **Best list**: https://ga.fcu.edu.tw/ctrtst/. Publisher: 總務處. Level: school.
+- **Format**: HTML. The fetched page has only the policy text and a 「【加入】逢甲特約商店」 vendor sign-up form (service202-sds.fcu.edu.tw). It contains **no store list**, and I found no embedded iframe, sheet or JSON in the HTML.
+- **Approx. listings**: 0 visible.
+- **Students eligible?**: per the page, 「須出示教職員工服務證或學生證(部分特約限定對象)，方可享有特約優惠」.
+- **Difficulty**: 5 as fetched. A list may exist elsewhere, but I found none.
+
+### 7. 靜宜大學 — pu.edu.tw
+- **URLs fetched**:
+  - http://www.pu.edu.tw → 503 (proxy upstream timeout)
+  - https://www.pu.edu.tw/ → 200
+  - https://psn.pu.edu.tw/p/412-1009-2873.php (search lead) → 404
+  - https://psn.pu.edu.tw/ → 200
+  - https://psn.pu.edu.tw/p/412-1009-5689.php?Lang=zh-tw → 200
+- **Best list**: https://psn.pu.edu.tw/p/412-1009-5689.php?Lang=zh-tw (特約商店名錄). Publisher: 人事室. Level: school.
+- **Format**: HTML directory in 4 categories (美食餐飲 29, 醫療・美容 16, 住宿旅遊 40, 交通・… 31). Each store name links to its offer or contract document.
+- **Approx. listings**: 116.
+- **Last-updated signal**: none on the page.
+- **Students eligible?**: No. 「教職員工專屬優惠」 and 「消費前請出示本校教職員證」.
+- **Difficulty**: 3 (terms sit behind per-store links or contracts).
+
+### 8. 長庚大學 — cgu.edu.tw
+- **URLs fetched**:
+  - http://www.cgu.edu.tw → 200
+  - https://cgubenefit.cgu.edu.tw/p/412-1052-87.php → proxy 502
+  - https://www.cgu.edu.tw/cgubenefit/Contents/?nodeId=10905 → 200
+  - https://www.cgu.edu.tw/cgusga/Subject?nodeId=17420 (學生會 學生特約 › 玩樂類) → 200
+- **Best list**: https://www.cgu.edu.tw/cgubenefit/Contents/?nodeId=10905 (特約廠商清單 / 一般優惠廠商一覽表). Publisher: 教職員工福利委員會. Level: school.
+- **Format**: HTML numbered list. The site also has category pages (食衣/住行/育樂/其他) and a 台塑企業特約廠商查詢 page, none of which I fetched.
+- **Approx. listings**: ~30 (numbered items).
+- **Last-updated signal**: 「114年11月9日更新」. Publish date 2024/03/28.
+- **Students eligible?**: Mostly 「持職員證或眷屬證」. A few say 「持職員證、學生證（含校友證）」.
+- **Student-org list**: 學生會 「學生特約」 (餐飲類/玩樂類/生活類). The 玩樂類 page has 2 items (2025-10-22, 2025-02-25), both for 學生證.
+- **Difficulty**: 2.
+
+### 9. 元智大學 — yzu.edu.tw
+- **URLs fetched**:
+  - http://www.yzu.edu.tw → 200
+  - http://web2.yzu.edu.tw/profit-2024/index.php/zh/special-store → 200 (served over plain http, no https redirect)
+- **Best list**: http://web2.yzu.edu.tw/profit-2024/index.php/zh/special-store. Publisher: 福利委員會. Level: school.
+- **Format**: HTML in categories (飯店, 醫療診所, 餐廳, 烘培坊, 休閒遊玩, 教育, 其他). Each entry lists 電話, 地址, 優惠內容 and 合約終止.
+- **Approx. listings**: 81.
+- **Last-updated signal**: 64 entries are 「永久有效」. The rest end 115.12.31 / 2026-12-31 / 116.12.31. The latest date string on the page is 2026-10-06.
+- **Students eligible?**: Mostly staff (持識別證/教師證). A few give student terms, e.g. 「教職員工及眷屬享有9折，學生85折優惠」 and 「訂購前先出示學生證」.
+- **Difficulty**: 2.
+
+### 10. 中華大學 — chu.edu.tw
+- **URLs fetched**:
+  - http://www.chu.edu.tw → 403
+  - https://www.chu.edu.tw/ → 200
+  - https://personnel.chu.edu.tw/p/412-1056-2141.php?Lang=zh-tw → 200
+  - https://personnel.chu.edu.tw/var/file/56/1056/img/656/896939603.pdf → 200
+- **Best list**: the PDF 特約商店優惠資訊 (https://personnel.chu.edu.tw/var/file/56/1056/img/656/896939603.pdf). Publisher: 人事室 (福委會特約廠商). Level: school.
+- **Format**: PDF, 17 pages, with a table of contents. The first vendors (hotels) appear to be images.
+- **Approx. listings**: 15.
+- **Last-updated signal**: PDF created and modified 2025-07-31.
+- **Students eligible?**: Partly. E.g. 「須於結帳時出示員工識別證或學生證」, while others say 「出示教職員工證」 or 「員工識別證」 only.
+- **Difficulty**: 3.
+
+### 11. 大葉大學 — dyu.edu.tw
+- **URLs fetched**:
+  - http://www.dyu.edu.tw → 200
+  - https://bulletin.dyu.edu.tw/file/A0041/35093.pdf → 200
+- **Searches**: 「特約商店 優惠」 and 「福委會 特約商店 115年」. No newer list surfaced.
+- **Best list**: 大葉大學福委會特約商店 PDF. Publisher: 福委會. Level: school.
+- **Format**: PDF, 14 pages (餐飲/住宿/其他).
+- **Approx. listings**: ~34 (by 對象 fields).
+- **Last-updated signal**: 「更新日期:104/12/08」. PDF dated 2015-12-09. Latest term end seen 105/12. **Stale.**
+- **Students eligible?**: Partly. E.g. 「對象：教職員、學生【憑證結帳才享優惠】」.
+- **Difficulty**: 3, but the content is ~10 years old.
+
+### 12. 華梵大學 — hfu.edu.tw
+- **URLs fetched**:
+  - http://www.hfu.edu.tw → 503
+  - https://www.hfu.edu.tw/ → 200
+  - http://sa.hfu.edu.tw/3dt7/super_pages.php?ID=3dt702 (search lead 「校友證申請暨特約商店」) → 404
+  - https://www.hfu.edu.tw/Front/Student-Affairs-System/Student-Affairs-System-03/Page.aspx?id=b6Y%2B2FNv500= (校友) → 200, with no 特約/優惠 links
+- **Searches**: 「特約商店 優惠」 and 「校友證 特約商店」. Hits were a 104 meeting-minutes PDF (a planned 校友證特約商店) and the 114 新生手冊 (on-campus 9折 at campus eateries). I fetched neither.
+- **Result**: **nothing found** (no current list).
+
+### 13. 義守大學 — isu.edu.tw
+- **URLs fetched**:
+  - http://www.isu.edu.tw → 200
+  - https://sa1.isu.edu.tw/page/集團-學生優惠-EIqT4kiRhhEK → 200
+  - https://sa1.isu.edu.tw/storage/files/bbFi8O3kMPDDtjH6pgBjFjvfCQYR1JEa2J0QdGym.pdf (校友證校內服務及優惠一覽表) → 200
+  - https://hr.isu.edu.tw/page/福利專區-QLmsr0d52Jbc → 200
+- **Best source**: 學務處 「義大集團-學生優惠」. Publisher: 學務處. Level: school. It covers a single perk: 「義守大學學生於在學期間憑學生證，可享義大醫療體系四大醫院免掛號費服務」.
+- **Other**: the alumni PDF (113/10/28 修訂) lists only on-campus services (parking, library, course fees). HR 福利專區 links to SharePoint PDFs and to a login-only group employee platform (empsale.e-united.com.tw). The only partner named there is 「交通類特約廠商－台灣高鐵」.
+- **Approx. listings**: no merchant list found.
+- **Difficulty**: 5.
+
+### 14. 世新大學 — shu.edu.tw
+- **URLs fetched**:
+  - http://www.shu.edu.tw → 200 (homepage links directly to 特約商店)
+  - https://alumni.web.shu.edu.tw/校友服務/特約商店/ → 200
+  - https://po.web.shu.edu.tw/福利/特約商店/ → 200
+- **Best list**: https://po.web.shu.edu.tw/%E7%A6%8F%E5%88%A9/%E7%89%B9%E7%B4%84%E5%95%86%E5%BA%97/. Publisher: 人事室. Level: school.
+- **Format**: HTML, grouped into 餐飲食品 / 住宿飯店 / 休閒娛樂 / medical. Each entry has 《name》 好康資料 links, 據點 and 特約期.
+- **Approx. listings**: ~28 (26 《》 entries plus 2 medical lines).
+- **Last-updated signal**: 特約期 mostly 115年01月01日–115年12月31日 (one to 116年12月31日). The latest page date is 2026/06/17.
+- **Students eligible?**: Mostly staff. The medical entries say 「本校教職員工生出示教師證、員工證、學生證者」.
+- **Secondary (alumni)**: 校友服務 › 特約商店 says 「凡持有世新大學實體校友證及數位校友證者」. It has ~14 entries, and its contract terms end 2023/12/31 (stale).
+- **Difficulty**: 2.
+
+### 15. 銘傳大學 — mcu.edu.tw
+- **URLs fetched**:
+  - http://www.mcu.edu.tw → 200 (web2.mcu.edu.tw)
+  - https://alumnus.mcu.edu.tw/ → 200 (only 「校友推廣課程優惠」)
+  - http://club.mcu.edu.tw/bme/zh-hant/node/26 (醫工系學會 贊助商家) → 200, headings only (「銘傳區 特約商店、贊助廠商 / 後街 特約商店、贊助廠商」), no entries
+  - http://club.mcu.edu.tw/sgatpe/zh-hant (台北校區學生會) → 200
+  - http://club.mcu.edu.tw/sgatpe/zh-hant/node/147 (學生會特約商店) → 200, a 「工商專區」 recruitment notice by the 第十四屆學生會 with no store list (site content dates to 110學年)
+- **Searches**: news articles (week.mcu.edu.tw) describe a past 學生會 「ＭＣＵ．特約商店」 sticker programme. They are not lists, and I did not fetch them.
+- **Result**: **nothing current found**.
+
+### 16. 實踐大學 — usc.edu.tw
+- **URLs fetched**:
+  - https://www.usc.edu.tw/ → 200
+  - https://welfare.usc.edu.tw/p/412-1068-2341.php?Lang=zh-tw → 200
+  - https://welfare.usc.edu.tw/p/405-1068-14153,c2341.php (交通住宿旅遊) → 200
+  - https://welfare.usc.edu.tw/p/405-1068-14152,c2341.php (生活娛樂運動) → 200
+  - https://welfare.usc.edu.tw/p/405-1068-14156,c2341.php (購物餐飲服務) → 200
+  - https://welfare.usc.edu.tw/p/405-1068-14155,c2341.php (醫療) → 200
+- **Best list**: 特約商店一覽表｜VENDORS, 4 category pages. Publisher: 教職員工福利互助委員會. Level: school.
+- **Format**: HTML tables (商店名稱 | 合約期間 | 備註), with regions and links to 特惠合約.
+- **Approx. listings**: ~112 (52 + 10 + 45 + 5 rows).
+- **Last-updated signal**: 合約期間 values like 「簽約日-115/12/31」, with some up to 119/12/31.
+- **Students eligible?**: Mostly staff: 「使用特約商店優惠時，請記得先出示教職員證」 and 「優惠對象:本校教職員」. About 9 rows add students, e.g. 「優惠對象:本校教職員及學生」.
+- **Difficulty**: 2.
+
+### 17. 朝陽科技大學 — cyut.edu.tw
+- **URLs fetched**:
+  - http://www.cyut.edu.tw → 200
+  - https://hr.cyut.edu.tw/p/412-1072-5237.php?Lang=zh-tw → 200
+  - https://hr.cyut.edu.tw/p/403-1072-1148-1.php?Lang=zh-tw (優惠廠商相關訊息) → 200
+  - https://news.cyut.edu.tw/p/406-1078-53338,r1633.php (校園簡訊 福委會簽約廠商) → 200
+- **Best list**: 人資處 「優惠廠商相關訊息」. Publisher: 人資處. Level: school.
+- **Format**: HTML, one post per vendor.
+- **Approx. listings**: 12.
+- **Last-updated signal**: none on the list.
+- **Students eligible?**: Staff. The search snippet for the 台灣虎航 post says 「本校專任教職員工」, but I did not fetch that post.
+- **Note**: the 校園簡訊 list is ~30 vendors with expiry dates in 民國92–96 (very stale).
+- **Difficulty**: 4.
+
+### 18. 高雄醫學大學 — kmu.edu.tw
+- **URLs fetched**:
+  - http://www2.kmu.edu.tw → 503
+  - https://www.kmu.edu.tw/ → redirected to olis.kmu.edu.tw/error.html (connection resets)
+  - https://personnel.kmu.edu.tw/…/24-特約商店一覽表 → **403 "Access Denied"** (3 attempts, including a later retry)
+  - https://alumni.kmu.edu.tw/index.php/services/5 → 403
+  - https://fu.kmu.edu.tw/…(教師會) → 403
+- **Search lead (unverified)**: 人力資源室 「本校特約商店一覽表」. Snippets say it covers 「教職員工生、校友」 with student examples, but I could not fetch it.
+- **Result**: **not verifiable** (WAF 403). This is a likely good source if access works from another network.
+
+### 19. 南華大學 — nhu.edu.tw
+- **URLs fetched**:
+  - http://www.nhu.edu.tw → redirect error (curl 3, host-less redirect)
+  - https://www.nhu.edu.tw/ → **TLS fail** (twice)
+  - https://welfare2.nhu.edu.tw/Web/Pages?mid=1422 (飲食) → 200
+  - https://welfare2.nhu.edu.tw/Web/Pages?mid=8266 (餐廳) → 200, image only
+  - https://welfare2.nhu.edu.tw/Web/Pages?mid=8268 (住宿) → 200, image only
+- **Best list**: welfare2.nhu.edu.tw 「108-109年度南華大學「特約商店」及「特約醫療院所」」. Publisher: 教職員工福利互助委員會. Level: school.
+- **Format**: HTML (2 text entries) plus category pages that hold only images.
+- **Approx. listings**: 2 visible as text.
+- **Last-updated signal**: 「優惠效期：2021年12月31日止」 (**stale**).
+- **Students eligible?**: Yes, in the visible entries: 「適用對象：機關教職員工、在學學生(含同行親友)」 and 「須持機關教職員工證或學生證」.
+- **Difficulty**: 4 (stale; images).
+
+### 20. 真理大學 — au.edu.tw
+- **URLs fetched**:
+  - http://www.au.edu.tw → 503
+  - https://www.au.edu.tw/ → 200
+  - https://alumni.au.edu.tw/p/406-1020-30422,r108704.php (台灣高鐵VIP企業會員) → 200
+  - https://alumni.au.edu.tw/p/426-1020-1.php?Lang=zh-tw (特約商店總攬) → 200
+  - https://alumni.au.edu.tw/p/406-1020-73426,r111159.php (漁夫先生) → 200
+- **Best list**: 特約商店總攬. Publisher: 校友與公共關係組. Level: school.
+- **Format**: HTML index (住宿/交通/餐飲/生活/文教) with one post per vendor.
+- **Approx. listings**: 11.
+- **Last-updated signal**: none.
+- **Students eligible?**: Mostly staff, e.g. 「請本校教職員前往…記得帶服務證件」. 高鐵 says 「為便利全校教職員工生搭乘高鐵」.
+- **Difficulty**: 3.
+
+### 21. 大同大學 — ttu.edu.tw
+- **URLs fetched**:
+  - http://www.ttu.edu.tw → 200 (connection reset during transfer)
+  - https://www.ttu.edu.tw/p/412-1000-103.php?Lang=zh-tw (畢業校友) → 200, no 特約/優惠 terms
+- **Searches**: 「特約商店 優惠」, 「特約廠商 教職員 學生 優惠」, 「福利委員會 特約商店」 and 「校友 優惠 特約 商家 學生會」. The only hit was an old 遠傳 staff mobile plan on cc.ttu.edu.tw.
+- **Result**: **nothing found**.
+
+### 22. 南臺科技大學 — stust.edu.tw
+- **URLs fetched**:
+  - http://www.stust.edu.tw → 200
+  - https://alumni.stust.edu.tw/tc/node/alumnicard → 200 (links to 特約商店)
+  - https://cda.stust.edu.tw/tc/node/AlumniiPass → proxy 502
+  - https://sites.google.com/stust.edu.tw/appointed-store/首頁 → 200
+  - …/appointed-store/食 → 200
+  - …/appointed-store/住 → 200
+  - …/appointed-store/樂 → 200
+- **Best list**: https://sites.google.com/stust.edu.tw/appointed-store/. Publisher: 校友中心. Level: school.
+- **Format**: Google Sites, 8 category pages (食衣住行育樂醫其他). Entries have consistent fields (電話/地址/折扣內容/注意事項/優惠對象/截止日期), and some link to attachments on Google Drive.
+- **Approx. listings**: 82 across 3 of 8 categories (食 38, 住 30, 樂 14). Estimated 120+ in total.
+- **Last-updated signal**: 截止日期 values are mostly 「永久有效」. The Google Sites "Page updated" date was not in the static HTML.
+- **Students eligible?**: Yes for many. 「優惠對象：學生/教職員/校友/之友」 appears on 32 entries and 「學生/教職員」 on 3. 45 entries are 「教職員」 only. The 一卡通 student card gives access to 「校友中心洽談合作之特約商店優惠」.
+- **Difficulty**: 2.
+
+### 23. 嘉南藥理大學 — cnu.edu.tw
+- **URLs fetched**:
+  - http://www.cnu.edu.tw → 200
+  - https://alumnicenter.cnu.edu.tw/ → 200, no 特約/優惠 terms
+- **Searches**: 「特約商店 優惠」 (no results), 「特約商店 福利 優惠」 and 「校友 特約 合作廠商 優惠 校友證」. Hits were campus-restaurant and industry-MOU news only.
+- **Result**: **nothing found**.
+
+### 24. 樹德科技大學 — stu.edu.tw
+- **URLs fetched**:
+  - http://www.stu.edu.tw → 202 with an empty body (likely a bot challenge)
+  - https://gad.stu.edu.tw/ (總務處) → 202 with an empty body
+- **Searches**: 「特約商店 優惠」, 「特約廠商 福利 優惠」 and 「特約商店 教職員工 學生證 九折」. No list surfaced.
+- **Result**: **nothing found**. The pages could not be read (202, empty).
+
+### 25. 中山醫學大學 — csmu.edu.tw
+- **URLs fetched**:
+  - http://www.csmu.edu.tw → 200
+  - https://personnel.csmu.edu.tw/p/403-1012-387.php?Lang=zh-tw → 200
+  - https://personnel.csmu.edu.tw/p/406-1012-70698,r387.php (飲食&育樂) → 200
+  - https://personnel.csmu.edu.tw/p/406-1012-70684,r387.php (住宿&租車) → 200
+- **Best list**: the two pages above. Publisher: 人力資源室. Level: school.
+- **Format**: HTML tables with **eligibility columns 教職員 / 學生 / 校友 / 附醫 (√/–)**. Sections: 飲食&購物, 運動健身, 手機&網路, 旅遊, 外送, 醫療, 幼兒園, 住宿, 租車/旅遊.
+- **Approx. listings**: ~90 (about 46 and 50 numbered rows).
+- **Last-updated signal**: 「資料更新：2026/12/30」 on the food page (as published) and 「2025/12/30」 on the lodging page. The index says 最後更新日期 2026-10-20.
+- **Students eligible?**: Yes, row by row. E.g. lodging rows say 「教職員、學生、校友、附醫」. The page says 「使用各項優惠時請務必出示本校相關識別證」.
+- **Difficulty**: 1–2 (the cleanest structure in the batch).
+
+### 26. 龍華科技大學 — lhu.edu.tw
+- **URLs fetched**:
+  - http://www.lhu.edu.tw/ → 200
+  - https://alumni.lhu.edu.tw/ → 200
+  - https://alumni.lhu.edu.tw/p/412-1055-2154.php?Lang=zh-tw (校友權益) → 200, no discount list
+- **Searches**: 「特約商店 優惠」, 「特約廠商 福利委員會 優惠」, site personnel.lhu.edu.tw 「特約商店 人事室」 and 「特約商店 校友 優惠 識別證」. No list found.
+- **Result**: **nothing found**. The only offers are recurring single-vendor posts (「龍華人汽車駕訓班…優惠資訊」) on the alumni site.
+
+### 27. 輔英科技大學 — fy.edu.tw
+- **URLs fetched**:
+  - https://www.fy.edu.tw/ → 200
+  - https://fyasc.fy.edu.tw/ → 200
+  - https://fyasc.fy.edu.tw/p/412-1069-6760.php?Lang=zh-tw (校友卡特約廠商) → 200
+- **Best list**: 校友卡特約廠商. Publisher: 職發與校友中心. Level: school.
+- **Format**: HTML (name, 📍 address, ☎️ phone, short offer).
+- **Approx. listings**: 21.
+- **Last-updated signal**: none.
+- **Students eligible?**: No: 「畢業校友請出示校友卡、教職員工請出示員工證」.
+- **Difficulty**: 3 (many entries lack offer terms).
+
+### 28. 明新科技大學 — must.edu.tw
+- **URLs fetched**:
+  - http://www.must.edu.tw → 200
+  - http://webc1.must.edu.tw/jtmust073/… (old 特約商店總覽_20211013) → DNS fail (host gone)
+  - https://admin.must.edu.tw/view/list.aspx?UnitID=96&id=2803 (特約資訊) → 200
+  - content.aspx?UnitID=96&id=3770 (食品餐飲) → 200
+  - id=3768 (飯店住宿) → 200
+  - id=3764 (醫療護理) → 200
+  - id=3769 (休閒娛樂) → 200
+- **Best list**: https://admin.must.edu.tw/view/list.aspx?UnitID=96&id=2803. Publisher: 總務處事務組. Level: school.
+- **Format**: HTML, 9 category pages with labelled fields (■地址 ■電話 ■網址 ■合約期限 ■優惠內容).
+- **Approx. listings**: 22 in the 4 categories fetched (3 + 10 + 6 + 3). Estimated 30–45 in total.
+- **Last-updated signal**: e.g. 「自114年11月1日-115年12月31日止」. Some say 113年12月31日止 or 永久.
+- **Students eligible?**: Partly: 「憑員工識別證…」 with 「學生攜帶學生證，即享相同優惠」 on several entries (9 student mentions in 22 entries).
+- **Difficulty**: 2.
+
+### 29. 長榮大學 — cjcu.edu.tw
+- **URLs fetched**:
+  - http://www.cjcu.edu.tw → 503
+  - https://www.cjcu.edu.tw/ → **TLS fail** (twice)
+  - https://dweb.cjcu.edu.tw/agad/news/18854 → 200 (vending machine notice)
+  - https://dweb.cjcu.edu.tw/benefits and /benefits/ (福委會) → 200, but redirected to 「Oops! Site Not Found」 (Error 998)
+  - https://dweb.cjcu.edu.tw/health/article/1669 (衛保組 就診就醫資訊) → 200
+- **Best source**: 衛生保健組 特約診所/醫院 list (medical only). Publisher: 衛生保健組. Level: school.
+- **Students eligible?**: Yes for clinics. Students need 「學生證」 plus 「當學期在學證明」 and 特約醫院證明單.
+- **Merchant list**: none reachable. The 福委會 site is gone, and the search lead is only the contract template (識別證, members only).
+- **Result**: **not verifiable** (TLS) and nothing found for merchants.
+
+### 30. 弘光科技大學 — hk.edu.tw
+- **URLs fetched**:
+  - https://www.hk.edu.tw/ → 200
+  - https://ewc.hk.edu.tw/category/特約活動訊息/ → 200
+  - https://ewc.hk.edu.tw/wp-content/uploads/2026/07/114學年特約商店115.07.20更新.xlsx → 200
+- **Best list**: 「114學年度弘光科技大學員工福利委員會 特約商店清單」 (xlsx). Publisher: 員工福利委員會. Level: school.
+- **Format**: XLSX. Sheet 1 has columns 序號 | 店家名稱 | 縣市 | 服務內容 | 優惠說明 | 合約期限 | 聯絡人 | 連絡方式, plus batch labels such as 「112學年新增」. Sheet 2 holds attachments (附件). There are also HTML posts per new vendor.
+- **Approx. listings**: 87.
+- **Last-updated signal**: file name 「115.07.20更新」, xlsx modified 2026-07-20 (title says 截至114年6月30日).
+- **Students eligible?**: Mostly staff (「憑員工識別證」). About 12 rows include students, e.g. 「出示員工識別證、學生證可享有…」 and 「教職員工及學生就診時」.
+- **Difficulty**: 2.
+
+### 1. 健行科技大學 (uch.edu.tw)
+- **URLs fetched**:
+  - http://www.uch.edu.tw → https://www.uch.edu.tw/: 200, but a truncated 6.5 KB page (connection reset during retries). A second fetch of https://www.uch.edu.tw/ was also 200 and truncated.
+  - https://personnel.uch.edu.tw/zh_tw/form6: 200 (a welfare-application form page with no 特約 content).
+- **Best list**: nothing found on uch.edu.tw. The homepage had no 特約/優惠/福利 links. The site-restricted WebSearch for 「特約商店 優惠」 and 「特約廠商 教職員工 學生證」 returned only job-fair PDFs, umart.uch.edu.tw student shop pages and personnel forms.
+- **Note**: 萬能's 總務處 page (fetched, see #3) says 健行 is one of the schools in the 『桃園區大專院校教職員工福利聯盟』. Its shared list is published by 中央大學 and 中原大學 and was not looked at here.
+
+### 2. 正修科技大學 (csu.edu.tw)
+- **URLs fetched**:
+  - https://www.csu.edu.tw/: 000 (reset) on the first try, then 200 on retry. Links found were for 校友 only.
+  - https://sa.csu.edu.tw/shop_vip.php: 000. Connection reset by peer on 4 attempts, across 3 rounds.
+  - https://sa.csu.edu.tw/shop_vip.php?id=210: 000 (proxy 502 / reset).
+- **Best list**: search found a lead at `sa.csu.edu.tw/shop_vip.php` (a "學生會特約廠商"-style page under 學務處). It could not be reached, so it is **not verifiable**. Nothing is reported from the snippet.
+
+### 3. 萬能科技大學 (vnu.edu.tw)
+- **URLs fetched**:
+  - http://www.vnu.edu.tw/ → https: 200 (small splash page)
+  - https://administration.vnu.edu.tw/oga/2407: 200
+  - https://www.vnu.edu.tw/files/17648/特約商店-八校聯盟店家201611.xls: 200
+- **Best list**: 總務處 › 特約商店 (school level). The page explains that the 桃園區大專院校教職員工福利聯盟 (中央, 中原, 元智, 開南, 桃創, 健行, 龍華, 萬能) shares one store list. It links the alliance file (`.xls` and `.ods`) and a contract template (`.odt`).
+- **Format**: XLS/ODS spreadsheet (not parsed, because no xls reader was available offline). A rough heuristic found ~165 phone-number strings, which suggests a list of 100 or more rows. Treat that figure as unconfirmed.
+- **Last-updated signal**: the file name says 201611 and the XLS metadata says last saved 2016-11-22. The page footer shows "更新日期 2026-10-07", but the list itself is 10 years old.
+- **Students eligible?**: "讓本校全體師生一起享受優惠" and "出示識別證，消費享優惠". The list was originally a staff-welfare (教職員工福利委員會) list.
+- **Extraction difficulty**: 4 (stale legacy XLS, multi-school).
+
+### 4. 玄奘大學 (hcu.edu.tw)
+- **URLs fetched**:
+  - https://www.hcu.edu.tw/hcu/zh-tw: 200 (no 特約 links)
+  - https://hcu.edu.tw/person/zh-tw/?sh=: 000 (proxy 502)
+  - https://www.hcu.edu.tw/person/zh-tw/: 200
+  - https://www.hcu.edu.tw/person/person/zh-tw/6617225C228C42EAB4A3E4786573EFC1/9476D029CECE43248F43E3CD05F44ACA: 200 (福利天地 › 特約店家資訊)
+  - https://www.hcu.edu.tw/person/Download.aspx?aid=6A8407FB714F4DD2A28CB0A2D20C6CC6: 200 (DOCX)
+- **Best list**: 人事室 › 福利天地 › 特約店家資訊, with the attachment "特約店家" (school level).
+- **Format**: Word DOCX with one table. The columns are 店家名稱 | 優惠內容 | 聯絡方式 | 簽約年度 | 備註.
+- **Approx. listings**: ~24 (26 table rows, minus the note and header rows).
+- **Last-updated signal**: the page says "最後更新日期: 2025-12-16". 簽約年度 values run from 101 to 114, and 效期 values reach 116.12.31.
+- **Students eligible?**: No. The table note says "＊消費時請攜帶教職員識別證以為憑証。"
+- **Extraction difficulty**: 2 (a clean table, but in a DOCX download).
+
+### 5. 建國科技大學 (ctu.edu.tw)
+- **URLs fetched**:
+  - http://www.ctu.edu.tw → https: 200
+  - https://www.ctu.edu.tw/p/412-1000-5873.php?Lang=zh-tw (在學學生): 200. It contains the link "學校特約商店" → http://gen.ctu.edu.tw/web/upload/files/files_191226164115_1.12
+  - http://gen.ctu.edu.tw/web/upload/files/files_191226164115_1.12: redirected to https, **404**
+- **Best list**: none reachable. The official link exists but points to a dead file. Its name suggests an upload from 2019-12-26. Treat this school as nothing found.
+
+### 6. 明志科技大學 (mcut.edu.tw)
+- **URLs fetched**:
+  - http://www.mcut.edu.tw/ → https: 200 (links 教職員工福利委員會 at cfw.mcut.edu.tw)
+  - https://cfw.mcut.edu.tw/: 200
+  - https://cfw.mcut.edu.tw/p/412-1050-10969.php (特約廠商 menu): 200
+  - https://cfw.mcut.edu.tw/p/412-1050-11584.php (明志科大特約廠商): 200
+  - https://cfw.mcut.edu.tw/p/412-1050-10980.php (台塑企業特約廠商): 200. It only says to log in to the internal NOTES system.
+- **Best list**: 教職員工福利委員會 › 明志科大特約廠商 (school level).
+- **Format**: HTML text.
+- **Approx. listings**: 3 (享鴨, 旅市旅行社, 棋勝汽車). The larger 台塑企業 list is internal-only.
+- **Last-updated signal**: "優惠期限至115年12月31日" on the 享鴨 entry.
+- **Students eligible?**: No. "憑職員證…".
+- **Extraction difficulty**: 2 (but very small and staff-only).
+
+### 7. 台鋼科技大學, formerly 高苑 (kyu.edu.tw → tsust.edu.tw)
+- **URLs fetched**:
+  - http://www.kyu.edu.tw → https://www.tsust.edu.tw/: 200
+  - https://ord.tsust.edu.tw/: 200
+  - https://ord.tsust.edu.tw/var/file/10/1010/img/242/605095100.pdf: 200 (11 pages)
+- **Best list**: 【台鋼科技大學特約商店列表】 PDF, hosted on the 研究發展處 site (school level).
+- **Format**: PDF table. The columns are 類別 | 特約店名稱 | 地址 | 電話 | 特約內容 | 優惠對象, and rows marked ■ are new.
+- **Approx. listings**: ~55 (category cells counted: 住宿 ~21, 飲食 ~17, 家居生活 6, 醫療衛生 5, 休閒娛樂 5, 維修保養 2, and a few others).
+- **Last-updated signal**: "製表日期:115.01.16". PDF CreationDate is 2026-01-16. Example term: "兌換期限：115/01/01~116/12/31".
+- **Students eligible?**: Partly. The 優惠對象 column varies by row. In the text the word 教職員 appears 64 times, 學生 53 times and 校友 52 times, so many rows include students. Some rows say "憑員工識別證" and are 教職員-only.
+- **Extraction difficulty**: 3 (structured PDF, but the 特約內容 cells wrap across many lines).
+
+### 8. 大仁科技大學 (tajen.edu.tw)
+- **URLs fetched**:
+  - http://www.tajen.edu.tw → https: 200
+  - https://a06.tajen.edu.tw/p/404-1006-94061.php?Lang=zh-tw: 200
+- **Best list**: 總務處 › 學校特約商店 (school level). It reads: "為提供本校教職員工及學生更多元服務消費優惠福利，本校與校外合法登記商店簽訂折扣特約".
+- **Format**: HTML table. The columns are 特約商店 | 優惠措施 | 電話及地址 | 特約期間 | 備註. One hotel's rates are in an attached PDF.
+- **Approx. listings**: ~12 (12 特約期間 ranges).
+- **Last-updated signal**: the newest ranges are "115/9/9~117/12/31" and "114/10/23~115/12/31". Several are "~永久".
+- **Students eligible?**: Yes. "請主動出示教職員證或學生證" appears in 10 rows. Some rows add "優惠對象：教職員工、校友、學生".
+- **Extraction difficulty**: 1.
+
+### 9. 聖約翰科技大學 (sju.edu.tw)
+- **URLs fetched**:
+  - https://www.sju.edu.tw/: 200 (畢業校友 → sjsmitaa.org)
+  - https://pr.sju.edu.tw/campusnews/alu/discount.html: 000 (reset ×4)
+  - http://pr.sju.edu.tw/campusnews/alu/discount.html (the URL as published/indexed): 200
+- **Best list**: 聖約翰科技大學校友總會校友專屬優惠方案（持續更新中）. This is alumni-association level, published on the school's pr subdomain.
+- **Format**: an HTML index of headlines. Each headline links to a per-deal news page.
+- **Approx. listings**: ~35 headlines (for example 「黑沐咖啡」校友88折優惠 and 「大碗公小吃店」校友9折優惠). A few are seasonal promotions.
+- **Last-updated signal**: HTTP Last-Modified is 2026-03-16. The page contains date strings up to 202603.
+- **Students eligible?**: No. Alumni only ("校友專屬優惠").
+- **Extraction difficulty**: 3 (the terms are in headlines and per-page text).
+
+### 10. 嶺東科技大學 (ltu.edu.tw)
+- **URLs fetched**:
+  - http://www.ltu.edu.tw → https: 200
+  - https://www.ltu.edu.tw/p/404-1000-2515.php (特約績優商店 hub): 200
+  - https://www.ltu.edu.tw/p/403-1000-51-1.php (特約績優商店-食): 200
+  - https://www.ltu.edu.tw/p/406-1000-2551,r51.php (陶板屋 sample): 200
+- **Best list**: 特約績優商店, split into 食/醫/住/行/其他 categories. It is on the main school site and no publishing unit is shown.
+- **Format**: HTML, one page per store.
+- **Approx. listings**: ~18 in 食 (district sub-pages included). The 醫/住/行/其他 categories were not fetched.
+- **Last-updated signal**: the sample was posted 2019-05-28, with "合約期限：108年6月1日起至108年12月31日止". It looks stale.
+- **Students eligible?**: The sample says "優惠限教職員工使用".
+- **Extraction difficulty**: 3 (per-page, stale).
+
+### 11. 中國科技大學 (cute.edu.tw)
+- **URLs fetched**:
+  - http://www.cute.edu.tw/ → https: 200
+  - https://gene.gm.cute.edu.tw/校園資訊: 200 (links "學生會特約商店" and 特約飯店)
+  - Google Doc export 1lmDwxAmyY2znSKlTzmt8QMKkvqcyArhi (txt): 200
+  - Google Sheet export 1ng_VPDNjU11NDJ2lDOR8hM-a2DNwuDm_ (csv): 200. This is a phone directory and not relevant.
+- **Best list**: the 學生會特約商店 Google Doc, linked from the 總務處 校園資訊 page (student_org level).
+- **Format**: Google Doc table. The columns are 類別 | 商店名稱 | 連絡人 | 電話 | 地址 | 優惠方案.
+- **Approx. listings**: ~11 (mostly around the 台北 興隆路 campus).
+- **Last-updated signal**: none found in the document.
+- **Students eligible?**: Yes. For example "全校師生憑本校證件一律9折" and "本校學生購買教科書…".
+- **Extraction difficulty**: 2.
+
+### 12. 中臺科技大學 (ctust.edu.tw)
+- **URLs fetched**:
+  - http://www.ctust.edu.tw → https: 200
+  - https://personnel.ctust.edu.tw/p/412-1026-1671.php?Lang=zh-tw: 200
+- **Best list**: 人力資源處 (personnel.ctust) › 特約商店, school level. It is split into categories such as 1.餐廳、日常用品 and 2.旅館飯店.
+- **Format**: HTML table (53 `<tr>`). The columns are 特約商店 | 地址 | 電話 | 優惠內容. Some entries link PDF attachments.
+- **Approx. listings**: ~38 (eligibility lines counted: 27 × "優惠身份：本校教職員、學生、校友", 6 × "優惠對象：教職員工、校友、學生", and 5 other variants).
+- **Last-updated signal**: contract notes mention "至115/12/31". There is no page date.
+- **Students eligible?**: Yes for most rows ("本校教職員、學生、校友", "教職員工、校友及學生出示服務證(學生證)"). A few rows, such as Uber Eats, are 教職員工-only.
+- **Extraction difficulty**: 2.
+
+### 13. 亞洲大學 (asia.edu.tw)
+- **URLs fetched**: https://www.asia.edu.tw/: 000. "SSL certificate problem: unable to get local issuer certificate" means it is **not verifiable**. It was not bypassed.
+- **Best list**: nothing found. WebSearch (allowed_domains asia.edu.tw) for 「特約商店 優惠」 returned no results, and 「特約廠商 優惠」 returned only 產學 and 技轉 pages.
+
+### 14. 開南大學 (knu.edu.tw)
+- **URLs fetched**:
+  - http://www.knu.edu.tw: 503 (upstream timeout)
+  - https://www.knu.edu.tw/: 000 (reset)
+  - https://general.knu.edu.tw/p/16-1006-47156.php: 000 (reset on 3 separate rounds)
+- **Best list**: not verifiable. Search found a 總務處 notice lead about a new 特約商店 (大友量販), but the page could not be fetched, so no facts are reported. 開南 is also listed (in VNU's page) as a member of the 桃園區 welfare alliance.
+
+### 15. 佛光大學 (fgu.edu.tw)
+- **URLs fetched**:
+  - http://www.fgu.edu.tw → https://website.fgu.edu.tw/?locale=zh_tw: 200 (only "公路客運優惠" news; no 特約 links)
+  - https://secretary.fgu.edu.tw/zh_tw/fgualumni: 200 (校友會 news and a membership form only)
+- **Best list**: nothing found. WebSearch for 「特約商店 優惠」 and 「特約廠商 福利 優惠」 returned only a library Gemini-Pro notice.
+
+### 16. 台南應用科技大學 (tut.edu.tw)
+- **URLs fetched**:
+  - http://www.tut.edu.tw/ → https: 200
+  - https://secret.tut.edu.tw/var/file/1/1001/img/349/302908950.pdf: 200 (49 pages)
+  - https://secret.tut.edu.tw/p/403-1001-545-1.php (特約活動訊息 list): 200
+  - https://secret.tut.edu.tw/p/406-1001-58889,r545.php (一底夯 post): 200
+  - https://secret.tut.edu.tw/p/406-1001-58589,r545.php (2026 notice): 200
+- **Best list**: 秘書室 公共事務暨校友服務組 (TUT校友服務組), school level, in three parts:
+  - (a) the 特約廠商 master PDF;
+  - (b) 特約活動訊息 posts for new contracts;
+  - (c) the 「南應大行動校園 App」. The 2026 notice says "續約廠商相關資訊將統一收錄於「南應大行動校園 App」中…網頁不另行逐一公告".
+- **Format**: PDF table. The columns are 分類 | 區域 | 公司名稱/店名 | 網址 | 電話 | 地址 | 優惠內容 | 合約起 | 合約訖, plus eligibility flags 教職員工證 / 學生證 / 校友學思卡. The parts are 住宿類 (23 pp), 生活類 (18 pp) and 餐廳類 (8 pp). There are also HTML posts, and the app.
+- **Approx. listings**: ~250 rows in the PDF (category-cell counts: 住宿 ~105, 生活 ~93, 餐飲 ~62). There are 16 posts on the list page.
+- **Last-updated signal**: the PDF footer says 2024/5/3 and its latest 合約訖 is 114/12/31, so most PDF terms have probably expired. The 2026 notice says "本公告更新日期：2026 年 04 月 21 日". The 一底夯 post says "優惠期限 : ~2027/12/31".
+- **Students eligible?**: Yes, flagged per row. Posts say "適用對象：教職員工、學生、校友(學思卡)".
+- **Extraction difficulty**: 3 for the PDF (wide, wrapped table). Current renewals are app-only, which is 5.
+
+### 17. 中信科技大學, formerly 遠東 (feu.edu.tw → ctbctech.edu.tw)
+- **URLs fetched**:
+  - http://www.feu.edu.tw → https://www.ctbctech.edu.tw/: 200 (links 校友發展中心)
+  - https://alumni.ctbctech.edu.tw/: 200 (menu item "特約商店")
+  - https://alumni.ctbctech.edu.tw/var/file/15/1015/img/238/319511573.pdf: 200 (1-page 特約商店契約書 template, created 2026-01-08)
+  - https://www.feu.edu.tw/adms/sdc/IDC/IAD/FeuFranchiseStore_01.html (old 遠東 list, from search): 000. "SSL: no alternative certificate subject name matches target host name" means it is **not verifiable**.
+- **Best list**: nothing usable. The alumni 特約商店 menu item opens a blank contract template, not a list. The template says "甲方教職員、學生和校友等至乙方營業場所消費時，於結帳時出示機關識別證", which suggests a student-eligible program is being rebuilt.
+
+### 18. 元培醫事科技大學 (ypu.edu.tw)
+- **URLs fetched**:
+  - http://www.ypu.edu.tw/: 503
+  - https://www.ypu.edu.tw/: 200 (video splash page with no 特約/福利/校友 links)
+- **Best list**: nothing found. WebSearch for 「特約商店 優惠」 and 「特約廠商 福利 優惠」 returned only job postings.
+
+### 19. 景文科技大學 (just.edu.tw)
+- **URLs fetched**:
+  - http://www.just.edu.tw/ → https: 200 (admissions splash)
+  - https://www.just.edu.tw/app/home.php: 200 (no 特約/福利/優惠 links)
+- **Best list**: nothing found. WebSearch for 「特約商店 優惠」 and 「特約廠商 福利 優惠」 returned only 觀光餐旅學院 employer-benefit pages.
+
+### 20. 中華醫事科技大學 (hwai.edu.tw)
+- **URLs fetched**:
+  - http://www.hwai.edu.tw → https: 200
+  - https://secretary.hwai.edu.tw/p/412-1010-277.php (特約商店, from search): **404**
+  - https://secretary.hwai.edu.tw/p/412-1010-3071.php (特別商店): 200
+- **Best list**: 主任秘書室 › 特別商店, headed "中華醫事科技大學特約商店一覽表" (school level).
+- **Format**: HTML table. The columns are 商店名稱 | 地址 | 優惠項目 | 備註.
+- **Approx. listings**: ~17 ("出示證件" appears 17 times).
+- **Last-updated signal**: none on the page.
+- **Students eligible?**: Partly. Most rows only say "出示證件". The clinic rows say "華醫學生及職員…". One hotel row says "憑員工證".
+- **Extraction difficulty**: 2.
+
+### 21. 東南科技大學 (tnu.edu.tw)
+- **URLs fetched**: https://www.tnu.edu.tw/: 200 (JavaScript single-page app; no links in the static HTML)
+- **Best list**: nothing found. WebSearch for 「特約商店 優惠」 and 「特約廠商 福利 優惠」 returned only 學務處 forwards of government cards (志願服務榮譽卡, 僑胞卡), recruiting PDFs and a 推廣教育 tuition discount.
+
+### 22. 德明財經科技大學 (takming.edu.tw)
+- **URLs fetched**:
+  - http://www.takming.edu.tw → https: 200 (meta refresh)
+  - https://www.takming.edu.tw/schtm/default.asp: 200 (only 畢業校友 → alumni.takming.edu.tw; no 特約 links)
+- **Best list**: nothing found. WebSearch for 「特約商店 優惠」 and 「學生會 特約商店」 returned only meeting-minute PDFs that mention 學生會 trying to sign stores. Those were not fetched.
+
+### 23. 南開科技大學 (nkut.edu.tw)
+- **URLs fetched**:
+  - http://www.nkut.edu.tw → https: 200
+  - https://nkpre.nkut.edu.tw/front/Alumni_Associat/pages.php?ID=…: 200 (校友總會: albums, donations and membership; no 特約)
+- **Best list**: nothing found. WebSearch for 「特約商店 優惠」 returned no results, and 「特約商店 特約廠商」 returned only a library catalogue.
+
+### 24. 中華科技大學 (cust.edu.tw)
+- **URLs fetched**:
+  - http://www.cust.edu.tw/www/cust.html: 200 (redirect stub)
+  - http://www.cust.edu.tw/www/index.html: 200 (no 特約/福利/優惠 links)
+  - http://career.cust.edu.tw/: **503**
+- **Best list**: nothing found. A search snippet says the 就業暨校友服務組 site has a "特約廠商" menu, but that site returned 503, so it is not verifiable.
+
+### 25. 僑光科技大學 (ocu.edu.tw)
+- **URLs fetched**:
+  - http://www.ocu.edu.tw → https://www.ocu.edu.tw/: 000. "unable to get local issuer certificate" means it is **not verifiable**.
+  - https://alumni.ocu.edu.tw/p/406-1035-66025,r11.php: 000 (same TLS error)
+- **Best list**: not verifiable. Search shows a 校友會 site with many "新增特約商店~…" posts (a lead only). It could not be fetched without bypassing TLS.
+
+### 26. 育達科技大學 (ydu.edu.tw)
+- **URLs fetched**:
+  - http://www.ydu.edu.tw: 503
+  - https://www.ydu.edu.tw/: 000 (reset, 2 rounds)
+  - https://www1.ydu.edu.tw/: 000 (reset)
+- **Best list**: nothing found and the site was unreachable. WebSearch for 「特約商店 優惠」 and 「特約廠商 優惠 教職員」 returned only an 總務處 forward of a 遠傳 staff plan and a 僑胞卡 notice.
+
+### 27. 美和科技大學 (meiho.edu.tw)
+- **URLs fetched**:
+  - https://www.meiho.edu.tw/: 200
+  - https://gad.meiho.edu.tw/?Lang=zh-tw: 200
+  - https://gad.meiho.edu.tw/p/412-1005-1088.php (特約商店 hub): 200
+  - Category lists, all 200: https://gad.meiho.edu.tw/p/403-1005-{148,149,175,176,179}-1.php
+  - Sample page https://gad.meiho.edu.tw/p/406-1005-21769,r149.php: 200
+  - The ajax tab loaders /app/index.php?Action=mobileloadmod…: empty or 404 responses
+- **Best list**: 總務處 › 特約商店, school level. It is governed by 「洽定特約商店作業要點」 and the stated purpose is "為提供本校教職員工及學生更多元的消費優惠福利措施". The categories are 旅遊, 美食, 住宿, 服飾 and 其他.
+- **Format**: HTML category lists, with one page per store.
+- **Approx. listings**: ~31 tagged entries (美食 8, 服飾 6, 住宿 2, 旅遊/休閒 10, 其他 5). A few untagged entries were not counted.
+- **Last-updated signal**: no list dates. Search snippets show old terms (for example 台北旅店 109–110), but those are leads only.
+- **Students eligible?**: Mostly yes. Titles state eligibility, for example "(適用教職員工證、學生證、校友證)". Some entries are "(適用教職員工證)" only.
+- **Extraction difficulty**: 3 (one page per store; eligibility is in the titles).
+
+### 28. 吳鳳科技大學 (wfu.edu.tw)
+- **URLs fetched**:
+  - http://www.wfu.edu.tw/ → https: 200 (link "教職員生福利")
+  - https://adm.wfu.edu.tw/personnel/?page_id=263: 200 (the content is in an iframe)
+  - https://campus.wfu.edu.tw/CampusNews/IISystem/MsgManager/showNews/NewsRC3_CC.jsp?layoutID=60: 200 (5 welfare posts)
+  - https://campus.wfu.edu.tw/CampusNews/IISystem/MsgManager/showNews/NewsV1/newsUnit.jspf?News_ID=93743&Layout_ID=60: 200 ("2025教職員生福利")
+  - POST https://campus.wfu.edu.tw/CampusNews/Object/download.jspf (attachment 202641910224.xlsx): 200
+- **Best list**: 人事室 "2025教職員生福利" XLSX (school level).
+- **Format**: XLSX with 6 sheets: 餐飲, 生活, 休閒, 交通, (教職員)住宿 and (教職員)托育機構.
+- **Approx. listings**: ~25 (24 "地址：" cells, plus brands without an address such as 台灣中油 and foodpanda).
+- **Last-updated signal**: posted 2026-05-19 10:21, with 公告期限 2026-05-19 ~ 2026-12-31. The latest post on the welfare feed is 耐斯王子大飯店 for 2026 Oct–Dec.
+- **Students eligible?**: Mixed. For example "結帳時出示教職員證、學生證識別證…" and "甲方教職員工生及持有甲方之友卡及校友卡之人員". The 住宿 and 托育 sheets are 教職員-only, and some rows say "限教職員工".
+- **Extraction difficulty**: 2 (a structured spreadsheet behind a POST download).
+
+### 29. 修平科技大學 (hust.edu.tw)
+- **URLs fetched**:
+  - http://www.hust.edu.tw/ → https: 200 (link "特約廠商" → ohrs)
+  - https://ohrs.hust.edu.tw/?item=12&custom=3176&type=detail&isEn=0: 200 (人力資源室: a few staff-only items, for example 陶源茗 "對象：本校教職員工", plus 楊梅會館)
+  - https://ohrs.hust.edu.tw/shareFile/file/44/88/5eqfplsgu.pdf: 200 (1-page image PDF from 2012)
+  - https://student.hust.edu.tw/sa: 200 (學生自治會: 特約列表, 特約地圖)
+  - Google Sheet export 1qIqk4jsMXyEIAhxgWXBLyngf-_KfpnxA (csv): 200
+- **Best list**: 學生自治會 "修平科技大學學生自治會特約廠商" Google Sheet, plus a Google My Map (student_org level).
+- **Format**: Google Sheet with the columns 名稱 | 特約優惠, plus a Google My Map.
+- **Approx. listings**: ~27.
+- **Last-updated signal**: the newest 自治會 news item about stores is 2024-06-26 (日上鍋物), and a foodpanda item is 2024-10-08. The sheet has no dates.
+- **Students eligible?**: Yes. "出示學生證即可享有優惠". Some rows give detailed terms (for example "全館飲品享九折"), and others say only that phrase.
+- **Extraction difficulty**: 2 (clean sheet, but some rows are names-only with generic terms).
+
+### 30. 長庚科技大學 (cgust.edu.tw)
+- **URLs fetched**:
+  - http://www.cgust.edu.tw → https: 200
+  - https://cguaa.cgust.edu.tw/p/412-1011-577.php (校友會 特約廠商): 200
+  - https://cguaa.cgust.edu.tw/p/405-1011-82687,c577.php (傑昇通信): 200
+- **Best list**: 校友會 › 特約廠商 (alumni association, on a school subdomain).
+- **Format**: an HTML list of posts (10 per page, 2 pages). Each post has its own page.
+- **Approx. listings**: ~11–20 (page 1 shows 10, page 2 not fetched).
+- **Last-updated signal**: the newest post, 傑昇通信, says "自115年3月15日起…簽約為特約商店". A 鏡化美學 "2026新優惠合約" post is also listed.
+- **Students eligible?**: Mainly alumni: "校友可憑藉會員卡到特約商店享受折扣優惠…請出示校友會會員卡". The 傑昇 post adds "學校師生憑教職員證/學生證可享…".
+- **Extraction difficulty**: 3.
+
+### 臺北城市科技大學 — tpcu.edu.tw
+- **URLs fetched**: https://www.tpcu.edu.tw/ (200); https://per.tpcu.edu.tw/ (200); https://per.tpcu.edu.tw/p/406-1007-88200,r694.php?Lang=zh-tw (200); https://sao.tpcu.edu.tw/ (200)
+- **Best list**: none. The 人事室 site carries one-off forwards of telecom offers made under 「全國公教員工優惠商店合作同意書」, such as the 台灣大哥大 notice above, whose title says 「活動115.07.31止」. There is no standing partner-store list.
+- **Format**: HTML notices
+- **Approx. listings**: 0 (telecom forwards only)
+- **Last-updated signal**: notice titles read 115.07.31止, which has expired
+- **Students eligible?**: No. The offers are aimed at 教職員工 and 眷屬. Search leads said the same; I fetched only the 台灣大哥大 notice.
+- **Extraction difficulty**: n/a
+- **Searched**: the homepage links (only an alumni video matched), the sao home (no keyword links), the per home (no 特約, 福利 or 優惠 links), and two WebSearches.
+
+### 敏實科技大學 — mitust.edu.tw
+- **URLs fetched**: https://www.mitust.edu.tw/ (200); https://osa.mitust.edu.tw/ (200)
+- **Best list**: nothing found
+- **Searched**: the homepage and 學務處 home (no 特約, 優惠, 福利 or 合作廠商 links). One WebSearch returned only employer brochures from job fairs. The second search could not run because the budget was used up.
+
+### 醒吾科技大學 — hwu.edu.tw
+- **URLs fetched**: https://www.hwu.edu.tw/ (200); https://b002.hwu.edu.tw/Category?CId=4829 (200); POST https://b002.hwu.edu.tw/_PostList with CId=4829 (200, the AJAX list); https://b002.hwu.edu.tw/Post?PId=51429 (200)
+- **Best list**: a 「校友特約商店」 section under 學務處 → 校友服務中心 (school level). It holds a single post, 「商家合作資訊」, whose whole body is 「廠商如有特約需求，可洽校友服務組」. No merchants are listed.
+- **Format**: HTML, with the list loaded by AJAX POST
+- **Approx. listings**: 0
+- **Last-updated signal**: none
+- **Students eligible?**: not stated. The section is for alumni.
+- **Extraction difficulty**: n/a (empty)
+
+### 文藻外語大學 — wzu.edu.tw
+- **URLs fetched**: https://www.wzu.edu.tw (200; an 8.5 KB shell, with the menu rendered by JS); https://www.wzu.edu.tw/front (200; it redirects to https://b002.wzu.edu.tw/front/ and returns 114 bytes)
+- **Best list**: nothing found
+- **Searched**: two WebSearches. They found only job-fair brochures and a 推廣部 tuition discount for 「特約公司」 employees, which is the reverse direction. The homepage is JS-rendered, so I could not grep its links.
+
+### 華夏科技大學 — hwh.edu.tw
+- **URLs fetched**: https://www.hwh.edu.tw/ (000, curl 35 connection reset; the proxy logged `ws_closed_mid_exchange`); https://ga.hwh.edu.tw/ (000, same). Plain http also returned 503 from the proxy, and I did not use it.
+- **Best list**: **not verifiable**. Two WebSearches returned nothing relevant, only one 總務處 tender notice.
+
+### 致理科技大學 — chihlee.edu.tw
+- **URLs fetched**: https://www.chihlee.edu.tw (200); https://www.chihlee.edu.tw/p/404-1000-21979.php?Lang=zh-tw (200, the alumni page); https://welfare.chihlee.edu.tw/p/412-1018-1013.php?Lang=zh-tw (200); https://welfare.chihlee.edu.tw/p/403-1018-1013-2.php?Lang=zh-tw (404, my guess at the page-2 URL); https://welfare.chihlee.edu.tw/p/405-1018-114783,c1013.php?Lang=zh-tw (200)
+- **Best list**: https://welfare.chihlee.edu.tw/p/412-1018-1013.php?Lang=zh-tw, the 「特約廠商」 category of the 福利委員會 site (school level, staff welfare)
+- **Format**: an HTML list of posts. Each post carries a PDF attachment; for example, the 明成手作 post body is only 「附件、明成手作訂單.pdf」.
+- **Approx. listings**: 5 on page 1 (板橋農會年貨市場, 明成手作, ABV Bar&Kitchen 全品項95折, 川蜀麻辣食堂, 和風時尚會館). The pager says 「共 2 頁」, so the total is about 10. I could not reach page 2 at the URL I tried.
+- **Last-updated signal**: no date visible on the list or the item page
+- **Students eligible?**: not stated. The publisher is the staff 福利委員會, so assume staff only.
+- **Extraction difficulty**: 3 (clean titles, but the terms are in PDFs)
+
+### 康寧大學 — ukn.edu.tw
+- **URLs fetched**: https://www.ukn.edu.tw/ (200); https://www.ukn.edu.tw/p/412-1000-2069.php?Lang=zh-tw (200, alumni); https://ga.ukn.edu.tw/ (200); https://www.ukn.edu.tw/p/412-1000-377.php?Lang=zh-tw (200, admin units); https://sa.ukn.edu.tw/ (200); https://person.ukn.edu.tw (200); https://person.ukn.edu.tw/p/412-1008-1132.php?Lang=zh-tw (200, the 人事室 「福利」 category, which had no posts)
+- **Best list**: no list. The 總務處 home links to one notice, 「2026康寧大學特約寢具廠商-愛菲斯」 (https://ga.ukn.edu.tw/p/406-1022-42879,r11.php?Lang=zh-tw, not fetched).
+- **Format**: an HTML notice
+- **Approx. listings**: 1 (a dorm bedding vendor)
+- **Last-updated signal**: the title says 2026
+- **Students eligible?**: not verified
+- **Extraction difficulty**: 4
+
+### 宏國德霖科技大學 — hdut.edu.tw
+- **URLs fetched**: https://www.hdut.edu.tw/ (200); https://alumnus.hdut.edu.tw/bin/home.php (200); https://alumnus.hdut.edu.tw/files/15-1002-285,c101-1.php (200)
+- **Best list**: the 校友會 page 「校友優惠方案」 exists, but its only content is an image, `UNDERCONSTRUCTION.jpg`.
+- **Approx. listings**: 0
+- **Last-updated signal**: the site header shows 2026-07-30
+- **Students eligible?**: n/a
+- **Extraction difficulty**: n/a
+
+### 崇右影藝科技大學 — cufa.edu.tw
+- **URLs fetched**: https://www.cufa.edu.tw/ (000, curl 35 connection reset; the proxy logged `ws_closed_mid_exchange`); https://ao.cufa.edu.tw/ (000, same)
+- **Best list**: **not verifiable**. Two WebSearches returned only budget documents from the 會計室.
+
+### 台北海洋科技大學 — tumt.edu.tw
+- **URLs fetched**: https://www.tumt.edu.tw/app/home.php (200); https://www.tumt.edu.tw/p/412-1000-86.php (200, admin units); https://safr.tumt.edu.tw/ (200, 學務處)
+- **Best list**: nothing found
+- **Searched**: the homepage, admin-unit and 學務處 links (no keyword hits), plus one WebSearch, which returned job posts and an old 國民旅遊卡 news link. A second search was blocked by the budget.
+
+### 亞東科技大學 — aeust.edu.tw
+- **URLs fetched**: https://www.aeust.edu.tw/ (200); https://oaa.aeust.edu.tw/ (200, alumni); https://www.aeust.edu.tw/p/412-1000-389.php?Lang=zh-tw (200); https://sa.aeust.edu.tw (200); https://hr.aeust.edu.tw (200)
+- **Best list**: nothing found
+- **Searched**: no keyword links on any of the five pages. Two WebSearches returned only employer job posts.
+
+### 馬偕醫學大學 — mmc.edu.tw (also mmu.edu.tw)
+- **URLs fetched**: https://www.mmc.edu.tw (200); https://alumni.mmu.edu.tw/ (200); https://www.mmc.edu.tw/xmdoc?xsmsid=0O268672798421593308 (200, admin units); https://studentaffairs.mmu.edu.tw/ (200); https://general.mmu.edu.tw/ (200)
+- **Best list**: nothing found. The 學務處 page only forwards public-transport holiday offers.
+- **Searched**: the pages above and one WebSearch on mmc.edu.tw and mmu.edu.tw, which returned an accounting rule.
+
+### 中信金融管理學院 — ctbc.edu.tw
+- **URLs fetched**: https://www.ctbc.edu.tw/ (000, curl 60 "SSL certificate problem: unable to get local issuer certificate"); https://sa.ctbc.edu.tw/p/412-1003-2035.php?Lang=zh-tw (000, same TLS error)
+- **Best list**: **not verifiable (TLS)**. This is the strongest lead in the batch. WebSearch returned 「學校特約商店名單 - 學生事務處」 (https://sa.ctbc.edu.tw/p/16-1003-8670.php) and a 「特約商店」 category (https://sa.ctbc.edu.tw/p/412-1003-2035.php). The snippets mention restaurants, KTV, gyms and hair salons, with 「出示…教職員證或學生證」. **This comes from search snippets only and has not been verified.** It needs a re-check from an environment with a complete certificate chain.
+
+### 南亞技術學院 — nanya.edu.tw
+- **URLs fetched**: https://www.nanya.edu.tw/home.aspx (200); https://www.nanya.edu.tw/alumni.aspx (200)
+- **Best list**: nothing found
+- **Searched**: homepage and alumni links (news items only) and one WebSearch (job-post PDFs and a 2014 news item about a campus beauty-store practicum that gave a 9折 discount). A second search was blocked by the budget.
+
+### 黎明技術學院 — lit.edu.tw
+- **URLs fetched**: https://www.lit.edu.tw (200); https://www.lit.edu.tw/general/58391/ (200); https://www.lit.edu.tw/student/ (200); https://www.lit.edu.tw/personnel/ (200); https://alumni.lit.edu.tw/ (000, curl 35 connection reset)
+- **Best list**: nothing found. The 總務處 page forwards the 國民旅遊卡特約商店聯盟 「國民旅遊卡福利網」 notice, dated 2025/11/25. The 人事室 page forwards 「115年10月教育部所屬機關同仁…員眷親友專屬優惠方案」. Neither is a school partner list.
+- **Students eligible?**: n/a. The 公教 forward is for staff.
+- **Note**: the alumni site could not be verified.
+
+### 德育護理健康學院 — dyhu.edu.tw
+- **URLs fetched**: https://www.dyhu.edu.tw/ (200); https://rd.dyhu.edu.tw/p/16-1023-41849.php (200); https://dsa.dyhu.edu.tw/ (200); https://per.dyhu.edu.tw/ (200); https://ga.dyhu.edu.tw/ (200)
+- **Best list**: nothing found. The 「校友會特約商店合約」 page offers only blank contract templates (特約廠商合約書.doc, .odt and .pdf). It shows that the 校友會 signs partner stores, but no list is published.
+- **Searched**: 學務處, 人事室 and 總務處 home pages (no keyword links) and one WebSearch.
+
+### 法鼓文理學院 — dila.edu.tw
+- **URLs fetched**: https://www.dila.edu.tw/ (200); https://www.dila.edu.tw/alumni (200)
+- **Best list**: nothing found
+- **Searched**: homepage and alumni links (only 「校友與學生急難救助」 matched) and one WebSearch, which returned an unrelated article.
+
+### 馬偕醫護管理專科學校 — mkc.edu.tw
+- **URLs fetched**: https://www.mkc.edu.tw/ (000, curl 28 timeout after 30 s); https://web.mkc.edu.tw/ (000)
+- **Best list**: **not verifiable**. Two WebSearches returned only a laundry-concession tender and a 學務週報.
+
+### 仁德醫護管理專科學校 — jente.edu.tw
+- **URLs fetched**: https://www.jente.edu.tw/ (000, curl 35 connection reset; the proxy logged `ws_closed_mid_exchange`); https://oga.jente.edu.tw/ (000, same)
+- **Best list**: **not verifiable**. Lead from WebSearch: the 總務處 site has a 「特約廠商」 category (https://oga.jente.edu.tw/特約廠商/...). One snippet describes 皮爾卡登皮件 with 「出示員工識別證…95折」 and code “JENTE”, valid 112/02/20 to 112/12/31. **These details come from a snippet only and have not been verified.**
+
+### 樹人醫護管理專科學校 — szmc.edu.tw
+- **URLs fetched**: https://www.szmc.edu.tw (200); https://www.szmc.edu.tw/Academic (200); https://web.szmc.edu.tw/Adm/Deptper (200, a 1.5 KB JS shell); https://web.szmc.edu.tw/Adm/Train/sa/ (200, a 1.6 KB JS shell)
+- **Best list**: nothing found. The unit sites are JS-rendered, so I could not grep their links.
+- **Searched**: one WebSearch (unrelated PDFs). A second search was blocked by the budget.
+
+### 慈惠醫護管理專科學校 — tzuhui.edu.tw
+- **URLs fetched**: https://www.tzuhui.edu.tw/home (200); https://www.tzuhui.edu.tw/ischool/publish_page/4 (200, 學務處); https://www.tzuhui.edu.tw/ischool/publish_page/9 (200, 人事室); https://www.tzuhui.edu.tw/ischool/publish_page/9?cid=1897 (200; 「15福利」 is a regulations category with an empty notice table)
+- **Best list**: nothing found
+- **Searched**: the pages above and two WebSearches (unrelated).
+
+### 耕莘健康管理專科學校 — ctcn.edu.tw
+- **URLs fetched**: https://www.ctcn.edu.tw (200); https://alumni.ctcn.edu.tw/ (200); https://www.ctcn.edu.tw/~personnel/ (200, Big5); https://www.ctcn.edu.tw/~personnel/html/福利快訊/綠世界.htm (200)
+- **Best list**: no current list. A legacy, orphaned 人事室 「福利快訊」 page (綠世界) is still online: 「本人憑員工識別證…半票優惠」 and 「園區各商店出示識別證享九折」. The current 人事室 menu does not link to it.
+- **Format**: static HTML (Big5)
+- **Approx. listings**: 1 page seen; the size of the folder is unknown
+- **Last-updated signal**: none (legacy)
+- **Students eligible?**: No (員工識別證)
+- **Extraction difficulty**: 4
+
+### 敏惠醫護管理專科學校 — mhchcm.edu.tw
+- **URLs fetched**: https://www.mhchcm.edu.tw/ (200); https://www.mhchcm.edu.tw/p/426-1000-2.php?Lang=zh-tw (200); https://b009.mhchcm.edu.tw/files/14-1009-9325,r516-1.php?Lang=zh-tw (000, curl 35 reset); https://b009.mhchcm.edu.tw/ (000, reset)
+- **Best list**: **not verifiable**. Lead from WebSearch: the 學務處 site (b009) has 特約商店 posts. One example is 極鮮火鍋-新營店 (107年), with 「憑教職員工或學生證 刷卡95折 現金9折」. **This comes from a snippet only.** The b009 host reset every connection.
+
+### 育英醫護管理專科學校 — yuhing.edu.tw
+- **URLs fetched**: https://www.yuhing.edu.tw/ischool/publish_page/0/ (200); https://www.yuhing.edu.tw/ischool/publish_page/5 (200, 學務處); https://www.yuhing.edu.tw/ischool/publish_page/7 (200, 人事室)
+- **Best list**: nothing found
+- **Searched**: the pages above and one WebSearch (an environmental PDF). A second search was blocked by the budget.
+
+### 聖母醫護管理專科學校 — smc.edu.tw
+- **URLs fetched**: https://www.smc.edu.tw/ (000, curl 60 "unable to get local issuer certificate")
+- **Best list**: **not verifiable (TLS)**. One WebSearch returned only a theatre ticket PDF and a budget list.
+
+### 新生醫護管理專科學校 — hsc.edu.tw
+- **URLs fetched**: https://www.hsc.edu.tw/ (200); https://www.hsc.edu.tw/p/404-1000-35585.php?Lang=zh-tw (200)
+- **Best list**: https://www.hsc.edu.tw/p/404-1000-35585.php?Lang=zh-tw, 「特約廠商一覽表」 on the school main site (school level; the page does not name a unit)
+- **Format**: an HTML table with the columns 特約廠商 | 地址及電話 | 優惠內容 | 期限
+- **Approx. listings**: 13, including 小樹苗診所, 福利購 (哈根達斯), 會來尖石溫泉渡假村, 韓味煮藝 (2 branches), 醇品咖啡素食坊, 當代牙科, 鑫聚成醫療聯盟, 明漾眼鏡, 美的適藥, 十八寶羊肉爐, 小豪包膜屋 and 西堤龍潭店.
+- **Last-updated signal**: no page date. One entry expires 112.12.31 (already past); all the others are 「無期限」.
+- **Students eligible?**: **Yes**. The table says 「掛號時本人出示學生證」, 「持學生證或員工識別證『95折』」 and 「學生:6折、老師:5折」.
+- **Extraction difficulty**: 1 (a clean HTML table with terms and validity)
+
+### 崇仁醫護管理專科學校 — cjc.edu.tw
+- **URLs fetched**: https://www.cjc.edu.tw/ (200); https://www.cjc.edu.tw/Front/AdministrativeUnit/PersonnelRoom/SpecialStore/Archive.aspx?id=hXYARXuydzw%3D&page=1 (200); the same URL with page=2 (200); one attachment, Download.aspx?…玉津咖啡-嘉義溪口分店特約商店 (200, PDF)
+- **Best list**: the 人事室 → 特約商店 archive (school level)
+- **Format**: an HTML index of titles. Most items link to a PDF contract. The PDF I sampled was a 1-page scan (Producer 「Scanner System Image Conversion」) with no text layer.
+- **Approx. listings**: 18 across 2 pages: 愛菲斯 bedding, 棒棒積木飯店, 敦謙國際集團, 玉津咖啡, 公教人員特約休閒活動中心, 寬悅花園酒店, 大榮駕訓班, 蜻亮點旅店, 法羅米手感麵包, 嘉祐耳鼻喉科, 慈濟大林分院, 聖馬爾定醫院 (2 entries), 三兩茶, 昇學幼兒園, 行藝文旅, 圓石優格飲, and one entry titled 「最新特約商店」.
+- **Last-updated signal**: titles show 2024 contracts. The sampled PDF is dated 2023-06-15. The site footer reads 「更新日期 : 2026/10/22」, but that is a site-wide date.
+- **Students eligible?**: not stated in the index. The publisher is 人事室, and one item is a staff childcare contract, so staff are the main audience.
+- **Extraction difficulty**: 4 (names only in HTML; the terms are in scanned PDFs that need OCR)
+
+### 臺北市立大學 — utaipei.edu.tw
+- **URLs fetched**: https://www.utaipei.edu.tw (200); https://sec.utaipei.edu.tw/p/412-1009-34.php?Lang=zh-tw (200); the category pages …/412-1009-35.php (住宿, 200), …-36.php (餐飲, 200), …-9907.php (交通, 200) and …-37.php (其他, 200); the item pages …/405-1009-135222,c34.php (200) and …/406-1009-129462,r5.php (200); …/403-1009-34-1.php (404, my guess at a full-list URL)
+- **Best list**: https://sec.utaipei.edu.tw/p/412-1009-34.php?Lang=zh-tw, 「特約服務商店」, published by 秘書室 (school level) and split into 住宿, 餐飲, 交通 and 其他.
+- **Format**: one HTML post per merchant. Each title carries the validity, for example 「(-116/12/31)」, and the full terms are in PDF contracts.
+- **Approx. listings**: 19 unique titles across the visible category pages, such as 真杏坊, 饗賓, 饗犇, 雲雀國際, 懷寧復健科, 客美多咖啡, 中華航空, 長榮航空, 台灣高鐵, 和運租車 and 易遊網. Each page shows only its latest 5 posts. Older posts exist beyond these, for example 義美, which is dated 115/1/1 to 115/12/31.
+- **Last-updated signal**: end dates run to 116/12/31 and 116/9/23, so the list is current.
+- **Students eligible?**: **Some.** The 義美 post says 「優惠對象包含本校教職員工及在學學生，憑教職員工識別證、學生證即可享有專屬優惠」. The 饗賓 post says 「憑教職員工識別證」, which means staff only.
+- **Extraction difficulty**: 3 (clean titles and dates, but each post has to be opened and the terms are in PDFs)
+
+## Round 2 (2026-10-23), partial
+
+**Retry of the unreachable schools by a second route (WebFetch, which runs outside this container's proxy).** I retried 25 URLs that had failed through the proxy.
+
+**Still unreachable (23 of 25):**
+- **503 on both routes:** 22 URLs:
+  - alumni.ntou
+  - api.dhsa.ndhu (東華 student-union card stores)
+  - w3.tnua
+  - alumni.niu
+  - personnel.nfu
+  - nqu 特約商店
+  - tcpa
+  - sa.csu (正修 學務處 shop_vip)
+  - asia
+  - knu
+  - feu (old 遠東 list)
+  - career.cust
+  - alumni.ocu
+  - ydu
+  - hwh
+  - cufa
+  - sa.ctbc (中信金融 學務處 「學校特約商店名單」)
+  - mkc
+  - oga.jente
+  - b009.mhchcm
+  - smc
+- **高醫:** personnel.kmu redirects to an error page, and alumni.kmu returns 403.
+
+These servers appear to refuse non-Taiwan or cloud traffic. **Re-check them from a network inside Taiwan.**
+
+**Loaded but no list (2):**
+- olife.ntou.edu.tw is a dining-news feed. It has single promotions, such as a 路易莎 「海洋大學特餐」 offer for 教職員 dated 2026-05-18, but no store list.
+- dweb.cjcu.edu.tw/benefits is a 「查無此網站」 page.
+
+**Round-2 tasks** (both finished later in the session; results are in the sections above):
+1. **School gaps (done; see "School gaps, round 2" above):**
+   - A full survey of the 10 under-searched schools: 敏實, 台北海洋, 南亞, 樹人, 育英, 德育, 黎明, 文藻, 嘉義大學, 臺南大學.
+   - One more targeted search for each of the 21 "nothing found" schools.
+   - Exact counts for the lists that were only lower bounds: 南臺 (all 8 categories), 明新, 臺藝大, 高雄大學, 彰師大, 長庚, 中山醫, 中原.
+2. **Brand perks, round 2 (done; see the section above):**
+   - Verify the round-1 "unverified leads" (故宮, 兩廳院, 衛武營, Adobe, Autodesk, 中華電信, 台灣大哥大, YouTube Premium, 國光客運, cinemas, banks, airlines, food chains).
+   - Add the missing categories: 客運, MRT/TPASS student fares, scooter and bike sharing, bookstores, more software and hardware, streaming, gyms, theme parks, youth travel and banks.
+
+**These are good candidates for new worker issues.**
