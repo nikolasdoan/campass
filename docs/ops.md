@@ -13,8 +13,8 @@ Owner: campass-2 (Cloudflare: deploys, production D1, Worker secrets). See [coor
 | Secrets | `ADMIN_TOKEN` (set), `GOOGLE_CLIENT_SECRET` (pending) |
 | Test login | `DEV_LOGIN` was on in production 2026-10-16 ~03:55–05:00 UTC for founder testing; **removed**, `/auth/dev-login` → 404. Both `dev:` test accounts (incl. one created by prod-smoke) deleted 2026-10-16 07:10 UTC with their sessions, views and passes; production has 0 users. |
 | First deploy | 2026-10-15, integration commit `d37e097`, 605 deals seeded |
-| Current deploy | 2026-10-24 04:50 UTC, integration commit `29510a2` (code = `fda39dd`), version `5e317cac` (?v=19: CCU 31, NSYSU 17, NDHU 116 + NYCU/NCHU/NCU updates, NDHU school code; `db:seed:remote` → 1325 deals); Google sign-in still pending |
-| Previous deploy | 2026-10-22 18:03 UTC, `494e5c2`, version `2a0faaba` (rollback target; code rollback does not roll back data: re-run `db:seed:remote` from `494e5c2` for the 1156-deal set) |
+| Current deploy | 2026-10-24 07:03 UTC, integration commit `88239f7`, version `42905d79` (?v=20: CSMU, NKUHT, CTUST, STUST, HSC, TAJEN; untranscribed-terms records held (HOLD_UNTRANSCRIBED); `db:seed:remote` → 1563 deals); Google sign-in still pending |
+| Previous deploy | 2026-10-24 04:50 UTC, `29510a2`, version `5e317cac` (rollback target; code rollback does not roll back data: re-run `db:seed:remote` from `29510a2` for the 1325-deal set) |
 | Test shop link | label `campass-2 smoke` (deal 58a27e58ee), created 2026-10-16 for the deploy check; counts in shop stats |
 
 Only touch the `campuspass` Worker and D1. The account also holds other projects (bizmap, fishpond,
