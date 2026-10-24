@@ -1,49 +1,72 @@
-/* Anonymous usage counts: [kind, key] pairs, batched to POST /api/events by sendBeacon. No user id and
-   no cookie of its own; the server keeps only daily totals and normalises and scrubs every key again.
-   Nothing is sent when the browser asks not to be tracked (Global Privacy Control or Do Not Track).
-   Kinds: search · search_zero (a term that found nothing) · filter ("cat:food") · open (a deal id).
-   Sends only once the server says it takes them (/api/me features.events → enableTracking). */
+/* Anonymous usage counts for the admin dashboard: what readers search for, which searches find
+   nothing, which filters and deals they open. Batched here and sent to /api/events when the page is
+   hidden; the server keeps daily totals only (no user id, IP or cookie). Readers who ask browsers not
+   to be tracked (Do Not Track, Global Privacy Control) send nothing. */
 
-const MAX = 20; // pairs per request
-const KEY_MAX = 40;
-let queue = [];
-let enabled = false;
-const seen = new Set(); // each pair once per page view
+const OFF = navigator.doNotTrack === "1" || navigator.globalPrivacyControl === true;
+const SEARCH_SETTLE_MS = 1500; // a search counts once the reader stops typing
+const MAX_BATCH = 30;
 
-const optedOut = () => navigator.globalPrivacyControl === true || navigator.doNotTrack === "1" || window.doNotTrack === "1";
+const queue = new Map(); // "kind\tkey" → n
 
-export function track(kind, key) {
-  if (!key || optedOut()) return;
-  const k = String(key).slice(0, KEY_MAX);
-  const id = `${kind}\u0000${k}`;
-  if (seen.has(id)) return;
-  seen.add(id);
-  queue.push([kind, k]);
-  if (queue.length > 200) queue.shift(); // never sent (server without events): bounded
-  if (queue.length >= MAX) flush();
+function add(kind, key) {
+  if (OFF || !key) return;
+  const id = `${kind}\t${key}`;
+  queue.set(id, (queue.get(id) || 0) + 1);
+  if (queue.size >= MAX_BATCH) flush();
 }
 
-/** The server takes events (features.events): send what was queued, and from now on. Off drops the queue. */
-export function enableTracking(on) {
-  enabled = !!on;
-  if (!enabled) queue = [];
-  else flush();
+function flush() {
+  settleSearch();
+  if (!queue.size) return;
+  const body = JSON.stringify({ e: [...queue].map(([id, n]) => [...id.split("\t"), n]) });
+  queue.clear();
+  // keepalive lets the request finish while the page goes away.
+  fetch("/api/events", { method: "POST", body, keepalive: true, headers: { "Content-Type": "application/json" } }).catch(() => {});
 }
 
-export function flush() {
-  while (enabled && queue.length) {
-    // text/plain: a CORS-safelisted type, so the beacon needs no preflight; the server parses the JSON.
-    const body = JSON.stringify({ e: queue.splice(0, MAX) });
-    try {
-      if (!navigator.sendBeacon?.("/api/events", new Blob([body], { type: "text/plain;charset=UTF-8" }))) {
-        fetch("/api/events", { method: "POST", body, keepalive: true, headers: { "Content-Type": "text/plain;charset=UTF-8" } }).catch(() => {});
-      }
-    } catch {
-      /* counts are best effort */
-    }
-  }
-}
-
-setInterval(flush, 30e3);
-addEventListener("pagehide", flush);
 document.addEventListener("visibilitychange", () => document.visibilityState === "hidden" && flush());
+addEventListener("pagehide", flush);
+
+/** A deal's detail was opened. */
+export const trackOpen = (id) => add("open", id);
+
+let pending = null; // { q, n } waiting to settle
+let pendingTimer = 0;
+let lastSearch = "";
+
+function settleSearch() {
+  clearTimeout(pendingTimer);
+  if (!pending) return;
+  const { q, n } = pending;
+  pending = null;
+  if (q === lastSearch) return;
+  lastSearch = q;
+  add("search", q);
+  if (!n) add("search_zero", q);
+}
+
+/** The list was drawn for search text q with n results; counted once the text settles. */
+export function noteSearch(q, n) {
+  q = (q || "").trim().toLowerCase().replace(/\s+/g, " ").slice(0, 40);
+  if (q.length < 2) {
+    pending = null;
+    clearTimeout(pendingTimer);
+    if (!q) lastSearch = "";
+    return;
+  }
+  pending = { q, n };
+  clearTimeout(pendingTimer);
+  pendingTimer = setTimeout(settleSearch, SEARCH_SETTLE_MS);
+}
+
+let lastFilters = null;
+
+/** The list was drawn with these filters; counts each category, region or school the reader picks. */
+export function noteFilters(f) {
+  const now = { cat: f.cat, region: f.region, school: f.school };
+  if (lastFilters) {
+    for (const k of Object.keys(now)) if (now[k] !== lastFilters[k] && now[k] !== "all") add("filter", `${k}:${now[k]}`);
+  }
+  lastFilters = now;
+}

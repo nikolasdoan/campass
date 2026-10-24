@@ -19,8 +19,8 @@
   } catch (e) {}
 })();
 </script>
-<link rel="stylesheet" href="/admin.css?v=1">
-<script type="module" src="/admin.js?v=1"></script>
+<link rel="stylesheet" href="/admin.css?v=2">
+<script type="module" src="/admin.js?v=2"></script>
 </head>
 <body>
 <header class="top">
@@ -86,6 +86,17 @@
         <div id="topRedeemed"></div>
       </section>
     </div>
+
+    <section class="card" aria-labelledby="anonTitle">
+      <h2 id="anonTitle">匿名使用統計（近 30 天）<span class="en">Anonymous usage, last 30 days</span></h2>
+      <p class="muted small">所有訪客（含未登入）的每日總數；不含帳號、IP 或 Cookie。<span class="en">Daily totals from every visitor, signed in or not. No account, IP or cookie.</span></p>
+      <div class="two">
+        <div><h3>熱門搜尋 <span class="en">Top searches</span></h3><div id="topSearches"></div></div>
+        <div><h3>沒有結果的搜尋 <span class="en">Searches with no results</span></h3><div id="zeroSearches"></div></div>
+        <div><h3>最多開啟 <span class="en">Most opened</span></h3><div id="topOpened"></div></div>
+        <div><h3>篩選使用 <span class="en">Filters used</span></h3><div id="filtersUsed"></div></div>
+      </div>
+    </section>
 
     <section class="card" aria-labelledby="exportTitle">
       <h2 id="exportTitle">匯出 CSV <span class="en">Export CSV</span></h2>

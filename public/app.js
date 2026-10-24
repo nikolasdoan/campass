@@ -8,7 +8,7 @@ import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoo
 import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=21";
 import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=21";
 import { qrSVG } from "./js/qr.js?v=21";
-import { track, enableTracking } from "./js/track.js?v=21";
+import { trackOpen, noteSearch, noteFilters } from "./js/track.js?v=21";
 
 /* ---------- constants ---------- */
 
@@ -557,7 +557,6 @@ async function loadMe() {
     state.user = r.data.user || null;
     state.identities = state.user && Array.isArray(r.data.identities) ? r.data.identities.filter((c) => c && typeof c.school === "string") : [];
     state.features = { ...NO_FEATURES, ...(r.data.features || {}) };
-    enableTracking(state.features.events === true);
     cacheMe(state.user);
     let order = Array.isArray(r.data.favorites) ? r.data.favorites.slice() : [];
     // A star still on its way to the server wins over the list read before it arrived.
@@ -824,7 +823,8 @@ function renderExplore() {
 
   // List
   const shown = state.deals.filter((d) => matches(d, terms));
-  shownCount = shown.length;
+  noteSearch(f.q, shown.length);
+  noteFilters(f);
   const fc = $("fcount");
   // On a narrow phone only the number shows, so the pills before it never slide under it.
   if (fc) fc.innerHTML = `<span class="fc-n" aria-hidden="true">${shown.length}</span><span class="fc-full">${esc(t("count", { n: shown.length }))}</span>`;
@@ -1061,7 +1061,6 @@ function openPicker(kind, anchor) {
   dlg.addEventListener("click", (e) => {
     const b = e.target.closest("[data-value]");
     if (!b) return;
-    track("filter", `${isRegion ? "region" : "school"}:${b.dataset.value}`);
     if (isRegion) f.region = b.dataset.value;
     else {
       f.school = b.dataset.value;
@@ -2971,8 +2970,7 @@ function route() {
     const opening = !els.detail.classList.contains("open") || prev.id !== r.id;
     setDetailOpen(true);
     if (opening) {
-      trackSearch(); // a result opened: the search counts now
-      track("open", r.id);
+      trackOpen(r.id);
       renderDetail(r.id, { focus: prev.name !== "deal" || prev.id !== r.id });
     }
     setTitle();
@@ -3100,7 +3098,6 @@ function onClick(e) {
   const cat = t0.closest("[data-cat]");
   if (cat) {
     state.filters.cat = cat.dataset.cat;
-    if (cat.dataset.cat !== "all") track("filter", `cat:${cat.dataset.cat}`);
     renderExplore();
     cat.scrollIntoView({ block: "nearest", inline: "nearest", behavior: reducedMotion() ? "auto" : "smooth" });
     if (scrollY > 0) scrollTo({ top: 0 });
@@ -3108,7 +3105,6 @@ function onClick(e) {
   }
   if (t0.closest('[data-toggle="students"]')) {
     state.filters.students = !state.filters.students;
-    track("filter", `students:${state.filters.students ? "on" : "off"}`);
     renderExplore();
     return;
   }
@@ -3248,21 +3244,7 @@ const onSearch = debounce(() => {
   state.filters.q = els.q.value;
   els.qclear.hidden = !els.q.value;
   renderExplore();
-  trackSearchSoon();
 }, 90);
-
-/* Usage counts (js/track.js): the search a reader settled on (1.5 s without typing, or a result
-   opened), and whether it found anything. */
-let shownCount = 0;
-let trackedQ = "";
-const trackSearchSoon = debounce(() => trackSearch(), 1500);
-function trackSearch() {
-  const q = norm(state.filters.q || "").trim();
-  if (!q || q === trackedQ) return;
-  trackedQ = q;
-  track("search", q);
-  if (!shownCount) track("search_zero", q);
-}
 
 let scrollRaf = 0;
 function onScroll() {

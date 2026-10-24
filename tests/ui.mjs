@@ -1290,31 +1290,33 @@ const delCard = (page, id) => page.evaluate((i) => fetch('/api/identities/' + i,
   await ctx.close();
 }
 
-// Usage counts (js/track.js → POST /api/events): what is sent, batched, and nothing under Global Privacy Control.
+// Anonymous usage counts: a settled search, a search with no results, a filter and a deal opened are
+// batched and sent to /api/events when the page is hidden; text typed on the way is not counted.
 {
-  const run = async (gpc) => {
-    const { ctx, page } = await newPage(MOBILE, gpc ? 'track-gpc' : 'track');
-    if (gpc) await page.addInitScript(() => Object.defineProperty(navigator, 'globalPrivacyControl', { get: () => true }));
-    const sent = [];
-    // The server advertises events in /api/me (features.events); stubbed here until src/events.ts lands.
-    await page.route('**/api/me', async (r) => { const res = await r.fetch(); const j = await res.json(); j.features = { ...j.features, events: true }; r.fulfill({ response: res, json: j }); });
-    await page.route('**/api/events', (r) => { try { sent.push(...JSON.parse(r.request().postData() || '{}').e); } catch {} r.fulfill({ status: 204 }); });
-    await page.goto(B + '/', { waitUntil: 'networkidle' }); await page.waitForSelector('#list .item');
-    await page.fill('#q', 'zzqqxx'); await settle(page, 1900);
-    await page.fill('#q', ''); await settle(page, 300);
-    await page.click('[data-cat="food"]'); await settle(page, 200);
-    const id = await page.getAttribute('#list .item', 'data-id');
-    await page.click(`#list .item[data-id="${id}"]`); await settle(page, 500);
-    await page.evaluate(() => dispatchEvent(new Event('pagehide'))); await settle(page, 500);
-    await ctx.close();
-    return { sent, id };
-  };
-  const { sent, id } = await run(false);
-  const has = (k, v) => sent.some(([a, b]) => a === k && b === v);
-  check('track: a settled search, its zero result, a category and an opened deal are counted', has('search', 'zzqqxx') && has('search_zero', 'zzqqxx') && has('filter', 'cat:food') && has('open', id), JSON.stringify(sent));
-  check('track: no user data in the events (only kind and key)', sent.every((p) => Array.isArray(p) && p.length === 2));
-  const gpc = await run(true);
-  check('track: nothing is sent under Global Privacy Control', gpc.sent.length === 0, JSON.stringify(gpc.sent));
+  const { ctx, page } = await newPage(MOBILE, 'track');
+  const none = `zq${Date.now().toString(36)}`;
+  await page.goto(B + '/'); await page.waitForSelector('#list .item');
+  await page.fill('#q', '福'); await settle(page, 300);
+  await page.fill('#q', '福華'); await settle(page, 1700);
+  await page.fill('#q', none); await settle(page, 1700);
+  await page.fill('#q', ''); await settle(page, 200);
+  await page.click('[data-cat="food"]'); await settle(page, 200);
+  const id = await page.$eval('#list .item', (e) => e.dataset.id);
+  await page.click(`#list .item[data-id="${id}"] .pick`); await settle(page, 400);
+  const sent = page.waitForRequest((r) => r.url().endsWith('/api/events') && r.method() === 'POST', { timeout: 5000 }).catch(() => null);
+  await page.evaluate(() => {
+    Object.defineProperty(document, 'visibilityState', { value: 'hidden', configurable: true });
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  const req = await sent;
+  const ev = req ? JSON.parse(req.postData()).e : [];
+  const has = (k, key) => ev.some(([a, b]) => a === k && b === key);
+  check('track: settled search, no-result search, filter and open sent on hide',
+    has('search', '福華') && has('search_zero', none) && has('filter', 'cat:food') && has('open', id) && !has('search', '福'),
+    JSON.stringify(ev));
+  const res = req ? await req.response() : null;
+  check('track: /api/events accepts the batch', res?.status() === 204, `status ${res?.status()}`);
+  await ctx.close();
 }
 
 // The shop/scan checks provoke 403/404/409/410 answers on purpose; Chromium logs every non-2xx

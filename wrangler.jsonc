@@ -28,7 +28,9 @@
   // distinctive ids so other Workers on the account (bizmap etc.) never share these counters.
   "ratelimits": [
     { "name": "RL_FORMS", "namespace_id": "20261001", "simple": { "limit": 10, "period": 60 } },
-    { "name": "RL_CONFIRM", "namespace_id": "20261002", "simple": { "limit": 30, "period": 60 } }
+    { "name": "RL_CONFIRM", "namespace_id": "20261002", "simple": { "limit": 30, "period": 60 } },
+    // Anonymous usage counts (POST /api/events): generous, since a campus network shares one IP.
+    { "name": "RL_EVENTS", "namespace_id": "20261005", "simple": { "limit": 120, "period": 60 } }
   ],
   // Daily cleanup at 03:17 Asia/Taipei (19:17 UTC): expired sessions, data past retention
   "triggers": { "crons": ["17 19 * * *"] },
@@ -64,7 +66,8 @@
       },
       "ratelimits": [
         { "name": "RL_FORMS", "namespace_id": "20261003", "simple": { "limit": 10, "period": 60 } },
-        { "name": "RL_CONFIRM", "namespace_id": "20261004", "simple": { "limit": 30, "period": 60 } }
+        { "name": "RL_CONFIRM", "namespace_id": "20261004", "simple": { "limit": 30, "period": 60 } },
+        { "name": "RL_EVENTS", "namespace_id": "20261006", "simple": { "limit": 120, "period": 60 } }
       ],
       "triggers": { "crons": ["17 19 * * *"] }
     }
