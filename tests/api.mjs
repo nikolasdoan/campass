@@ -363,6 +363,7 @@ if (!mockUp) {
     ["search", "me@example.com", 1], // email: dropped
     ["search", "0912345678", 1], // phone: dropped
     ["open", "not-a-deal-id", 1], // bad id: dropped
+    ["open", "0123456789", 1], // well-formed but no such deal: dropped
     ["filter", "cat:<script>", 1], // bad filter: dropped
     ["teleport", "x", 1], // unknown kind: dropped
   ]);

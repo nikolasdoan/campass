@@ -35,10 +35,12 @@ export async function recordEvents(db: D1Database, body: any, day: string): Prom
   if (rows.size) {
     await db.batch(
       [...rows.values()].map(([kind, key, n]) =>
+        // A deal open counts only for a deal that exists.
         db.prepare(
-          `INSERT INTO event_counts (day, kind, key, n) VALUES (?, ?, ?, ?)
+          `INSERT INTO event_counts (day, kind, key, n) SELECT ?, ?, ?, ?
+            WHERE ? <> 'open' OR EXISTS (SELECT 1 FROM deals WHERE id = ?)
            ON CONFLICT (day, kind, key) DO UPDATE SET n = n + excluded.n`
-        ).bind(day, kind, key, n)
+        ).bind(day, kind, key, n, kind, key)
       )
     );
   }
