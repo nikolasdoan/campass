@@ -122,12 +122,15 @@ const noHScroll = (page) => page.evaluate(() => document.documentElement.scrollW
 
 // ---------- partner leads (tests/fixtures/partner_leads.sql: fictional BANs 00000001-00000003) ----------
 {
-  // Start from "new" so a rerun against the same local D1 tests the change, not a leftover.
-  await fetch(`${B}/admin/leads/00000002`, {
-    method: "PATCH",
-    headers: { Authorization: `Bearer ${TOKEN}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ status: "new", note: "" }),
-  });
+  // Start every fixture lead from "new": tests/api.mjs runs first in CI and marks 00000001 do-not-contact,
+  // and a rerun against the same local D1 must test the change, not a leftover.
+  for (const ban of ["00000001", "00000002", "00000003"]) {
+    await fetch(`${B}/admin/leads/${ban}`, {
+      method: "PATCH",
+      headers: { Authorization: `Bearer ${TOKEN}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ status: "new", note: "" }),
+    });
+  }
 
   for (const [name, opts] of [["desktop", DESKTOP], ["phone", PHONE]]) {
     const { ctx, page, errors } = await newPage(opts);
