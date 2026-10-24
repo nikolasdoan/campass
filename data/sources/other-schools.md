@@ -18,6 +18,8 @@
 
 Per-school record counts: NCHU 128, NCCU 115, NTHU 76, NYCU 49, TCU 41.
 
+NCHU 2026-10-23 (worker, issue #10): added a253 彩碗 ColorBowl Poke 大里大明店. The source card is on `vstore.php` page 1: 期限 2027-10-20; 使用對象 教職員、在校學生; offer 「消費$135以上…送「金鮮蛋一顆」」 plus the no-combining clause. Its highlight is 消費贈品, as for the other NCHU free-item records. NCHU now has 129 records.
+
 Records by region:
 
 | Region | Single-region records | Including multi-region records |

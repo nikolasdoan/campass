@@ -81,3 +81,12 @@ Category counts: food 68, lodging 28, shopping 17, entertainment 11, health 8, s
 - Some cards copy a corporate contract verbatim (甲方/乙方, 「貴公司」), and the eligible group may differ from what the alumni page implies. The wording is preserved in `offer` and `notes`.
 - Hotel rate tables were flattened from HTML or PDF tables. Column alignment can be imperfect (for example 清新溫泉 and 金典); check against the linked attachment or website.
 - 永豐棧 publishes the room-rate inclusions but no prices. 現代物業 offers 「優先通知」, not a discount. Both are kept with 專屬優惠價 and 特約優惠 badges.
+
+## Changes
+
+- **2026-10-23 (worker, issue #10):** 涮乃葉 was re-fetched from `page=0`.
+  - The card title is now 「涮乃葉 (統一市府店/信義遠百/台中大遠百店/福科店/文心秀泰店/豐原萬家福店)」. The record's `name` and `subtitle` were updated to match.
+  - `phone` is now 「02-2723-0646/02-2763-0298/ 04-2254-7131」.
+  - `offer` now includes the new 台北統一時代市府店 block (訂位專線 02-2723-0646) and the 台北信義遠百店 block.
+  - The new branch address is published as 「台北市信義區五段8號3樓」, with no road name. It was copied as published and noted on the record, not completed.
+  - The card's 地址 field is unchanged, and so is the 優惠期限 (115.10.01-116.12.31).

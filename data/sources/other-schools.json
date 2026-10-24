@@ -1,5 +1,40 @@
 [
  {
+  "name": "彩碗 ColorBowl Poke 大里大明店",
+  "subtitle": "台中市大里區",
+  "category": "food",
+  "regions": [
+   "central"
+  ],
+  "address": "台中市大里區大明路278-1號1樓",
+  "phone": "04-24823493",
+  "highlight": "消費贈品",
+  "offer": "1. 至彩碗台中大里大明店門市消費$135以上（適用於內用、外帶及自取，不限平日與假日），即可享有送「金鮮蛋一顆」之優惠。\n2. 本特約優惠不得與門市其他任何行銷優惠活動或外送平台訂單重複累計或合併使用。",
+  "info": "電話：04-24823493\n地址：台中市大里區大明路278-1號1樓\n使用對象：教職員、在校學生",
+  "links": [
+   {
+    "label": "官網",
+    "url": "https://www.colorbowlpoke.com/"
+   }
+  ],
+  "expires_on": "2027-10-20",
+  "auto_renew": false,
+  "notes": "",
+  "eligibility": {
+   "student": true,
+   "staff": true,
+   "alumni": false,
+   "family": false
+  },
+  "schools": [
+   "NCHU"
+  ],
+  "source_level": "school",
+  "source_org": "中興大學校友中心",
+  "source_url": "https://alumni.nchu.edu.tw/vstore.php",
+  "retrieved_on": "2026-10-23"
+ },
+ {
   "name": "G惡熊脆皮雞蛋糕",
   "subtitle": "台中市西區",
   "category": "food",
