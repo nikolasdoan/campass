@@ -3,6 +3,7 @@ import { getCookie, setCookie, deleteCookie } from "hono/cookie";
 import { googleAuthUrl, exchangeCode, newPkce, type GoogleEndpoints } from "./google";
 import { addIdentity, listIdentities, ROLES } from "./identities";
 import { recordEvents, eventStats } from "./events";
+import { schoolUnits } from "./departments";
 
 export interface Env {
   DB: D1Database;
@@ -175,7 +176,7 @@ app.use("*", async (c, next) => {
 app.use("*", async (c, next) => {
   await next();
   // Anything that can depend on the caller (session, shop cookie, admin) must never be cached by a
-  // browser, the service worker or a proxy. Only the public deal list opts in to caching.
+  // browser, the service worker or a proxy. Only the public deal list and school units opt in to caching.
   if (!c.res.headers.has("Cache-Control")) c.header("Cache-Control", "private, no-store");
   c.header("X-Content-Type-Options", "nosniff");
   c.header("Referrer-Policy", "strict-origin-when-cross-origin");
@@ -408,6 +409,14 @@ app.get("/api/deals/:id", async (c) => {
     c.env.DB.prepare("INSERT INTO deal_views (user_id, deal_id) VALUES (?, ?)").bind(user.id, id).run()
   );
   return c.json({ deal: parseDeal(row), locked: false });
+});
+
+// A school's colleges and departments (reference data for deal tags and the card). NTU only so far.
+app.get("/api/schools/:code/units", (c) => {
+  const units = schoolUnits(c.req.param("code"));
+  if (!units) return c.json({ error: "not_found" }, 404);
+  c.header("Cache-Control", "public, max-age=86400");
+  return c.json(units);
 });
 
 // ---------- school identities ----------

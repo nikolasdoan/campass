@@ -8,6 +8,10 @@ Sources:
   - Every data/sources/*.json file (records in the same shape as deals.json,
     produced by research; each must carry source_org and source_url)
 
+Optional `units` on a source record: NTU college codes or department codes (data/schools/ntu-units.json,
+built by scripts/build_ntu_units.mjs), e.g. ["eecs"] or ["9020"] for a deal only one college or department
+gets. Unknown codes skip the record; the list is copied to deals.json only when non-empty (not yet to the SQL).
+
 Each sheet is one category. Rows with the same merchant appearing in several
 lodging regions are merged into one deal with multiple regions. Eligibility
 (student / staff / alumni / family) is inferred from the text and can be
@@ -25,6 +29,10 @@ import openpyxl
 ROOT = Path(__file__).resolve().parent.parent
 FINANCE_URL = "https://homepage.ntu.edu.tw/~ntufinance/benefit.html"
 RETRIEVED_ON = "2026-10-15"
+NTU_UNITS = json.loads((ROOT / "data/schools/ntu-units.json").read_text())
+NTU_UNIT_CODES = {c["code"] for c in NTU_UNITS["college"]} | {
+    d["code"] for c in NTU_UNITS["college"] for d in c["depts"]
+}
 CATEGORIES = {"food", "lodging", "transport", "shopping", "services", "entertainment", "health", "education"}
 
 SHEETS = {
@@ -196,6 +204,19 @@ def area_of(address):
     return city + district
 
 
+def bad_units(rec):
+    """Why a record's optional `units` is invalid, or "" if it is fine (absent counts as fine)."""
+    units = rec.get("units")
+    if units is None:
+        return ""
+    if not isinstance(units, list) or not all(isinstance(u, str) for u in units):
+        return "units must be a list of codes"
+    if units and "NTU" not in (rec.get("schools") or ["NTU"]):
+        return "units are NTU codes but the deal is not for NTU"
+    unknown = [u for u in units if u not in NTU_UNIT_CODES]
+    return f"unknown units {', '.join(unknown)}" if unknown else ""
+
+
 def deal_id(key):
     return hashlib.sha1(key.encode()).hexdigest()[:10]
 
@@ -292,6 +313,10 @@ def main(path):
             if not rec.get("source_url") or rec.get("category") not in CATEGORIES:
                 print(f"skip {src.name}: {rec.get('name')} (missing source_url or bad category)")
                 continue
+            why = bad_units(rec)
+            if why:
+                print(f"skip {src.name}: {rec.get('name')} ({why})")
+                continue
             # The terms exist only in a scan or attachment nobody has transcribed (the worker notes 「未轉錄」):
             # nothing concrete to show a student, so the record stays in its source file but is not listed.
             if HOLD_UNTRANSCRIBED and "未轉錄" in (rec.get("notes") or ""):
@@ -326,6 +351,9 @@ def main(path):
                 "retrieved_on": rec.get("retrieved_on") or RETRIEVED_ON,
                 "sort_order": order,
             }
+            units = list(dict.fromkeys(rec.get("units") or []))  # dedupe, keep order
+            if units:
+                deals[key]["units"] = units
 
     if held:
         print("held, terms not transcribed: " + ", ".join(f"{k} {v}" for k, v in sorted(held.items())))
