@@ -4,6 +4,7 @@ import { googleAuthUrl, exchangeCode, newPkce, type GoogleEndpoints } from "./go
 import { addIdentity, listIdentities, ROLES } from "./identities";
 import { recordEvents, eventStats } from "./events";
 import { schoolUnits } from "./departments";
+import { listDistricts } from "./districts";
 
 export interface Env {
   DB: D1Database;
@@ -418,6 +419,9 @@ app.get("/api/schools/:code/units", (c) => {
   c.header("Cache-Control", "public, max-age=86400");
   return c.json(units);
 });
+
+// 商圈 outlines for the map view: static and public (src/districts.ts, data/districts.json).
+app.get("/api/districts", (c) => listDistricts(c));
 
 // ---------- school identities ----------
 
