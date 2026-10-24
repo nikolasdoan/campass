@@ -68,3 +68,7 @@ Category counts: food 25, lodging 12, services 8, shopping 6, transport 5, healt
 - 好野吧Drink SPORT and 華安大飯店 have `regions: []` and no address (see above).
 - The 5 總務處 on-campus rows come from a 2023 survey PDF. Their contracts run to 2027-06-30, but the vendors may have changed since.
 - `schools` is `["NTNU"]` for every record. The 總務處 PDF is titled 「(三校)」 (NTU system), so NTU and NTUST IDs may also be accepted on campus. This was not confirmed.
+
+## Evidence
+
+The 13 page images I read for this extraction (9 rate tables and 4 photos checked for terms or a location) are kept in private storage (not in this public repo); `data/evidence/ntnu/MANIFEST.md` lists them, exactly as downloaded on 2026-10-22, with `MANIFEST.md` giving each image's source URL, its sha256 and the record it decided.

@@ -80,4 +80,4 @@ The 學生自治會 東華黑卡 list (`dhsa.ndhu.edu.tw`, data at `api.dhsa.ndh
 
 ## Evidence
 
-The 11 contract pages I read from scans are saved in `data/evidence/ndhu/`, one per contract (page 1 at 60 dpi), with `MANIFEST.md` giving each image's source URL, the source PDF's sha256 and the records it decided.
+The 11 contract pages I read from scans are kept in private storage (not in this public repo); `data/evidence/ndhu/MANIFEST.md` lists them, one per contract (page 1 at 60 dpi), with `MANIFEST.md` giving each image's source URL, the source PDF's sha256 and the records it decided.

@@ -88,4 +88,4 @@ The 「人事室特約內容」 link (https://ope.nsysu.edu.tw/p/412-1011-19408.
 
 ## Evidence
 
-The 25 contract pages I read from scans (periods and eligibility clauses) are saved in `data/evidence/nsysu/`, rendered at 70 dpi, with `MANIFEST.md` giving each image's source URL, the source PDF's sha256 and the record it decided.
+The 25 contract pages I read from scans (periods and eligibility clauses) are kept in private storage (not in this public repo); `data/evidence/nsysu/MANIFEST.md` lists them, rendered at 70 dpi, with `MANIFEST.md` giving each image's source URL, the source PDF's sha256 and the record it decided.
