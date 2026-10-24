@@ -71,6 +71,7 @@ jobs:
           EOF
           npx wrangler d1 migrations apply campuspass --local
           npx wrangler d1 execute campuspass --local --file seed/deals.sql
+          npx wrangler d1 execute campuspass --local --file tests/fixtures/partner_leads.sql
 
       - name: Playwright version
         id: pw

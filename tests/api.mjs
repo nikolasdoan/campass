@@ -411,6 +411,27 @@ if (!mockUp) {
   check("districts: each has id, city, polygon", list.every((d) => d.id && d.city && Array.isArray(d.polygon) && d.polygon.length >= 3 && d.radius_m > 0));
 }
 
+
+// ---------- partner leads (/admin/leads; fixture: tests/fixtures/partner_leads.sql) ----------
+{
+  check("leads: admin token required", (await anon.json("/admin/leads")).status === 401);
+  const all = await anon.json("/admin/leads", { headers: ADMIN });
+  check("leads: listed, nearest first", all.status === 200 && all.body.total >= 3 && all.body.leads[0].distance_m <= all.body.leads[1].distance_m, JSON.stringify(all.body?.leads?.map((l) => l.ban)));
+  check("leads: source named", /data\.gov\.tw\/dataset\/9400/.test(all.body.source || ""));
+  check("leads: sole proprietors only as counts", all.body.summary.sole_or_partnership.some((r) => r.campus === "NTU" && r.category === "food" && r.n === 42)
+    && !JSON.stringify(all.body.leads).includes("sole"));
+  const ntu = await anon.json("/admin/leads?campus=NTU&category=cafe", { headers: ADMIN });
+  check("leads: filter by campus and category", ntu.body.total === 1 && ntu.body.leads[0].ban === "00000002", JSON.stringify(ntu.body?.leads));
+  const set = await anon.json("/admin/leads/00000001", { method: "PATCH", headers: ADMIN, json: { status: "do_not_contact", note: "asked us not to" } });
+  check("leads: status saved", set.status === 200);
+  const dnc = await anon.json("/admin/leads?status=do_not_contact", { headers: ADMIN });
+  check("leads: filter by status, note kept", dnc.body.leads.some((l) => l.ban === "00000001" && l.note === "asked us not to"), JSON.stringify(dnc.body?.leads));
+  check("leads: unknown status refused", (await anon.json("/admin/leads/00000001", { method: "PATCH", headers: ADMIN, json: { status: "spam" } })).status === 400);
+  check("leads: unknown lead is 404", (await anon.json("/admin/leads/99999999", { method: "PATCH", headers: ADMIN, json: { status: "new" } })).status === 404);
+  const csvText = await (await anon.req("/admin/leads.csv?campus=NTNU", { headers: ADMIN })).text();
+  check("leads: CSV export", /^ban,/.test(csvText) && csvText.includes("00000003") && !csvText.includes("00000001"), csvText.slice(0, 80));
+}
+
 const passed = results.filter(Boolean).length;
 console.log(`\n${passed}/${results.length} passed`);
 process.exit(passed === results.length ? 0 : 1);

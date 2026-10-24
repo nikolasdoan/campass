@@ -5,6 +5,7 @@ import { addIdentity, listIdentities, ROLES } from "./identities";
 import { recordEvents, eventStats } from "./events";
 import { schoolUnits } from "./departments";
 import { listDistricts } from "./districts";
+import { listLeads, exportLeads, updateLead } from "./leads";
 
 export interface Env {
   DB: D1Database;
@@ -836,6 +837,29 @@ app.post("/admin/merchant-keys", async (c) => {
     .bind(await sha256(key), b.label, ids.join(","))
     .run();
   return c.json({ url: `${new URL(c.req.url).origin}/m/${key}` });
+});
+
+// Partner leads (src/leads.ts): shops near each campus that are not partners yet. Admin only.
+const leadQuery = (c: any) => ({
+  campus: str(c.req.query("campus"), 10) || undefined,
+  category: str(c.req.query("category"), 20) || undefined,
+  status: str(c.req.query("status"), 20) || undefined,
+  q: str(c.req.query("q"), 40) || undefined,
+  limit: Number(c.req.query("limit")) || undefined,
+  offset: Number(c.req.query("offset")) || undefined,
+});
+
+app.get("/admin/leads", async (c) => c.json(await listLeads(c.env.DB, leadQuery(c))));
+
+app.get("/admin/leads.csv", async (c) =>
+  c.body(csv(await exportLeads(c.env.DB, leadQuery(c))), 200, { "Content-Type": "text/csv; charset=utf-8" })
+);
+
+app.patch("/admin/leads/:ban", async (c) => {
+  const b = await jsonBody(c);
+  const r = await updateLead(c.env.DB, c.req.param("ban"), b.status, b.note);
+  if (r === "ok") return c.json({ ok: true });
+  return c.json({ error: r }, r === "not_found" ? 404 : 400);
 });
 
 app.get("/admin/stats", async (c) => {
