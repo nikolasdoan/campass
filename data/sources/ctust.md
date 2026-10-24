@@ -51,3 +51,7 @@
 - JSON parses: 49 records, all with the `ncu.json` key set and valid categories.
 - No past `expires_on`, and there are no duplicate (name, subtitle) pairs.
 - `python3 scripts/import_deals.py` in a throwaway copy imported all 49 CTUST records with 0 skips.
+
+## Transcription (2026-10-24, issue #29)
+
+水舞系列精品旅館's 2020 「特惠住宿專案協議」 was re-read (`data/evidence/ctust/MANIFEST.md`). Once the 2020 prices are set aside, what is left is only 「特約商永久有效，惟商務價格有變動時會發mail通知，訂房依現場公告商務價為準」, plus check-in windows taken from the same 2020 price table. That is not a concrete, current discount, so the record **stays held**, with 「未轉錄」 and the reason in `notes`.

@@ -81,3 +81,30 @@ The 學生自治會 東華黑卡 list (`dhsa.ndhu.edu.tw`, data at `api.dhsa.ndh
 ## Evidence
 
 The 11 contract pages I read from scans are kept in private storage (not in this public repo); `data/evidence/ndhu/MANIFEST.md` lists them, one per contract (page 1 at 60 dpi), with `MANIFEST.md` giving each image's source URL, the source PDF's sha256 and the records it decided.
+
+## Transcription (2026-10-24, issue #29)
+
+The 17 hotel records held with 「未轉錄」 were transcribed from their scanned contract PDFs. Each PDF was re-fetched, rendered at 100 dpi and read visually, with pages re-rendered at 200 dpi where digits were unclear. Every file is listed in `data/evidence/ndhu/MANIFEST.md`.
+
+**Results:**
+- **Transcribed: 16.** `offer` now holds the room types with weekday/weekend 優惠價, what is included, blackout dates and the booking method. `highlight` is the lowest rate, for example 住宿$2,000起; for 旅居文旅 and 山琳 it is a percentage (官網售價9折, 房價9折).
+- **Notes.** `notes` now starts with 「房價取自掃描合約（<file> p.N，2026-10-24 讀取）」, then the contract period, the eligible groups as the contract states them, and any difference from the list.
+- **Dropped: 1, 喜樂旅店.** Its contract ran 114/3/14–114/12/31 with no auto-renewal clause. The list says 「合約到期自動展延」, but per the issue the contract wins.
+- **Still held: 0.**
+
+**Eligibility.** Six contracts name only employees, so `student` is now false:
+- 富野: 「貴公司及所屬之員工」.
+- 福容: 「出示員工識別證」.
+- 理想大地: 「所屬之員工」.
+- 旅居文旅: 「乙方員工」.
+- 月見溪: 「簽署公司之員工、客戶」. 「客戶」 is read as not covering students.
+- 安居台北: 「限持公司相關證件員工本人入住」.
+
+**Dates:**
+- **Contracts that ended but renew automatically keep the list's date**, with a note: 洄瀾窩 (2023 term, renews yearly), 旅居文旅 (114 term) and 浯島文旅 (to 2025-03-19).
+- **New end dates from the contracts:** 依山午民宿 → 2027-12-31 (115/5/5–116/12/31, then 無限期自動續約). 山琳文旅民宿 → 2031-08-11 (115/8/12–120/8/11; the 「120」 is handwritten).
+- **Auto-renewal added:** 富野 and 非凡 now have `auto_renew: true`, per their contracts.
+
+**Other differences:**
+- 知樂智慧酒店's first linked PDF (913669891) is actually the 富野 contract, so only 257262949 was used.
+- 浯島文旅's contract also covers three sister properties; only the 浯島文旅 table is transcribed.

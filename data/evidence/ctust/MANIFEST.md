@@ -16,3 +16,9 @@ Text-layer attachments that were read with `pdftotext`, so no image was kept:
 - **427374200.pdf** (`c409e66464e51a164269cafe247fa15523634c557a2348dcc0eebab267fa458b`). Uber Eats was skipped: every code must be entered by 2025-12-31.
 - **store_202012_owlhotel.pdf** (`63c2f5721c9bfde5997b049d1308950c6458136b760a6ef3ea84d98cce3fc433`). This is a 2020 proposal. The 貓頭鷹旅店 offer (平日9折/假日95折) is from the table.
 - **705917819.pdf** (`4794d18bc0cb8ac115b107811d21927814431aaf60074ae1807a60839c5489cf`). These are the foodpanda 企業帳號 upgrade steps.
+
+## Re-read for transcription (2026-10-24, issue #29)
+
+| Record | Source URL | Source sha256 | Pages read | Outcome |
+|---|---|---|---|---|
+| 水舞系列精品旅館 | https://personnel.ctust.edu.tw/var/file/26/1026/img/1952/store_2020_water.pdf | `6aa707b8a646793d9c9513d2fae4813d86770d9da54b20982302031dc7689b38` | 1-2 (100 dpi) | still held |

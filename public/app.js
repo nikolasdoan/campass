@@ -3,12 +3,12 @@
    a pushed full-screen page on a phone) · /merchants (商家合作) · /m/:key (a shop's private
    confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
    Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=22";
-import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=22";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=22";
-import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=22";
-import { qrSVG } from "./js/qr.js?v=22";
-import { trackOpen, noteSearch, noteFilters } from "./js/track.js?v=22";
+import { icon } from "./js/icons.js?v=23";
+import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=23";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=23";
+import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=23";
+import { qrSVG } from "./js/qr.js?v=23";
+import { trackOpen, noteSearch, noteFilters } from "./js/track.js?v=23";
 
 /* ---------- constants ---------- */
 
@@ -61,6 +61,9 @@ const BADGE_EN = {
   專屬活動網頁: "Members' offer page", 企業會員優惠: "Corporate member rate", 免檢測費: "No inspection fee", 維修優惠價: "Repair discount",
   免付掛號費用: "No registration fee", 掛號費全免: "No registration fee", 飲料暢飲: "Free-flow drinks", 會員禮100點: "100 welcome points",
   "企業會員額外3%": "Corporate: extra 3%",
+  免費停車: "Free parking", 平日免費停車2小時: "Free parking 2 h (weekdays)", 免費體驗一個月: "Free month trial",
+  "送教練課或滾筒(二擇一)": "Free coaching or roller", "筋膜刀50分$1,300": "50 min NT$1,300", 免費體驗課程1次: "Free trial class",
+  "掛號費$100": "Registration NT$100", "植牙每顆$37,500": "Implants NT$37,500 each",
 };
 // 「課程9折」: what the rate applies to.
 const BADGE_WHAT = {
@@ -68,13 +71,13 @@ const BADGE_WHAT = {
   限定月: "Select months: ", 手續費: "Fees ", 旅平險: "Travel insurance ", 課程: "Courses ", 配鏡: "Glasses ", 眼鏡: "Glasses ",
   內用: "Dine-in ", 零件: "Parts ", 住宿: "Stays ", 餐廳: "Restaurant ", 平日: "Weekdays ", 泡湯: "Hot springs ", 學生: "Students ",
   歡唱: "Karaoke ", 保養: "Servicing ", 排餐: "Steaks ", 註冊費: "Registration ", 機票: "Flights ", 學費: "Tuition ", 現金: "Cash ",
-  包車: "Charter ",
+  包車: "Charter ", 櫃台價: "Walk-in rate ", 官網售價: "Website price ", 房價: "Rooms ", 包日: "Day hire ",
 };
 // 「招待梅酒」「贈薯條」: the free item.
 const FREE_EN = {
   梅酒: "plum wine", 牛培根: "beef bacon", 主廚私房菜: "chef's dish", 丸拼盤: "meatball platter", 時令雙鮮: "seasonal seafood",
   薯條: "fries", 甜點: "dessert", 汽水: "soda", 茶一壺: "pot of tea", 海6拼: "seafood platter", 肉品海鮮: "meat and seafood",
-  雪花豬: "pork", 薄切鴨胸: "duck breast", 手捲或飲品: "hand roll or drink", 肉品: "meat", 飲料: "drink", 黑輪: "oden",
+  雪花豬: "pork", 五花: "pork belly", 點心: "snack", 薄切鴨胸: "duck breast", 手捲或飲品: "hand roll or drink", 肉品: "meat", 飲料: "drink", 黑輪: "oden",
 };
 const pctOff = (n) => 100 - (n.length === 1 ? +n * 10 : +n); // 「9」→10, 「95」→5, 「88」→12
 const ntd = (x) => `NT$${(+String(x).replace(/,/g, "")).toLocaleString("en-US")}`;
@@ -96,8 +99,13 @@ function badgeEn(text) {
     const post = { 每人: " each", 每份: " per item" }[m[1]] || "";
     return `${pre}${ntd(m[2])}${m[3] ? "+" : ""} off${post}`;
   }
-  if ((m = s.match(/^滿額?(百|[\d,]+)?折\$?([\d,]+)元?$/))) return m[1] ? `${ntd(m[2])} off over ${ntd(zhNum(m[1]))}` : `${ntd(m[2])} off over a spend`;
-  if ((m = s.match(/^滿(百|[\d,]+)送(.+)$/))) return `Free ${FREE_EN[m[2]] || "gift"} over ${ntd(zhNum(m[1]))}`;
+  if ((m = s.match(/^(?:住宿|客房)\$?([\d,]+)(\+10%)?元?起$/))) return `Stays from ${ntd(m[1])}${m[2] ? " +10%" : ""}`;
+  if ((m = s.match(/^每日\$?([\d,]+)元?起$/))) return `From ${ntd(m[1])} a day`;
+  if ((m = s.match(/^滿\$?([\d,]+)免外送費$/))) return `Free delivery over ${ntd(m[1])}`;
+  if ((m = s.match(/^套餐(?:贈|送)/))) return "Free extra with set meals";
+  if ((m = s.match(/^掛號費折\$?([\d,]+)元?$/))) return `${ntd(m[1])} off registration`;
+  if ((m = s.match(/^滿額?\$?(百|[\d,]+)?折\$?([\d,]+)元?$/))) return m[1] ? `${ntd(m[2])} off over ${ntd(zhNum(m[1]))}` : `${ntd(m[2])} off over a spend`;
+  if ((m = s.match(/^滿\$?(百|[\d,]+)(?:送|贈)(.+)$/))) return `Free ${FREE_EN[m[2]] || "gift"} over ${ntd(zhNum(m[1]))}`;
   if ((m = s.match(/^(?:減免)?掛號費(?:減免)?([\d,]+)元$/))) return `${ntd(m[1])} off registration`;
   if ((m = s.match(/^優惠價\$([\d,]+)$/))) return `Special price ${ntd(m[1])}`;
   if ((m = s.match(/^團費([\d.]+)%折扣$/))) return `Tours ${m[1]}% off`;
