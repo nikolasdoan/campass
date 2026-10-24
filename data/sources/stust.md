@@ -83,3 +83,42 @@ This settles the survey's open question: the site lists 119 entries, not about 8
 - JSON parses: 110 records, all with the `ncu.json` key set and valid categories.
 - No `expires_on` is before 2026-10-24, and there are no duplicate (name, subtitle) pairs.
 - `python3 scripts/import_deals.py` in a throwaway copy imported all 110 STUST records with 0 skips.
+
+## Transcription (2026-10-24, issue #28)
+
+The 73 records held with 「未轉錄」 were transcribed from their Google Drive attachments. All 76 unique files were fetched with `curl` (`drive.google.com/uc?export=download&id=…`); every one is listed with its sha256 in `data/evidence/stust/MANIFEST.md`.
+- Format: 63 scanned PDFs (rendered at 100 dpi and read visually), 9 PDFs with a text layer and 3 JPEGs.
+- 1 file returned HTTP 404: 南紡購物中心's second attachment, 「3月」. Its main attachment was read.
+
+**Results:**
+- **Transcribed: 64.** Each record now has the concrete terms in `offer` (discounts, room rates, conditions, exclusions, booking method) and a matching `highlight`, such as 9折 or 住宿$2,650+10%起.
+  - `notes` now starts with 「條款取自附件（Google Drive，2026-10-24 讀取）」, followed by the attachment's own period and eligible groups and any difference from the page.
+- **Still held: 9.** These keep 「未轉錄」, with the reason added to `notes`:
+  - **4 attachments state no concrete terms.**
+    - 塔木德酒店集團: book via the 「特約會員專區」, no rates.
+    - 貳鍋三 and 賓士KTV: group contracts that say 「優惠內容以官網公布」.
+    - 直航租車: conditions only; prices 「以直航租車官網公告特約廠商專案為準」.
+  - **5 attachments are expired contracts that do not renew automatically,** while the page gives a later 截止日期. The current terms cannot be confirmed from the file, so they were not taken.
+    - 新驛旅店, 丹迪旅店 and 喜瑞飯店 (one Taipei Inn contract, 2024-10-29 to 2025-12-31).
+    - 168inn旅館集團 (114/01/01–114/12/29, 「本合約無自動續約」).
+    - 宅 夏都 (2025 rate sheet).
+- **Expired and dropped: 0.**
+
+**Eligibility changes (6).** Where the attachment names fewer groups than the page, the attachment wins:
+- **和牛涮 台南中華西店 and 航典國際旅行社:** the page lists 學生/教職員/校友/之友, but the contracts cover only 員工 and their family. They are now staff + family, with `student: false` and `alumni: false`.
+- **義大遊樂世界, 王品聚鍋, 品田牧場 and 璟馨/詠馨:** these were already staff-only. The contracts include 眷屬 (or 眷屬或親朋 / 配偶), so `family` is now true.
+
+Student-eligible records: 58 → 56.
+
+**Dates:**
+- **No `expires_on` changed.** Where the file states no end date, the page's is kept.
+- **Auto-renewing contracts kept with the page's date.** Some contracts printed an end date that has passed but say they renew automatically (自動續約/自動展延/視同續約), for example 劍橋 (2016, handwritten 「自動展延」), IF Motel, HUB HOTEL, foodpanda, 同和農科, 醉酒香 and Q哥3C. Those keep the page's 截止日期, with the note 「附件期限…已過但載明自動續約，期限沿用頁面」.
+- **`auto_renew`** is now true on 22 records, up from 4.
+
+**Transcription notes:**
+- **Handwritten terms:** 一家攝影 (a crossed-out word after 九折優待 is left out) and VK銀櫃.
+- **Partly obscured:** a stamp covers parts of 同和農科 clauses 3, 4 and 6; only the legible parts were taken.
+- **Closed branches excluded:** 劍橋's file marks 3 of its 5 hotels 已停業, so only 台南館 and 永康館 rates are given. 168inn's 平鎮館 closed on 114/3/3.
+- **Branch-specific deals:** 牛角燒肉 (台南愛買店 only) and 橫濱牛排 (台南三井 only), noted.
+- **Address differences between page and file are noted but not changed:** 58筋讚, 心動力, 倍力 and 沐荳.
+- **Spot check:** 台南老爺行旅 and 一家攝影 were checked against the scans by a second reader.
