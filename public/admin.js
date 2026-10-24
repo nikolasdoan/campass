@@ -96,6 +96,7 @@ async function load() {
   try {
     const stats = await (await admin("/admin/stats")).json();
     render(stats);
+    loadLeads();
     $("signin").hidden = true;
     $("dash").hidden = false;
     $("topActions").hidden = false;
@@ -222,14 +223,12 @@ function render(s) {
 
 // ---------- CSV exports ----------
 
-$("csvButtons").addEventListener("click", async (e) => {
-  const btn = e.target.closest("button[data-csv]");
-  if (!btn) return;
-  const name = btn.dataset.csv;
+/** Fetches an admin CSV with the bearer header and saves it as campuspass-<name>-<date>.csv. */
+async function downloadCsv(path, name, btn, msgId) {
   btn.disabled = true;
-  setMsg("exportMsg", "");
+  setMsg(msgId, "");
   try {
-    const blob = await (await admin(`/admin/${name}.csv`)).blob();
+    const blob = await (await admin(path)).blob();
     const a = el("a");
     a.href = URL.createObjectURL(blob);
     a.download = `campuspass-${name}-${new Date().toLocaleDateString("sv-SE", { timeZone: "Asia/Taipei" })}.csv`;
@@ -237,12 +236,284 @@ $("csvButtons").addEventListener("click", async (e) => {
     a.click();
     a.remove();
     setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-    setMsg("exportMsg", blob.size ? `已下載 ${a.download}。 Downloaded.` : `${a.download}：目前沒有資料。 No rows yet.`, "ok");
+    setMsg(msgId, blob.size ? `已下載 ${a.download}。 Downloaded.` : `${a.download}：目前沒有資料。 No rows yet.`, "ok");
   } catch (err) {
-    handleError(err, "exportMsg");
+    handleError(err, msgId);
   } finally {
     btn.disabled = false;
   }
+}
+
+$("csvButtons").addEventListener("click", (e) => {
+  const btn = e.target.closest("button[data-csv]");
+  if (!btn) return;
+  downloadCsv(`/admin/${btn.dataset.csv}.csv`, btn.dataset.csv, btn, "exportMsg");
+});
+
+// ---------- partner leads ----------
+// Shops near each campus from the open business registry (src/leads.ts). Only companies are listed by
+// name; sole proprietors and partnerships are natural persons and appear as one count per area, never
+// as rows. The source line is the attribution the open-data licence requires.
+
+const CAMPUSES = [["NTU", "臺大"], ["NTNU", "師大"], ["NTUST", "臺科大"], ["NCCU", "政大"], ["TMU", "北醫"]];
+const CATEGORIES = {
+  food: "餐飲", cafe: "咖啡飲料", books: "書店文具", retail: "零售",
+  fitness: "運動健身", beauty: "美容美髮", fun: "休閒娛樂", services: "生活服務",
+};
+const STATUSES = {
+  new: "未聯繫", contacted: "已聯繫", interested: "有興趣",
+  partner: "已合作", not_interested: "沒興趣", do_not_contact: "勿聯繫",
+};
+const STATUS_EN = {
+  new: "New", contacted: "Contacted", interested: "Interested",
+  partner: "Partner", not_interested: "Not interested", do_not_contact: "Do not contact",
+};
+const catLabel = (k) => (CATEGORIES[k] ? `${CATEGORIES[k]} ${k}` : k || "");
+const campusLabel = (k) => {
+  const c = CAMPUSES.find(([id]) => id === k);
+  return c ? `${c[1]} ${c[0]}` : k || "";
+};
+
+function fillSelect(sel, allText, pairs) {
+  const all = el("option", null, allText);
+  all.value = "";
+  sel.replaceChildren(all, ...pairs.map(([value, text]) => {
+    const o = el("option", null, text);
+    o.value = value;
+    return o;
+  }));
+}
+fillSelect($("leadCampus"), "全部 All", CAMPUSES.map(([id]) => [id, campusLabel(id)]));
+fillSelect($("leadCategory"), "全部 All", Object.keys(CATEGORIES).map((k) => [k, catLabel(k)]));
+fillSelect($("leadStatus"), "全部 All", Object.keys(STATUSES).map((k) => [k, `${STATUSES[k]} ${STATUS_EN[k]}`]));
+
+const leads = { rows: [], total: 0, seq: 0 };
+
+function leadFilters() {
+  const p = new URLSearchParams();
+  const set = (k, v) => v && p.set(k, v);
+  set("campus", $("leadCampus").value);
+  set("category", $("leadCategory").value);
+  set("status", $("leadStatus").value);
+  set("q", $("leadQ").value.trim());
+  return p;
+}
+
+/** Loads the first page (reset) or the next one, for the current filters. */
+async function loadLeads(more = false) {
+  const seq = ++leads.seq;
+  const p = leadFilters();
+  p.set("limit", "50");
+  if (more) p.set("offset", String(leads.rows.length));
+  $("leadsMore").disabled = true;
+  if (!more) setMsg("leadsMsg", "");
+  try {
+    const data = await (await admin(`/admin/leads?${p}`)).json();
+    if (seq !== leads.seq) return; // a newer filter change won
+    leads.rows = more ? leads.rows.concat(data.leads || []) : data.leads || [];
+    leads.total = data.total || 0;
+    renderLeadSource(data);
+    renderLeadSummary(data.summary || {});
+    renderLeadRows();
+  } catch (err) {
+    if (seq === leads.seq) handleError(err, "leadsMsg");
+  } finally {
+    if (seq === leads.seq) $("leadsMore").disabled = false;
+  }
+}
+
+function renderLeadSource(d) {
+  const date = d.source_date ? `，資料日期 ${d.source_date}` : "";
+  const box = $("leadsSource");
+  box.replaceChildren(`資料來源：${d.source || "—"}${date}。`);
+  box.append(el("span", "en", ` Source: ${d.source || "—"}${d.source_date ? `, data as of ${d.source_date}` : ""}.`));
+}
+
+/** One row per area for listed companies and one for the counted-only sole proprietors/partnerships. */
+function renderLeadSummary(s) {
+  const campus = $("leadCampus").value;
+  const cat = $("leadCategory").value;
+  const keep = (r) => (!campus || r.campus === campus) && (!cat || r.category === cat);
+  const areas = new Map();
+  const add = (list, group) => {
+    for (const r of (list || []).filter(keep)) {
+      const k = `${r.campus}|${r.category}`;
+      if (!areas.has(k)) areas.set(k, { campus: r.campus, category: r.category, listed: null, counted: null });
+      areas.get(k)[group] = r.n;
+    }
+  };
+  add(s.listed, "listed");
+  add(s.sole_or_partnership, "counted");
+  const order = (a) => [CAMPUSES.findIndex(([id]) => id === a.campus), Object.keys(CATEGORIES).indexOf(a.category)];
+  const sorted = [...areas.values()].sort((a, b) => {
+    const [x1, y1] = order(a), [x2, y2] = order(b);
+    return x1 - x2 || y1 - y2;
+  });
+  if (!sorted.length) {
+    $("leadsSummary").replaceChildren(el("p", "empty", "沒有符合的資料。 No data for these filters."));
+    return;
+  }
+  const t = el("table", "lead-summary");
+  const head = el("tr");
+  for (const [txt, n] of [["校區 Campus"], ["類別 Category"], ["類型 Type"], ["家數 Count", true]]) {
+    const th = el("th", n ? "n" : "", txt);
+    th.scope = "col";
+    head.append(th);
+  }
+  t.append(el("thead", null, null, head));
+  const body = el("tbody");
+  for (const a of sorted) {
+    const rows = [];
+    if (a.listed != null) rows.push(["listed", label("公司／商號（列名）", "Companies (listed)"), a.listed]);
+    if (a.counted != null) rows.push(["sole_or_partnership", label("獨資／合夥（僅統計，不列名）", "Sole proprietors & partnerships (counted, never named)"), a.counted]);
+    rows.forEach(([group, typeLabel, n], i) => {
+      const tr = el("tr", group === "sole_or_partnership" ? "counted" : "");
+      tr.dataset.group = group;
+      tr.dataset.campus = a.campus;
+      tr.dataset.category = a.category;
+      tr.append(
+        el("td", i ? "rep" : "", campusLabel(a.campus)),
+        el("td", i ? "rep" : "", catLabel(a.category)),
+        el("td", null, null, typeLabel),
+        el("td", "n", fmt(n)),
+      );
+      body.append(tr);
+    });
+  }
+  t.append(body);
+  $("leadsSummary").replaceChildren(el("div", "tablewrap", null, t));
+}
+
+const LEAD_COLS = [
+  ["name", "名稱 Name"], ["category", "類別 Category"], ["industry", "行業 Industry"],
+  ["distance_m", "距離 m Distance", true], ["address", "地址 Address"], ["org_type", "組織 Org type"],
+  ["status", "狀態 Status"], ["note", "備註 Note"],
+];
+
+function renderLeadRows() {
+  const shown = leads.rows.length;
+  $("leadsTotal").textContent = `共 ${fmt(leads.total)} 家，顯示 ${fmt(shown)} 家。 ${fmt(leads.total)} leads, showing ${fmt(shown)}.`;
+  $("leadsMore").hidden = shown >= leads.total;
+  if (!shown) {
+    $("leadsTable").replaceChildren(el("p", "empty", "沒有符合的店家。 No leads match these filters."));
+    return;
+  }
+  const t = el("table", "lead-table");
+  const head = el("tr");
+  for (const [, txt, n] of LEAD_COLS) {
+    const th = el("th", n ? "n" : "", txt);
+    th.scope = "col";
+    head.append(th);
+  }
+  t.append(el("thead", null, null, head));
+  t.append(el("tbody", null, null, ...leads.rows.map(leadRow)));
+  $("leadsTable").replaceChildren(el("div", "tablewrap", null, t));
+}
+
+function leadRow(r) {
+  const tr = el("tr", r.status === "do_not_contact" ? "dnc" : "");
+  tr.dataset.ban = r.ban;
+  const cell = (key, cls, ...kids) => {
+    const td = el("td", cls, null, ...kids);
+    td.dataset.label = LEAD_COLS.find(([k]) => k === key)[1];
+    return td;
+  };
+  const name = el("span", "lead-name", r.name);
+  const sub = el("span", "lead-sub", `${campusLabel(r.campus)} · ${r.ban}`);
+  const msg = el("span", "row-msg");
+  msg.setAttribute("role", "status");
+
+  const sel = el("select");
+  sel.setAttribute("aria-label", `狀態 Status: ${r.name}`);
+  for (const k of Object.keys(STATUSES)) {
+    const o = el("option", null, `${STATUSES[k]} ${STATUS_EN[k]}`);
+    o.value = k;
+    sel.append(o);
+  }
+  sel.value = r.status || "new";
+  sel.addEventListener("change", async () => {
+    const prev = r.status || "new";
+    const next = sel.value;
+    if (await saveLead(r, { status: next }, sel, msg)) {
+      r.status = next;
+      tr.classList.toggle("dnc", next === "do_not_contact");
+    } else {
+      sel.value = prev;
+    }
+  });
+
+  const note = el("input");
+  note.type = "text";
+  note.maxLength = 500;
+  note.value = r.note || "";
+  note.placeholder = "備註 Note";
+  note.setAttribute("aria-label", `備註 Note: ${r.name}`);
+  const saveNote = async () => {
+    const v = note.value.trim();
+    if (v === (r.note || "")) return;
+    const was = r.note;
+    r.note = v; // claim it so blur after Enter does not save twice
+    if (!(await saveLead(r, { note: v }, null, msg))) r.note = was; // the field stays editable
+  };
+  note.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      saveNote();
+    }
+  });
+  note.addEventListener("blur", saveNote);
+
+  tr.append(
+    cell("name", "lead-namecell", name, sub),
+    cell("category", null, catLabel(r.category)),
+    cell("industry", null, r.industry || ""),
+    cell("distance_m", "n", r.distance_m == null ? "—" : fmt(r.distance_m)),
+    cell("address", null, r.address || ""),
+    cell("org_type", null, r.org_type || ""),
+    cell("status", "lead-status", sel),
+    cell("note", "lead-note", note, msg),
+  );
+  return tr;
+}
+
+async function saveLead(r, body, ctrl, msg) {
+  msg.textContent = "儲存中… Saving…";
+  msg.className = "row-msg";
+  if (ctrl) ctrl.disabled = true;
+  try {
+    await admin(`/admin/leads/${encodeURIComponent(r.ban)}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    msg.textContent = "已儲存 Saved";
+    msg.className = "row-msg ok";
+    return true;
+  } catch (err) {
+    if (err instanceof AuthError) handleError(err, "leadsMsg");
+    msg.textContent = `儲存失敗 Not saved (${err.message})`;
+    msg.className = "row-msg err";
+    return false;
+  } finally {
+    if (ctrl) ctrl.disabled = false;
+  }
+}
+
+for (const id of ["leadCampus", "leadCategory", "leadStatus"]) $(id).addEventListener("change", () => loadLeads());
+let leadQTimer = 0;
+$("leadQ").addEventListener("input", () => {
+  clearTimeout(leadQTimer);
+  leadQTimer = setTimeout(() => loadLeads(), 300);
+});
+$("leadsFilters").addEventListener("submit", (e) => {
+  e.preventDefault();
+  clearTimeout(leadQTimer);
+  loadLeads();
+});
+$("leadsMore").addEventListener("click", () => loadLeads(true));
+$("leadsCsv").addEventListener("click", () => {
+  const p = String(leadFilters());
+  downloadCsv(`/admin/leads.csv${p ? `?${p}` : ""}`, "leads", $("leadsCsv"), "leadsMsg");
 });
 
 // ---------- shop links ----------
