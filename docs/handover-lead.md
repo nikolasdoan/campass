@@ -63,10 +63,16 @@ Stop servers with `pkill -f "[w]rangler dev"`. The bracket stops pkill from kill
 
 - **Demo QA round** (2026-10-22): done. What was fixed and what is still open, ranked, is in
   [qa-2026-10-22.md](qa-2026-10-22.md). Start from its "Open" list.
-- **Live (2026-10-24):** 88239f7, ?v=20, 1,563 deals from 21 schools. Records whose terms were never transcribed
-  (notes 「未轉錄」, 164 so far) are held back by `HOLD_UNTRANSCRIBED` in scripts/import_deals.py (founder confirmed,
-  2026-10-24). Transcription is with the worker: #28 STUST (73), #29 NDHU hotels (17) + CTUST 水舞. CSMU (51) and
-  NKUHT (22) stay held: their contracts aren't public.
+- **Production (pass.tecxmate.com):** 88239f7, ?v=20, 1,563 deals. **Preview:** 44b6593, ?v=23, 1,643 deals, plus
+  usage counts (src/events.ts, migration 0006), NTU units data and API, 商圈 data and /api/districts, and the
+  admin-only partner leads (src/leads.ts, migration 0007). Production waits for the founder's go.
+- **Held records:** those whose terms were never transcribed (notes 「未轉錄」) are held back by
+  `HOLD_UNTRANSCRIBED` in scripts/import_deals.py (founder confirmed, 2026-10-24): 83 left (CSMU 51, NKUHT 22,
+  STUST 9, CTUST 1). CSMU and NKUHT contracts aren't public.
+- **Waiting for the founder's review:** the 商圈 and stamps mock-ups on one canvas,
+  https://claude.ai/artifact/V6kqB1h3pvE28VQnXRZQu1. Build after 「做」. The stamps design is in
+  docs/design/gamification/. The department UI waits for NTU deals tagged with units (worker #32: none found yet).
+  Migration 0008 is reserved for the user_identities unit column.
 - **Worker loop** (docs/worker.md): campass-2 files `worker` issues; review the PRs, merge, run the import, add any
   new school code (SCHOOL_DOMAINS, i18n SCHOOLS, CARD_TONE) and give every new badge text an English rule.
   Evidence is a MANIFEST only (images in the founder's private storage).
