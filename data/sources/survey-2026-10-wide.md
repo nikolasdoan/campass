@@ -31,7 +31,13 @@
 | … not verifiable (TLS, reset, 403/503) | about 20, for example 海大, 北藝大, 宜大, 虎科, 高醫 (403), 長榮, 戲曲學院, 正修, 開南, 亞洲, 僑光, 中信, 華夏, 崇右, 仁德, 馬偕護專, 聖母 |
 | … nothing official found | about 35 |
 
-**Brand-direct perks:** 36 were checked on official pages (35 live, 1 expired). Many more remain unverified leads; see the brand section.
+**Brand-direct perks:** 83 were confirmed on official pages over two rounds (36 + 47, plus 2 partial). The breakdown:
+- **2 have ended:** Google AI Pro for students (applications closed 2025-12-09) and 中華電信 4G學生方案 (the page still says 「至115/09/30止」).
+- **1 is temporarily closed:** 富源 森林遊樂區, after the typhoon on 2026-10-22.
+- **5 state an end date that hasn't passed yet:** 臺鐵 大學生優惠 to 2027-08-16, 救國團 to 2026-12-31, Samsung's current promotion to 2026-12-31, 劍湖山 to 2026-12-27, and 史前館's free Wednesdays to 2026-12-31.
+- **75 give no end date.** Their pages were live on 2026-10-23, but nothing says how long the offers last.
+
+Many more perks remain unverified leads; see the brand sections.
 
 ## Best next extractions (value = listings × student eligibility × ease)
 
@@ -822,7 +828,7 @@ Each school got at least one new domain-restricted search 「特約廠商」 (or
 
 ## Brand-direct student perks, round 2 (2026-10-23)
 
-This round verified 47 more perks on official pages, so the two rounds together total **83**: 82 live and 1 expired. I checked two of the new entries against the saved pages:
+This round verified 47 more perks on official pages, plus 2 partial ones (六福村 and ASUS, which show a student perk but no price). The two rounds together total **83**. Of those, **2 have ended**: Google AI Pro (round 1) and 中華電信 4G學生方案, whose stated period 「至115/09/30止」 has passed even though the page is still up. **1 is temporarily closed**: 富源, after the typhoon. Only 5 state an end date that hasn't passed yet; the other 75 give no end date. I checked two of the new entries against the saved pages:
 - 台北101 觀景台: 「學生/樂齡方案/愛心票/軍警消專案 NT$300」, against NT$600 for adults.
 - 中華電信 4G學生方案: from $288/月. The page says 「本活動期間自即日起至115/09/30止」 and is still live, so the record needs a review date rather than an expiry.
 
