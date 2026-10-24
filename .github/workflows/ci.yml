@@ -44,19 +44,19 @@ jobs:
       - name: Typecheck
         run: npx tsc --noEmit
 
-      # On pushes the committed seed must match the sources. Pull requests (worker data PRs may not commit
-      # data/deals.json or seed/) keep the regenerated seed instead, so the suites below test the new records;
-      # campass-1 commits the import when merging, and the push run enforces it.
+      # On the integration branch the committed seed must match the sources. Everywhere else (pull requests, and
+      # pushes to worker branches, which may not commit data/deals.json or seed/) CI keeps the regenerated seed, so
+      # the suites below test the new records; campass-1 commits the import when merging.
       - name: Seed is committed and up to date
         env:
-          EVENT: ${{ github.event_name }}
+          STRICT: ${{ github.event_name == 'push' && github.ref == 'refs/heads/claude/jolly-maxwell-e43rxf' }}
         run: |
           python3 scripts/import_deals.py
-          if [ "$EVENT" = pull_request ]; then
-            git diff --stat data/deals.json seed/deals.sql
-            git diff --quiet data/deals.json seed/deals.sql || echo "::notice::Seed regenerated from data/sources for this PR; the merge must commit the import."
-          else
+          if [ "$STRICT" = true ]; then
             git diff --exit-code data/deals.json seed/deals.sql
+          else
+            git diff --stat data/deals.json seed/deals.sql
+            git diff --quiet data/deals.json seed/deals.sql || echo "::notice::Seed regenerated from data/sources; the merge must commit the import."
           fi
 
       - name: Local D1 (migrations + seed)
