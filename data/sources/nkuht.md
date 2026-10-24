@@ -39,7 +39,7 @@ The older 22-page 115年 version (212596080.pdf, 2026-01-29) was **not** used, a
 - **End dates:**
   - 學生會 cards: the last date of 特約期間 is used (115/01/18~116/01/18 → 2027-01-18). 「…-迄今」 / 「~迄今」 cards (36, from 2018–2023) get `null`, with the note 「特約期間「…迄今」，未標示結束日」. Some are years old, so the note tells users to phone first.
   - 人事室 rows: the last date of 合約有效期限 is used. 無期限 → `null`. The typo 「119-12/31」 (人杰老四川) is read as 119/12/31 → 2030-12-31. 東北酸白菜火鍋 ends 2026-10-28, which is still current on the retrieval date.
-- **Pointer-only 人事室 rows are kept.** 22 rows say only 「優惠房價請詳見合約內容」 or 「優惠內容請見合約書」: 18 hotels, plus 中國東方航空, 金色三麥, 喜樂時代 and 寶島53. The contracts are not published.
+- **Pointer-only 人事室 rows are kept.** 22 rows say only 「優惠房價請詳見合約內容」 or 「優惠內容請見合約書」: 19 hotels, plus 中國東方航空, 金色三麥 and 喜樂時代 (電影票). The contracts are not published.
   - These rows get the highlight 「專屬優惠價」 (hotels) or 「特約優惠」, plus the note 「合約未公開，優惠內容未轉錄」.
   - No prices were invented. Reviewers may prefer to drop them.
 - **Regions:**
