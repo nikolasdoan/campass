@@ -1,0 +1,4733 @@
+[
+  {
+    "name": "花蓮富野渡假酒店",
+    "subtitle": "住宿",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市中華路302號",
+    "phone": "0930-983866    03-8346999",
+    "highlight": "專屬優惠價",
+    "offer": "優惠房價詳見契約文件；契約書為掃描檔，房價未轉錄",
+    "info": "電話：0930-983866    03-8346999\n地址：花蓮市中華路302號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/913669891.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.hoyaresort.com.tw/Hualien/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款僅見於掃描契約書，未轉錄；頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "九號溫泉旅店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "宜蘭縣礁溪鄉溫泉路85號",
+    "phone": "03-9871508",
+    "highlight": "85折起",
+    "offer": "平日住宿8.5折，平日泡湯加贈半小時\n相關餐飲9折優惠(鮮九鼎餐廳、九號咖啡外澳館、石城館)",
+    "info": "電話：03-9871508\n地址：宜蘭縣礁溪鄉溫泉路85號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/913669891.pdf"
+      },
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/108371157.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.no9.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "知樂智慧酒店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市前金區五福三路79號6,7樓",
+    "phone": "07-2153468",
+    "highlight": "專屬優惠價",
+    "offer": "優惠房價詳見契約文件；契約書為掃描檔，房價未轉錄",
+    "info": "電話：07-2153468\n地址：高雄市前金區五福三路79號6,7樓\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/913669891.pdf"
+      },
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/257262949.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://chillaxinn.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款僅見於掃描契約書，未轉錄；頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "雀客國際酒店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "",
+    "phone": "",
+    "highlight": "專屬優惠價",
+    "offer": "特約房為浮動報價，訂房皆須透過合約公司以line 向負責業務預訂。官方LINE ID：@107fupja。",
+    "info": "使用對象：教職員（契約：「僅供甲方現職員工及經甲方正式邀請之特定貴賓適用」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/534619651.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.checkhotels.com/zh_tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "雀客旗下指定館別，頁面與契約未列地址，歸類為全區；頁面合約期限：合約期限至115年12月31日；名單備註寫「出示教職員證或學生證」，但契約限現職員工及受邀貴賓，依契約歸類為教職員適用",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "家美瑞品飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "臺北市中正區北平東路12號",
+    "phone": "02-23581234#669",
+    "highlight": "專屬優惠價",
+    "offer": "優惠房價詳見契約文件；契約書為掃描檔，房價未轉錄",
+    "info": "電話：02-23581234#669\n地址：臺北市中正區北平東路12號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/150725804.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://jiameihotel.com/"
+      }
+    ],
+    "expires_on": "2026-12-30",
+    "auto_renew": false,
+    "notes": "條款僅見於掃描契約書，未轉錄；頁面合約期限：合約期限至115年12月30日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "非凡飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市民國路153號",
+    "phone": "03-8311757",
+    "highlight": "專屬優惠價",
+    "offer": "優惠房價詳見契約文件；契約書為掃描檔，房價未轉錄",
+    "info": "電話：03-8311757\n地址：花蓮市民國路153號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/804905303.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.unique-holiday.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "條款僅見於掃描契約書，未轉錄；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "洄瀾窩青年旅舍",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市國聯一路83號",
+    "phone": "03-8330186",
+    "highlight": "專屬優惠價",
+    "offer": "優惠房價詳見契約文件；契約書為掃描檔，房價未轉錄",
+    "info": "電話：03-8330186\n地址：花蓮市國聯一路83號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/123749320.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.hualienwow.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "條款僅見於掃描契約書，未轉錄；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "喜樂旅店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "台東市新興路617號(台東火車站前)",
+    "phone": "089-230458",
+    "highlight": "專屬優惠價",
+    "offer": "優惠房價詳見契約文件；契約書為掃描檔，房價未轉錄",
+    "info": "電話：089-230458\n地址：台東市新興路617號(台東火車站前)\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/652488584.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.joyhotel2018.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "條款僅見於掃描契約書，未轉錄；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "花蓮潔西艾美渡假酒店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市中正路599號",
+    "phone": "03-8655999",
+    "highlight": "9折",
+    "offer": "1.會議場租九折優待\n2.住宿優惠",
+    "info": "電話：03-8655999\n地址：花蓮市中正路599號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/670386676.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.facebook.com/LMHualien/?locale=zh_TW"
+      }
+    ],
+    "expires_on": "2026-12-30",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月30日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "福容大飯店(花蓮)",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市民生路51號",
+    "phone": "03-8239988分機7596",
+    "highlight": "專屬優惠價",
+    "offer": "優惠房價詳見契約文件；契約書為掃描檔，房價未轉錄",
+    "info": "電話：03-8239988分機7596\n地址：花蓮市民生路51號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/468521178.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.fullon-hotels.com.tw/tw/"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.fullon-hotels.com.tw/tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款僅見於掃描契約書，未轉錄；頁面合約期限：合約至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "福容大飯店(連鎖商務)",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north",
+      "south"
+    ],
+    "address": "花蓮市民生路51號",
+    "phone": "03-8239988分機7596",
+    "highlight": "專屬優惠價",
+    "offer": "台北一館、台北二館、桃園、桃園機場捷運A8、高雄、淡水魚人碼頭、福隆(旅館區)、福隆貝悅(VILLA區)",
+    "info": "電話：03-8239988分機7596\n地址：花蓮市民生路51號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/330014232.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.fullon-hotels.com.tw/tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "連鎖館別：台北一館、台北二館、桃園、桃園機場捷運A8、高雄、淡水、福隆；頁面合約期限：合約至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "花蓮理想大地渡假飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣壽豐鄉理想路一號",
+    "phone": "03-8656688",
+    "highlight": "專屬優惠價",
+    "offer": "優惠房價詳見契約文件；契約書為掃描檔，房價未轉錄",
+    "info": "電話：03-8656688\n地址：花蓮縣壽豐鄉理想路一號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/530065714.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.plcresort.com.tw/zh_TW"
+      }
+    ],
+    "expires_on": "2027-12-31",
+    "auto_renew": false,
+    "notes": "條款僅見於掃描契約書，未轉錄；頁面合約期限：合約期限至116年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "花蓮藍天麗池飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣花蓮市三民街28號",
+    "phone": "03-833-6686",
+    "highlight": "專屬優惠價",
+    "offer": "優惠房價詳見契約文件；契約書為掃描檔，房價未轉錄",
+    "info": "電話：03-833-6686\n地址：花蓮縣花蓮市三民街28號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/120942869.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://rwd.ezhotel.cloud/azurehotel"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款僅見於掃描契約書，未轉錄；頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "旅居文旅",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市中山區青島西路11號4樓之5",
+    "phone": "02-23818999",
+    "highlight": "專屬優惠價",
+    "offer": "優惠房價詳見契約文件；契約書為掃描檔，房價未轉錄",
+    "info": "電話：02-23818999\n地址：台北市中山區青島西路11號4樓之5\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/125052523.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://group.hubhotel.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款僅見於掃描契約書，未轉錄；頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "逸心園民宿",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣壽豐鄉大學路二段63巷51號",
+    "phone": "03-8661859",
+    "highlight": "9折",
+    "offer": "全館房價9折，(農曆春節假期及7/1~8/31除外)\n預此優惠必須透過電話，EMAIL，FACEBOOK，LINE等通訊軟體直接向逸心園訂房，經網路訂房網(例如:AGODA，BOOKING，CTRIP，易遊網，,,,)訂房恕不在給予優惠。\n訂房電話:0972031606  LINE:0972031606",
+    "info": "電話：03-8661859\n地址：花蓮縣壽豐鄉大學路二段63巷51號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/168547338.pdf"
+      },
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/530041388.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.yishingarden.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "兄弟大飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市南京東路三段255號",
+    "phone": "02-27123456",
+    "highlight": "專屬優惠價",
+    "offer": "優惠房價詳見契約文件；契約書為掃描檔，房價未轉錄",
+    "info": "電話：02-27123456\n地址：台北市南京東路三段255號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/155723458.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.brotherhotel.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-30",
+    "auto_renew": false,
+    "notes": "條款僅見於掃描契約書，未轉錄；頁面合約期限：合約期限至115年12月30日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "葛瑪蘭溫泉飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "宜蘭縣礁溪鄉溫泉路40號",
+    "phone": "03-9876967",
+    "highlight": "專屬優惠價",
+    "offer": "平日2640~5280\n假日3600~7200\n泡湯2hr1000~1280",
+    "info": "電話：03-9876967\n地址：宜蘭縣礁溪鄉溫泉路40號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/160898142.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://gamalanhotel.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "F HOTEL",
+    "subtitle": "花蓮站前館",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市國盛二街203-1號",
+    "phone": "03-8325589",
+    "highlight": "專屬優惠價",
+    "offer": "平日2400~3100\n假日3300~4400",
+    "info": "電話：03-8325589\n地址：花蓮市國盛二街203-1號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/184109268.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.fhotels.com.tw/"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.fhotels.com.tw/"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.fhotels.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "F HOTEL",
+    "subtitle": "台南館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市中西區光賢街23號",
+    "phone": "06-2501199",
+    "highlight": "專屬優惠價",
+    "offer": "平日2000~3000\n假日3200~4300",
+    "info": "電話：06-2501199\n地址：台南市中西區光賢街23號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/184109268.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.fhotels.com.tw/"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.fhotels.com.tw/"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.fhotels.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "F HOTEL",
+    "subtitle": "嘉義館",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "嘉義縣番路鄉下坑村8鄰下坑42-3號",
+    "phone": "05-2590888",
+    "highlight": "專屬優惠價",
+    "offer": "平日2100~3300\n假日2700~3900",
+    "info": "電話：05-2590888\n地址：嘉義縣番路鄉下坑村8鄰下坑42-3號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/184109268.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.fhotels.com.tw/"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.fhotels.com.tw/"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.fhotels.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "F HOTEL",
+    "subtitle": "三義館",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "苗栗縣三義鄉復興路16-1號",
+    "phone": "03-7878788",
+    "highlight": "專屬優惠價",
+    "offer": "平日1600~4000\n假日2200~5200",
+    "info": "電話：03-7878788\n地址：苗栗縣三義鄉復興路16-1號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/184109268.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.fhotels.com.tw/"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.fhotels.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "墾丁假期渡假飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "屏東縣恆春鎮恆公路966號",
+    "phone": "08-8899999",
+    "highlight": "專屬優惠價",
+    "offer": "平日1900~2600\n假日2600~3500",
+    "info": "電話：08-8899999\n地址：屏東縣恆春鎮恆公路966號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/184109268.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.kenting-holiday.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "秧悅美地度假酒店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣吉安鄉干城二街95之9號",
+    "phone": "03-8129168",
+    "highlight": "專屬優惠價",
+    "offer": "平日8500~40000\n假日10150~41650\n115年餐飲營業時間及型態表\n115年謝師宴專案",
+    "info": "電話：03-8129168\n地址：花蓮縣吉安鄉干城二街95之9號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/381775407.pdf"
+      },
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/719486427.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.gaeavilla.com/zh-tw"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "村上春宿",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣壽豐鄉志學村中正路238號",
+    "phone": "03-8662382",
+    "highlight": "專屬優惠價",
+    "offer": "雙人房一晚優惠價1400/間",
+    "info": "電話：03-8662382\n地址：花蓮縣壽豐鄉志學村中正路238號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/869803544.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/pages/%E6%9D%91%E4%B8%8A%E6%98%A5%E5%AE%BF/188356977867197"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "橄欖樹農坊",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣鳳林鎮永豐路37號",
+    "phone": "03-8741467",
+    "highlight": "9折起",
+    "offer": "平日九折\n假日九五折",
+    "info": "電話：03-8741467\n地址：花蓮縣鳳林鎮永豐路37號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/587590910.pdf"
+      },
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/112688119.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://hualien.fun-taiwan.com/HouseDetailView.aspx?hid=002-799"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "月見溪行館",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "south"
+    ],
+    "address": "台南市南區健康路一段113巷65弄20號",
+    "phone": "06-2131222",
+    "highlight": "專屬優惠價",
+    "offer": "優惠房價詳見契約文件；契約書為掃描檔，房價未轉錄",
+    "info": "電話：06-2131222\n地址：台南市南區健康路一段113巷65弄20號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/978285367.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.facebook.com/hotelsukimi/"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.hotelsukimi.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款僅見於掃描契約書，未轉錄；頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "安居台北",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市新生南路一段157巷10號",
+    "phone": "02-27045888",
+    "highlight": "專屬優惠價",
+    "offer": "優惠房價詳見契約文件；契約書為掃描檔，房價未轉錄",
+    "info": "電話：02-27045888\n地址：台北市新生南路一段157巷10號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/341837421.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.thecornerhouse.com.tw/zh_TW"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.thecornerhouse.com.tw/zh_TW"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "條款僅見於掃描契約書，未轉錄；頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "立邦休閒事業有限公司-四季風呂能量湯",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣壽豐鄉池南村池南路二段90號",
+    "phone": "03-8655678",
+    "highlight": "8折",
+    "offer": "1.露營區無門營位小木屋訂價享8折優惠\n2.澡能量養生浴（泡湯）享訂價8折優惠\n3.團體活（迎新/烤肉）享專案優惠",
+    "info": "電話：03-8655678\n地址：花蓮縣壽豐鄉池南村池南路二段90號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/180837958.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.facebook.com/Hualien.LiYuLake.campingarea/"
+      },
+      {
+        "label": "官網",
+        "url": "https://tw.hotels.com/ho1345016256/hua-lian-li-yu-tan-lu-ying-qu-si-ji-feng-lu-neng-liang-tang-shou-feng-tai-wan/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "喜瑞飯店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市中山區長安東路一段64號",
+    "phone": "02-25410077",
+    "highlight": "9折",
+    "offer": "享當日官網價格九折優惠",
+    "info": "電話：02-25410077\n地址：台北市中山區長安東路一段64號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/898532281.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://booking.taipeiinngroup.com/nv/reservation/reservation.php"
+      }
+    ],
+    "expires_on": "2027-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至116年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "丹迪旅店天津店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市中山區天津街70號",
+    "phone": "02-25415788",
+    "highlight": "9折",
+    "offer": "享當日官網價格九折優惠",
+    "info": "電話：02-25415788\n地址：台北市中山區天津街70號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/898532281.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.dandyhotel.com.tw/"
+      }
+    ],
+    "expires_on": "2027-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至116年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "丹迪旅店大安森林公園店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大安區信義路三段33號",
+    "phone": "02-27076899",
+    "highlight": "9折",
+    "offer": "享當日官網價格九折優惠",
+    "info": "電話：02-27076899\n地址：台北市大安區信義路三段33號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/898532281.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.dandyhotel.com.tw/"
+      }
+    ],
+    "expires_on": "2027-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至116年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "丹迪旅店天母店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市士林區中山北路六段728巷2號",
+    "phone": "02-28732222",
+    "highlight": "9折",
+    "offer": "享當日官網價格九折優惠",
+    "info": "電話：02-28732222\n地址：台北市士林區中山北路六段728巷2號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/898532281.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.dandyhotel.com.tw/"
+      }
+    ],
+    "expires_on": "2027-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至116年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "新驛旅店台北車站一館",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市中正區懷寧街7號",
+    "phone": "02-23148008",
+    "highlight": "9折",
+    "offer": "享當日官網價格九折優惠",
+    "info": "電話：02-23148008\n地址：台北市中正區懷寧街7號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/898532281.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.cityinn.com.tw/"
+      }
+    ],
+    "expires_on": "2027-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至116年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "新驛旅店台北車站二館",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大同區長安西路81號",
+    "phone": "02-25555577",
+    "highlight": "9折",
+    "offer": "享當日官網價格九折優惠",
+    "info": "電話：02-25555577\n地址：台北市大同區長安西路81號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/898532281.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.cityinn.com.tw/"
+      }
+    ],
+    "expires_on": "2027-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至116年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "新驛旅店台北車站三館",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市大同區長安西路77號",
+    "phone": "02-77327777",
+    "highlight": "9折",
+    "offer": "享當日官網價格九折優惠",
+    "info": "電話：02-77327777\n地址：台北市大同區長安西路77號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/898532281.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.cityinn.com.tw/"
+      }
+    ],
+    "expires_on": "2027-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至116年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "新驛旅店",
+    "subtitle": "西門店",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市中正區寶慶路63號",
+    "phone": "02-77252288",
+    "highlight": "9折",
+    "offer": "享當日官網價格九折優惠",
+    "info": "電話：02-77252288\n地址：台北市中正區寶慶路63號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/898532281.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.cityinn.com.tw/"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.cityinn.com.tw/"
+      }
+    ],
+    "expires_on": "2027-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至116年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "新驛旅店復興北路店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "north"
+    ],
+    "address": "台北市中山區復興北路338號",
+    "phone": "02-25158777",
+    "highlight": "9折",
+    "offer": "享當日官網價格九折優惠",
+    "info": "電話：02-25158777\n地址：台北市中山區復興北路338號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/898532281.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.cityinn.com.tw/"
+      }
+    ],
+    "expires_on": "2027-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至116年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "新驛旅店台中車站店",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市東區復興路四段133號",
+    "phone": "04-22232333",
+    "highlight": "9折",
+    "offer": "享當日官網價格九折優惠",
+    "info": "電話：04-22232333\n地址：台中市東區復興路四段133號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/898532281.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.cityinn.com.tw/"
+      }
+    ],
+    "expires_on": "2027-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至116年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "浯島文旅",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [],
+    "address": "金門縣金湖鎮漁村20號",
+    "phone": "LINE:@wd-hotel  客服電話:08821-9194",
+    "highlight": "專屬優惠價",
+    "offer": "優惠房價詳見契約文件；契約書為掃描檔，房價未轉錄",
+    "info": "電話：LINE:@wd-hotel  客服電話:08821-9194\n地址：金門縣金湖鎮漁村20號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/343505721.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://kmhotel.homi.cc/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "條款僅見於掃描契約書，未轉錄；地址在金門（離島），regions 留空；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "海岸小旅民宿",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣吉安鄉仁和村海岸路242號",
+    "phone": "03-8566552、0966-580579",
+    "highlight": "專屬優惠價",
+    "offer": "優惠房價詳見契約文件；契約書為掃描檔，房價未轉錄",
+    "info": "電話：03-8566552、0966-580579\n地址：花蓮縣吉安鄉仁和村海岸路242號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/212725858.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.mrhost.com.tw/zh/hotel/11601"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "條款僅見於掃描契約書，未轉錄；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "依山午民宿",
+    "subtitle": "",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣壽豐鄉豐山村101巷17號",
+    "phone": "0975-737169",
+    "highlight": "專屬優惠價",
+    "offer": "優惠房價詳見契約文件；契約書為掃描檔，房價未轉錄",
+    "info": "電話：0975-737169\n地址：花蓮縣壽豐鄉豐山村101巷17號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/266981957.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/266981957.pdf"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "條款僅見於掃描契約書，未轉錄；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "山琳文旅民宿",
+    "subtitle": "JJ甜點研究所",
+    "category": "lodging",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市中華路251-6號",
+    "phone": "03-8360008",
+    "highlight": "專屬優惠價",
+    "offer": "優惠房價詳見契約文件；契約書為掃描檔，房價未轉錄",
+    "info": "電話：03-8360008\n地址：花蓮市中華路251-6號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/618227928.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/618227928.pdf"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "條款僅見於掃描契約書，未轉錄；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "鮮九鼎餐廳",
+    "subtitle": "九號溫泉旅店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "宜蘭縣礁溪鄉溫泉路85號",
+    "phone": "03-9871508",
+    "highlight": "9折",
+    "offer": "餐飲消費9折優惠",
+    "info": "電話：03-9871508\n地址：宜蘭縣礁溪鄉溫泉路85號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/108371157.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.no9.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "九號咖啡外澳館",
+    "subtitle": "九號溫泉旅店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "宜蘭縣礁溪鄉溫泉路85號",
+    "phone": "03-9871508",
+    "highlight": "9折",
+    "offer": "餐飲消費9折優惠",
+    "info": "電話：03-9871508\n地址：宜蘭縣礁溪鄉溫泉路85號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/108371157.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.no9.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "石城館",
+    "subtitle": "九號溫泉旅店",
+    "category": "food",
+    "regions": [
+      "north"
+    ],
+    "address": "宜蘭縣礁溪鄉溫泉路85號",
+    "phone": "03-9871508",
+    "highlight": "9折",
+    "offer": "餐飲消費9折優惠",
+    "info": "電話：03-9871508\n地址：宜蘭縣礁溪鄉溫泉路85號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/108371157.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.no9.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "八方悅鍋物(花蓮明心店)",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市明心街1-20號",
+    "phone": "03-8331665",
+    "highlight": "95折",
+    "offer": "出示相關識別證，提供同桌結帳特約95折優惠",
+    "info": "電話：03-8331665\n地址：花蓮市明心街1-20號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/489878471.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.facebook.com/8funyuehLove/?locale=zh_TW"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "御三家火鍋店",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市中美路7-2號",
+    "phone": "(03)8310023",
+    "highlight": "9折起",
+    "offer": "1.個人套餐9折\n2整筆帳單95折\n3以上優惠可擇一，唯與其他優惠無法併用",
+    "info": "電話：(03)8310023\n地址：花蓮市中美路7-2號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/327527841.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.facebook.com/people/%E5%BE%A1%E4%B8%89%E5%AE%B6%E9%8D%8B%E3%81%AE%E7%89%A9/61567702174332/#"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "米崙丼飯屋",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市中美路106號",
+    "phone": "038-310600",
+    "highlight": "9折",
+    "offer": "1.可享9折惠(服務費恕無折扣)。\n2.以上優惠不得與其他優惠合併使用。",
+    "info": "電話：038-310600\n地址：花蓮市中美路106號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/334362543.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.palaiscollection.com/location.php?id=85"
+      }
+    ],
+    "expires_on": "2027-03-01",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至116年3月1日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "木瓜山咖啡",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市中福路17號(咖啡秘境壽豐鄉五區9號)",
+    "phone": "0988154597",
+    "highlight": "折$200",
+    "offer": "特優惠咖啡豆品項單上和品項減200元(詳如特約契約)",
+    "info": "電話：0988154597\n地址：花蓮市中福路17號(咖啡秘境壽豐鄉五區9號)\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/808218766.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.mukumugicafe.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "草本茶集花蓮中山店",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市中山路383號1樓",
+    "phone": "03-8316178",
+    "highlight": "88折起",
+    "offer": "來店外帶9折\n派對桶茶88折\n詳如特約契約",
+    "info": "電話：03-8316178\n地址：花蓮市中山路383號1樓\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/341882663.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.facebook.com/herbtea.twn/?locale=zh_TW"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "迷途鯨魚",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣壽豐鄉中山路三段62號",
+    "phone": "03-8661097",
+    "highlight": "85折起",
+    "offer": "憑證享全館88折(預約包廂10人以上85折)\n不限低消和時間",
+    "info": "電話：03-8661097\n地址：花蓮縣壽豐鄉中山路三段62號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/649767643.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.facebook.com/p/Lost-Whale-100064036003759/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "醉酒香陳窖",
+    "subtitle": "品台餐飲股份有限公司",
+    "category": "food",
+    "regions": [],
+    "address": "金門縣金寧鄉桃園路368號",
+    "phone": "0975785296，0928304018",
+    "highlight": "特約優惠",
+    "offer": "加入官方LINE：@KM99，出示識別證即可享有以下優惠\n金門酒廠-金門高粱酒：五十八度紅標高粱酒600ml一箱(12入)4700元、五十八度白標高粱酒600ml一箱(12入)4650元、五十八度紅標高粱酒750ml一箱(12入)6450元\n戰酒系列滿額免運費\n本公司將不定期推出專屬優惠專案",
+    "info": "電話：0975785296，0928304018\n地址：金門縣金寧鄉桃園路368號\n使用對象：教職員工（契約：僅限所屬員工）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/275809026.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.facebook.com/p/%E9%86%89%E9%85%92%E9%A6%99%E9%99%B3%E7%AA%96-100063634227258/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "契約書為掃描檔（無文字層），以下契約條款係直接閱讀掃描影像取得；契約：「乙方參加甲方所提供優惠消費方案資格，僅限乙方所屬會員/員工」，依契約歸類為教職員工；契約期限114年02月28日，到期未提出終止視同自動續約一年；地址在金門（離島），regions 留空；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "圈圈音樂餐廳",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市國光里復興新村36號",
+    "phone": "03-8350105",
+    "highlight": "免服務費",
+    "offer": "來店用餐享本人及同桌親友免10%服務費",
+    "info": "電話：03-8350105\n地址：花蓮市國光里復興新村36號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/385284750.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.facebook.com/ooartmusic/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "櫻田野餐廳",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣吉安相福興七街8號",
+    "phone": "03-8540366",
+    "highlight": "9折起",
+    "offer": "刷卡95折\n現金9折",
+    "info": "電話：03-8540366\n地址：花蓮縣吉安相福興七街8號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/264239446.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://sakura.hualien.com.tw/sakura/index.php"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "歐薌牛排",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市中正路644號",
+    "phone": "03-8360340",
+    "highlight": "9折起",
+    "offer": "平日9折\n假日95折\n酒類及特價餐點不適用",
+    "info": "電話：03-8360340\n地址：花蓮市中正路644號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/856646057.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.facebook.com/OS0001/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "石屋燒肉火鍋",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市中正路644-2號",
+    "phone": "03-8352311",
+    "highlight": "95折",
+    "offer": "95折\n平日午餐優惠價599,酒類,特餐不適用",
+    "info": "電話：03-8352311\n地址：花蓮市中正路644-2號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/752796024.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/OS0005/"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/OS0005/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "德利豆乾",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市大禹街6號",
+    "phone": "03-8338039",
+    "highlight": "95折",
+    "offer": "95折\n特價商品除外",
+    "info": "電話：03-8338039\n地址：花蓮市大禹街6號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/675154366.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.derli.com.tw/"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.derli.com.tw/index2.html"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "松湖驛站",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣吉安鄉吉豐路5段15號",
+    "phone": "",
+    "highlight": "9折",
+    "offer": "餐點9折",
+    "info": "地址：花蓮縣吉安鄉吉豐路5段15號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/755329585.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/pinetreelake038513388"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/pinetreelake038513388"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "花蓮野人火鍋",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市國聯一路169號1樓",
+    "phone": "03-8352083",
+    "highlight": "9折",
+    "offer": "餐點9折，特價套餐除外",
+    "info": "電話：03-8352083\n地址：花蓮市國聯一路169號1樓\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/154693965.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/SavageHualien/"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/SavageHualien/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "杜倫先生",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市中華路23號",
+    "phone": "03-8358080",
+    "highlight": "95折",
+    "offer": "商品享有9.5折優惠(特價商品除外)。\n中式餅類或酒類不適用95折優惠",
+    "info": "電話：03-8358080\n地址：花蓮市中華路23號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/218278898.pdf"
+      },
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/454747334.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.mrturon.com/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "強一鐵板燒",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市中山路351號",
+    "phone": "03-8322068",
+    "highlight": "9折",
+    "offer": "9折",
+    "info": "電話：03-8322068\n地址：花蓮市中山路351號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/700046433.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.facebook.com/reel/1999023210469289"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "蜂之鄉有限公司",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市華西77-2號",
+    "phone": "03-8236123",
+    "highlight": "8折起",
+    "offer": "1. 95折優惠。\n2.消費滿10,000元以上享8折優惠。",
+    "info": "電話：03-8236123\n地址：花蓮市華西77-2號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/157545527.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://bee-pro.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "海心蛋糕食品行",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市莊敬路82號",
+    "phone": "03-8580206",
+    "highlight": "85折",
+    "offer": "麵包及生日蛋糕85折優惠(特價品除外)",
+    "info": "電話：03-8580206\n地址：花蓮市莊敬路82號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/675286358.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/HaiHsinCake"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/HaiHsinCake"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "洄瀾薯道",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市中華路84-1號",
+    "phone": "03-8359495",
+    "highlight": "9折",
+    "offer": "商品享9折優惠(酒類、特價品除外)，不得與其他優專合併使用。",
+    "info": "電話：03-8359495\n地址：花蓮市中華路84-1號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/115318124.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://since1938.com/"
+      },
+      {
+        "label": "官網",
+        "url": "https://since1938.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "品皇咖啡",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市建國路1段151號",
+    "phone": "03-8569083",
+    "highlight": "9折",
+    "offer": "商品享9折優惠，不得與其他優專合併使用。",
+    "info": "電話：03-8569083\n地址：花蓮市建國路1段151號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/443777557.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.phcafe.com.tw/"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.phcafe.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "滿庭芳烘培專賣店",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "8565089 花蓮市中山路422-7號/和平路467號/富國路88號",
+    "phone": "03-8325566/8362887/",
+    "highlight": "9折",
+    "offer": "自製產品可享9折優惠，外送無優惠。",
+    "info": "電話：03-8325566/8362887/\n地址：8565089 花蓮市中山路422-7號/和平路467號/富國路88號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/278904236.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "http://fragrancebakery.com/"
+      },
+      {
+        "label": "官網",
+        "url": "http://fragrancebakery.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "麥式多歐式麵包",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市民國路139-2號",
+    "phone": "03-8334336",
+    "highlight": "9折",
+    "offer": "自製商品享9折優惠，不得與其他優專合併使用。",
+    "info": "電話：03-8334336\n地址：花蓮市民國路139-2號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/968482717.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/mybakery970/"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/mybakery970/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "菩提食品(花蓮縣餅)",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市中華路1號",
+    "phone": "03-8312125",
+    "highlight": "9折",
+    "offer": "購物享9折優惠(奶油酥條及特價品除外)，單筆消費滿$3,500元享免宅配運費(奶油酥條除外)。",
+    "info": "電話：03-8312125\n地址：花蓮市中華路1號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/151035072.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.hling.com.tw/"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.hling.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "旬壽司",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣吉安鄉建國路一段220號",
+    "phone": "0911-835309",
+    "highlight": "免服務費",
+    "offer": "免收服務費（結帳前出示證件）。",
+    "info": "電話：0911-835309\n地址：花蓮縣吉安鄉建國路一段220號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/323332957.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/ShunSushi20150820"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/ShunSushi20150820"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "花蓮富野渡假酒店",
+    "subtitle": "餐飲",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市中華路302號",
+    "phone": "03-8346999",
+    "highlight": "9折",
+    "offer": "憑證享9折優惠，服務費10%另計(不得與其他優惠合併使用)。",
+    "info": "電話：03-8346999\n地址：花蓮市中華路302號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/913669891.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.hoyaresort.com.tw/Hualien/"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.hoyaresort.com.tw/Hualien/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "閩越食堂",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣鳳林鎮鳳仁里中正路二段472號",
+    "phone": "03-8762528",
+    "highlight": "9折起",
+    "offer": "平日用餐9折\n假日用餐95折",
+    "info": "電話：03-8762528\n地址：花蓮縣鳳林鎮鳳仁里中正路二段472號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/882131236.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.facebook.com/minvieteatery/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "椿山日本料理",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣光復街108號",
+    "phone": "03-8355833",
+    "highlight": "9折",
+    "offer": "享9折優惠\n飲料酒水、特價商品除外",
+    "info": "電話：03-8355833\n地址：花蓮縣光復街108號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/765232917.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/ChunShan108"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "胖叔叔烘焙屋",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣花蓮市中華路115號/花蓮縣花蓮市中華路296號",
+    "phone": "03-8323436",
+    "highlight": "9折",
+    "offer": "享9折優惠",
+    "info": "電話：03-8323436\n地址：花蓮縣花蓮市中華路115號/花蓮縣花蓮市中華路296號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/246530778.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/246530778.pdf"
+      }
+    ],
+    "expires_on": "2027-06-30",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至116年6月30日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "富友鍋物/火鍋世家-花蓮吉安店",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣吉安鄉南昌北路78號",
+    "phone": "03-8533557",
+    "highlight": "95折",
+    "offer": "1.主鍋享95折優惠，服務費不打折\n2.特約95折優惠與店內其他活動優惠請擇一使用(詳如特約契約)",
+    "info": "電話：03-8533557\n地址：花蓮縣吉安鄉南昌北路78號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/883339492.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/883339492.pdf"
+      }
+    ],
+    "expires_on": "2027-03-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至116年3月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "花蓮牛排",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "970花蓮縣花蓮市建中街30號",
+    "phone": "03-8330803",
+    "highlight": "9折",
+    "offer": "一人出示享全桌9折優惠(僅限內用、優惠商品除外)，不得與其他優惠同時使用。",
+    "info": "電話：03-8330803\n地址：970花蓮縣花蓮市建中街30號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/452395611.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://hualien-steak.weebly.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "青田の蔬食",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "970花蓮縣花蓮市建國路258號",
+    "phone": "03-8362210",
+    "highlight": "95折",
+    "offer": "消費金額95折，不得與其他優惠同時使用。",
+    "info": "電話：03-8362210\n地址：970花蓮縣花蓮市建國路258號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/276551496.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.facebook.com/slin0825258/?locale=zh_TW"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "流奶與蜜",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "970花蓮縣花蓮市民權八街60號",
+    "phone": "03-8222282",
+    "highlight": "9折",
+    "offer": "現金9折。",
+    "info": "電話：03-8222282\n地址：970花蓮縣花蓮市民權八街60號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/405583596.pdf"
+      },
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/899897051.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/899897051.pdf"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "茶湯會民國店",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "970花蓮縣花蓮市民國路89號",
+    "phone": "03-8315318",
+    "highlight": "9折",
+    "offer": "現金9折。",
+    "info": "電話：03-8315318\n地址：970花蓮縣花蓮市民國路89號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/405583596.pdf"
+      },
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/470396500.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/470396500.pdf"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "一芳水果茶中華店",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "970花蓮縣花蓮市中華路323號",
+    "phone": "03-8220883",
+    "highlight": "折$5",
+    "offer": "全品項折5元。",
+    "info": "電話：03-8220883\n地址：970花蓮縣花蓮市中華路323號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/405583596.pdf"
+      },
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/892288802.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/892288802.pdf"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "鄉村媽媽美食館",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "970花蓮縣花蓮市府前路34號",
+    "phone": "03-8236008",
+    "highlight": "9折起",
+    "offer": "平日消費9折，假日消費95折，過年期間不適用。",
+    "info": "電話：03-8236008\n地址：970花蓮縣花蓮市府前路34號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/405583596.pdf"
+      },
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/360459853.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/360459853.pdf"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "黑沃咖啡",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "970花蓮縣花蓮市軒轅路22號",
+    "phone": "03-8331000",
+    "highlight": "7折起",
+    "offer": "1.門市飲品9折\n2.咖啡豆單包9折.10包7折\n3.50元以上濾掛商品10包9折.40包以上7折\n4.節慶/客製禮盒買十送一",
+    "info": "電話：03-8331000\n地址：970花蓮縣花蓮市軒轅路22號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/464198945.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/464198945.pdf"
+      }
+    ],
+    "expires_on": "2027-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至116年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "鍋家",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "970花蓮縣花蓮市國聯三路25號",
+    "phone": "03-8058955",
+    "highlight": "折$50",
+    "offer": "消費滿600元折50元.滿1200元折100元。",
+    "info": "電話：03-8058955\n地址：970花蓮縣花蓮市國聯三路25號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/405583596.pdf"
+      },
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/400444604.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/400444604.pdf"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "伴杯蒔光商行",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "970花蓮縣花蓮市中華路48號",
+    "phone": "03-8333183",
+    "highlight": "9折",
+    "offer": "9折優惠。",
+    "info": "電話：03-8333183\n地址：970花蓮縣花蓮市中華路48號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/405583596.pdf"
+      },
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/653740733.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/653740733.pdf"
+      }
+    ],
+    "expires_on": "2028-07-01",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至117年7月1日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "岳澤坊",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "970花蓮縣花蓮市民國路91號1樓",
+    "phone": "0987-870183",
+    "highlight": "9折",
+    "offer": "全品項9折,外送除外,自帶杯折扣擇一使用。",
+    "info": "電話：0987-870183\n地址：970花蓮縣花蓮市民國路91號1樓\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/405583596.pdf"
+      },
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/748192542.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/748192542.pdf"
+      }
+    ],
+    "expires_on": "2028-07-01",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至117年7月1日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "安東韓式料理",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "973花蓮縣吉安鄉建國路二段27號",
+    "phone": "0989-058718",
+    "highlight": "9折",
+    "offer": "達低消門檻享九折,不與其他優惠活動併用。",
+    "info": "電話：0989-058718\n地址：973花蓮縣吉安鄉建國路二段27號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/405583596.pdf"
+      },
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/531115492.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/531115492.pdf"
+      }
+    ],
+    "expires_on": "2028-07-04",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至117年7月4日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "潘師傅糕餅鋪",
+    "subtitle": "",
+    "category": "food",
+    "regions": [
+      "east"
+    ],
+    "address": "970花蓮縣花蓮市德安一街21號",
+    "phone": "03-8338892",
+    "highlight": "消費贈品",
+    "offer": "經典系列買十送一,買二十送四。",
+    "info": "電話：03-8338892\n地址：970花蓮縣花蓮市德安一街21號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/405583596.pdf"
+      },
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/492580030.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/492580030.pdf"
+      }
+    ],
+    "expires_on": "2028-10-09",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至117年10月9日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "亮潔洗車",
+    "subtitle": "",
+    "category": "transport",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣吉安鄉建國路2段117號",
+    "phone": "0976309161",
+    "highlight": "8折",
+    "offer": "只限洗全套打8折",
+    "info": "電話：0976309161\n地址：花蓮縣吉安鄉建國路2段117號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "官網",
+        "url": "https://www.facebook.com/Han20200901/?locale=zh_TW"
+      }
+    ],
+    "expires_on": "2027-06-30",
+    "auto_renew": false,
+    "notes": "此列備註欄重複寫合約期限，未載明適用對象；依本表其餘各列之「出示教職員證或學生證」歸類為教職員、學生適用；頁面合約期限：合約期限至116年6月30日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "聯登物業(停車場)",
+    "subtitle": "",
+    "category": "transport",
+    "regions": [
+      "east"
+    ],
+    "address": "國興一街(停車場)，在花蓮火車站左前方",
+    "phone": "0800-019-399",
+    "highlight": "9折",
+    "offer": "1.半年提供1次異業結盟廠商優惠卷給教職員工\n2.停車9折，折扣優惠需使用折扣卡，請至本校事務組109室簽領折扣卡，1車號綁定1卡，使用說明請點左方連結「聯登物業(停車廠)」\n3.停車相關疑義，請加聯登官方Line：@143gvytw(QR-Code在左方連結內)或電話0800-019-399(其他詳契約內容)",
+    "info": "電話：0800-019-399\n地址：國興一街(停車場)，在花蓮火車站左前方\n使用對象：教職員工",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/668945651.pdf"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "備註欄：「掃優惠卡Line Pay支付」，未列學生；停車場位於花蓮火車站左前方；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "昱成輪胎行",
+    "subtitle": "",
+    "category": "transport",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市建林街91號",
+    "phone": "03-8335356",
+    "highlight": "9折",
+    "offer": "輪胎、保養9折",
+    "info": "電話：03-8335356\n地址：花蓮市建林街91號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/118859487.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.facebook.com/pages/category/Automotive-Repair-Shop/%E6%98%B1%E6%88%90%E6%B1%BD%E8%BB%8A-358926357641895/"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.facebook.com/pages/category/Automotive-Repair-Shop/%E6%98%B1%E6%88%90%E6%B1%BD%E8%BB%8A-358926357641895/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "久力汽車",
+    "subtitle": "",
+    "category": "transport",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣吉安鄉吉興路1段201號",
+    "phone": "03-8536218",
+    "highlight": "9折",
+    "offer": "1.到校牽車保養修理\n2.保養修理工資9折\n3.驗車前檢查及代驗車服務",
+    "info": "電話：03-8536218\n地址：花蓮縣吉安鄉吉興路1段201號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/129691183.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://twypage.com/sd-287377-C-%E8%8A%B1%E8%93%AE-%E4%B9%85%E5%8A%9B%E6%B1%BD%E8%BB%8A%E4%BC%81%E6%A5%AD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.html"
+      },
+      {
+        "label": "官網",
+        "url": "https://twypage.com/sd-287377-C-%E8%8A%B1%E8%93%AE-%E4%B9%85%E5%8A%9B%E6%B1%BD%E8%BB%8A%E4%BC%81%E6%A5%AD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.html"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "太陽輪胎行",
+    "subtitle": "",
+    "category": "transport",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣吉安鄉中央路三段300號",
+    "phone": "03-8533167",
+    "highlight": "9折起",
+    "offer": "1.舊胎換國內外胎95折\n2.引擎機油更換保養.底盤零件9折",
+    "info": "電話：03-8533167\n地址：花蓮縣吉安鄉中央路三段300號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/166606053.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.suntire.com.tw/"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.suntire.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "永成小客車租賃行",
+    "subtitle": "",
+    "category": "transport",
+    "regions": [],
+    "address": "金門縣金城鎮小西門76-2號3樓",
+    "phone": "0928304018",
+    "highlight": "7折起",
+    "offer": "1.全車系租車一律七折\n2.引搭配指定民宿全房型一律八五折(且停民宿、珠山閒庭、好悅會館)(特約民宿需要先租車搭配民宿才有優惠喔)(詳如契約)",
+    "info": "電話：0928304018\n地址：金門縣金城鎮小西門76-2號3樓\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/791419374.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://kinmen.travel/zh-tw/shop/details/3805"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "地址在金門（離島），regions 留空；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "新英輪胎行",
+    "subtitle": "",
+    "category": "transport",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市林森路275號",
+    "phone": "03-8322712",
+    "highlight": "85折起",
+    "offer": "1.換胎95折\n2.機油85折\n3.零件維修9折起",
+    "info": "電話：03-8322712\n地址：花蓮市林森路275號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/189316862.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/pages/category/Automotive-Repair-Shop/%E6%96%B0%E8%8B%B1%E8%BC%AA%E8%83%8E-%E8%8A%B1%E8%93%AE%E4%BF%AE%E8%BB%8A%E4%BF%9D%E9%A4%8A%E5%BA%95%E7%9B%A4%E5%AE%9A%E4%BD%8D%E6%8E%A5%E9%9B%BB%E8%A3%9C%E8%83%8E-717500038357033/"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/pages/category/Automotive-Repair-Shop/%E6%96%B0%E8%8B%B1%E8%BC%AA%E8%83%8E-%E8%8A%B1%E8%93%AE%E4%BF%AE%E8%BB%8A%E4%BF%9D%E9%A4%8A%E5%BA%95%E7%9B%A4%E5%AE%9A%E4%BD%8D%E6%8E%A5%E9%9B%BB%E8%A3%9C%E8%83%8E-717500038357033/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "詠順交通有限公司",
+    "subtitle": "",
+    "category": "transport",
+    "regions": [
+      "north"
+    ],
+    "address": "宜蘭市泰山路95巷33號1樓",
+    "phone": "03-9360660",
+    "highlight": "消費贈品",
+    "offer": "1.宜蘭縣內租用，隨車每人贈送礦泉水1瓶。\n2.出示識別證或學證租車另有優惠。",
+    "info": "電話：03-9360660\n地址：宜蘭市泰山路95巷33號1樓\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/279062324.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/pages/category/Hospitality-Service/%E8%A9%A0%E9%A0%86%E9%81%8A%E8%A6%BD%E8%BB%8A-%E6%96%B0%E8%A9%A0%E9%A0%86%E6%97%85%E8%A1%8C%E7%A4%BE-278733705887872/"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/pages/category/Hospitality-Service/%E8%A9%A0%E9%A0%86%E9%81%8A%E8%A6%BD%E8%BB%8A-%E6%96%B0%E8%A9%A0%E9%A0%86%E6%97%85%E8%A1%8C%E7%A4%BE-278733705887872/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "緯誠汽車商行",
+    "subtitle": "",
+    "category": "transport",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣吉安鄉中央路三段413-1號",
+    "phone": "0917-582081",
+    "highlight": "95折",
+    "offer": "1.維修保養95折\n2.全車出外檢查五油三水免費\n3.免費到府牽車",
+    "info": "電話：0917-582081\n地址：花蓮縣吉安鄉中央路三段413-1號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/551725535.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/%E7%B7%AF%E8%AA%A0%E5%9C%8B%E9%9A%9B%E8%BB%8A%E6%A5%AD-325145791014692/"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.twincn.com/item.aspx?no=41015386"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "貳輪嶼二手機車",
+    "subtitle": "",
+    "category": "transport",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市國聯一路197號",
+    "phone": "03-8316768",
+    "highlight": "特約優惠",
+    "offer": "1.買賣機車免收過戶代辦費\n2.雙人同行購車優惠每輛車1000元",
+    "info": "電話：03-8316768\n地址：花蓮市國聯一路197號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/551113906.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/551113906.pdf"
+      }
+    ],
+    "expires_on": "2028-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至117年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "愛買花蓮店",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市和平路581號B1",
+    "phone": "03-8909070#104",
+    "highlight": "滿額折$100",
+    "offer": "1.單筆結帳金額滿1,000元本人持當日消費發票教職員、學生證件及愛買APP到客服中心兌領100元現金折價券，每人每日最高兌領500元為限。\n2.全年最高發放1100張，兌完為止。\n3.總優惠金額110,000元。\n4.限於愛買花蓮店內消費滿1000元可使用一張100元現金折價券(美食街及商店街/菸酒商品/藥品/換購/加價購/遠東商品券、禮券及各項加值服務等恕不列入結帳金額計算)消費才享有優惠，相關折扣活動，限擇一兌換。",
+    "info": "電話：03-8909070#104\n地址：花蓮市和平路581號B1\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/632265752.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.facebook.com/pages/%E6%84%9B%E8%B2%B7%E8%8A%B1%E8%93%AE%E5%BA%97/136683199730929/#"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限115年1月1日至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "阿瘦皮鞋",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "高雄市三民區大昌2路132號3樓",
+    "phone": "07-39294598",
+    "highlight": "65折",
+    "offer": "1.阿瘦皮鞋自有品牌鞋、包商品，享定價65折優惠。\n2.特殊福利專案商品或促銷活動，由乙方另行提供優惠期間及價格。\n3.上述企業優惠僅限阿瘦皮鞋專屬網頁訂購，不適用於門市消費，亦不與其他優惠合併使用。",
+    "info": "電話：07-39294598\n地址：高雄市三民區大昌2路132號3樓\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/350186681.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.aso.com.tw/?srsltid=AfmBOorbfRsTCp4RwFfyTzZEDHvGE6ACczkKXKKIaqnqw4UBltLmaAws"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "阿瘦皮鞋全台門市；地址為公司地址；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "朵法婭生活美學",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "台北市中和區板南路663號14樓",
+    "phone": "02-27780037#34",
+    "highlight": "8折",
+    "offer": "1.於官網使用優惠碼：SVIP8\n2.全館8折，不與館內其他優惠共用(詳如附件)",
+    "info": "電話：02-27780037#34\n地址：台北市中和區板南路663號14樓\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/447041276.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.darphia.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "官網優惠碼，歸類為全區；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "U2電影館",
+    "subtitle": "",
+    "category": "entertainment",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "台北市萬華區漢中街156號6樓",
+    "phone": "02-23817479",
+    "highlight": "消費贈品",
+    "offer": "至U2電影館全省各分館消費可享每人每片160元優惠價，並附贈飲料一杯(詳如附件)",
+    "info": "電話：02-23817479\n地址：台北市萬華區漢中街156號6樓\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/336457874.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.u2mtv.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "「全省各分館」；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "宏常有限公司(囍瑞)",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "south"
+    ],
+    "address": "高雄市左營區文科街80號",
+    "phone": "07-3413992",
+    "highlight": "93折",
+    "offer": "1.全館商品享93折\n2.不定期推出獨家限定款商品組合優惠\n3.特約商店代碼為:「22010036」",
+    "info": "電話：07-3413992\n地址：高雄市左營區文科街80號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/157274595.pdf"
+      },
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/780282439.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.bioes.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "六福村主題遊樂園",
+    "subtitle": "",
+    "category": "entertainment",
+    "regions": [
+      "north"
+    ],
+    "address": "新竹縣關西鎮仁安里拱子溝60號",
+    "phone": "03-5475665",
+    "highlight": "特約優惠",
+    "offer": "主題樂園:專案價690元(原價1400)\n主題樂園+水樂園:專案價890元(原價1800)\n每張識別證最多買2張",
+    "info": "電話：03-5475665\n地址：新竹縣關西鎮仁安里拱子溝60號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/128722967.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.leofoovillage.com.tw/"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.leofoovillage.com.tw/"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "太一旅行社",
+    "subtitle": "",
+    "category": "services",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "臺北市中山北路2段44號15樓B室",
+    "phone": "02-25673822",
+    "highlight": "折$1000",
+    "offer": "網上全線產品優惠1000元",
+    "info": "電話：02-25673822\n地址：臺北市中山北路2段44號15樓B室\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/127069185.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.t1tour.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "網上全線產品，歸類為全區；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "二毛旅行社",
+    "subtitle": "",
+    "category": "services",
+    "regions": [],
+    "address": "金門縣金寧鄉盤果路85號",
+    "phone": "082-316808，0928304018",
+    "highlight": "專屬優惠價",
+    "offer": "加入官方LINE：@2MAO，出示識別證即可享有以下優惠\n三天兩夜金門旅遊 機+酒+包車+司機導遊每人原價16800元，優惠方案每人15500元(三人成團)，六人以上15000元 (無購物行程)\n包車(含司機導遊)原價7500/天，優惠方案7000/天",
+    "info": "電話：082-316808，0928304018\n地址：金門縣金寧鄉盤果路85號\n使用對象：教職員工（契約：僅限所屬員工）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/131308322.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://travel.v2-2mao.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "契約書為掃描檔（無文字層），以下契約條款係直接閱讀掃描影像取得；契約：「乙方參加甲方所提供優惠消費方案資格，僅限乙方所屬會員/員工」，依契約歸類為教職員工；契約期限114年02月28日，到期未提出終止視同自動續約一年；地址在金門（離島），regions 留空；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "大地假期旅行社",
+    "subtitle": "",
+    "category": "services",
+    "regions": [
+      "south"
+    ],
+    "address": "嘉義市西區中興路418號",
+    "phone": "05-2315520",
+    "highlight": "折$2000起",
+    "offer": "護照(新辦)：市價1500，特約價1450\n台胞證(新辦)：市價1700，特約價1500\n外國行程 8日以下：折扣NT$2,000（大地假期自組團）\n外國行程 9~14日：折扣NT$3,000\n外國行程 15日以上：折扣NT$4,000",
+    "info": "電話：05-2315520\n地址：嘉義市西區中興路418號\n使用對象：教職員工（含退休）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/331704113.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.actwg.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "契約書為掃描檔（無文字層），以下契約條款係直接閱讀掃描影像取得；契約：「上述公司員工（含退休人員）憑識別證、顧客憑消費收據」，依契約歸類為教職員工；契約：109年2月3日起至109年12月31日，期滿雙方未為反對之意思表示，視同自動續約一年；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": false,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "雄獅旅行社股份有限公司花蓮分公司",
+    "subtitle": "",
+    "category": "services",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣花蓮市富裕二街32號1樓（花蓮後火車站大廳）",
+    "phone": "03-8907100#3920",
+    "highlight": "特約優惠",
+    "offer": "團體旅遊（東南亞、日本、韓國、大陸(港澳除外)、關島、帛琉）：教職員生本人需參團及同行親友報名者每人優惠 400 元\n團體旅遊（美國、加拿大、歐洲、紐西蘭、澳洲）：教職員生本人需參團及同行親友報名者每人優惠 900 元\n國外簽證：雄獅網簽證訂價每人優惠 100 元\n※上列優惠須主動出示教職員生識別證 / 教職員工本人名片即可享優惠；本優惠折扣方案不得與其他異業合作、專案優惠合併使用",
+    "info": "電話：03-8907100#3920\n地址：花蓮縣花蓮市富裕二街32號1樓（花蓮後火車站大廳）\n使用對象：教職員、學生、退休人員及志工",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/539154958.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.liontravel.com/category/zh-tw/index"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "契約書為掃描檔（無文字層），以下契約條款係直接閱讀掃描影像取得；契約：「甲方之教職員、學生或退休人員及志工等至乙方營業場所消費時，於結帳時出示學校服務證、學生證或相關證件」；期限依頁面「合約期限至115年12月31日」；頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "溯溪傳奇",
+    "subtitle": "",
+    "category": "entertainment",
+    "regions": [
+      "east"
+    ],
+    "address": "0920285555 花蓮市國富二街101號",
+    "phone": "03-8566981",
+    "highlight": "8折",
+    "offer": "溯溪行程1000-3000元(8折)\n詳如契約",
+    "info": "電話：03-8566981\n地址：0920285555 花蓮市國富二街101號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/100173118.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/riverfun93/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "花舍",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市明智街82號",
+    "phone": "03-8344230",
+    "highlight": "消費贈品",
+    "offer": "消費滿800元，贈送3吋觀葉小品盆栽1盒。",
+    "info": "電話：03-8344230\n地址：花蓮市明智街82號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/147636146.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/flower.mj82/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "千田運動廣場",
+    "subtitle": "花蓮中山店 台東新生店",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "east"
+    ],
+    "address": "花蓮市中山路132號",
+    "phone": "03-8342296",
+    "highlight": "95折",
+    "offer": "售價後再享有95折（特價商品除外，花蓮、台東暢貨中心不適用）",
+    "info": "電話：03-8342296\n地址：花蓮市中山路132號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/212342258.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/pages/category/Outdoor-Equipment-Store/%E5%8D%83%E7%94%B0%E9%81%8B%E5%8B%95%E5%BB%A3%E5%A0%B4-%E8%8A%B1%E8%93%AE%E6%9A%A2%E8%B2%A8%E4%B8%AD%E5%BF%83-376785399349315/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "「適用宜花東連鎖營業站」；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "路易斯皮件",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "central"
+    ],
+    "address": "台中市西屯路3段164-17號7樓",
+    "phone": "04-24612112",
+    "highlight": "5折",
+    "offer": "1.推廣系列產品訂價5折\n2.正常使用下，零配件永久免費保固",
+    "info": "電話：04-24612112\n地址：台中市西屯路3段164-17號7樓\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/957555486.pdf"
+      },
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/360714958.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.btlewis.com.tw/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "已移除過期子方案「115年6月專屬優惠39折」；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "阿默兒經典手工鞋花蓮加盟店",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市中華路27號1樓",
+    "phone": "03-8312110",
+    "highlight": "9折",
+    "offer": "商品享9折優惠，不得與其他優惠合併使用。",
+    "info": "電話：03-8312110\n地址：花蓮市中華路27號1樓\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/172890252.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.amour1981.com/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "信香行有限公司",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市大同街33號",
+    "phone": "03-8322066",
+    "highlight": "9折起",
+    "offer": "依現場標價百貨95折，五金9折。",
+    "info": "電話：03-8322066\n地址：花蓮市大同街33號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/258190002.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://zh-tw.facebook.com/pages/category/Grocery-Store/%E4%BF%A1%E9%A6%99%E8%A1%8C-612880555458867/"
+      }
+    ],
+    "expires_on": null,
+    "auto_renew": true,
+    "notes": "頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "愛菲斯居家美學",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "台北市中山區林森北路500號5樓",
+    "phone": "02-25230027",
+    "highlight": "8折",
+    "offer": "【特約商店優惠】愛菲斯官網享有全館8折。(不與館內其他優惠共用)\n【預約試躺獨享】凡\"預約\"愛菲斯實體店試躺床墊、枕頭，享有專屬睡眠評測，助眠調理20分鐘，深眠建議。(價值3980元)",
+    "info": "電話：02-25230027\n地址：台北市中山區林森北路500號5樓\n使用對象：教職員、學生、退休人員及志工",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://ga.ndhu.edu.tw/var/file/6/1006/img/2120/564979241.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "http://www.elvishome.com/?lang=zh-TW"
+      }
+    ],
+    "expires_on": "2026-11-30",
+    "auto_renew": true,
+    "notes": "契約書為掃描檔（無文字層），以下契約條款係直接閱讀掃描影像取得；契約：「甲方之教職員、學生或退休人員及志工等…出示學校服務證、學生證或相關證件」；契約期間113年12月1日起至114年11月30日止，勾選「到期自動續約1年」；頁面合約期限至115年11月30日；官網優惠，歸類為全區；頁面合約期限：合約期限至115年11月30日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "肌肉工廠",
+    "subtitle": "",
+    "category": "health",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮市國興二街145號",
+    "phone": "0930-536220",
+    "highlight": "消費贈品",
+    "offer": "1.一個月免費會籍，每人一次。\n2.會籍買一季送10天，買半年送30天(一次限用一組)",
+    "info": "電話：0930-536220\n地址：花蓮市國興二街145號\n使用對象：教職員、學生（「出示教職員證或學生證」）",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/724404843.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/724404843.pdf"
+      }
+    ],
+    "expires_on": "2026-12-31",
+    "auto_renew": false,
+    "notes": "頁面合約期限：合約期限至115年12月31日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "威比寢飾",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "north",
+      "central",
+      "south",
+      "east"
+    ],
+    "address": "新北市三重區中正北路415號2樓",
+    "phone": "02-29800892",
+    "highlight": "7折",
+    "offer": "1. 官網各項寢具七折優惠，須向官方客服索取折扣代碼，並於官網結帳時輸入使用，且不得與其他優惠、折扣、特惠方案或活動併用。\n2. 訂單出貨前送至校內地址者，不限金額享免運費。\n3. 凡購買寢具三件組，加贈同級枕頭套乙枚。\n4. 限定低收入戶身分之在學大學部學士班學生，憑有效證明文件，可免費申請寢具纖滑型三件組乙組，每人限申請一組，且不得重複申請。",
+    "info": "電話：02-29800892\n地址：新北市三重區中正北路415號2樓\n使用對象：教職員、學生、退休人員及志工",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/438290957.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.wibby-st.com/"
+      }
+    ],
+    "expires_on": "2028-08-31",
+    "auto_renew": true,
+    "notes": "契約書為掃描檔（無文字層），以下契約條款係直接閱讀掃描影像取得；契約：「甲方之教職員、學生或退休人員及志工等…出示學校服務證、學生證或相關證件」；契約期間115年2月9日起至117年8月31日止，勾選「期滿無限期自動續約」；官網訂購，歸類為全區；頁面合約期限：合約到期自動展延",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  },
+  {
+    "name": "合興傢俱行",
+    "subtitle": "",
+    "category": "shopping",
+    "regions": [
+      "east"
+    ],
+    "address": "花蓮縣吉安鄉吉豐路一段78號",
+    "phone": "03-8510188",
+    "highlight": "消費贈品",
+    "offer": "購置傢俱免費運送至指定地點並安裝完成。",
+    "info": "電話：03-8510188\n地址：花蓮縣吉安鄉吉豐路一段78號\n使用對象：教職員、學生、退休人員及志工",
+    "links": [
+      {
+        "label": "特約契約書",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/184202798.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/184202798.pdf"
+      },
+      {
+        "label": "官網",
+        "url": "https://www.wibby-st.com/"
+      },
+      {
+        "label": "官網",
+        "url": "https://rb006.ndhu.edu.tw/var/file/6/1006/img/2120/184202798.pdf"
+      }
+    ],
+    "expires_on": "2027-05-17",
+    "auto_renew": false,
+    "notes": "契約書為掃描檔（無文字層），以下契約條款係直接閱讀掃描影像取得；契約：「甲方之教職員、學生或退休人員及志工等…出示學校服務證、學生證或相關證件」；契約期間115年5月18日起至116年5月17日止；契約第二項優惠內容在掃描檔中被遮蔽，僅錄可辨識之第一項；頁面合約期限：合約期限至116年5月17日",
+    "eligibility": {
+      "student": true,
+      "staff": true,
+      "alumni": false,
+      "family": false
+    },
+    "schools": [
+      "NDHU"
+    ],
+    "source_level": "school",
+    "source_org": "國立東華大學 總務處事務組",
+    "source_url": "https://ga.ndhu.edu.tw/p/412-1006-13996.php?Lang=zh-tw",
+    "retrieved_on": "2026-10-24"
+  }
+]

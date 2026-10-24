@@ -3,11 +3,11 @@
    a pushed full-screen page on a phone) · /merchants (商家合作) · /m/:key (a shop's private
    confirm page) · /r/:code (what a scanned pass QR opens). History API routing over the
    Workers SPA fallback. */
-import { icon } from "./js/icons.js?v=18";
-import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=18";
-import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=18";
-import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=18";
-import { qrSVG } from "./js/qr.js?v=18";
+import { icon } from "./js/icons.js?v=19";
+import { t, tBoth, getLang, setLang, applyLang, schoolName, schoolAliases, schoolCodes } from "./js/i18n.js?v=19";
+import { esc, linkify, safeUrl, storage, todayTW, daysBetween, fmtDate, norm, debounce, isPhone, reducedMotion } from "./js/util.js?v=19";
+import { toast, announce, openDialog, closeDialog, dialogOpen } from "./js/ui.js?v=19";
+import { qrSVG } from "./js/qr.js?v=19";
 
 /* ---------- constants ---------- */
 
@@ -50,6 +50,7 @@ const BADGE_EN = {
   半票優惠: "Half-price ticket", 免運費: "Free shipping", 免費入館閱覽: "Free library entry", 免費終身信箱: "Free lifetime email",
   雙倍點數: "Double points",
   滿額贈: "Gift over a spend", 免費升級: "Free upgrade",
+  團購優惠: "Group-buy discount", 企業帳號: "Corporate account", 免掛號費: "No registration fee",
 };
 const pctOff = (n) => 100 - (n.length === 1 ? +n * 10 : +n); // 「9」→10, 「95」→5, 「88」→12
 function badgeEn(text) {
@@ -58,10 +59,12 @@ function badgeEn(text) {
   let m = s.match(/^(.*?)(\d{1,2})折(起)?$/); // 9折, 85折起, 第二杯85折, 旅平險77折
   if (m) {
     const off = `${pctOff(m[2])}%${m[3] ? "+" : ""} off`;
-    const what = { "": "", 團體: "Groups ", 第二杯: "2nd cup ", 紀念品: "Souvenirs ", 限定月: "Select months: ", 手續費: "Fees ", 旅平險: "Travel insurance " }[m[1]];
+    const what = { "": "", 團體: "Groups ", 掛號費: "Registration fee ", 第二杯: "2nd cup ", 紀念品: "Souvenirs ", 限定月: "Select months: ", 手續費: "Fees ", 旅平險: "Travel insurance " }[m[1]];
     return what === undefined ? null : what + off;
   }
   if ((m = s.match(/^(每人)?折\$([\d,]+)(起)?$/))) return `NT$${(+m[2].replace(/,/g, "")).toLocaleString("en-US")}${m[3] ? "+" : ""} off${m[1] ? " each" : ""}`;
+  if ((m = s.match(/^滿額折\$([\d,]+)$/))) return `NT$${(+m[1].replace(/,/g, "")).toLocaleString("en-US")} off over a spend`;
+  if ((m = s.match(/^優惠價\$([\d,]+)$/))) return `Special price NT$${(+m[1].replace(/,/g, "")).toLocaleString("en-US")}`;
   if ((m = s.match(/^買(一|\d+)送(一|\d+)$/))) return `Buy ${m[1] === "一" ? 1 : m[1]}, get ${m[2] === "一" ? 1 : m[2]} free`;
   if ((m = s.match(/^(\d+)%回饋$/))) return `${m[1]}% cashback`;
   if ((m = s.match(/^額外(\d+)%折扣$/))) return `Extra ${m[1]}% off`;
@@ -91,7 +94,7 @@ const ROLES = ["student", "staff", "alumni"];
 // never a school's own branding. Unknown codes fall back to slate.
 const CARD_TONE = {
   NTU: "violet", NCCU: "teal", NTNU: "blue", NTUST: "rose", NTHU: "amber", NYCU: "green", NCKU: "slate",
-  NCU: "blue", NCHU: "green", TMU: "rose", TCU: "teal", KSU: "amber", CMU: "violet", CCU: "slate", NSYSU: "teal",
+  NCU: "blue", NCHU: "green", TMU: "rose", TCU: "teal", KSU: "amber", CMU: "violet", CCU: "slate", NSYSU: "teal", NDHU: "green",
 };
 const toneOf = (school) => CARD_TONE[school] || "slate";
 const NO_FEATURES = { google: false, dev_login: false, email_code: false };

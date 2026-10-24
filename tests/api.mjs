@@ -253,7 +253,7 @@ check("session gone after logout", (await stu.json("/api/me")).body?.user === nu
     await sc.req(`/auth/dev-login?email=${encodeURIComponent(`ccu-${Date.now()}@ntu.edu.tw`)}&next=/`);
     const added = async (email) => new URL((await sc.req(`/auth/dev-login?email=${encodeURIComponent(email)}&link=1&next=/me`)).headers.get("location"), B).searchParams.get("identity_added");
     check("nccu.edu.tw is not mistaken for ccu.edu.tw", (await added("y@nccu.edu.tw")) === "NCCU");
-    check("CCU and NSYSU student addresses get their cards", (await added("s@alum.ccu.edu.tw")) === "CCU" && (await added("s@student.nsysu.edu.tw")) === "NSYSU");
+    check("CCU, NSYSU and NDHU student addresses get their cards", (await added("s@alum.ccu.edu.tw")) === "CCU" && (await added("s@student.nsysu.edu.tw")) === "NSYSU" && (await added("s@gms.ndhu.edu.tw")) === "NDHU");
   }
   const n1 = (await idu.json("/api/me")).body.identities.length;
   await idu.req(`/auth/dev-login?email=z@ntnu.edu.tw&link=1&next=/me`);
