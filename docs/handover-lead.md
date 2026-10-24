@@ -44,7 +44,7 @@ Stop servers with `pkill -f "[w]rangler dev"`. The bracket stops pkill from kill
    changes. The service worker and browsers key on it.
 3. Run all four local suites green, commit (small, self-contained) and push to the integration branch.
 4. Message campass-2: the commit, what changed, any migration (applied to production *before* the code), and
-   "deploy when CI is green".
+   "deploy when CI is green". It goes to the private preview first; production only on the founder's word.
 
 ## Product rules worth knowing
 

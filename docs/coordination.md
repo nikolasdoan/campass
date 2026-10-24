@@ -30,7 +30,9 @@ No two sessions edit the same file. If you need a change in a file you don't own
 
 1. campass-2 commits on its own branch and pushes, then messages campass-1 with the branch name and what changed.
 2. campass-1 reviews, merges into `claude/jolly-maxwell-e43rxf`, regenerates `seed/deals.sql` if sources changed, runs the checks, pushes, and tells campass-2 the commit to deploy.
-3. campass-2 deploys **only commits on the integration branch** that campass-1 has named, and reports the URL and its checks.
+3. campass-2 deploys **only commits on the integration branch** that campass-1 has named, first to the private
+   preview (https://campuspass-preview.niko-tecx.workers.dev, password-protected), and reports its checks.
+   **pass.tecxmate.com changes only when the founder says so** (founder decision, 2026-10-24).
 4. Schema changes (`migrations/`) are applied to production by campass-2 **before** the code that needs them is deployed.
 
 ## Messaging
