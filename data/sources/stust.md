@@ -119,6 +119,6 @@ Student-eligible records: 58 → 56.
 - **Handwritten terms:** 一家攝影 (a crossed-out word after 九折優待 is left out) and VK銀櫃.
 - **Partly obscured:** a stamp covers parts of 同和農科 clauses 3, 4 and 6; only the legible parts were taken.
 - **Closed branches excluded:** 劍橋's file marks 3 of its 5 hotels 已停業, so only 台南館 and 永康館 rates are given. 168inn's 平鎮館 closed on 114/3/3.
-- **Branch-specific deals:** 牛角燒肉 (台南愛買店 only) and 涮乃葉 (台南三井 only), noted.
+- **Branch-specific deals:** 牛角燒肉 (台南愛買店 only) and 橫濱牛排 (台南三井 only), noted.
 - **Address differences between page and file are noted but not changed:** 58筋讚, 心動力, 倍力 and 沐荳.
 - **Spot check:** 台南老爺行旅 and 一家攝影 were checked against the scans by a second reader.
