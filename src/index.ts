@@ -18,6 +18,8 @@ export interface Env {
   ALLOW_HTTP?: string;
   /** Local testing only (needs DEV_LOGIN): base URL of a mock Google OAuth server (tests/mock-google.mjs). */
   GOOGLE_MOCK_URL?: string;
+  /** Private preview Worker only (wrangler env "preview"): every request needs this password. Never set in production. */
+  PREVIEW_PASSWORD?: string;
 }
 
 /** Real Google endpoints, or the local mock when testing the OAuth flow end to end. */
@@ -883,8 +885,45 @@ export async function cleanup(db: D1Database) {
 // Lets tests and operators run the cleanup on demand.
 app.post("/admin/cleanup", async (c) => c.json({ deleted: await cleanup(c.env.DB) }));
 
+// The private preview (wrangler env "preview") sends every request through the Worker
+// (run_worker_first: true) and asks for a password first. Open without it: the manifest and icons
+// (browsers fetch them without credentials) and /admin/*, which sends its own Bearer header and already
+// requires ADMIN_TOKEN. Paths the production Worker handles go to the app; the rest are static files,
+// as in production.
+const WORKER_PATHS = ["/api/", "/auth/", "/admin/"];
+const PREVIEW_OPEN = /^\/(manifest\.webmanifest$|icons\/|admin\/)/;
+
+async function previewFetch(req: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+  const path = new URL(req.url).pathname;
+  if (!PREVIEW_OPEN.test(path) && !(await previewAuthorized(req, env.PREVIEW_PASSWORD!))) {
+    return new Response("CampusPass preview: password required", {
+      status: 401,
+      headers: { "WWW-Authenticate": 'Basic realm="CampusPass preview", charset="UTF-8"', "Cache-Control": "no-store" },
+    });
+  }
+  const res = WORKER_PATHS.some((p) => path.startsWith(p)) ? await app.fetch(req, env, ctx) : await env.ASSETS.fetch(req);
+  const out = new Response(res.body, res);
+  out.headers.set("X-Robots-Tag", "noindex, nofollow");
+  return out;
+}
+
+/** HTTP Basic auth with any user name; the password is compared in constant time. */
+async function previewAuthorized(req: Request, password: string): Promise<boolean> {
+  const m = /^Basic\s+(.+)$/i.exec(req.headers.get("Authorization") || "");
+  if (!m) return false;
+  let given: string;
+  try {
+    const decoded = atob(m[1]);
+    given = decoded.slice(decoded.indexOf(":") + 1);
+  } catch {
+    return false;
+  }
+  return sameSecret(given, password);
+}
+
 export default {
-  fetch: app.fetch,
+  fetch: (req: Request, env: Env, ctx: ExecutionContext) =>
+    env.PREVIEW_PASSWORD ? previewFetch(req, env, ctx) : app.fetch(req, env, ctx),
   async scheduled(_event: ScheduledController, env: Env, ctx: ExecutionContext) {
     ctx.waitUntil(cleanup(env.DB));
   },

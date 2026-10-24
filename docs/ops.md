@@ -58,6 +58,24 @@ Retry before debugging.
 Until both are set, `/auth/google/start` returns 500 "Google login is not configured". **Never set
 `DEV_LOGIN` in production.**
 
+## Private preview (deploy here first)
+
+Founder decision, 2026-10-24: new work goes to the private preview first. **pass.tecxmate.com changes only
+when the founder says so**, even for a commit campass-1 names and CI passes.
+
+| | |
+|---|---|
+| URL | https://campuspass-preview.niko-tecx.workers.dev (workers.dev only, no custom domain) |
+| Worker / D1 | `campuspass-preview` / `campuspass-preview` (`c818a1a5-…`), wrangler env `preview` |
+| Gate | HTTP Basic auth, any user name, password = secret `PREVIEW_PASSWORD`. Open without it: the manifest, `/icons/*` and `/admin/*` (own `ADMIN_TOKEN`, separate from production's). `X-Robots-Tag: noindex` on everything. |
+| Data | its own copy: `npm run db:migrate:preview`, `npm run db:seed:preview`. Test accounts there never touch production. |
+| Secrets | `PREVIEW_PASSWORD`, `ADMIN_TOKEN` (campass-2 holds both; the founder has the password). Rotate with `npx wrangler secret put PREVIEW_PASSWORD --env preview` (stdin). |
+
+Flow for a named commit: CI green → detached checkout → `npm run deploy:preview` (plus migrate/seed preview if the
+commit has migrations or data) → smoke with `BASE=https://campuspass-preview… ` and the password → tell the
+founder and campass-1 → production (`npm run deploy`, `db:seed:remote`) only after the founder's go.
+A first deploy must carry the password in the same upload: `npx wrangler deploy --env preview --secrets-file <file>`.
+
 ## Routine deploy
 
 Deploy only commits on `claude/jolly-maxwell-e43rxf` that campass-1 has named.
