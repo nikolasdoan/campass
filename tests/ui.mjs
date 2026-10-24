@@ -723,7 +723,11 @@ const STUDENT = `redeem-${Date.now()}@ntu.edu.tw`; // fresh user: passes are reu
   // after signing in again the report reopens with the text.
   await ctx.clearCookies();
   await page.fill('dialog.report textarea', 'kept across sign-in');
-  await page.click('dialog.report [type="submit"]'); await settle(page, 500);
+  await page.click('dialog.report [type="submit"]');
+  // The locked detail is re-fetched over the network: wait for it rather than a fixed delay (CI is slower).
+  await page.waitForSelector('dialog[open].signin', { timeout: 5000 }).catch(() => {});
+  await page.waitForSelector('#detail .lockcard', { timeout: 5000 }).catch(() => {});
+  await settle(page, 150);
   check('401: report → sign-in sheet (expired reason), detail locked again', (await page.textContent('dialog[open]')).includes('登入已過期') && !!(await page.$('#detail .lockcard')) && (await rect(page, '#detailUse')).display === 'none');
   check('toast: the live region goes back to the page when its dialog closes', await page.evaluate(() => document.querySelector('#live')?.parentElement === document.body));
   await page.goto(B + `/auth/dev-login?email=fixes-${STUDENT}&next=/deal/${FULL}`, { waitUntil: 'networkidle' });
