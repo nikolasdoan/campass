@@ -378,6 +378,19 @@ if (!mockUp) {
   check("events: personal-looking searches dropped", !/b09902123|example\.com|0912345678|not-a-deal|script|teleport/.test(keys));
 }
 
+// ---------- 商圈 (/api/districts) ----------
+{
+  const r = await anon.req("/api/districts");
+  const body = await r.json().catch(() => null);
+  const list = body?.districts || [];
+  check("districts: list is non-empty", r.status === 200 && list.length > 50, `status ${r.status}, ${list.length}`);
+  check("districts: cacheable for a day", (r.headers.get("cache-control") || "").includes("max-age=86400"), r.headers.get("cache-control"));
+  const gg = list.find((d) => d.name === "臺大公館商圈");
+  const [lat, lng] = gg?.centre || [];
+  check("districts: 臺大公館商圈 centred near 公館", gg && Math.abs(lat - 25.014) < 0.01 && Math.abs(lng - 121.534) < 0.01, JSON.stringify(gg?.centre));
+  check("districts: each has id, city, polygon", list.every((d) => d.id && d.city && Array.isArray(d.polygon) && d.polygon.length >= 3 && d.radius_m > 0));
+}
+
 const passed = results.filter(Boolean).length;
 console.log(`\n${passed}/${results.length} passed`);
 process.exit(passed === results.length ? 0 : 1);

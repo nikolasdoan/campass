@@ -2,6 +2,7 @@ import { Hono } from "hono";
 import { getCookie, setCookie, deleteCookie } from "hono/cookie";
 import { googleAuthUrl, exchangeCode, newPkce, type GoogleEndpoints } from "./google";
 import { addIdentity, listIdentities, ROLES } from "./identities";
+import { listDistricts } from "./districts";
 
 export interface Env {
   DB: D1Database;
@@ -408,6 +409,9 @@ app.get("/api/deals/:id", async (c) => {
   );
   return c.json({ deal: parseDeal(row), locked: false });
 });
+
+// 商圈 outlines for the map view: static and public (src/districts.ts, data/districts.json).
+app.get("/api/districts", (c) => listDistricts(c));
 
 // ---------- school identities ----------
 
